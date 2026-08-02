@@ -1,6 +1,6 @@
 # ADR-0002 — Transform by patching source ranges, not by re-serializing the document
 
-- **Status:** Accepted (pending spike — see `spikes/001-transform-architecture.md`)
+- **Status:** Accepted (spike 001 passed; implementation and real-output build validation remain required)
 - **Date:** 2026-08-02
 - **Relates to:** `IMPLEMENTATION_PLAN.md` → D-8 (superseded by this record); `pipeline/demark/KNOWN-ISSUES.md` → DM-1; `DESIGN.md` → *The marking manipulation*
 
