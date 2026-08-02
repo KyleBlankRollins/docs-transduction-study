@@ -268,6 +268,8 @@ AMENDMENTS.md              Post-L2 changes: date, change, rationale, results-see
 runlog.md                  Chronological; every deviation, version, and pin
 README.md                  Public-facing summary
 IMPLEMENTATION_PLAN.md     This file. Not part of the registration.
+phases/                    Phase files P0–P11: this plan broken into gated,
+                           agent-executable phases. Not part of the registration.
 decisions/                 Numbered decision records. Not part of the registration.
 spikes/                    Throwaway investigations; findings land in runlog.md
 LICENSE / LICENSE-DATA
