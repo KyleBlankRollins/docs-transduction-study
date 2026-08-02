@@ -1,0 +1,48 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Kyle Rollins
+
+The material described below is licensed under CC BY 4.0. You are free to share
+and adapt it for any purpose, including commercially, provided you give
+appropriate credit, link to the license, and indicate if changes were made.
+
+Full legal text:  https://creativecommons.org/licenses/by/4.0/legalcode
+Summary:          https://creativecommons.org/licenses/by/4.0/
+
+Suggested attribution:
+
+    Rollins, K. (2026). Communicability Under Transduction: coded dataset and
+    instruments. CC BY 4.0.
+
+---
+
+## What this covers
+
+    DESIGN.md, AMENDMENTS.md, runlog.md, README.md, and the other prose
+                        documents in this repository
+    instruments/        Relation taxonomy, instances, probes with foils,
+                        gate exclusions, rubric
+    coding/             M1a coding records and the M2 redundancy inventory
+    logs/               Inspect eval logs
+    figures/            Generated figures
+    artifacts/          A1-A4 pipeline output, EXCEPT where it reproduces corpus
+                        text — see below
+
+## What this does not cover
+
+**Software** — `src/`, `pipeline/demark/`, `tests/` — is MIT. See `LICENSE`.
+
+**Corpus specimens and their derived variants** under `corpus/` are derived from
+the Astro documentation (github.com/withastro/docs), which is MIT licensed. That
+license travels with the material and with anything derived from it. This
+repository does not, and cannot, relicense it. See `corpus/NOTICE`.
+
+This matters for `artifacts/` too: pipeline artifacts contain rendered and
+extracted corpus text, so to the extent an artifact reproduces Astro's content it
+carries Astro's terms. The CC BY grant above applies to the study's own
+contribution — the selection, the transformation, the coding, and the analysis —
+not to the underlying documentation.
+
+The implicit-arm variants are **derivative works created by this study**. They are
+mechanically degraded on purpose and are not Astro's documentation. Anyone
+redistributing them should say so, in addition to preserving Astro's attribution.

@@ -1,0 +1,50 @@
+# ── Python ────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ── Node ──────────────────────────────────────────────────────────────────
+node_modules/
+dist/
+*.tsbuildinfo
+
+# ── Generated trees and build output ──────────────────────────────────────
+# build/ is the implicit docs tree materialized by ADR-0003, and is also where
+# Python build artifacts land. Both are reproducible from committed inputs.
+build/
+
+# ── Playwright ────────────────────────────────────────────────────────────
+test-results/
+playwright-report/
+.playwright/
+
+# ── OS and editor ─────────────────────────────────────────────────────────
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# ══════════════════════════════════════════════════════════════════════════
+# DELIBERATELY TRACKED — do not add these
+#
+# This repository publishes its evidence. The following look like build output
+# and are not:
+#
+#   artifacts/    A1-A4 output for both arms. Archived, not regenerated —
+#                 corpus drift is a named threat and the mitigation is that
+#                 these files are the record.
+#   logs/         Inspect eval logs. The design commits to publishing them.
+#   coding/       Append-only coding records. Never overwritten.
+#   figures/      Generated, but published alongside the analysis.
+#   corpus/       Specimens and derived variants, both arms.
+#   uv.lock       The environment someone else needs to reproduce a run.
+#   pipeline/demark/package-lock.json
+#
+# Sealing the artifact-ID mapping until analysis is the coding harness's job,
+# not this file's. Ignoring it would hide it from Git without hiding it from
+# the coder, which is the wrong half of the problem.
+# ══════════════════════════════════════════════════════════════════════════

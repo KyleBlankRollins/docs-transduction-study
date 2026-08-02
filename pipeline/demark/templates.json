@@ -1,0 +1,94 @@
+{
+  "$comment": [
+    "The de-marking template set. THIS FILE IS THE MANIPULATION.",
+    "D2, D3, and D4 insert language rather than only removing structure, so the",
+    "inserted wording is fixed here and applied uniformly to every specimen.",
+    "A sentence hand-written for one specimen is how an implicit arm becomes a",
+    "strawman without anyone intending it.",
+    "",
+    "Templates must be GENEROUS, not stingy. The manipulation is HOW a relation is",
+    "encoded, never WHETHER it is encoded. A template that drops force rather than",
+    "restating it in ordinary words violates propositional equivalence and would",
+    "make any measured gap an artifact of the template rather than of marking.",
+    "",
+    "frozen=false until L2. Set frozen=true in the instrument-lock commit.",
+    "After that, any change is an amendment."
+  ],
+  "version": "0.1.0-draft",
+  "frozen": false,
+
+  "d1_sequence": {
+    "$comment": "Steps component -> prose. Order preserved in sentence sequence.",
+    "ordinals": [
+      "First,",
+      "Second,",
+      "Third,",
+      "Fourth,",
+      "Fifth,",
+      "Sixth,",
+      "Seventh,",
+      "Eighth,",
+      "Ninth,",
+      "Tenth,"
+    ],
+    "overflow": "Next,",
+    "final": "Finally,",
+    "lead_in": "Complete the following steps in order."
+  },
+
+  "d2_membership": {
+    "$comment": "Tabs -> prose enumeration. lead_in states the alternatives relation in words exactly once, which is the relational content the tabs carried structurally.",
+    "lead_in": "Choose one of the following options. These are alternatives — use exactly one, not all of them.",
+    "option_prefix": "If you are using {label}:"
+  },
+
+  "d3_force_aside": {
+    "$comment": "Asides -> inline prose, in place. Each phrase must carry the same force the admonition type carried, in ordinary words.",
+    "note": "Note that",
+    "tip": "As a helpful tip,",
+    "caution": "Use caution here:",
+    "danger": "This is dangerous:",
+    "default": "Note that",
+    "titled": "{title}:"
+  },
+
+  "d4_force_keywords": {
+    "$comment": [
+      "RFC 2119/8174 keywords -> ordinary modals. Keys are matched only as whole",
+      "words in ALL CAPS, per RFC 8174: a lowercase 'must' is already ordinary",
+      "English. Longer keys are matched first, so MUST NOT never becomes MUST.",
+      "",
+      "The mapping lowercases and does nothing else. See ADR-0001 (decisions/).",
+      "",
+      "Capitalization IS the marking, per RFC 8174, so removing it is the whole",
+      "de-marking — exactly, minimally, nothing else disturbed. The design's earlier",
+      "illustration ('MUST' -> 'needs to') was rejected: applied mechanically it is",
+      "ungrammatical for the corpus's most common construction ('You MUST restart'",
+      "-> 'You needs to restart'), and broken grammar in the implicit arm ONLY makes",
+      "the arms distinguishable on fluency rather than on marking.",
+      "",
+      "Consequence, pre-specified: D4 is the smallest manipulation in the set and",
+      "its instances are reported separately from D3 within R3, never pooled."
+    ],
+    "MUST NOT": "must not",
+    "SHALL NOT": "shall not",
+    "SHOULD NOT": "should not",
+    "NOT RECOMMENDED": "not recommended",
+    "MUST": "must",
+    "SHALL": "shall",
+    "REQUIRED": "required",
+    "SHOULD": "should",
+    "RECOMMENDED": "recommended",
+    "MAY": "may",
+    "OPTIONAL": "optional"
+  },
+
+  "d7_precondition_table": {
+    "$comment": "Tables -> prose enumeration, in place. One sentence per body row, field names taken from the header row.",
+    "lead_in": "The table below is given as a list.",
+    "row_prefix": "For {first_cell}:",
+    "cell_pattern": "{header} is {value}",
+    "cell_separator": "; ",
+    "row_terminator": "."
+  }
+}
