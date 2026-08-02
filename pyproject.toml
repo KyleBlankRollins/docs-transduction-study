@@ -1,16 +1,14 @@
 [project]
 name = "docs-transduction-study"
 version = "0.1.0"
-description = "Add your description here"
+description = "Reproducible tooling for the documentation transduction study."
 readme = "README.md"
-authors = [
-    { name = "Kyle Rollins", email = "kyleblankrollins@gmail.com" }
-]
-requires-python = ">=3.14"
-dependencies = [
-    "inspect-ai>=0.3.251",
-    "playwright>=1.62.0",
-]
+authors = [{ name = "Kyle Rollins", email = "kyleblankrollins@gmail.com" }]
+requires-python = ">=3.14,<3.15"
+dependencies = ["inspect-ai>=0.3.251", "playwright>=1.62.0"]
+
+[dependency-groups]
+dev = ["mypy>=1.18.2", "pytest>=8.4.2", "ruff>=0.13.0"]
 
 [project.scripts]
 docs-transduction-study = "docs_transduction_study:main"
