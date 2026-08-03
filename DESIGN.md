@@ -5,7 +5,7 @@ keywords: "experiment design, pre-registration, technical writing, documentation
 date: ""
 tags: [technical writing, documentation, AI, research, experiment]
 status: "design"
-design_version: "0.6"
+design_version: "0.7"
 registered: "2026-08-02"
 registration_commit: "75667a9a494b076e79e9f5aba5bd0dc932d890a1"
 instrument_locked: ""
@@ -15,7 +15,7 @@ repository: "docs-transduction-study — separate repository, not this one"
 
 ## Status
 
-**Design — not yet registered, not yet run.** Version 0.6 supersedes 0.5; 0.2 is preserved alongside this file. See [What changed from 0.5](#what-changed-from-05-and-why), [What changed from 0.4](#what-changed-from-04-and-why), [What changed from 0.3](#what-changed-from-03-and-why), and [What changed from 0.2](#what-changed-from-02-and-why).
+**Design — registered 2026-08-02 (L1, commit `75667a9a`); instrument not yet locked, not yet run.** Version 0.7 is the registered 0.6 plus post-registration amendments A1–A2 — see the [Amendment log](#amendment-log). Version 0.6 supersedes 0.5; 0.2 is preserved alongside this file. See [What changed from 0.5](#what-changed-from-05-and-why), [What changed from 0.4](#what-changed-from-04-and-why), [What changed from 0.3](#what-changed-from-03-and-why), and [What changed from 0.2](#what-changed-from-02-and-why).
 
 Registration happens in **two locks**, because two different things need protecting and they are ready at different times:
 
@@ -178,12 +178,13 @@ Explicit variants are Astro's pages as authored. Implicit variants apply these r
 | D3 | Admonitions → inline sentences in surrounding prose, in place |
 | D4 | Normative keywords → ordinary modals: the keyword is lowercased ("MUST" → "must"), in place |
 | D7 | Tables → prose enumeration, in place |
+| D8 | Prerequisite-heading blocks → heading removed; content unchanged and in place, introduced by a template sentence stating the precondition relation. *Added by amendment A1.* |
 
 *(D5 and D6 from the 0.2 design are deliberately absent — see [What changed](#what-changed-from-02-and-why). Rule IDs are kept stable rather than renumbered.)*
 
-**D2, D3, and D4 insert words; they do not only remove structure.** D2 must state the alternative relation in prose, D3 must land an admonition's content in a surrounding sentence, and D4 must substitute an ordinary modal for a normative keyword. Each of those is a writing act, and a writing act performed freely, specimen by specimen, is exactly how an implicit arm becomes a strawman without anyone intending it.
+**D2, D3, and D8 insert words; they do not only remove structure.** D2 must state the alternative relation in prose, D3 must land an admonition's content in a surrounding sentence, and D8 must assert the precondition relation in a sentence once its heading is gone. (D4 inserts nothing — it lowercases the keyword in place, per the 0.4 decision and ADR-0001.) Each insertion is a writing act, and a writing act performed freely, specimen by specimen, is exactly how an implicit arm becomes a strawman without anyone intending it.
 
-So the inserted language comes from a **small, fixed, committed template set** — a frozen mapping for D4 (`MUST` → "needs to", `SHOULD` → "is recommended to", and so on) and a frozen phrase inventory for D2 and D3 (`"Choose one of the following options:"`). Templates are applied uniformly across all specimens, are committed as data rather than embedded in prose, and are frozen at L2.
+So the inserted language comes from a **small, fixed, committed template set** — a frozen phrase inventory for D2, D3, and D8 (`"Choose one of the following options:"`, `"Before you begin, you need the following:"`). Templates are applied uniformly across all specimens, are committed as data rather than embedded in prose, and are frozen at L2. *(An earlier version of this paragraph described a D4 paraphrase mapping; that contradicted the 0.4 lowercasing rule and was repaired by amendment A2.)*
 
 If a specimen genuinely cannot be de-marked without a bespoke sentence, that is recorded as an exception naming the specimen — and if exceptions turn out to be frequent, the claim that the manipulation is mechanical is **false and must be reported as such**, not quietly patched with better sentences.
 
@@ -430,7 +431,8 @@ Every change after registration: date, what changed, why, and whether results ha
 
 | Date | Change | Rationale | Results seen? |
 | ---- | ------ | --------- | ------------- |
-|      |        |           |               |
+| 2026-08-02 | **A1** — Added de-marking rule D8: prerequisite-heading blocks lose their heading; content stays in place, introduced by a template sentence asserting the precondition relation. | The corpus's dominant R4 idiom — "Prerequisites" headings, 48 of 417 English pages — had no applicable rule after D6 was cut at 0.3. Without D8 the manipulated R4 cell draws only from aside-carried preconditions and ~3 table pages and cannot approach its minimum. D8 avoids D6's flaw: nothing relocates. | No |
+| 2026-08-02 | **A2** — Repaired stale D4 wording in *The marking manipulation*: two paragraphs still prescribed the 0.3 paraphrase mapping (`MUST` → "needs to"), contradicting the 0.4 lowercasing rule and ADR-0001. | Internal inconsistency in the registered text, discovered while drafting A1. The rule table and 0.4 changelog were correct; the templates paragraph was not. No behavior of the study changes — the transform was always specified to lowercase. | No |
 
 ## Execution checklist
 

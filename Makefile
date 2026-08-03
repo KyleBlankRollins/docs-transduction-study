@@ -20,6 +20,9 @@ check:
 	npm run typecheck --prefix $(DEMARK_DIR)
 	npm test --prefix $(DEMARK_DIR)
 
-corpus-report demark anchors-a0 inventory-counts pilot lint-probes artifacts anchors coding-setup code kappa analyze:
+demark anchors-a0 inventory-counts pilot lint-probes artifacts anchors coding-setup code kappa analyze:
 	@printf '%s\n' "$(MAKECMDGOALS): not implemented" >&2
 	@exit 1
+
+corpus-report:
+	uv run python -m docs_transduction_study.corpus_report

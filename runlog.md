@@ -2,6 +2,22 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-08-02 — Amendments A1–A2 taken: D8 added, stale D4 wording repaired; design at v0.7
+
+- **A1 (maintainer-approved):** de-marking rule **D8** added — prerequisite-heading blocks lose their heading; content stays in place, introduced by a template sentence asserting the precondition relation (template frozen at L2 with the rest). Resolves the flag in the previous entry: the manipulated R4 cell can now draw on the corpus's dominant idiom (48 pages). First post-registration amendment; results not seen — no instrument, no artifacts exist.
+- **A2:** while drafting A1, the registered text was found internally inconsistent — the templates paragraph still prescribed the 0.3 `MUST` → "needs to" mapping that 0.4 replaced with lowercasing (ADR-0001). Repaired. No study behavior changes.
+- Recorded in `AMENDMENTS.md`, in the design's own amendment log (both copies), and propagated: plan W2/§3, phases P3/P4, P0 version gate (0.6→0.7). Status header updated to reflect the registered state.
+
+## 2026-08-02 — R4 column added to the component report
+
+- `prereq_count` added to `corpus_report.py`: `##`/`###` headings containing "Prerequisites"/"Requirements" (the corpus's dominant precondition idiom — 60 headings across 48 pages, no competing styles found) plus prerequisite-titled asides (`:::note[Prerequisites]`). Regenerated: 62 markers across 50 pages. Titled asides also appear in `aside_count`; the columns are selection signals, not a partition.
+- **Flag for the maintainer:** heading-marked prerequisite blocks have no de-marking rule in the frozen design (D6 was deliberately cut at v0.3), so R4's *manipulated* cell can draw only from aside-carried preconditions (D3) and tables (D7, ≈3 pages corpus-wide). Decision pending: accept a narrow R4 cell and record the shortfall, or amend (pre-data, labeled) to add a heading-unmarking rule.
+
+## 2026-08-02 — Component report corrected; two corpus-level cell shortfalls anticipated
+
+- **Counter bug fixed:** `corpus_report.py`'s tabs pattern matched only raw `<Tabs>`, missing the custom wrapper family — the corpus's dominant tab idiom. Corrected and regenerated: tabs_count 26→234 instances, 6→104 pages. Selection had not begun; no decision was made on the bad numbers.
+- **Genuine corpus facts, verified independently of the counter:** (1) zero English pages contain an uppercase normative keyword (MUST/SHALL/REQUIRED...) — Astro's house style carries force through asides, not RFC-2119 capitalization, so the **R3-D4 cell is expected empty corpus-wide**; (2) only 3 pages contain Markdown pipe tables, so the **D7/table side of R4 is expected near-empty**. Both are the "record the shortfall before running" case the frozen design anticipates (Corpus → selection rules); formal cell counts land at P4, but the expectation is recorded now, before selection. Neither requires an amendment. Both are themselves reportable findings about the corpus's marking style.
+
 ## 2026-08-02 — L1 taken: design frozen at v0.6
 
 - **Freeze commit: `75667a9a494b076e79e9f5aba5bd0dc932d890a1`**, recorded in `DESIGN.md` frontmatter (`registered`, `registration_commit`) in the immediately following commit, per the two-commit convention. Mirrored into the source design doc in the Web-Portfolio repo.

@@ -26,7 +26,7 @@ Implements **W0**. Authority: `IMPLEMENTATION_PLAN.md` §2 W0, §3, §4. Pre-reg
 ## Exit gate
 
 - [ ] `git log --oneline | wc -l` → ≥ 1, and `git ls-files | grep -E 'node_modules|__pycache__|\.venv/|^build/|dist/'` → empty.
-- [ ] `test -f DESIGN.md && grep -q 'design_version: "0.6"' DESIGN.md` → the frozen-candidate design is v0.6. (Updated from 0.5 by maintainer, 2026-08-02, alongside the design bump — this check pins the copy to the current source version and moves when the source does.)
+- [ ] `test -f DESIGN.md && grep -q 'design_version: "0.7"' DESIGN.md` → the design copy is current: v0.7 = registered v0.6 + amendments A1–A2. (This check pins the copy to the current source version and moves when the source does — post-registration, only via logged amendments.)
 - [ ] `grep -c '{#' DESIGN.md` → `0`.
 - [ ] `test -f AMENDMENTS.md && test -f runlog.md` → both exist; runlog has the toolchain-versions entry.
 - [ ] `grep -q '>=3.14,<3.15' pyproject.toml && uv lock --check` → bounded range, lockfile consistent.

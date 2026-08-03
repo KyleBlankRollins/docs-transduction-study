@@ -138,10 +138,10 @@ Commit; record date and SHA in `DESIGN.md` frontmatter and in `runlog.md`. From 
 
 The highest-risk code in phase 1. **Runs after [spike 001](spikes/001-transform-architecture.md)**, which decides whether the architecture below is the one that gets built.
 
-- Node package implementing D1–D4 and D7 as remark/mdast transforms, **patching source ranges by byte offset rather than re-serializing the document** ([ADR-0002](decisions/0002-surgical-source-patching.md)). The explicit arm is then verbatim Astro source and the implicit arm is byte-identical to it except at de-marked sites.
+- Node package implementing D1–D4, D7, and D8 (amendment A1) as remark/mdast transforms, **patching source ranges by byte offset rather than re-serializing the document** ([ADR-0002](decisions/0002-surgical-source-patching.md)). The explicit arm is then verbatim Astro source and the implicit arm is byte-identical to it except at de-marked sites.
 - Rules descend recursively, which is required by patching and is also what closes DM-1. Do not fix DM-1 separately — it closes when this lands.
 - A first version exists at `pipeline/demark/` on the older whole-document architecture. Treat it as a prototype: the rules, template loading, and test suite carry over; the traversal and serialization do not.
-- **The templates are the manipulation**, and the design now requires this rather than merely permitting it. D2, D3, and D4 insert words; those insertions come from a small, fixed, committed template set applied uniformly, never per-specimen. Templates live in `pipeline/demark/templates.json` and are frozen at L2. Exceptions are logged with the specimen named — and per the design, frequent exceptions falsify the mechanical-manipulation claim and get reported as such.
+- **The templates are the manipulation**, and the design now requires this rather than merely permitting it. D2, D3, and D8 insert words (D4 lowercases in place, per ADR-0001); those insertions come from a small, fixed, committed template set applied uniformly, never per-specimen. Templates live in `pipeline/demark/templates.json` and are frozen at L2. Exceptions are logged with the specimen named — and per the design, frequent exceptions falsify the mechanical-manipulation claim and get reported as such.
 - Output to `corpus/implicit/`, committed, so `git diff` between arms is the reviewable record of what the manipulation did.
 - **Propositional-equivalence review**: read every diff hunk against the constraint that no information — including relational information — was dropped. Log per-specimen sign-off. This is manual and it is the point. Under ADR-0002 the diff carries the manipulation and nothing else, which is what makes the review worth trusting.
 - Both arms must build clean (W4 dependency; iterate).
@@ -239,7 +239,7 @@ Fixing these now is most of what makes the milestones parallelizable. All CSVs, 
 
 No `pilot` column: the v0.5 carve-out means the pilot page is never a specimen. It is identified in `runlog.md` at W4, alongside the disposal entry.
 
-**`instruments/instances.csv`** — `instance_id`, `specimen_id`, `relation_type` (R1–R4, O1, O2), `anchor_explicit`, `anchor_implicit`, `host_passage_explicit`, `host_passage_implicit`, `demark_rule` (D1–D4/D7, or blank for observed), `notes`
+**`instruments/instances.csv`** — `instance_id`, `specimen_id`, `relation_type` (R1–R4, O1, O2), `anchor_explicit`, `anchor_implicit`, `host_passage_explicit`, `host_passage_implicit`, `demark_rule` (D1–D4/D7/D8, or blank for observed), `notes`
 
 **`instruments/probes.csv`** — `probe_id`, `instance_id`, `question`, `correct_answer`, `foil_1`, `foil_2` (two is the cap, per design v0.5), `version_change` (bool), `superseded_answer`, `superseded_source` (version-change probes only: the pre-change docs SHA or changelog entry the superseded answer was verified against)
 
