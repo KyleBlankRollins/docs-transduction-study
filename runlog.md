@@ -2,6 +2,13 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-08-02 — L1 taken: design frozen at v0.6
+
+- **Freeze commit: `75667a9a494b076e79e9f5aba5bd0dc932d890a1`**, recorded in `DESIGN.md` frontmatter (`registered`, `registration_commit`) in the immediately following commit, per the two-commit convention. Mirrored into the source design doc in the Web-Portfolio repo.
+- Decision taken by the maintainer (Kyle Rollins), in session, after the full P0 exit gate and P1 entry gate were re-run and passed: 4 commits, no generated paths tracked, `DESIGN.md` at v0.6 with zero author comments, bounded `requires-python`, `uv lock --check` clean, `make help` listing all 13 stage commands, `make check` green (33 tests), spike brief present, spike PASS standing, submodule pristine at `6eca24e7` (two stray `.vscode` deletions inside the submodule restored before freezing).
+- From the freeze commit forward: changes to hypotheses, taxonomy, rubric, de-marking rules, pipeline stage definitions, analysis plan, or disconfirming outcomes are amendments in `AMENDMENTS.md`.
+- P1 is complete once this entry and the frontmatter SHA are committed. Next: P2 — specimen selection (HUMAN), with `en/install-and-setup.mdx` excluded as the designated pilot page.
+
 ## 2026-08-02 — Pilot page designated: `en/install-and-setup.mdx`
 
 - **Maintainer designation:** the P5 pilot page is `src/content/docs/en/install-and-setup.mdx` (live: docs.astro.build/en/install-and-setup/). Consequence: this page is **excluded from specimen selection at P2**, per the pilot carve-out.
