@@ -16,7 +16,7 @@ Implements **W1** (post-pin). Authority: `IMPLEMENTATION_PLAN.md` §2 W1, §3 (`
 
 ## Hard rules
 
-- The pilot page (P5) is **never** one of these specimens. Selection here defines the set the pilot must avoid.
+- The pilot page (P5) is **never** one of these specimens. It is already designated — `src/content/docs/en/install-and-setup.mdx` (runlog, 2026-08-02) — and must not appear in `specimens.csv`.
 - `selection_rationale` is human-authored text. Do not generate, summarize, or "improve" it.
 
 ## Exit gate

@@ -1,0 +1,10 @@
+---
+// Study overlay (ADR-0005). Replaces the corpus's RandomizedAd.astro, which
+// picks one of three ads with Math.random() in frontmatter — i.e. per page,
+// per build — making clean builds differ on ~5,100 pages (spike 001, B2).
+// Pinning the choice restores A1 determinism and keeps the arms identical
+// outside de-marked sites. Applied to BOTH arm trees before either build.
+import ScrimbaAd from './ScrimbaAd.astro';
+---
+
+<ScrimbaAd />

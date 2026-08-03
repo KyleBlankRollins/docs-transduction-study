@@ -8,7 +8,7 @@ Implements **W3**. Authority: `IMPLEMENTATION_PLAN.md` §2 W3, §3 (`instances.c
 
 ## Tasks
 
-1. **Automatic R1–R4 candidates.** Walk the explicit arm's component tree: a `<Steps>` block *is* an R1 instance; tabs → R2; admonitions and normative keywords → R3 (tag which — D3 vs D4 matters to the analysis split); prerequisite blocks and tables → R4. Emit candidates with `demark_rule` populated.
+1. **Automatic R1–R4 candidates.** Walk the explicit arm's component tree: a `<Steps>` block *is* an R1 instance; tabs → R2, **including the corpus's custom tab wrappers** (`PackageManagerTabs` and family — see runlog 2026-08-02), not only raw `<Tabs>`; admonitions and normative keywords → R3 (tag which — D3 vs D4 matters to the analysis split); prerequisite blocks and tables → R4. Emit candidates with `demark_rule` populated. **Anchor rule for wrapped tabs:** anchors come from panel content (command text), never tab labels — the labels live in the component and do not exist in A0 source.
 2. **O1/O2 candidates by assist script.** Surface candidate referring expressions (O1) and deictic expressions (O2) from both arms' shared text. Candidates only — the script proposes, it never classifies.
 3. **HUMAN — classify O1/O2 and confirm R1–R4.** Instance classification defines the unit of analysis; it is analyst judgment inside a locked-at-L2 instrument. The human accepts/rejects candidates and resolves boundaries.
 4. **Anchors and host passages, per arm.** For every accepted instance, record `anchor_explicit`/`anchor_implicit` (short verbatim substrings of that arm's A0 source) and both host passages. Populate `instruments/instances.csv` per the §3 contract.

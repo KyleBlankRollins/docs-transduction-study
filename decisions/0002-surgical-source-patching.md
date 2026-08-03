@@ -2,7 +2,7 @@
 
 - **Status:** Accepted (spike 001 passed; implementation and real-output build validation remain required)
 - **Date:** 2026-08-02
-- **Relates to:** `IMPLEMENTATION_PLAN.md` → D-8 (superseded by this record); `pipeline/demark/KNOWN-ISSUES.md` → DM-1; `DESIGN.md` → *The marking manipulation*
+- **Relates to:** `IMPLEMENTATION_PLAN.md` → D-8 (superseded by this record); `pipeline/demark/KNOWN-ISSUES.md` → DM-1; `DESIGN.md` → _The marking manipulation_
 
 ## Context
 
@@ -52,8 +52,8 @@ Consequences of that shape, all intended:
 ## Consequences
 
 **D-8 dissolves rather than being decided.** There is no formatting confound to
-balance, so no design change is needed: *"Explicit variants are Astro's pages as
-authored"* becomes literally true instead of approximately true. The option D-8
+balance, so no design change is needed: _"Explicit variants are Astro's pages as
+authored"_ becomes literally true instead of approximately true. The option D-8
 recommended would have required editing that sentence.
 
 **DM-1 is absorbed.** The nesting bug and the formatting confound turn out to be
@@ -63,7 +63,7 @@ transform fixes both. DM-1 should not be patched separately; it closes when this
 lands.
 
 **The equivalence review gets much stronger.** M2's propositional-equivalence
-check reads diff hunks, and the diff *is* the evidence that the manipulation was
+check reads diff hunks, and the diff _is_ the evidence that the manipulation was
 mechanical. Under whole-document serialization every specimen diff carries
 formatting noise the reviewer has to look past, on every file, with attention
 that should be going to content. Under patching, the diff contains the
@@ -113,4 +113,4 @@ because it makes the design's existing wording true.
 
 **Gates L2.** The transform must be rebuilt and spiked before implicit variants
 are generated and the instrument is locked. If the spike fails and the fallback is
-taken, D-8 reopens *and* gains a design edit, so it would then gate L1 after all.
+taken, D-8 reopens _and_ gains a design edit, so it would then gate L1 after all.

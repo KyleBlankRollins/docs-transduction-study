@@ -12,15 +12,15 @@ Implements **W6** (the run — the code was built in P5). Authority: `IMPLEMENTA
 
 ## Tasks
 
-1. **Run the committed pipeline**, both arms: `make artifacts` → A1 (two full builds), A2 (default-state snapshots), A3 (plain-text extraction), A4 (character-based chunks) into `artifacts/`.
+1. **Run the committed pipeline**, both arms: `make artifacts` → A1 (two full builds, ADR-0005 overlay applied to both trees before either build), A2 (default-state snapshots), A3 (plain-text extraction), A4 (character-based chunks) into `artifacts/`.
 2. **Resolve anchors:** `make anchors` → every instance located in every artifact through the committed normalization spec; A4 chunk assignment emitted with `spans_chunks` per instance.
-3. **Anchor failures are amendments.** A post-L2 anchor that fails to resolve is repaired as a mechanical amendment (results-not-seen) in `AMENDMENTS.md`, then re-run. The 100% criterion below means 100% *after normalization, with repairs logged* — failures are representable, silent fixes are not.
+3. **Anchor failures are amendments.** A post-L2 anchor that fails to resolve is repaired as a mechanical amendment (results-not-seen) in `AMENDMENTS.md`, then **resolution is re-run against the archived artifacts — never the build**. The 100% criterion below means 100% *after normalization, with repairs logged* — failures are representable, silent fixes are not.
 4. **Run `setup`** (the P5-built harness entry point): shuffle by the locked seed, opaque IDs, `artifacts/manifest.csv`, mapping encrypted at rest, ciphertext checksum in `runlog.md`.
 5. **Runlog:** stage versions and parameters — Node, package manager, extractor name/version/config, chunk size and justification, build determinism result on the real specimen set.
 
 ## Hard rules
 
-- No stage parameter changes after the first specimen artifact is generated. A parameter that must change is a logged deviation and a full regeneration.
+- **Artifacts are generated once and archived.** Builds are never casually re-run. A stage parameter that must change after the first specimen artifact exists is a logged deviation and a full regeneration of the *entire* artifact set — never a partial mix of builds. Downstream work (anchor repairs, coding, analysis) always runs against the archived set.
 - The plaintext mapping never exists on disk outside the encryption step. The `code` entry point cannot read it; nothing else should either, until P10's logged decryption.
 
 ## Exit gate

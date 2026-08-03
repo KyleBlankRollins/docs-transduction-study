@@ -2,6 +2,21 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-08-02 — Pilot page designated: `en/install-and-setup.mdx`
+
+- **Maintainer designation:** the P5 pilot page is `src/content/docs/en/install-and-setup.mdx` (live: docs.astro.build/en/install-and-setup/). Consequence: this page is **excluded from specimen selection at P2**, per the pilot carve-out.
+- Why it is a good pilot: package-manager tabs appear four times, and the first is nested inside `<Steps>` — the exact Tabs-inside-Steps case spike 001's fixtures never contained (DM-1's motivating nesting). It also runs the tabs-to-sequence mechanism check from `TODO.md` on real content.
+- **Structural finding with corpus-wide reach:** the page does not use raw `<Tabs>/<TabItem>`. It uses `<PackageManagerTabs>` with `<Fragment slot="npm|pnpm|yarn">` children — a corpus-custom component wrapping Starlight `<Tabs syncKey="package-managers">`, with the tab labels living in the component, not the MDX. ~110 English pages use this custom tab family (`PackageManagerTabs`, `UIFrameworkTabs`, `AstroVueTabs`, `StaticSsrTabs`, `JavascriptFlavorTabs`, `AstroJSXTabs`). Two consequences:
+  - **D2 must recognize the custom tab wrappers as R2 markers**, not only Starlight `<Tabs>` — they are the dominant tab idiom in the corpus. P3 and P4 updated.
+  - **Anchors for such R2 instances must come from panel content** (the command text), never from tab labels — the labels do not exist in A0 source, only in rendered artifacts.
+
+## 2026-08-02 — B2 root cause found; ad-pinning overlay adopted (ADR-0005); design at v0.6
+
+- Root cause of the B2 build nondeterminism: `src/components/RightSidebar/RandomizedAd.astro` picks one of three ads with `Math.random()` in component frontmatter — per page, per build — rendered on essentially every page via the `Footer.astro` and `PageSidebar.astro` Starlight overrides. Sole build-output randomness found; `TabbedContent` tab IDs and `MultipleChoice` keys are client-side only (A2 snapshot-stability check added to the pilot).
+- **Maintainer decision:** freeze rather than remove. Committed overlay at `pipeline/overlays/` pins the ad to ScrimbaAd; applied identically to both arm trees before either build; submodule untouched. Recorded as [ADR-0005](../decisions/0005-deterministic-ad-overlay.md).
+- Design bumped to **v0.6** (source doc and `DESIGN.md`, identical edits): A1's "deterministic" label is claimed only with the overlay applied; changelog section added. Pre-L1, so an edit rather than an amendment.
+- Phase files updated: P5 re-scores the spike's B2 with the overlay (expect zero differing files) plus the deferred B3/B4, and checks A2 snapshot stability twice-loaded; P7 applies the overlay in `make artifacts` and hardens the archive-once rule — artifacts are generated once, downstream work runs against the archive, anchor repairs re-run resolution, never the build.
+
 ## 2026-08-02 — P1 blockers resolved; remote requirement removed
 
 - `DESIGN.md` copied in from the source design doc at v0.5; both `{# ... #}` author comments moved to `TODO.md` per P0 task 2. Gate checks pass: `grep -c '{#' DESIGN.md` → 0; `design_version: "0.5"` present.

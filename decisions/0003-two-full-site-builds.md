@@ -1,9 +1,9 @@
 # ADR-0003 — Produce A1 from two full builds of the pinned docs site
 
-- **Status:** Accepted with build-determinism deviation (spike 001 passed B1; rotating promotional content prevents strict B2 determinism, so one build must be archived)
+- **Status:** Accepted with build-determinism deviation (spike 001 passed B1; rotating promotional content prevents strict B2 determinism, so one build must be archived). **Deviation dispositioned by [ADR-0005](0005-deterministic-ad-overlay.md):** the ad-pinning overlay restores determinism; B2 is re-scored at the P5 pilot with the overlay applied. Archive-once remains the operating rule.
 - **Supersedes:** the minimal-harness decision recorded as D-3 in `IMPLEMENTATION_PLAN.md`
 - **Date:** 2026-08-02
-- **Relates to:** `DESIGN.md` → *Pipeline* (A1); H2
+- **Relates to:** `DESIGN.md` → _Pipeline_ (A1); H2
 
 ## Context
 
