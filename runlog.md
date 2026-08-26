@@ -2,6 +2,16 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-08-26 — P2: specimens selected and committed
+
+- **Specimens:** 12 specimens selected from the English corpus, spanning 12 unique pages across 2 Diátaxis types (tutorial ×1, how-to-guide ×11).
+- **Diátaxis shortfall:** Only 2 of 4 Diátaxis types are represented — the human selector focused on pages with de-markable markup (Steps, Tabs, asides, tables, prerequisite markers), which are concentrated in how-to guides and tutorials. Reference pages contain minimal markup constructs (mostly description lists and code blocks). Explanation/concepts pages (concepts/why-astro, concepts/islands) are markup-sparse. Per the exit gate's allowance, the shortfall is recorded here rather than blocking selection.
+- **Version spread:** v5 (7), v6 (4), v7 (1) — captures multiple Astro major versions.
+- **Cell-minimum risk anticipated:** R3-D4 (normative keywords) expected empty corpus-wide per 2026-08-02 runlog entry; R4/table (D7) side expected near-empty (3 pages corpus-wide).
+- Specimens copied verbatim to `corpus/explicit/`; `diff` confirmed no differences.
+- Component-count report already committed (2026-08-02 entries).
+- `corpus/specimens.csv` exit gate: 12 rows, no empty cells, Diátaxis shortfall recorded here, verbatim copies verified.
+
 ## 2026-08-02 — Amendments A1–A2 taken: D8 added, stale D4 wording repaired; design at v0.7
 
 - **A1 (maintainer-approved):** de-marking rule **D8** added — prerequisite-heading blocks lose their heading; content stays in place, introduced by a template sentence asserting the precondition relation (template frozen at L2 with the rest). Resolves the flag in the previous entry: the manipulated R4 cell can now draw on the corpus's dominant idiom (48 pages). First post-registration amendment; results not seen — no instrument, no artifacts exist.

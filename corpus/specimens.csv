@@ -1,1 +1,13 @@
 specimen_id,source_path,diataxis_type,last_major_change_version,selection_rationale
+S01,guides/integrations.mdx,how-to-guide,v7,Broad representation across R1-4
+S02,guides/build-with-ai.mdx,how-to-guide,v7,5 discrete steps that have good connections and aren't overloaded with code examples
+S03,recipes/sharing-state-islands.mdx,how-to-guide,v5,Complex page with many asides and tabs
+S04,guides/backend/firebase.mdx,how-to-guide,v5,Contains 3 R4s and lots of asides
+S05,recipes/docker.mdx,how-to-guide,v5,Different content type that includes an R4
+S06,guides/deploy/deno.mdx,how-to-guide,v5,Many tabs
+S07,guides/framework-components.mdx,how-to-guide,v6,Lots of asides
+S08,tutorial/1-setup/1.mdx,tutorial,v6,Low number of steps and asides
+S09,guides/migrate-to-astro/from-nextjs.mdx,how-to-guide,v6,Mix of things across R1-4
+S10,guides/testing.mdx,how-to-guide,v5,Mix of things across R1-4
+S11,guides/cms/builderio.mdx,how-to-guide,v6,"Steps, asides, and a prereq"
+S12,guides/cms/contentful.mdx,how-to-guide,v5,Mix of things across R1-4
