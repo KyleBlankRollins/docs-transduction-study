@@ -1,11 +1,12 @@
 /**
  * Shared types for the de-marking transform.
  *
- * Rule IDs match the design document (D1-D4, D7). D5 and D6 were cut in design
- * version 0.3 and the IDs are deliberately not reused.
+ * Rule IDs match the design document (D1-D4, D7, D8). D5 and D6 were cut in
+ * design version 0.3 and the IDs are deliberately not reused. D8 was added
+ * by amendment A1.
  */
 
-export const RULE_IDS = ["D1", "D2", "D3", "D4", "D7"] as const;
+export const RULE_IDS = ["D1", "D2", "D3", "D4", "D7", "D8"] as const;
 
 export type RuleId = (typeof RULE_IDS)[number];
 
@@ -29,6 +30,18 @@ export interface RuleException {
   rule: RuleId;
   reason: string;
   line: number | undefined;
+}
+
+/**
+ * A source-range patch: replace bytes [start, end) in the original source
+ * with `replacement`. Patches are applied bottom-up (deepest range last in
+ * the source, i.e. largest start offset last), so inner patches land before
+ * outer patches subsume them.
+ */
+export interface Patch {
+  start: number;
+  end: number;
+  replacement: string;
 }
 
 export interface DemarkReport {

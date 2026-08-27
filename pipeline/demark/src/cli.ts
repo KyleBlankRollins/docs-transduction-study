@@ -13,7 +13,7 @@
  * differs" would be false.
  */
 
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { parseArgs } from "node:util";
 import { demark, summarize } from "./demark.js";
@@ -86,6 +86,7 @@ function main(): void {
 
   let output: string;
   let reportJson: string | undefined;
+  let withholdOutput = false;
 
   if (values.mode === "normalize") {
     output = normalize(source);
@@ -128,10 +129,24 @@ function main(): void {
         `  exception ${exception.rule}${exception.line ? ` (line ${exception.line})` : ""}: ${exception.reason}\n`,
       );
     }
+    if (result.report.exceptions.length > 0) {
+      // Signal failure but continue to write the report.
+      process.exitCode = 1;
+      withholdOutput = true;
+    }
   }
 
   if (values.out === undefined) {
     process.stdout.write(output);
+  } else if (withholdOutput) {
+    // Demark with exceptions: write a warning to stderr, remove any stale
+    // output file (so a previous successful run's artefact isn't mistaken
+    // for a current result), but do write the report.
+    const outPath = resolve(values.out);
+    try {
+      rmSync(outPath);
+    } catch { /* ok if no file exists */ }
+    process.stderr.write("  (output withheld due to exceptions)\n");
   } else {
     const outPath = resolve(values.out);
     mkdirSync(dirname(outPath), { recursive: true });

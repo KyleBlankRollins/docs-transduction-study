@@ -84,6 +84,11 @@ const TemplatesSchema = z.object({
     cell_separator: z.string(),
     row_terminator: z.string(),
   }),
+
+  d8_prerequisite_heading: z.object({
+    lead_in: nonEmpty,
+    heading_patterns: z.array(nonEmpty).min(1),
+  }),
 });
 
 export type Templates = z.infer<typeof TemplatesSchema>;

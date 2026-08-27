@@ -44,7 +44,7 @@
 
   "d3_force_aside": {
     "$comment": "Asides -> inline prose, in place. Each phrase must carry the same force the admonition type carried, in ordinary words.",
-    "note": "Note that",
+    "note": "Note:",
     "tip": "As a helpful tip,",
     "caution": "Use caution here:",
     "danger": "This is dangerous:",
@@ -90,5 +90,15 @@
     "cell_pattern": "{header} is {value}",
     "cell_separator": "; ",
     "row_terminator": "."
+  },
+
+  "d8_prerequisite_heading": {
+    "$comment": [
+      "Prerequisite-heading blocks -> heading removed, content in place, template sentence asserts the precondition.",
+      "heading_patterns lists regex patterns for headings to unmark (case-insensitive).",
+      "The lead_in replaces the heading line entirely."
+    ],
+    "lead_in": "Before you begin, you need the following:\n",
+    "heading_patterns": ["^prerequisites$", "^requirements$", "^what you.?ll need$"]
   }
 }

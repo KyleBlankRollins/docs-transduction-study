@@ -1,68 +1,82 @@
 /**
  * D7 — Precondition. GFM tables -> prose enumeration, in place.
  *
- * Cell contents are spliced in as phrasing nodes rather than flattened to plain
- * text, so inline code, links, and emphasis survive. Flattening would strip
+ * Cell contents are preserved as verbatim source text from source slices,
+ * so inline code, links, and emphasis survive. Flattening would strip
  * formatting that carries meaning in a docs table (`--flag` becoming --flag) and
  * that loss would land only on the implicit arm.
+ *
+ * Per ADR-0002, patches the full table range with replacement prose.
  */
 
-import type { PhrasingContent, Root, Table, TableRow } from "mdast";
-import { lineOf, paragraph, textOf, textParagraph, type BlockNode } from "../ast.js";
+import type { Root, Table, TableRow } from "mdast";
+import { lineOf, textOf } from "../ast.js";
+import type { Patch } from "../types.js";
 import { except, record, type Rule, type RuleContext } from "./rule.js";
 
 /**
- * Splits a template around one placeholder and inserts nodes at that position,
- * so templated wording and real phrasing content can be combined without either
- * being reduced to a string.
+ * Splits a template around one placeholder and inserts verbatim source text
+ * at that position, so templated wording and real content can be combined.
  */
-function splice(template: string, placeholder: string, nodes: PhrasingContent[]): PhrasingContent[] {
+function splice(template: string, placeholder: string, sourceText: string): string {
   const marker = `{${placeholder}}`;
   const at = template.indexOf(marker);
-  if (at === -1) return [{ type: "text", value: template }, ...nodes];
+  if (at === -1) return template + sourceText;
 
   const before = template.slice(0, at);
   const after = template.slice(at + marker.length);
-  const out: PhrasingContent[] = [];
-  if (before !== "") out.push({ type: "text", value: before });
-  out.push(...nodes);
-  if (after !== "") out.push({ type: "text", value: after });
-  return out;
+  return before + sourceText + after;
 }
 
-function rowToParagraph(
+/**
+ * Build the prose representation of one table row using the header names.
+ * Cell content comes from the original source to preserve inline formatting.
+ */
+function rowToProse(
   row: TableRow,
   headers: readonly string[],
+  source: string,
   t: RuleContext["templates"]["d7_precondition_table"],
-): BlockNode {
+): string {
   const cells = row.children;
   const [firstCell, ...restCells] = cells;
 
-  const children: PhrasingContent[] = splice(
-    t.row_prefix,
-    "first_cell",
-    (firstCell?.children ?? []) as PhrasingContent[],
-  );
-  children.push({ type: "text", value: " " });
+  // Get first cell content from source, stripping markdown pipe delimiters
+  let firstContent = "";
+  if (firstCell?.position?.start.offset && firstCell.position?.end.offset) {
+    firstContent = source.slice(firstCell.position.start.offset, firstCell.position.end.offset).trim();
+    firstContent = firstContent.replace(/^\| ?/, "").replace(/ ?\|$/, "").trim();
+  } else if (firstCell) {
+    firstContent = textOf(firstCell).trim();
+  }
+
+  let result = splice(t.row_prefix, "first_cell", firstContent);
+  result += " ";
 
   restCells.forEach((cell, index) => {
     const header = headers[index + 1] ?? "";
+
+    let cellContent = "";
+    if (cell?.position?.start.offset && cell.position?.end.offset) {
+      cellContent = source.slice(cell.position.start.offset, cell.position.end.offset).trim();
+      cellContent = cellContent.replace(/^\| ?/, "").replace(/ ?\|$/, "").trim();
+    } else if (cell) {
+      cellContent = textOf(cell).trim();
+    }
+
     const pattern = t.cell_pattern.replace(/\{header\}/g, header);
-    children.push(...splice(pattern, "value", cell.children as PhrasingContent[]));
-    children.push({
-      type: "text",
-      value: index === restCells.length - 1 ? t.row_terminator : t.cell_separator,
-    });
+    result += splice(pattern, "value", cellContent);
+    result += index === restCells.length - 1 ? t.row_terminator : t.cell_separator;
   });
 
-  return paragraph(children);
+  return result;
 }
 
 export const d7Tables: Rule = {
   id: "D7",
   description: "GFM table -> prose enumeration, one sentence per row",
 
-  apply(tree: Root, ctx: RuleContext): void {
+  apply(source: string, tree: Root, ctx: RuleContext, patches: Patch[]): void {
     const t = ctx.templates.d7_precondition_table;
 
     for (let i = tree.children.length - 1; i >= 0; i--) {
@@ -70,6 +84,13 @@ export const d7Tables: Rule = {
       if (node?.type !== "table") continue;
 
       const table = node as Table;
+      const start = table.position?.start.offset;
+      const end = table.position?.end.offset;
+      if (start === undefined || end === undefined) {
+        except(ctx, "D7", "table has no position offsets", lineOf(table));
+        continue;
+      }
+
       const line = lineOf(table);
       const [headerRow, ...bodyRows] = table.children;
 
@@ -83,12 +104,18 @@ export const d7Tables: Rule = {
       }
 
       const headers = headerRow.children.map((cell) => textOf(cell).trim());
-      const replacement: BlockNode[] = [textParagraph(t.lead_in)];
+
+      const parts: string[] = [t.lead_in];
       for (const row of bodyRows) {
-        replacement.push(rowToParagraph(row, headers, t));
+        parts.push(rowToProse(row, headers, source, t));
       }
 
-      tree.children.splice(i, 1, ...(replacement as never[]));
+      const replacement = parts.join("\n\n");
+      patches.push({
+        start,
+        end,
+        replacement: replacement + "\n",
+      });
       record(ctx, "D7", `table with ${bodyRows.length} rows`, line);
     }
   },

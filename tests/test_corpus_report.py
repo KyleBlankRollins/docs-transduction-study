@@ -30,7 +30,7 @@ def test_scan_and_report_are_sorted_and_csv_is_stable(tmp_path: Path) -> None:
     write_report(scan_corpus(source_root), output)
 
     assert output.read_text(encoding="utf-8").splitlines() == [
-        "source_path,steps_count,tabs_count,aside_count,tables_count,normative_keywords_count",
-        "a.mdx,0,0,0,0,1",
-        "z/b.md,0,0,0,0,1",
+        "source_path,steps_count,tabs_count,aside_count,prereq_count,tables_count,normative_keywords_count",
+        "a.mdx,0,0,0,0,0,1",
+        "z/b.md,0,0,0,0,0,1",
     ]

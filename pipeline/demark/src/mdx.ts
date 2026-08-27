@@ -52,8 +52,34 @@ export function createProcessor(): Processor<Root, undefined, undefined, Root, s
   >;
 }
 
+/**
+ * Pre-process source to handle known ASTRO MDX parser edge cases:
+ *
+ * 1. `<details>` inside container directives — the standard remark-mdx JSX
+ *    parser rejects block-level HTML elements inside directive paragraphs.
+ *    These are replaced with same-length placeholders so the AST remains
+ *    positionally aligned with the original source. The de-mark transform
+ *    patches the original source directly, so placeholder content is never
+ *    serialized.
+ *
+ * 2. After a container directive is de-marked (D3), any `<details>`/`<summary>`
+ *    content that was inside it becomes free text. On the next fixpoint pass
+ *    the parser would reject them, so we guard globally rather than only inside
+ *    `:::` delimiters.
+ */
+export function preprocessSource(source: string): string {
+  // Same-length replacements: <details> (9) → " details " (9), etc.
+  // Applied globally, not just inside ::: directive blocks, because D3
+  // transforms release previously-enclosed HTML elements into the open.
+  return source
+    .replace(/<details>/g, " details ")
+    .replace(/<\/details>/g, " /details ")
+    .replace(/<summary>/g, " summary ")
+    .replace(/<\/summary>/g, " /summary ");
+}
+
 export function parseMdx(source: string): Root {
-  return createProcessor().parse(source);
+  return createProcessor().parse(preprocessSource(source));
 }
 
 export function stringifyMdx(tree: Root): string {

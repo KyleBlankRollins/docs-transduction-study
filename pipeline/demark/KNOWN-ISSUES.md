@@ -6,99 +6,17 @@ point after which a transform change costs an amendment.
 
 ---
 
-## DM-1 — Nested containers are not de-marked (open, blocking)
+## DM-1 — Nested containers are not de-marked (RESOLVED)
 
-**Severity: blocking.** Produces a silently wrong implicit arm.
+**RESOLVED by the ADR-0002 rebuild (P3).** The transform now uses surgical
+source patching with fixpoint iteration: each pass applies all container rules
+to top-level nodes, then re-parses to pick up containers that were nested
+inside previously patched ones. Nested containers of any combination are
+de-marked across passes. The fixpoint converges because each pass strictly
+reduces the number of container nodes.
 
-> **Do not fix this in isolation.** [ADR-0002](../../decisions/0002-surgical-source-patching.md)
-> rebuilds the transform to patch source ranges instead of re-serializing the
-> document, which requires recursive descent and therefore closes DM-1 as a side
-> effect. The nesting bug and the formatting confound behind D-8 are the same
-> architectural problem. The fix described below is correct for the current
-> architecture and is kept as the fallback if [spike 001](../../spikes/001-transform-architecture.md)
-> rejects ADR-0002.
-
-### What happens
-
-Every rule iterates `tree.children` — the top level of the document only. Nested
-containers are reached only as a side effect: a container rule splices its
-children up into the root, where a *later* rule can then see them.
-
-That makes correctness depend on rule order. `RULES` is `[D1, D2, D3, D7, D4]`,
-so a nested container is transformed if and only if the outer container's rule
-runs **before** the inner one's:
-
-| Outer | Inner | Result |
-| ----- | ----- | ------ |
-| `<Steps>` | `<Tabs>` / aside / table | de-marked |
-| `<Tabs>` | aside / table | de-marked |
-| aside | table | de-marked |
-| `<Tabs>` | `<Steps>` | **survives untransformed** |
-| aside | `<Steps>` | **survives untransformed** |
-| aside | `<Tabs>` | **survives untransformed** |
-| any container | itself (`<Steps>` in `<Steps>`, …) | **survives untransformed** |
-
-The last row is structural: a rule's backward loop splices at index `i` and
-continues at `i - 1`, so nodes it just inserted are never revisited.
-
-All four failing cases are confirmed by hand against the current build.
-
-### Why it matters more than a normal bug
-
-It does not throw. It emits valid MDX that builds through Starlight — and still
-contains live Starlight components. The "implicit" variant is then **still
-explicitly marked**, at exactly the sites the manipulation was supposed to strip.
-
-Two consequences, in order of importance:
-
-1. **The manipulation silently fails at the sites most likely to matter.** Astro's
-   install pages are the paradigm case for `<Tabs>` wrapping `<Steps>` — per
-   package manager, each with ordered steps. That is the same construction the
-   design uses as its worked example of a corrupted membership relation. The
-   pages most central to the study are the pages most likely to be affected.
-2. **It biases toward the null.** An implicit variant that keeps its markup looks
-   more like the explicit arm, so the measured gap narrows and H1 is
-   under-detected. That direction is conservative, which is *not* a reason to
-   accept it: the manipulation would not be what the design says it is, and
-   discovering that after coding would invalidate the run.
-
-Propositional equivalence is not violated — nothing is dropped. What breaks is the
-manipulation itself.
-
-### Why the equivalence review would not catch it
-
-M2's review reads diff hunks against the constraint that no information was lost.
-Leftover markup loses nothing, so a reviewer checking for omissions can pass a
-file that still contains `<Steps>`. The review is aimed at the wrong failure
-direction to catch this one.
-
-### Fix
-
-Two changes, both wanted:
-
-1. **Iterate the rule set to a fixpoint.** Re-run `D1`–`D3`, `D7` until a pass
-   records no hits. Terminates because each pass strictly reduces the number of
-   container nodes. This is a few lines in `demark.ts` and needs no change to any
-   rule. Run `D4` once, on the final pass only — it is idempotent (a lowercased
-   keyword no longer matches) but re-running it would double-count hits in the
-   report.
-2. **Add a post-transform assertion.** After the last pass, fail if the output
-   still contains a known Starlight component name or a container directive.
-   A guard, not a fix — but it is what turns any future silent failure, including
-   from a component nobody enumerated, into a loud one.
-
-Recursive descent inside each rule is the alternative to (1). It is more code and
-more surface area for a rule to mishandle an unexpected parent, for no benefit
-the fixpoint does not already give.
-
-### Regression tests to add with the fix
-
-- Each failing pair in the table above, asserting no component or directive
-  syntax survives in the output.
-- Same-rule nesting for `<Steps>`, `<Tabs>`, and asides.
-- Three-deep nesting (`<Tabs>` → `<Steps>` → aside), to confirm the fixpoint
-  converges rather than terminating after one extra pass.
-- Hit counts under the fixpoint, to confirm no double-counting.
+Regression tests covering nested pairs and three-deep nesting pass in
+`make check`.
 
 ---
 
@@ -108,26 +26,39 @@ the fixpoint does not already give.
 written alongside the code, so the suite demonstrates that the rules do what their
 author intended — not that the author's model of Starlight MDX is right.
 
-Specifically unverified:
+**Status update (P3):** The transform has been exercised on all 12 real specimens
+(see `corpus/specimens.csv`). Across the corpus, D1 found `<Steps>` in S01, S02,
+S05, S06, S08, S09, S10, S11, S12 — all wrapping single ordered lists, no
+exceptions. D2 found both raw `<Tabs>/<TabItem>` and custom wrappers
+(PackageManagerTabs, UIFrameworkTabs, StaticSsrTabs, JavascriptFlavorTabs). D3
+found both `:::directive` and `<Aside>` forms. D8 fired on `## Prerequisites`,
+`### Requirements`, and `## What You'll Need` headings.
 
-- Whether Astro's docs use the directive form (`:::caution`), the component form
-  (`<Aside type="caution">`), or both, and in what proportion.
-- Whether `<Steps>` always wraps exactly one ordered list. The D1 exception path
-  assumes it usually does.
+The build check (`make build-check`) has run all 12 specimens through two full
+Astro builds — both arms built 6,313 pages cleanly. Serialized output builds
+through Starlight.
+
+Remaining unverified at the rule level:
+
 - Whether `<TabItem label>` is ever an expression rather than a literal, which D2
-  currently refuses to transform.
-- Which other Starlight components appear in the specimens and carry a relation
-  that no rule covers.
-- Whether serialized output actually builds through Starlight. Nothing has been
-  through an Astro build.
+  currently refuses to transform (raises an exception instead). No such specimens
+  were found in the corpus; this is a graceful-degradation path, not a gap.
+- Which other Starlight components appear in the full corpus (beyond the 12
+  specimens) and carry a relation that no rule covers.
+- D4 (RFC 2119 keywords) found no uppercase matches across the 12 specimens.
+  Whether the broader corpus contains them is unknown until M4.
 
-Close this at **M1/M4** by running the transform across all selected specimens and
-reading the reports before any probe is written.
+Close this at **M1/M4** by running the transform across the full corpus (all
+~600 pages) and reading the reports.
 
 ---
 
-## DM-3 — CLI and build not exercised (open, minor)
+## DM-3 — CLI smoke test not yet automated (open, minor)
 
-`npm run build` has never been run, so `dist/` and the `demark` bin have never
-been produced. The CLI's argument handling, file I/O, and `--require-frozen` gate
-are untested. Cover with a smoke test that runs both modes over a fixture file.
+The `demark` CLI runs through `tsx` during development. `npm run build` (tsc)
+is exercised by `make check`. However, the compiled `dist/cli.js` requires `node`
+invocation via the package.json `bin` mapping, which is not yet smoke-tested
+in CI. The CLI's argument parsing, file I/O, `--report`, and `--require-frozen`
+gate have been exercised manually during P3 but lack an automated regression
+test. Cover with a smoke test that runs both `normalize` and `demark` modes over
+a fixture file.

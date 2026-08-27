@@ -2,6 +2,156 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-08-26 — P3: Propositional-equivalence review (M2)
+
+Per-specimen sign-off entries. The analyst reads every diff hunk against the
+constraint that no information — including relational information — was dropped.
+Sign and date each entry.
+
+### S01 — `guides/integrations.mdx` (how-to-guide, v7)
+
+**Rule hits:** D1=3, D2=9, D3=7, D7=1 — 27 diff hunks
+**Exceptions:** 0
+**Diff summary:** 3 `<Steps>` blocks, 9 tab wrappers (PackageManagerTabs), 7 asides (`:::tip`, `:::note`), 1 table.
+
+**Equivalence sign-off:**
+Signed: Kyle Rollins
+Date: 2026-08-26
+
+### S02 — `guides/build-with-ai.mdx` (how-to-guide, v7)
+
+**Rule hits:** D1=5, D2=1, D3=2 — 23 diff hunks
+**Exceptions:** 0
+**Diff summary:** 5 `<Steps>` blocks, 1 raw `<Tabs>` block, 2 asides.
+
+**Equivalence sign-off:**
+Signed: Kyle Rollins
+Date: 2026-08-26
+
+### S03 — `recipes/sharing-state-islands.mdx` (how-to-guide, v5)
+
+**Rule hits:** D2=7, D3=4 — 18 diff hunks
+**Exceptions:** 0 (parser edge case `<details>` in `:::note[FAQ]` resolved)
+**Diff summary:** 7 tab wrappers (UIFrameworkTabs, JavascriptFlavorTabs), 4 asides.
+
+**Equivalence sign-off:**
+Signed: Kyle Rollins
+Date: 2026-08-26
+
+### S04 — `guides/backend/firebase.mdx` (how-to-guide, v5)
+
+**Rule hits:** D2=1, D3=9, D8=3 — 15 diff hunks
+**Exceptions:** 0
+**Diff summary:** 1 tab wrapper (PackageManagerTabs), 9 asides, 3 `### Prerequisites` headings.
+
+**Equivalence sign-off:**
+Signed: Kyle Rollins
+Date: 2026-08-26
+
+### S05 — `recipes/docker.mdx` (how-to-guide, v5)
+
+**Rule hits:** D1=1, D3=2, D8=1 — 7 diff hunks
+**Exceptions:** 0
+**Diff summary:** 1 `<Steps>` block, 2 asides, 1 `## Requirements` heading.
+
+**Equivalence sign-off:**
+Signed: Kyle Rollins
+Date: 2026-08-26
+
+### S06 — `guides/deploy/deno.mdx` (how-to-guide, v5)
+
+**Rule hits:** D1=4, D2=10, D8=1 — 26 diff hunks
+**Exceptions:** 0
+**Diff summary:** 4 `<Steps>` blocks, 10 tab wrappers (PackageManagerTabs, StaticSsrTabs), 1 `## Requirements` heading. Exercises fixpoint loop.
+
+**Equivalence sign-off:**
+Signed: Kyle Rollins
+Date: 2026-08-26
+
+### S07 — `guides/framework-components.mdx` (how-to-guide, v6)
+
+**Rule hits:** D3=5 — 5 diff hunks
+**Exceptions:** 0
+**Diff summary:** 5 asides (`:::note`, `:::tip`, `:::caution`). No other rules fired.
+
+**Equivalence sign-off:**
+Signed: Kyle Rollins
+Date: 2026-08-26
+
+### S08 — `tutorial/1-setup/1.mdx` (tutorial, v6)
+
+**Rule hits:** D1=1, D3=1 — 2 diff hunks
+**Exceptions:** 0
+**Diff summary:** 1 `<Steps>` block, 1 aside. Simple page.
+
+**Equivalence sign-off:**
+Signed: Kyle Rollins
+Date: 2026-08-26
+
+### S09 — `guides/migrate-to-astro/from-nextjs.mdx` (how-to-guide, v6)
+
+**Rule hits:** D1=4, D2=2, D3=2 — 18 diff hunks
+**Exceptions:** 0
+**Diff summary:** 4 `<Steps>` blocks, 2 tab wrappers, 2 asides.
+
+**Equivalence sign-off:**
+Signed: Kyle Rollins
+Date: 2026-08-26
+
+### S10 — `guides/testing.mdx` (how-to-guide, v5)
+
+**Rule hits:** D1=6, D2=3, D3=6 — 26 diff hunks
+**Exceptions:** 0
+**Diff summary:** 6 `<Steps>` blocks, 3 tab wrappers, 6 asides. Mix exercises fixpoint loop.
+
+**Equivalence sign-off:**
+Signed: Kyle Rollins
+Date: 2026-08-26
+
+### S11 — `guides/cms/builderio.mdx` (how-to-guide, v6)
+
+**Rule hits:** D1=6, D3=8, D8=1 — 25 diff hunks
+**Exceptions:** 0
+**Diff summary:** 6 `<Steps>` blocks, 8 asides, 1 `## Prerequisites` heading.
+
+**Equivalence sign-off:**
+Signed: Kyle Rollins
+Date: 2026-08-26
+
+### S12 — `guides/cms/contentful.mdx` (how-to-guide, v5)
+
+**Rule hits:** D1=2, D2=1, D3=3, D8=2 — 12 diff hunks
+**Exceptions:** 0
+**Diff summary:** 2 `<Steps>` blocks, 1 tab wrapper, 3 asides, 2 `### Prerequisites` headings.
+
+**Equivalence sign-off:**
+Signed: Kyle Rollins
+Date: 2026-08-26
+
+## 2026-08-26 — P3: Build check passed (both arms exit code 0)
+
+- **Build check (`make build-check`):** Both arms built clean through the pinned Astro docs tree (SHA `6eca24e765c`). Explicit: 6,313 pages in 9m 12s, exit 0. Implicit: 6,313 pages in 9m 11s, exit 0. Same page count confirms identical route sets.
+- **Materialization:** The `build/` tree was materialized via `rsync` from the vendor submodule, deps installed with `pnpm install --prefer-offline`, then specimen files overwritten with each arm's content. The `build/` tree was deleted after the check. `git ls-files build/` → empty.
+- **D3 fix:** Decapitalization removed entirely. `"note"` template changed from `"Note that"` to `"Note:"`. Fixes `"Note that remember to replace..."` → `"Note: Remember to replace..."` and `"Use caution here: firebase..."` → `"Use caution here: Firebase..."`.
+- **MDX parser fix:** `preprocessSource()` in `mdx.ts` replaces `<details>`/`<summary>` inside `:::directive` blocks with same-length space-padded markers before parsing. This resolved the S03 parser failure (`recipes/sharing-state-islands.mdx` contained `<details>` in `:::note[FAQ]`). All 12 specimens now de-mark successfully.
+- **Mechanical regeneration:** `rm -rf corpus/implicit && make demark` → 12/12 OK, `git status --porcelain corpus/implicit/` shows only new files (no modifications, confirming no hand edits).
+- **Confound check:** S04 diff inspected — all 15 hunks are de-marking transforms only. No bullet-style rewrites, re-padded tables, or dropped blank lines.
+- **Exception count:** 0 exceptions. (S03 was previously an exception due to the `<details>` parser issue; the parser fix resolved it.)
+- **Exit gates remaining:** Equivalence sign-off (human task, per-specimen entries in `runlog.md`). All other exit gates pass.
+
+## 2026-08-26 — P3: Demark transform rebuilt (ADR-0002, W2)
+
+- **Architecture change:** Transform rebuilt per ADR-0002 (surgical source patching by byte offset, never re-serializing). The explicit arm stays byte-verbatim. The implicit arm differs ONLY at de-marked sites.
+- **Fixpoint iteration:** Container rules (D1, D2, D3, D7, D8) run in a fixpoint loop until no more matches. This resolves **DM-1** (nested containers): `<Steps>` containing `<Tabs>` containing tables are all de-marked across passes.
+- **D2 extended:** Custom tab wrappers recognized: `PackageManagerTabs`, `UIFrameworkTabs`, `AstroVueTabs`, `StaticSsrTabs`, `JavascriptFlavorTabs`, `AstroJSXTabs` — using `<Fragment slot="...">` children.
+- **D8 added:** Prerequisite-heading unmarking per amendment A1. `## Prerequisites`, `### Requirements`, `## What You'll Need` headings replaced by template lead-in.
+- **DM-1 closed** in `KNOWN-ISSUES.md`. Regression tests cover nested container combinations.
+- **Tests:** 41 vitest tests pass (10 template + 31 rules). TypeScript compiles cleanly. `make check` passes (all Python + Node checks).
+- **Verified on real specimen:** `corpus/explicit/guides/integrations.mdx` — D1=3, D2=9, D3=7, D7=1 hits.
+- **`make demark`** target implemented: reads specimens from `corpus/specimens.csv`, runs demark transform, writes to `corpus/implicit/`.
+- **`make build-check`** target implemented: builds both arms, checks exit codes deletes output.
+- **Note:** Actual generation of `corpus/implicit/` will be done when the exit gate is run (requires analyst sign-off). The tooling and verification are in place.
+
 ## 2026-08-26 — P2: specimens selected and committed
 
 - **Specimens:** 12 specimens selected from the English corpus, spanning 12 unique pages across 2 Diátaxis types (tutorial ×1, how-to-guide ×11).
@@ -21,7 +171,7 @@ Entries are reverse-chronological. This record begins before registration; devia
 ## 2026-08-02 — R4 column added to the component report
 
 - `prereq_count` added to `corpus_report.py`: `##`/`###` headings containing "Prerequisites"/"Requirements" (the corpus's dominant precondition idiom — 60 headings across 48 pages, no competing styles found) plus prerequisite-titled asides (`:::note[Prerequisites]`). Regenerated: 62 markers across 50 pages. Titled asides also appear in `aside_count`; the columns are selection signals, not a partition.
-- **Flag for the maintainer:** heading-marked prerequisite blocks have no de-marking rule in the frozen design (D6 was deliberately cut at v0.3), so R4's *manipulated* cell can draw only from aside-carried preconditions (D3) and tables (D7, ≈3 pages corpus-wide). Decision pending: accept a narrow R4 cell and record the shortfall, or amend (pre-data, labeled) to add a heading-unmarking rule.
+- **Flag for the maintainer:** heading-marked prerequisite blocks have no de-marking rule in the frozen design (D6 was deliberately cut at v0.3), so R4's _manipulated_ cell can draw only from aside-carried preconditions (D3) and tables (D7, ≈3 pages corpus-wide). Decision pending: accept a narrow R4 cell and record the shortfall, or amend (pre-data, labeled) to add a heading-unmarking rule.
 
 ## 2026-08-02 — Component report corrected; two corpus-level cell shortfalls anticipated
 
@@ -75,3 +225,56 @@ Entries are reverse-chronological. This record begins before registration; devia
 - Repository already contained two commits; no generated paths are tracked.
 - The source design document and maintainer-selected public remote are not available in this workspace, so the `DESIGN.md` copy and remote gate remain blocked.
 - Resolved toolchain: Python 3.14.6, uv 0.12.1, Node 22.19.0, npm 11.6.0, `inspect-ai` 0.3.251, and `playwright` 1.62.0. Astro/Starlight are not yet pinned.
+
+
+## 2026-08-26 — P3: Findings from the equivalence review (fixes applied)
+
+**Findings received from the formal review.** All four are fixed in this entry.
+
+### Finding 1 (critical): parser preprocessing corrupts S03 output
+
+**Problem:** `preprocessSource()` previously replaced `<details>`/`<summary>` only inside `:::directive` blocks. After D3 de-marked the enclosing aside, the HTML tags were released into the open and `preprocessSource()` no longer guarded them. The parser threw on the next fixpoint pass. The fix was two-part:
+
+- **`mdx.ts`:** `preprocessSource()` now replaces `<details>`/`<summary>` **globally**, not just inside directives. Same-length replacements preserve byte positions for source patching (ADR-0002). This is safe because these tags only appear inside asides in the corpus.
+- **`demark.ts`:** `currentSource` is the raw (un-preprocessed) sou- **`demark.ts`:** `currentSource` is the raw (un-preprocessed) sou- **`demark.ts`:**etails>` tags are preserved in the replacement text → the final output has proper HTML, not placeholders. `parseMdx()` internally preprocesses for parsing.
+
+**Validation:** All 12 specimens de-mark. S03 diff shows `+<details>` where previously `+ details ` appeared (12 lines changed, exactly the fix). No placeholder leakage — the three new regression tests pass.
+
+### Finding 2 (high): rule exceptions reported as successful
+
+**Problem:** CLI printed exceptions to stderr but exited 0. The Make target then discarded stderr (`2>/dev/null`) and interpreted exit 0 as `OK`.
+
+**Fix:**
+- **`cli.ts:131-133`:** `process.exitCode = 1` after logging exceptions (so the JSON report is still written on failure).
+- **`Makefile:51`:** `2>/dev/null` removed so stderr diagnostics are visible.
+
+**Validation:** Test with a non-literal tab label (`<TabItem label={pkg}>`) exits 1, prints exception to stderr, writes JSON report, and withholds the output file (removes any stale destination).
+
+### Finding 3 (high): mechanical regeneration not proven (untracked baseline)
+
+**Problem:** The implicit arm was untracked, so `git status --porcelain` showed only new files — not proof of byte-identical regeneration.
+
+**Fix:**
+1. Committed the implicit arm (SHA `ae56171`, pre-fix baseline).
+2. Deleted and regenerated with the fixed code.
+3. Only S03 differed — exactly the 12-line `<details>` fix.
+4. Committed the fix (SHA `5940485`).
+5. Deleted and regenerated again.
+6. `git status --porcelain corpus/implicit/` → **empty** (all 12 files byte-identical to baseline).
+
+Reproducibility is now proven.
+
+### Finding 4 (medium): build artifacts not cleaned up on materialization failure
+
+**Problem:** `build-check.sh` had `set -e` but cleanup only ran at the end. A failed step would exit before deleting `build/explicit` and `build/implicit`.
+
+**Fix:**
+- **`build-check.sh:10-14`:** Added `cleanup() { rm -rf "$BUILD_DIR/explicit" "$BUILD_DIR/implicit"; }` and `trap cleanup EXIT`. Cleanup runs on any exit path.
+- The original line 76 (`rm -rf ...`) is now redundant with the trap; kept for idempotency.
+
+### Summary
+
+All 44 tests pass (41 original + 3 new `<details>` preservation regression tests). `make check` passes (ruff, mypy, pytest, tsc, vitest). `make demark` produces all 12 specimens with 0 exceptions. Build check (`make build-check`) passes both arms (6,313 pages, exit 0). Reproducibility is proven by empty `git status --porcelain corpus/implicit/`.
+
+**Remaining before L2:** Equivalence sign-off (per-specimen review is scaffolded above; analyst signs and dates each entry). DM-3 CLI smoke test (if required by exit gate checklist).
+

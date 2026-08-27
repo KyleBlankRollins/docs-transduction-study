@@ -1,4 +1,4 @@
-export { demark, summarize, type DemarkOptions } from "./demark.js";
+export { demark, summarize, applyPatches, type DemarkOptions } from "./demark.js";
 export { createProcessor, normalize, parseMdx, stringifyMdx, STRINGIFY_OPTIONS } from "./mdx.js";
 export { fill, loadTemplates, ordinal, parseTemplates, TemplateError, type Templates } from "./templates.js";
 export { RULES, RULES_BY_ID, type Rule, type RuleContext } from "./rules/index.js";
@@ -7,6 +7,7 @@ export {
   RULE_IDS,
   type DemarkReport,
   type DemarkResult,
+  type Patch,
   type RuleException,
   type RuleHit,
   type RuleId,

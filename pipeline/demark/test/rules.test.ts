@@ -94,6 +94,20 @@ describe("D2 — Tabs to prose enumeration", () => {
     expect(report.hits.filter((h) => h.rule === "D2")).toHaveLength(0);
     expect(report.exceptions.some((e) => e.rule === "D2")).toBe(true);
   });
+
+  it("recognises custom tab wrapper PackageManagerTabs", () => {
+    const result = out("\n<PackageManagerTabs>\n  <Fragment slot=\"npm\">\n\n    npm content\n\n  </Fragment>\n  <Fragment slot=\"pnpm\">\n\n    pnpm content\n\n  </Fragment>\n</PackageManagerTabs>\n");
+    expect(result).not.toContain("PackageManagerTabs");
+    expect(result).toContain("If you are using npm");
+    expect(result).toContain("If you are using pnpm");
+  });
+
+  it("recognises UIFrameworkTabs with slot-based fragments", () => {
+    const result = out("\n<UIFrameworkTabs>\n  <Fragment slot=\"react\">\n\n    React content\n\n  </Fragment>\n  <Fragment slot=\"vue\">\n\n    Vue content\n\n  </Fragment>\n</UIFrameworkTabs>\n");
+    expect(result).not.toContain("UIFrameworkTabs");
+    expect(result).toContain("If you are using react");
+    expect(result).toContain("If you are using vue");
+  });
 });
 
 describe("D3 — Asides to inline prose", () => {
@@ -130,10 +144,10 @@ Use the dev server for faster feedback.
   });
 
   it("lowercases the following sentence so the prose does not read as machine-made", () => {
-    expect(out(":::note\nRestart the server.\n:::\n")).toContain("Note that restart");
+    expect(out(":::note\nRestart the server.\n:::\n")).toContain("Note: Restart");
   });
 
-  it("does not lowercase a proper noun or acronym", () => {
+  it("does not lowercase a proper noun or acronym — decapitalization is removed", () => {
     expect(out(":::note\nTypeScript is required here.\n:::\n")).toContain("TypeScript");
     expect(out(":::note\nURL rewriting applies.\n:::\n")).toContain("URL");
   });
@@ -200,5 +214,117 @@ describe("D7 — tables to prose enumeration", () => {
   it("raises an exception for a header-only table", () => {
     const { report } = run("| A | B |\n| - | - |\n");
     expect(report.exceptions.some((e) => e.rule === "D7")).toBe(true);
+  });
+});
+describe("D8 — prerequisite heading unmarking", () => {
+  it("replaces ## Prerequisites with the template lead-in", () => {
+    const result = out("## Prerequisites\n\nYou need Node 18+.\n");
+    expect(result).not.toContain("## Prerequisites");
+    expect(result).toContain(templates.d8_prerequisite_heading.lead_in.trim());
+    expect(result).toContain("Node 18+");
+  });
+
+  it("replaces ### Requirements with the template lead-in", () => {
+    const result = out("### Requirements\n\nInstall pnpm first.\n");
+    expect(result).not.toContain("### Requirements");
+    expect(result).toContain(templates.d8_prerequisite_heading.lead_in.trim());
+    expect(result).toContain("Install pnpm");
+  });
+
+  it("records one hit when a heading is de-marked", () => {
+    const { report } = run("## Prerequisites\n\nContent here.\n");
+    expect(report.hits.filter((h) => h.rule === "D8")).toHaveLength(1);
+  });
+
+  it("does not touch non-prerequisite headings", () => {
+    const result = out("## Getting Started\n\nContent here.\n");
+    expect(result).toContain("## Getting Started");
+    const { report } = run("## Getting Started\n\nContent here.\n");
+    expect(report.hits.filter((h) => h.rule === "D8")).toHaveLength(0);
+  });
+});
+
+describe("DM-1 — nested containers (closed by fixpoint)", () => {
+  it("de-marks a table inside a step (two-deep nesting)", () => {
+    const source = [
+      "<Steps>",
+      "",
+      "1. Install.",
+      "",
+      "   | Flag  | Value  |",
+      "   | ----- | ------ |",
+      "   | --port | 4321 |",
+      "",
+      "2. Deploy.",
+      "",
+      "</Steps>",
+    ].join("\n");
+    const result = out(source);
+    expect(result).not.toContain("<Steps>");
+    expect(result).not.toContain("|---");
+    expect(result).toContain("First,");
+    expect(result).toContain("Finally,");
+    expect(result).toContain("--port");
+  });
+
+  it("de-marks an aside inside a step", () => {
+    const result = out("\n<Steps>\n\n1. Configure.\n\n   :::caution\n   Backup first.\n   :::\n\n2. Deploy.\n\n</Steps>\n");
+    expect(result).not.toContain("<Steps>");
+    expect(result).not.toContain(":::");
+    expect(result).toContain("First,");
+    expect(result).toContain("Finally,");
+    expect(result).toContain("Backup first.");
+  });
+});
+
+describe("Parser integrity — <details>/<summary> inside directives", () => {
+  const faqSource = [
+    ":::note[FAQ]",
+    "",
+    "<details>",
+    "<summary>**Q: How does this work?**</summary>",
+    "",
+    "It works via transduction.",
+    "",
+    "</details>",
+    "",
+    "<details>",
+    "<summary>**Q: Is it safe?**</summary>",
+    "",
+    "Yes.",
+    "",
+    "</details>",
+    "",
+    ":::",
+    "",
+    "Regular content after the aside.",
+  ].join("\n");
+
+  it("preserves <details> tags inside ::: directives (no placeholder leakage)", () => {
+    const result = out(faqSource);
+    // The explicit arm (untransformed) has <details> — the transform must
+    // keep them byte-identical. Preprocess sanitizes only the parser input;
+    // patching operates on the real source.
+    expect(result).toContain("<details>");
+    expect(result).toContain("</details>");
+    expect(result).toContain("<summary>");
+    expect(result).toContain("</summary>");
+  });
+
+  it("does not leak placeholder text like ' details ' or ' summary ' into output", () => {
+    const result = out(faqSource);
+    // The preprocessSource function replaces tags with padded space markers.
+    // These must never appear in the transform output.
+    expect(result).not.toMatch(/^\s+details\s+$/m);
+    expect(result).not.toMatch(/^\s+\/details\s+$/m);
+    expect(result).not.toMatch(/^\s+summary\s+$/m);
+    expect(result).not.toMatch(/^\s+\/summary\s+$/m);
+  });
+
+  it("reports a D3 hit for the enclosing aside but no extra hits for the HTML", () => {
+    const { report } = run(faqSource);
+    const d3Hits = report.hits.filter((h) => h.rule === "D3");
+    expect(d3Hits).toHaveLength(1);
+    expect(d3Hits[0]?.detail).toContain("note");
   });
 });
