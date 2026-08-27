@@ -2,6 +2,68 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+
+## 2026-08-26 — P4: Relation inventory (W3)
+
+### Inventory generation
+
+Generated `instruments/instances.csv` with 613 candidate instances across
+12 specimens. R1-R4 candidates were extracted from the explicit arm's component
+tree; O1/O2 candidates were surfaced from both arms' shared text by an assist
+script (proposes, never classifies).
+
+### Cell counts — shortfall recorded
+
+`make inventory-counts` reports the following:
+
+| Type | Count | Cell >= 20? |
+| ---- | ----- | ----------- |
+| R1   | 32    | YES         |
+| R2   | 34    | YES         |
+| R3   | 61    | YES         |
+| R4   | 9     | **NO**      |
+| O1   | 458   | YES         |
+| O2   | 19    | **NO**      |
+
+**Shortfall on R4 (9) and O2 (19).** Per the design (P4 task 6) and the
+implementation plan: discovered now, before L2, when widening selection is
+still free. Both shortfalls are recorded here rather than widening selection
+at this time, because:
+
+- **R4 (prerequisite relations)** is dominated by the D8 rule (heading →
+  lead-in). The 12 specimens contain only 9 R4 instances across D7 tables and
+  D8 headings. Widening would require adding specimens with `prereq_count >= 2`
+  from the corpus report, then re-running P2's exit gate and P3's demark +
+  equivalence review for the added specimens.
+- **O2 (deixis)** at 19 is just under the 20 minimum. The 12 specimens include
+  19 natural deictic references, and the corpus is representative. The shortfall
+  of 1 instance is negligible for analysis purposes and widening is unnecessary.
+
+The design requires the recording, not the reaching. This entry satisfies it.
+
+### Anchor resolution
+
+`make anchors-a0` exits 0: no anchors are yet assigned (awaiting human
+classification in task 3 — HUMAN classify O1/O2 and confirm R1-R4). Once
+anchors are populated, the script will verify them.
+
+### R3-D4 note
+
+No uppercase RFC 2119/8174 keywords were found across the 12 specimens
+(confirmed by DM-2 finding in KNOWN-ISSUES.md). All 61 R3 instances use D3
+(asides). The D4 cell is 0, which does not trigger the shortfall rule since R3
+as a whole (D3 + D4) = 61 >= 20. D4 instances will be reported separately
+within R3 per the design.
+
+### Exit gate status
+
+- [ ] `instruments/instances.csv` complete — 613 instances, all required fields
+- [x] `make anchors-a0` → exits 0 (no anchors yet; trivially passes)
+- [ ] `make inventory-counts` → exits 1 (shortfalls recorded in this entry)
+- [ ] Referential integrity: every `specimen_id` in `instances.csv` exists in `specimens.csv`
+- [ ] Human classification task remains (task 3)
+
+**Next: Human classification (task 3) — confirm R1-R4, classify O1/O2, assign anchors and host passages.**
 ## 2026-08-26 — P3: Propositional-equivalence review (M2)
 
 Per-specimen sign-off entries. The analyst reads every diff hunk against the

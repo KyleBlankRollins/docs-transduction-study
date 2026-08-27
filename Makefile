@@ -7,7 +7,7 @@ DEMARK_DIR := pipeline/demark
 EXPLICIT_DIR := corpus/explicit
 IMPLICIT_DIR := corpus/implicit
 BUILD_DIR := build
-STAGES := check corpus-report demark build-check anchors-a0 inventory-counts pilot lint-probes artifacts anchors coding-setup code kappa analyze
+STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts pilot lint-probes artifacts anchors coding-setup code kappa analyze
 
 .PHONY: help check $(STAGES)
 
@@ -69,7 +69,21 @@ demark:
 build-check:
 	@bash $(DEMARK_DIR)/build-check.sh
 
-anchors-a0 inventory-counts pilot lint-probes artifacts anchors coding-setup code kappa analyze:
+# ── Phase P4: relation inventory ────────────────────────────────────────
+
+# Extract R1-R4 candidates and surface O1/O2 candidates from specimens
+inventory:
+	uv run python -m docs_transduction_study.inventory
+
+# Verify every anchor resolves in both arms' A0 source
+anchors-a0:
+	uv run python -m docs_transduction_study.anchors_a0 --instances instruments/instances.csv
+
+# Report instances per type and check cell minimums
+inventory-counts:
+	uv run python -m docs_transduction_study.inventory_counts --instances instruments/instances.csv --specimens corpus/specimens.csv
+
+pilot lint-probes artifacts anchors coding-setup code kappa analyze:
 	@printf '%s\n' "$(MAKECMDGOALS): not implemented" >&2
 	@exit 1
 
