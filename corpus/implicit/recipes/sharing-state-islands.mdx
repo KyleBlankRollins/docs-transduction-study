@@ -30,8 +30,8 @@ Still, there are a number of alternatives you can explore. These include:
 - [Vue's reactivity API](https://vuejs.org/guide/scaling-up/state-management.html#simple-state-management-with-reactivity-api)
 - [Sending custom browser events](https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events) between components
 
-FAQ: details 
- summary **🙋 Can I use Nano Stores in `.astro` files or other server-side components?** /summary 
+FAQ: <details>
+<summary>**🙋 Can I use Nano Stores in `.astro` files or other server-side components?**</summary>
 
 Nano Stores can be used in `<script>` tags to [share state between `.astro` components](/en/recipes/sharing-state/). However, Using Nano Stores in the frontmatter of server-side components is not recommended because of the following restrictions:
 - Writing to a store from a `.astro` file or [non-hydrated component](/en/guides/framework-components/#hydrating-interactive-components) will _not_ affect the value received by [client-side components](/en/reference/directives-reference/#client-directives).
@@ -40,18 +40,18 @@ Nano Stores can be used in `<script>` tags to [share state between `.astro` comp
 
 If you understand these restrictions and still find a use case, you can give Nano Stores a try! Just remember that Nano Stores are built for reactivity to changes on the **client** specifically.
 
- /details 
+</details>
 
- details 
- summary **🙋 How do Svelte stores compare to Nano Stores?** /summary 
+<details>
+<summary>**🙋 How do Svelte stores compare to Nano Stores?**</summary>
 
 **Nano Stores and [Svelte stores](https://svelte.dev/tutorial/writable-stores) are very similar!** In fact, [nanostores allow you to use the same `$` shortcut](https://github.com/nanostores/nanostores#svelte) for subscriptions that you might use with Svelte stores.
 
 If you want to avoid third-party libraries, [Svelte stores](https://svelte.dev/tutorial/writable-stores) are a great cross-island communication tool on their own. Still, you might prefer Nano Stores if a) you like their add-ons for ["objects"](https://github.com/nanostores/nanostores#maps) and [async state](https://github.com/nanostores/nanostores#lazy-stores), or b) you want to communicate between Svelte and other UI frameworks like Preact or Vue.
- /details 
+</details>
 
- details 
- summary **🙋 How do Solid signals compare to Nano Stores?** /summary 
+<details>
+<summary>**🙋 How do Solid signals compare to Nano Stores?**</summary>
 
 If you've used Solid for a while, you may have tried moving [signals](https://www.solidjs.com/docs/latest#createsignal) or [stores](https://www.solidjs.com/docs/latest#createstore) outside of your components. This is a great way to share state between Solid islands! Try exporting signals from a shared file:
 
@@ -62,7 +62,7 @@ import { createSignal } from 'solid-js';
 export const sharedCount = createSignal(0);
 ```
 ...and all components importing `sharedCount` will share the same state. Though this works well, you might prefer Nano Stores if a) you like their add-ons for ["objects"](https://github.com/nanostores/nanostores#maps) and [async state](https://github.com/nanostores/nanostores#lazy-stores), or b) you want to communicate between Solid and other UI frameworks like Preact or Vue.
- /details 
+</details>
 
 
 ## Installing Nano Stores
@@ -432,12 +432,12 @@ If you are using ts:
   
 
 
-Note: details 
+Note: <details>
 
- summary **🙋 Why use `.get()` here instead of a `useStore` helper?** /summary 
+<summary>**🙋 Why use `.get()` here instead of a `useStore` helper?**</summary>
 
 You may have noticed we're calling `cartItems.get()` here, instead of grabbing that `useStore` helper from our React / Preact / Solid / Vue examples. This is because **useStore is meant to trigger component re-renders.** In other words, `useStore` should be used whenever the store value is being rendered to the UI. Since we're reading the value when an **event** is triggered (`addToCart` in this case), and we aren't trying to render that value, we don't need `useStore` here.
- /details 
+</details>
 
 
 With our store in place, we can call this function inside our `AddToCartForm` whenever that form is submitted. We'll also open the cart flyout so you can see a full cart summary.
