@@ -49,8 +49,10 @@ _PREREQ_HEADING_PATTERN = re.compile(
 
 # ── O1/O2 patterns ───────────────────────────────────────────────────────
 
+# O1: Referring expressions — "the <noun>", "your <noun>"
+# "this <noun>" is rerouted to O2 (deixis); "the following <noun>" is cataphoric → O2.
 _O1_PATTERN = re.compile(
-    r"\b(the|your|this)\s+([A-Z][a-z]+(?:\s+[a-z]+)*)",
+    r"\b(the|your)\s+([A-Z][a-z]+(?:\s+[a-z]+)*)",
     re.IGNORECASE,
 )
 _O2_DEICTIC_NOUN = re.compile(
@@ -67,6 +69,18 @@ _O2_REFERENTIAL = re.compile(
     r"\b(?:see|refer\s+to|review)\s+(?:above|below|the\s+(?:previous|following"
     r"|next)\s+(?:section|step|chapter|page|example))\b",
     re.IGNORECASE,
+)
+
+# Rerouted from O1: "this + capitalized noun phrase" is cataphoric/demonstrative → O2
+# No IGNORECASE: only match when the following word starts uppercase (proper noun
+# or title-case noun phrase), avoiding sentence-initial pronoun uses.
+_O2_THIS_PHRASE = re.compile(
+    r"\bthis\s+([A-Z][a-z]+(?:\s+[a-z]+)*)",
+)
+
+# Rerouted from O1: "the following X" points forward → O2 (cataphoric deixis)
+_O2_FOLLOWING = re.compile(
+    r"\bthe\s+following\s+([a-z]+(?:\s+[a-z]+)*)",
 )
 # ── Instance data structure ──────────────────────────────────────────────
 
@@ -287,19 +301,26 @@ def surface_o_candidates(
             ))
 
         # O2: Deictic expressions
-        o2_matches: set[str] = set()
+        o2_matches: dict[str, str] = {}  # expr -> source hint
         for m in _O2_DEICTIC_NOUN.finditer(body):
-            o2_matches.add(m.group(0).strip())
+            o2_matches[m.group(0).strip()] = "deictic noun"
         for m in _O2_LOCATIVE.finditer(body):
-            o2_matches.add(m.group(0).strip())
+            o2_matches[m.group(0).strip()] = "locative"
         for m in _O2_REFERENTIAL.finditer(body):
-            o2_matches.add(m.group(0).strip())
-        for expr in sorted(o2_matches):
+            o2_matches[m.group(0).strip()] = "referential"
+        # Rerouted from O1: "this X" — demonstrative/cataphoric → O2
+        for m in _O2_THIS_PHRASE.finditer(body):
+            o2_matches[m.group(0).strip()] = "rerouted from O1 (this/demonstrative)"
+        # Rerouted from O1: "the following X" — cataphoric → O2
+        for m in _O2_FOLLOWING.finditer(body):
+            o2_matches[m.group(0).strip()] = "rerouted from O1 (cataphoric)"
+        for expr in sorted(o2_matches.keys()):
+            source = o2_matches[expr]
             instances.append(Instance(
                 instance_id=_instance_id(sid, "O2", next_seq("O2")),
                 specimen_id=sid, relation_type="O2",
                 demark_rule="",
-                notes=f"Deictic expression candidate: '{expr}'",
+                notes=f"Deictic expression candidate ({source}): '{expr}'",
             ))
 
         o1 = seq.get("O1", 0)
