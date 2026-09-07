@@ -52,7 +52,7 @@ _PREREQ_HEADING_PATTERN = re.compile(
 # O1: Referring expressions — "the <noun>", "your <noun>"
 # "this <noun>" is rerouted to O2 (deixis); "the following <noun>" is cataphoric → O2.
 _O1_PATTERN = re.compile(
-    r"\b(the|your)\s+([A-Z][a-z]+(?:\s+[a-z]+)*)",
+    r"\b(?:the(?!\s+following)|your)\s+([A-Z][a-z]+(?:\s+[a-z]+)*)",
     re.IGNORECASE,
 )
 _O2_DEICTIC_NOUN = re.compile(

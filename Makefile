@@ -7,7 +7,7 @@ DEMARK_DIR := pipeline/demark
 EXPLICIT_DIR := corpus/explicit
 IMPLICIT_DIR := corpus/implicit
 BUILD_DIR := build
-STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts pilot lint-probes artifacts anchors coding-setup code kappa analyze
+STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts assign-anchors review-o1-o2 classify-o1-o2 pilot lint-probes artifacts anchors coding-setup code kappa analyze
 
 .PHONY: help check $(STAGES)
 
@@ -78,6 +78,18 @@ inventory:
 # Verify every anchor resolves in both arms' A0 source
 anchors-a0:
 	uv run python -m docs_transduction_study.anchors_a0 --instances instruments/instances.csv
+
+# Assign mechanical anchors for R-instances
+assign-anchors:
+	uv run python -m docs_transduction_study.assign_anchors
+
+# Generate review CSVs for O1/O2 candidates
+review-o1-o2:
+	uv run python -m docs_transduction_study.review_o1_o2
+
+# Run mechanical classification on O1/O2 candidates
+classify-o1-o2:
+	uv run python -m docs_transduction_study.classify_o1_o2
 
 # Report instances per type and check cell minimums
 inventory-counts:

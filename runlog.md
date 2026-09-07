@@ -3,6 +3,212 @@
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
 
+## 2026-09-07 — P4: O1 classified; instances.csv synced; R1–R4 confirmation finalized (task 3 complete)
+
+Human classification session for P4 task 3. Scope: **O1 classification**
+(`instruments/o1_review.csv`, all 418 candidates), **`instances.csv` sync**
+(removal of all human-rejected rows), and finalization of the R1–R4
+confirmation recorded earlier today. O2 classification (55 accepted, 4
+rejected) is recorded in the previous entry and unchanged.
+
+### O1 classification — 418 candidates → 369 accepted, 49 rejected
+
+Every row was located in the explicit arm and classified with context; every
+mechanical pre-fill (229 rows) was reviewed, not trusted. Per-occurrence fence
+state was computed from the extractor's actual match sites (a candidate is
+`not_probeable` only when **every** occurrence of its string lies inside a
+fenced code block).
+
+- **`not_probeable`: 21 rejected** (verified all-occurrences-fenced);
+  **93 of the 114 mechanical pre-fills were false positives** — same
+  ```-in-context-window artifact as O2 (the fence is usually the referent the
+  expression introduces).
+- **`idiom`: 4 rejected** (the meantime / the same time ×2 / the time of
+  writing); **18 of 22 were false positives** — the check is a case-insensitive
+  substring test: "the REST" hit "the rest", "the endpoint" hit "the end", and
+  comparative references ("the same `$` shortcut", "the same state", "the same
+  file extension") hit "the same". All overridden with context.
+- **`generic`: 19 rejected** (role/venue nouns — the user, the community; the
+  medium — the edge; arbitrary members — of your choice / your preferred
+  package manager / your favorite UI framework; non-artifacts — your work,
+  your needs, your code; UI-label proper noun — "Your apps"; locative
+  fragments — the bottom, the middle; link title — "Testing Your App").
+  **74 of 93 were false positives** — the fragment rule (≤2 words) rejects
+  complete NPs ("the component", "your terminal"), and exact-list matches
+  acquire specific referents in context ("the file" → `env.d.ts`, "the page"
+  → `builder-preview.astro`, "the CMS" → Contentful).
+- **`duplicate_boundary`: 5 rejected** — boundary variants of an occurrence
+  represented by another accepted row: S01-O1-015 (⊂ S01-O1-016), S01-O1-033
+  (⊂ S01-O1-031), S02-O1-012 (⊂ S02-O1-011), S07-O1-009 (⊂ S07-O1-008), and
+  S06-O1-016, which overlaps the accepted O2 instance S06-O2-002 ("the
+  following command") — the definition is thereby extended: an overlapping
+  candidate of an accepted instance **of either type** is a duplicate.
+
+**Extractor defects discovered during review** (relevant to future re-runs;
+all candidates were classified as surfaced, no re-extraction was performed):
+
+1. *Match stealing:* the O1 pattern is leftmost-greedy over up to 6 words, so
+   "your framework components will only render on the server" consumes the
+   "the server" occurrence; S07-O1-018 exists only as a code-comment match.
+2. *Token truncation:* é (S09-O1-005 "the REST Pok"), "." (S09-O1-019 "your
+   Next"), and hyphens (S01-O1-041 "your now") truncate candidates mid-NP.
+3. *String-keyed dedup:* candidates are unique surface strings per specimen;
+   ~85 O1 and ~11 O2 rows represent multiple occurrences (substring estimate,
+   max 10 and 5). The registered unit of analysis is **one occurrence** —
+   the instrument currently realizes "one unique expression string".
+   **Flagged for the maintainer as a pre-L2 design question** (expand
+   accepted strings to occurrences, or register the string as the unit);
+   no expansion was made in this session.
+
+**Boundary resolutions** (accepted rows whose candidate text truncates or
+over-extends the referring NP; resolved to the NP core):
+
+| Specimen | Resolutions |
+| --- | --- |
+| S01 | 003→"The main **package entrypoint**"; 013→"the custom `name`, `description`, or `homepage`"; 017→"the integration"; 022→"the required `astro-component`/`astro-integration`/`withastro` keyword"; 032→"your component"; 039→"your integration"; 041→"your now-extracted components"; 045/047→"your package" |
+| S02 | 014→"the file"; 016→"the full list of `astro dev` flags and subcommands"; 017→"the global level" |
+| S03 | 008→"the quantity"; 009→"the same `$` shortcut"; 011→"the shape"; 012→"the standard `get()`/`set()` helpers"; 020→"your machine" |
+| S04 | 030→"your Firebase credentials" |
+| S05 | 001→"the Docker `COPY`/`ADD` commands"; 005→"the build time"; 017→"your image"; 023→"your project"; 024→"your site" |
+| S06 | 013→"your Astro site"; 018→"your deploys"; 022→"your project" |
+| S07 | 002→"the Astro `<slot />` pattern"; 022→"your framework components"; (S04-O1-001→"the endpoint", S04 idiom group) |
+| S08 | 004→"the required [version]" |
+| S09 | 001→"Your Next project"; 005→"the REST PokéAPI"; 007→"the case of any HTML global attributes"; 010→"the first 151 Pokémon"; 015→"the returned JSX"; 019→"your Next.js site"; 028→"your existing Tailwind code"; 035→"your posts" |
+| S10 | 004→"the Cypress App"; 007→"the command value"; 019/021→"the test"; 020→"the test run"; 024→"the value of the page `<title>`"; 034→"your test" |
+| S11 | 021→"the other parameters" |
+| S12 | 004→"The property inside `params`"; 008→"the entry"; 014→"the other parameters"; 016→"the page component"; 029→"your blog posts"; 032→"your component"; 036→"your data" |
+
+### instances.csv sync — 613 → 548 rows
+
+65 rows removed per the hard rule (unconfirmed instances do not enter the
+instrument): 49 O1 rejections (above), 4 O2 rejections (previous entry), 12 R3
+rejections (S03-R3-005…014, S07-R3-006/007 — code-block `<aside>` artifacts,
+previous entry).
+
+### Final cell counts (confirmed inventory)
+
+| Type | Count | ≥ 20? |
+| ---- | ----- | ----- |
+| R1   | 32    | YES   |
+| R2   | 34    | YES   |
+| R3   | 49 (D3: 49, D4: 0) | YES |
+| R4   | 9     | NO (shortfall entry of 2026-08-26 stands) |
+| O1   | 369   | YES   |
+| O2   | 55    | YES   |
+
+`make inventory-counts` run on the synced file (exits 1 on R4 only — the
+recorded shortfall). Referential integrity: no violations.
+`make anchors-a0` exits 0 — 123 mechanically pre-assigned R anchors resolve in
+both arms; **S01-R4-001 (the D7 table) has no anchor** (the anchor script does
+not handle D7 tables — task 4 item); 425 O-instance anchors await task-4
+assignment.
+
+### Remaining for P4
+
+Task 4 (anchors + host passages for all 548 instances, incl. S01-R4-001's
+missing mechanical anchor), then the P4 exit gate. The string-vs-occurrence
+question above should be resolved before L2.
+
+
+## 2026-09-07 — P4: O2 classified; R1–R4 confirmed (task 3, partial — O1 outstanding)
+
+Human classification session for P4 task 3. Scope of this entry: **O2 classification**
+(`instruments/o2_review.csv`, all 59 candidates) and **R1–R4 confirmation**
+(`instruments/instances.csv`, all 136 R-candidates). O1 classification remains
+outstanding; the `instances.csv` sync (removal of rejected rows) is deferred until
+O1 completes so the instrument is edited once, consistently.
+
+### O2 classification — 59 candidates → 55 accepted, 4 rejected
+
+Every row in `o2_review.csv` was read against the explicit-arm source (candidates
+located by context string, not by the `source_line` column, which does not map to
+file lines).
+
+- **All 30 mechanical `not_probeable` pre-fills were reviewed and overturned.**
+  The code-context heuristic rejects any candidate with a code fence anywhere in
+  its context window; in every case the expression itself sits in running prose
+  and the fence belongs to the *neighboring* block — typically the very code block
+  the deixis introduces ("add the following variables:" → ```ini). This is a
+  systematic false-rejection mode of the assist classifier: deixis that
+  introduces a code block is exactly the deixis the heuristic deletes. 26 rows
+  accepted; 4 re-reasoned as duplicates (below).
+- **4 rejections, reason `duplicate_boundary`** (new reason value, defined here):
+  the candidate is a boundary variant of an occurrence already represented by an
+  accepted row — one probe per instance requires one row per occurrence.
+  Rejected: `S02-O2-004` (dup of S02-O2-003), `S02-O2-006` (dup of S02-O2-005),
+  `S05-O2-004` (dup of S05-O2-003), `S10-O2-008` (dup of S10-O2-007).
+  S10-O2-007 and S10-O2-010 were kept as **distinct**: line 120 of testing.mdx
+  contains two separate deictic occurrences ("add the following test file…" /
+  "copy and paste the following test…") sharing one referent.
+- All accepted expressions are prose deixis with recoverable referents
+  (cataphoric "the following X", anaphoric "this X"/"listed above", locative
+  "see below"). No idiom or generic rejections arose.
+
+**Boundary resolutions** (accepted rows whose candidate text over-extends the
+deictic expression; resolved boundary recorded here for anchor/host-passage work):
+
+| Instance | Resolved boundary |
+| --- | --- |
+| S02-O2-005 | the following configuration |
+| S02-O2-007 | the following |
+| S02-O2-008 | the following |
+| S04-O2-004 | the following packages |
+| S08-O2-002 | the following command |
+| S10-O2-006 | the following line |
+| S10-O2-009 | the following test |
+| S10-O2-010 | the following test |
+| S11-O2-004 | the following content |
+| S12-O2-001 | the following credentials |
+| S12-O2-004 | the following |
+
+### R1–R4 confirmation — 136 candidates → 124 confirmed, 12 rejected
+
+Method: every candidate's claimed construct was located in the explicit arm at
+(or within 3 lines of) the line recorded in its note; counts were cross-checked
+per specimen against the component tree and against the P3 rule-hit entries.
+
+- **R1: 32/32 confirmed.** Every note resolves to a `<Steps>` block.
+- **R2: 34/34 confirmed.** Every note resolves to a tab wrapper (custom
+  PackageManagerTabs family / raw `<Tabs>`).
+- **R3: 49/61 confirmed — 12 rejected:** `S03-R3-005` … `S03-R3-014` (10) and
+  `S07-R3-006`, `S07-R3-007` (2). These notes claim "<Aside> component", but no
+  Starlight `<Aside>` exists in either arm; the extractor matched the HTML
+  `<aside>` **element inside code examples** (framework component samples in
+  fenced blocks). Candidate-extractor defect, not a corpus property. Note for the
+  O1 pass: the same extractor produced the O1 candidates.
+  All 49 confirmed R3 rows resolve to `:::` directives, including three
+  indented inside `<Steps>`/`<PackageManagerTabs>` fragments
+  (`S03-R3-002`, `S10-R3-001/003/005`) that line-start-only checks miss.
+- **R4: 9/9 confirmed** — 8 D8 prerequisite headings + 1 D7 table
+  (S01, the single markdown pipe table, lines 589–598).
+
+### Recomputed cell counts (confirmed instances only)
+
+| Type | Confirmed | ≥ 20? |
+| ---- | --------- | ----- |
+| R1   | 32        | YES   |
+| R2   | 34        | YES   |
+| R3   | 49        | YES   |
+| R4   | 9         | NO (shortfall entry of 2026-08-26 stands) |
+| O1   | pending   | —     |
+| O2   | 55        | YES   |
+
+The O2 cell is now satisfied. The 19 recorded on 2026-08-26 predated a
+re-run of candidate surfacing: `instances.csv` holds 59 O2 (and 418 O1, not the
+458 recorded then); total 613 is unchanged. The earlier shortfall entry remains
+on the record as history; with classification complete, O2 = 55.
+
+### Pending for P4 completion
+
+1. O1 classification (`o1_review.csv`: 189 rows unclassified; 229 mechanical
+   pre-fills unreviewed — and the extractor defect above warrants reviewing all).
+2. `instances.csv` sync — remove the 16 rejected rows:
+   `S03-R3-005…014`, `S07-R3-006`, `S07-R3-007`, `S02-O2-004`, `S02-O2-006`,
+   `S05-O2-004`, `S10-O2-008`.
+3. Anchors and host passages (task 4), then `make anchors-a0` and a fresh
+   `make inventory-counts` for the exit gate.
+
+
 ## 2026-08-26 — P4: Relation inventory (W3)
 
 ### Inventory generation
