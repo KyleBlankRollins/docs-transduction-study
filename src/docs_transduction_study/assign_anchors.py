@@ -3,6 +3,7 @@
 Extracts verbatim substrings from both arms' A0 source for R1-R4 instances.
 The demark transform preserves inner content, so the same text appears in both arms.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -16,7 +17,9 @@ def _normalize(text: str) -> str:
 
 
 def _extract_anchor_explicit(
-    text: str, line_num: int, demark_rule: str,
+    text: str,
+    line_num: int,
+    demark_rule: str,
 ) -> str:
     """Extract a short anchor from the explicit source at the given line."""
     lines = text.split("\n")
@@ -50,7 +53,12 @@ def _extract_anchor_explicit(
         for i in range(line_idx, min(line_idx + 5, len(lines))):
             l = lines[i].strip()
             # Skip directive markers, closing tags, and code fences
-            if l.startswith(":::") or l.startswith("</") or l.startswith("```") or not l:
+            if (
+                l.startswith(":::")
+                or l.startswith("</")
+                or l.startswith("```")
+                or not l
+            ):
                 continue
             anchor = l[:60].strip()
             break
@@ -80,7 +88,9 @@ def _extract_anchor_explicit(
     return anchor
 
 
-def _find_in_implicit(explicit_anchor: str, implicit_text: str, demark_rule: str = "") -> str:
+def _find_in_implicit(
+    explicit_anchor: str, implicit_text: str, demark_rule: str = ""
+) -> str:
     """Find anchor text in implicit source.
 
     For D8: heading text was replaced by template lead-in in the implicit arm.
@@ -96,23 +106,25 @@ def _find_in_implicit(explicit_anchor: str, implicit_text: str, demark_rule: str
         ]:
             idx = norm_implicit.lower().find(leadin.lower())
             if idx >= 0:
-                return norm_implicit[idx: idx + len(leadin)]
+                return norm_implicit[idx : idx + len(leadin)]
 
     norm_anchor = _normalize(explicit_anchor)
     norm_implicit = _normalize(implicit_text)
     idx = norm_implicit.lower().find(norm_anchor.lower())
     if idx >= 0:
-        return norm_implicit[idx: idx + len(norm_anchor)]
+        return norm_implicit[idx : idx + len(norm_anchor)]
     short = norm_anchor[:30]
     idx = norm_implicit.lower().find(short.lower())
     if idx >= 0:
-        return norm_implicit[idx: idx + len(short)]
+        return norm_implicit[idx : idx + len(short)]
     return ""
 
 
 def assign_anchors(
-    instances_csv: Path, specimens_csv: Path,
-    explicit_dir: Path, implicit_dir: Path,
+    instances_csv: Path,
+    specimens_csv: Path,
+    explicit_dir: Path,
+    implicit_dir: Path,
     output: Path | None = None,
 ) -> int:
     """Assign mechanical anchors for R-instances. Returns count."""
@@ -142,7 +154,10 @@ def assign_anchors(
         sid = row["specimen_id"]
         if not rt.startswith("R"):
             continue
-        if row.get("anchor_explicit", "").strip() and row.get("anchor_implicit", "").strip():
+        if (
+            row.get("anchor_explicit", "").strip()
+            and row.get("anchor_implicit", "").strip()
+        ):
             continue
         line_m = re.search(r"at line (\d+)", notes)
         if not line_m:
@@ -171,15 +186,22 @@ def assign_anchors(
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--instances", type=Path, default=Path("instruments/instances.csv"))
+    parser.add_argument(
+        "--instances", type=Path, default=Path("instruments/instances.csv")
+    )
     parser.add_argument("--specimens", type=Path, default=Path("corpus/specimens.csv"))
     parser.add_argument("--explicit-dir", type=Path, default=Path("corpus/explicit"))
     parser.add_argument("--implicit-dir", type=Path, default=Path("corpus/implicit"))
     parser.add_argument("--output", type=Path, default=None)
     args = parser.parse_args()
 
-    n = assign_anchors(args.instances, args.specimens,
-                       args.explicit_dir, args.implicit_dir, args.output)
+    n = assign_anchors(
+        args.instances,
+        args.specimens,
+        args.explicit_dir,
+        args.implicit_dir,
+        args.output,
+    )
     print(f"Assigned anchors for {n} R-instances")
 
 

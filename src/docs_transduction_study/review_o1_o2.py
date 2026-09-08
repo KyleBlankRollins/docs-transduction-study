@@ -1,4 +1,5 @@
 """Generate reviewable O1/O2 candidate CSV with context for human classification."""
+
 from __future__ import annotations
 
 import argparse
@@ -18,7 +19,9 @@ def _normalize(text: str) -> str:
 
 
 def _find_context(
-    body: str, expression: str, window_chars: int = 120,
+    body: str,
+    expression: str,
+    window_chars: int = 120,
 ) -> dict[str, str]:
     norm_body = _normalize(body)
     norm_expr = _normalize(expression)
@@ -34,7 +37,7 @@ def _find_context(
     after_end = min(len(norm_body), idx + len(norm_expr) + window_chars)
     return {
         "before": norm_body[before_start:idx].strip(),
-        "after": norm_body[idx + len(norm_expr):after_end].strip(),
+        "after": norm_body[idx + len(norm_expr) : after_end].strip(),
     }
 
 
@@ -47,9 +50,16 @@ def _find_source_line(body: str, expression: str) -> int:
 
 
 OUTPUT_FIELDS = [
-    "instance_id", "specimen_id", "relation_type",
-    "expression", "context_before", "highlight", "context_after",
-    "source_line", "accept", "rejection_reason",
+    "instance_id",
+    "specimen_id",
+    "relation_type",
+    "expression",
+    "context_before",
+    "highlight",
+    "context_after",
+    "source_line",
+    "accept",
+    "rejection_reason",
 ]
 
 
@@ -105,18 +115,20 @@ def generate_review_csv(
                     before = ctx.get("before", "")
                     after = ctx.get("after", "")
 
-            writer.writerow({
-                "instance_id": inst_id,
-                "specimen_id": sid,
-                "relation_type": relation_type,
-                "expression": expr,
-                "context_before": before[-120:].strip(),
-                "highlight": expr,
-                "context_after": after[:120].strip(),
-                "source_line": str(source_line) if source_line else "",
-                "accept": "",
-                "rejection_reason": "",
-            })
+            writer.writerow(
+                {
+                    "instance_id": inst_id,
+                    "specimen_id": sid,
+                    "relation_type": relation_type,
+                    "expression": expr,
+                    "context_before": before[-120:].strip(),
+                    "highlight": expr,
+                    "context_after": after[:120].strip(),
+                    "source_line": str(source_line) if source_line else "",
+                    "accept": "",
+                    "rejection_reason": "",
+                }
+            )
 
     print(f"Wrote to {output}")
     print("Review instructions:")
@@ -131,15 +143,19 @@ def generate_review_csv(
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--instances", type=Path, default=Path("instruments/instances.csv"))
+    parser.add_argument(
+        "--instances", type=Path, default=Path("instruments/instances.csv")
+    )
     parser.add_argument("--explicit-dir", type=Path, default=Path("corpus/explicit"))
     parser.add_argument("--output-dir", type=Path, default=Path("instruments"))
     args = parser.parse_args()
 
-    generate_review_csv(args.instances, args.explicit_dir,
-                        args.output_dir / "o1_review.csv", "O1")
-    generate_review_csv(args.instances, args.explicit_dir,
-                        args.output_dir / "o2_review.csv", "O2")
+    generate_review_csv(
+        args.instances, args.explicit_dir, args.output_dir / "o1_review.csv", "O1"
+    )
+    generate_review_csv(
+        args.instances, args.explicit_dir, args.output_dir / "o2_review.csv", "O2"
+    )
 
 
 if __name__ == "__main__":

@@ -1,10 +1,10 @@
 """Merge human O1/O2 classification into instances.csv; assign O-anchors and host passages."""
+
 from __future__ import annotations
 
 import argparse
 import csv
 import re
-import sys
 from pathlib import Path
 
 
@@ -53,9 +53,15 @@ def _get_expression_from_notes(notes: str) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--instances", type=Path, default=Path("instruments/instances.csv"))
-    parser.add_argument("--o1-review", type=Path, default=Path("instruments/o1_review.csv"))
-    parser.add_argument("--o2-review", type=Path, default=Path("instruments/o2_review.csv"))
+    parser.add_argument(
+        "--instances", type=Path, default=Path("instruments/instances.csv")
+    )
+    parser.add_argument(
+        "--o1-review", type=Path, default=Path("instruments/o1_review.csv")
+    )
+    parser.add_argument(
+        "--o2-review", type=Path, default=Path("instruments/o2_review.csv")
+    )
     parser.add_argument("--specimens", type=Path, default=Path("corpus/specimens.csv"))
     parser.add_argument("--explicit-dir", type=Path, default=Path("corpus/explicit"))
     parser.add_argument("--implicit-dir", type=Path, default=Path("corpus/implicit"))

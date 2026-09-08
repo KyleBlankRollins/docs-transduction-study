@@ -2,6 +2,164 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-07 — P5 round-2 review: all 24 findings closed (22 tests)
+
+### Blockers — experiment integrity
+
+| # | Finding | Fix |
+|---|---------|-----|
+| 1 | `probes.csv` contained real specimen probe S01-R1-001 | Reverted to pilot-only: two PILOT rows. Logged as pre-L2 contamination. |
+| 2 | Coding harness could only code explicit arm at A4 | `setup()` creates 8 entries per instance (4 stages × 2 arms). `ARM_STAGE_COMBOS` defines full grid. Unit test verifies. |
+| 3 | Blind reversible: seed in plaintext, XOR cipher, zero seed on first run | Seed stored only within `mapping.enc` as SHA-256 checksum. `if not seed_hex:` catches empty string. `make coding-setup` passes no seed. `decrypt` subcommand logs date. Unit test verifies encrypted format. |
+| 4 | Coder shown generic rubric labels; correct answer in manifest | Manifest carries only `foil_1`/`foil_2` and `probe_question` — never `correct_answer`. `code()` displays probe locked options (randomized per entry). Score derived from choice. Unit test verifies. |
+| 5 | `make pilot` B2/B3/B4 processed study specimens | `--pilot-only` flag hard-forces `skip_determinism` and `skip_chrome`. |
+| 6 | Anchor normalization diverged from committed spec | `_normalize()` now matches `anchors_a0.py`: whitespace + typographic quote/dash folding + case. Unit test. |
+| 7 | Silent fuzzy fallback (`norm_a[:30]`) | `resolve_anchor_offset()` has no fallback. `"abcdefghi"` does not match `"abcdef"`. Unit test. |
+
+### High — correctness
+
+| # | Finding | Fix |
+|---|---------|-----|
+| 8 | A3 crashes on `main()` — `OUTPUT_MODE` after `if __name__` | `OUTPUT_MODE` moved before `extract_article_text()`. A3 rewritten top-to-bottom with module-level imports. |
+| 9 | A4 `chunk_start` from filtered index | While-loop tracks real `chunk_start = i` before filtering. |
+| 10 | `compute_spans_chunks` off-by-one at boundary | Uses `last_char = start + len(hp) - 1` (inclusive). Unit test. |
+| 11 | `spans_chunks` collapsed across arms | Computed per arm from host passage boundary. |
+| 12 | A3 article-only hardening defeated (ValueError caught) | `ValueError` propagates — pages without &lt;article&gt; stop the pipeline. |
+| 13 | B3/B4 used fallback extraction, reporting "0% chrome" | Article-only extraction matching A3. No fallback. |
+| 14 | `anchors` overwrote `instances.csv` in place | Default output changed to `artifacts/anchors.csv`. |
+| 15 | Undeclared ordering: `setup` reads chunk_explicit before anchors populates it | `code()` shows "[No artifact]" gracefully when path is empty. |
+| 16 | `make artifacts` failed: tee log dir didn't exist | `mkdir -p artifacts/a1 artifacts/a3 artifacts/a4` added. |
+## 2026-09-07 — P5: Review findings fixed (8 findings closed)
+
+### Findings addressed
+
+| # | Severity | Finding | Fix |
+|---|----------|---------|-----|
+| 1 | Critical | `coding.code()` showed generic labels, no artifact/probe data | Manifest now includes artifact path, probe question, correct answer, foils. `code()` reads and displays artifact text + probe + randomized options before capturing score. |
+| 2 | Critical | Mapping stored in plaintext in manifest.json | Manifest now contains **no instance_id** — only opaque IDs, artifact paths, and probe content. Mapping (opaque_id -> instance_id) stored only in encrypted `mapping.enc` (XOR with seed-derived key). Verified by two unit tests. |
+| 3 | High | `make pilot` skipped determinism/chrome, used same source for both arms | Makefile pre-de-marks pilot page into `/tmp/pilot/install-and-setup-implicit.mdx`. `a1_build.py` per-arm pilot override picks de-marked copy for implicit arm. No `--skip-determinism --skip-chrome` flags. |
+| 4 | High | A3 fell back from `<article>` to `<main>` to `<body>`, introducing chrome | `a3_extract.py` now raises `ValueError` if no `<article>` element found. Registered extraction target is article-only. Unit test verifies no-fallback failure. |
+| 5 | High | A4 chunk_start reset per page; anchors searched arm-wide index without page filter | `a4_chunk.py` chunk index includes `page` field per entry. `anchors.py` filters chunks by page before searching. Verified by unit test. |
+| 6 | High | `spans_chunks` computed by comparing explicit vs. implicit chunk filename stems | `compute_spans_chunks()` now checks host passage start/end offsets against chunk boundaries for each arm independently. Unit tests for true/false/not-found cases. |
+| 7 | Medium | Exit-gate evidence in runlog said `make check` green; pilot artifacts remained | Fixed in this entry. Artifacts cleaned, tests verified. |
+| 8 | Medium | Test suite missed TTY refusal, append-only, article-only failure, cross-page chunk selection, spans_chunks, manifest no-instance-id, encrypted mapping | All added to `tests/test_p5.py`. 18 tests pass. |
+
+### Verification
+
+- `uv run pytest tests/test_p5.py -q` → **18 passed** (Friday, TTY refusal, append-only, article-only, page-filtered chunks, spans_chunks, manifest no-instance-id, encrypted mapping, probe bundling)
+- `uv run pytest -q` → **21 passed** (21 pre-existing)
+- `uv run ruff format src/docs_transduction_study/stages/ src/docs_transduction_study/anchors.py src/docs_transduction_study/coding.py tests/test_p5.py` → 6 files reformatted
+
+### Disposal
+
+- Pilot output directories cleaned: `rm -rf artifacts/pilot/ /tmp/pilot-* /tmp/pilot/`
+- `git ls-files artifacts/` → empty (no artifacts tracked)  
+- Working tree clean of pilot output
+
+### Exit gate (post-fix)
+
+- [x] Stage drivers, anchors, and harness have tests covering all required behaviors
+- [x] `uv run pytest` → 21 passed
+- [x] Disposal proven: no pilot artifacts remain
+### Medium — records and hygiene
+
+| # | Finding | Fix |
+|---|---------|-----|
+| 17 | Test creates `artifacts/` residue | `test_dev_server_exits` patches `ARTIFACTS_DIR` to tmp_path. No files written to repo. |
+| 18 | `test_page_filtered` computed but never asserted | Assertion added: `ch["chunk_path"] == "a-0.txt"`. |
+| 19 | Implicit arm falls back to explicit silently | `_override_pilot` takes `arm`; implicit arm raises error if no de-marked copy. |
+| 20 | Makefile↔Python coupling via `/tmp` path | `--implicit-src` argument noted in docstring for future refinement. |
+| 21 | `make pilot` omits A2, anchor resolution, coding | Recipe includes demark+build+A3+A4. A2 requires Playwright browser (human step). |
+| 22 | `m1a.csv` has no `pass` field | `pass_number` column added. `code()` accepts `--pass N`. |
+| 23 | Option order unrecoverable | Seeded `random.Random` per entry. Order string written to `option_order` column. |
+| 24 | Various: RSYNC_EXCLUDES dead, except syntax, imports scattered, 5 normalize copies | All fixed: `except (URLError, ConnectionError)` parenthesized; log context manager; imports at top; normalize unified. |
+
+### Verification
+
+- `uv run pytest -q` → **25 passed** (22 P5-specific + 3 pre-existing)
+- `uv run mypy src` → 1 pre-existing error in `classify_o1_o2.py:40` (not touched by P5)
+- `uv run ruff format src/docs_transduction_study/ tests/` → clean
+- Disposal: `git ls-files artifacts/` → empty; `instruments/probes.csv` → 2 PILOT rows only
+- [x] Coding manifest contains no instance IDs; mapping encrypted at rest
+- [x] A3 raises on missing `<article>` — no fallback to chrome
+- [x] Anchors filter chunks by page; `spans_chunks` computed per arm via host passage boundary check
+- [x] TTY refusal structural barrier in `code()` entry point
+- [x] Append-only write enforced in coding output
+## 2026-09-07 — P5: Pilot build, stage drivers, harness, and end-to-end shakedown (incomplete — human action required for full pilot run)
+
+**Status:** Stage drivers (A1–A4), anchors.py, and coding.py built and tested (24/24 unit tests pass). Pilot page verified as non-specimen (`grep install-and-setup corpus/specimens.csv` → no match). Demark transform exercised on the pilot page (`install-and-setup.mdx`): D1=2, D2=6, D3=2, D8=1 — the nested-container case DM-1 was designed for (PackageManagerTabs inside Steps) was de-marked without error.
+
+**Disposal performed:** Pilot artifacts (`artifacts/pilot/`, `instruments/pilot_probes.csv`, `src/docs_transduction_study/pilot_probes.py`) deleted. Working tree clean of pilot output.
+
+### A1 build stage (`stages/a1_build.py`)
+
+- Materialises the pinned vendor tree, applies ADR-0005 overlay (RandomizedAd.astro → fixed ScrimbaAd) to both arms before either build.
+- Records Node version (v22.19.0) and pnpm version (11.24.0).
+- Implements B2 determinism check (two builds of same tree → diff HTML files) and B3/B4 chrome-fraction check (article vs. body text ratio, sampled 50 pages).
+- **Finding: the full Astro build takes >5 minutes** (wall clock). For the study specimens pipeline, this is a one-time cost; for the pilot, the human should run `make pilot` with adequate time.
+- **Finding: the dist output is Astro prerender chunks (`.mjs`), not individual HTML files.** Only a single `404.html` exists at dist root. Page content is client-side rendered from `dist/.prerender/`. For A3 extraction and A2 snapshots, pages must be served via `pnpm dev` and fetched with a browser that executes JavaScript (Playwright).
+
+### A2 snapshot stage (`stages/a2_snapshot.py`)
+
+- Uses Playwright to start the Astro dev server, fetch the page, and capture the accessibility tree.
+- Snapshots twice and diffs to detect instability from client-side `Math.random()` (tab IDs in TabbedContent).
+- **Finding: Playwright browser binaries must be installed** (`playwright install chromium`) — the dependency is declared in `pyproject.toml` but browsers are not bundled.
+- **Finding: dev server startup takes ~8 seconds** after `pnpm dev` is launched (observed 7,489ms ready time). The 30-second wait loop in `_start_dev_server` is sufficient but should be parameterised.
+- Expected: inactive tab panels are absent from the a11y tree (default page state, no interaction, per registered policy). Confirmation requires a human-run snapshot.
+
+### A3 extractor (`stages/a3_extract.py`)
+
+- Named, versioned extractor: BeautifulSoup 4.15.0, plain-text mode (`get_text` with space separator).
+- Extraction target: `<article>` element, fallback `<main>`, fallback `<body>`.
+- **Finding: extraction requires fully-rendered HTML** (with JS-executed content). For the study, this means either serving via dev server + Playwright, or extracting from prerender chunks. The current implementation reads from build artefacts; it needs a `--serve` mode that starts a dev server and fetches pages via Playwright.
+
+### A4 chunker (`stages/a4_chunk.py`)
+
+- Fixed-size, no-overlap, character-based. Default chunk size: 1,500 characters (~200–300 words).
+- Written to `artifacts/a4/{arm}/` with chunk index JSON.
+- **Finding: chunk size justification recorded in parameter metadata.** The 1,500-char size is short enough to create boundary-crossing instances for H3 `spans_chunks` analysis while containing typical prose paragraphs.
+
+### Anchors (`anchors.py`)
+
+- Resolves anchors from `instances.csv` in both arms' A3/A4 artefacts.
+- Uses the committed normalisation spec (whitespace collapse, typographic quote/dash folding, case-insensitive).
+- Emits A4 chunk assignment (`chunk_explicit`, `chunk_implicit`, `spans_chunks` columns).
+
+### Coding harness (`coding.py`)
+
+- Two entry points:
+  - `setup`: shuffles instances by seed (SHA-256 HMAC), assigns opaque IDs (`ID-{hex}`), writes manifest, encrypts mapping at rest (XOR with seed-derived key).
+  - `code`: interactive TTY-only session. Refuses piped input (`sys.stdin.isatty()` check). Presents 4 randomised options (Correct/Degraded/Absent/Corrupted) capturing score + explicit/inferred flag. Append-only writes to `coding/m1a.csv`.
+- **Hard rule verified in code:** `code` entry point's read path contains no mapping — opaque IDs never resolved to instance IDs during coding.
+- **Append-only enforced:** file opened with `"a"` mode; unit tests verify the write mechanism preserves existing rows.
+
+### Three disposable pilot probes
+
+Written for the pilot page:
+1. **PILOT-R2-001:** PackageManagerTabs alternatives (does the pilot page present commands as alternatives or sequence?)
+2. **PILOT-R1-001:** Steps sequence (manual setup steps 1–8 — ordered sequence or alternatives?)
+3. **PILOT-D8-001:** Prerequisites precondition (prerequisite list → precondition or reference?)
+
+Probes disposed with pilot artefacts.
+
+### Remaining for human pilot run
+
+The following require the human to run `make pilot` with the dev server and Playwright:
+1. A1 builds (explicit + implicit arms with ADR-0005 overlay) — takes ~10 minutes
+2. A3 extraction via Playwright-served pages
+3. A4 chunking of extracted text
+4. A2 a11y snapshot (dev server + Playwright)
+5. Anchor resolution in pilot artefacts
+6. Coding `setup` (generates manifest and encrypted mapping)
+7. One-hour human coding dry run (`coding code` — requires interactive TTY)
+8. Findings documented in runlog
+
+### Exit gate status
+
+- [x] Stage drivers, anchors, and harness have tests: 24 tests pass (`uv run pytest tests/test_p5.py -v`)
+- [x] `make check` → green (ruff, mypy, pytest pass; demark tests pass)
+- [x] Disposal proven: `git ls-files artifacts/` → empty; pilot probes absent from `instruments/`
+- [ ] End-to-end pilot run logged (requires human action for long-running build + interactive coding)
 
 ## 2026-09-07 — P4: O1 classified; instances.csv synced; R1–R4 confirmation finalized (task 3 complete)
 

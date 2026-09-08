@@ -1,6 +1,7 @@
 """
 P4 — Relation inventory: R1-R4 candidate extraction and O1/O2 surfacing.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -18,9 +19,7 @@ _CUSTOM_TAB_WRAPPERS = (
     "PackageManagerTabs|UIFrameworkTabs|AstroVueTabs"
     "|StaticSsrTabs|JavascriptFlavorTabs|AstroJSXTabs"
 )
-_TABS_PATTERN = re.compile(
-    rf"<(?:Tabs|{_CUSTOM_TAB_WRAPPERS})\b", re.IGNORECASE
-)
+_TABS_PATTERN = re.compile(rf"<(?:Tabs|{_CUSTOM_TAB_WRAPPERS})\b", re.IGNORECASE)
 
 _ASIDE_DIRECTIVE_PATTERN = re.compile(
     r"(?:^|\n)\s*:::(note|tip|caution|danger)\b",
@@ -29,18 +28,24 @@ _ASIDE_DIRECTIVE_PATTERN = re.compile(
 _ASIDE_COMPONENT_PATTERN = re.compile(r"<Aside\b", re.IGNORECASE)
 
 _NORMATIVE_KEYWORDS = (
-    "MUST NOT", "SHALL NOT", "SHOULD NOT", "NOT RECOMMENDED",
-    "MUST", "SHALL", "REQUIRED", "SHOULD", "RECOMMENDED",
-    "MAY", "OPTIONAL",
+    "MUST NOT",
+    "SHALL NOT",
+    "SHOULD NOT",
+    "NOT RECOMMENDED",
+    "MUST",
+    "SHALL",
+    "REQUIRED",
+    "SHOULD",
+    "RECOMMENDED",
+    "MAY",
+    "OPTIONAL",
 )
 _KEYWORD_PATTERN = re.compile(
     r"(?<![A-Za-z])(?:" + "|".join(_NORMATIVE_KEYWORDS) + r")(?![A-Za-z])"
 )
 
 _TABLE_ROW = re.compile(r"^\s*\|.*\|\s*$")
-_TABLE_SEPARATOR = re.compile(
-    r"^\s*\|\s*:?-{3,}:?\s*(?:\|\s*:?-{3,}:?\s*)+\|\s*$"
-)
+_TABLE_SEPARATOR = re.compile(r"^\s*\|\s*:?-{3,}:?\s*(?:\|\s*:?-{3,}:?\s*)+\|\s*$")
 
 _PREREQ_HEADING_PATTERN = re.compile(
     r"^(#{2,4})\s+.*\b(?:Prerequisites?|Requirements?|What You.?ll Need)\b.*$",
@@ -88,6 +93,7 @@ _O2_FOLLOWING = re.compile(
 @dataclass
 class Instance:
     """One relation instance per instruments/instances.csv schema."""
+
     instance_id: str
     specimen_id: str
     relation_type: str
@@ -136,6 +142,7 @@ def _strip_frontmatter(text: str) -> str:
     text = re.sub(r"^import\s+.*?;?\n", "", text, flags=re.MULTILINE)
     return text
 
+
 FIELD_NAMES = [
     "instance_id",
     "specimen_id",
@@ -167,8 +174,9 @@ def extract_r_candidates(
         source_file = explicit_dir / source_path
 
         if not source_file.exists():
-            print(f"  WARNING: {source_file} not found, skipping {sid}",
-                  file=sys.stderr)
+            print(
+                f"  WARNING: {source_file} not found, skipping {sid}", file=sys.stderr
+            )
             continue
 
         text = source_file.read_text(encoding="utf-8")
@@ -181,72 +189,93 @@ def extract_r_candidates(
         # R1 / D1: Steps
         for m in _STEPS_PATTERN.finditer(text):
             line = text[: m.start()].count("\n") + 1
-            instances.append(Instance(
-                instance_id=_instance_id(sid, "R1", next_seq("R1")),
-                specimen_id=sid, relation_type="R1",
-                demark_rule="D1",
-                notes=f"<Steps> block at line {line}",
-            ))
+            instances.append(
+                Instance(
+                    instance_id=_instance_id(sid, "R1", next_seq("R1")),
+                    specimen_id=sid,
+                    relation_type="R1",
+                    demark_rule="D1",
+                    notes=f"<Steps> block at line {line}",
+                )
+            )
 
         # R2 / D2: Tabs (raw + custom wrappers)
         for m in _TABS_PATTERN.finditer(text):
             line = text[: m.start()].count("\n") + 1
             tag_name = m.group(0)[1:]
-            instances.append(Instance(
-                instance_id=_instance_id(sid, "R2", next_seq("R2")),
-                specimen_id=sid, relation_type="R2",
-                demark_rule="D2",
-                notes=f"<{tag_name}> at line {line}",
-            ))
+            instances.append(
+                Instance(
+                    instance_id=_instance_id(sid, "R2", next_seq("R2")),
+                    specimen_id=sid,
+                    relation_type="R2",
+                    demark_rule="D2",
+                    notes=f"<{tag_name}> at line {line}",
+                )
+            )
 
         # R3 / D3: Asides (directives and component form)
         for m in _ASIDE_DIRECTIVE_PATTERN.finditer(text):
             line = text[: m.start()].count("\n") + 1
             aside_type = m.group(1).lower()
-            instances.append(Instance(
-                instance_id=_instance_id(sid, "R3", next_seq("R3")),
-                specimen_id=sid, relation_type="R3",
-                demark_rule="D3",
-                notes=f":::{aside_type} directive at line {line}",
-            ))
+            instances.append(
+                Instance(
+                    instance_id=_instance_id(sid, "R3", next_seq("R3")),
+                    specimen_id=sid,
+                    relation_type="R3",
+                    demark_rule="D3",
+                    notes=f":::{aside_type} directive at line {line}",
+                )
+            )
         for m in _ASIDE_COMPONENT_PATTERN.finditer(text):
             line = text[: m.start()].count("\n") + 1
-            instances.append(Instance(
-                instance_id=_instance_id(sid, "R3", next_seq("R3")),
-                specimen_id=sid, relation_type="R3",
-                demark_rule="D3",
-                notes=f"<Aside> component at line {line}",
-            ))
-# R3 / D4: Normative keywords
+            instances.append(
+                Instance(
+                    instance_id=_instance_id(sid, "R3", next_seq("R3")),
+                    specimen_id=sid,
+                    relation_type="R3",
+                    demark_rule="D3",
+                    notes=f"<Aside> component at line {line}",
+                )
+            )
+        # R3 / D4: Normative keywords
         for m in _KEYWORD_PATTERN.finditer(text):
             line = text[: m.start()].count("\n") + 1
-            instances.append(Instance(
-                instance_id=_instance_id(sid, "R3", next_seq("R3")),
-                specimen_id=sid, relation_type="R3",
-                demark_rule="D4",
-                notes=f"keyword '{m.group()}' at line {line}",
-            ))
+            instances.append(
+                Instance(
+                    instance_id=_instance_id(sid, "R3", next_seq("R3")),
+                    specimen_id=sid,
+                    relation_type="R3",
+                    demark_rule="D4",
+                    notes=f"keyword '{m.group()}' at line {line}",
+                )
+            )
 
         # R4 / D7: Tables
         table_count = _count_tables(text)
         for ti in range(table_count):
-            instances.append(Instance(
-                instance_id=_instance_id(sid, "R4", next_seq("R4")),
-                specimen_id=sid, relation_type="R4",
-                demark_rule="D7",
-                notes=f"Table {ti + 1} of {table_count}",
-            ))
+            instances.append(
+                Instance(
+                    instance_id=_instance_id(sid, "R4", next_seq("R4")),
+                    specimen_id=sid,
+                    relation_type="R4",
+                    demark_rule="D7",
+                    notes=f"Table {ti + 1} of {table_count}",
+                )
+            )
 
         # R4 / D8: Prerequisite headings
         for m in _PREREQ_HEADING_PATTERN.finditer(text):
             line = text[: m.start()].count("\n") + 1
             heading_text = m.group(0).strip()
-            instances.append(Instance(
-                instance_id=_instance_id(sid, "R4", next_seq("R4")),
-                specimen_id=sid, relation_type="R4",
-                demark_rule="D8",
-                notes=f"Prerequisite heading '{heading_text}' at line {line}",
-            ))
+            instances.append(
+                Instance(
+                    instance_id=_instance_id(sid, "R4", next_seq("R4")),
+                    specimen_id=sid,
+                    relation_type="R4",
+                    demark_rule="D8",
+                    notes=f"Prerequisite heading '{heading_text}' at line {line}",
+                )
+            )
 
         r1 = seq.get("R1", 0)
         r2 = seq.get("R2", 0)
@@ -255,6 +284,8 @@ def extract_r_candidates(
         print(f"  {sid}: R1={r1} R2={r2} R3={r3} R4={r4}")
 
     return instances
+
+
 # ── O1/O2 candidate surfacing ────────────────────────────────────────────
 
 
@@ -293,12 +324,15 @@ def surface_o_candidates(
             if 2 <= len(expr.split()) <= 6:
                 o1_matches.add(expr)
         for expr in sorted(o1_matches):
-            instances.append(Instance(
-                instance_id=_instance_id(sid, "O1", next_seq("O1")),
-                specimen_id=sid, relation_type="O1",
-                demark_rule="",
-                notes=f"Referring expression candidate: '{expr}'",
-            ))
+            instances.append(
+                Instance(
+                    instance_id=_instance_id(sid, "O1", next_seq("O1")),
+                    specimen_id=sid,
+                    relation_type="O1",
+                    demark_rule="",
+                    notes=f"Referring expression candidate: '{expr}'",
+                )
+            )
 
         # O2: Deictic expressions
         o2_matches: dict[str, str] = {}  # expr -> source hint
@@ -316,12 +350,15 @@ def surface_o_candidates(
             o2_matches[m.group(0).strip()] = "rerouted from O1 (cataphoric)"
         for expr in sorted(o2_matches.keys()):
             source = o2_matches[expr]
-            instances.append(Instance(
-                instance_id=_instance_id(sid, "O2", next_seq("O2")),
-                specimen_id=sid, relation_type="O2",
-                demark_rule="",
-                notes=f"Deictic expression candidate ({source}): '{expr}'",
-            ))
+            instances.append(
+                Instance(
+                    instance_id=_instance_id(sid, "O2", next_seq("O2")),
+                    specimen_id=sid,
+                    relation_type="O2",
+                    demark_rule="",
+                    notes=f"Deictic expression candidate ({source}): '{expr}'",
+                )
+            )
 
         o1 = seq.get("O1", 0)
         o2 = seq.get("O2", 0)
@@ -368,8 +405,11 @@ def write_instances_csv(instances: list[Instance], output: Path) -> None:
     new_count = sum(1 for i in instances if i.instance_id not in existing)
     preserved_count = sum(1 for i in instances if i.instance_id in existing)
     total = len(merged)
-    print(f"Wrote {total} instances to {output}"
-          f" ({preserved_count} preserved from existing, {new_count} new)")
+    print(
+        f"Wrote {total} instances to {output}"
+        f" ({preserved_count} preserved from existing, {new_count} new)"
+    )
+
 
 # ── CLI ──────────────────────────────────────────────────────────────────
 
@@ -377,27 +417,33 @@ def write_instances_csv(instances: list[Instance], output: Path) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--specimens", type=Path,
+        "--specimens",
+        type=Path,
         default=Path("corpus/specimens.csv"),
     )
     parser.add_argument(
-        "--explicit-dir", type=Path,
+        "--explicit-dir",
+        type=Path,
         default=Path("corpus/explicit"),
     )
     parser.add_argument(
-        "--implicit-dir", type=Path,
+        "--implicit-dir",
+        type=Path,
         default=Path("corpus/implicit"),
     )
     parser.add_argument(
-        "--output", type=Path,
+        "--output",
+        type=Path,
         default=Path("instruments/instances.csv"),
     )
     parser.add_argument(
-        "--r-only", action="store_true",
+        "--r-only",
+        action="store_true",
         help="Only extract R1-R4 candidates",
     )
     parser.add_argument(
-        "--o-only", action="store_true",
+        "--o-only",
+        action="store_true",
         help="Only surface O1/O2 candidates",
     )
     args = parser.parse_args()
@@ -412,7 +458,9 @@ def main() -> None:
     if not args.r_only:
         print("Surfacing O1/O2 candidates...")
         o_candidates = surface_o_candidates(
-            args.specimens, args.explicit_dir, args.implicit_dir,
+            args.specimens,
+            args.explicit_dir,
+            args.implicit_dir,
         )
 
     all_candidates = r_candidates + o_candidates

@@ -1,6 +1,6 @@
 """Patch review CSVs with human classification decisions from provided data."""
+
 import csv
-import re
 from pathlib import Path
 
 # The 49 rejected O1 entries (instance_id -> rejection_reason)

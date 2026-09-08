@@ -1,4 +1,5 @@
 """Inventory counts — instances per type and cell-minimum check."""
+
 from __future__ import annotations
 
 import argparse
@@ -14,7 +15,9 @@ REQUIRED_TYPES = ["R1", "R2", "R3", "R4", "O1", "O2"]
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--instances", type=Path, default=Path("instruments/instances.csv"))
+    parser.add_argument(
+        "--instances", type=Path, default=Path("instruments/instances.csv")
+    )
     parser.add_argument("--specimens", type=Path, default=Path("corpus/specimens.csv"))
     args = parser.parse_args()
 
@@ -45,8 +48,12 @@ def main() -> None:
     print()
 
     # Per-type breakdown including D3 vs D4 split for R3
-    r3_d3 = sum(1 for r in instances if r["relation_type"] == "R3" and r["demark_rule"] == "D3")
-    r3_d4 = sum(1 for r in instances if r["relation_type"] == "R3" and r["demark_rule"] == "D4")
+    r3_d3 = sum(
+        1 for r in instances if r["relation_type"] == "R3" and r["demark_rule"] == "D3"
+    )
+    r3_d4 = sum(
+        1 for r in instances if r["relation_type"] == "R3" and r["demark_rule"] == "D4"
+    )
 
     print(f"{'Type':<12} {'Count':>6} {'Cell >=20?':<12}")
     print("-" * 32)
@@ -71,7 +78,9 @@ def main() -> None:
         all_pass = False
 
     print()
-    print(f"Demark rules used: {sorted(set(r['demark_rule'] for r in instances if r['demark_rule']))}")
+    print(
+        f"Demark rules used: {sorted(set(r['demark_rule'] for r in instances if r['demark_rule']))}"
+    )
 
     print()
     if all_pass:
@@ -79,7 +88,9 @@ def main() -> None:
     else:
         print(f"RESULT: SHORTFALL on {', '.join(shortfalls)} — needs runlog entry")
         for sf in shortfalls:
-            print(f"  {sf}: {type_counts.get(sf.split('=')[0], 0)} (minimum {CELL_MINIMUM})")
+            print(
+                f"  {sf}: {type_counts.get(sf.split('=')[0], 0)} (minimum {CELL_MINIMUM})"
+            )
 
     sys.exit(0 if all_pass else 1)
 

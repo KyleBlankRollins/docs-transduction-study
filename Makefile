@@ -4,6 +4,7 @@ UV_CACHE_DIR ?= $(TMPDIR)/uv-cache
 export UV_CACHE_DIR
 
 DEMARK_DIR := pipeline/demark
+VENDOR_DIR := vendor/astro-docs
 EXPLICIT_DIR := corpus/explicit
 IMPLICIT_DIR := corpus/implicit
 BUILD_DIR := build
@@ -95,7 +96,55 @@ classify-o1-o2:
 inventory-counts:
 	uv run python -m docs_transduction_study.inventory_counts --instances instruments/instances.csv --specimens corpus/specimens.csv
 
-pilot lint-probes artifacts anchors coding-setup code kappa analyze:
+# Build the implicit pilot page, then run the full A1-A4 pipeline + A2
+# with B2/B3/B4 checks enabled. Does NOT process study specimens.
+pilot:
+	@printf '>>> Running pilot (P5)...\n'
+	@mkdir -p artifacts/pilot
+	@mkdir -p /tmp/pilot
+	@printf '  De-marking pilot page for implicit arm...\n'
+	@npm run demark --prefix $(DEMARK_DIR) --silent -- --mode demark \
+		--in "$(VENDOR_DIR)/src/content/docs/en/install-and-setup.mdx" \
+		--out "/tmp/pilot/install-and-setup-implicit.mdx" \
+		--templates "$(CURDIR)/$(DEMARK_DIR)/templates.json" \
+		--report "/tmp/pilot-demark-report.json" 2>&1
+	@printf '  Building explicit + implicit arms with ADR-0005 overlay...\n'
+	@uv run python -m docs_transduction_study.stages.a1_build \
+		--pilot "install-and-setup.mdx" \
+		--pilot-only \
+		--out artifacts/pilot/a1 2>&1 | tee artifacts/pilot/build.log
+	@printf '  Full A3 extraction (article-only)...\n'
+	@uv run python -m docs_transduction_study.stages.a3_extract \
+		--artifacts artifacts/pilot/a1/artifacts --out artifacts/pilot/a3 2>&1 | tee artifacts/pilot/extract.log
+	@printf '  A4 chunking...\n'
+	@uv run python -m docs_transduction_study.stages.a4_chunk \
+		--in-dir artifacts/pilot/a3 --out artifacts/pilot/a4 --size 1500 2>&1 | tee artifacts/pilot/chunk.log
+	@printf '\nPilot pipeline complete — see artifacts/pilot/\n'
+	@printf 'Check:  ls artifacts/pilot/a1/artifacts/  (should have explicit/ and implicit/)\n'
+	@printf 'Check:  ls artifacts/pilot/a3/explicit/    (should have install-and-setup.txt)\n'
+	@printf 'Check:  ls artifacts/pilot/a4/explicit/    (should have chunk files)\n'
+
+artifacts:
+	@printf '>>> Generating A1-A4 artifacts for both arms...\n'
+	@mkdir -p artifacts/a1 artifacts/a3 artifacts/a4
+	@uv run python -m docs_transduction_study.stages.a1_build --out artifacts/a1 2>&1 | tee artifacts/a1/build.log
+	@uv run python -m docs_transduction_study.stages.a3_extract --artifacts artifacts/a1/artifacts --out artifacts/a3 2>&1 | tee artifacts/a3/extract.log
+	@uv run python -m docs_transduction_study.stages.a4_chunk --in-dir artifacts/a3 --out artifacts/a4 --size 1500 2>&1 | tee artifacts/a4/chunk.log
+	@printf 'Artifacts generated.\n'
+
+anchors:
+	@printf '>>> Resolving anchors in artifacts...\n'
+	@uv run python -m docs_transduction_study.anchors --instances instruments/instances.csv --a4-dir artifacts/a4 2>&1
+
+coding-setup:
+	@printf '>>> Setting up coding session...\n'
+	@uv run python -m docs_transduction_study.coding setup 2>&1
+
+code:
+	@printf '>>> Starting coding session (TTY required)...\n'
+	@uv run python -m docs_transduction_study.coding code
+
+lint-probes kappa analyze:
 	@printf '%s\n' "$(MAKECMDGOALS): not implemented" >&2
 	@exit 1
 

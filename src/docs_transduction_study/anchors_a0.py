@@ -1,4 +1,5 @@
 """Anchors A0 — verify every anchor resolves in both arms' A0 source."""
+
 from __future__ import annotations
 
 import argparse
@@ -35,7 +36,9 @@ def resolve_anchor(anchor: str, a0_source: str) -> bool:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--instances", type=Path, default=Path("instruments/instances.csv"))
+    parser.add_argument(
+        "--instances", type=Path, default=Path("instruments/instances.csv")
+    )
     parser.add_argument("--explicit-dir", type=Path, default=Path("corpus/explicit"))
     parser.add_argument("--implicit-dir", type=Path, default=Path("corpus/implicit"))
     parser.add_argument("--specimens", type=Path, default=Path("corpus/specimens.csv"))
@@ -72,13 +75,17 @@ def main() -> None:
         implicit_file = args.implicit_dir / source_path
 
         if a_explicit and explicit_file.exists():
-            if not resolve_anchor(a_explicit, explicit_file.read_text(encoding="utf-8")):
+            if not resolve_anchor(
+                a_explicit, explicit_file.read_text(encoding="utf-8")
+            ):
                 msg = f"{inst_id}: explicit anchor '{a_explicit}' not found in A0"
                 failures.append(msg)
                 print(f"  FAIL: {msg}", file=sys.stderr)
 
         if a_implicit and implicit_file.exists():
-            if not resolve_anchor(a_implicit, implicit_file.read_text(encoding="utf-8")):
+            if not resolve_anchor(
+                a_implicit, implicit_file.read_text(encoding="utf-8")
+            ):
                 msg = f"{inst_id}: implicit anchor '{a_implicit}' not found in A0"
                 failures.append(msg)
                 print(f"  FAIL: {msg}", file=sys.stderr)
@@ -88,7 +95,9 @@ def main() -> None:
         sys.exit(1)
 
     print(f"All {total_anchored} anchor(s) resolved in both arms (A0).")
-    print(f"{len(instances) - total_anchored} instance(s) have no anchor yet (waiting on human assignment).")
+    print(
+        f"{len(instances) - total_anchored} instance(s) have no anchor yet (waiting on human assignment)."
+    )
 
 
 if __name__ == "__main__":
