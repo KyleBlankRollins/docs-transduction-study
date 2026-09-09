@@ -182,9 +182,9 @@ def extract_r_candidates(
         text = source_file.read_text(encoding="utf-8")
         seq: dict[str, int] = {}
 
-        def next_seq(rt: str) -> int:
-            seq[rt] = seq.get(rt, 0) + 1
-            return seq[rt]
+        def next_seq(rt: str, _seq: dict[str, int] = seq) -> int:
+            _seq[rt] = _seq.get(rt, 0) + 1
+            return _seq[rt]
 
         # R1 / D1: Steps
         for m in _STEPS_PATTERN.finditer(text):
@@ -313,9 +313,9 @@ def surface_o_candidates(
 
         seq: dict[str, int] = {}
 
-        def next_seq(rt: str) -> int:
-            seq[rt] = seq.get(rt, 0) + 1
-            return seq[rt]
+        def next_seq(rt: str, _seq: dict[str, int] = seq) -> int:
+            _seq[rt] = _seq.get(rt, 0) + 1
+            return _seq[rt]
 
         # O1: Referring expressions
         o1_matches: set[str] = set()

@@ -74,21 +74,27 @@ def main() -> None:
         explicit_file = args.explicit_dir / source_path
         implicit_file = args.implicit_dir / source_path
 
-        if a_explicit and explicit_file.exists():
-            if not resolve_anchor(
+        if (
+            a_explicit
+            and explicit_file.exists()
+            and not resolve_anchor(
                 a_explicit, explicit_file.read_text(encoding="utf-8")
-            ):
-                msg = f"{inst_id}: explicit anchor '{a_explicit}' not found in A0"
-                failures.append(msg)
-                print(f"  FAIL: {msg}", file=sys.stderr)
+            )
+        ):
+            msg = f"{inst_id}: explicit anchor '{a_explicit}' not found in A0"
+            failures.append(msg)
+            print(f"  FAIL: {msg}", file=sys.stderr)
 
-        if a_implicit and implicit_file.exists():
-            if not resolve_anchor(
+        if (
+            a_implicit
+            and implicit_file.exists()
+            and not resolve_anchor(
                 a_implicit, implicit_file.read_text(encoding="utf-8")
-            ):
-                msg = f"{inst_id}: implicit anchor '{a_implicit}' not found in A0"
-                failures.append(msg)
-                print(f"  FAIL: {msg}", file=sys.stderr)
+            )
+        ):
+            msg = f"{inst_id}: implicit anchor '{a_implicit}' not found in A0"
+            failures.append(msg)
+            print(f"  FAIL: {msg}", file=sys.stderr)
 
     if failures:
         print(f"\n{len(failures)} anchor(s) failed to resolve", file=sys.stderr)

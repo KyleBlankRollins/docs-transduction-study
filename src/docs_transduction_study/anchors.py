@@ -150,9 +150,8 @@ def assign_chunks(
                 resolved += 1
 
                 # spans_chunks: check host passage boundary crossing
-                if host:
-                    if compute_spans_chunks(host, a3_text, page_chunks):
-                        spans_any = True
+                if host and compute_spans_chunks(host, a3_text, page_chunks):
+                    spans_any = True
 
         row["spans_chunks"] = "True" if spans_any else "False"
 

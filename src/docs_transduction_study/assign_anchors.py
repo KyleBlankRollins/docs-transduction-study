@@ -42,7 +42,7 @@ def _extract_anchor_explicit(
     elif demark_rule == "D2":
         for i in range(line_idx, min(line_idx + 10, len(lines))):
             l = lines[i].strip()
-            if l.startswith("<") or l.startswith("```") or not l:
+            if not l or l.startswith(("<", "```")):
                 continue
             anchor = l[:60].strip()
             break
@@ -53,12 +53,7 @@ def _extract_anchor_explicit(
         for i in range(line_idx, min(line_idx + 5, len(lines))):
             l = lines[i].strip()
             # Skip directive markers, closing tags, and code fences
-            if (
-                l.startswith(":::")
-                or l.startswith("</")
-                or l.startswith("```")
-                or not l
-            ):
+            if not l or l.startswith((":::", "</", "```")):
                 continue
             anchor = l[:60].strip()
             break

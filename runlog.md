@@ -2,6 +2,28 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-08 — P6 begun: entry gate cleared, probe linter built, coding-order seed generated
+
+**Entry gate.** P4 exit gate re-verified (560 instances, anchors-a0 resolves; R4=9 shortfall stands, recorded 2026-08-26). P5 exit gate cleared genuinely:
+
+- `make check` is green for the first time as claimed: ruff format + ruff check + mypy + **58 pytest** (25 pre-existing + 33 new P6) + demark typecheck + 44 vitest. This required closing P5's outstanding lint debt: 14 ruff errors (`anchors.py` SIM102; `anchors_a0.py` ×2 SIM102; `assign_anchors.py` ×2 PIE810; `classify_o1_o2.py` RUF059 + missing return; `inventory.py` ×5 B023; `inventory_counts.py` C401; `a2_snapshot.py` SIM115) and 1 mypy error (`_check_code_context` missing `return False`). All mechanical, none touch behavior.
+- **Pilot material cleared from `instruments/probes.csv`.** The file was reset from the two PILOT rows (round-2 contamination, logged 2026-09-07) to the §3 header alone. The P5 exit-gate item "pilot probes absent from `instruments/`" now holds; nothing pilot can leak into probe authoring. New `instruments/gate_exclusions.csv` created (§3 header, empty is valid).
+
+**Task 1 — probe linter built** (`src/docs_transduction_study/lint_probes.py`, `make lint-probes`). Enforces by code: exactly one probe per instance (full join: one probe **or** one exclusion per instance, disjoint and covering; equality `probes + exclusions == instances`); no probe free-text field verbatim in either arm's A0 source (raw and whitespace-collapsed; ≥4 chars, the distinctive-string threshold); ≤2 foils with `foil_1` required; foils are relations, not absence paraphrases (fixed wordlist — "the text does not say"-family is never stored, per §3); `version_change=true` ⇒ non-empty `superseded_answer` **and** `superseded_source`, and `false` with superseded content is incoherent; schema headers; duplicate-`instance_id` detection. Exit 1 on any error; verified blocking on the current unlocked probes.csv (561 errors: 560 instances with no probe + the equality), and 26 unit tests cover every check class plus the exit-1 CLI behavior.
+
+**Task 2 support — authoring surface** (`src/docs_transduction_study/probe_sheet.py`, `make probe-sheet`). Emits `build/probe-authoring-sheet.md` (gitignored): every instance with relation type, demark rule, anchors, and both host passages for the human to author against. It surfaces material only — it cannot and does not draft probe text, per the phase's reservation.
+
+**Task 5 — coding-order seed generated** (`src/docs_transduction_study/seed.py`, `make seed`). `coding/seed` written with a fresh random 64-hex seed; checksum recorded here:
+- seed checksum sha256[:16] = `107b0d1a5e139067` (seed value on disk, not reproduced here).
+
+`make coding-setup` now passes the committed seed into `setup` (empty-file fallback intact, so the P5 round-2 Find-3 empty-string fix holds). `make seed` refuses overwrite and refuses to run once `DESIGN.md` carries `instrument_locked`.
+
+**Deliberate deviation, logged pre-L2:** the raw seed is **generated but left uncommitted**, to land in the L2 commit per task 6. This resolves a conflict the phase text creates: task 5/L2 commit the seed while the P5 round-2 Finding 3 called the plaintext seed in repo a blinded-blind-reverser (coder could recompute opaque IDs from seed + instances.csv). Leaving it for the L2 act (a) satisfies the exit gate `git show --name-only <L2 commit>` naming all six instrument files with the seed *new* in that commit, and (b) lets the registrant decide at L2 whether to commit the raw seed or to store only its checksum and keep the seed out-of-band. **Decision needed before the L2 act.**
+
+**Open items carried from P4, still unresolved pre-L2**: (1) the string-vs-occurrence unit question (instances realize one unique expression string, not occurrences; registered unit is the occurrence) was flagged for the maintainer on 2026-09-07 and remains open; (2) R4 cell shortfall (9 < 20) stands per the 2026-08-26 recording.
+
+**Remaining = the HUMAN tasks of P6**: task 2 (author every probe; agent surfaces the sheet, drafts nothing), task 3 (both-arms gate, exclusions before the lock), task 4 (version-change subset with verified `superseded_source`), task 6 (take L2 — the two-commit convention).
+
 ## 2026-09-07 — P5 round-2 review: all 24 findings closed (22 tests)
 
 ### Blockers — experiment integrity

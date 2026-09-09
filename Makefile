@@ -8,7 +8,7 @@ VENDOR_DIR := vendor/astro-docs
 EXPLICIT_DIR := corpus/explicit
 IMPLICIT_DIR := corpus/implicit
 BUILD_DIR := build
-STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts assign-anchors review-o1-o2 classify-o1-o2 pilot lint-probes artifacts anchors coding-setup code kappa analyze
+STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts assign-anchors review-o1-o2 classify-o1-o2 pilot lint-probes probe-sheet seed artifacts anchors coding-setup code kappa analyze
 
 .PHONY: help check $(STAGES)
 
@@ -138,13 +138,31 @@ anchors:
 
 coding-setup:
 	@printf '>>> Setting up coding session...\n'
-	@uv run python -m docs_transduction_study.coding setup 2>&1
+	@uv run python -m docs_transduction_study.coding setup --seed "$$(cat coding/seed 2>/dev/null || echo '')" 2>&1
 
 code:
 	@printf '>>> Starting coding session (TTY required)...\n'
 	@uv run python -m docs_transduction_study.coding code
 
-lint-probes kappa analyze:
+# ── Phase P6: probe linter, authoring sheet, coding-order seed ────────────
+
+# Enforce the probe authoring rules by code (P6 task 1). Exit 0 only on a
+# probes.csv that satisfies exactly-one-probe-per-instance, the
+# distinctive-string rule, the foil cap, and the version-change fields.
+lint-probes:
+	@uv run python -m docs_transduction_study.lint_probes
+
+# Surface instances + host passages for the human probe author (P6 task 2).
+# Generates only source material; it never drafts probe text.
+probe-sheet:
+	@uv run python -m docs_transduction_study.probe_sheet
+
+# Generate the coding-order seed at coding/seed, checksum for runlog (P6 task 5).
+# Refuses to overwrite an existing seed and refuses to run after L2.
+seed:
+	@uv run python -m docs_transduction_study.seed
+
+kappa analyze:
 	@printf '%s\n' "$(MAKECMDGOALS): not implemented" >&2
 	@exit 1
 

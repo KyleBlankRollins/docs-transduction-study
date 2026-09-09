@@ -4,8 +4,8 @@ Implements **W5** and **L2**. Authority: `IMPLEMENTATION_PLAN.md` §2 W5/L2, §3
 
 ## Entry gate
 
-- [ ] P4 exit gate passing (inventory complete, A0 anchors resolve).
-- [ ] P5 exit gate passing (pilot disposed of — no pilot material can leak into probe authoring).
+- [x] P4 exit gate passing (inventory complete, A0 anchors resolve).
+- [x] P5 exit gate passing (pilot disposed of — no pilot material can leak into probe authoring).
 
 ## Tasks
 

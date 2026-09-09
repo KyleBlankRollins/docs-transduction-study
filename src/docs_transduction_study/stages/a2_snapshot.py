@@ -73,13 +73,14 @@ def _start_dev_server(tree_dir: Path, port: int) -> subprocess.Popen:
     """Start the Astro dev server. Returns process handle."""
     log = ARTIFACTS_DIR / "a2" / "server.log"
     log.parent.mkdir(parents=True, exist_ok=True)
-    proc = subprocess.Popen(
-        ["pnpm", "dev", "--port", str(port), "--host"],
-        cwd=tree_dir,
-        stdout=open(log, "w"),
-        stderr=subprocess.STDOUT,
-        # type: ignore[arg-type]
-    )
+    with open(log, "w") as logf:
+        proc = subprocess.Popen(
+            ["pnpm", "dev", "--port", str(port), "--host"],
+            cwd=tree_dir,
+            stdout=logf,
+            stderr=subprocess.STDOUT,
+            # type: ignore[arg-type]
+        )
     import urllib.error
     import urllib.request
 

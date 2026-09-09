@@ -79,7 +79,7 @@ def main() -> None:
 
     print()
     print(
-        f"Demark rules used: {sorted(set(r['demark_rule'] for r in instances if r['demark_rule']))}"
+        f"Demark rules used: {sorted({r['demark_rule'] for r in instances if r['demark_rule']})}"
     )
 
     print()

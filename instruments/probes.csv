@@ -1,3 +1,1 @@
-probe_id,instance_id,relation_type,artifact_stage,question,correct_answer,foil_1,foil_2
-PILOT-R2-001,PILOT-R2,R2,A4,What is the relationship among the three package manager commands?,Alternatives - run exactly one,Sequence - run all three,The text does not say
-PILOT-R1-001,PILOT-R1,R1,A4,What is the relationship among steps 1 through 8?,Ordered sequence,Alternatives - choose one,The text does not say
+probe_id,instance_id,question,correct_answer,foil_1,foil_2,version_change,superseded_answer,superseded_source

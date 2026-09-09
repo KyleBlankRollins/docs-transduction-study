@@ -96,8 +96,7 @@ def _lower_normalize(expr: str) -> str:
 
 def _check_code_context(before: str, after: str) -> bool:
     """True if expression is inside a code block."""
-    if "```" in (before + after):
-        return True
+    return "```" in (before + after)
 
 
 def classify_o1(row: dict[str, str]) -> tuple[str, str, str]:
@@ -188,7 +187,7 @@ def main() -> None:
             writer.writeheader()
             for row in rows:
                 if not row.get("accept"):
-                    accept, reason, note = classify_fn(row)
+                    accept, reason, _note = classify_fn(row)
                     if accept:
                         row["accept"] = accept
                         row["rejection_reason"] = reason
