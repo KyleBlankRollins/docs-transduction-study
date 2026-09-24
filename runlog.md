@@ -2,6 +2,13 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-23 — A5 amendment commit recorded
+
+Amendment A5 is commit `e36209b4e6a04fe8fb22b67c3c12a3170e977051`, recorded in DESIGN frontmatter as
+`instrument_amendment_commits`. `verify-lock` now checks the lock files against
+that commit (L2 `ace31884` remains the lock of record). Study generation has not
+been rerun.
+
 ## 2026-09-23 — Amendment A5 applied (D3 paragraph fix); partial A1 disposed
 
 On maintainer approval: D3 fix plus a Vitest regression that parses real output
