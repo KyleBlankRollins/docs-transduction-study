@@ -15,9 +15,15 @@ by another.
 - Checks: authenticated inference; the live export's provider and model IDs;
   reasoning-part handling; answer-JSON compliance; one step per session; no tools;
   fresh session IDs; and the repeat path.
-- Prerequisite (maintainer action): confirm OpenCode Go's account-level
-  **"Use balance" fallback to Zen credits is OFF**. The CLI cannot show it. Also
-  confirm that Go's "typical coding agent traffic" terms cover this workload.
+- Prerequisite (maintainer action): confirm there is no paid fallback. Per
+  opencode.ai/docs/go, the opt-in "Use balance" option exists only "if you also
+  have credits on your Zen balance"; by default, reaching the Go limit blocks
+  requests. The docs give no console path, and the option may be absent without
+  Zen credits. Check in the console that the Zen balance is $0 with no billing
+  method, or, if a card is on file, that auto-reload is off and a monthly usage
+  limit is set. Also confirm that Go's "typical coding agent traffic" terms
+  cover this workload. The smoke test (6 calls, <10k tokens) cannot plausibly
+  reach the limit; this matters for the full run.
 - Afterwards: record the aggregate results in the runlog, dispose of the smoke
   outputs, then freeze `coding/AI_PROTOCOL.md` (configuration sha256 from
   `configuration_record`, CLI 1.18.32).

@@ -1,11 +1,17 @@
 # M1-AI Evaluation Protocol
 
-Status: executable scoring/recording core and tool-free pilot validated on
-2026-09-23; OpenCode transport implemented and verified **offline** on
-2026-09-23 (mocked CLI plus the real CLI against a loopback fake provider).
-**Not frozen for study use**: the bounded live smoke test, provider-account
-quota settings, and freeze are pending approval. No study responses exist.
-Amendment A3 governs this exploratory measure. Human M1a remains separate.
+Status: **frozen 2026-09-23** after the approved live smoke test, for use once
+L2 exists. No study responses have been collected. Changes after L2 require an
+amendment.
+
+Frozen configuration (`opencode_runner.configuration_record`): OpenCode CLI
+1.18.32; `opencode-go/glm-5.3-flash`; variant `default` (provider reasoning
+effort unknown); temperature 0; output cap 32,000; top-p, seed, and weights
+unknown; protocol `m1-ai-1`; evaluator prompt sha256
+`b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679`; agent
+prompt sha256 `a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944`;
+generated-config sha256
+`7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd`.
 
 ## Selected Model
 

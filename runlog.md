@@ -2,6 +2,27 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-23 — Approved live smoke test passed; M1-AI protocol frozen
+
+On maintainer approval, `opencode_runner smoke` ran three disposable synthetic
+packets plus one repeat against `opencode-go/glm-5.3-flash` (budget 6). Result:
+4 invocations, 4 recorded, no retries, errors, tool events, or quota messages.
+Every session export and assistant turn reported provider `opencode-go`, model
+`glm-5.3-flash`, variant `default`; four distinct fresh sessions, one step each,
+CLI 1.18.32, one configuration hash. Scores: the two answerable probes 3 and 3
+(explicit quotes); the deliberately unanswerable probe chose absence (1); the
+repeat matched (3/3). Usage about 410-420 input and 60-200 output tokens per
+call; reported total cost about $0.0005. Observed: one answer arrived in a
+```json fence (the single parser tolerance, which was needed); two responses
+included reasoning parts while reported reasoning tokens were 0, so reasoning
+token accounting is unreliable for cost estimates.
+
+The prerequisite was reframed from the docs: per opencode.ai/docs/go, "Use
+balance" is opt-in and exists only with Zen credits; the maintainer approved the
+smoke test after that clarification. Smoke inputs/outputs were deleted and
+absence verified; only these aggregates are kept. `coding/AI_PROTOCOL.md` is now
+frozen (configuration sha256 `7533af43…afacd`). L2 remains pending approval.
+
 ## 2026-09-23 — Maintainer decisions for L2; lock check corrected
 
 **Decisions (maintainer, recorded in `L2_APPROVAL_PACKAGE.md`):** the raw
