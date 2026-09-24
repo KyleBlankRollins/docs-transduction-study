@@ -10,7 +10,7 @@ registered: "2026-08-02"
 registration_commit: "75667a9a494b076e79e9f5aba5bd0dc932d890a1"
 instrument_locked: "2026-09-23"
 instrument_lock_commit: "ace31884f457b5e63b061e3584678552276b11a7"
-instrument_amendment_commits: "e36209b4e6a04fe8fb22b67c3c12a3170e977051"
+instrument_amendment_commits: "e36209b4e6a04fe8fb22b67c3c12a3170e977051,d789182e1aec17a6e02bc7fa969a19c1691dd0f0"
 repository: "docs-transduction-study — separate repository, not this one"
 ---
 
