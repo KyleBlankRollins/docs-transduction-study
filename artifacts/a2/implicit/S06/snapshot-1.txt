@@ -1,0 +1,639 @@
+- link "Skip to content":
+  - /url: "#_top"
+- banner:
+  - link "Astro":
+    - /url: https://astro.build/
+    - img
+  - link "Docs":
+    - /url: /en/getting-started/
+    - img
+  - button "Search":
+    - img
+    - text: Search
+  - link "GitHub":
+    - /url: https://github.com/withastro/astro
+  - link "Discord":
+    - /url: https://astro.build/chat
+  - text: Select theme
+  - combobox "Select theme":
+    - option "Dark"
+    - option "Light"
+    - option "Auto" [selected]
+  - text: Select language
+  - combobox "Select language":
+    - option "English" [selected]
+    - option "Deutsch"
+    - option "Português do Brasil"
+    - option "Español"
+    - option "简体中文"
+    - option "正體中文"
+    - option "Français"
+    - option "हिन्दी"
+    - option "العربية"
+    - option "日本語"
+    - option "한국어"
+    - option "Polski"
+    - option "Русский"
+    - option "Italiano"
+- navigation "Main":
+  - tablist:
+    - tab "Tutorial"
+    - tab "Guide"
+    - tab "Reference"
+    - tab "Ecosystem" [selected]
+  - tabpanel "Ecosystem":
+    - list:
+      - listitem:
+        - group: UI frameworks
+      - listitem:
+        - group: Adapters
+      - listitem:
+        - group: Other official integrations
+      - listitem:
+        - group:
+          - text: Deployment guides
+          - list:
+            - listitem:
+              - link "Deployment overview":
+                - /url: /en/guides/deploy/
+            - listitem:
+              - link "AWS":
+                - /url: /en/guides/deploy/aws/
+            - listitem:
+              - link "AWS via Flightcontrol":
+                - /url: /en/guides/deploy/aws-via-flightcontrol/
+            - listitem:
+              - link "AWS via SST":
+                - /url: /en/guides/deploy/aws-via-sst/
+            - listitem:
+              - link "Azion":
+                - /url: /en/guides/deploy/azion/
+            - listitem:
+              - link "Buddy":
+                - /url: /en/guides/deploy/buddy/
+            - listitem:
+              - link "Cleavr":
+                - /url: /en/guides/deploy/cleavr/
+            - listitem:
+              - link "Clever Cloud":
+                - /url: /en/guides/deploy/clever-cloud/
+            - listitem:
+              - link "Cloudflare":
+                - /url: /en/guides/deploy/cloudflare/
+            - listitem:
+              - link "CloudRay":
+                - /url: /en/guides/deploy/cloudray/
+            - listitem:
+              - link "Deno Deploy":
+                - /url: /en/guides/deploy/deno/
+            - listitem:
+              - link "DeployHQ":
+                - /url: /en/guides/deploy/deployhq/
+            - listitem:
+              - link "EdgeOne Pages":
+                - /url: /en/guides/deploy/edgeone-pages/
+            - listitem:
+              - link "Firebase":
+                - /url: /en/guides/deploy/firebase/
+            - listitem:
+              - link "Fleek":
+                - /url: /en/guides/deploy/fleek/
+            - listitem:
+              - link "Fly.io":
+                - /url: /en/guides/deploy/flyio/
+            - listitem:
+              - link "GitHub Pages":
+                - /url: /en/guides/deploy/github/
+            - listitem:
+              - link "GitLab Pages":
+                - /url: /en/guides/deploy/gitlab/
+            - listitem:
+              - link "Google Cloud":
+                - /url: /en/guides/deploy/google-cloud/
+            - listitem:
+              - link "Heroku":
+                - /url: /en/guides/deploy/heroku/
+            - listitem:
+              - link "Hostinger":
+                - /url: /en/guides/deploy/hostinger/
+            - listitem:
+              - link "Microsoft Azure":
+                - /url: /en/guides/deploy/microsoft-azure/
+            - listitem:
+              - link "Netlify":
+                - /url: /en/guides/deploy/netlify/
+            - listitem:
+              - link "Railway":
+                - /url: /en/guides/deploy/railway/
+            - listitem:
+              - link "Render":
+                - /url: /en/guides/deploy/render/
+            - listitem:
+              - link "Seenode":
+                - /url: /en/guides/deploy/seenode/
+            - listitem:
+              - link "Sevalla":
+                - /url: /en/guides/deploy/sevalla/
+            - listitem:
+              - link "Stormkit":
+                - /url: /en/guides/deploy/stormkit/
+            - listitem:
+              - link "Surge":
+                - /url: /en/guides/deploy/surge/
+            - listitem:
+              - link "Vercel":
+                - /url: /en/guides/deploy/vercel/
+            - listitem:
+              - link "Zeabur":
+                - /url: /en/guides/deploy/zeabur/
+            - listitem:
+              - link "Zephyr Cloud":
+                - /url: /en/guides/deploy/zephyr/
+            - listitem:
+              - link "Zerops":
+                - /url: /en/guides/deploy/zerops/
+      - listitem:
+        - group: Content management systems
+      - listitem:
+        - group: Backend services
+      - listitem:
+        - group: Image and video hosting
+      - listitem:
+        - link "E-commerce":
+          - /url: /en/guides/ecommerce/
+      - listitem:
+        - link "Authentication":
+          - /url: /en/guides/authentication/
+      - listitem:
+        - link "Testing":
+          - /url: /en/guides/testing/
+  - heading "Sponsored by" [level=2]
+  - link "Netlify":
+    - /url: https://www.netlify.com/?utm_campaign=Astro-2024&utm_source=astro-referral
+  - link "Webflow":
+    - /url: https://webflow.com/feature/cloud?utm_source=Astro&utm_medium=tech-partner&utm_campaign=fy26-astro&utm_content=fy26-docs
+  - link "Cloudflare":
+    - /url: https://www.cloudflare.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mux":
+    - /url: https://www.mux.com/?utm_campaign=21819274-Astro&utm_source=astro
+  - link "Image Kit":
+    - /url: https://imagekit.io/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mintlify":
+    - /url: https://www.mintlify.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+- complementary:
+  - navigation "On this page":
+    - heading "On this page" [level=2]
+    - list:
+      - listitem:
+        - link "Overview":
+          - /url: "#_top"
+      - listitem:
+        - link "Project Configuration":
+          - /url: "#project-configuration"
+        - list:
+          - listitem:
+            - link "Static Site":
+              - /url: "#static-site"
+          - listitem:
+            - link "Adapter for on-demand rendering":
+              - /url: "#adapter-for-on-demand-rendering"
+      - listitem:
+        - link "How to deploy":
+          - /url: "#how-to-deploy"
+        - list:
+          - listitem:
+            - link "On your own server":
+              - /url: "#on-your-own-server"
+          - listitem:
+            - link "GitHub Actions Deployment":
+              - /url: "#github-actions-deployment"
+          - listitem:
+            - link "CLI Deployment":
+              - /url: "#cli-deployment"
+  - complementary "Learn Astro with James Q Quick":
+    - img "Scrimba"
+    - heading "Learn Astro with James Q Quick" [level=2]:
+      - strong: Learn Astro
+      - text: with James Q Quick
+    - paragraph: Build your first site with 35 interactive Scrimba lessons
+    - link "Get 20% off":
+      - /url: https://scrimba.com/intro-to-astro-c00ar0fi5u?via=astro
+- main:
+  - heading "Deploy your Astro Site with Deno" [level=1]
+  - paragraph:
+    - text: You can deploy a static or on-demand rendered Astro site using Deno, either on your own server, or to
+    - link "Deno Deploy":
+      - /url: https://deno.com/deploy
+    - text: ", a distributed system that runs JavaScript, TypeScript, and WebAssembly at the edge, worldwide."
+  - paragraph: This guide includes instructions for running your Astro site on your own server with Deno, and deploying to Deno Deploy through GitHub Actions or the Deno Deploy CLI.
+  - paragraph: "Before you begin, you need the following:"
+  - paragraph:
+    - text: This guide assumes you already have
+    - link "Deno":
+      - /url: https://deno.com/
+    - text: installed.
+  - heading "Project Configuration" [level=2]
+  - link "Section titled “Project Configuration”":
+    - /url: "#project-configuration"
+  - paragraph: Your Astro project can be deployed as a static site, or as an on-demand rendered site.
+  - heading "Static Site" [level=3]
+  - link "Section titled “Static Site”":
+    - /url: "#static-site"
+  - paragraph: Your Astro project is a static site by default. You don’t need any extra configuration to deploy a static Astro site with Deno, or to Deno Deploy.
+  - heading "Adapter for on-demand rendering" [level=3]
+  - link "Section titled “Adapter for on-demand rendering”":
+    - /url: "#adapter-for-on-demand-rendering"
+  - paragraph: "To enable on-demand rendering in your Astro project using Deno, and to deploy on Deno Deploy:"
+  - paragraph: Complete the following steps in order.
+  - paragraph:
+    - text: First, Install
+    - link "the @deno/astro-adapter adapter":
+      - /url: https://github.com/denoland/deno-astro-adapter
+      - text: the
+      - code: "@deno/astro-adapter"
+      - text: adapter
+    - text: "to your project’s dependencies using your preferred package manager:"
+  - paragraph: Choose one of the following options. These are alternatives — use exactly one, not all of them.
+  - paragraph: "If you are using npm:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: npm install @deno/astro-adapter
+    - button "Copy to clipboard"
+  - paragraph: "If you are using pnpm:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: pnpm install @deno/astro-adapter
+    - button "Copy to clipboard"
+  - paragraph: "If you are using yarn:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: yarn add @deno/astro-adapter
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: Second, Update your
+    - code: astro.config.mjs
+    - text: project configuration file with the changes below.
+  - figure "astro.config.mjs":
+    - text: astro.config.mjs
+    - code: "import { defineConfig } from 'astro/config'; + import deno from '@deno/astro-adapter'; export default defineConfig({ + output: 'server', + adapter: deno(), });"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: Finally, Update your
+    - code: preview
+    - text: script in
+    - code: package.json
+    - text: with the change below.
+  - figure "package.json":
+    - text: package.json
+    - region:
+      - code: "{ \"scripts\": { \"dev\": \"astro dev\", \"start\": \"astro dev\", \"build\": \"astro build\", - \"preview\": \"astro preview\" + \"preview\": \"deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs\" } }"
+    - button "Copy to clipboard"
+  - paragraph: You can now use this command to preview your production Astro site locally with Deno.
+  - paragraph: Choose one of the following options. These are alternatives — use exactly one, not all of them.
+  - paragraph: "If you are using npm:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: npm run preview
+    - button "Copy to clipboard"
+  - paragraph: "If you are using pnpm:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: pnpm run preview
+    - button "Copy to clipboard"
+  - paragraph: "If you are using yarn:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: yarn run preview
+    - button "Copy to clipboard"
+  - heading "How to deploy" [level=2]
+  - link "Section titled “How to deploy”":
+    - /url: "#how-to-deploy"
+  - paragraph: You can run your Astro site on your own server, or deploy to Deno Deploy through GitHub Actions or using Deno Deploy’s CLI (command line interface).
+  - heading "On your own server" [level=3]
+  - link "Section titled “On your own server”":
+    - /url: "#on-your-own-server"
+  - paragraph: Complete the following steps in order.
+  - paragraph: First, Copy your project onto your server.
+  - paragraph: "Second, Install the project dependencies using your preferred package manager:"
+  - paragraph: Choose one of the following options. These are alternatives — use exactly one, not all of them.
+  - paragraph: "If you are using npm:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: npm install
+    - button "Copy to clipboard"
+  - paragraph: "If you are using pnpm:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: pnpm install
+    - button "Copy to clipboard"
+  - paragraph: "If you are using yarn:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: yarn install
+    - button "Copy to clipboard"
+  - paragraph: "Third, Build your Astro site with your preferred package manager:"
+  - paragraph: Choose one of the following options. These are alternatives — use exactly one, not all of them.
+  - paragraph: "If you are using npm:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: npm run build
+    - button "Copy to clipboard"
+  - paragraph: "If you are using pnpm:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: pnpm run build
+    - button "Copy to clipboard"
+  - paragraph: "If you are using yarn:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: yarn run build
+    - button "Copy to clipboard"
+  - paragraph: "Finally, Start your application with the following command:"
+  - paragraph: Choose one of the following options. These are alternatives — use exactly one, not all of them.
+  - paragraph: "If you are using static:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: deno run -A jsr:@std/http/file-server dist
+    - button "Copy to clipboard"
+  - paragraph: "If you are using ssr:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: deno run -A ./dist/server/entry.mjs
+    - button "Copy to clipboard"
+  - heading "GitHub Actions Deployment" [level=3]
+  - link "Section titled “GitHub Actions Deployment”":
+    - /url: "#github-actions-deployment"
+  - paragraph:
+    - text: If your project is stored on GitHub, the
+    - link "Deno Deploy website":
+      - /url: https://dash.deno.com/
+    - text: will guide you through setting up GitHub Actions to deploy your Astro site.
+  - paragraph: Complete the following steps in order.
+  - paragraph: First, Push your code to a public or private GitHub repository.
+  - paragraph:
+    - text: Second, Sign in on
+    - link "Deno Deploy":
+      - /url: https://dash.deno.com/
+    - text: with your GitHub account, and click on
+    - link "New Project":
+      - /url: https://dash.deno.com
+    - text: .
+  - paragraph:
+    - text: Third, Select your repository, the branch you want to deploy from, and select
+    - strong: GitHub Action
+    - text: mode. (Your Astro site requires a build step, and cannot use Automatic mode.)
+  - paragraph:
+    - text: Fourth, In your Astro project, create a new file at
+    - code: .github/workflows/deploy.yml
+    - text: and paste in the YAML below. This is similar to the YAML given by Deno Deploy, with the additional steps needed for your Astro site.
+  - paragraph: Choose one of the following options. These are alternatives — use exactly one, not all of them.
+  - paragraph: "If you are using static:"
+  - figure ".github/workflows/deploy.yml":
+    - text: .github/workflows/deploy.yml
+    - region:
+      - code: "name: Deploy on: [push] jobs: deploy: name: Deploy runs-on: ubuntu-latest permissions: id-token: write # Needed for auth with Deno Deploy contents: read # Needed to clone the repository steps: - name: Clone repository uses: actions/checkout@v7 # Not using npm? Change `npm ci` to `pnpm i` or `yarn install` - name: Install dependencies run: npm ci # Not using npm? Change `npm run build` to `pnpm run build` or `yarn run build` - name: Build Astro run: npm run build - name: Upload to Deno Deploy uses: denoland/deployctl@v1 with: project: my-deno-project # TODO: replace with Deno Deploy project name entrypoint: jsr:@std/http/file-server root: dist"
+    - button "Copy to clipboard"
+  - paragraph: "If you are using ssr:"
+  - figure ".github/workflows/deploy.yml":
+    - text: .github/workflows/deploy.yml
+    - region:
+      - code: "name: Deploy on: [push] jobs: deploy: name: Deploy runs-on: ubuntu-latest permissions: id-token: write # Needed for auth with Deno Deploy contents: read # Needed to clone the repository steps: - name: Clone repository uses: actions/checkout@v7 # Not using npm? Change `npm ci` to `pnpm i` or `yarn install` - name: Install dependencies run: npm ci # Not using npm? Change `npm run build` to `pnpm run build` or `yarn run build` - name: Build Astro run: npm run build - name: Upload to Deno Deploy uses: denoland/deployctl@v1 with: project: my-deno-project # TODO: replace with Deno Deploy project name entrypoint: dist/server/entry.mjs"
+    - button "Copy to clipboard"
+  - paragraph: Finally, After committing this YAML file, and pushing to GitHub on your configured deploy branch, the deploy should begin automatically!
+  - paragraph:
+    - text: You can track the progress using the “Actions” tab on your GitHub repository page, or on
+    - link "Deno Deploy":
+      - /url: https://dash.deno.com
+    - text: .
+  - heading "CLI Deployment" [level=3]
+  - link "Section titled “CLI Deployment”":
+    - /url: "#cli-deployment"
+  - paragraph: Complete the following steps in order.
+  - paragraph:
+    - text: First, Install the
+    - link "Deno Deploy CLI":
+      - /url: https://docs.deno.com/deploy/manual/deployctl
+    - text: .
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: deno install -gArf jsr:@deno/deployctl
+    - button "Copy to clipboard"
+  - paragraph: "Second, Build your Astro site with your preferred package manager:"
+  - paragraph: Choose one of the following options. These are alternatives — use exactly one, not all of them.
+  - paragraph: "If you are using npm:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: npm run build
+    - button "Copy to clipboard"
+  - paragraph: "If you are using pnpm:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: pnpm run build
+    - button "Copy to clipboard"
+  - paragraph: "If you are using yarn:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: yarn run build
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: Third, Run
+    - code: deployctl
+    - text: to deploy!
+  - paragraph: Choose one of the following options. These are alternatives — use exactly one, not all of them.
+  - paragraph: "If you are using static:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: cd dist && deployctl deploy jsr:@std/http/file-server
+    - button "Copy to clipboard"
+  - paragraph: "If you are using ssr:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: deployctl deploy ./dist/server/entry.mjs
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: You can track all your deploys on
+    - link "Deno Deploy":
+      - /url: https://dash.deno.com
+    - text: .
+  - paragraph:
+    - text: Finally, (Optional) To simplify the build and deploy into one command, add a
+    - code: deploy-deno
+    - text: script in
+    - code: package.json
+    - text: ", adapting it for your preferred package manager."
+  - paragraph: Choose one of the following options. These are alternatives — use exactly one, not all of them.
+  - paragraph: "If you are using static:"
+  - figure "package.json":
+    - text: package.json
+    - region:
+      - code: "{ \"scripts\": { \"dev\": \"astro dev\", \"start\": \"astro dev\", \"build\": \"astro build\", \"preview\": \"astro preview\", + \"deno-deploy\": \"npm run build && cd dist && deployctl deploy jsr:@std/http/file-server\" } }"
+    - button "Copy to clipboard"
+  - paragraph: "If you are using ssr:"
+  - figure "package.json":
+    - text: package.json
+    - region:
+      - code: "{ \"scripts\": { \"dev\": \"astro dev\", \"start\": \"astro dev\", \"build\": \"astro build\", \"preview\": \"deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs\", + \"deno-deploy\": \"npm run build && deployctl deploy ./dist/server/entry.mjs\" } }"
+    - button "Copy to clipboard"
+  - paragraph: Then you can use this command to build and deploy your Astro site in one step.
+  - paragraph: Choose one of the following options. These are alternatives — use exactly one, not all of them.
+  - paragraph: "If you are using npm:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: npm run deno-deploy
+    - button "Copy to clipboard"
+  - paragraph: "If you are using pnpm:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: pnpm run deno-deploy
+    - button "Copy to clipboard"
+  - paragraph: "If you are using yarn:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: yarn run deno-deploy
+    - button "Copy to clipboard"
+  - heading "More Deployment Guides" [level=2]
+  - list:
+    - listitem:
+      - heading "AWS" [level=3]:
+        - link "AWS":
+          - /url: /en/guides/deploy/aws/
+    - listitem:
+      - heading "AWS via Flightcontrol" [level=3]:
+        - link "AWS via Flightcontrol":
+          - /url: /en/guides/deploy/aws-via-flightcontrol/
+    - listitem:
+      - heading "AWS via SST" [level=3]:
+        - link "AWS via SST":
+          - /url: /en/guides/deploy/aws-via-sst/
+    - listitem:
+      - heading "Azion" [level=3]:
+        - link "Azion":
+          - /url: /en/guides/deploy/azion/
+    - listitem:
+      - heading "Buddy" [level=3]:
+        - link "Buddy":
+          - /url: /en/guides/deploy/buddy/
+    - listitem:
+      - heading "Cleavr" [level=3]:
+        - link "Cleavr":
+          - /url: /en/guides/deploy/cleavr/
+    - listitem:
+      - heading "Clever Cloud" [level=3]:
+        - link "Clever Cloud":
+          - /url: /en/guides/deploy/clever-cloud/
+    - listitem:
+      - heading "Cloudflare" [level=3]:
+        - link "Cloudflare":
+          - /url: /en/guides/deploy/cloudflare/
+    - listitem:
+      - heading "CloudRay" [level=3]:
+        - link "CloudRay":
+          - /url: /en/guides/deploy/cloudray/
+    - listitem:
+      - heading "Deno Deploy" [level=3]:
+        - link "Deno Deploy":
+          - /url: /en/guides/deploy/deno/
+    - listitem:
+      - heading "DeployHQ" [level=3]:
+        - link "DeployHQ":
+          - /url: /en/guides/deploy/deployhq/
+    - listitem:
+      - heading "EdgeOne Pages" [level=3]:
+        - link "EdgeOne Pages":
+          - /url: /en/guides/deploy/edgeone-pages/
+    - listitem:
+      - heading "Firebase" [level=3]:
+        - link "Firebase":
+          - /url: /en/guides/deploy/firebase/
+    - listitem:
+      - heading "Fleek" [level=3]:
+        - link "Fleek":
+          - /url: /en/guides/deploy/fleek/
+    - listitem:
+      - heading "Fly.io" [level=3]:
+        - link "Fly.io":
+          - /url: /en/guides/deploy/flyio/
+    - listitem:
+      - heading "GitHub Pages" [level=3]:
+        - link "GitHub Pages":
+          - /url: /en/guides/deploy/github/
+    - listitem:
+      - heading "GitLab Pages" [level=3]:
+        - link "GitLab Pages":
+          - /url: /en/guides/deploy/gitlab/
+    - listitem:
+      - heading "Google Cloud" [level=3]:
+        - link "Google Cloud":
+          - /url: /en/guides/deploy/google-cloud/
+    - listitem:
+      - heading "Heroku" [level=3]:
+        - link "Heroku":
+          - /url: /en/guides/deploy/heroku/
+    - listitem:
+      - heading "Hostinger" [level=3]:
+        - link "Hostinger":
+          - /url: /en/guides/deploy/hostinger/
+    - listitem:
+      - heading "Microsoft Azure" [level=3]:
+        - link "Microsoft Azure":
+          - /url: /en/guides/deploy/microsoft-azure/
+    - listitem:
+      - heading "Netlify" [level=3]:
+        - link "Netlify":
+          - /url: /en/guides/deploy/netlify/
+    - listitem:
+      - heading "Railway" [level=3]:
+        - link "Railway":
+          - /url: /en/guides/deploy/railway/
+    - listitem:
+      - heading "Render" [level=3]:
+        - link "Render":
+          - /url: /en/guides/deploy/render/
+    - listitem:
+      - heading "Seenode" [level=3]:
+        - link "Seenode":
+          - /url: /en/guides/deploy/seenode/
+    - listitem:
+      - heading "Sevalla" [level=3]:
+        - link "Sevalla":
+          - /url: /en/guides/deploy/sevalla/
+    - listitem:
+      - heading "Stormkit" [level=3]:
+        - link "Stormkit":
+          - /url: /en/guides/deploy/stormkit/
+    - listitem:
+      - heading "Surge" [level=3]:
+        - link "Surge":
+          - /url: /en/guides/deploy/surge/
+    - listitem:
+      - heading "Vercel" [level=3]:
+        - link "Vercel":
+          - /url: /en/guides/deploy/vercel/
+    - listitem:
+      - heading "Zeabur" [level=3]:
+        - link "Zeabur":
+          - /url: /en/guides/deploy/zeabur/
+    - listitem:
+      - heading "Zephyr Cloud" [level=3]:
+        - link "Zephyr Cloud":
+          - /url: /en/guides/deploy/zephyr/
+    - listitem:
+      - heading "Zerops" [level=3]:
+        - link "Zerops":
+          - /url: /en/guides/deploy/zerops/
+  - link "Edit page":
+    - /url: https://github.com/withastro/docs/edit/main/src/content/docs/en/guides/deploy/deno.mdx
+  - link "Translate this page":
+    - /url: https://contribute.docs.astro.build/guides/i18n/
+  - link "Previous CloudRay":
+    - /url: /en/guides/deploy/cloudray/
+  - link "Next DeployHQ":
+    - /url: /en/guides/deploy/deployhq/
+  - link "Contribute":
+    - /url: /en/contribute/
+  - link "Community":
+    - /url: https://astro.build/chat
+    - img
+    - text: Community
+  - link "Sponsor":
+    - /url: https://opencollective.com/astrodotbuild

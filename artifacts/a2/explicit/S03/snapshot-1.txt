@@ -1,0 +1,586 @@
+- link "Skip to content":
+  - /url: "#_top"
+- banner:
+  - link "Astro":
+    - /url: https://astro.build/
+    - img
+  - link "Docs":
+    - /url: /en/getting-started/
+    - img
+  - button "Search":
+    - img
+    - text: Search
+  - link "GitHub":
+    - /url: https://github.com/withastro/astro
+  - link "Discord":
+    - /url: https://astro.build/chat
+  - text: Select theme
+  - combobox "Select theme":
+    - option "Dark"
+    - option "Light"
+    - option "Auto" [selected]
+  - text: Select language
+  - combobox "Select language":
+    - option "English" [selected]
+    - option "Deutsch"
+    - option "Português do Brasil"
+    - option "Español"
+    - option "简体中文"
+    - option "正體中文"
+    - option "Français"
+    - option "हिन्दी"
+    - option "العربية"
+    - option "日本語"
+    - option "한국어"
+    - option "Polski"
+    - option "Русский"
+    - option "Italiano"
+- navigation "Main":
+  - tablist:
+    - tab "Tutorial"
+    - tab "Guide" [selected]
+    - tab "Reference"
+    - tab "Ecosystem"
+  - tabpanel "Guide":
+    - list:
+      - listitem:
+        - group:
+          - text: Welcome, world!
+          - list:
+            - listitem:
+              - link "Why Astro?":
+                - /url: /en/concepts/why-astro/
+            - listitem:
+              - link "Islands architecture":
+                - /url: /en/concepts/islands/
+            - listitem:
+              - link "Courses":
+                - /url: /en/astro-courses/
+      - listitem:
+        - group:
+          - text: Start a new project
+          - list:
+            - listitem:
+              - link "Installation":
+                - /url: /en/install-and-setup/
+            - listitem:
+              - link "Project structure":
+                - /url: /en/basics/project-structure/
+            - listitem:
+              - link "Develop and build":
+                - /url: /en/develop-and-build/
+      - listitem:
+        - group:
+          - text: Configuration
+          - list:
+            - listitem:
+              - link "Configuration overview":
+                - /url: /en/guides/configuring-astro/
+            - listitem:
+              - link "Editor setup":
+                - /url: /en/editor-setup/
+            - listitem:
+              - link "TypeScript":
+                - /url: /en/guides/typescript/
+            - listitem:
+              - link "Environment variables":
+                - /url: /en/guides/environment-variables/
+            - listitem:
+              - link "Working with integrations":
+                - /url: /en/guides/integrations/
+            - listitem:
+              - link "Build with AI":
+                - /url: /en/guides/build-with-ai/
+            - listitem:
+              - link "Dev toolbar":
+                - /url: /en/guides/dev-toolbar/
+      - listitem:
+        - group:
+          - text: Routing and navigation
+          - list:
+            - listitem:
+              - link "Pages":
+                - /url: /en/basics/astro-pages/
+            - listitem:
+              - link "Routing":
+                - /url: /en/guides/routing/
+            - listitem:
+              - link "Endpoints":
+                - /url: /en/guides/endpoints/
+            - listitem:
+              - link "Middleware":
+                - /url: /en/guides/middleware/
+            - listitem:
+              - link "Internationalization (i18n)":
+                - /url: /en/guides/internationalization/
+            - listitem:
+              - link "Prefetch":
+                - /url: /en/guides/prefetch/
+            - listitem:
+              - link "View transitions":
+                - /url: /en/guides/view-transitions/
+      - listitem:
+        - group:
+          - text: Build your UI
+          - list:
+            - listitem:
+              - link "Components":
+                - /url: /en/basics/astro-components/
+            - listitem:
+              - link "Layouts":
+                - /url: /en/basics/layouts/
+            - listitem:
+              - link "Styles and CSS":
+                - /url: /en/guides/styling/
+            - listitem:
+              - link "Fonts":
+                - /url: /en/guides/fonts/
+            - listitem:
+              - link "Syntax Highlighting":
+                - /url: /en/guides/syntax-highlighting/
+            - listitem:
+              - link "Scripts and event handling":
+                - /url: /en/guides/client-side-scripts/
+            - listitem:
+              - link "Front-end frameworks":
+                - /url: /en/guides/framework-components/
+      - listitem:
+        - group:
+          - text: Add content to your site
+          - list:
+            - listitem:
+              - link "Markdown":
+                - /url: /en/guides/markdown-content/
+            - listitem:
+              - link "Content collections":
+                - /url: /en/guides/content-collections/
+            - listitem:
+              - link "Images":
+                - /url: /en/guides/images/
+            - listitem:
+              - link "Data fetching":
+                - /url: /en/guides/data-fetching/
+      - listitem:
+        - group:
+          - text: Server rendering
+          - list:
+            - listitem:
+              - link "On-demand rendering":
+                - /url: /en/guides/on-demand-rendering/
+            - listitem:
+              - link "Server islands":
+                - /url: /en/guides/server-islands/
+            - listitem:
+              - link "Actions":
+                - /url: /en/guides/actions/
+            - listitem:
+              - link "Sessions":
+                - /url: /en/guides/sessions/
+            - listitem:
+              - link "Route caching":
+                - /url: /en/guides/caching/
+      - listitem:
+        - group:
+          - text: Upgrade
+          - list:
+            - listitem:
+              - link "Upgrade Astro":
+                - /url: /en/upgrade-astro/
+            - listitem:
+              - group: Major upgrade guides
+      - listitem:
+        - link "Troubleshooting":
+          - /url: /en/guides/troubleshooting/
+      - listitem:
+        - group:
+          - text: How-to recipes
+          - list:
+            - listitem:
+              - link "Recipes overview":
+                - /url: /en/recipes/
+            - listitem:
+              - link "Installing a Vite or Rollup plugin":
+                - /url: /en/recipes/add-yaml-support/
+            - listitem:
+              - link "Analyze bundle size":
+                - /url: /en/recipes/analyze-bundle-size/
+            - listitem:
+              - link "Build a custom image component":
+                - /url: /en/recipes/build-custom-img-component/
+            - listitem:
+              - link "Build HTML forms in Astro pages":
+                - /url: /en/recipes/build-forms/
+            - listitem:
+              - link "Build forms with API routes":
+                - /url: /en/recipes/build-forms-api/
+            - listitem:
+              - link "Use Bun with Astro":
+                - /url: /en/recipes/bun/
+            - listitem:
+              - link "Call endpoints from the server":
+                - /url: /en/recipes/call-endpoints/
+            - listitem:
+              - link "Verify a Captcha":
+                - /url: /en/recipes/captcha/
+            - listitem:
+              - link "Customize file names in the build output":
+                - /url: /en/recipes/customizing-output-filenames/
+            - listitem:
+              - link "Build your Astro site with Docker":
+                - /url: /en/recipes/docker/
+            - listitem:
+              - link "Dynamically import images":
+                - /url: /en/recipes/dynamically-importing-images/
+            - listitem:
+              - link "Add icons to external links":
+                - /url: /en/recipes/external-links/
+            - listitem:
+              - link "Add i18n features":
+                - /url: /en/recipes/i18n/
+            - listitem:
+              - link "Create a dev toolbar app":
+                - /url: /en/recipes/making-toolbar-apps/
+            - listitem:
+              - link "Add last modified time":
+                - /url: /en/recipes/modified-time/
+            - listitem:
+              - link "Add reading time":
+                - /url: /en/recipes/reading-time/
+            - listitem:
+              - link "Add an RSS feed":
+                - /url: /en/recipes/rss/
+            - listitem:
+              - link "Share state between Astro components":
+                - /url: /en/recipes/sharing-state/
+            - listitem:
+              - link "Share state between islands":
+                - /url: /en/recipes/sharing-state-islands/
+            - listitem:
+              - link "Using streaming to improve page performance":
+                - /url: /en/recipes/streaming-improve-page-performance/
+            - listitem:
+              - link "Style rendered Markdown with Tailwind Typography":
+                - /url: /en/recipes/tailwind-rendered-markdown/
+      - listitem:
+        - group: Migrate to Astro
+      - listitem:
+        - link "Contribute to Astro":
+          - /url: /en/contribute/
+  - heading "Sponsored by" [level=2]
+  - link "Netlify":
+    - /url: https://www.netlify.com/?utm_campaign=Astro-2024&utm_source=astro-referral
+  - link "Webflow":
+    - /url: https://webflow.com/feature/cloud?utm_source=Astro&utm_medium=tech-partner&utm_campaign=fy26-astro&utm_content=fy26-docs
+  - link "Cloudflare":
+    - /url: https://www.cloudflare.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mux":
+    - /url: https://www.mux.com/?utm_campaign=21819274-Astro&utm_source=astro
+  - link "Image Kit":
+    - /url: https://imagekit.io/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mintlify":
+    - /url: https://www.mintlify.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+- complementary:
+  - navigation "On this page":
+    - heading "On this page" [level=2]
+    - list:
+      - listitem:
+        - link "Overview":
+          - /url: "#_top"
+      - listitem:
+        - link "Why Nano Stores?":
+          - /url: "#why-nano-stores"
+      - listitem:
+        - link "Installing Nano Stores":
+          - /url: "#installing-nano-stores"
+      - listitem:
+        - link "Usage example - ecommerce cart flyout":
+          - /url: "#usage-example---ecommerce-cart-flyout"
+        - list:
+          - listitem:
+            - link "Using “atoms”":
+              - /url: "#using-atoms"
+          - listitem:
+            - link "Using “maps”":
+              - /url: "#using-maps"
+  - complementary "Learn Astro with James Q Quick":
+    - img "Scrimba"
+    - heading "Learn Astro with James Q Quick" [level=2]:
+      - strong: Learn Astro
+      - text: with James Q Quick
+    - paragraph: Build your first site with 35 interactive Scrimba lessons
+    - link "Get 20% off":
+      - /url: https://scrimba.com/intro-to-astro-c00ar0fi5u?via=astro
+- main:
+  - heading "Share state between islands" [level=1]
+  - paragraph:
+    - text: When building an Astro website with
+    - link "islands architecture / partial hydration":
+      - /url: /en/concepts/islands/
+    - text: ", you may have run into this problem:"
+    - strong: I want to share state between my components.
+  - paragraph:
+    - text: UI frameworks like React or Vue may encourage
+    - link "“context” providers":
+      - /url: https://react.dev/learn/passing-data-deeply-with-context
+    - text: for other components to consume. But when
+    - link "partially hydrating components":
+      - /url: /en/guides/framework-components/#hydrating-interactive-components
+    - text: within Astro or Markdown, you can’t use these context wrappers.
+  - paragraph:
+    - text: "Astro recommends a different solution for shared client-side storage:"
+    - link "Nano Stores":
+      - /url: https://github.com/nanostores/nanostores
+      - strong: Nano Stores
+    - text: .
+  - strong: "Related recipe:"
+  - link "Share state between Astro components":
+    - /url: /en/recipes/sharing-state/
+  - heading "Why Nano Stores?" [level=2]
+  - link "Section titled “Why Nano Stores?”":
+    - /url: "#why-nano-stores"
+  - paragraph:
+    - text: The
+    - link "Nano Stores":
+      - /url: https://github.com/nanostores/nanostores
+    - text: "library allows you to author stores that any component can interact with. We recommend Nano Stores because:"
+  - list:
+    - listitem:
+      - strong: They’re lightweight.
+      - text: Nano Stores ship the bare minimum JS you’ll need (less than 1 KB) with zero dependencies.
+    - listitem:
+      - strong: They’re framework-agnostic.
+      - text: This means sharing state between frameworks will be seamless! Astro is built on flexibility, so we love solutions that offer a similar developer experience no matter your preference.
+  - paragraph: "Still, there are a number of alternatives you can explore. These include:"
+  - list:
+    - listitem:
+      - link "Svelte’s built-in stores":
+        - /url: https://svelte.dev/tutorial/writable-stores
+    - listitem:
+      - link "Solid signals":
+        - /url: https://www.solidjs.com/docs/latest
+      - text: outside of a component context
+    - listitem:
+      - link "Vue’s reactivity API":
+        - /url: https://vuejs.org/guide/scaling-up/state-management.html#simple-state-management-with-reactivity-api
+    - listitem:
+      - link "Sending custom browser events":
+        - /url: https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events
+      - text: between components
+  - complementary "FAQ":
+    - group:
+      - strong:
+        - text: 🙋 Can I use Nano Stores in
+        - code: .astro
+        - text: files or other server-side components?
+    - group:
+      - strong: 🙋 How do Svelte stores compare to Nano Stores?
+    - group:
+      - strong: 🙋 How do Solid signals compare to Nano Stores?
+  - heading "Installing Nano Stores" [level=2]
+  - link "Section titled “Installing Nano Stores”":
+    - /url: "#installing-nano-stores"
+  - paragraph: "To get started, install Nano Stores alongside their helper package for your favorite UI framework:"
+  - tablist:
+    - tab "Preact" [selected]
+    - tab "React"
+    - tab "Solid"
+    - tab "Svelte"
+    - tab "Vue"
+  - tabpanel "Preact":
+    - figure "Terminal window":
+      - text: Terminal window
+      - code: npm install nanostores @nanostores/preact
+      - button "Copy to clipboard"
+  - paragraph:
+    - text: You can jump into the
+    - link "Nano Stores usage guide":
+      - /url: https://github.com/nanostores/nanostores#guide
+    - text: from here, or follow along with our example below!
+  - heading "Usage example - ecommerce cart flyout" [level=2]
+  - link "Section titled “Usage example - ecommerce cart flyout”":
+    - /url: "#usage-example---ecommerce-cart-flyout"
+  - paragraph: "Let’s say we’re building a simple ecommerce interface with three interactive elements:"
+  - list:
+    - listitem: An “add to cart” submission form
+    - listitem: A cart flyout to display those added items
+    - listitem: A cart flyout toggle
+  - paragraph:
+    - emphasis:
+      - link "Try the completed example":
+        - /url: https://github.com/withastro/astro/tree/main/examples/with-nanostores
+        - strong: Try the completed example
+      - text: on your machine or online via StackBlitz.
+  - paragraph: "Your base Astro file may look like this:"
+  - figure "src/pages/index.astro":
+    - text: src/pages/index.astro
+    - code: "--- import CartFlyoutToggle from '../components/CartFlyoutToggle'; import CartFlyout from '../components/CartFlyout'; import AddToCartForm from '../components/AddToCartForm'; --- <!DOCTYPE html> <html lang=\"en\"> <head>...</head> <body> <header> <nav> <a href=\"/\">Astro storefront</a> <CartFlyoutToggle client:load /> </nav> </header> <main> <AddToCartForm client:load> <!-- ... --> </AddToCartForm> </main> <CartFlyout client:load /> </body> </html>"
+    - button "Copy to clipboard"
+  - heading "Using “atoms”" [level=3]
+  - link "Section titled “Using “atoms””":
+    - /url: "#using-atoms"
+  - paragraph:
+    - text: Let’s start by opening our
+    - code: CartFlyout
+    - text: whenever
+    - code: CartFlyoutToggle
+    - text: is clicked.
+  - paragraph:
+    - text: First, create a new JS or TS file to contain our store. We’ll use an
+    - link "“atom”":
+      - /url: https://github.com/nanostores/nanostores#atoms
+    - text: "for this:"
+  - figure "src/cartStore.js":
+    - text: src/cartStore.js
+    - code: "import { atom } from 'nanostores'; export const isCartOpen = atom(false);"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: Now, we can import this store into any file that needs to read or write. We’ll start by wiring up our
+    - code: CartFlyoutToggle
+    - text: ":"
+  - tablist:
+    - tab "Preact" [selected]
+    - tab "React"
+    - tab "Solid"
+    - tab "Svelte"
+    - tab "Vue"
+  - tabpanel "Preact":
+    - figure "src/components/CartFlyoutToggle.jsx":
+      - text: src/components/CartFlyoutToggle.jsx
+      - code: "import { useStore } from '@nanostores/preact'; import { isCartOpen } from '../cartStore'; export default function CartButton() { // read the store value with the `useStore` hook const $isCartOpen = useStore(isCartOpen); // write to the imported store using `.set` return ( <button onClick={() => isCartOpen.set(!$isCartOpen)}>Cart</button> ) }"
+      - button "Copy to clipboard"
+  - paragraph:
+    - text: Then, we can read
+    - code: isCartOpen
+    - text: from our
+    - code: CartFlyout
+    - text: "component:"
+  - tablist:
+    - tab "Preact" [selected]
+    - tab "React"
+    - tab "Solid"
+    - tab "Svelte"
+    - tab "Vue"
+  - tabpanel "Preact":
+    - figure "src/components/CartFlyout.jsx":
+      - text: src/components/CartFlyout.jsx
+      - code: "import { useStore } from '@nanostores/preact'; import { isCartOpen } from '../cartStore'; export default function CartFlyout() { const $isCartOpen = useStore(isCartOpen); return $isCartOpen ? <aside>...</aside> : null; }"
+      - button "Copy to clipboard"
+  - heading "Using “maps”" [level=3]
+  - link "Section titled “Using “maps””":
+    - /url: "#using-maps"
+  - complementary "Tip":
+    - paragraph:
+      - strong:
+        - link "Maps":
+          - /url: https://github.com/nanostores/nanostores#maps
+        - text: are a great choice for objects you write to regularly!
+      - text: Alongside the standard
+      - code: get()
+      - text: and
+      - code: set()
+      - text: helpers an
+      - code: atom
+      - text: provides, you’ll also have a
+      - code: .setKey()
+      - text: function to efficiently update individual object keys.
+  - paragraph:
+    - text: Now, let’s keep track of the items inside your cart. To avoid duplicates and keep track of “quantity,” we can store your cart as an object with the item’s ID as a key. We’ll use a
+    - link "Map":
+      - /url: https://github.com/nanostores/nanostores#maps
+    - text: for this.
+  - paragraph:
+    - text: Let’s add a
+    - code: cartItem
+    - text: store to our
+    - code: cartStore.js
+    - text: from earlier. You can also switch to a TypeScript file to define the shape if you’re so inclined.
+  - tablist:
+    - tab "JavaScript" [selected]
+    - tab "TypeScript"
+  - tabpanel "JavaScript":
+    - figure "src/cartStore.js":
+      - text: src/cartStore.js
+      - code: "import { atom, map } from 'nanostores'; export const isCartOpen = atom(false); /** * @typedef {Object} CartItem * @property {string} id * @property {string} name * @property {string} imageSrc * @property {number} quantity */ /** @type {import('nanostores').MapStore<Record<string, CartItem>>} */ export const cartItems = map({});"
+      - button "Copy to clipboard"
+  - paragraph:
+    - text: Now, let’s export an
+    - code: addCartItem
+    - text: helper for our components to use.
+  - list:
+    - listitem:
+      - strong: If that item doesn’t exist in your cart
+      - text: ", add the item with a starting quantity of 1."
+    - listitem:
+      - strong:
+        - text: If that item
+        - emphasis: does
+        - text: already exist
+      - text: ", bump the quantity by 1."
+  - tablist:
+    - tab "JavaScript" [selected]
+    - tab "TypeScript"
+  - tabpanel "JavaScript":
+    - figure "src/cartStore.js":
+      - text: src/cartStore.js
+      - code: "... export function addCartItem({ id, name, imageSrc }) { const existingEntry = cartItems.get()[id]; if (existingEntry) { cartItems.setKey(id, { ...existingEntry, quantity: existingEntry.quantity + 1, }) } else { cartItems.setKey( id, { id, name, imageSrc, quantity: 1 } ); } }"
+      - button "Copy to clipboard"
+  - complementary "Note":
+    - group:
+      - strong:
+        - text: 🙋 Why use
+        - code: .get()
+        - text: here instead of a
+        - code: useStore
+        - text: helper?
+  - paragraph:
+    - text: With our store in place, we can call this function inside our
+    - code: AddToCartForm
+    - text: whenever that form is submitted. We’ll also open the cart flyout so you can see a full cart summary.
+  - tablist:
+    - tab "Preact" [selected]
+    - tab "React"
+    - tab "Solid"
+    - tab "Svelte"
+    - tab "Vue"
+  - tabpanel "Preact":
+    - figure "src/components/AddToCartForm.jsx":
+      - text: src/components/AddToCartForm.jsx
+      - code: "import { addCartItem, isCartOpen } from '../cartStore'; export default function AddToCartForm({ children }) { // we'll hardcode the item info for simplicity! const hardcodedItemInfo = { id: 'astronaut-figurine', name: 'Astronaut Figurine', imageSrc: '/images/astronaut-figurine.png', } function addToCart(e) { e.preventDefault(); isCartOpen.set(true); addCartItem(hardcodedItemInfo); } return ( <form onSubmit={addToCart}> {children} </form> ) }"
+      - button "Copy to clipboard"
+  - paragraph:
+    - text: Finally, we’ll render those cart items inside our
+    - code: CartFlyout
+    - text: ":"
+  - tablist:
+    - tab "Preact" [selected]
+    - tab "React"
+    - tab "Solid"
+    - tab "Svelte"
+    - tab "Vue"
+  - tabpanel "Preact":
+    - figure "src/components/CartFlyout.jsx":
+      - text: src/components/CartFlyout.jsx
+      - code: "import { useStore } from '@nanostores/preact'; import { isCartOpen, cartItems } from '../cartStore'; export default function CartFlyout() { const $isCartOpen = useStore(isCartOpen); const $cartItems = useStore(cartItems); return $isCartOpen ? ( <aside> {Object.values($cartItems).length ? ( <ul> {Object.values($cartItems).map(cartItem => ( <li> <img src={cartItem.imageSrc} alt={cartItem.name} /> <h3>{cartItem.name}</h3> <p>Quantity: {cartItem.quantity}</p> </li> ))} </ul> ) : <p>Your cart is empty!</p>} </aside> ) : null; }"
+      - button "Copy to clipboard"
+  - paragraph: Now, you should have a fully interactive ecommerce example with the smallest JS bundle in the galaxy 🚀
+  - paragraph:
+    - link "Try the completed example":
+      - /url: https://github.com/withastro/astro/tree/main/examples/with-nanostores
+      - strong: Try the completed example
+    - text: on your machine or online via StackBlitz!
+  - link "Edit page":
+    - /url: https://github.com/withastro/docs/edit/main/src/content/docs/en/recipes/sharing-state-islands.mdx
+  - link "Translate this page":
+    - /url: https://contribute.docs.astro.build/guides/i18n/
+  - link "Previous Share state between Astro components":
+    - /url: /en/recipes/sharing-state/
+  - link "Next Using streaming to improve page performance":
+    - /url: /en/recipes/streaming-improve-page-performance/
+  - link "Contribute":
+    - /url: /en/contribute/
+  - link "Community":
+    - /url: https://astro.build/chat
+    - img
+    - text: Community
+  - link "Sponsor":
+    - /url: https://opencollective.com/astrodotbuild

@@ -1,0 +1,1 @@
+tores/vue ' ; const $isCartOpen = useStore ( isCartOpen ); const $cartItems = useStore ( cartItems ); </ script > Now, you should have a fully interactive ecommerce example with the smallest JS bundle in the galaxy 🚀 Try the completed example on your machine or online via StackBlitz! Recipes

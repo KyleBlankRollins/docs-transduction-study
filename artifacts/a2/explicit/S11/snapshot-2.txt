@@ -1,0 +1,984 @@
+- link "Skip to content":
+  - /url: "#_top"
+- banner:
+  - link "Astro":
+    - /url: https://astro.build/
+    - img
+  - link "Docs":
+    - /url: /en/getting-started/
+    - img
+  - button "Search":
+    - img
+    - text: Search
+  - link "GitHub":
+    - /url: https://github.com/withastro/astro
+  - link "Discord":
+    - /url: https://astro.build/chat
+  - text: Select theme
+  - combobox "Select theme":
+    - option "Dark"
+    - option "Light"
+    - option "Auto" [selected]
+  - text: Select language
+  - combobox "Select language":
+    - option "English" [selected]
+    - option "Deutsch"
+    - option "Português do Brasil"
+    - option "Español"
+    - option "简体中文"
+    - option "正體中文"
+    - option "Français"
+    - option "हिन्दी"
+    - option "العربية"
+    - option "日本語"
+    - option "한국어"
+    - option "Polski"
+    - option "Русский"
+    - option "Italiano"
+- navigation "Main":
+  - tablist:
+    - tab "Tutorial"
+    - tab "Guide"
+    - tab "Reference"
+    - tab "Ecosystem" [selected]
+  - tabpanel "Ecosystem":
+    - list:
+      - listitem:
+        - group: UI frameworks
+      - listitem:
+        - group: Adapters
+      - listitem:
+        - group: Other official integrations
+      - listitem:
+        - group: Deployment guides
+      - listitem:
+        - group:
+          - text: Content management systems
+          - list:
+            - listitem:
+              - link "CMS overview":
+                - /url: /en/guides/cms/
+            - listitem:
+              - link "ApostropheCMS":
+                - /url: /en/guides/cms/apostrophecms/
+            - listitem:
+              - link "Builder.io":
+                - /url: /en/guides/cms/builderio/
+            - listitem:
+              - link "ButterCMS":
+                - /url: /en/guides/cms/buttercms/
+            - listitem:
+              - link "Caisy":
+                - /url: /en/guides/cms/caisy/
+            - listitem:
+              - link "CloudCannon":
+                - /url: /en/guides/cms/cloudcannon/
+            - listitem:
+              - link "Contentful":
+                - /url: /en/guides/cms/contentful/
+            - listitem:
+              - link "Cosmic":
+                - /url: /en/guides/cms/cosmic/
+            - listitem:
+              - link "Craft CMS":
+                - /url: /en/guides/cms/craft-cms/
+            - listitem:
+              - link "Craft Cross CMS":
+                - /url: /en/guides/cms/craft-cross-cms/
+            - listitem:
+              - link "Crystallize":
+                - /url: /en/guides/cms/crystallize/
+            - listitem:
+              - link "DatoCMS":
+                - /url: /en/guides/cms/datocms/
+            - listitem:
+              - link "Decap CMS":
+                - /url: /en/guides/cms/decap-cms/
+            - listitem:
+              - link "Directus":
+                - /url: /en/guides/cms/directus/
+            - listitem:
+              - link "Drupal":
+                - /url: /en/guides/cms/drupal/
+            - listitem:
+              - link "Flotiq":
+                - /url: /en/guides/cms/flotiq/
+            - listitem:
+              - link "Front Matter CMS":
+                - /url: /en/guides/cms/frontmatter-cms/
+            - listitem:
+              - link "Ghost":
+                - /url: /en/guides/cms/ghost/
+            - listitem:
+              - link "GitCMS":
+                - /url: /en/guides/cms/gitcms/
+            - listitem:
+              - link "Hashnode":
+                - /url: /en/guides/cms/hashnode/
+            - listitem:
+              - link "Hygraph":
+                - /url: /en/guides/cms/hygraph/
+            - listitem:
+              - link "JekyllPad":
+                - /url: /en/guides/cms/jekyllpad/
+            - listitem:
+              - link "Keystatic":
+                - /url: /en/guides/cms/keystatic/
+            - listitem:
+              - link "KeystoneJS":
+                - /url: /en/guides/cms/keystonejs/
+            - listitem:
+              - link "Kontent.ai":
+                - /url: /en/guides/cms/kontent-ai/
+            - listitem:
+              - link "microCMS":
+                - /url: /en/guides/cms/microcms/
+            - listitem:
+              - link "Optimizely CMS":
+                - /url: /en/guides/cms/optimizely/
+            - listitem:
+              - link "Pages CMS":
+                - /url: /en/guides/cms/pages-cms/
+            - listitem:
+              - link "Payload CMS":
+                - /url: /en/guides/cms/payload/
+            - listitem:
+              - link "Prepr CMS":
+                - /url: /en/guides/cms/preprcms/
+            - listitem:
+              - link "Prismic":
+                - /url: /en/guides/cms/prismic/
+            - listitem:
+              - link "Sanity":
+                - /url: /en/guides/cms/sanity/
+            - listitem:
+              - link "Sitecore XM":
+                - /url: /en/guides/cms/sitecore/
+            - listitem:
+              - link "Sitepins":
+                - /url: /en/guides/cms/sitepins/
+            - listitem:
+              - link "Spinal":
+                - /url: /en/guides/cms/spinal/
+            - listitem:
+              - link "Statamic":
+                - /url: /en/guides/cms/statamic/
+            - listitem:
+              - link "Storyblok":
+                - /url: /en/guides/cms/storyblok/
+            - listitem:
+              - link "Strapi":
+                - /url: /en/guides/cms/strapi/
+            - listitem:
+              - link "StudioCMS":
+                - /url: /en/guides/cms/studiocms/
+            - listitem:
+              - link "TinaCMS":
+                - /url: /en/guides/cms/tina-cms/
+            - listitem:
+              - link "Umbraco":
+                - /url: /en/guides/cms/umbraco/
+            - listitem:
+              - link "Vault CMS":
+                - /url: /en/guides/cms/vault-cms/
+            - listitem:
+              - link "Wordpress":
+                - /url: /en/guides/cms/wordpress/
+            - listitem:
+              - link "Zero":
+                - /url: /en/guides/cms/zero/
+      - listitem:
+        - group: Backend services
+      - listitem:
+        - group: Image and video hosting
+      - listitem:
+        - link "E-commerce":
+          - /url: /en/guides/ecommerce/
+      - listitem:
+        - link "Authentication":
+          - /url: /en/guides/authentication/
+      - listitem:
+        - link "Testing":
+          - /url: /en/guides/testing/
+  - heading "Sponsored by" [level=2]
+  - link "Netlify":
+    - /url: https://www.netlify.com/?utm_campaign=Astro-2024&utm_source=astro-referral
+  - link "Webflow":
+    - /url: https://webflow.com/feature/cloud?utm_source=Astro&utm_medium=tech-partner&utm_campaign=fy26-astro&utm_content=fy26-docs
+  - link "Cloudflare":
+    - /url: https://www.cloudflare.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mux":
+    - /url: https://www.mux.com/?utm_campaign=21819274-Astro&utm_source=astro
+  - link "Image Kit":
+    - /url: https://imagekit.io/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mintlify":
+    - /url: https://www.mintlify.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+- complementary:
+  - navigation "On this page":
+    - heading "On this page" [level=2]
+    - list:
+      - listitem:
+        - link "Overview":
+          - /url: "#_top"
+      - listitem:
+        - link "Prerequisites":
+          - /url: "#prerequisites"
+      - listitem:
+        - link "Setting up credentials":
+          - /url: "#setting-up-credentials"
+      - listitem:
+        - link "Making a blog with Astro and Builder":
+          - /url: "#making-a-blog-with-astro-and-builder"
+        - list:
+          - listitem:
+            - link "Creating a model for a blog post":
+              - /url: "#creating-a-model-for-a-blog-post"
+          - listitem:
+            - link "Setting up the preview":
+              - /url: "#setting-up-the-preview"
+          - listitem:
+            - link "Creating a blog post":
+              - /url: "#creating-a-blog-post"
+          - listitem:
+            - link "Displaying a list of blog posts":
+              - /url: "#displaying-a-list-of-blog-posts"
+          - listitem:
+            - link "Displaying a single blog post":
+              - /url: "#displaying-a-single-blog-post"
+          - listitem:
+            - link "Publishing your site":
+              - /url: "#publishing-your-site"
+      - listitem:
+        - link "Official resources":
+          - /url: "#official-resources"
+      - listitem:
+        - link "Community resources":
+          - /url: "#community-resources"
+  - complementary "Learn Astro with James Q Quick":
+    - img "Scrimba"
+    - heading "Learn Astro with James Q Quick" [level=2]:
+      - strong: Learn Astro
+      - text: with James Q Quick
+    - paragraph: Build your first site with 35 interactive Scrimba lessons
+    - link "Get 20% off":
+      - /url: https://scrimba.com/intro-to-astro-c00ar0fi5u?via=astro
+- main:
+  - heading "Builder.io & Astro" [level=1]
+  - paragraph:
+    - link "Builder.io":
+      - /url: https://www.builder.io/
+    - text: is a visual CMS that supports drag-and-drop content editing for building websites.
+  - paragraph: This recipe will show you how to connect your Builder space to Astro with zero client-side JavaScript.
+  - heading "Prerequisites" [level=2]
+  - link "Section titled “Prerequisites”":
+    - /url: "#prerequisites"
+  - paragraph: "To get started, you will need to have the following:"
+  - list:
+    - listitem:
+      - strong: A Builder account and space
+      - text: "- If you don’t have an account yet,"
+      - link "sign up for free":
+        - /url: https://www.builder.io/
+      - text: and create a new space. If you already have a space with Builder, feel free to use it, but you will need to modify the code to match the model name (
+      - code: blogpost
+      - text: ) and custom data fields.
+    - listitem:
+      - strong: A Builder API key
+      - text: "- This public key will be used to fetch your content from Builder."
+      - link "Read Builder’s guide on how to find your key":
+        - /url: https://www.builder.io/c/docs/using-your-api-key#finding-your-public-api-key
+      - text: .
+  - heading "Setting up credentials" [level=2]
+  - link "Section titled “Setting up credentials”":
+    - /url: "#setting-up-credentials"
+  - paragraph:
+    - text: To add your Builder API key and your Builder model name to Astro, create a
+    - code: .env
+    - text: "file in the root of your project (if one does not already exist) and add the following variables:"
+  - figure ".env":
+    - text: .env
+    - code: BUILDER_API_PUBLIC_KEY=YOUR_API_KEY BUILDER_BLOGPOST_MODEL='blogpost'
+    - button "Copy to clipboard"
+  - paragraph: Now, you should be able to use this API key in your project.
+  - complementary "Note":
+    - paragraph:
+      - text: At the time of writing,
+      - link "this key is public":
+        - /url: https://www.builder.io/c/docs/using-your-api-key#prerequisites
+      - text: ", so you don’t have to worry about hiding or encrypting it."
+  - paragraph:
+    - text: If you would like to have IntelliSense for your environment variables, you can create a
+    - code: env.d.ts
+    - text: file in the
+    - code: src/
+    - text: directory and configure
+    - code: ImportMetaEnv
+    - text: "like this:"
+  - figure "src/env.d.ts":
+    - text: src/env.d.ts
+    - code: "interface ImportMetaEnv { readonly BUILDER_API_PUBLIC_KEY: string; }"
+    - button "Copy to clipboard"
+  - paragraph: "Your project should now include these files:"
+  - list:
+    - listitem:
+      - group:
+        - text: Directory src/
+        - list:
+          - listitem:
+            - strong: env.d.ts
+    - listitem:
+      - strong: .env
+    - listitem: astro.config.mjs
+    - listitem: package.json
+  - text: Learn more about
+  - link "environment variables":
+    - /url: /en/guides/environment-variables/
+  - text: and
+  - code: .env
+  - text: files in Astro.
+  - heading "Making a blog with Astro and Builder" [level=2]
+  - link "Section titled “Making a blog with Astro and Builder”":
+    - /url: "#making-a-blog-with-astro-and-builder"
+  - heading "Creating a model for a blog post" [level=3]
+  - link "Section titled “Creating a model for a blog post”":
+    - /url: "#creating-a-model-for-a-blog-post"
+  - paragraph:
+    - text: "The instructions below create an Astro blog using a Builder model (Type: “Section”) called"
+    - code: blogpost
+    - text: "that contains two required text fields:"
+    - code: title
+    - text: and
+    - code: slug
+    - text: .
+  - complementary "For visual types":
+    - paragraph:
+      - text: You can find videos showing this procedure in one of
+      - link "Builder’s official tutorials":
+        - /url: https://www.builder.io/blog/creating-blog#creating-a-blog-article-model
+      - text: .
+  - paragraph:
+    - text: "In the Builder app create the model that will represent a blog post: go to the"
+    - strong: Models
+    - text: tab and click the
+    - strong: + Create Model
+    - text: "button to create model with the following fields and values:"
+  - list:
+    - listitem:
+      - strong: "Type:"
+      - text: Section
+    - listitem:
+      - strong: "Name:"
+      - text: “blogpost”
+    - listitem:
+      - strong: "Description:"
+      - text: “This model is for a blog post”
+  - paragraph:
+    - text: In your new model use the
+    - strong: + New Custom Field
+    - text: "button to create 2 new fields:"
+  - list:
+    - listitem:
+      - paragraph: Text field
+      - list:
+        - listitem:
+          - strong: "Name:"
+          - text: “title”
+        - listitem:
+          - strong: "Required:"
+          - text: "Yes"
+        - listitem:
+          - strong: Default value
+          - text: “I forgot to give this a title”
+      - paragraph: (leave the other parameters as their defaults)
+    - listitem:
+      - paragraph: Text field
+      - list:
+        - listitem:
+          - strong: "Name:"
+          - text: “slug”
+        - listitem:
+          - strong: "Required:"
+          - text: "Yes"
+        - listitem:
+          - strong: Default value
+          - text: “some-slugs-take-their-time”
+      - paragraph: (leave the other parameters as their defaults)
+  - paragraph:
+    - text: Then click the
+    - strong: Save
+    - text: button in the upper right.
+  - complementary "Slugs":
+    - paragraph:
+      - text: There are some pitfalls with the
+      - code: slug
+      - text: "field:"
+    - list:
+      - listitem:
+        - paragraph: Make sure your slug is not just a number. This seems to break the fetch request to Builder’s API.
+      - listitem:
+        - paragraph: Make sure your slugs are unique, since your site’s routing will depend on that.
+  - heading "Setting up the preview" [level=3]
+  - link "Section titled “Setting up the preview”":
+    - /url: "#setting-up-the-preview"
+  - paragraph:
+    - text: To use Builder’s visual editor, create the page
+    - code: src/pages/builder-preview.astro
+    - text: that will render the special
+    - code: <builder-component>
+    - text: ":"
+  - list:
+    - listitem:
+      - group:
+        - text: Directory src/
+        - list:
+          - listitem:
+            - group:
+              - text: Directory pages/
+              - list:
+                - listitem:
+                  - strong: builder-preview.astro
+          - listitem: env.d.ts
+    - listitem: .env
+    - listitem: astro.config.mjs
+    - listitem: package.json
+  - paragraph: "Then add the following content:"
+  - figure "src/pages/builder-preview.astro":
+    - text: src/pages/builder-preview.astro
+    - code: "--- const builderAPIpublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY; const builderModel = import.meta.env.BUILDER_BLOGPOST_MODEL; --- <html lang=\"en\"> <head> <title>Preview for builder.io</title> </head> <body> <header>This is your header</header> <builder-component model={builderModel} api-key={builderAPIpublicKey} ></builder-component> <script async src=\"https://cdn.builder.io/js/webcomponents\"></script> <footer>This is your footer</footer> </body> </html>"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: In the above example,
+    - code: <builder-component>
+    - text: tells Builder where to insert the content from its CMS.
+  - heading "Setting the new route as the preview URL" [level=4]
+  - link "Section titled “Setting the new route as the preview URL”":
+    - /url: "#setting-the-new-route-as-the-preview-url"
+  - list:
+    - listitem:
+      - paragraph:
+        - text: Copy the full URL of your preview, including the protocol, to your clipboard (e.g.
+        - code: "https://{your host}/builder-preview"
+        - text: ).
+    - listitem:
+      - paragraph:
+        - text: Go to the
+        - strong: Models
+        - text: tab in your Builder space, pick the model you’ve created and paste the URL from step 1 into the
+        - strong: Preview URL
+        - text: field. Make sure the URL is complete and includes the protocol, for example
+        - code: https://
+        - text: .
+    - listitem:
+      - paragraph:
+        - text: Click the
+        - strong: Save
+        - text: button in the upper right.
+  - complementary "Tip":
+    - paragraph:
+      - text: When you deploy your site, change the preview URL to match your production URL, for example
+      - code: https://myAwesomeAstroBlog.com/builder-preview
+      - text: .
+  - heading "Testing the preview URL setup" [level=4]
+  - link "Section titled “Testing the preview URL setup”":
+    - /url: "#testing-the-preview-url-setup"
+  - list:
+    - listitem:
+      - paragraph:
+        - text: Make sure your site is live (e.g. your dev server is running) and the
+        - code: /builder-preview
+        - text: route is working.
+    - listitem:
+      - paragraph:
+        - text: In your Builder space under the
+        - strong: Content
+        - text: tab, click on
+        - strong: New
+        - text: to create a new content entry for your
+        - code: blogpost
+        - text: model.
+    - listitem:
+      - paragraph:
+        - text: In the Builder editor that just opened, you should be able to see the
+        - code: builder-preview.astro
+        - text: page with a big
+        - strong: Add Block
+        - text: in the middle.
+  - complementary "Troubleshooting":
+    - paragraph: "Things can sometimes go wrong when setting up the preview. If something’s not right, you can try one of these things:"
+    - list:
+      - listitem: Make sure the site is live - for example, your dev server is running.
+      - listitem: Make sure that the URLs match exactly - the one in your Astro project and the one set in the Builder app.
+      - listitem:
+        - text: Make sure it’s the full URL including the protocol, for example
+        - code: https://
+        - text: .
+      - listitem:
+        - text: If you’re working in a virtual environment like
+        - link "StackBlitz":
+          - /url: https://stackblitz.com/
+        - text: ", you might have to copy and paste the URL again when you restart your workspace, since this usually generates a new URL for your project."
+    - paragraph:
+      - text: For more ideas, read
+      - link "Builder’s troubleshooting guide":
+        - /url: https://www.builder.io/c/docs/guides/preview-url-working
+      - text: .
+  - heading "Creating a blog post" [level=3]
+  - link "Section titled “Creating a blog post”":
+    - /url: "#creating-a-blog-post"
+  - list:
+    - listitem:
+      - paragraph: "In Builder’s visual editor, create a new content entry with the following values:"
+      - list:
+        - listitem:
+          - strong: "title:"
+          - text: ‘First post, woohoo!’
+        - listitem:
+          - strong: "slug:"
+          - text: ‘first-post-woohoo’
+    - listitem:
+      - paragraph:
+        - text: Complete your post using the
+        - strong: Add Block
+        - text: button and add a text field with some post content.
+    - listitem:
+      - paragraph: In the text field above the editor, give your entry a name. This is how it will be listed in the Builder app.
+    - listitem:
+      - paragraph:
+        - text: When you’re ready click the
+        - strong: Publish
+        - text: button in the upper right corner.
+    - listitem:
+      - paragraph:
+        - text: Create as many posts as you like, ensuring that all content entries contain a
+        - code: title
+        - text: and a
+        - code: slug
+        - text: as well as some post content.
+  - heading "Displaying a list of blog posts" [level=3]
+  - link "Section titled “Displaying a list of blog posts”":
+    - /url: "#displaying-a-list-of-blog-posts"
+  - paragraph:
+    - text: Add the following content to
+    - code: src/pages/index.astro
+    - text: "in order to fetch and display a list of all post titles, each linking to its own page:"
+  - figure "src/pages/index.astro":
+    - text: src/pages/index.astro
+    - region:
+      - code: "--- const builderAPIpublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY; const builderModel = import.meta.env.BUILDER_BLOGPOST_MODEL; const { results: posts } = await fetch( `https://cdn.builder.io/api/v3/content/${builderModel}?${new URLSearchParams({ apiKey: builderAPIpublicKey, fields: [\"data.slug\", \"data.title\"].join(\",\"), cachebust: \"true\", }).toString()}` ) .then((res) => res.json()) .catch(); --- <html lang=\"en\"> <head> <title>Blog Index</title> </head> <body> <ul> { posts.flatMap(({ data: { slug, title } }) => ( <li> <a href={`/posts/${slug}`}>{title}</a> </li> )) } </ul> </body> </html>"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: Fetching via the content API returns an array of objects containing data for each post. The
+    - code: fields
+    - text: query parameter tells Builder which data is included (see highlighted code).
+    - code: slug
+    - text: and
+    - code: title
+    - text: should match the names of the custom data fields you’ve added to your Builder model.
+  - paragraph:
+    - text: The
+    - code: posts
+    - text: array returned from the fetch displays a list of blog post titles on the home page. The individual page routes will be created in the next step.
+  - complementary "Framework integrations":
+    - paragraph:
+      - text: If you are using a JavaScript framework (e.g. Svelte, Vue, or React) in your Astro project you can use
+      - link "one of Builder’s integrations":
+        - /url: https://www.builder.io/m/integrations
+      - text: as an alternative to making raw fetch calls through the REST API.
+  - paragraph: Go to your index route and you should be able to see a list of links each with the title of a blog post!
+  - heading "Displaying a single blog post" [level=3]
+  - link "Section titled “Displaying a single blog post”":
+    - /url: "#displaying-a-single-blog-post"
+  - paragraph:
+    - text: Create the page
+    - code: src/pages/posts/[slug].astro
+    - text: that will
+    - link "dynamically generate a page":
+      - /url: /en/guides/routing/#dynamic-routes
+    - text: for each post.
+  - list:
+    - listitem:
+      - group:
+        - text: Directory src/
+        - list:
+          - listitem:
+            - group:
+              - text: Directory pages/
+              - list:
+                - listitem: index.astro
+                - listitem:
+                  - group:
+                    - text: Directory posts/
+                    - list:
+                      - listitem:
+                        - strong: "[slug].astro"
+          - listitem: env.d.ts
+    - listitem: .env
+    - listitem: astro.config.mjs
+    - listitem: package.json
+  - paragraph: "This file must contain:"
+  - list:
+    - listitem:
+      - text: A
+      - link "getStaticPaths()":
+        - /url: /en/reference/routing-reference/#getstaticpaths
+        - code: getStaticPaths()
+      - text: function to fetch
+      - code: slug
+      - text: information from Builder and create a static route for each blog post.
+    - listitem:
+      - text: A
+      - code: fetch()
+      - text: to the Builder API using the
+      - code: slug
+      - text: identifier to return post content and metadata (e.g. a
+      - code: title
+      - text: ).
+    - listitem:
+      - text: A
+      - code: <Fragment />
+      - text: in the template to render the post content as HTML.
+  - paragraph: Each of these is highlighted in the following code snippet.
+  - figure "src/pages/posts/[slug].astro":
+    - text: src/pages/posts/[slug].astro
+    - region:
+      - code: "--- + export async function getStaticPaths() { const builderModel = import.meta.env.BUILDER_BLOGPOST_MODEL; const builderAPIpublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY; const { results: posts } = await fetch( `https://cdn.builder.io/api/v3/content/${builderModel}?${new URLSearchParams( { apiKey: builderAPIpublicKey, fields: [\"data.slug\", \"data.title\"].join(\",\"), cachebust: \"true\", } ).toString()}` ) .then((res) => res.json()) .catch // ...catch some errors...); (); return posts.map(({ data: { slug, title } }) => ({ params: { slug }, props: { title }, })) } const { slug } = Astro.params; const { title } = Astro.props; const builderModel = import.meta.env.BUILDER_BLOGPOST_MODEL; + const builderAPIpublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY; // Builder's API requires this field but for this use case the url doesn't seem to matter - the API returns the same HTML const encodedUrl = encodeURIComponent(\"moot\"); const { html: postHTML } = await fetch( `https://cdn.builder.io/api/v1/qwik/${builderModel}?${new URLSearchParams({ apiKey: builderAPIpublicKey, url: encodedUrl, + \"query.data.slug\": slug, cachebust: \"true\", }).toString()}` ) .then((res) => res.json()) .catch(); --- + <html lang=\"en\"> <head> <title>{title}</title> </head> <body> <header>This is your header</header> <article> <Fragment set:html={postHTML} /> </article> <footer>This is your footer</footer> </body> + </html>"
+    - button "Copy to clipboard"
+  - complementary "Note":
+    - paragraph:
+      - text: The variables
+      - code: builderModel
+      - text: and
+      - code: builderAPIpublicKey
+      - text: need to be created twice, since
+      - link "getStaticPaths() runs in its own isolated scope":
+        - /url: /en/reference/routing-reference/#getstaticpaths
+        - code: getStaticPaths()
+        - text: runs in its own isolated scope
+      - text: .
+  - paragraph: Now when you click on a link on your index route, you will be taken to the individual blog post page.
+  - heading "Publishing your site" [level=3]
+  - link "Section titled “Publishing your site”":
+    - /url: "#publishing-your-site"
+  - paragraph:
+    - text: To deploy your website, visit our
+    - link "deployment guides":
+      - /url: /en/guides/deploy/
+    - text: and follow the instructions for your preferred hosting provider.
+  - heading "Rebuild on Builder changes" [level=4]
+  - link "Section titled “Rebuild on Builder changes”":
+    - /url: "#rebuild-on-builder-changes"
+  - paragraph:
+    - text: If your project is using Astro’s default static mode, you will need to set up a webhook to trigger a new build when your content changes. If you are using Netlify or Vercel as your hosting provider, you can use its webhook feature to trigger a new build whenever you click
+    - strong: Publish
+    - text: in the Builder editor.
+  - heading "Netlify" [level=5]
+  - link "Section titled “Netlify”":
+    - /url: "#netlify"
+  - list:
+    - listitem:
+      - paragraph:
+        - text: Go to your site dashboard, then
+        - strong: Site Settings
+        - text: and click on
+        - strong: Build & deploy
+        - text: .
+    - listitem:
+      - paragraph:
+        - text: Under the
+        - strong: Continuous Deployment
+        - text: tab, find the
+        - strong: Build hooks
+        - text: section and click on
+        - strong: Add build hook
+        - text: .
+    - listitem:
+      - paragraph:
+        - text: Provide a name for your webhook and select the branch you want to trigger the build on. Click on
+        - strong: Save
+        - text: and copy the generated URL.
+  - heading "Vercel" [level=5]
+  - link "Section titled “Vercel”":
+    - /url: "#vercel"
+  - list:
+    - listitem:
+      - paragraph:
+        - text: Go to your project dashboard and click on
+        - strong: Settings
+        - text: .
+    - listitem:
+      - paragraph:
+        - text: Under the
+        - strong: Git
+        - text: tab, find the
+        - strong: Deploy Hooks
+        - text: section.
+    - listitem:
+      - paragraph:
+        - text: Provide a name for your webhook and the branch you want to trigger the build on. Click
+        - strong: Add
+        - text: and copy the generated URL.
+  - heading "Adding a webhook to Builder" [level=5]
+  - link "Section titled “Adding a webhook to Builder”":
+    - /url: "#adding-a-webhook-to-builder"
+  - complementary "Official resource":
+    - paragraph:
+      - text: See
+      - link "Builder’s guide on adding webhooks":
+        - /url: https://www.builder.io/c/docs/webhooks
+      - text: for more information.
+  - list:
+    - listitem:
+      - paragraph:
+        - text: In your Builder dashboard, go into your
+        - strong:
+          - code: blogpost
+        - text: model. Under
+        - strong: Show More Options
+        - text: ", select"
+        - strong: Edit Webhooks
+        - text: at the bottom.
+    - listitem:
+      - paragraph:
+        - text: Add a new webhook by clicking on
+        - strong: Webhook
+        - text: . Paste the URL generated by your hosting provider into the
+        - strong: Url
+        - text: field.
+    - listitem:
+      - paragraph:
+        - text: Click on
+        - strong: Show Advanced
+        - text: under the URL field and toggle the option to select
+        - strong: Disable Payload
+        - text: . With the payload disabled, Builder sends a simpler POST request to your hosting provider, which can be helpful as your site grows. Click
+        - strong: Done
+        - text: to save this selection.
+  - paragraph:
+    - text: With this webhook in place, whenever you click the
+    - strong: Publish
+    - text: button in the Builder editor, your hosting provider rebuilds your site - and Astro fetches the newly published data for you. Nothing to do but lean back and pump out that sweet sweet content!
+  - heading "Official resources" [level=2]
+  - link "Section titled “Official resources”":
+    - /url: "#official-resources"
+  - list:
+    - listitem:
+      - text: Check out
+      - link "the official Builder.io starter project":
+        - /url: https://github.com/BuilderIO/builder/tree/main/examples/astro-solidjs
+      - text: ", which uses Astro and SolidJS."
+    - listitem:
+      - text: The
+      - link "official Builder quickstart guide":
+        - /url: https://www.builder.io/c/docs/quickstart#step-1-add-builder-as-a-dependency
+      - text: covers both the use of the REST API as well as data fetching through an integration with a JavaScript framework like Qwik, React or Vue.
+    - listitem:
+      - link "Builder’s API explorer":
+        - /url: https://builder.io/api-explorer
+      - text: can help if you need to troubleshoot your API calls.
+  - heading "Community resources" [level=2]
+  - link "Section titled “Community resources”":
+    - /url: "#community-resources"
+  - list:
+    - listitem:
+      - text: Read
+      - link "Connecting Builder.io’s Visual CMS to Astro":
+        - /url: https://www.hamatoyogi.dev/blog/astro-log/connecting-builderio-to-astro
+      - text: by Yoav Ganbar.
+  - heading "More CMS guides" [level=2]
+  - heading "Featured CMS partners" [level=3]
+  - list:
+    - listitem:
+      - heading "CloudCannon" [level=3]:
+        - link "CloudCannon":
+          - /url: /en/guides/cms/cloudcannon/
+      - paragraph: Git-based CMS built for speed, security, and zero headaches.
+  - heading "All CMS guides" [level=3]
+  - list:
+    - listitem:
+      - heading "ApostropheCMS" [level=3]:
+        - link "ApostropheCMS":
+          - /url: /en/guides/cms/apostrophecms/
+    - listitem:
+      - heading "Builder.io" [level=3]:
+        - link "Builder.io":
+          - /url: /en/guides/cms/builderio/
+    - listitem:
+      - heading "ButterCMS" [level=3]:
+        - link "ButterCMS":
+          - /url: /en/guides/cms/buttercms/
+    - listitem:
+      - heading "Caisy" [level=3]:
+        - link "Caisy":
+          - /url: /en/guides/cms/caisy/
+    - listitem:
+      - heading "CloudCannon" [level=3]:
+        - link "CloudCannon":
+          - /url: /en/guides/cms/cloudcannon/
+    - listitem:
+      - heading "Contentful" [level=3]:
+        - link "Contentful":
+          - /url: /en/guides/cms/contentful/
+    - listitem:
+      - heading "Cosmic" [level=3]:
+        - link "Cosmic":
+          - /url: /en/guides/cms/cosmic/
+    - listitem:
+      - heading "Craft CMS" [level=3]:
+        - link "Craft CMS":
+          - /url: /en/guides/cms/craft-cms/
+    - listitem:
+      - heading "Craft Cross CMS" [level=3]:
+        - link "Craft Cross CMS":
+          - /url: /en/guides/cms/craft-cross-cms/
+    - listitem:
+      - heading "Crystallize" [level=3]:
+        - link "Crystallize":
+          - /url: /en/guides/cms/crystallize/
+    - listitem:
+      - heading "DatoCMS" [level=3]:
+        - link "DatoCMS":
+          - /url: /en/guides/cms/datocms/
+    - listitem:
+      - heading "Decap CMS" [level=3]:
+        - link "Decap CMS":
+          - /url: /en/guides/cms/decap-cms/
+    - listitem:
+      - heading "Directus" [level=3]:
+        - link "Directus":
+          - /url: /en/guides/cms/directus/
+    - listitem:
+      - heading "Drupal" [level=3]:
+        - link "Drupal":
+          - /url: /en/guides/cms/drupal/
+    - listitem:
+      - heading "Flotiq" [level=3]:
+        - link "Flotiq":
+          - /url: /en/guides/cms/flotiq/
+    - listitem:
+      - heading "Front Matter CMS" [level=3]:
+        - link "Front Matter CMS":
+          - /url: /en/guides/cms/frontmatter-cms/
+    - listitem:
+      - heading "Ghost" [level=3]:
+        - link "Ghost":
+          - /url: /en/guides/cms/ghost/
+    - listitem:
+      - heading "GitCMS" [level=3]:
+        - link "GitCMS":
+          - /url: /en/guides/cms/gitcms/
+    - listitem:
+      - heading "Hashnode" [level=3]:
+        - link "Hashnode":
+          - /url: /en/guides/cms/hashnode/
+    - listitem:
+      - heading "Hygraph" [level=3]:
+        - link "Hygraph":
+          - /url: /en/guides/cms/hygraph/
+    - listitem:
+      - heading "JekyllPad" [level=3]:
+        - link "JekyllPad":
+          - /url: /en/guides/cms/jekyllpad/
+    - listitem:
+      - heading "Keystatic" [level=3]:
+        - link "Keystatic":
+          - /url: /en/guides/cms/keystatic/
+    - listitem:
+      - heading "KeystoneJS" [level=3]:
+        - link "KeystoneJS":
+          - /url: /en/guides/cms/keystonejs/
+    - listitem:
+      - heading "Kontent.ai" [level=3]:
+        - link "Kontent.ai":
+          - /url: /en/guides/cms/kontent-ai/
+    - listitem:
+      - heading "microCMS" [level=3]:
+        - link "microCMS":
+          - /url: /en/guides/cms/microcms/
+    - listitem:
+      - heading "Optimizely CMS" [level=3]:
+        - link "Optimizely CMS":
+          - /url: /en/guides/cms/optimizely/
+    - listitem:
+      - heading "Pages CMS" [level=3]:
+        - link "Pages CMS":
+          - /url: /en/guides/cms/pages-cms/
+    - listitem:
+      - heading "Payload CMS" [level=3]:
+        - link "Payload CMS":
+          - /url: /en/guides/cms/payload/
+    - listitem:
+      - heading "Prepr CMS" [level=3]:
+        - link "Prepr CMS":
+          - /url: /en/guides/cms/preprcms/
+    - listitem:
+      - heading "Prismic" [level=3]:
+        - link "Prismic":
+          - /url: /en/guides/cms/prismic/
+    - listitem:
+      - heading "Sanity" [level=3]:
+        - link "Sanity":
+          - /url: /en/guides/cms/sanity/
+    - listitem:
+      - heading "Sitecore XM" [level=3]:
+        - link "Sitecore XM":
+          - /url: /en/guides/cms/sitecore/
+    - listitem:
+      - heading "Sitepins" [level=3]:
+        - link "Sitepins":
+          - /url: /en/guides/cms/sitepins/
+    - listitem:
+      - heading "Spinal" [level=3]:
+        - link "Spinal":
+          - /url: /en/guides/cms/spinal/
+    - listitem:
+      - heading "Statamic" [level=3]:
+        - link "Statamic":
+          - /url: /en/guides/cms/statamic/
+    - listitem:
+      - heading "Storyblok" [level=3]:
+        - link "Storyblok":
+          - /url: /en/guides/cms/storyblok/
+    - listitem:
+      - heading "Strapi" [level=3]:
+        - link "Strapi":
+          - /url: /en/guides/cms/strapi/
+    - listitem:
+      - heading "StudioCMS" [level=3]:
+        - link "StudioCMS":
+          - /url: /en/guides/cms/studiocms/
+    - listitem:
+      - heading "TinaCMS" [level=3]:
+        - link "TinaCMS":
+          - /url: /en/guides/cms/tina-cms/
+    - listitem:
+      - heading "Umbraco" [level=3]:
+        - link "Umbraco":
+          - /url: /en/guides/cms/umbraco/
+    - listitem:
+      - heading "Vault CMS" [level=3]:
+        - link "Vault CMS":
+          - /url: /en/guides/cms/vault-cms/
+    - listitem:
+      - heading "Wordpress" [level=3]:
+        - link "Wordpress":
+          - /url: /en/guides/cms/wordpress/
+    - listitem:
+      - heading "Zero" [level=3]:
+        - link "Zero":
+          - /url: /en/guides/cms/zero/
+  - link "Edit page":
+    - /url: https://github.com/withastro/docs/edit/main/src/content/docs/en/guides/cms/builderio.mdx
+  - link "Translate this page":
+    - /url: https://contribute.docs.astro.build/guides/i18n/
+  - link "Previous ApostropheCMS":
+    - /url: /en/guides/cms/apostrophecms/
+  - link "Next ButterCMS":
+    - /url: /en/guides/cms/buttercms/
+  - link "Contribute":
+    - /url: /en/contribute/
+  - link "Community":
+    - /url: https://astro.build/chat
+    - img
+    - text: Community
+  - link "Sponsor":
+    - /url: https://opencollective.com/astrodotbuild

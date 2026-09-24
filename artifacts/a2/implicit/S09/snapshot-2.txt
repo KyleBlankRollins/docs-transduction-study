@@ -1,0 +1,1217 @@
+- link "Skip to content":
+  - /url: "#_top"
+- banner:
+  - link "Astro":
+    - /url: https://astro.build/
+    - img
+  - link "Docs":
+    - /url: /en/getting-started/
+    - img
+  - button "Search":
+    - img
+    - text: Search
+  - link "GitHub":
+    - /url: https://github.com/withastro/astro
+  - link "Discord":
+    - /url: https://astro.build/chat
+  - text: Select theme
+  - combobox "Select theme":
+    - option "Dark"
+    - option "Light"
+    - option "Auto" [selected]
+  - text: Select language
+  - combobox "Select language":
+    - option "English" [selected]
+    - option "Deutsch"
+    - option "Português do Brasil"
+    - option "Español"
+    - option "简体中文"
+    - option "正體中文"
+    - option "Français"
+    - option "हिन्दी"
+    - option "العربية"
+    - option "日本語"
+    - option "한국어"
+    - option "Polski"
+    - option "Русский"
+    - option "Italiano"
+- navigation "Main":
+  - tablist:
+    - tab "Tutorial"
+    - tab "Guide" [selected]
+    - tab "Reference"
+    - tab "Ecosystem"
+  - tabpanel "Guide":
+    - list:
+      - listitem:
+        - group:
+          - text: Welcome, world!
+          - list:
+            - listitem:
+              - link "Why Astro?":
+                - /url: /en/concepts/why-astro/
+            - listitem:
+              - link "Islands architecture":
+                - /url: /en/concepts/islands/
+            - listitem:
+              - link "Courses":
+                - /url: /en/astro-courses/
+      - listitem:
+        - group:
+          - text: Start a new project
+          - list:
+            - listitem:
+              - link "Installation":
+                - /url: /en/install-and-setup/
+            - listitem:
+              - link "Project structure":
+                - /url: /en/basics/project-structure/
+            - listitem:
+              - link "Develop and build":
+                - /url: /en/develop-and-build/
+      - listitem:
+        - group:
+          - text: Configuration
+          - list:
+            - listitem:
+              - link "Configuration overview":
+                - /url: /en/guides/configuring-astro/
+            - listitem:
+              - link "Editor setup":
+                - /url: /en/editor-setup/
+            - listitem:
+              - link "TypeScript":
+                - /url: /en/guides/typescript/
+            - listitem:
+              - link "Environment variables":
+                - /url: /en/guides/environment-variables/
+            - listitem:
+              - link "Working with integrations":
+                - /url: /en/guides/integrations/
+            - listitem:
+              - link "Build with AI":
+                - /url: /en/guides/build-with-ai/
+            - listitem:
+              - link "Dev toolbar":
+                - /url: /en/guides/dev-toolbar/
+      - listitem:
+        - group:
+          - text: Routing and navigation
+          - list:
+            - listitem:
+              - link "Pages":
+                - /url: /en/basics/astro-pages/
+            - listitem:
+              - link "Routing":
+                - /url: /en/guides/routing/
+            - listitem:
+              - link "Endpoints":
+                - /url: /en/guides/endpoints/
+            - listitem:
+              - link "Middleware":
+                - /url: /en/guides/middleware/
+            - listitem:
+              - link "Internationalization (i18n)":
+                - /url: /en/guides/internationalization/
+            - listitem:
+              - link "Prefetch":
+                - /url: /en/guides/prefetch/
+            - listitem:
+              - link "View transitions":
+                - /url: /en/guides/view-transitions/
+      - listitem:
+        - group:
+          - text: Build your UI
+          - list:
+            - listitem:
+              - link "Components":
+                - /url: /en/basics/astro-components/
+            - listitem:
+              - link "Layouts":
+                - /url: /en/basics/layouts/
+            - listitem:
+              - link "Styles and CSS":
+                - /url: /en/guides/styling/
+            - listitem:
+              - link "Fonts":
+                - /url: /en/guides/fonts/
+            - listitem:
+              - link "Syntax Highlighting":
+                - /url: /en/guides/syntax-highlighting/
+            - listitem:
+              - link "Scripts and event handling":
+                - /url: /en/guides/client-side-scripts/
+            - listitem:
+              - link "Front-end frameworks":
+                - /url: /en/guides/framework-components/
+      - listitem:
+        - group:
+          - text: Add content to your site
+          - list:
+            - listitem:
+              - link "Markdown":
+                - /url: /en/guides/markdown-content/
+            - listitem:
+              - link "Content collections":
+                - /url: /en/guides/content-collections/
+            - listitem:
+              - link "Images":
+                - /url: /en/guides/images/
+            - listitem:
+              - link "Data fetching":
+                - /url: /en/guides/data-fetching/
+      - listitem:
+        - group:
+          - text: Server rendering
+          - list:
+            - listitem:
+              - link "On-demand rendering":
+                - /url: /en/guides/on-demand-rendering/
+            - listitem:
+              - link "Server islands":
+                - /url: /en/guides/server-islands/
+            - listitem:
+              - link "Actions":
+                - /url: /en/guides/actions/
+            - listitem:
+              - link "Sessions":
+                - /url: /en/guides/sessions/
+            - listitem:
+              - link "Route caching":
+                - /url: /en/guides/caching/
+      - listitem:
+        - group:
+          - text: Upgrade
+          - list:
+            - listitem:
+              - link "Upgrade Astro":
+                - /url: /en/upgrade-astro/
+            - listitem:
+              - group: Major upgrade guides
+      - listitem:
+        - link "Troubleshooting":
+          - /url: /en/guides/troubleshooting/
+      - listitem:
+        - group: How-to recipes
+      - listitem:
+        - group:
+          - text: Migrate to Astro
+          - list:
+            - listitem:
+              - link "Site migration overview":
+                - /url: /en/guides/migrate-to-astro/
+            - listitem:
+              - link "Create React App":
+                - /url: /en/guides/migrate-to-astro/from-create-react-app/
+            - listitem:
+              - link "Docusaurus":
+                - /url: /en/guides/migrate-to-astro/from-docusaurus/
+            - listitem:
+              - link "Eleventy":
+                - /url: /en/guides/migrate-to-astro/from-eleventy/
+            - listitem:
+              - link "Gatsby":
+                - /url: /en/guides/migrate-to-astro/from-gatsby/
+            - listitem:
+              - link "GitBook":
+                - /url: /en/guides/migrate-to-astro/from-gitbook/
+            - listitem:
+              - link "Gridsome":
+                - /url: /en/guides/migrate-to-astro/from-gridsome/
+            - listitem:
+              - link "Hugo":
+                - /url: /en/guides/migrate-to-astro/from-hugo/
+            - listitem:
+              - link "Jekyll":
+                - /url: /en/guides/migrate-to-astro/from-jekyll/
+            - listitem:
+              - link "Next.js":
+                - /url: /en/guides/migrate-to-astro/from-nextjs/
+            - listitem:
+              - link "NuxtJS":
+                - /url: /en/guides/migrate-to-astro/from-nuxtjs/
+            - listitem:
+              - link "Pelican":
+                - /url: /en/guides/migrate-to-astro/from-pelican/
+            - listitem:
+              - link "SvelteKit":
+                - /url: /en/guides/migrate-to-astro/from-sveltekit/
+            - listitem:
+              - link "VuePress":
+                - /url: /en/guides/migrate-to-astro/from-vuepress/
+            - listitem:
+              - link "WordPress":
+                - /url: /en/guides/migrate-to-astro/from-wordpress/
+      - listitem:
+        - link "Contribute to Astro":
+          - /url: /en/contribute/
+  - heading "Sponsored by" [level=2]
+  - link "Netlify":
+    - /url: https://www.netlify.com/?utm_campaign=Astro-2024&utm_source=astro-referral
+  - link "Webflow":
+    - /url: https://webflow.com/feature/cloud?utm_source=Astro&utm_medium=tech-partner&utm_campaign=fy26-astro&utm_content=fy26-docs
+  - link "Cloudflare":
+    - /url: https://www.cloudflare.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mux":
+    - /url: https://www.mux.com/?utm_campaign=21819274-Astro&utm_source=astro
+  - link "Image Kit":
+    - /url: https://imagekit.io/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mintlify":
+    - /url: https://www.mintlify.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+- complementary:
+  - navigation "On this page":
+    - heading "On this page" [level=2]
+    - list:
+      - listitem:
+        - link "Overview":
+          - /url: "#_top"
+      - listitem:
+        - link "Key Similarities between Next.js and Astro":
+          - /url: "#key-similarities-between-nextjs-and-astro"
+      - listitem:
+        - link "Key Differences between Next.js and Astro":
+          - /url: "#key-differences-between-nextjs-and-astro"
+      - listitem:
+        - link "Convert your Next.js Project":
+          - /url: "#convert-your-nextjs-project"
+        - list:
+          - listitem:
+            - link "Create a new Astro project":
+              - /url: "#create-a-new-astro-project"
+          - listitem:
+            - link "Install integrations (optional)":
+              - /url: "#install-integrations-optional"
+          - listitem:
+            - link "Put your source code in src":
+              - /url: "#put-your-source-code-in-src"
+          - listitem:
+            - link "The Astro config file":
+              - /url: "#the-astro-config-file"
+          - listitem:
+            - 'link "Tips: Convert JSX files to .astro files"':
+              - /url: "#tips-convert-jsx-files-to-astro-files"
+          - listitem:
+            - link "Migrating Layout Files":
+              - /url: "#migrating-layout-files"
+          - listitem:
+            - link "Migrating Pages and Posts":
+              - /url: "#migrating-pages-and-posts"
+          - listitem:
+            - link "Migrating Tests":
+              - /url: "#migrating-tests"
+      - listitem:
+        - 'link "Reference: Convert Next.js Syntax to Astro"':
+          - /url: "#reference-convert-nextjs-syntax-to-astro"
+        - list:
+          - listitem:
+            - link "Next Links to Astro":
+              - /url: "#next-links-to-astro"
+          - listitem:
+            - link "Next Imports to Astro":
+              - /url: "#next-imports-to-astro"
+          - listitem:
+            - link "Next Children Props to Astro":
+              - /url: "#next-children-props-to-astro"
+          - listitem:
+            - link "Next Data Fetching to Astro":
+              - /url: "#next-data-fetching-to-astro"
+          - listitem:
+            - link "Next Styling to Astro":
+              - /url: "#next-styling-to-astro"
+          - listitem:
+            - link "Next Image Plugin to Astro":
+              - /url: "#next-image-plugin-to-astro"
+      - listitem:
+        - 'link "Guided example: Next data fetching to Astro"':
+          - /url: "#guided-example-next-data-fetching-to-astro"
+      - listitem:
+        - link "Community Resources":
+          - /url: "#community-resources"
+  - complementary "Learn Astro with James Q Quick":
+    - img "Scrimba"
+    - heading "Learn Astro with James Q Quick" [level=2]:
+      - strong: Learn Astro
+      - text: with James Q Quick
+    - paragraph: Build your first site with 35 interactive Scrimba lessons
+    - link "Get 20% off":
+      - /url: https://scrimba.com/intro-to-astro-c00ar0fi5u?via=astro
+- main:
+  - heading "Migrating from Next.js" [level=1]
+  - paragraph:
+    - text: Here are some key concepts and migration strategies to help you get started. Use the rest of our docs and our
+    - link "Discord community":
+      - /url: https://astro.build/chat
+    - text: to keep going!
+  - heading "Key Similarities between Next.js and Astro" [level=2]
+  - link "Section titled “Key Similarities between Next.js and Astro”":
+    - /url: "#key-similarities-between-nextjs-and-astro"
+  - paragraph: "Next.js and Astro share some similarities that will help you migrate your project:"
+  - list:
+    - listitem:
+      - text: The
+      - link "syntax of .astro files is similar to JSX":
+        - /url: /en/reference/astro-syntax/#differences-between-astro-and-jsx
+        - text: syntax of
+        - code: .astro
+        - text: files is similar to JSX
+      - text: . Writing Astro should feel familiar.
+    - listitem:
+      - text: Astro projects can also be SSG or
+      - link "SSR with page-level prerendering":
+        - /url: /en/guides/on-demand-rendering/
+      - text: .
+    - listitem:
+      - text: Astro uses file-based routing, and
+      - link "allows specially named pages to create dynamic routes":
+        - /url: /en/guides/routing/#dynamic-routes
+      - text: .
+    - listitem:
+      - text: Astro is
+      - link "component-based":
+        - /url: /en/basics/astro-components/
+      - text: ", and your markup structure will be similar before and after your migration."
+    - listitem:
+      - text: Astro has
+      - link "official integrations for React, Preact, and Solid":
+        - /url: /en/guides/integrations-guide/react/
+      - text: so you can use your existing JSX components. Note that in Astro, these files
+      - strong: must
+      - text: have a
+      - code: .jsx
+      - text: or
+      - code: .tsx
+      - text: extension.
+    - listitem:
+      - text: Astro has support for
+      - link "installing NPM packages":
+        - /url: /en/guides/imports/#npm-packages
+      - text: ", including React libraries. Many of your existing dependencies will work in Astro."
+  - heading "Key Differences between Next.js and Astro" [level=2]
+  - link "Section titled “Key Differences between Next.js and Astro”":
+    - /url: "#key-differences-between-nextjs-and-astro"
+  - paragraph: "When you rebuild your Next.js site in Astro, you will notice some important differences:"
+  - list:
+    - listitem:
+      - paragraph:
+        - text: Next.js is a React single-page app, and uses
+        - code: index.js
+        - text: as your project’s root. Astro is a multi-page site, and
+        - code: index.astro
+        - text: is your home page.
+    - listitem:
+      - paragraph:
+        - link ".astro components":
+          - /url: /en/basics/astro-components/
+          - code: .astro
+          - text: components
+        - text: are not written as exported functions that return page templating. Instead, you’ll split your code into a “code fence” for your JavaScript and a body exclusively for the HTML you generate.
+    - listitem:
+      - paragraph:
+        - link "content-driven":
+          - /url: /en/concepts/why-astro/#content-driven
+        - text: ": Astro was designed to showcase your content and to allow you to opt-in to interactivity only as needed. An existing Next.js app might be built for high client-side interactivity and may require advanced Astro techniques to include items that are more challenging to replicate using"
+        - code: .astro
+        - text: components, such as dashboards.
+  - heading "Convert your Next.js Project" [level=2]
+  - link "Section titled “Convert your Next.js Project”":
+    - /url: "#convert-your-nextjs-project"
+  - paragraph: Each project migration will look different, but there are some common actions you will perform when converting from Next.js to Astro.
+  - heading "Create a new Astro project" [level=3]
+  - link "Section titled “Create a new Astro project”":
+    - /url: "#create-a-new-astro-project"
+  - paragraph:
+    - text: Use the
+    - code: create astro
+    - text: command for your package manager to launch Astro’s CLI wizard or choose a community theme from the
+    - link "Astro Theme Showcase":
+      - /url: https://astro.build/themes
+    - text: .
+  - paragraph:
+    - text: You can pass a
+    - code: "--template"
+    - text: argument to the
+    - code: create astro
+    - text: command to start a new Astro project with one of our official starters (e.g.
+    - code: docs
+    - text: ","
+    - code: blog
+    - text: ","
+    - code: portfolio
+    - text: ). Or, you can
+    - link "start a new project from any existing Astro repository on GitHub":
+      - /url: /en/install-and-setup/#install-from-the-cli-wizard
+    - text: .
+  - paragraph: Choose one of the following options. These are alternatives — use exactly one, not all of them.
+  - paragraph: "If you are using npm:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: "# launch the Astro CLI Wizard npm create astro@latest # create a new project with an official example npm create astro@latest -- --template <example-name>"
+    - button "Copy to clipboard"
+  - paragraph: "If you are using pnpm:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: "# launch the Astro CLI Wizard pnpm create astro@latest # create a new project with an official example pnpm create astro@latest --template <example-name>"
+    - button "Copy to clipboard"
+  - paragraph: "If you are using yarn:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: "# launch the Astro CLI Wizard yarn create astro@latest # create a new project with an official example yarn create astro@latest --template <example-name>"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: Then, copy your existing Next project files over to your new Astro project in a separate folder outside of
+    - code: src
+    - text: .
+  - paragraph:
+    - text: As a helpful tip, Visit
+    - link "https://astro.new":
+      - /url: https://astro.new
+    - text: for the full list of official starter templates, and links for opening a new project in StackBlitz or CodeSandbox.
+  - heading "Install integrations (optional)" [level=3]
+  - link "Section titled “Install integrations (optional)”":
+    - /url: "#install-integrations-optional"
+  - paragraph:
+    - text: You may find it useful to install some of
+    - link "Astro’s optional integrations":
+      - /url: /en/guides/integrations/
+    - text: "to use while converting your Next project to Astro:"
+  - list:
+    - listitem:
+      - paragraph:
+        - strong: "@astrojs/react"
+        - text: ": to reuse some existing React UI components in your new Astro site, or keep writing with React components."
+    - listitem:
+      - paragraph:
+        - strong: "@astrojs/mdx"
+        - text: ": to bring existing MDX files from your Next project, or to use MDX in your new Astro site."
+  - heading "Put your source code in src" [level=3]:
+    - text: Put your source code in
+    - code: src
+  - link "Section titled “Put your source code in src”":
+    - /url: "#put-your-source-code-in-src"
+  - paragraph:
+    - text: Following
+    - link "Astro’s project structure":
+      - /url: /en/basics/project-structure/
+    - text: ":"
+  - paragraph: Complete the following steps in order.
+  - paragraph:
+    - text: First,
+    - strong: Keep
+    - text: Next’s
+    - code: public/
+    - text: folder untouched.
+  - paragraph:
+    - text: Astro uses the
+    - code: public/
+    - text: directory for static assets, just like Next. There is no change needed to this folder, nor its contents.
+  - paragraph:
+    - text: Finally,
+    - strong: Copy or Move
+    - text: Next’s other files and folders (e.g.
+    - code: pages
+    - text: ","
+    - code: styles
+    - text: etc.) into Astro’s
+    - code: src/
+    - text: folder as you rebuild your site, following
+    - link "Astro’s project structure":
+      - /url: /en/basics/project-structure/
+    - text: .
+  - paragraph:
+    - text: Like Next, Astro’s
+    - code: src/pages/
+    - text: folder is a special folder used for file-based routing. All other folders are optional, and you can organize the contents of your
+    - code: src/
+    - text: folder any way you like. Other common folders in Astro projects include
+    - code: src/layouts/
+    - text: ","
+    - code: src/components
+    - text: ","
+    - code: src/styles
+    - text: ","
+    - code: src/scripts
+    - text: .
+  - heading "The Astro config file" [level=3]
+  - link "Section titled “The Astro config file”":
+    - /url: "#the-astro-config-file"
+  - paragraph:
+    - text: Astro has a configuration file at the root of your project called
+    - link "astro.config.mjs":
+      - /url: /en/guides/configuring-astro/
+      - code: astro.config.mjs
+    - text: . This is used only for configuring your Astro project and any installed integrations, including
+    - link "SSR adapters":
+      - /url: /en/guides/deploy/
+    - text: .
+  - 'heading "Tips: Convert JSX files to .astro files" [level=3]':
+    - text: "Tips: Convert JSX files to"
+    - code: .astro
+    - text: files
+  - 'link "Section titled “Tips: Convert JSX files to .astro files”"':
+    - /url: "#tips-convert-jsx-files-to-astro-files"
+  - paragraph:
+    - text: Here are some tips for converting a Next
+    - code: .js
+    - text: component into a
+    - code: .astro
+    - text: "component:"
+  - list:
+    - listitem:
+      - paragraph: Use the returned JSX of the existing Next.js component function as the basis for your HTML template.
+    - listitem:
+      - paragraph:
+        - text: Change any
+        - link "Next or JSX syntax to Astro":
+          - /url: "#reference-convert-nextjs-syntax-to-astro"
+        - text: or to HTML web standards. This includes
+        - code: <Link>
+        - text: ","
+        - code: <Script>
+        - text: ","
+        - code: "{children}"
+        - text: ", and"
+        - code: className
+        - text: ", for example."
+    - listitem:
+      - paragraph:
+        - text: Move any necessary JavaScript, including import statements, into a
+        - link "“code fence” (---)":
+          - /url: /en/basics/astro-components/#the-component-script
+          - text: “code fence” (
+          - code: "---"
+          - text: )
+        - text: ". Note: JavaScript to"
+        - link "conditionally render content":
+          - /url: /en/reference/astro-syntax/#dynamic-html
+        - text: is often written inside the HTML template directly in Astro.
+    - listitem:
+      - paragraph:
+        - text: Use
+        - link "Astro.props":
+          - /url: /en/reference/api-reference/#props
+          - code: Astro.props
+        - text: to access any additional props that were previously passed to your Next function.
+    - listitem:
+      - paragraph:
+        - text: Decide whether any imported components also need to be converted to Astro. With the official integration installed, you can
+        - link "use existing React components in your Astro file":
+          - /url: /en/guides/framework-components/
+        - text: . But, you may want to convert them to
+        - code: .astro
+        - text: components, especially if they do not need to be interactive!
+    - listitem:
+      - paragraph:
+        - text: Replace
+        - code: getStaticProps()
+        - text: with import statements or
+        - link "import.meta.glob()":
+          - /url: /en/guides/imports/#importmetaglob
+          - code: import.meta.glob()
+        - text: to query your local files. Use
+        - code: fetch()
+        - text: to fetch external data.
+  - paragraph:
+    - text: See
+    - link "an example of a Next .js file converted step-by-step":
+      - /url: "#guided-example-next-data-fetching-to-astro"
+      - text: an example of a Next
+      - code: .js
+      - text: file converted step-by-step
+    - text: .
+  - 'heading "Compare: JSX vs Astro" [level=4]'
+  - 'link "Section titled “Compare: JSX vs Astro”"':
+    - /url: "#compare-jsx-vs-astro"
+  - paragraph: "Compare the following Next component and a corresponding Astro component:"
+  - paragraph: Choose one of the following options. These are alternatives — use exactly one, not all of them.
+  - paragraph: "If you are using jsx:"
+  - figure "StarCount.jsx":
+    - text: StarCount.jsx
+    - region:
+      - code: "import Header from \"./header\"; import Footer from \"./footer\"; import \"./layout.css\"; export async function getStaticProps() { const res = await fetch(\"https://api.github.com/repos/withastro/astro\"); const json = await res.json(); return { props: { message: json.message, stars: json.stargazers_count || 0 }, } } const Component = ({ stars, message }) => { return ( <> <Header /> <p style={{ backgroundColor: `#f4f4f4`, padding: `1em 1.5em`, textAlign: `center`, marginBottom: `1em` }}>Astro has {stars} 🧑‍🚀</p> <Footer /> </> ) } export default Component;"
+    - button "Copy to clipboard"
+  - paragraph: "If you are using astro:"
+  - figure "StarCount.astro":
+    - text: StarCount.astro
+    - code: "--- import Header from \"./header\"; import Footer from \"./footer\"; import \"./layout.css\"; const res = await fetch(\"https://api.github.com/repos/withastro/astro\"); const json = await res.json(); const message = json.message; const stars = json.stargazers_count || 0; --- <Header /> <p class=\"banner\">Astro has {stars} 🧑‍🚀</p> <Footer /> <style> .banner { background-color: #f4f4f4; padding: 1em 1.5em; text-align: center; margin-bottom: 1em; } </style>"
+    - button "Copy to clipboard"
+  - heading "Migrating Layout Files" [level=3]
+  - link "Section titled “Migrating Layout Files”":
+    - /url: "#migrating-layout-files"
+  - paragraph:
+    - text: You may find it helpful to start by converting your Next.js layouts and templates into
+    - link "Astro layout components":
+      - /url: /en/basics/layouts/
+    - text: .
+  - paragraph: "Next has two different methods for creating layout files, each of which handles layouts differently than Astro:"
+  - list:
+    - listitem:
+      - paragraph:
+        - text: The
+        - code: pages
+        - text: directory
+    - listitem:
+      - paragraph:
+        - link "The /app directory":
+          - /url: https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#layouts
+          - text: The
+          - code: /app
+          - text: directory
+  - paragraph:
+    - text: Each Astro page explicitly requires
+    - code: <html>
+    - text: ","
+    - code: <head>
+    - text: ", and"
+    - code: <body>
+    - text: tags to be present, so it is common to reuse a layout file across pages. Astro uses a
+    - link "<slot />":
+      - /url: /en/basics/astro-components/#slots
+      - code: <slot />
+    - text: for page content, with no import statement required. Note the standard HTML templating, and direct access to
+    - code: <head>
+    - text: ":"
+  - figure "src/layouts/Layout.astro":
+    - text: src/layouts/Layout.astro
+    - code: "--- --- <html lang=\"en\"> <head> <meta charset=\"utf-8\" /> <link rel=\"icon\" type=\"image/svg+xml\" href=\"/favicon.svg\" /> <meta name=\"viewport\" content=\"width=device-width\" /> <meta name=\"generator\" content={Astro.generator} /> <title>Astro</title> </head> <body> <!-- Wrap the slot element with your existing layout templating --> <slot /> </body> </html>"
+    - button "Copy to clipboard"
+  - heading "Migrating from Next.js’ pages directory" [level=4]:
+    - text: Migrating from Next.js’
+    - code: pages
+    - text: directory
+  - link "Section titled “Migrating from Next.js’ pages directory”":
+    - /url: "#migrating-from-nextjs-pages-directory"
+  - paragraph:
+    - text: Your Next project may have a
+    - code: pages/_document.jsx
+    - text: file that imports React components to customize your app’s
+    - code: <head>
+    - text: ":"
+  - figure "pages/_document.jsx":
+    - text: pages/_document.jsx
+    - region:
+      - code: "import Document, { Html, Head, Main, NextScript } from \"next/document\"; export default class MyDocument extends Document { render() { return ( <Html lang=\"en\"> <Head> <link rel=\"icon\" href=\"/favicon.ico\" /> </Head> <body> <Main /> <NextScript /> </body> </Html> ); } }"
+    - button "Copy to clipboard"
+  - paragraph: Complete the following steps in order.
+  - paragraph: First, Make a new Astro layout file using only the returned JSX.
+  - paragraph:
+    - text: Finally, Replace any React components with
+    - code: <html>
+    - text: ","
+    - code: <head>
+    - text: ","
+    - code: <slot>
+    - text: ", and other HTML standard tags."
+  - figure "src/layouts/Document.astro":
+    - text: src/layouts/Document.astro
+    - code: <html lang="en"> <head> <link rel="icon" href="/favicon.ico" /> </head> <body> <slot/> </body> </html>
+    - button "Copy to clipboard"
+  - heading "Migrating from Next.js’ /app directory" [level=4]:
+    - text: Migrating from Next.js’
+    - code: /app
+    - text: directory
+  - link "Section titled “Migrating from Next.js’ /app directory”":
+    - /url: "#migrating-from-nextjs-app-directory"
+  - paragraph:
+    - text: Next.js’
+    - code: app/
+    - text: "directory layout files are created with two files: a"
+    - code: layout.jsx
+    - text: file to customize the
+    - code: <html>
+    - text: and
+    - code: <body>
+    - text: contents, and a
+    - code: head.jsx
+    - text: file to customize the
+    - code: <head>
+    - text: element contents.
+  - figure "app/layout.jsx":
+    - text: app/layout.jsx
+    - code: "export default function Layout({ children }) { return ( <html lang=\"en\"> <body>{children}</body> </html> ); }"
+    - button "Copy to clipboard"
+  - figure "app/head.jsx":
+    - text: app/head.jsx
+    - code: "export default function Head() { return ( <> <title>My Page</title> </> ); }"
+    - button "Copy to clipboard"
+  - paragraph: Complete the following steps in order.
+  - paragraph: First, Make a new Astro layout file using only the returned JSX.
+  - paragraph:
+    - text: Finally, Replace both these files with a single Astro layout file that contains a page shell (
+    - code: <html>
+    - text: ","
+    - code: <head>
+    - text: ", and"
+    - code: <body>
+    - text: tags) and a
+    - code: <slot/>
+    - text: instead of React’s
+    - code: "{children}"
+    - text: "prop:"
+  - figure "src/layouts/Layout.astro":
+    - text: src/layouts/Layout.astro
+    - code: <html lang="en"> <head> <title>My Page</title> </head> <body> <slot/> </body> </html>
+    - button "Copy to clipboard"
+  - heading "Migrating Pages and Posts" [level=3]
+  - link "Section titled “Migrating Pages and Posts”":
+    - /url: "#migrating-pages-and-posts"
+  - paragraph:
+    - text: In Next.js, your posts either live in
+    - code: /pages
+    - text: or
+    - code: /app/routeName/page.jsx
+    - text: .
+  - paragraph:
+    - text: In Astro, all your page content must live within
+    - code: src/
+    - text: unless you are using
+    - link "content collections":
+      - /url: /en/guides/content-collections/
+    - text: .
+  - heading "React pages" [level=4]
+  - link "Section titled “React pages”":
+    - /url: "#react-pages"
+  - paragraph:
+    - text: Your existing Next JSX (
+    - code: .js
+    - text: ) pages will need to be
+    - link "converted from JSX files to .astro pages":
+      - /url: "#tips-convert-jsx-files-to-astro-files"
+      - text: converted from JSX files to
+      - code: .astro
+      - text: pages
+    - text: . You cannot use an existing JSX page file in Astro.
+  - paragraph:
+    - text: These
+    - link ".astro pages":
+      - /url: /en/basics/astro-pages/
+      - code: .astro
+      - text: pages
+    - text: must be located within
+    - code: src/pages/
+    - text: and will have page routes generated automatically based on their file path.
+  - heading "Markdown and MDX pages" [level=4]
+  - link "Section titled “Markdown and MDX pages”":
+    - /url: "#markdown-and-mdx-pages"
+  - paragraph:
+    - text: Astro has built-in support for Markdown and an optional integration for MDX files. You can reuse any existing
+    - link "Markdown and MDX files":
+      - /url: /en/guides/markdown-content/
+    - text: ", but they may require some adjustments to their frontmatter, such as adding"
+    - link "Astro’s special layout frontmatter property":
+      - /url: /en/basics/layouts/#markdown-layouts
+      - text: Astro’s special
+      - code: layout
+      - text: frontmatter property
+    - text: . You will no longer need to manually create pages for each Markdown-generated route. These files can be placed within
+    - code: src/pages/
+    - text: to take advantage of automatic file-based routing.
+  - paragraph:
+    - text: Alternatively, you can use
+    - link "content collections":
+      - /url: /en/guides/content-collections/
+    - text: in Astro to store and manage your content. You will retrieve the content yourself and
+    - link "generate those pages dynamically":
+      - /url: /en/guides/content-collections/#generating-routes-from-content
+    - text: .
+  - heading "Migrating Tests" [level=3]
+  - link "Section titled “Migrating Tests”":
+    - /url: "#migrating-tests"
+  - paragraph: As Astro outputs raw HTML, it is possible to write end-to-end tests using the output of the build step. Any end-to-end tests written previously might work out-of-the-box if you have been able to match the markup of your Next site. Testing libraries such as Jest and React Testing Library can be imported and used in Astro to test your React components.
+  - paragraph:
+    - text: See Astro’s
+    - link "testing guide":
+      - /url: /en/guides/testing/
+    - text: for more.
+  - 'heading "Reference: Convert Next.js Syntax to Astro" [level=2]'
+  - 'link "Section titled “Reference: Convert Next.js Syntax to Astro”"':
+    - /url: "#reference-convert-nextjs-syntax-to-astro"
+  - heading "Next Links to Astro" [level=3]
+  - link "Section titled “Next Links to Astro”":
+    - /url: "#next-links-to-astro"
+  - paragraph:
+    - text: Convert any Next
+    - code: <Link to="">
+    - text: ","
+    - code: <NavLink>
+    - text: etc. components to HTML
+    - code: <a href="">
+    - text: tags.
+  - figure:
+    - code: "- <Link to=\"/blog\">Blog</Link> + <a href=\"/blog\">Blog</a>"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: Astro does not use any special component for links, although you are welcome to build your own
+    - code: <Link>
+    - text: component. You can then import and use this
+    - code: <Link>
+    - text: just as you would any other component.
+  - figure "src/components/Link.astro":
+    - text: src/components/Link.astro
+    - code: "--- const { to } = Astro.props; --- <a href={to}><slot /></a>"
+    - button "Copy to clipboard"
+  - heading "Next Imports to Astro" [level=3]
+  - link "Section titled “Next Imports to Astro”":
+    - /url: "#next-imports-to-astro"
+  - paragraph:
+    - text: Update any
+    - link "file imports":
+      - /url: /en/guides/imports/
+    - text: to reference relative file paths exactly. This can be done using
+    - link "import aliases":
+      - /url: /en/guides/typescript/#import-aliases
+    - text: ", or by writing out a relative path in full."
+  - paragraph:
+    - text: Note that
+    - code: .astro
+    - text: and several other file types must be imported with their full file extension.
+  - figure "src/pages/authors/Fred.astro":
+    - text: src/pages/authors/Fred.astro
+    - code: "--- import Card from \"../../components/Card.astro\"; --- <Card />"
+    - button "Copy to clipboard"
+  - heading "Next Children Props to Astro" [level=3]
+  - link "Section titled “Next Children Props to Astro”":
+    - /url: "#next-children-props-to-astro"
+  - paragraph:
+    - text: Convert any instances of
+    - code: "{children}"
+    - text: to an Astro
+    - code: <slot />
+    - text: . Astro does not need to receive
+    - code: "{children}"
+    - text: as a function prop and will automatically render child content in a
+    - code: <slot />
+    - text: .
+  - figure "src/components/MyComponent.astro":
+    - text: src/components/MyComponent.astro
+    - code: "--- --- - export default function MyComponent(props) { - return ( - <div> - {props.children} - </div> - ); - } + <div> + <slot /> + </div>"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: React components that pass multiple sets of children can be migrated to an Astro component using
+    - link "named slots":
+      - /url: /en/basics/astro-components/#named-slots
+    - text: .
+  - paragraph:
+    - text: See more about
+    - link "specific <slot /> usage in Astro":
+      - /url: /en/basics/astro-components/#slots
+      - text: specific
+      - code: <slot />
+      - text: usage in Astro
+    - text: .
+  - heading "Next Data Fetching to Astro" [level=3]
+  - link "Section titled “Next Data Fetching to Astro”":
+    - /url: "#next-data-fetching-to-astro"
+  - paragraph:
+    - text: Convert any instances of
+    - code: getStaticProps()
+    - text: to either
+    - code: import.meta.glob()
+    - text: or
+    - code: getCollection()
+    - text: /
+    - code: getEntry()
+    - text: in order to access data from other files in your project source. To
+    - link "fetch remote data":
+      - /url: /en/guides/data-fetching/
+    - text: ", use"
+    - code: fetch()
+    - text: .
+  - paragraph: These data requests are made in the frontmatter of the Astro component and use top-level await.
+  - figure "src/pages/index.astro":
+    - text: src/pages/index.astro
+    - region:
+      - code: "--- import { getCollection } from 'astro:content'; // Get all `src/content/blog/` entries const allBlogPosts = await getCollection('blog'); // Get all `src/pages/posts/` entries const allPosts = Object.values(import.meta.glob('../pages/posts/*.md', { eager: true })); const response = await fetch('https://randomuser.me/api/'); const data = await response.json(); const randomUser = data.results[0]; ---"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: See more about local files imports with
+    - link "import.meta.glob()":
+      - /url: /en/guides/imports/#importmetaglob
+      - code: import.meta.glob()
+    - text: ","
+    - link "querying with content collections":
+      - /url: /en/guides/content-collections/#querying-build-time-collections
+    - text: or
+    - link "fetching remote data":
+      - /url: /en/guides/data-fetching/
+    - text: .
+  - heading "Next Styling to Astro" [level=3]
+  - link "Section titled “Next Styling to Astro”":
+    - /url: "#next-styling-to-astro"
+  - paragraph:
+    - text: You may need to replace any
+    - link "CSS-in-JS libraries":
+      - /url: https://github.com/withastro/astro/issues/4432
+    - text: (e.g. styled-components) with other available CSS options in Astro.
+  - paragraph:
+    - text: If necessary, convert any inline style objects (
+    - code: "style={{ fontWeight: \"bold\" }}"
+    - text: ) to inline HTML style attributes (
+    - code: style="font-weight:bold;"
+    - text: ). Or, use an
+    - link "Astro <style> tag":
+      - /url: /en/guides/styling/#styling-in-astro
+      - text: Astro
+      - code: <style>
+      - text: tag
+    - text: for scoped CSS styles.
+  - figure "src/components/Card.astro":
+    - text: src/components/Card.astro
+    - region:
+      - code: "- <div style={{backgroundColor: `#f4f4f4`, padding: `1em`}}>{message}</div> + <div style=\"background-color: #f4f4f4; padding: 1em;\">{message}</div>"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: Tailwind is supported after installing the
+    - link "Tailwind Vite plugin":
+      - /url: /en/guides/styling/#tailwind
+    - text: . No changes to your existing Tailwind code are required!
+  - paragraph:
+    - text: See more about
+    - link "Styling in Astro":
+      - /url: /en/guides/styling/
+    - text: .
+  - heading "Next Image Plugin to Astro" [level=3]
+  - link "Section titled “Next Image Plugin to Astro”":
+    - /url: "#next-image-plugin-to-astro"
+  - paragraph:
+    - text: Convert any Next
+    - code: <Image />
+    - text: components to
+    - link "Astro’s own image component":
+      - /url: /en/guides/images/
+    - text: in
+    - code: .astro
+    - text: or
+    - code: .mdx
+    - text: files, or to a
+    - link "standard HTML <img> / JSX <img />":
+      - /url: /en/guides/images/#images-in-ui-framework-components
+      - text: standard HTML
+      - code: <img>
+      - text: / JSX
+      - code: <img />
+    - text: tag as appropriate in your React components.
+  - paragraph:
+    - text: Astro’s
+    - code: <Image />
+    - text: component works in
+    - code: .astro
+    - text: and
+    - code: .mdx
+    - text: files only. See a
+    - link "full list of its component attributes":
+      - /url: /en/reference/modules/astro-assets/#image-
+    - text: and note that several will differ from Next’s attributes.
+  - figure "src/pages/index.astro":
+    - text: src/pages/index.astro
+    - code: "--- import { Image } from 'astro:assets'; import rocket from '../assets/rocket.png'; --- <Image src={rocket} alt=\"A rocketship in space.\" /> <img src={rocket.src} alt=\"A rocketship in space.\">"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: In React (
+    - code: .jsx
+    - text: ) components, use standard JSX image syntax (
+    - code: <img />
+    - text: ). Astro will not optimize these images, but you can install and use NPM packages for more flexibility.
+  - paragraph:
+    - text: You can learn more about
+    - link "using images in Astro":
+      - /url: /en/guides/images/
+    - text: in the Images Guide.
+  - 'heading "Guided example: Next data fetching to Astro" [level=2]'
+  - 'link "Section titled “Guided example: Next data fetching to Astro”"':
+    - /url: "#guided-example-next-data-fetching-to-astro"
+  - paragraph: Here is an example of Next.js Pokédex data fetch converted to Astro.
+  - paragraph:
+    - code: pages/index.js
+    - text: fetches and displays a list of the first 151 Pokémon using
+    - link "the REST PokéAPI":
+      - /url: https://pokeapi.co/
+    - text: .
+  - paragraph:
+    - text: Here’s how to recreate that in
+    - code: src/pages/index.astro
+    - text: ", replacing"
+    - code: getStaticProps()
+    - text: with
+    - code: fetch()
+    - text: .
+  - paragraph: Complete the following steps in order.
+  - paragraph: First, Identify the return() JSX.
+  - figure "pages/index.js":
+    - text: pages/index.js
+    - region:
+      - code: "import Link from 'next/link' import styles from '../styles/poke-list.module.css'; export default function Home({ pokemons }) { return ( <> <ul className={`plain-list ${styles.pokeList}`}> {pokemons.map((pokemon) => ( <li className={styles.pokemonListItem} key={pokemon.name}> <Link className={styles.pokemonContainer} as={`/pokemon/${pokemon.name}`} href=\"/pokemon/[name]\"> <p className={styles.pokemonId}>No. {pokemon.id}</p> <img className={styles.pokemonImage} src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} alt={`${pokemon.name} picture`}></img> <h2 className={styles.pokemonName}>{pokemon.name}</h2> </Link> </li> ))} </ul> </> ) } export const getStaticProps = async () => { const res = await fetch(\"https://pokeapi.co/api/v2/pokemon?limit=151\") const resJson = await res.json(); const pokemons = resJson.results.map(pokemon => { const name = pokemon.name; // https://pokeapi.co/api/v2/pokemon/1/ const url = pokemon.url; const id = url.split(\"/\")[url.split(\"/\").length - 2]; return { name, url, id } }); return { props: { pokemons, }, } }"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: Second, Create
+    - code: src/pages/index.astro
+  - paragraph:
+    - text: Use the return value of the Next function. Convert any Next or React syntax to Astro, including changing the case of any
+    - link "HTML global attributes":
+      - /url: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
+    - text: .
+  - paragraph: "Note that:"
+  - list:
+    - listitem:
+      - paragraph:
+        - code: .map
+        - text: just works!
+    - listitem:
+      - paragraph:
+        - code: className
+        - text: becomes
+        - code: class
+        - text: .
+    - listitem:
+      - paragraph:
+        - code: <Link>
+        - text: becomes
+        - code: <a>
+        - text: .
+    - listitem:
+      - paragraph:
+        - text: The
+        - code: <> </>
+        - text: fragment is not required in Astro templating.
+    - listitem:
+      - paragraph:
+        - code: key
+        - text: is a React attribute, and is not an attribute of
+        - code: li
+        - text: in Astro.
+  - figure "src/pages/index.astro":
+    - text: src/pages/index.astro
+    - region:
+      - code:
+        - text: "--- --- <ul"
+        - mark: class
+        - text: "=\"plain-list pokeList\"> { pokemons.map((pokemon: any) => ( <li"
+        - mark: class
+        - text: ="pokemonListItem">
+        - mark: <a
+        - mark: class
+        - text: "=\"pokemonContainer\" href={`/pokemon/${pokemon.name}`}> <p"
+        - mark: class
+        - text: "=\"pokemonId\">No. {pokemon.id}</p> <img"
+        - mark: class
+        - text: "=\"pokemonImage\" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} alt={`${pokemon.name} picture`} /> <h2"
+        - mark: class
+        - text: "=\"pokemonName\">{pokemon.name}</h2>"
+        - mark: </a>
+        - text: "</li> )) } </ul>"
+    - button "Copy to clipboard"
+  - paragraph: Finally, Add any needed imports, props, and JavaScript
+  - paragraph: "Note that:"
+  - list:
+    - listitem:
+      - text: the
+      - code: getStaticProps
+      - text: function is no longer needed. Data from the API is fetched directly in the code fence.
+    - listitem:
+      - text: A
+      - code: <Layout>
+      - text: component is imported and wraps the page templating.
+  - figure "src/pages/index.astro":
+    - text: src/pages/index.astro
+    - region:
+      - code: "--- + import Layout from \"../layouts/layout.astro\"; + const res = await fetch(\"https://pokeapi.co/api/v2/pokemon?limit=151\"); + const resJson = await res.json(); + const pokemons = resJson.results.map((pokemon: any) => { + const name = pokemon.name; + // https://pokeapi.co/api/v2/pokemon/1/ + const url = pokemon.url; + const id = url.split(\"/\")[url.split(\"/\").length - 2]; + return { + name, + url, + id, + }; + }); --- + <Layout> <ul class=\"plain-list pokeList\"> { pokemons.map((pokemon: any) => ( <li class=\"pokemonListItem\"> <a class=\"pokemonContainer\" href={`/pokemon/${pokemon.name}`}> <p class=\"pokemonId\">No. {pokemon.id}</p> <img class=\"pokemonImage\" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} alt={`${pokemon.name} picture`} /> <h2 class=\"pokemonName\">{pokemon.name}</h2> </a> </li> )) } </ul> + </Layout>"
+    - button "Copy to clipboard"
+  - heading "Community Resources" [level=2]
+  - link "Section titled “Community Resources”":
+    - /url: "#community-resources"
+  - link "Why we switched to Astro (and why it might interest you)":
+    - /url: https://www.datocms.com/blog/why-we-switched-to-astro
+  - link "Migrating from Next.js to Astro":
+    - /url: https://johnzanussi.com/posts/nextjs-to-astro-migration
+  - link "From NextJS to Astro":
+    - /url: https://vanntile.com/blog/next-to-astro
+  - link "Converting Next.js to Astro":
+    - /url: https://ericclemmons.com/blog/converting-nextjs-to-astro
+  - link "Migrating to Astro (from Next.js)":
+    - /url: https://www.raygesualdo.com/posts/migrating-to-astro-the-beginning/
+  - link "Astro.js as an alternative to Next.js":
+    - /url: https://www.railyard.works/blog/astro-as-alternative-to-next
+  - link "Why I Switched My Website from Next.js to Astro":
+    - /url: https://praveenjuge.com/blog/why-i-switched-my-website-from-nextjs-to-astro/
+  - 'link "NextJS to Astro: more control = faster sites"':
+    - /url: https://www.youtube.com/watch?v=PSzCtdM20Fc
+  - link "How Astro made my site 100x faster":
+    - /url: https://www.youtube.com/watch?v=cOxA3kMYtkM
+  - paragraph:
+    - text: "Have a resource to share?: If you found (or made!) a helpful video or blog post about converting a Next.js site to Astro,"
+    - link "add it to this list":
+      - /url: https://github.com/withastro/docs/edit/main/src/content/docs/en/guides/migrate-to-astro/from-nextjs.mdx
+    - text: "!"
+  - heading "More migration guides" [level=2]
+  - list:
+    - listitem:
+      - heading "Create React App" [level=3]:
+        - link "Create React App":
+          - /url: /en/guides/migrate-to-astro/from-create-react-app/
+    - listitem:
+      - heading "Docusaurus" [level=3]:
+        - link "Docusaurus":
+          - /url: /en/guides/migrate-to-astro/from-docusaurus/
+    - listitem:
+      - heading "Eleventy" [level=3]:
+        - link "Eleventy":
+          - /url: /en/guides/migrate-to-astro/from-eleventy/
+    - listitem:
+      - heading "Gatsby" [level=3]:
+        - link "Gatsby":
+          - /url: /en/guides/migrate-to-astro/from-gatsby/
+    - listitem:
+      - heading "GitBook" [level=3]:
+        - link "GitBook":
+          - /url: /en/guides/migrate-to-astro/from-gitbook/
+    - listitem:
+      - heading "Gridsome" [level=3]:
+        - link "Gridsome":
+          - /url: /en/guides/migrate-to-astro/from-gridsome/
+    - listitem:
+      - heading "Hugo" [level=3]:
+        - link "Hugo":
+          - /url: /en/guides/migrate-to-astro/from-hugo/
+    - listitem:
+      - heading "Jekyll" [level=3]:
+        - link "Jekyll":
+          - /url: /en/guides/migrate-to-astro/from-jekyll/
+    - listitem:
+      - heading "Next.js" [level=3]:
+        - link "Next.js":
+          - /url: /en/guides/migrate-to-astro/from-nextjs/
+    - listitem:
+      - heading "NuxtJS" [level=3]:
+        - link "NuxtJS":
+          - /url: /en/guides/migrate-to-astro/from-nuxtjs/
+    - listitem:
+      - heading "Pelican" [level=3]:
+        - link "Pelican":
+          - /url: /en/guides/migrate-to-astro/from-pelican/
+    - listitem:
+      - heading "SvelteKit" [level=3]:
+        - link "SvelteKit":
+          - /url: /en/guides/migrate-to-astro/from-sveltekit/
+    - listitem:
+      - heading "VuePress" [level=3]:
+        - link "VuePress":
+          - /url: /en/guides/migrate-to-astro/from-vuepress/
+    - listitem:
+      - heading "WordPress" [level=3]:
+        - link "WordPress":
+          - /url: /en/guides/migrate-to-astro/from-wordpress/
+  - link "Edit page":
+    - /url: https://github.com/withastro/docs/edit/main/src/content/docs/en/guides/migrate-to-astro/from-nextjs.mdx
+  - link "Translate this page":
+    - /url: https://contribute.docs.astro.build/guides/i18n/
+  - link "Previous Jekyll":
+    - /url: /en/guides/migrate-to-astro/from-jekyll/
+  - link "Next NuxtJS":
+    - /url: /en/guides/migrate-to-astro/from-nuxtjs/
+  - link "Contribute":
+    - /url: /en/contribute/
+  - link "Community":
+    - /url: https://astro.build/chat
+    - img
+    - text: Community
+  - link "Sponsor":
+    - /url: https://opencollective.com/astrodotbuild

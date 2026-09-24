@@ -1,0 +1,509 @@
+- link "Skip to content":
+  - /url: "#_top"
+- banner:
+  - link "Astro":
+    - /url: https://astro.build/
+    - img
+  - link "Docs":
+    - /url: /en/getting-started/
+    - img
+  - button "Search":
+    - img
+    - text: Search
+  - link "GitHub":
+    - /url: https://github.com/withastro/astro
+  - link "Discord":
+    - /url: https://astro.build/chat
+  - text: Select theme
+  - combobox "Select theme":
+    - option "Dark"
+    - option "Light"
+    - option "Auto" [selected]
+  - text: Select language
+  - combobox "Select language":
+    - option "English" [selected]
+    - option "Deutsch"
+    - option "Português do Brasil"
+    - option "Español"
+    - option "简体中文"
+    - option "正體中文"
+    - option "Français"
+    - option "हिन्दी"
+    - option "العربية"
+    - option "日本語"
+    - option "한국어"
+    - option "Polski"
+    - option "Русский"
+    - option "Italiano"
+- navigation "Main":
+  - tablist:
+    - tab "Tutorial"
+    - tab "Guide" [selected]
+    - tab "Reference"
+    - tab "Ecosystem"
+  - tabpanel "Guide":
+    - list:
+      - listitem:
+        - group:
+          - text: Welcome, world!
+          - list:
+            - listitem:
+              - link "Why Astro?":
+                - /url: /en/concepts/why-astro/
+            - listitem:
+              - link "Islands architecture":
+                - /url: /en/concepts/islands/
+            - listitem:
+              - link "Courses":
+                - /url: /en/astro-courses/
+      - listitem:
+        - group:
+          - text: Start a new project
+          - list:
+            - listitem:
+              - link "Installation":
+                - /url: /en/install-and-setup/
+            - listitem:
+              - link "Project structure":
+                - /url: /en/basics/project-structure/
+            - listitem:
+              - link "Develop and build":
+                - /url: /en/develop-and-build/
+      - listitem:
+        - group:
+          - text: Configuration
+          - list:
+            - listitem:
+              - link "Configuration overview":
+                - /url: /en/guides/configuring-astro/
+            - listitem:
+              - link "Editor setup":
+                - /url: /en/editor-setup/
+            - listitem:
+              - link "TypeScript":
+                - /url: /en/guides/typescript/
+            - listitem:
+              - link "Environment variables":
+                - /url: /en/guides/environment-variables/
+            - listitem:
+              - link "Working with integrations":
+                - /url: /en/guides/integrations/
+            - listitem:
+              - link "Build with AI":
+                - /url: /en/guides/build-with-ai/
+            - listitem:
+              - link "Dev toolbar":
+                - /url: /en/guides/dev-toolbar/
+      - listitem:
+        - group:
+          - text: Routing and navigation
+          - list:
+            - listitem:
+              - link "Pages":
+                - /url: /en/basics/astro-pages/
+            - listitem:
+              - link "Routing":
+                - /url: /en/guides/routing/
+            - listitem:
+              - link "Endpoints":
+                - /url: /en/guides/endpoints/
+            - listitem:
+              - link "Middleware":
+                - /url: /en/guides/middleware/
+            - listitem:
+              - link "Internationalization (i18n)":
+                - /url: /en/guides/internationalization/
+            - listitem:
+              - link "Prefetch":
+                - /url: /en/guides/prefetch/
+            - listitem:
+              - link "View transitions":
+                - /url: /en/guides/view-transitions/
+      - listitem:
+        - group:
+          - text: Build your UI
+          - list:
+            - listitem:
+              - link "Components":
+                - /url: /en/basics/astro-components/
+            - listitem:
+              - link "Layouts":
+                - /url: /en/basics/layouts/
+            - listitem:
+              - link "Styles and CSS":
+                - /url: /en/guides/styling/
+            - listitem:
+              - link "Fonts":
+                - /url: /en/guides/fonts/
+            - listitem:
+              - link "Syntax Highlighting":
+                - /url: /en/guides/syntax-highlighting/
+            - listitem:
+              - link "Scripts and event handling":
+                - /url: /en/guides/client-side-scripts/
+            - listitem:
+              - link "Front-end frameworks":
+                - /url: /en/guides/framework-components/
+      - listitem:
+        - group:
+          - text: Add content to your site
+          - list:
+            - listitem:
+              - link "Markdown":
+                - /url: /en/guides/markdown-content/
+            - listitem:
+              - link "Content collections":
+                - /url: /en/guides/content-collections/
+            - listitem:
+              - link "Images":
+                - /url: /en/guides/images/
+            - listitem:
+              - link "Data fetching":
+                - /url: /en/guides/data-fetching/
+      - listitem:
+        - group:
+          - text: Server rendering
+          - list:
+            - listitem:
+              - link "On-demand rendering":
+                - /url: /en/guides/on-demand-rendering/
+            - listitem:
+              - link "Server islands":
+                - /url: /en/guides/server-islands/
+            - listitem:
+              - link "Actions":
+                - /url: /en/guides/actions/
+            - listitem:
+              - link "Sessions":
+                - /url: /en/guides/sessions/
+            - listitem:
+              - link "Route caching":
+                - /url: /en/guides/caching/
+      - listitem:
+        - group:
+          - text: Upgrade
+          - list:
+            - listitem:
+              - link "Upgrade Astro":
+                - /url: /en/upgrade-astro/
+            - listitem:
+              - group: Major upgrade guides
+      - listitem:
+        - link "Troubleshooting":
+          - /url: /en/guides/troubleshooting/
+      - listitem:
+        - group:
+          - text: How-to recipes
+          - list:
+            - listitem:
+              - link "Recipes overview":
+                - /url: /en/recipes/
+            - listitem:
+              - link "Installing a Vite or Rollup plugin":
+                - /url: /en/recipes/add-yaml-support/
+            - listitem:
+              - link "Analyze bundle size":
+                - /url: /en/recipes/analyze-bundle-size/
+            - listitem:
+              - link "Build a custom image component":
+                - /url: /en/recipes/build-custom-img-component/
+            - listitem:
+              - link "Build HTML forms in Astro pages":
+                - /url: /en/recipes/build-forms/
+            - listitem:
+              - link "Build forms with API routes":
+                - /url: /en/recipes/build-forms-api/
+            - listitem:
+              - link "Use Bun with Astro":
+                - /url: /en/recipes/bun/
+            - listitem:
+              - link "Call endpoints from the server":
+                - /url: /en/recipes/call-endpoints/
+            - listitem:
+              - link "Verify a Captcha":
+                - /url: /en/recipes/captcha/
+            - listitem:
+              - link "Customize file names in the build output":
+                - /url: /en/recipes/customizing-output-filenames/
+            - listitem:
+              - link "Build your Astro site with Docker":
+                - /url: /en/recipes/docker/
+            - listitem:
+              - link "Dynamically import images":
+                - /url: /en/recipes/dynamically-importing-images/
+            - listitem:
+              - link "Add icons to external links":
+                - /url: /en/recipes/external-links/
+            - listitem:
+              - link "Add i18n features":
+                - /url: /en/recipes/i18n/
+            - listitem:
+              - link "Create a dev toolbar app":
+                - /url: /en/recipes/making-toolbar-apps/
+            - listitem:
+              - link "Add last modified time":
+                - /url: /en/recipes/modified-time/
+            - listitem:
+              - link "Add reading time":
+                - /url: /en/recipes/reading-time/
+            - listitem:
+              - link "Add an RSS feed":
+                - /url: /en/recipes/rss/
+            - listitem:
+              - link "Share state between Astro components":
+                - /url: /en/recipes/sharing-state/
+            - listitem:
+              - link "Share state between islands":
+                - /url: /en/recipes/sharing-state-islands/
+            - listitem:
+              - link "Using streaming to improve page performance":
+                - /url: /en/recipes/streaming-improve-page-performance/
+            - listitem:
+              - link "Style rendered Markdown with Tailwind Typography":
+                - /url: /en/recipes/tailwind-rendered-markdown/
+      - listitem:
+        - group: Migrate to Astro
+      - listitem:
+        - link "Contribute to Astro":
+          - /url: /en/contribute/
+  - heading "Sponsored by" [level=2]
+  - link "Netlify":
+    - /url: https://www.netlify.com/?utm_campaign=Astro-2024&utm_source=astro-referral
+  - link "Webflow":
+    - /url: https://webflow.com/feature/cloud?utm_source=Astro&utm_medium=tech-partner&utm_campaign=fy26-astro&utm_content=fy26-docs
+  - link "Cloudflare":
+    - /url: https://www.cloudflare.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mux":
+    - /url: https://www.mux.com/?utm_campaign=21819274-Astro&utm_source=astro
+  - link "Image Kit":
+    - /url: https://imagekit.io/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mintlify":
+    - /url: https://www.mintlify.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+- complementary:
+  - navigation "On this page":
+    - heading "On this page" [level=2]
+    - list:
+      - listitem:
+        - link "Overview":
+          - /url: "#_top"
+      - listitem:
+        - link "Prerequisites":
+          - /url: "#prerequisites"
+      - listitem:
+        - link "Creating a Dockerfile":
+          - /url: "#creating-a-dockerfile"
+        - list:
+          - listitem:
+            - link "SSR":
+              - /url: "#ssr"
+          - listitem:
+            - link "Adding a .dockerignore":
+              - /url: "#adding-a-dockerignore"
+          - listitem:
+            - link "Static":
+              - /url: "#static"
+          - listitem:
+            - link "Multi-stage build (using SSR)":
+              - /url: "#multi-stage-build-using-ssr"
+      - listitem:
+        - link "Recipe":
+          - /url: "#recipe"
+  - complementary "Learn Astro with James Q Quick":
+    - img "Scrimba"
+    - heading "Learn Astro with James Q Quick" [level=2]:
+      - strong: Learn Astro
+      - text: with James Q Quick
+    - paragraph: Build your first site with 35 interactive Scrimba lessons
+    - link "Get 20% off":
+      - /url: https://scrimba.com/intro-to-astro-c00ar0fi5u?via=astro
+- main:
+  - heading "Build your Astro site with Docker" [level=1]
+  - paragraph:
+    - link "Docker":
+      - /url: https://docker.com
+    - text: is a tool to build, deploy, and run applications using containers.
+  - paragraph:
+    - text: Docker images and containers can be deployed to many different platforms, like AWS, Azure, and
+    - link "Google Cloud":
+      - /url: /en/guides/deploy/google-cloud/#cloud-run-ssr-and-static
+    - text: . This recipe won’t cover how to deploy your site to a specific platform but will show you how to set up Docker for your project.
+  - heading "Prerequisites" [level=2]
+  - link "Section titled “Prerequisites”":
+    - /url: "#prerequisites"
+  - list:
+    - listitem:
+      - text: Docker installed on your local machine. You can find
+      - link "installation instructions for your operating system here":
+        - /url: https://docs.docker.com/get-docker/
+      - text: .
+    - listitem:
+      - text: A Dockerfile in your project. You can
+      - link "learn more about Dockerfiles here":
+        - /url: https://docs.docker.com/engine/reference/builder/
+      - text: and use the Dockerfiles in the following section as a starting point.
+  - heading "Creating a Dockerfile" [level=2]
+  - link "Section titled “Creating a Dockerfile”":
+    - /url: "#creating-a-dockerfile"
+  - paragraph:
+    - text: Create a file called
+    - code: Dockerfile
+    - text: in your project’s root directory. This file contains the instructions to build your site, which will differ depending on your needs. This guide can’t show all possible options but will give you starting points for SSR and static mode.
+  - paragraph: If you’re using another package manager than npm, you’ll need to adjust the commands accordingly.
+  - heading "SSR" [level=3]
+  - link "Section titled “SSR”":
+    - /url: "#ssr"
+  - paragraph:
+    - text: This Dockerfile will build your site and serve it using Node.js on port
+    - code: "4321"
+    - text: and therefore requires the
+    - link "Node adapter":
+      - /url: /en/guides/integrations-guide/node/
+    - text: installed in your Astro project.
+  - figure "Dockerfile":
+    - text: Dockerfile
+    - code: FROM node:lts AS runtime WORKDIR /app COPY . . RUN npm install RUN npm run build ENV HOST=0.0.0.0 ENV PORT=4321 EXPOSE 4321 CMD ["node", "./dist/server/entry.mjs"]
+    - button "Copy to clipboard"
+  - complementary "Keep this in mind":
+    - paragraph:
+      - text: These are just examples of Dockerfiles. You can customize them to your needs. For example, you could use another image, like
+      - code: node:lts-alpine
+      - text: ":"
+    - figure "Dockerfile":
+      - text: Dockerfile
+      - code: "- FROM node:lts as runtime + FROM node:lts-alpine as runtime"
+      - button "Copy to clipboard"
+  - heading "Adding a .dockerignore" [level=3]
+  - link "Section titled “Adding a .dockerignore”":
+    - /url: "#adding-a-dockerignore"
+  - paragraph:
+    - text: Adding a
+    - code: .dockerignore
+    - text: file to your project is best practice. This file describes which files or folders should be ignored in the Docker
+    - code: COPY
+    - text: or
+    - code: ADD
+    - text: commands, very similar to how
+    - code: .gitignore
+    - text: works. This speeds up the build process and reduces the size of the final image.
+  - figure ".dockerignore":
+    - text: .dockerignore
+    - code: .DS_Store node_modules dist
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: This file should go in the same directory as the
+    - code: Dockerfile
+    - text: itself.
+    - link "Read the .dockerignore documentation for extra info":
+      - /url: https://docs.docker.com/engine/reference/builder/#dockerignore-file
+      - text: Read the
+      - code: .dockerignore
+      - text: documentation for extra info
+  - heading "Static" [level=3]
+  - link "Section titled “Static”":
+    - /url: "#static"
+  - heading "Apache (httpd)" [level=4]
+  - link "Section titled “Apache (httpd)”":
+    - /url: "#apache-httpd"
+  - paragraph:
+    - text: The following Dockerfile will build your site and serve it using Apache httpd on port
+    - code: "80"
+    - text: with the default configuration.
+  - figure "Dockerfile":
+    - text: Dockerfile
+    - code: FROM node:lts AS build WORKDIR /app COPY . . RUN npm i RUN npm run build FROM httpd:2.4 AS runtime COPY --from=build /app/dist /usr/local/apache2/htdocs/ EXPOSE 80
+    - button "Copy to clipboard"
+  - complementary "Recommendation":
+    - paragraph: Use this approach for simple websites that don’t need any special configuration. For more complex websites, it is recommended to use a custom configuration, either in Apache or NGINX.
+  - heading "NGINX" [level=4]
+  - link "Section titled “NGINX”":
+    - /url: "#nginx"
+  - figure "Dockerfile":
+    - text: Dockerfile
+    - code: FROM node:lts AS build WORKDIR /app COPY package*.json ./ RUN npm install COPY . . RUN npm run build FROM nginx:alpine AS runtime COPY ./nginx/nginx.conf /etc/nginx/nginx.conf COPY --from=build /app/dist /usr/share/nginx/html EXPOSE 8080
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: In order to build the Dockerfile above, you’ll also need to create a configuration file for NGINX. Create a folder called
+    - code: nginx
+    - text: in your project’s root directory and create a file called
+    - code: nginx.conf
+    - text: inside.
+  - figure "nginx.conf":
+    - text: nginx.conf
+    - region:
+      - code: "worker_processes 1; events { worker_connections 1024; } http { server { listen 8080; server_name _; root /usr/share/nginx/html; index index.html index.htm; include /etc/nginx/mime.types; gzip on; gzip_min_length 1000; gzip_proxied expired no-cache no-store private auth; gzip_types text/plain text/css application/json application/javascript application/x-javascript text/xml application/xml application/xml+rss text/javascript; error_page 404 /404.html; location = /404.html { root /usr/share/nginx/html; internal; } location / { try_files $uri $uri/index.html =404; } } }"
+    - button "Copy to clipboard"
+  - heading "Multi-stage build (using SSR)" [level=3]
+  - link "Section titled “Multi-stage build (using SSR)”":
+    - /url: "#multi-stage-build-using-ssr"
+  - paragraph:
+    - text: Here’s an example of a more advanced Dockerfile that, thanks to Docker’s
+    - link "multi-stage builds":
+      - /url: https://docs.docker.com/build/building/multi-stage/
+    - text: ", optimizes the build process for your site by not reinstalling the npm dependencies when only the source code changes. This can reduce the build time even by minutes, depending on the size of your dependencies."
+  - figure "Dockerfile":
+    - text: Dockerfile
+    - region:
+      - code: "FROM node:lts AS base WORKDIR /app # By copying only the package.json and package-lock.json here, we ensure that the following `-deps` steps are independent of the source code. # Therefore, the `-deps` steps will be skipped if only the source code changes. COPY package.json package-lock.json ./ FROM base AS prod-deps RUN npm install --omit=dev FROM base AS build-deps RUN npm install FROM build-deps AS build COPY . . RUN npm run build FROM base AS runtime COPY --from=prod-deps /app/node_modules ./node_modules COPY --from=build /app/dist ./dist ENV HOST=0.0.0.0 ENV PORT=4321 EXPOSE 4321 CMD [\"node\", \"./dist/server/entry.mjs\"]"
+    - button "Copy to clipboard"
+  - heading "Recipe" [level=2]
+  - link "Section titled “Recipe”":
+    - /url: "#recipe"
+  - list:
+    - listitem:
+      - paragraph:
+        - text: Build your container by running the following command in your project’s root directory. Use any name for
+        - code: <your-astro-image-name>
+        - text: ":"
+      - figure "Terminal window":
+        - text: Terminal window
+        - code: docker build -t <your-astro-image-name> .
+        - button "Copy to clipboard"
+      - paragraph: This will output an image, which you can run locally or deploy to a platform of your choice.
+    - listitem:
+      - paragraph: To run your image as a local container, use the following command.
+      - paragraph:
+        - text: Replace
+        - code: <local-port>
+        - text: with an open port on your machine. Replace
+        - code: <container-port>
+        - text: with the port exposed by your Docker container (
+        - code: "4321"
+        - text: ","
+        - code: "80"
+        - text: ", or"
+        - code: "8080"
+        - text: in the above examples.)
+      - figure "Terminal window":
+        - text: Terminal window
+        - region:
+          - code: docker run -p <local-port>:<container-port> <your-astro-image-name>
+        - button "Copy to clipboard"
+      - paragraph:
+        - text: You should be able to access your site at
+        - code: http://localhost:<local-port>
+        - text: .
+    - listitem:
+      - paragraph:
+        - text: Now that your website is successfully built and packaged in a container, you can deploy it to a cloud provider. See the
+        - link "Google Cloud":
+          - /url: /en/guides/deploy/google-cloud/#cloud-run-ssr-and-static
+        - text: deployment guide for one example, and the
+        - link "Deploy your app":
+          - /url: https://docs.docker.com/language/nodejs/deploy/
+        - text: page in the Docker docs.
+  - link "Edit page":
+    - /url: https://github.com/withastro/docs/edit/main/src/content/docs/en/recipes/docker.mdx
+  - link "Translate this page":
+    - /url: https://contribute.docs.astro.build/guides/i18n/
+  - link "Previous Customize file names in the build output":
+    - /url: /en/recipes/customizing-output-filenames/
+  - link "Next Dynamically import images":
+    - /url: /en/recipes/dynamically-importing-images/
+  - link "Contribute":
+    - /url: /en/contribute/
+  - link "Community":
+    - /url: https://astro.build/chat
+    - img
+    - text: Community
+  - link "Sponsor":
+    - /url: https://opencollective.com/astrodotbuild

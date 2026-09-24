@@ -1,0 +1,279 @@
+- link "Skip to content":
+  - /url: "#_top"
+- banner:
+  - link "Astro":
+    - /url: https://astro.build/
+    - img
+  - link "Docs":
+    - /url: /en/getting-started/
+    - img
+  - button "Search":
+    - img
+    - text: Search
+  - link "GitHub":
+    - /url: https://github.com/withastro/astro
+  - link "Discord":
+    - /url: https://astro.build/chat
+  - text: Select theme
+  - combobox "Select theme":
+    - option "Dark"
+    - option "Light"
+    - option "Auto" [selected]
+  - text: Select language
+  - combobox "Select language":
+    - option "English" [selected]
+    - option "Deutsch"
+    - option "Português do Brasil"
+    - option "Español"
+    - option "简体中文"
+    - option "正體中文"
+    - option "Français"
+    - option "हिन्दी"
+    - option "العربية"
+    - option "日本語"
+    - option "한국어"
+    - option "Polski"
+    - option "Русский"
+    - option "Italiano"
+- navigation "Main":
+  - tablist:
+    - tab "Tutorial" [selected]
+    - tab "Guide"
+    - tab "Reference"
+    - tab "Ecosystem"
+  - tabpanel "Tutorial":
+    - list:
+      - listitem:
+        - link "Introduction":
+          - /url: /en/tutorial/0-introduction/
+      - listitem:
+        - link "Unit 1 - Setup":
+          - /url: /en/tutorial/1-setup/
+      - listitem:
+        - link "Unit 2 - Pages":
+          - /url: /en/tutorial/2-pages/
+      - listitem:
+        - link "Unit 3 - Components":
+          - /url: /en/tutorial/3-components/
+      - listitem:
+        - link "Unit 4 - Layouts":
+          - /url: /en/tutorial/4-layouts/
+      - listitem:
+        - link "Unit 5 - Astro API":
+          - /url: /en/tutorial/5-astro-api/
+      - listitem:
+        - link "Unit 6 - Astro Islands":
+          - /url: /en/tutorial/6-islands/
+  - heading "Sponsored by" [level=2]
+  - link "Netlify":
+    - /url: https://www.netlify.com/?utm_campaign=Astro-2024&utm_source=astro-referral
+  - link "Webflow":
+    - /url: https://webflow.com/feature/cloud?utm_source=Astro&utm_medium=tech-partner&utm_campaign=fy26-astro&utm_content=fy26-docs
+  - link "Cloudflare":
+    - /url: https://www.cloudflare.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mux":
+    - /url: https://www.mux.com/?utm_campaign=21819274-Astro&utm_source=astro
+  - link "Image Kit":
+    - /url: https://imagekit.io/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mintlify":
+    - /url: https://www.mintlify.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+- complementary:
+  - navigation "Tutorial Tracker":
+    - heading "Tutorial Tracker" [level=2]
+    - tablist:
+      - tab "Unit 0 (0/2 Complete)"
+      - tab "Unit 1 (0/6 Complete)" [selected]
+      - tab "Unit 2 (0/6 Complete)"
+      - tab "Unit 3 (0/5 Complete)"
+      - tab "Unit 4 (0/4 Complete)"
+      - tab "Unit 5 (0/5 Complete)"
+      - tab "Unit 6 (0/5 Complete)"
+    - tabpanel "Unit 1 (0/6 Complete)":
+      - heading "Create and deploy your first Astro site" [level=2]
+      - list:
+        - listitem:
+          - 'link "To-do 0 Check in: Unit 1 - Setup"':
+            - /url: /en/tutorial/1-setup/
+        - listitem:
+          - link "To-do 1 Prepare your dev environment":
+            - /url: /en/tutorial/1-setup/1/
+          - list:
+            - listitem:
+              - link "Get the dev tools you need":
+                - /url: "#get-the-dev-tools-you-need"
+            - listitem:
+              - link "Checklist for moving on":
+                - /url: "#checklist-for-moving-on"
+        - listitem:
+          - link "To-do 2 Create your first Astro project":
+            - /url: /en/tutorial/1-setup/2/
+        - listitem:
+          - link "To-do 3 Write your first line of Astro":
+            - /url: /en/tutorial/1-setup/3/
+        - listitem:
+          - link "To-do 4 Store your repository online":
+            - /url: /en/tutorial/1-setup/4/
+        - listitem:
+          - link "To-do 5 Deploy your site to the web":
+            - /url: /en/tutorial/1-setup/5/
+  - complementary "Learn Astro with James Q Quick":
+    - img "Scrimba"
+    - heading "Learn Astro with James Q Quick" [level=2]:
+      - strong: Learn Astro
+      - text: with James Q Quick
+    - paragraph: Build your first site with 35 interactive Scrimba lessons
+    - link "Get 20% off":
+      - /url: https://scrimba.com/intro-to-astro-c00ar0fi5u?via=astro
+- main:
+  - heading "Prepare your dev environment" [level=1]
+  - paragraph: Get ready to…
+  - list:
+    - listitem: Install any tools that you will use to build your Astro website
+  - heading "Get the dev tools you need" [level=2]
+  - link "Section titled “Get the dev tools you need”":
+    - /url: "#get-the-dev-tools-you-need"
+  - heading "Terminal" [level=3]
+  - link "Section titled “Terminal”":
+    - /url: "#terminal"
+  - paragraph:
+    - text: You will use a
+    - strong: command line (terminal)
+    - text: to create your Astro project and to run key commands to build, develop, and test your site.
+  - paragraph:
+    - text: You can access the command line through a local terminal program for your operating system. Common applications include
+    - strong: Terminal
+    - text: (MacOS/Linux),
+    - strong: Command Prompt
+    - text: (Windows), and
+    - strong: Termux
+    - text: (Android). One of these will probably already be on your machine.
+  - heading "Node.js" [level=3]
+  - link "Section titled “Node.js”":
+    - /url: "#nodejs"
+  - paragraph:
+    - text: For Astro to run on your system, you will also need to have a compatible version of
+    - link "Node.js":
+      - /url: https://nodejs.org/en/
+      - strong: Node.js
+    - text: installed. Astro supports
+    - strong: even-numbered
+    - text: Node.js versions. The current minimum supported version is
+    - code: v22.12.0
+    - text: . Odd-numbered versions like
+    - code: v23
+    - text: are not supported.
+  - paragraph: "To check to see whether you already have a compatible version installed, run the following command in your terminal:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: node -v // Example output v22.20.0
+    - button "Copy to clipboard"
+  - paragraph: If the command returns a version number supported by Astro, you’re good to go!
+  - paragraph:
+    - text: If the command returns an error message like
+    - code: Command 'node' not found
+    - text: ", or a version number lower than the required, then you need to"
+    - link "install a compatible Node.js version":
+      - /url: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+    - text: .
+  - heading "Code Editor" [level=3]
+  - link "Section titled “Code Editor”":
+    - /url: "#code-editor"
+  - paragraph:
+    - text: Additionally, you will need to download and install a
+    - strong: code editor
+    - text: to write your code.
+  - complementary "We’ll use…":
+    - paragraph:
+      - text: This tutorial will use
+      - strong: VS Code
+      - text: ", but you can use any editor for your operating system."
+  - list:
+    - listitem:
+      - link "Download and install VS Code":
+        - /url: https://code.visualstudio.com/#alt-downloads
+      - text: or another code editor of your choice.
+  - heading "Test your knowledge" [level=3]
+  - link "Section titled “Test your knowledge”":
+    - /url: "#test-your-knowledge"
+  - paragraph: Which of the following is…
+  - list:
+    - listitem:
+      - paragraph: A code editor, for making changes to your files and their content?
+      - list:
+        - listitem:
+          - radio "web browser"
+          - paragraph: web browser
+        - listitem:
+          - radio "Terminal"
+          - paragraph: Terminal
+        - listitem:
+          - radio "VS Code"
+          - paragraph: VS Code
+      - button "Submit" [disabled]
+      - alert
+    - listitem:
+      - paragraph: An online version control provider for your repository?
+      - list:
+        - listitem:
+          - radio "GitHub"
+          - paragraph: GitHub
+        - listitem:
+          - radio "Terminal"
+          - paragraph: Terminal
+        - listitem:
+          - radio "VS Code"
+          - paragraph: VS Code
+      - button "Submit" [disabled]
+      - alert
+    - listitem:
+      - paragraph: An application for running commands?
+      - list:
+        - listitem:
+          - radio "GitHub"
+          - paragraph: GitHub
+        - listitem:
+          - radio "Terminal"
+          - paragraph: Terminal
+        - listitem:
+          - radio "web browser"
+          - paragraph: web browser
+      - button "Submit" [disabled]
+      - alert
+  - heading "Checklist for moving on" [level=2]
+  - link "Section titled “Checklist for moving on”":
+    - /url: "#checklist-for-moving-on"
+  - list:
+    - listitem:
+      - checkbox "I can access the command line in a terminal."
+      - text: I can access the command line in a terminal.
+    - listitem:
+      - checkbox "I have Node.js installed."
+      - text: I have Node.js installed.
+    - listitem:
+      - checkbox "I have a code editor like VS Code."
+      - text: I have a code editor like VS Code.
+  - heading "Resources" [level=3]
+  - link "Section titled “Resources”":
+    - /url: "#resources"
+  - list:
+    - listitem:
+      - paragraph:
+        - link "FreeCodeCamp.org":
+          - /url: https://freecodecamp.org
+        - text: external — a free educational site with full courses or quick refreshers in HTML, CSS, JS, and more.
+  - link "Edit page":
+    - /url: https://github.com/withastro/docs/edit/main/src/content/docs/en/tutorial/1-setup/1.mdx
+  - link "Translate this page":
+    - /url: https://contribute.docs.astro.build/guides/i18n/
+  - 'link "Previous Check in: Unit 1 - Setup"':
+    - /url: /en/tutorial/1-setup/
+  - link "Next Create your first Astro project":
+    - /url: /en/tutorial/1-setup/2/
+  - link "Contribute":
+    - /url: /en/contribute/
+  - link "Community":
+    - /url: https://astro.build/chat
+    - img
+    - text: Community
+  - link "Sponsor":
+    - /url: https://opencollective.com/astrodotbuild

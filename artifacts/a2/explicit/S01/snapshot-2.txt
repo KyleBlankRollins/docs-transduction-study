@@ -1,0 +1,1103 @@
+- link "Skip to content":
+  - /url: "#_top"
+- banner:
+  - link "Astro":
+    - /url: https://astro.build/
+    - img
+  - link "Docs":
+    - /url: /en/getting-started/
+    - img
+  - button "Search":
+    - img
+    - text: Search
+  - link "GitHub":
+    - /url: https://github.com/withastro/astro
+  - link "Discord":
+    - /url: https://astro.build/chat
+  - text: Select theme
+  - combobox "Select theme":
+    - option "Dark"
+    - option "Light"
+    - option "Auto" [selected]
+  - text: Select language
+  - combobox "Select language":
+    - option "English" [selected]
+    - option "Deutsch"
+    - option "Português do Brasil"
+    - option "Español"
+    - option "简体中文"
+    - option "正體中文"
+    - option "Français"
+    - option "हिन्दी"
+    - option "العربية"
+    - option "日本語"
+    - option "한국어"
+    - option "Polski"
+    - option "Русский"
+    - option "Italiano"
+- navigation "Main":
+  - tablist:
+    - tab "Tutorial"
+    - tab "Guide" [selected]
+    - tab "Reference"
+    - tab "Ecosystem"
+  - tabpanel "Guide":
+    - list:
+      - listitem:
+        - group:
+          - text: Welcome, world!
+          - list:
+            - listitem:
+              - link "Why Astro?":
+                - /url: /en/concepts/why-astro/
+            - listitem:
+              - link "Islands architecture":
+                - /url: /en/concepts/islands/
+            - listitem:
+              - link "Courses":
+                - /url: /en/astro-courses/
+      - listitem:
+        - group:
+          - text: Start a new project
+          - list:
+            - listitem:
+              - link "Installation":
+                - /url: /en/install-and-setup/
+            - listitem:
+              - link "Project structure":
+                - /url: /en/basics/project-structure/
+            - listitem:
+              - link "Develop and build":
+                - /url: /en/develop-and-build/
+      - listitem:
+        - group:
+          - text: Configuration
+          - list:
+            - listitem:
+              - link "Configuration overview":
+                - /url: /en/guides/configuring-astro/
+            - listitem:
+              - link "Editor setup":
+                - /url: /en/editor-setup/
+            - listitem:
+              - link "TypeScript":
+                - /url: /en/guides/typescript/
+            - listitem:
+              - link "Environment variables":
+                - /url: /en/guides/environment-variables/
+            - listitem:
+              - link "Working with integrations":
+                - /url: /en/guides/integrations/
+            - listitem:
+              - link "Build with AI":
+                - /url: /en/guides/build-with-ai/
+            - listitem:
+              - link "Dev toolbar":
+                - /url: /en/guides/dev-toolbar/
+      - listitem:
+        - group:
+          - text: Routing and navigation
+          - list:
+            - listitem:
+              - link "Pages":
+                - /url: /en/basics/astro-pages/
+            - listitem:
+              - link "Routing":
+                - /url: /en/guides/routing/
+            - listitem:
+              - link "Endpoints":
+                - /url: /en/guides/endpoints/
+            - listitem:
+              - link "Middleware":
+                - /url: /en/guides/middleware/
+            - listitem:
+              - link "Internationalization (i18n)":
+                - /url: /en/guides/internationalization/
+            - listitem:
+              - link "Prefetch":
+                - /url: /en/guides/prefetch/
+            - listitem:
+              - link "View transitions":
+                - /url: /en/guides/view-transitions/
+      - listitem:
+        - group:
+          - text: Build your UI
+          - list:
+            - listitem:
+              - link "Components":
+                - /url: /en/basics/astro-components/
+            - listitem:
+              - link "Layouts":
+                - /url: /en/basics/layouts/
+            - listitem:
+              - link "Styles and CSS":
+                - /url: /en/guides/styling/
+            - listitem:
+              - link "Fonts":
+                - /url: /en/guides/fonts/
+            - listitem:
+              - link "Syntax Highlighting":
+                - /url: /en/guides/syntax-highlighting/
+            - listitem:
+              - link "Scripts and event handling":
+                - /url: /en/guides/client-side-scripts/
+            - listitem:
+              - link "Front-end frameworks":
+                - /url: /en/guides/framework-components/
+      - listitem:
+        - group:
+          - text: Add content to your site
+          - list:
+            - listitem:
+              - link "Markdown":
+                - /url: /en/guides/markdown-content/
+            - listitem:
+              - link "Content collections":
+                - /url: /en/guides/content-collections/
+            - listitem:
+              - link "Images":
+                - /url: /en/guides/images/
+            - listitem:
+              - link "Data fetching":
+                - /url: /en/guides/data-fetching/
+      - listitem:
+        - group:
+          - text: Server rendering
+          - list:
+            - listitem:
+              - link "On-demand rendering":
+                - /url: /en/guides/on-demand-rendering/
+            - listitem:
+              - link "Server islands":
+                - /url: /en/guides/server-islands/
+            - listitem:
+              - link "Actions":
+                - /url: /en/guides/actions/
+            - listitem:
+              - link "Sessions":
+                - /url: /en/guides/sessions/
+            - listitem:
+              - link "Route caching":
+                - /url: /en/guides/caching/
+      - listitem:
+        - group:
+          - text: Upgrade
+          - list:
+            - listitem:
+              - link "Upgrade Astro":
+                - /url: /en/upgrade-astro/
+            - listitem:
+              - group: Major upgrade guides
+      - listitem:
+        - link "Troubleshooting":
+          - /url: /en/guides/troubleshooting/
+      - listitem:
+        - group: How-to recipes
+      - listitem:
+        - group: Migrate to Astro
+      - listitem:
+        - link "Contribute to Astro":
+          - /url: /en/contribute/
+  - heading "Sponsored by" [level=2]
+  - link "Netlify":
+    - /url: https://www.netlify.com/?utm_campaign=Astro-2024&utm_source=astro-referral
+  - link "Webflow":
+    - /url: https://webflow.com/feature/cloud?utm_source=Astro&utm_medium=tech-partner&utm_campaign=fy26-astro&utm_content=fy26-docs
+  - link "Cloudflare":
+    - /url: https://www.cloudflare.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mux":
+    - /url: https://www.mux.com/?utm_campaign=21819274-Astro&utm_source=astro
+  - link "Image Kit":
+    - /url: https://imagekit.io/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mintlify":
+    - /url: https://www.mintlify.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+- complementary:
+  - navigation "On this page":
+    - heading "On this page" [level=2]
+    - list:
+      - listitem:
+        - link "Overview":
+          - /url: "#_top"
+      - listitem:
+        - link "Official integrations":
+          - /url: "#official-integrations"
+      - listitem:
+        - link "Automatic integration setup":
+          - /url: "#automatic-integration-setup"
+        - list:
+          - listitem:
+            - link "Manual installation":
+              - /url: "#manual-installation"
+          - listitem:
+            - link "Custom options":
+              - /url: "#custom-options"
+          - listitem:
+            - link "Toggle an integration":
+              - /url: "#toggle-an-integration"
+      - listitem:
+        - link "Upgrading integrations":
+          - /url: "#upgrading-integrations"
+        - list:
+          - listitem:
+            - link "Automatic upgrading":
+              - /url: "#automatic-upgrading"
+          - listitem:
+            - link "Manual upgrading":
+              - /url: "#manual-upgrading"
+      - listitem:
+        - link "Removing an integration":
+          - /url: "#removing-an-integration"
+      - listitem:
+        - link "Finding more integrations":
+          - /url: "#finding-more-integrations"
+      - listitem:
+        - link "Building your own integration":
+          - /url: "#building-your-own-integration"
+      - listitem:
+        - link "Publishing your integration to npm":
+          - /url: "#publishing-your-integration-to-npm"
+        - list:
+          - listitem:
+            - link "Quick start":
+              - /url: "#quick-start"
+          - listitem:
+            - link "Creating a package":
+              - /url: "#creating-a-package"
+          - listitem:
+            - link "Developing your package":
+              - /url: "#developing-your-package"
+          - listitem:
+            - link "Testing your component":
+              - /url: "#testing-your-component"
+          - listitem:
+            - link "Publishing your component":
+              - /url: "#publishing-your-component"
+          - listitem:
+            - link "Integrations library":
+              - /url: "#integrations-library"
+          - listitem:
+            - link "Share":
+              - /url: "#share"
+  - complementary "Learn Astro with James Q Quick":
+    - img "Scrimba"
+    - heading "Learn Astro with James Q Quick" [level=2]:
+      - strong: Learn Astro
+      - text: with James Q Quick
+    - paragraph: Build your first site with 35 interactive Scrimba lessons
+    - link "Get 20% off":
+      - /url: https://scrimba.com/intro-to-astro-c00ar0fi5u?via=astro
+- main:
+  - heading "Working with integrations" [level=1]
+  - paragraph:
+    - strong: Astro integrations
+    - text: add new functionality and behaviors for your project with only a few lines of code. You can use an official integration,
+    - link "integrations built by the community":
+      - /url: "#finding-more-integrations"
+    - text: or even
+    - link "build a custom integration yourself":
+      - /url: "#building-your-own-integration"
+    - text: .
+  - paragraph: Integrations can…
+  - list:
+    - listitem:
+      - text: Unlock React, Vue, Svelte, Solid, and other popular UI frameworks with a
+      - link "renderer":
+        - /url: /en/guides/framework-components/
+      - text: .
+    - listitem:
+      - text: Enable on-demand rendering with an
+      - link "SSR adapter":
+        - /url: /en/guides/on-demand-rendering/
+      - text: .
+    - listitem: Integrate tools like MDX, and Partytown with a few lines of code.
+    - listitem: Add new features to your project, like automatic sitemap generation.
+    - listitem: Write custom code that hooks into the build process, dev server, and more.
+  - complementary "Integrations directory":
+    - paragraph:
+      - text: Browse or search the complete set of hundreds of official and community integrations in our
+      - link "integrations directory":
+        - /url: https://astro.build/integrations/
+      - text: . Find packages to add to your Astro project for authentication, analytics, performance, SEO, accessibility, UI, developer tools, and more.
+  - heading "Official integrations" [level=2]
+  - link "Section titled “Official integrations”":
+    - /url: "#official-integrations"
+  - paragraph: The following integrations are maintained by Astro.
+  - heading "Front-end frameworks" [level=3]
+  - list:
+    - listitem:
+      - heading "@astrojs/alpinejs" [level=3]:
+        - link "@astrojs/alpinejs":
+          - /url: /en/guides/integrations-guide/alpinejs/
+    - listitem:
+      - heading "@astrojs/preact" [level=3]:
+        - link "@astrojs/preact":
+          - /url: /en/guides/integrations-guide/preact/
+    - listitem:
+      - heading "@astrojs/react" [level=3]:
+        - link "@astrojs/react":
+          - /url: /en/guides/integrations-guide/react/
+    - listitem:
+      - heading "@astrojs/solid⁠-⁠js" [level=3]:
+        - link "@astrojs/solid⁠-⁠js":
+          - /url: /en/guides/integrations-guide/solid-js/
+    - listitem:
+      - heading "@astrojs/svelte" [level=3]:
+        - link "@astrojs/svelte":
+          - /url: /en/guides/integrations-guide/svelte/
+    - listitem:
+      - heading "@astrojs/vue" [level=3]:
+        - link "@astrojs/vue":
+          - /url: /en/guides/integrations-guide/vue/
+  - heading "Adapters" [level=3]
+  - list:
+    - listitem:
+      - heading "@astrojs/cloudflare" [level=3]:
+        - link "@astrojs/cloudflare":
+          - /url: /en/guides/integrations-guide/cloudflare/
+    - listitem:
+      - heading "@astrojs/netlify" [level=3]:
+        - link "@astrojs/netlify":
+          - /url: /en/guides/integrations-guide/netlify/
+    - listitem:
+      - heading "@astrojs/node" [level=3]:
+        - link "@astrojs/node":
+          - /url: /en/guides/integrations-guide/node/
+    - listitem:
+      - heading "@astrojs/vercel" [level=3]:
+        - link "@astrojs/vercel":
+          - /url: /en/guides/integrations-guide/vercel/
+  - heading "Other integrations" [level=3]
+  - list:
+    - listitem:
+      - heading "@astrojs/markdoc" [level=3]:
+        - link "@astrojs/markdoc":
+          - /url: /en/guides/integrations-guide/markdoc/
+    - listitem:
+      - heading "@astrojs/mdx" [level=3]:
+        - link "@astrojs/mdx":
+          - /url: /en/guides/integrations-guide/mdx/
+    - listitem:
+      - heading "@astrojs/partytown" [level=3]:
+        - link "@astrojs/partytown":
+          - /url: /en/guides/integrations-guide/partytown/
+    - listitem:
+      - heading "@astrojs/sitemap" [level=3]:
+        - link "@astrojs/sitemap":
+          - /url: /en/guides/integrations-guide/sitemap/
+  - heading "Automatic integration setup" [level=2]
+  - link "Section titled “Automatic integration setup”":
+    - /url: "#automatic-integration-setup"
+  - paragraph:
+    - text: Astro includes an
+    - code: astro add
+    - text: command to automate the setup of official integrations. Several community plugins can also be added using this command. Please check each integration’s own documentation to see whether
+    - code: astro add
+    - text: is supported, or whether you must
+    - link "install manually":
+      - /url: "#manual-installation"
+    - text: .
+  - paragraph:
+    - text: Run the
+    - code: astro add
+    - text: command using the package manager of your choice and our automatic integration wizard will update your configuration file and install any necessary dependencies.
+  - tablist:
+    - tab "npm" [selected]
+    - tab "pnpm"
+    - tab "Yarn"
+  - tabpanel "npm":
+    - figure "Terminal window":
+      - text: Terminal window
+      - code: npx astro add react
+      - button "Copy to clipboard"
+  - paragraph: It’s even possible to add multiple integrations at the same time!
+  - tablist:
+    - tab "npm" [selected]
+    - tab "pnpm"
+    - tab "Yarn"
+  - tabpanel "npm":
+    - figure "Terminal window":
+      - text: Terminal window
+      - code: npx astro add react sitemap partytown
+      - button "Copy to clipboard"
+  - complementary "Handling integration dependencies":
+    - paragraph:
+      - text: If you see any warnings like
+      - code: Cannot find package '[package-name]'
+      - text: after adding an integration, your package manager may not have installed
+      - link "peer dependencies":
+        - /url: https://nodejs.org/en/blog/npm/peer-dependencies/
+      - text: "for you. To install these missing packages, run the following command:"
+    - tablist:
+      - tab "npm" [selected]
+      - tab "pnpm"
+      - tab "Yarn"
+    - tabpanel "npm":
+      - figure "Terminal window":
+        - text: Terminal window
+        - code: npm install [package-name]
+        - button "Copy to clipboard"
+  - heading "Manual installation" [level=3]
+  - link "Section titled “Manual installation”":
+    - /url: "#manual-installation"
+  - paragraph:
+    - text: Astro integrations are always added through the
+    - code: integrations
+    - text: property in your
+    - code: astro.config.mjs
+    - text: file.
+  - paragraph: "There are three common ways to import an integration into your Astro project:"
+  - list:
+    - listitem:
+      - paragraph:
+        - link "Install an npm package integration":
+          - /url: "#installing-an-npm-package"
+        - text: .
+    - listitem:
+      - paragraph: Import your own integration from a local file inside your project.
+    - listitem:
+      - paragraph: Write your integration inline, directly in your config file.
+      - figure "astro.config.mjs":
+        - text: astro.config.mjs
+        - code: "import { defineConfig } from 'astro/config'; import installedIntegration from '@astrojs/vue'; import localIntegration from './my-integration.js'; export default defineConfig({ integrations: [ // 1. Imported from an installed npm package installedIntegration(), // 2. Imported from a local JS file localIntegration(), // 3. An inline object { name: 'namespace:id', hooks: { /* ... */ } }, ] });"
+        - button "Copy to clipboard"
+  - paragraph:
+    - text: Check out the
+    - link "Integration API":
+      - /url: /en/reference/integrations-reference/
+    - text: reference to learn all of the different ways that you can write an integration.
+  - heading "Installing an npm package" [level=4]
+  - link "Section titled “Installing an npm package”":
+    - /url: "#installing-an-npm-package"
+  - paragraph:
+    - text: Install an npm package integration using a package manager, and then update
+    - code: astro.config.mjs
+    - text: manually.
+  - paragraph:
+    - text: For example, to install the
+    - code: "@astrojs/sitemap"
+    - text: "integration:"
+  - list:
+    - listitem:
+      - paragraph: "Install the integration to your project dependencies using your preferred package manager:"
+      - tablist:
+        - tab "npm" [selected]
+        - tab "pnpm"
+        - tab "Yarn"
+      - tabpanel "npm":
+        - figure "Terminal window":
+          - text: Terminal window
+          - code: npm install @astrojs/sitemap
+          - button "Copy to clipboard"
+    - listitem:
+      - paragraph:
+        - text: Import the integration to your
+        - code: astro.config.mjs
+        - text: file, and add it to your
+        - code: integrations[]
+        - text: "array, along with any configuration options:"
+      - figure "astro.config.mjs":
+        - text: astro.config.mjs
+        - code:
+          - text: "import { defineConfig } from 'astro/config'; + import sitemap from '@astrojs/sitemap'; export default defineConfig({ // ... integrations: ["
+          - insertion: sitemap()
+          - text: "], // ... });"
+        - button "Copy to clipboard"
+      - paragraph:
+        - text: Note that different integrations may have different configuration settings. Read each integration’s documentation, and apply any necessary config options to your chosen integration in
+        - code: astro.config.mjs
+        - text: .
+  - heading "Custom options" [level=3]
+  - link "Section titled “Custom options”":
+    - /url: "#custom-options"
+  - paragraph: Integrations are almost always authored as factory functions that return the actual integration object. This lets you pass arguments and options to the factory function that customize the integration for your project.
+  - figure:
+    - code: "integrations: [ // Example: Customize your integration with function arguments sitemap({ filter: true }) ]"
+    - button "Copy to clipboard"
+  - heading "Toggle an integration" [level=3]
+  - link "Section titled “Toggle an integration”":
+    - /url: "#toggle-an-integration"
+  - paragraph:
+    - text: Falsy integrations are ignored, so you can toggle integrations on & off without worrying about left-behind
+    - code: undefined
+    - text: and boolean values.
+  - figure:
+    - code: "integrations: [ // Example: Skip building a sitemap on Windows process.platform !== 'win32' && sitemap() ]"
+    - button "Copy to clipboard"
+  - heading "Upgrading integrations" [level=2]
+  - link "Section titled “Upgrading integrations”":
+    - /url: "#upgrading-integrations"
+  - paragraph:
+    - text: To upgrade all official integrations at once, run the
+    - code: "@astrojs/upgrade"
+    - text: command. This will upgrade both Astro and all official integrations to their latest versions.
+  - heading "Automatic upgrading" [level=3]
+  - link "Section titled “Automatic upgrading”":
+    - /url: "#automatic-upgrading"
+  - tablist:
+    - tab "npm" [selected]
+    - tab "pnpm"
+    - tab "Yarn"
+  - tabpanel "npm":
+    - figure "Terminal window":
+      - text: Terminal window
+      - code: "# Upgrade Astro and official integrations together to latest npx @astrojs/upgrade"
+      - button "Copy to clipboard"
+  - heading "Manual upgrading" [level=3]
+  - link "Section titled “Manual upgrading”":
+    - /url: "#manual-upgrading"
+  - paragraph: To upgrade one or more integrations manually, use the appropriate command for your package manager.
+  - tablist:
+    - tab "npm" [selected]
+    - tab "pnpm"
+    - tab "Yarn"
+  - tabpanel "npm":
+    - figure "Terminal window":
+      - text: Terminal window
+      - code: "# Example: upgrade React and Partytown integrations npm install @astrojs/react@latest @astrojs/partytown@latest"
+      - button "Copy to clipboard"
+  - heading "Removing an integration" [level=2]
+  - link "Section titled “Removing an integration”":
+    - /url: "#removing-an-integration"
+  - list:
+    - listitem:
+      - paragraph: To remove an integration, first uninstall the integration from your project.
+      - tablist:
+        - tab "npm" [selected]
+        - tab "pnpm"
+        - tab "Yarn"
+      - tabpanel "npm":
+        - figure "Terminal window":
+          - text: Terminal window
+          - code: npm uninstall @astrojs/react
+          - button "Copy to clipboard"
+    - listitem:
+      - paragraph:
+        - text: Next, remove the integration from your
+        - code: astro.config.*
+        - text: "file:"
+      - figure "astro.config.mjs":
+        - text: astro.config.mjs
+        - code: "import { defineConfig } from 'astro/config'; - import react from '@astrojs/react'; export default defineConfig({ integrations: [ - react() ] });"
+        - button "Copy to clipboard"
+  - heading "Finding more integrations" [level=2]
+  - link "Section titled “Finding more integrations”":
+    - /url: "#finding-more-integrations"
+  - paragraph:
+    - text: You can find many integrations developed by the community in the
+    - link "Astro Integrations Directory":
+      - /url: https://astro.build/integrations/
+    - text: . Follow links there for detailed usage and configuration instructions.
+  - heading "Building your own integration" [level=2]
+  - link "Section titled “Building your own integration”":
+    - /url: "#building-your-own-integration"
+  - paragraph: Astro’s Integration API is inspired by Rollup and Vite, and designed to feel familiar to anyone who has ever written a Rollup or Vite plugin before.
+  - paragraph:
+    - text: Check out the
+    - link "Integration API":
+      - /url: /en/reference/integrations-reference/
+    - text: reference to learn what integrations can do and how to write one yourself.
+  - heading "Publishing your integration to npm" [level=2]
+  - link "Section titled “Publishing your integration to npm”":
+    - /url: "#publishing-your-integration-to-npm"
+  - paragraph: Publishing an Astro component is a great way to reuse your existing work across your projects, and to share with the wider Astro community at large. Astro components can be published directly to and installed from npm, just like any other JavaScript package.
+  - paragraph:
+    - text: Looking for inspiration? Check out some of our favorite
+    - link "themes":
+      - /url: https://astro.build/themes/
+    - text: and
+    - link "components":
+      - /url: https://astro.build/integrations/
+    - text: from the Astro community. You can also
+    - link "search npm":
+      - /url: https://www.npmjs.com/search?q=keywords:astro-component,withastro
+    - text: to see the entire public catalog.
+  - complementary "Don’t want to go it alone?":
+    - paragraph:
+      - text: Check out
+      - link "Astro community’s component template":
+        - /url: https://github.com/Princesseuh/component-template
+      - text: for a community-supported, out-of-the-box template!
+  - heading "Quick start" [level=3]
+  - link "Section titled “Quick start”":
+    - /url: "#quick-start"
+  - paragraph: To get started developing your component quickly, you can use a template already set up for you.
+  - tablist:
+    - tab "npm" [selected]
+    - tab "pnpm"
+    - tab "Yarn"
+  - tabpanel "npm":
+    - figure "Terminal window":
+      - text: Terminal window
+      - region:
+        - code: "# Initialize the Astro Component template in a new directory npm create astro@latest my-new-component-directory -- --template component"
+      - button "Copy to clipboard"
+  - heading "Creating a package" [level=3]
+  - link "Section titled “Creating a package”":
+    - /url: "#creating-a-package"
+  - complementary "Prerequisites":
+    - paragraph: "Before diving in, it will help to have a basic understanding of:"
+    - list:
+      - listitem:
+        - link "Node Modules":
+          - /url: https://docs.npmjs.com/creating-node-js-modules
+      - listitem:
+        - link "Package Manifest (package.json)":
+          - /url: https://docs.npmjs.com/creating-a-package-json-file
+          - text: Package Manifest (
+          - code: package.json
+          - text: )
+      - listitem:
+        - link "Workspaces":
+          - /url: https://docs.npmjs.com/cli/v7/configuring-npm/package-json#workspaces
+  - paragraph:
+    - text: To create a new package, configure your development environment to use
+    - strong: workspaces
+    - text: within your project. This will allow you to develop your component alongside a working copy of Astro.
+  - list:
+    - listitem:
+      - group:
+        - text: Directory my-new-component-directory/
+        - list:
+          - listitem:
+            - group:
+              - text: Directory demo/
+              - list:
+                - listitem: … for testing and demonstration
+          - listitem: package.json
+          - listitem:
+            - group:
+              - text: Directory packages/
+              - list:
+                - listitem:
+                  - group:
+                    - text: Directory my-component/
+                    - list:
+                      - listitem: index.js
+                      - listitem: package.json
+                      - listitem: … additional files used by the package
+  - paragraph:
+    - text: This example, named
+    - code: my-project
+    - text: ", creates a project with a single package, named"
+    - code: my-component
+    - text: ", and a"
+    - code: demo/
+    - text: directory for testing and demonstrating the component.
+  - paragraph:
+    - text: This is configured in the project root’s
+    - code: package.json
+    - text: "file:"
+  - figure:
+    - code: "{ \"name\": \"my-project\", \"workspaces\": [\"demo\", \"packages/*\"] }"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: In this example, multiple packages can be developed together from the
+    - code: packages
+    - text: directory. These packages can also be referenced from
+    - code: demo
+    - text: ", where you can install a working copy of Astro."
+  - tablist:
+    - tab "npm" [selected]
+    - tab "pnpm"
+    - tab "Yarn"
+  - tabpanel "npm":
+    - figure "Terminal window":
+      - text: Terminal window
+      - code: npm create astro@latest demo -- --template minimal
+      - button "Copy to clipboard"
+  - paragraph:
+    - text: "There are two initial files that will make up your individual package:"
+    - code: package.json
+    - text: and
+    - code: index.js
+    - text: .
+  - heading "package.json" [level=4]:
+    - code: package.json
+  - link "Section titled “package.json”":
+    - /url: "#packagejson"
+  - paragraph:
+    - text: The
+    - code: package.json
+    - text: in the package directory includes all of the information related to your package, including its description, dependencies, and any other package metadata.
+  - figure:
+    - region:
+      - code: "{ \"name\": \"my-component\", \"description\": \"Component description\", \"version\": \"1.0.0\", \"homepage\": \"https://github.com/owner/project#readme\", \"type\": \"module\", \"exports\": { \".\": \"./index.js\", \"./astro\": \"./MyAstroComponent.astro\", \"./react\": \"./MyReactComponent.jsx\" }, \"files\": [\"index.js\", \"MyAstroComponent.astro\", \"MyReactComponent.jsx\"], \"keywords\": [\"astro-component\", \"withastro\", \"... etc\", \"... etc\"] }"
+    - button "Copy to clipboard"
+  - heading "description" [level=5]:
+    - code: description
+  - link "Section titled “description”":
+    - /url: "#description"
+  - paragraph: A short description of your component used to help others know what it does.
+  - figure:
+    - code: "{ \"description\": \"An Astro Element Generator\" }"
+    - button "Copy to clipboard"
+  - heading "type" [level=5]:
+    - code: type
+  - link "Section titled “type”":
+    - /url: "#type"
+  - paragraph:
+    - text: The module format used by Node.js and Astro to interpret your
+    - code: index.js
+    - text: files.
+  - figure:
+    - code: "{ \"type\": \"module\" }"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: Use
+    - code: "\"type\": \"module\""
+    - text: so that your
+    - code: index.js
+    - text: can be used as an entrypoint with
+    - code: import
+    - text: and
+    - code: export
+    - text: .
+  - heading "homepage" [level=5]:
+    - code: homepage
+  - link "Section titled “homepage”":
+    - /url: "#homepage"
+  - paragraph: The url to the project homepage.
+  - figure:
+    - code: "{ \"homepage\": \"https://github.com/owner/project#readme\" }"
+    - button "Copy to clipboard"
+  - paragraph: This is a great way to direct users to an online demo, documentation, or homepage for your project.
+  - heading "exports" [level=5]:
+    - code: exports
+  - link "Section titled “exports”":
+    - /url: "#exports"
+  - paragraph: The entry points of a package when imported by name.
+  - figure:
+    - code: "{ \"exports\": { \".\": \"./index.js\", \"./astro\": \"./MyAstroComponent.astro\", \"./react\": \"./MyReactComponent.jsx\" } }"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: In this example, importing
+    - code: my-component
+    - text: would use
+    - code: index.js
+    - text: ", while importing"
+    - code: my-component/astro
+    - text: or
+    - code: my-component/react
+    - text: would use
+    - code: MyAstroComponent.astro
+    - text: or
+    - code: MyReactComponent.jsx
+    - text: respectively.
+  - heading "files" [level=5]:
+    - code: files
+  - link "Section titled “files”":
+    - /url: "#files"
+  - paragraph:
+    - text: An optional optimization to exclude unnecessary files from the bundle shipped to users via npm. Note that
+    - strong: only files listed here will be included in your package
+    - text: ", so if you add or change files necessary for your package to work, you must update this list accordingly."
+  - figure:
+    - code: "{ \"files\": [\"index.js\", \"MyAstroComponent.astro\", \"MyReactComponent.jsx\"] }"
+    - button "Copy to clipboard"
+  - heading "keywords" [level=5]:
+    - code: keywords
+  - link "Section titled “keywords”":
+    - /url: "#keywords"
+  - paragraph:
+    - text: An array of keywords relevant to your component, used to help others
+    - link "find your component on npm":
+      - /url: https://www.npmjs.com/search?q=keywords:astro-component,withastro
+    - text: and in any other search catalogs.
+  - paragraph:
+    - text: Add
+    - code: astro-component
+    - text: ","
+    - code: astro-integration
+    - text: ", or"
+    - code: withastro
+    - text: as a special keyword to maximize its discoverability in the Astro ecosystem.
+  - figure:
+    - code: "{ \"keywords\": [\"astro-component\", \"withastro\", \"... etc\", \"... etc\"] }"
+    - button "Copy to clipboard"
+  - complementary "Tip":
+    - paragraph:
+      - text: Keywords are also used by our
+      - link "integrations library":
+        - /url: https://astro.build/integrations/
+      - text: "!"
+      - link "See below":
+        - /url: "#integrations-library"
+      - text: for a full list of keywords we look for in npm.
+  - separator
+  - heading "index.js" [level=4]:
+    - code: index.js
+  - link "Section titled “index.js”":
+    - /url: "#indexjs"
+  - paragraph:
+    - text: The main
+    - strong: package entrypoint
+    - text: used whenever your package is imported.
+  - figure:
+    - region:
+      - code: "export { default as MyAstroComponent } from './MyAstroComponent.astro'; export { default as MyReactComponent } from './MyReactComponent.jsx';"
+    - button "Copy to clipboard"
+  - paragraph: This allows you to package multiple components together into a single interface.
+  - 'heading "Example: Using named imports" [level=5]'
+  - 'link "Section titled “Example: Using named imports”"':
+    - /url: "#example-using-named-imports"
+  - figure:
+    - code: "--- import { MyAstroComponent } from 'my-component'; import { MyReactComponent } from 'my-component'; --- <MyAstroComponent /> <MyReactComponent />"
+    - button "Copy to clipboard"
+  - 'heading "Example: Using namespace imports" [level=5]'
+  - 'link "Section titled “Example: Using namespace imports”"':
+    - /url: "#example-using-namespace-imports"
+  - figure:
+    - code: "--- import * as Example from 'example-astro-component'; --- <Example.MyAstroComponent /> <Example.MyReactComponent />"
+    - button "Copy to clipboard"
+  - 'heading "Example: Using individual imports" [level=5]'
+  - 'link "Section titled “Example: Using individual imports”"':
+    - /url: "#example-using-individual-imports"
+  - figure:
+    - code: "--- import MyAstroComponent from 'example-astro-component/astro'; import MyReactComponent from 'example-astro-component/react'; --- <MyAstroComponent /> <MyReactComponent />"
+    - button "Copy to clipboard"
+  - separator
+  - heading "Developing your package" [level=3]
+  - link "Section titled “Developing your package”":
+    - /url: "#developing-your-package"
+  - paragraph: Astro does not have a dedicated “package mode” for development. Instead, you should use a demo project to develop and test your package inside of your project. This can be a private website only used for development, or a public demo/documentation website for your package.
+  - paragraph: If you are extracting components from an existing project, you can even continue to use that project to develop your now-extracted components.
+  - heading "Testing your component" [level=3]
+  - link "Section titled “Testing your component”":
+    - /url: "#testing-your-component"
+  - paragraph:
+    - text: Astro does not currently ship a test runner.
+    - emphasis:
+      - text: (If you are interested in helping out with this,
+      - link "join us on Discord!":
+        - /url: https://astro.build/chat
+      - text: )
+  - paragraph: "In the meantime, our current recommendation for testing is:"
+  - list:
+    - listitem:
+      - paragraph:
+        - text: Add a test
+        - code: fixtures
+        - text: directory to your
+        - code: demo/src/pages
+        - text: directory.
+    - listitem:
+      - paragraph: Add a new page for every test that you’d like to run.
+    - listitem:
+      - paragraph: Each page should include some different component usage that you’d like to test.
+    - listitem:
+      - paragraph:
+        - text: Run
+        - code: astro build
+        - text: to build your fixtures, then compare the output of the
+        - code: dist/__fixtures__/
+        - text: directory to what you expected.
+      - list:
+        - listitem:
+          - group:
+            - text: Directory my-project/demo/src/pages/__fixtures__/
+            - list:
+              - listitem: test-name-01.astro
+              - listitem: test-name-02.astro
+              - listitem: test-name-03.astro
+  - heading "Publishing your component" [level=3]
+  - link "Section titled “Publishing your component”":
+    - /url: "#publishing-your-component"
+  - paragraph:
+    - text: Once you have your package ready, you can publish it to npm using the
+    - code: npm publish
+    - text: command. If that fails, make sure that you have logged in via
+    - code: npm login
+    - text: and that your
+    - code: package.json
+    - text: is correct. If it succeeds, you’re done!
+  - paragraph:
+    - text: Notice that there was no
+    - code: build
+    - text: step for Astro packages. Any file type that Astro supports natively, such as
+    - code: .astro
+    - text: ","
+    - code: .ts
+    - text: ","
+    - code: .jsx
+    - text: ", and"
+    - code: .css
+    - text: ", can be published directly without a build step."
+  - paragraph: If you need another file type that isn’t natively supported by Astro, add a build step to your package. This advanced exercise is left up to you.
+  - heading "Integrations library" [level=3]
+  - link "Section titled “Integrations library”":
+    - /url: "#integrations-library"
+  - paragraph:
+    - text: Share your hard work by adding your integration to our
+    - link "integrations library":
+      - /url: https://astro.build/integrations/
+    - text: "!"
+  - complementary "Tip":
+    - paragraph:
+      - text: Do you need some help building your integration, or just want to meet other integrations builders? We have a dedicated
+      - code: "#integrations"
+      - text: channel on our
+      - link "Discord server":
+        - /url: https://astro.build/chat
+      - text: . Come say hi!
+  - heading "package.json data" [level=4]:
+    - code: package.json
+    - text: data
+  - link "Section titled “package.json data”":
+    - /url: "#packagejson-data"
+  - paragraph:
+    - text: The library is automatically updated weekly, pulling in every package published to npm with the
+    - code: astro-component
+    - text: ","
+    - code: astro-integration
+    - text: ", or"
+    - code: withastro
+    - text: keyword.
+  - paragraph:
+    - text: The integrations library reads the
+    - code: name
+    - text: ","
+    - code: description
+    - text: ","
+    - code: repository
+    - text: ", and"
+    - code: homepage
+    - text: data from your
+    - code: package.json
+    - text: .
+  - paragraph:
+    - text: Avatars are a great way to highlight your brand in the library! Once your package is published you can
+    - link "file a GitHub issue":
+      - /url: https://github.com/withastro/astro.build/issues/new/choose
+    - text: with your avatar attached and we will add it to your listing.
+  - complementary "Tip":
+    - paragraph:
+      - text: Need to override the information our library reads from npm? No problem!
+      - link "File an issue":
+        - /url: https://github.com/withastro/astro.build/issues/new/choose
+      - text: with the updated information and we’ll make sure the custom
+      - code: name
+      - text: ","
+      - code: description
+      - text: ", or"
+      - code: homepage
+      - text: is used instead.
+  - heading "Categories" [level=4]
+  - link "Section titled “Categories”":
+    - /url: "#categories"
+  - paragraph:
+    - text: In addition to the required
+    - code: astro-component
+    - text: ","
+    - code: astro-integration
+    - text: ", or"
+    - code: withastro
+    - text: keyword, special keywords are also used to automatically organize packages. Including any of the keywords below will add your integration to the matching category in our integrations library.
+  - table:
+    - rowgroup:
+      - row "category keywords":
+        - columnheader "category"
+        - columnheader "keywords"
+    - rowgroup:
+      - row "Accessibility a11y, accessibility":
+        - cell "Accessibility"
+        - cell "a11y, accessibility":
+          - code: a11y
+          - text: ","
+          - code: accessibility
+      - row "Adapters astro-adapter":
+        - cell "Adapters"
+        - cell "astro-adapter":
+          - code: astro-adapter
+      - row "Analytics analytics":
+        - cell "Analytics"
+        - cell "analytics":
+          - code: analytics
+      - row "CSS + UI css, ui, icon, icons, renderer":
+        - cell "CSS + UI"
+        - cell "css, ui, icon, icons, renderer":
+          - code: css
+          - text: ","
+          - code: ui
+          - text: ","
+          - code: icon
+          - text: ","
+          - code: icons
+          - text: ","
+          - code: renderer
+      - row "Frameworks renderer":
+        - cell "Frameworks"
+        - cell "renderer":
+          - code: renderer
+      - row "Content Loaders astro-loader":
+        - cell "Content Loaders"
+        - cell "astro-loader":
+          - code: astro-loader
+      - row "Images + Media media, image, images, video, audio":
+        - cell "Images + Media"
+        - cell "media, image, images, video, audio":
+          - code: media
+          - text: ","
+          - code: image
+          - text: ","
+          - code: images
+          - text: ","
+          - code: video
+          - text: ","
+          - code: audio
+      - row "Performance + SEO performance, perf, seo, optimization":
+        - cell "Performance + SEO"
+        - cell "performance, perf, seo, optimization":
+          - code: performance
+          - text: ","
+          - code: perf
+          - text: ","
+          - code: seo
+          - text: ","
+          - code: optimization
+      - row "Dev Toolbar devtools, dev-overlay, dev-toolbar":
+        - cell "Dev Toolbar"
+        - cell "devtools, dev-overlay, dev-toolbar":
+          - code: devtools
+          - text: ","
+          - code: dev-overlay
+          - text: ","
+          - code: dev-toolbar
+      - row "Utilities tooling, utils, utility":
+        - cell "Utilities"
+        - cell "tooling, utils, utility":
+          - code: tooling
+          - text: ","
+          - code: utils
+          - text: ","
+          - code: utility
+  - paragraph:
+    - text: Packages that don’t include any keyword matching a category will be shown as
+    - code: Uncategorized
+    - text: .
+  - heading "Share" [level=3]
+  - link "Section titled “Share”":
+    - /url: "#share"
+  - paragraph:
+    - text: We encourage you to share your work, and we really do love seeing what our talented Astronauts create. Come and share what you create with us in our
+    - link "Discord":
+      - /url: https://astro.build/chat
+    - text: or mention
+    - link "@astrodotbuild":
+      - /url: https://twitter.com/astrodotbuild
+    - text: in a Tweet!
+  - link "Edit page":
+    - /url: https://github.com/withastro/docs/edit/main/src/content/docs/en/guides/integrations.mdx
+  - link "Translate this page":
+    - /url: https://contribute.docs.astro.build/guides/i18n/
+  - link "Previous Environment variables":
+    - /url: /en/guides/environment-variables/
+  - link "Next Build with AI":
+    - /url: /en/guides/build-with-ai/
+  - link "Contribute":
+    - /url: /en/contribute/
+  - link "Community":
+    - /url: https://astro.build/chat
+    - img
+    - text: Community
+  - link "Sponsor":
+    - /url: https://opencollective.com/astrodotbuild

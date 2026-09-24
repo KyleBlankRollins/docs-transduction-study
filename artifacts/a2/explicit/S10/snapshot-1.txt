@@ -1,0 +1,550 @@
+- link "Skip to content":
+  - /url: "#_top"
+- banner:
+  - link "Astro":
+    - /url: https://astro.build/
+    - img
+  - link "Docs":
+    - /url: /en/getting-started/
+    - img
+  - button "Search":
+    - img
+    - text: Search
+  - link "GitHub":
+    - /url: https://github.com/withastro/astro
+  - link "Discord":
+    - /url: https://astro.build/chat
+  - text: Select theme
+  - combobox "Select theme":
+    - option "Dark"
+    - option "Light"
+    - option "Auto" [selected]
+  - text: Select language
+  - combobox "Select language":
+    - option "English" [selected]
+    - option "Deutsch"
+    - option "Português do Brasil"
+    - option "Español"
+    - option "简体中文"
+    - option "正體中文"
+    - option "Français"
+    - option "हिन्दी"
+    - option "العربية"
+    - option "日本語"
+    - option "한국어"
+    - option "Polski"
+    - option "Русский"
+    - option "Italiano"
+- navigation "Main":
+  - tablist:
+    - tab "Tutorial"
+    - tab "Guide"
+    - tab "Reference"
+    - tab "Ecosystem" [selected]
+  - tabpanel "Ecosystem":
+    - list:
+      - listitem:
+        - group: UI frameworks
+      - listitem:
+        - group: Adapters
+      - listitem:
+        - group: Other official integrations
+      - listitem:
+        - group: Deployment guides
+      - listitem:
+        - group: Content management systems
+      - listitem:
+        - group: Backend services
+      - listitem:
+        - group: Image and video hosting
+      - listitem:
+        - link "E-commerce":
+          - /url: /en/guides/ecommerce/
+      - listitem:
+        - link "Authentication":
+          - /url: /en/guides/authentication/
+      - listitem:
+        - link "Testing":
+          - /url: /en/guides/testing/
+  - heading "Sponsored by" [level=2]
+  - link "Netlify":
+    - /url: https://www.netlify.com/?utm_campaign=Astro-2024&utm_source=astro-referral
+  - link "Webflow":
+    - /url: https://webflow.com/feature/cloud?utm_source=Astro&utm_medium=tech-partner&utm_campaign=fy26-astro&utm_content=fy26-docs
+  - link "Cloudflare":
+    - /url: https://www.cloudflare.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mux":
+    - /url: https://www.mux.com/?utm_campaign=21819274-Astro&utm_source=astro
+  - link "Image Kit":
+    - /url: https://imagekit.io/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mintlify":
+    - /url: https://www.mintlify.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+- complementary:
+  - navigation "On this page":
+    - heading "On this page" [level=2]
+    - list:
+      - listitem:
+        - link "Overview":
+          - /url: "#_top"
+      - listitem:
+        - link "Unit and integration tests":
+          - /url: "#unit-and-integration-tests"
+        - list:
+          - listitem:
+            - link "Vitest":
+              - /url: "#vitest"
+      - listitem:
+        - link "End-to-end tests":
+          - /url: "#end-to-end-tests"
+        - list:
+          - listitem:
+            - link "Playwright":
+              - /url: "#playwright"
+          - listitem:
+            - link "Cypress":
+              - /url: "#cypress"
+          - listitem:
+            - link "NightwatchJS":
+              - /url: "#nightwatchjs"
+  - complementary "Learn Astro with James Q Quick":
+    - img "Scrimba"
+    - heading "Learn Astro with James Q Quick" [level=2]:
+      - strong: Learn Astro
+      - text: with James Q Quick
+    - paragraph: Build your first site with 35 interactive Scrimba lessons
+    - link "Get 20% off":
+      - /url: https://scrimba.com/intro-to-astro-c00ar0fi5u?via=astro
+- main:
+  - heading "Testing" [level=1]
+  - paragraph:
+    - text: Testing helps you write and maintain working Astro code. Astro supports many popular tools for unit tests, component tests, and end-to-end tests including Jest, Mocha, Jasmine,
+    - link "Cypress":
+      - /url: https://cypress.io
+    - text: and
+    - link "Playwright":
+      - /url: https://playwright.dev
+    - text: . You can even install framework-specific testing libraries such as React Testing Library to test your UI framework components.
+  - paragraph:
+    - text: Testing frameworks allow you to state
+    - strong: assertions
+    - text: or
+    - strong: expectations
+    - text: about how your code should behave in specific situations, then compare these to the actual behavior of your current code.
+  - heading "Unit and integration tests" [level=2]
+  - link "Section titled “Unit and integration tests”":
+    - /url: "#unit-and-integration-tests"
+  - heading "Vitest" [level=3]
+  - link "Section titled “Vitest”":
+    - /url: "#vitest"
+  - paragraph: A Vite-native unit test framework with ESM, TypeScript and JSX support powered by esbuild.
+  - paragraph:
+    - text: Use Astro’s
+    - code: getViteConfig()
+    - text: helper in your
+    - link "vitest.config.ts configuration file":
+      - /url: https://vitest.dev/config/
+      - code: vitest.config.ts
+      - text: configuration file
+    - text: "to set up Vitest with your Astro project’s settings:"
+  - figure "vitest.config.ts":
+    - text: vitest.config.ts
+    - code: "/// <reference types=\"vitest/config\" /> import { getViteConfig } from 'astro/config'; export default getViteConfig({ test: { // Vitest configuration options }, });"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: By default,
+    - code: getViteConfig()
+    - text: will try to load an Astro config file in your project and apply it to the test environment. As of Astro 4.8, if you need to customize the Astro configuration applied in your tests, pass a second argument to
+    - code: getViteConfig()
+    - text: ":"
+  - figure:
+    - code: "export default getViteConfig( { test: { /* Vitest configuration options */ } }, { site: 'https://example.com/', trailingSlash: 'always', }, );"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: See the
+    - link "Astro + Vitest starter template":
+      - /url: https://github.com/withastro/astro/tree/latest/examples/with-vitest
+    - text: on GitHub.
+  - heading "Vitest and Container API" [level=4]
+  - link "Section titled “Vitest and Container API”":
+    - /url: "#vitest-and-container-api"
+  - paragraph:
+    - strong: "Added in:"
+    - code: astro@4.9.0
+  - paragraph:
+    - text: You can natively test Astro components using the
+    - link "container API":
+      - /url: /en/reference/container-reference/
+    - text: . First, setup
+    - link "vitest as explained above":
+      - /url: "#vitest"
+      - code: vitest
+      - text: as explained above
+    - text: ", then create a"
+    - code: .test.js
+    - text: "file to test your component:"
+  - figure "example.test.js":
+    - text: example.test.js
+    - region:
+      - code: "import { experimental_AstroContainer as AstroContainer } from 'astro/container'; import { expect, test } from 'vitest'; import Card from '../src/components/Card.astro'; test('Card with slots', async () => { const container = await AstroContainer.create(); const result = await container.renderToString(Card, { slots: { default: 'Card content', }, }); expect(result).toContain('This is a card'); expect(result).toContain('Card content'); });"
+    - button "Copy to clipboard"
+  - heading "End-to-end tests" [level=2]
+  - link "Section titled “End-to-end tests”":
+    - /url: "#end-to-end-tests"
+  - heading "Playwright" [level=3]
+  - link "Section titled “Playwright”":
+    - /url: "#playwright"
+  - paragraph: Playwright is an end-to-end testing framework for modern web apps. Use the Playwright API in JavaScript or TypeScript to test your Astro code on all modern rendering engines including Chromium, WebKit, and Firefox.
+  - heading "Installation" [level=4]
+  - link "Section titled “Installation”":
+    - /url: "#installation"
+  - paragraph:
+    - text: You can get started and run your tests using the
+    - link "VS Code Extension":
+      - /url: https://playwright.dev/docs/getting-started-vscode
+    - text: .
+  - paragraph: Alternatively, you can install Playwright within your Astro project using the package manager of your choice. Follow the CLI steps to choose JavaScript/TypeScript, name your test folder, and add an optional GitHub Actions workflow.
+  - tablist:
+    - tab "npm" [selected]
+    - tab "pnpm"
+    - tab "Yarn"
+  - tabpanel "npm":
+    - figure "Terminal window":
+      - text: Terminal window
+      - code: npm init playwright@latest
+      - button "Copy to clipboard"
+  - heading "Create your first Playwright test" [level=4]
+  - link "Section titled “Create your first Playwright test”":
+    - /url: "#create-your-first-playwright-test"
+  - list:
+    - listitem:
+      - paragraph:
+        - text: Choose a page to test. This example will test the example page
+        - code: index.astro
+        - text: below.
+      - figure "src/pages/index.astro":
+        - text: src/pages/index.astro
+        - region:
+          - code: "--- --- <html lang=\"en\"> <head> <title>Astro is awesome!</title> <meta name=\"description\" content=\"Pull content from anywhere and serve it fast with Astro's next-gen islands architecture.\" /> </head> <body></body> </html>"
+        - button "Copy to clipboard"
+    - listitem:
+      - paragraph:
+        - text: Create a new folder and add the following test file in
+        - code: src/test
+        - text: . Copy and paste the following test into the file to verify that the page meta information is correct. Update the value of the page
+        - code: <title>
+        - text: to match the page you are testing.
+      - figure "src/test/index.spec.ts":
+        - text: src/test/index.spec.ts
+        - code:
+          - text: "import { test, expect } from '@playwright/test'; test('meta is correct', async ({ page }) => { await page.goto(\"http://localhost:4321/\"); await expect(page).toHaveTitle('"
+          - mark: Astro is awesome!
+          - text: "'); });"
+        - button "Copy to clipboard"
+      - complementary "Set a baseUrl":
+        - paragraph:
+          - text: You can set
+          - 'link "\"baseURL\": \"http://localhost:4321\""':
+            - /url: https://playwright.dev/docs/api/class-testoptions#test-options-base-url
+            - code: "\"baseURL\": \"http://localhost:4321\""
+          - text: in the
+          - code: playwright.config.ts
+          - text: configuration file to use
+          - code: page.goto("/")
+          - text: instead of
+          - code: page.goto("http://localhost:4321/")
+          - text: for a more convenient URL.
+  - heading "Running your Playwright tests" [level=4]
+  - link "Section titled “Running your Playwright tests”":
+    - /url: "#running-your-playwright-tests"
+  - paragraph: You can run a single test or several tests at once, testing one or multiple browsers. By default, your test results will be shown in the terminal. Optionally, you can open the HTML Test Reporter to show a full report and filter test results.
+  - list:
+    - listitem:
+      - paragraph:
+        - text: To run our test from the previous example using the command line, use the
+        - code: test
+        - text: "command. Optionally, include the file name to run just the single test:"
+      - figure "Terminal window":
+        - text: Terminal window
+        - code: npx playwright test index.spec.ts
+        - button "Copy to clipboard"
+    - listitem:
+      - paragraph: "To see the full HTML Test Report, open it using the following command:"
+      - figure "Terminal window":
+        - text: Terminal window
+        - code: npx playwright show-report
+        - button "Copy to clipboard"
+  - complementary "Tip":
+    - paragraph: Run your tests against your production code to more closely resemble your live, deployed site.
+  - 'heading "Advanced: Launching a development web server during the tests" [level=5]'
+  - 'link "Section titled “Advanced: Launching a development web server during the tests”"':
+    - /url: "#advanced-launching-a-development-web-server-during-the-tests"
+  - paragraph:
+    - text: You can also have Playwright start your server when you run your testing script by using the
+    - link "webServer":
+      - /url: https://playwright.dev/docs/test-advanced#launching-a-development-web-server-during-the-tests
+      - code: webServer
+    - text: option in the Playwright configuration file.
+  - paragraph: "Here is an example of the configuration and commands required when using npm:"
+  - list:
+    - listitem:
+      - paragraph:
+        - text: Add a test script to your
+        - code: package.json
+        - text: file in the project root, such as
+        - code: "\"test:e2e\": \"playwright test\""
+        - text: .
+    - listitem:
+      - paragraph:
+        - text: In
+        - code: playwright.config.ts
+        - text: ", add the"
+        - code: webServer
+        - text: object and update the command value to
+        - code: npm run preview
+        - text: .
+      - figure "playwright.config.ts":
+        - text: playwright.config.ts
+        - code:
+          - text: "import { defineConfig } from '@playwright/test'; export default defineConfig({ + webServer: { + command: '"
+          - mark: npm run preview
+          - text: "', + url: 'http://localhost:4321/', + timeout: 120 * 1000, + reuseExistingServer: !process.env.CI, + }, use: { baseURL: 'http://localhost:4321/', }, });"
+        - button "Copy to clipboard"
+    - listitem:
+      - paragraph:
+        - text: Run
+        - code: npm run build
+        - text: ", then run"
+        - code: npm run test:e2e
+        - text: to run the Playwright tests.
+  - paragraph: "More information about Playwright can be found in the links below:"
+  - list:
+    - listitem:
+      - link "Getting started with Playwright":
+        - /url: https://playwright.dev/docs/intro
+    - listitem:
+      - link "Use a development server":
+        - /url: https://playwright.dev/docs/test-webserver#configuring-a-web-server
+  - heading "Cypress" [level=3]
+  - link "Section titled “Cypress”":
+    - /url: "#cypress"
+  - paragraph: Cypress is a front-end testing tool built for the modern web. Cypress enables you to write end-to-end tests for your Astro site.
+  - heading "Installation" [level=4]
+  - link "Section titled “Installation”":
+    - /url: "#installation-1"
+  - paragraph: You can install Cypress using the package manager of your choice. This will install Cypress locally as a dev dependency for your project.
+  - tablist:
+    - tab "npm" [selected]
+    - tab "pnpm"
+    - tab "Yarn"
+  - tabpanel "npm":
+    - figure "Terminal window":
+      - text: Terminal window
+      - code: npm install cypress --save-dev
+      - button "Copy to clipboard"
+  - heading "Configuration" [level=4]
+  - link "Section titled “Configuration”":
+    - /url: "#configuration"
+  - paragraph:
+    - text: In the root of your project, create a
+    - code: cypress.config.js
+    - text: "file with the following content:"
+  - figure "cypress.config.js":
+    - text: cypress.config.js
+    - code: "import { defineConfig } from 'cypress' export default defineConfig({ e2e: { supportFile: false } })"
+    - button "Copy to clipboard"
+  - heading "Create your first Cypress test" [level=4]
+  - link "Section titled “Create your first Cypress test”":
+    - /url: "#create-your-first-cypress-test"
+  - list:
+    - listitem:
+      - paragraph:
+        - text: Choose a page to test. This example will test the example page
+        - code: index.astro
+        - text: below.
+      - figure "src/pages/index.astro":
+        - text: src/pages/index.astro
+        - region:
+          - code: "--- --- <html lang=\"en\"> <head> <title>Astro is awesome!</title> <meta name=\"description\" content=\"Pull content from anywhere and serve it fast with Astro's next-gen islands architecture.\" /> </head> <body> <h1>Hello world from Astro</h1> </body> </html>"
+        - button "Copy to clipboard"
+    - listitem:
+      - paragraph:
+        - text: Create an
+        - code: index.cy.js
+        - text: file in the
+        - code: cypress/e2e
+        - text: folder. Use the following test in the file to verify that the page title and header are correct.
+      - figure "cypress/e2e/index.cy.js":
+        - text: cypress/e2e/index.cy.js
+        - code: "it('titles are correct', () => { const page = cy.visit('http://localhost:4321'); page.get('title').should('have.text', 'Astro is awesome!') page.get('h1').should('have.text', 'Hello world from Astro'); });"
+        - button "Copy to clipboard"
+      - complementary "Set a baseUrl":
+        - paragraph:
+          - text: You can set
+          - 'link "\"baseUrl\": \"http://localhost:4321\""':
+            - /url: https://docs.cypress.io/guides/end-to-end-testing/testing-your-app#Step-3-Configure-Cypress
+            - code: "\"baseUrl\": \"http://localhost:4321\""
+          - text: in the
+          - code: cypress.config.js
+          - text: configuration file to use
+          - code: cy.visit("/")
+          - text: instead of
+          - code: cy.visit("http://localhost:4321/")
+          - text: for a more convenient URL.
+  - heading "Running your Cypress tests" [level=4]
+  - link "Section titled “Running your Cypress tests”":
+    - /url: "#running-your-cypress-tests"
+  - paragraph: Cypress can be run from the command line or from the Cypress App. The App provides a visual interface for running and debugging your tests.
+  - paragraph: First, start the dev server so Cypress can access your live site.
+  - paragraph: "To run our test from the previous example using the command line, execute the following command:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: npx cypress run
+    - button "Copy to clipboard"
+  - paragraph: "Alternatively, to run the test using the Cypress App, execute the following command:"
+  - figure "Terminal window":
+    - text: Terminal window
+    - code: npx cypress open
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: Once the Cypress App is launched, choose
+    - strong: E2E Testing
+    - text: ", then select the browser to be used to run tests."
+  - paragraph: "Once the test run is finished, you should see green check marks in the output confirming that your test passed:"
+  - figure "Output from npx cypress run":
+    - text: Output from npx cypress run
+    - region:
+      - code: "Running: index.cy.js (1 of 1) ✓ titles are correct (107ms) 1 passing (1s)"
+    - button "Copy to clipboard"
+  - complementary "Fail the test":
+    - paragraph:
+      - text: To check that your test really does work, you can change the following line in the
+      - code: index.astro
+      - text: "file:"
+    - figure "src/pages/index.astro":
+      - text: src/pages/index.astro
+      - code: <body> - <h1>Hello world from Astro</h1> + <h1>Hello from Astro</h1> </body>
+      - button "Copy to clipboard"
+    - paragraph: Then run the test again. You should see a red “x” in the output confirming that your test failed.
+  - heading "Next steps" [level=4]
+  - link "Section titled “Next steps”":
+    - /url: "#next-steps"
+  - paragraph: "More information about Cypress can be found in the links below:"
+  - list:
+    - listitem:
+      - link "Introduction to Cypress":
+        - /url: https://docs.cypress.io/guides/core-concepts/introduction-to-cypress
+    - listitem:
+      - link "Testing Your App":
+        - /url: https://docs.cypress.io/guides/end-to-end-testing/testing-your-app
+  - heading "NightwatchJS" [level=3]
+  - link "Section titled “NightwatchJS”":
+    - /url: "#nightwatchjs"
+  - paragraph: Nightwatch.js is a test automation framework with a powerful set of tools to write, run, and debug your tests across the web with built-in support for all major browsers and their mobile equivalents, as well as native mobile applications.
+  - heading "Installation" [level=4]
+  - link "Section titled “Installation”":
+    - /url: "#installation-2"
+  - paragraph: You can install NightwatchJS within your Astro project using the package manager of your choice. Follow the CLI steps to choose JavaScript/TypeScript, name your test folder, and select whether or not to include component testing and testing on mobile browsers.
+  - tablist:
+    - tab "npm" [selected]
+    - tab "pnpm"
+    - tab "Yarn"
+  - tabpanel "npm":
+    - figure "Terminal window":
+      - text: Terminal window
+      - code: npm init nightwatch@latest
+      - button "Copy to clipboard"
+  - heading "Create your first Nightwatch test" [level=4]
+  - link "Section titled “Create your first Nightwatch test”":
+    - /url: "#create-your-first-nightwatch-test"
+  - list:
+    - listitem:
+      - paragraph:
+        - text: Choose a page to test. This example will test the example page
+        - code: index.astro
+        - text: below.
+      - figure "src/pages/index.astro":
+        - text: src/pages/index.astro
+        - region:
+          - code: "--- --- <html lang=\"en\"> <head> <title>Astro is awesome!</title> <meta name=\"description\" content=\"Pull content from anywhere and serve it fast with Astro's next-gen islands architecture.\" /> </head> <body></body> </html>"
+        - button "Copy to clipboard"
+    - listitem:
+      - paragraph:
+        - text: Create a new folder
+        - code: src/test/
+        - text: "and add the following test file:"
+      - figure "src/test/index.js":
+        - text: src/test/index.js
+        - code: "describe('Astro testing with Nightwatch', function () { before(browser => browser.navigateTo('http://localhost:4321/')); it(\"check that the title is correct\", function (browser) { browser.assert.titleEquals('Astro is awesome!') }); after(browser => browser.end()); });"
+        - button "Copy to clipboard"
+      - complementary "Set a baseUrl":
+        - paragraph:
+          - text: You can set
+          - 'link "\"baseURL\": \"http://localhost:4321\""':
+            - /url: https://nightwatchjs.org/guide/reference/settings.html#setting-the-baseurl-property
+            - code: "\"baseURL\": \"http://localhost:4321\""
+          - text: in the
+          - code: nightwatch.conf.js
+          - text: configuration file to use
+          - code: browser.navigateTo("/")
+          - text: instead of
+          - code: browser.navigateTo("http://localhost:4321/")
+          - text: for a more convenient URL.
+  - heading "Running your NightwatchJS tests" [level=4]
+  - link "Section titled “Running your NightwatchJS tests”":
+    - /url: "#running-your-nightwatchjs-tests"
+  - paragraph: You can run a single test or several tests at once, testing one or multiple browsers. By default, your test results will be shown in the terminal. Optionally, you can open the HTML Test Reporter to show a full report and filter test results.
+  - paragraph:
+    - text: You can run the tests with the
+    - link "NightwatchJS VSCode Extension":
+      - /url: https://marketplace.visualstudio.com/items?itemName=browserstackcom.nightwatch
+    - text: "or using the CLI steps below:"
+  - list:
+    - listitem:
+      - paragraph: "To run all tests, enter the following command in the terminal. Optionally, include the file name to run just the single test:"
+      - figure "Terminal window":
+        - text: Terminal window
+        - code: npx nightwatch test/index.js
+        - button "Copy to clipboard"
+      - paragraph:
+        - text: Additionally, you can run the tests against a specific browser using the
+        - code: "--environment"
+        - text: or
+        - code: "-e"
+        - text: CLI argument. If you don’t have the relevant browser installed, Nightwatch will attempt to set it up for you using
+        - link "Selenium Manager":
+          - /url: https://www.selenium.dev/blog/2022/introducing-selenium-manager/
+        - text: ":"
+      - figure "Terminal window":
+        - text: Terminal window
+        - code: npx nightwatch test/index.ts -e firefox
+        - button "Copy to clipboard"
+    - listitem:
+      - paragraph: "To see the full HTML Test Report, open it using the following command:"
+      - figure "Terminal window":
+        - text: Terminal window
+        - code: npx nightwatch test/index.ts --open
+        - button "Copy to clipboard"
+  - complementary "Tip":
+    - paragraph: Run your tests against your production code to more closely resemble your live, deployed site.
+  - paragraph: "More information about NightwatchJS can be found in the links below:"
+  - list:
+    - listitem:
+      - link "Intro to Nightwatch":
+        - /url: https://nightwatchjs.org/guide/overview/what-is-nightwatch.html
+    - listitem:
+      - link "Testing with Nightwatch":
+        - /url: https://nightwatchjs.org/guide/writing-tests/introduction.html
+  - link "Edit page":
+    - /url: https://github.com/withastro/docs/edit/main/src/content/docs/en/guides/testing.mdx
+  - link "Translate this page":
+    - /url: https://contribute.docs.astro.build/guides/i18n/
+  - link "Previous Authentication":
+    - /url: /en/guides/authentication/
+  - link "Contribute":
+    - /url: /en/contribute/
+  - link "Community":
+    - /url: https://astro.build/chat
+    - img
+    - text: Community
+  - link "Sponsor":
+    - /url: https://opencollective.com/astrodotbuild

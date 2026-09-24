@@ -1,0 +1,603 @@
+- link "Skip to content":
+  - /url: "#_top"
+- banner:
+  - link "Astro":
+    - /url: https://astro.build/
+    - img
+  - link "Docs":
+    - /url: /en/getting-started/
+    - img
+  - button "Search":
+    - img
+    - text: Search
+  - link "GitHub":
+    - /url: https://github.com/withastro/astro
+  - link "Discord":
+    - /url: https://astro.build/chat
+  - text: Select theme
+  - combobox "Select theme":
+    - option "Dark"
+    - option "Light"
+    - option "Auto" [selected]
+  - text: Select language
+  - combobox "Select language":
+    - option "English" [selected]
+    - option "Deutsch"
+    - option "Português do Brasil"
+    - option "Español"
+    - option "简体中文"
+    - option "正體中文"
+    - option "Français"
+    - option "हिन्दी"
+    - option "العربية"
+    - option "日本語"
+    - option "한국어"
+    - option "Polski"
+    - option "Русский"
+    - option "Italiano"
+- navigation "Main":
+  - tablist:
+    - tab "Tutorial"
+    - tab "Guide" [selected]
+    - tab "Reference"
+    - tab "Ecosystem"
+  - tabpanel "Guide":
+    - list:
+      - listitem:
+        - group:
+          - text: Welcome, world!
+          - list:
+            - listitem:
+              - link "Why Astro?":
+                - /url: /en/concepts/why-astro/
+            - listitem:
+              - link "Islands architecture":
+                - /url: /en/concepts/islands/
+            - listitem:
+              - link "Courses":
+                - /url: /en/astro-courses/
+      - listitem:
+        - group:
+          - text: Start a new project
+          - list:
+            - listitem:
+              - link "Installation":
+                - /url: /en/install-and-setup/
+            - listitem:
+              - link "Project structure":
+                - /url: /en/basics/project-structure/
+            - listitem:
+              - link "Develop and build":
+                - /url: /en/develop-and-build/
+      - listitem:
+        - group:
+          - text: Configuration
+          - list:
+            - listitem:
+              - link "Configuration overview":
+                - /url: /en/guides/configuring-astro/
+            - listitem:
+              - link "Editor setup":
+                - /url: /en/editor-setup/
+            - listitem:
+              - link "TypeScript":
+                - /url: /en/guides/typescript/
+            - listitem:
+              - link "Environment variables":
+                - /url: /en/guides/environment-variables/
+            - listitem:
+              - link "Working with integrations":
+                - /url: /en/guides/integrations/
+            - listitem:
+              - link "Build with AI":
+                - /url: /en/guides/build-with-ai/
+            - listitem:
+              - link "Dev toolbar":
+                - /url: /en/guides/dev-toolbar/
+      - listitem:
+        - group:
+          - text: Routing and navigation
+          - list:
+            - listitem:
+              - link "Pages":
+                - /url: /en/basics/astro-pages/
+            - listitem:
+              - link "Routing":
+                - /url: /en/guides/routing/
+            - listitem:
+              - link "Endpoints":
+                - /url: /en/guides/endpoints/
+            - listitem:
+              - link "Middleware":
+                - /url: /en/guides/middleware/
+            - listitem:
+              - link "Internationalization (i18n)":
+                - /url: /en/guides/internationalization/
+            - listitem:
+              - link "Prefetch":
+                - /url: /en/guides/prefetch/
+            - listitem:
+              - link "View transitions":
+                - /url: /en/guides/view-transitions/
+      - listitem:
+        - group:
+          - text: Build your UI
+          - list:
+            - listitem:
+              - link "Components":
+                - /url: /en/basics/astro-components/
+            - listitem:
+              - link "Layouts":
+                - /url: /en/basics/layouts/
+            - listitem:
+              - link "Styles and CSS":
+                - /url: /en/guides/styling/
+            - listitem:
+              - link "Fonts":
+                - /url: /en/guides/fonts/
+            - listitem:
+              - link "Syntax Highlighting":
+                - /url: /en/guides/syntax-highlighting/
+            - listitem:
+              - link "Scripts and event handling":
+                - /url: /en/guides/client-side-scripts/
+            - listitem:
+              - link "Front-end frameworks":
+                - /url: /en/guides/framework-components/
+      - listitem:
+        - group:
+          - text: Add content to your site
+          - list:
+            - listitem:
+              - link "Markdown":
+                - /url: /en/guides/markdown-content/
+            - listitem:
+              - link "Content collections":
+                - /url: /en/guides/content-collections/
+            - listitem:
+              - link "Images":
+                - /url: /en/guides/images/
+            - listitem:
+              - link "Data fetching":
+                - /url: /en/guides/data-fetching/
+      - listitem:
+        - group:
+          - text: Server rendering
+          - list:
+            - listitem:
+              - link "On-demand rendering":
+                - /url: /en/guides/on-demand-rendering/
+            - listitem:
+              - link "Server islands":
+                - /url: /en/guides/server-islands/
+            - listitem:
+              - link "Actions":
+                - /url: /en/guides/actions/
+            - listitem:
+              - link "Sessions":
+                - /url: /en/guides/sessions/
+            - listitem:
+              - link "Route caching":
+                - /url: /en/guides/caching/
+      - listitem:
+        - group:
+          - text: Upgrade
+          - list:
+            - listitem:
+              - link "Upgrade Astro":
+                - /url: /en/upgrade-astro/
+            - listitem:
+              - group: Major upgrade guides
+      - listitem:
+        - link "Troubleshooting":
+          - /url: /en/guides/troubleshooting/
+      - listitem:
+        - group: How-to recipes
+      - listitem:
+        - group: Migrate to Astro
+      - listitem:
+        - link "Contribute to Astro":
+          - /url: /en/contribute/
+  - heading "Sponsored by" [level=2]
+  - link "Netlify":
+    - /url: https://www.netlify.com/?utm_campaign=Astro-2024&utm_source=astro-referral
+  - link "Webflow":
+    - /url: https://webflow.com/feature/cloud?utm_source=Astro&utm_medium=tech-partner&utm_campaign=fy26-astro&utm_content=fy26-docs
+  - link "Cloudflare":
+    - /url: https://www.cloudflare.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mux":
+    - /url: https://www.mux.com/?utm_campaign=21819274-Astro&utm_source=astro
+  - link "Image Kit":
+    - /url: https://imagekit.io/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mintlify":
+    - /url: https://www.mintlify.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+- complementary:
+  - navigation "On this page":
+    - heading "On this page" [level=2]
+    - list:
+      - listitem:
+        - link "Overview":
+          - /url: "#_top"
+      - listitem:
+        - link "Official front-end framework integrations":
+          - /url: "#official-front-end-framework-integrations"
+      - listitem:
+        - link "Installing integrations":
+          - /url: "#installing-integrations"
+      - listitem:
+        - link "Using framework components":
+          - /url: "#using-framework-components"
+      - listitem:
+        - link "Hydrating interactive components":
+          - /url: "#hydrating-interactive-components"
+        - list:
+          - listitem:
+            - link "Available hydration directives":
+              - /url: "#available-hydration-directives"
+      - listitem:
+        - link "Mixing frameworks":
+          - /url: "#mixing-frameworks"
+      - listitem:
+        - link "Passing props to framework components":
+          - /url: "#passing-props-to-framework-components"
+      - listitem:
+        - link "Passing children to framework components":
+          - /url: "#passing-children-to-framework-components"
+      - listitem:
+        - link "Nesting framework components":
+          - /url: "#nesting-framework-components"
+      - listitem:
+        - link "Can I use Astro components inside my framework components?":
+          - /url: "#can-i-use-astro-components-inside-my-framework-components"
+      - listitem:
+        - link "Can I hydrate Astro components?":
+          - /url: "#can-i-hydrate-astro-components"
+  - complementary "Learn Astro with James Q Quick":
+    - img "Scrimba"
+    - heading "Learn Astro with James Q Quick" [level=2]:
+      - strong: Learn Astro
+      - text: with James Q Quick
+    - paragraph: Build your first site with 35 interactive Scrimba lessons
+    - link "Get 20% off":
+      - /url: https://scrimba.com/intro-to-astro-c00ar0fi5u?via=astro
+- main:
+  - heading "Front-end frameworks" [level=1]
+  - paragraph:
+    - text: Build your Astro website without sacrificing your favorite component framework. Create Astro
+    - link "islands":
+      - /url: /en/concepts/islands/
+    - text: with the UI frameworks of your choice.
+  - heading "Official front-end framework integrations" [level=2]
+  - link "Section titled “Official front-end framework integrations”":
+    - /url: "#official-front-end-framework-integrations"
+  - paragraph:
+    - text: Astro supports a variety of popular frameworks including
+    - link "React":
+      - /url: https://react.dev/
+    - text: ","
+    - link "Preact":
+      - /url: https://preactjs.com/
+    - text: ","
+    - link "Svelte":
+      - /url: https://svelte.dev/
+    - text: ","
+    - link "Vue":
+      - /url: https://vuejs.org/
+    - text: ","
+    - link "SolidJS":
+      - /url: https://www.solidjs.com/
+    - text: ", and"
+    - link "AlpineJS":
+      - /url: https://alpinejs.dev/
+    - text: with official integrations.
+  - paragraph:
+    - text: Find even more
+    - link "community-maintained framework integrations":
+      - /url: https://astro.build/integrations/?search=&categories%5B%5D=frameworks
+    - text: (e.g. Angular, Qwik, Elm) in our integrations directory.
+  - heading "Front-end frameworks" [level=3]
+  - list:
+    - listitem:
+      - heading "@astrojs/alpinejs" [level=3]:
+        - link "@astrojs/alpinejs":
+          - /url: /en/guides/integrations-guide/alpinejs/
+    - listitem:
+      - heading "@astrojs/preact" [level=3]:
+        - link "@astrojs/preact":
+          - /url: /en/guides/integrations-guide/preact/
+    - listitem:
+      - heading "@astrojs/react" [level=3]:
+        - link "@astrojs/react":
+          - /url: /en/guides/integrations-guide/react/
+    - listitem:
+      - heading "@astrojs/solid⁠-⁠js" [level=3]:
+        - link "@astrojs/solid⁠-⁠js":
+          - /url: /en/guides/integrations-guide/solid-js/
+    - listitem:
+      - heading "@astrojs/svelte" [level=3]:
+        - link "@astrojs/svelte":
+          - /url: /en/guides/integrations-guide/svelte/
+    - listitem:
+      - heading "@astrojs/vue" [level=3]:
+        - link "@astrojs/vue":
+          - /url: /en/guides/integrations-guide/vue/
+  - heading "Installing integrations" [level=2]
+  - link "Section titled “Installing integrations”":
+    - /url: "#installing-integrations"
+  - paragraph: One or several of these Astro integrations can be installed and configured in your project.
+  - paragraph:
+    - text: See the
+    - link "Integrations Guide":
+      - /url: /en/guides/integrations/
+    - text: for more details on installing and configuring Astro integrations.
+  - paragraph:
+    - text: As a helpful tip, Want to see an example for the framework of your choice? Visit
+    - link "astro.new":
+      - /url: https://astro.new/latest/frameworks
+    - text: and select one of the framework templates.
+  - heading "Using framework components" [level=2]
+  - link "Section titled “Using framework components”":
+    - /url: "#using-framework-components"
+  - paragraph:
+    - text: Use your JavaScript framework components in your Astro pages, layouts and components just like Astro components! All your components can live together in
+    - code: /src/components
+    - text: ", or can be organized in any way you like."
+  - paragraph: To use a framework component, import it from its relative path in your Astro component script. Then, use the component alongside other components, HTML elements and JSX-like expressions in the component template.
+  - figure "src/pages/static-components.astro":
+    - text: src/pages/static-components.astro
+    - code: "--- + import MyReactComponent from '../components/MyReactComponent.jsx'; --- <html> <body> <h1>Use React components directly in Astro!</h1> + <MyReactComponent /> </body> </html>"
+    - button "Copy to clipboard"
+  - paragraph: By default, your framework components will only render on the server, as static HTML. This is useful for templating components that are not interactive and avoids sending any unnecessary JavaScript to the client.
+  - heading "Hydrating interactive components" [level=2]
+  - link "Section titled “Hydrating interactive components”":
+    - /url: "#hydrating-interactive-components"
+  - paragraph:
+    - text: A framework component can be made interactive (hydrated) using a
+    - link "client:* directive":
+      - /url: /en/reference/directives-reference/#client-directives
+      - code: client:*
+      - text: directive
+    - text: . These are component attributes that determine when your component’s JavaScript should be sent to the browser.
+  - paragraph:
+    - text: With all client directives except
+    - code: client:only
+    - text: ", your component will first render on the server to generate static HTML. Component JavaScript will be sent to the browser according to the directive you chose. The component will then hydrate and become interactive."
+  - figure "src/pages/interactive-components.astro":
+    - text: src/pages/interactive-components.astro
+    - region:
+      - code:
+        - text: "--- // Example: hydrating framework components in the browser. import InteractiveButton from '../components/InteractiveButton.jsx'; import InteractiveCounter from '../components/InteractiveCounter.jsx'; import InteractiveModal from '../components/InteractiveModal.svelte'; --- <!-- This component's JS will begin importing when the page loads --> <InteractiveButton"
+        - mark: client:load
+        - text: /> <!-- This component's JS will not be sent to the client until the user scrolls down and the component is visible on the page --> <InteractiveCounter
+        - mark: client:visible
+        - text: /> <!-- This component won't render on the server, but will render on the client when the page loads --> <InteractiveModal
+        - mark: client:only="svelte"
+        - text: />
+    - button "Copy to clipboard"
+  - paragraph: The JavaScript framework (React, Svelte, etc.) needed to render the component will be sent to the browser along with the component’s own JavaScript. If two or more components on a page use the same framework, the framework will only be sent once.
+  - paragraph: "Accessibility: Most framework-specific accessibility patterns should work the same when these components are used in Astro. Be sure to choose a client directive that will ensure any accessibility-related JavaScript is properly loaded and executed at the appropriate time!"
+  - heading "Available hydration directives" [level=3]
+  - link "Section titled “Available hydration directives”":
+    - /url: "#available-hydration-directives"
+  - paragraph:
+    - text: "There are several hydration directives available for UI framework components:"
+    - code: client:load
+    - text: ","
+    - code: client:idle
+    - text: ","
+    - code: client:visible
+    - text: ","
+    - code: "client:media={QUERY}"
+    - text: and
+    - code: "client:only={FRAMEWORK}"
+    - text: .
+  - text: See our
+  - link "directives reference":
+    - /url: /en/reference/directives-reference/#client-directives
+  - text: page for a full description of these hydration directives, and their usage.
+  - heading "Mixing frameworks" [level=2]
+  - link "Section titled “Mixing frameworks”":
+    - /url: "#mixing-frameworks"
+  - paragraph: You can import and render components from multiple frameworks in the same Astro component.
+  - figure "src/pages/mixing-frameworks.astro":
+    - text: src/pages/mixing-frameworks.astro
+    - code: "--- // Example: Mixing multiple framework components on the same page. import MyReactComponent from '../components/MyReactComponent.jsx'; import MySvelteComponent from '../components/MySvelteComponent.svelte'; import MyVueComponent from '../components/MyVueComponent.vue'; --- <div> <MySvelteComponent /> <MyReactComponent /> <MyVueComponent /> </div>"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: Astro will recognize and render your component based on its file extension. To distinguish between frameworks that use the same file extension,
+    - link "additional configuration when rendering multiple JSX frameworks":
+      - /url: /en/guides/integrations-guide/react/#combining-multiple-jsx-frameworks
+    - text: (e.g. React and Preact) is required.
+  - paragraph:
+    - text: "Use caution here: Only"
+    - strong: Astro
+    - text: components (
+    - code: .astro
+    - text: ) can contain components from multiple frameworks.
+  - heading "Passing props to framework components" [level=2]
+  - link "Section titled “Passing props to framework components”":
+    - /url: "#passing-props-to-framework-components"
+  - paragraph: "You can pass props from Astro components to framework components:"
+  - figure "src/pages/frameworks-props.astro":
+    - text: src/pages/frameworks-props.astro
+    - code: "--- import TodoList from '../components/TodoList.jsx'; import Counter from '../components/Counter.svelte'; --- <div> <TodoList initialTodos={[\"learn Astro\", \"review PRs\"]} /> <Counter startingCount={1} /> </div>"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: Props that are passed to interactive framework components
+    - link "using a client:* directive":
+      - /url: /en/reference/directives-reference/#client-directives
+      - text: using a
+      - code: client:*
+      - text: directive
+    - text: must be
+    - link "serialized":
+      - /url: https://developer.mozilla.org/en-US/docs/Glossary/Serialization
+    - text: ": translated into a format suitable for transfer over a network, or storage. However, Astro does not serialize every type of data structure. Therefore, there are some limitations on what can be passed as props to hydrated components."
+  - paragraph:
+    - text: "The following prop types are supported: plain object,"
+    - code: number
+    - text: ","
+    - code: string
+    - text: ","
+    - code: Array
+    - text: ","
+    - code: Map
+    - text: ","
+    - code: Set
+    - text: ","
+    - code: RegExp
+    - text: ","
+    - code: Date
+    - text: ","
+    - code: BigInt
+    - text: ","
+    - code: URL
+    - text: ","
+    - code: Uint8Array
+    - text: ","
+    - code: Uint16Array
+    - text: ","
+    - code: Uint32Array
+    - text: ", and"
+    - code: "Infinity"
+  - paragraph: Non-supported data structures passed to components, such as functions, can only be used during the component’s server rendering and cannot be used to provide interactivity. For example, passing functions to hydrated components is not supported because Astro cannot pass functions from the server in a way that makes them executable on the client.
+  - heading "Passing children to framework components" [level=2]
+  - link "Section titled “Passing children to framework components”":
+    - /url: "#passing-children-to-framework-components"
+  - paragraph:
+    - text: Inside of an Astro component, you
+    - strong: can
+    - text: "pass children to framework components. Each framework has its own patterns for how to reference these children: React, Preact, and Solid all use a special prop named"
+    - code: children
+    - text: ", while Svelte and Vue use the"
+    - code: <slot />
+    - text: element.
+  - figure "src/pages/component-children.astro":
+    - text: src/pages/component-children.astro
+    - code: "--- import MyReactSidebar from '../components/MyReactSidebar.jsx'; --- <MyReactSidebar> <p>Here is a sidebar with some text and a button.</p> </MyReactSidebar>"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: Additionally, you can use
+    - link "Named Slots":
+      - /url: /en/basics/astro-components/#named-slots
+    - text: to group specific children together.
+  - paragraph:
+    - text: For React, Preact, and Solid, these slots will be converted to a top-level prop. Slot names using
+    - code: kebab-case
+    - text: will be converted to
+    - code: camelCase
+    - text: .
+  - figure "src/pages/named-slots.astro":
+    - text: src/pages/named-slots.astro
+    - code:
+      - text: "--- import MySidebar from '../components/MySidebar.jsx'; --- <MySidebar> <h2 slot=\""
+      - mark: title
+      - text: "\">Menu</h2> <p>Here is a sidebar with some text and a button.</p> <ul slot=\""
+      - mark: social-links
+      - text: "\"> <li><a href=\"https://twitter.com/astrodotbuild\">Twitter</a></li> <li><a href=\"https://github.com/withastro\">GitHub</a></li> </ul> </MySidebar>"
+    - button "Copy to clipboard"
+  - figure "src/components/MySidebar.jsx":
+    - text: src/components/MySidebar.jsx
+    - code:
+      - text: "export default function MySidebar(props) { return ( <aside> <header>{props."
+      - mark: title
+      - text: "}</header> <main>{props.children}</main> <footer>{props."
+      - mark: socialLinks
+      - text: "}</footer> </aside> ) }"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: For Svelte and Vue these slots can be referenced using a
+    - code: <slot>
+    - text: element with the
+    - code: name
+    - text: attribute. Slot names using
+    - code: kebab-case
+    - text: will be preserved.
+  - figure "src/components/MySidebar.svelte":
+    - text: src/components/MySidebar.svelte
+    - code:
+      - text: <aside> <header><slot name="
+      - mark: title
+      - text: "\" /></header> <main><slot /></main> <footer><slot name=\""
+      - mark: social-links
+      - text: "\" /></footer> </aside>"
+    - button "Copy to clipboard"
+  - heading "Nesting framework components" [level=2]
+  - link "Section titled “Nesting framework components”":
+    - /url: "#nesting-framework-components"
+  - paragraph: Inside of an Astro file, framework component children can also be hydrated components. This means that you can recursively nest components from any of these frameworks.
+  - figure "src/pages/nested-components.astro":
+    - text: src/pages/nested-components.astro
+    - code: "--- import MyReactSidebar from '../components/MyReactSidebar.jsx'; import MyReactButton from '../components/MyReactButton.jsx'; import MySvelteButton from '../components/MySvelteButton.svelte'; --- <MyReactSidebar> <p>Here is a sidebar with some text and a button.</p> <div slot=\"actions\"> <MyReactButton client:idle /> <MySvelteButton client:idle /> </div> </MyReactSidebar>"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: "Use caution here: Remember: framework component files themselves (e.g."
+    - code: .jsx
+    - text: ","
+    - code: .svelte
+    - text: ) cannot mix multiple frameworks.
+  - paragraph: This allows you to build entire “apps” in your preferred JavaScript framework and render them, via a parent component, to an Astro page.
+  - paragraph: "Note: Astro components are always rendered to static HTML, even when they include framework components that are hydrated. This means that you can only pass props that don’t do any HTML rendering. Passing React’s “render props” to framework components from an Astro component will not work, because Astro components can’t provide the client runtime behavior that this pattern requires. Instead, use named slots."
+  - heading "Can I use Astro components inside my framework components?" [level=2]
+  - link "Section titled “Can I use Astro components inside my framework components?”":
+    - /url: "#can-i-use-astro-components-inside-my-framework-components"
+  - paragraph:
+    - text: Any UI framework component becomes an “island” of that framework. These components must be written entirely as valid code for that framework, using only its own imports and packages. You cannot import
+    - code: .astro
+    - text: components in a UI framework component (e.g.
+    - code: .jsx
+    - text: or
+    - code: .svelte
+    - text: ).
+  - paragraph:
+    - text: You can, however, use
+    - link "the Astro <slot /> pattern":
+      - /url: /en/basics/astro-components/#slots
+      - text: the Astro
+      - code: <slot />
+      - text: pattern
+    - text: to pass static content generated by Astro components as children to your framework components
+    - strong:
+      - text: inside an
+      - code: .astro
+      - text: component
+    - text: .
+  - figure "src/pages/astro-children.astro":
+    - text: src/pages/astro-children.astro
+    - code: "--- import MyReactComponent from '../components/MyReactComponent.jsx'; import MyAstroComponent from '../components/MyAstroComponent.astro'; --- <MyReactComponent> <MyAstroComponent slot=\"name\" /> </MyReactComponent>"
+    - button "Copy to clipboard"
+  - heading "Can I hydrate Astro components?" [level=2]
+  - link "Section titled “Can I hydrate Astro components?”":
+    - /url: "#can-i-hydrate-astro-components"
+  - paragraph:
+    - text: If you try to hydrate an Astro component with a
+    - code: "client:"
+    - text: modifier, you will get an error.
+  - paragraph:
+    - link "Astro components":
+      - /url: /en/basics/astro-components/
+    - text: are HTML-only templating components with no client-side runtime. But, you can use a
+    - code: <script>
+    - text: tag in your Astro component template to send JavaScript to the browser that executes in the global scope.
+  - text: Learn more about
+  - link "client-side <script> tags in Astro components":
+    - /url: /en/guides/client-side-scripts/
+    - text: client-side
+    - code: <script>
+    - text: tags in Astro components
+  - link "Edit page":
+    - /url: https://github.com/withastro/docs/edit/main/src/content/docs/en/guides/framework-components.mdx
+  - link "Translate this page":
+    - /url: https://contribute.docs.astro.build/guides/i18n/
+  - link "Previous Scripts and event handling":
+    - /url: /en/guides/client-side-scripts/
+  - link "Next Markdown":
+    - /url: /en/guides/markdown-content/
+  - link "Contribute":
+    - /url: /en/contribute/
+  - link "Community":
+    - /url: https://astro.build/chat
+    - img
+    - text: Community
+  - link "Sponsor":
+    - /url: https://opencollective.com/astrodotbuild

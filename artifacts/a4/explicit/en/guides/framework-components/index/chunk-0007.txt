@@ -1,0 +1,1 @@
+ Astro component template to send JavaScript to the browser that executes in the global scope. Learn more about client-side <script> tags in Astro components Learn

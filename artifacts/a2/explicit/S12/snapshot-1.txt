@@ -1,0 +1,1065 @@
+- link "Skip to content":
+  - /url: "#_top"
+- banner:
+  - link "Astro":
+    - /url: https://astro.build/
+    - img
+  - link "Docs":
+    - /url: /en/getting-started/
+    - img
+  - button "Search":
+    - img
+    - text: Search
+  - link "GitHub":
+    - /url: https://github.com/withastro/astro
+  - link "Discord":
+    - /url: https://astro.build/chat
+  - text: Select theme
+  - combobox "Select theme":
+    - option "Dark"
+    - option "Light"
+    - option "Auto" [selected]
+  - text: Select language
+  - combobox "Select language":
+    - option "English" [selected]
+    - option "Deutsch"
+    - option "Português do Brasil"
+    - option "Español"
+    - option "简体中文"
+    - option "正體中文"
+    - option "Français"
+    - option "हिन्दी"
+    - option "العربية"
+    - option "日本語"
+    - option "한국어"
+    - option "Polski"
+    - option "Русский"
+    - option "Italiano"
+- navigation "Main":
+  - tablist:
+    - tab "Tutorial"
+    - tab "Guide"
+    - tab "Reference"
+    - tab "Ecosystem" [selected]
+  - tabpanel "Ecosystem":
+    - list:
+      - listitem:
+        - group: UI frameworks
+      - listitem:
+        - group: Adapters
+      - listitem:
+        - group: Other official integrations
+      - listitem:
+        - group: Deployment guides
+      - listitem:
+        - group:
+          - text: Content management systems
+          - list:
+            - listitem:
+              - link "CMS overview":
+                - /url: /en/guides/cms/
+            - listitem:
+              - link "ApostropheCMS":
+                - /url: /en/guides/cms/apostrophecms/
+            - listitem:
+              - link "Builder.io":
+                - /url: /en/guides/cms/builderio/
+            - listitem:
+              - link "ButterCMS":
+                - /url: /en/guides/cms/buttercms/
+            - listitem:
+              - link "Caisy":
+                - /url: /en/guides/cms/caisy/
+            - listitem:
+              - link "CloudCannon":
+                - /url: /en/guides/cms/cloudcannon/
+            - listitem:
+              - link "Contentful":
+                - /url: /en/guides/cms/contentful/
+            - listitem:
+              - link "Cosmic":
+                - /url: /en/guides/cms/cosmic/
+            - listitem:
+              - link "Craft CMS":
+                - /url: /en/guides/cms/craft-cms/
+            - listitem:
+              - link "Craft Cross CMS":
+                - /url: /en/guides/cms/craft-cross-cms/
+            - listitem:
+              - link "Crystallize":
+                - /url: /en/guides/cms/crystallize/
+            - listitem:
+              - link "DatoCMS":
+                - /url: /en/guides/cms/datocms/
+            - listitem:
+              - link "Decap CMS":
+                - /url: /en/guides/cms/decap-cms/
+            - listitem:
+              - link "Directus":
+                - /url: /en/guides/cms/directus/
+            - listitem:
+              - link "Drupal":
+                - /url: /en/guides/cms/drupal/
+            - listitem:
+              - link "Flotiq":
+                - /url: /en/guides/cms/flotiq/
+            - listitem:
+              - link "Front Matter CMS":
+                - /url: /en/guides/cms/frontmatter-cms/
+            - listitem:
+              - link "Ghost":
+                - /url: /en/guides/cms/ghost/
+            - listitem:
+              - link "GitCMS":
+                - /url: /en/guides/cms/gitcms/
+            - listitem:
+              - link "Hashnode":
+                - /url: /en/guides/cms/hashnode/
+            - listitem:
+              - link "Hygraph":
+                - /url: /en/guides/cms/hygraph/
+            - listitem:
+              - link "JekyllPad":
+                - /url: /en/guides/cms/jekyllpad/
+            - listitem:
+              - link "Keystatic":
+                - /url: /en/guides/cms/keystatic/
+            - listitem:
+              - link "KeystoneJS":
+                - /url: /en/guides/cms/keystonejs/
+            - listitem:
+              - link "Kontent.ai":
+                - /url: /en/guides/cms/kontent-ai/
+            - listitem:
+              - link "microCMS":
+                - /url: /en/guides/cms/microcms/
+            - listitem:
+              - link "Optimizely CMS":
+                - /url: /en/guides/cms/optimizely/
+            - listitem:
+              - link "Pages CMS":
+                - /url: /en/guides/cms/pages-cms/
+            - listitem:
+              - link "Payload CMS":
+                - /url: /en/guides/cms/payload/
+            - listitem:
+              - link "Prepr CMS":
+                - /url: /en/guides/cms/preprcms/
+            - listitem:
+              - link "Prismic":
+                - /url: /en/guides/cms/prismic/
+            - listitem:
+              - link "Sanity":
+                - /url: /en/guides/cms/sanity/
+            - listitem:
+              - link "Sitecore XM":
+                - /url: /en/guides/cms/sitecore/
+            - listitem:
+              - link "Sitepins":
+                - /url: /en/guides/cms/sitepins/
+            - listitem:
+              - link "Spinal":
+                - /url: /en/guides/cms/spinal/
+            - listitem:
+              - link "Statamic":
+                - /url: /en/guides/cms/statamic/
+            - listitem:
+              - link "Storyblok":
+                - /url: /en/guides/cms/storyblok/
+            - listitem:
+              - link "Strapi":
+                - /url: /en/guides/cms/strapi/
+            - listitem:
+              - link "StudioCMS":
+                - /url: /en/guides/cms/studiocms/
+            - listitem:
+              - link "TinaCMS":
+                - /url: /en/guides/cms/tina-cms/
+            - listitem:
+              - link "Umbraco":
+                - /url: /en/guides/cms/umbraco/
+            - listitem:
+              - link "Vault CMS":
+                - /url: /en/guides/cms/vault-cms/
+            - listitem:
+              - link "Wordpress":
+                - /url: /en/guides/cms/wordpress/
+            - listitem:
+              - link "Zero":
+                - /url: /en/guides/cms/zero/
+      - listitem:
+        - group: Backend services
+      - listitem:
+        - group: Image and video hosting
+      - listitem:
+        - link "E-commerce":
+          - /url: /en/guides/ecommerce/
+      - listitem:
+        - link "Authentication":
+          - /url: /en/guides/authentication/
+      - listitem:
+        - link "Testing":
+          - /url: /en/guides/testing/
+  - heading "Sponsored by" [level=2]
+  - link "Netlify":
+    - /url: https://www.netlify.com/?utm_campaign=Astro-2024&utm_source=astro-referral
+  - link "Webflow":
+    - /url: https://webflow.com/feature/cloud?utm_source=Astro&utm_medium=tech-partner&utm_campaign=fy26-astro&utm_content=fy26-docs
+  - link "Cloudflare":
+    - /url: https://www.cloudflare.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mux":
+    - /url: https://www.mux.com/?utm_campaign=21819274-Astro&utm_source=astro
+  - link "Image Kit":
+    - /url: https://imagekit.io/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+  - link "Mintlify":
+    - /url: https://www.mintlify.com/?utm_source=astro&utm_medium=astro&utm_campaign=astro
+- complementary:
+  - navigation "On this page":
+    - heading "On this page" [level=2]
+    - list:
+      - listitem:
+        - link "Overview":
+          - /url: "#_top"
+      - listitem:
+        - link "Integrating with Astro":
+          - /url: "#integrating-with-astro"
+        - list:
+          - listitem:
+            - link "Prerequisites":
+              - /url: "#prerequisites"
+          - listitem:
+            - link "Setting up credentials":
+              - /url: "#setting-up-credentials"
+          - listitem:
+            - link "Installing dependencies":
+              - /url: "#installing-dependencies"
+          - listitem:
+            - link "Fetching data":
+              - /url: "#fetching-data"
+      - listitem:
+        - link "Making a blog with Astro and Contentful":
+          - /url: "#making-a-blog-with-astro-and-contentful"
+        - list:
+          - listitem:
+            - link "Prerequisites":
+              - /url: "#prerequisites-1"
+          - listitem:
+            - link "Setting up a Contentful model":
+              - /url: "#setting-up-a-contentful-model"
+          - listitem:
+            - link "Displaying a list of blog posts":
+              - /url: "#displaying-a-list-of-blog-posts"
+          - listitem:
+            - link "Generating individual blog posts":
+              - /url: "#generating-individual-blog-posts"
+          - listitem:
+            - link "Publishing your site":
+              - /url: "#publishing-your-site"
+  - complementary "Learn Astro with James Q Quick":
+    - img "Scrimba"
+    - heading "Learn Astro with James Q Quick" [level=2]:
+      - strong: Learn Astro
+      - text: with James Q Quick
+    - paragraph: Build your first site with 35 interactive Scrimba lessons
+    - link "Get 20% off":
+      - /url: https://scrimba.com/intro-to-astro-c00ar0fi5u?via=astro
+- main:
+  - heading "Contentful & Astro" [level=1]
+  - paragraph:
+    - link "Contentful":
+      - /url: https://www.contentful.com/
+    - text: is a headless CMS that allows you to manage content, integrate with other services, and publish to multiple platforms.
+  - heading "Integrating with Astro" [level=2]
+  - link "Section titled “Integrating with Astro”":
+    - /url: "#integrating-with-astro"
+  - paragraph:
+    - text: In this section, we’ll use the
+    - link "Contentful SDK":
+      - /url: https://github.com/contentful/contentful.js
+    - text: to connect your Contentful space to Astro with zero client-side JavaScript.
+  - heading "Prerequisites" [level=3]
+  - link "Section titled “Prerequisites”":
+    - /url: "#prerequisites"
+  - paragraph: "To get started, you will need to have the following:"
+  - list:
+    - listitem:
+      - paragraph:
+        - strong: An Astro project
+        - text: "- If you don’t have an Astro project yet, our"
+        - link "Installation guide":
+          - /url: /en/install-and-setup/
+        - text: will get you up and running in no time.
+    - listitem:
+      - paragraph:
+        - strong: A Contentful account and a Contentful space
+        - text: . If you don’t have an account, you can
+        - link "sign up":
+          - /url: https://www.contentful.com/sign-up/
+        - text: for a free account and create a new Contentful space. You can also use an existing space if you have one.
+    - listitem:
+      - paragraph:
+        - strong: Contentful credentials
+        - text: "- You can find the following credentials in your Contentful dashboard"
+        - strong: Settings > API keys
+        - text: . If you don’t have any API keys, create one by selecting
+        - strong: Add API key
+        - text: .
+      - list:
+        - listitem:
+          - strong: Contentful space ID
+          - text: "- The ID of your Contentful space."
+        - listitem:
+          - strong: Contentful delivery access token
+          - text: "- The access token to consume"
+          - emphasis: published
+          - text: content from your Contentful space.
+        - listitem:
+          - strong: Contentful preview access token
+          - text: "- The access token to consume"
+          - emphasis: unpublished
+          - text: content from your Contentful space.
+  - heading "Setting up credentials" [level=3]
+  - link "Section titled “Setting up credentials”":
+    - /url: "#setting-up-credentials"
+  - paragraph:
+    - text: To add your Contentful space’s credentials to Astro, create an
+    - code: .env
+    - text: "file in the root of your project with the following variables:"
+  - figure ".env":
+    - text: .env
+    - code: CONTENTFUL_SPACE_ID=YOUR_SPACE_ID CONTENTFUL_DELIVERY_TOKEN=YOUR_DELIVERY_TOKEN CONTENTFUL_PREVIEW_TOKEN=YOUR_PREVIEW_TOKEN
+    - button "Copy to clipboard"
+  - paragraph: Now, you can use these environment variables in your project.
+  - paragraph:
+    - text: If you would like to have IntelliSense for your Contentful environment variables, you can create a
+    - code: env.d.ts
+    - text: file in the
+    - code: src/
+    - text: directory and configure
+    - code: ImportMetaEnv
+    - text: "like this:"
+  - figure "src/env.d.ts":
+    - text: src/env.d.ts
+    - code: "interface ImportMetaEnv { readonly CONTENTFUL_SPACE_ID: string; readonly CONTENTFUL_DELIVERY_TOKEN: string; readonly CONTENTFUL_PREVIEW_TOKEN: string; }"
+    - button "Copy to clipboard"
+  - complementary "Tip":
+    - paragraph:
+      - text: Read more about
+      - link "using environment variables":
+        - /url: /en/guides/environment-variables/
+      - text: and
+      - code: .env
+      - text: files in Astro.
+  - paragraph: "Your root directory should now include these new files:"
+  - list:
+    - listitem:
+      - group:
+        - text: Directory src/
+        - list:
+          - listitem:
+            - strong: env.d.ts
+    - listitem:
+      - strong: .env
+    - listitem: astro.config.mjs
+    - listitem: package.json
+  - heading "Installing dependencies" [level=3]
+  - link "Section titled “Installing dependencies”":
+    - /url: "#installing-dependencies"
+  - paragraph: "To connect with your Contentful space, install both of the following using the single command below for your preferred package manager:"
+  - list:
+    - listitem:
+      - link "contentful.js":
+        - /url: https://github.com/contentful/contentful.js
+        - code: contentful.js
+      - text: ", the official Contentful SDK for JavaScript"
+    - listitem:
+      - link "rich-text-html-renderer":
+        - /url: https://github.com/contentful/rich-text/tree/master/packages/rich-text-html-renderer
+        - code: rich-text-html-renderer
+      - text: ", a package to render Contentful’s rich text fields to HTML."
+  - tablist:
+    - tab "npm" [selected]
+    - tab "pnpm"
+    - tab "Yarn"
+  - tabpanel "npm":
+    - figure "Terminal window":
+      - text: Terminal window
+      - code: npm install contentful @contentful/rich-text-html-renderer
+      - button "Copy to clipboard"
+  - paragraph:
+    - text: Next, create a new file called
+    - code: contentful.ts
+    - text: in the
+    - code: src/lib/
+    - text: directory of your project.
+  - figure "src/lib/contentful.ts":
+    - text: src/lib/contentful.ts
+    - region:
+      - code: "import * as contentful from \"contentful\"; export const contentfulClient = contentful.createClient({ space: import.meta.env.CONTENTFUL_SPACE_ID, accessToken: import.meta.env.DEV ? import.meta.env.CONTENTFUL_PREVIEW_TOKEN : import.meta.env.CONTENTFUL_DELIVERY_TOKEN, host: import.meta.env.DEV ? \"preview.contentful.com\" : \"cdn.contentful.com\", });"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: The above code snippet creates a new Contentful client, passing in credentials from the
+    - code: .env
+    - text: file.
+  - complementary "Caution":
+    - paragraph:
+      - text: While in development mode, your content will be fetched from the
+      - strong: Contentful preview API
+      - text: . This means that you will be able to see unpublished content from the Contentful web app.
+    - paragraph:
+      - text: At build time, your content will be fetched from the
+      - strong: Contentful delivery API
+      - text: . This means that only published content will be available at build time.
+  - paragraph: "Finally, your root directory should now include these new files:"
+  - list:
+    - listitem:
+      - group:
+        - text: Directory src/
+        - list:
+          - listitem: env.d.ts
+          - listitem:
+            - group:
+              - text: Directory lib/
+              - list:
+                - listitem:
+                  - strong: contentful.ts
+    - listitem: .env
+    - listitem: astro.config.mjs
+    - listitem: package.json
+  - heading "Fetching data" [level=3]
+  - link "Section titled “Fetching data”":
+    - /url: "#fetching-data"
+  - paragraph:
+    - text: Astro components can fetch data from your Contentful account by using the
+    - code: contentfulClient
+    - text: and specifying the
+    - code: content_type
+    - text: .
+  - paragraph: "For example, if you have a “blogPost” content type that has a text field for a title and a rich text field for content, your component might look like this:"
+  - figure:
+    - region:
+      - code: "--- import { contentfulClient } from \"../lib/contentful\"; import { documentToHtmlString } from \"@contentful/rich-text-html-renderer\"; import type { EntryFieldTypes } from \"contentful\"; interface BlogPost { contentTypeId: \"blogPost\", fields: { title: EntryFieldTypes.Text content: EntryFieldTypes.RichText, } } const entries = await contentfulClient.getEntries<BlogPost>({ content_type: \"blogPost\", }); --- <body> {entries.items.map((item) => ( <section> <h2>{item.fields.title}</h2> <article set:html={documentToHtmlString(item.fields.content)}></article> </section> ))} </body>"
+    - button "Copy to clipboard"
+  - complementary "Tip":
+    - paragraph:
+      - text: If you have an empty Contentful space, check out
+      - link "setting up a Contentful model":
+        - /url: "#setting-up-a-contentful-model"
+      - text: to learn how to create a basic blog model for your content.
+  - paragraph:
+    - text: You can find more querying options in the
+    - link "Contentful documentation":
+      - /url: https://contentful.github.io/contentful.js/
+    - text: .
+  - heading "Making a blog with Astro and Contentful" [level=2]
+  - link "Section titled “Making a blog with Astro and Contentful”":
+    - /url: "#making-a-blog-with-astro-and-contentful"
+  - paragraph: With the setup above, you are now able to create a blog that uses Contentful as the CMS.
+  - heading "Prerequisites" [level=3]
+  - link "Section titled “Prerequisites”":
+    - /url: "#prerequisites-1"
+  - list:
+    - listitem:
+      - strong: A Contentful space
+      - text: "- For this tutorial we recommend starting with an empty space. If you already have a content model, feel free to use it, but you will need to modify our code snippets to match your content model."
+    - listitem:
+      - strong:
+        - text: An Astro project integrated with the
+        - link "Contentful SDK":
+          - /url: https://github.com/contentful/contentful.js
+      - text: "- See"
+      - link "integrating with Astro":
+        - /url: "#integrating-with-astro"
+      - text: for more details on how to set up an Astro project with Contentful.
+  - heading "Setting up a Contentful model" [level=3]
+  - link "Section titled “Setting up a Contentful model”":
+    - /url: "#setting-up-a-contentful-model"
+  - paragraph:
+    - text: Inside your Contentful space, in the
+    - strong: Content model
+    - text: "section, create a new content model with the following fields and values:"
+  - list:
+    - listitem:
+      - strong: "Name:"
+      - text: Blog Post
+    - listitem:
+      - strong: "API identifier:"
+      - code: blogPost
+    - listitem:
+      - strong: "Description:"
+      - text: This content type is for a blog post
+  - paragraph:
+    - text: In your newly created content type, use the
+    - strong: Add Field
+    - text: "button to add 5 new fields with the following parameters:"
+  - list:
+    - listitem:
+      - text: Text field
+      - list:
+        - listitem:
+          - strong: "Name:"
+          - text: title
+        - listitem:
+          - strong: "API identifier:"
+          - code: title
+          - text: (leave the other parameters as their defaults)
+    - listitem:
+      - text: Date and time field
+      - list:
+        - listitem:
+          - strong: "Name:"
+          - text: date
+        - listitem:
+          - strong: "API identifier:"
+          - code: date
+    - listitem:
+      - text: Text field
+      - list:
+        - listitem:
+          - strong: "Name:"
+          - text: slug
+        - listitem:
+          - strong: "API identifier:"
+          - code: slug
+          - text: (leave the other parameters as their defaults)
+    - listitem:
+      - text: Text field
+      - list:
+        - listitem:
+          - strong: "Name:"
+          - text: description
+        - listitem:
+          - strong: "API identifier:"
+          - code: description
+    - listitem:
+      - text: Rich text field
+      - list:
+        - listitem:
+          - strong: "Name:"
+          - text: content
+        - listitem:
+          - strong: "API identifier:"
+          - code: content
+  - paragraph:
+    - text: Click
+    - strong: Save
+    - text: to save your changes.
+  - paragraph:
+    - text: In the
+    - strong: Content
+    - text: section of your Contentful space, create a new entry by clicking the
+    - strong: Add Entry
+    - text: "button. Then, fill in the fields:"
+  - list:
+    - listitem:
+      - strong: "Title:"
+      - code: Astro is amazing!
+    - listitem:
+      - strong: "Slug:"
+      - code: astro-is-amazing
+    - listitem:
+      - strong: "Description:"
+      - code: Astro is a new static site generator that is blazing fast and easy to use.
+    - listitem:
+      - strong: "Date:"
+      - code: 2022-10-05
+    - listitem:
+      - strong: "Content:"
+      - code: This is my first blog post!
+  - paragraph:
+    - text: Click
+    - strong: Publish
+    - text: to save your entry. You have just created your first blog post.
+  - paragraph: Feel free to add as many blog posts as you want, then switch to your favorite code editor to start hacking with Astro!
+  - heading "Displaying a list of blog posts" [level=3]
+  - link "Section titled “Displaying a list of blog posts”":
+    - /url: "#displaying-a-list-of-blog-posts"
+  - paragraph:
+    - text: Create a new interface called
+    - code: BlogPost
+    - text: and add it to your
+    - code: contentful.ts
+    - text: file in
+    - code: src/lib/
+    - text: . This interface will match the fields of your blog post content type in Contentful. You will use it to type your blog post entries response.
+  - figure "src/lib/contentful.ts":
+    - text: src/lib/contentful.ts
+    - region:
+      - code:
+        - text: import * as contentful from "contentful"; import
+        - insertion: "type { EntryFieldTypes }"
+        - text: "from \"contentful\"; + export interface BlogPost { + contentTypeId: \"blogPost\", + fields: { + title: EntryFieldTypes.Text + content: EntryFieldTypes.RichText, + date: EntryFieldTypes.Date, + description: EntryFieldTypes.Text, + slug: EntryFieldTypes.Text + } + } export const contentfulClient = contentful.createClient({ space: import.meta.env.CONTENTFUL_SPACE_ID, accessToken: import.meta.env.DEV ? import.meta.env.CONTENTFUL_PREVIEW_TOKEN : import.meta.env.CONTENTFUL_DELIVERY_TOKEN, host: import.meta.env.DEV ? \"preview.contentful.com\" : \"cdn.contentful.com\", });"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: Next, go to the Astro page where you will fetch data from Contentful. We will use the home page
+    - code: index.astro
+    - text: in
+    - code: src/pages/
+    - text: in this example.
+  - paragraph:
+    - text: Import
+    - code: BlogPost
+    - text: interface and
+    - code: contentfulClient
+    - text: from
+    - code: src/lib/contentful.ts
+    - text: .
+  - paragraph:
+    - text: Fetch all the entries from Contentful with a content type of
+    - code: blogPost
+    - text: while passing the
+    - code: BlogPost
+    - text: interface to type your response.
+  - figure "src/pages/index.astro":
+    - text: src/pages/index.astro
+    - code: "--- import { contentfulClient } from \"../lib/contentful\"; import type { BlogPost } from \"../lib/contentful\"; const entries = await contentfulClient.getEntries<BlogPost>({ content_type: \"blogPost\", }); ---"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: This fetch call will return an array of your blog posts at
+    - code: entries.items
+    - text: . You can use
+    - code: map()
+    - text: to create a new array (
+    - code: posts
+    - text: ) that formats your returned data.
+  - paragraph:
+    - text: The example below returns the
+    - code: items.fields
+    - text: properties from our Content model to create a blog post preview, and at the same time, reformats the date to a more readable format.
+  - figure "src/pages/index.astro":
+    - text: src/pages/index.astro
+    - code: "--- import { contentfulClient } from \"../lib/contentful\"; import type { BlogPost } from \"../lib/contentful\"; const entries = await contentfulClient.getEntries<BlogPost>({ content_type: \"blogPost\", }); + const posts = entries.items.map((item) => { + const { title, date, description, slug } = item.fields; + return { + title, + slug, + description, + date: new Date(date).toLocaleDateString() + }; + }); ---"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: Finally, you can use
+    - code: posts
+    - text: in your template to show a preview of each blog post.
+  - figure "src/pages/index.astro":
+    - text: src/pages/index.astro
+    - code: "--- import { contentfulClient } from \"../lib/contentful\"; import type { BlogPost } from \"../lib/contentful\"; const entries = await contentfulClient.getEntries<BlogPost>({ content_type: \"blogPost\", }); const posts = entries.items.map((item) => { const { title, date, description, slug } = item.fields; return { title, slug, description, date: new Date(date).toLocaleDateString() }; }); --- + <html lang=\"en\"> + <head> + <title>My Blog</title> + </head> + <body> + <h1>My Blog</h1> + <ul> + {posts.map((post) => ( + <li> + <a href={`/posts/${post.slug}/`}> + <h2>{post.title}</h2> + </a> + <time>{post.date}</time> + <p>{post.description}</p> + </li> + ))} + </ul> + </body> + </html>"
+    - button "Copy to clipboard"
+  - heading "Generating individual blog posts" [level=3]
+  - link "Section titled “Generating individual blog posts”":
+    - /url: "#generating-individual-blog-posts"
+  - paragraph: Use the same method to fetch your data from Contentful as above, but this time, on a page that will create a unique page route for each blog post.
+  - heading "Static site generation" [level=4]
+  - link "Section titled “Static site generation”":
+    - /url: "#static-site-generation"
+  - paragraph:
+    - text: If you’re using Astro’s default static mode, you’ll use
+    - link "dynamic routes":
+      - /url: /en/guides/routing/#dynamic-routes
+    - text: and the
+    - code: getStaticPaths()
+    - text: function. This function will be called at build time to generate the list of paths that become pages.
+  - paragraph:
+    - text: Create a new file named
+    - code: "[slug].astro"
+    - text: in
+    - code: src/pages/posts/
+    - text: .
+  - paragraph:
+    - text: As you did on
+    - code: index.astro
+    - text: ", import the"
+    - code: BlogPost
+    - text: interface and
+    - code: contentfulClient
+    - text: from
+    - code: src/lib/contentful.ts
+    - text: .
+  - paragraph:
+    - text: This time, fetch your data inside a
+    - code: getStaticPaths()
+    - text: function.
+  - figure "src/pages/posts/[slug].astro":
+    - text: src/pages/posts/[slug].astro
+    - code: "--- import { contentfulClient } from \"../../lib/contentful\"; import type { BlogPost } from \"../../lib/contentful\"; export async function getStaticPaths() { const entries = await contentfulClient.getEntries<BlogPost>({ content_type: \"blogPost\", }); } ---"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: Then, map each item to an object with a
+    - code: params
+    - text: and
+    - code: props
+    - text: property. The
+    - code: params
+    - text: property will be used to generate the URL of the page and the
+    - code: props
+    - text: property will be passed to the page component as props.
+  - figure "src/pages/posts/[slug].astro":
+    - text: src/pages/posts/[slug].astro
+    - region:
+      - code: "--- import { contentfulClient } from \"../../lib/contentful\"; + import { documentToHtmlString } from \"@contentful/rich-text-html-renderer\"; import type { BlogPost } from \"../../lib/contentful\"; export async function getStaticPaths() { const entries = await contentfulClient.getEntries<BlogPost>({ content_type: \"blogPost\", }); + const pages = entries.items.map((item) => ({ + params: { slug: item.fields.slug }, + props: { + title: item.fields.title, + content: documentToHtmlString(item.fields.content), + date: new Date(item.fields.date).toLocaleDateString(), + }, + })); + return pages; } ---"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: The property inside
+    - code: params
+    - text: must match the name of the dynamic route. Since our filename is
+    - code: "[slug].astro"
+    - text: ", we use"
+    - code: slug
+    - text: .
+  - paragraph:
+    - text: In our example, the
+    - code: props
+    - text: "object passes three properties to the page:"
+  - list:
+    - listitem: title (a string)
+    - listitem:
+      - text: content (a rich text Document converted to HTML using
+      - code: documentToHtmlString
+      - text: )
+    - listitem:
+      - text: date (formatted using the
+      - code: Date
+      - text: constructor)
+  - paragraph:
+    - text: Finally, you can use the page
+    - code: props
+    - text: to display your blog post.
+  - figure "src/pages/posts/[slug].astro":
+    - text: src/pages/posts/[slug].astro
+    - region:
+      - code: "--- import { contentfulClient } from \"../../lib/contentful\"; import { documentToHtmlString } from \"@contentful/rich-text-html-renderer\"; import type { BlogPost } from \"../../lib/contentful\"; export async function getStaticPaths() { const { items } = await contentfulClient.getEntries<BlogPost>({ content_type: \"blogPost\", }); const pages = items.map((item) => ({ params: { slug: item.fields.slug }, props: { title: item.fields.title, content: documentToHtmlString(item.fields.content), date: new Date(item.fields.date).toLocaleDateString(), }, })); return pages; } + const { content, title, date } = Astro.props; --- + <html lang=\"en\"> + <head> + <title>{title}</title> + </head> + <body> + <h1>{title}</h1> + <time>{date}</time> + <article set:html={content} /> + </body> + </html>"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: Navigate to
+    - link "http://localhost:4321/":
+      - /url: http://localhost:4321/
+    - text: and click on one of your posts to make sure your dynamic route is working!
+  - heading "On-demand rendering" [level=4]
+  - link "Section titled “On-demand rendering”":
+    - /url: "#on-demand-rendering"
+  - paragraph:
+    - text: If you’ve
+    - link "opted into on-demand rendering with an adapter":
+      - /url: /en/guides/on-demand-rendering/
+    - text: ", you will use a dynamic route that uses a"
+    - code: slug
+    - text: parameter to fetch the data from Contentful.
+  - paragraph:
+    - text: Create a
+    - code: "[slug].astro"
+    - text: page in
+    - code: src/pages/posts
+    - text: . Use
+    - link "Astro.params":
+      - /url: /en/reference/api-reference/#params
+      - code: Astro.params
+    - text: to get the slug from the URL, then pass that to
+    - code: getEntries
+    - text: ":"
+  - figure "src/pages/posts/[slug].astro":
+    - text: src/pages/posts/[slug].astro
+    - code: "--- import { contentfulClient } from \"../../lib/contentful\"; import type { BlogPost } from \"../../lib/contentful\"; const { slug } = Astro.params; const data = await contentfulClient.getEntries<BlogPost>({ content_type: \"blogPost\", \"fields.slug\": slug, }); ---"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: If the entry is not found, you can redirect the user to the 404 page using
+    - link "Astro.redirect":
+      - /url: /en/guides/routing/#dynamic-redirects
+      - code: Astro.redirect
+    - text: .
+  - figure "src/pages/posts/[slug].astro":
+    - text: src/pages/posts/[slug].astro
+    - code: "--- import { contentfulClient } from \"../../lib/contentful\"; import type { BlogPost } from \"../../lib/contentful\"; const { slug } = Astro.params; + try { const data = await contentfulClient.getEntries<BlogPost>({ content_type: \"blogPost\", \"fields.slug\": slug, }); + } catch (error) { + return Astro.redirect(\"/404\"); + } ---"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: To pass post data to the template section, create a
+    - code: post
+    - text: object outside the
+    - code: try/catch
+    - text: block.
+  - paragraph:
+    - text: Use
+    - code: documentToHtmlString
+    - text: to convert
+    - code: content
+    - text: from a Document to HTML, and use the Date constructor to format the date.
+    - code: title
+    - text: can be left as-is. Then, add these properties to your
+    - code: post
+    - text: object.
+  - figure "src/pages/posts/[slug].astro":
+    - text: src/pages/posts/[slug].astro
+    - region:
+      - code: "--- import Layout from \"../../layouts/Layout.astro\"; import { contentfulClient } from \"../../lib/contentful\"; import { documentToHtmlString } from \"@contentful/rich-text-html-renderer\"; import type { BlogPost } from \"../../lib/contentful\"; + let post; const { slug } = Astro.params; try { const data = await contentfulClient.getEntries<BlogPost>({ content_type: \"blogPost\", \"fields.slug\": slug, }); + const { title, date, content } = data.items[0].fields; + post = { + title, + date: new Date(date).toLocaleDateString(), + content: documentToHtmlString(content), + }; } catch (error) { return Astro.redirect(\"/404\"); } ---"
+    - button "Copy to clipboard"
+  - paragraph:
+    - text: Finally, you can reference
+    - code: post
+    - text: to display your blog post in the template section.
+  - figure "src/pages/posts/[slug].astro":
+    - text: src/pages/posts/[slug].astro
+    - region:
+      - code: "--- import Layout from \"../../layouts/Layout.astro\"; import { contentfulClient } from \"../../lib/contentful\"; import { documentToHtmlString } from \"@contentful/rich-text-html-renderer\"; import type { BlogPost } from \"../../lib/contentful\"; let post; const { slug } = Astro.params; try { const data = await contentfulClient.getEntries<BlogPost>({ content_type: \"blogPost\", \"fields.slug\": slug, }); const { title, date, content } = data.items[0].fields; post = { title, date: new Date(date).toLocaleDateString(), content: documentToHtmlString(content), }; } catch (error) { return Astro.redirect(\"/404\"); } --- + <html lang=\"en\"> + <head> + <title>{post?.title}</title> + </head> + <body> + <h1>{post?.title}</h1> + <time>{post?.date}</time> + <article set:html={post?.content} /> + </body> + </html>"
+    - button "Copy to clipboard"
+  - heading "Publishing your site" [level=3]
+  - link "Section titled “Publishing your site”":
+    - /url: "#publishing-your-site"
+  - paragraph:
+    - text: To deploy your website, visit our
+    - link "deployment guides":
+      - /url: /en/guides/deploy/
+    - text: and follow the instructions for your preferred hosting provider.
+  - heading "Rebuild on Contentful changes" [level=4]
+  - link "Section titled “Rebuild on Contentful changes”":
+    - /url: "#rebuild-on-contentful-changes"
+  - paragraph: If your project is using Astro’s default static mode, you will need to set up a webhook to trigger a new build when your content changes. If you are using Netlify or Vercel as your hosting provider, you can use its webhook feature to trigger a new build from Contentful events.
+  - heading "Netlify" [level=5]
+  - link "Section titled “Netlify”":
+    - /url: "#netlify"
+  - paragraph: "To set up a webhook in Netlify:"
+  - list:
+    - listitem:
+      - paragraph:
+        - text: Go to your site dashboard and click on
+        - strong: Build & deploy
+        - text: .
+    - listitem:
+      - paragraph:
+        - text: Under the
+        - strong: Continuous Deployment
+        - text: tab, find the
+        - strong: Build hooks
+        - text: section and click on
+        - strong: Add build hook
+        - text: .
+    - listitem:
+      - paragraph:
+        - text: Provide a name for your webhook and select the branch you want to trigger the build on. Click on
+        - strong: Save
+        - text: and copy the generated URL.
+  - heading "Vercel" [level=5]
+  - link "Section titled “Vercel”":
+    - /url: "#vercel"
+  - paragraph: "To set up a webhook in Vercel:"
+  - list:
+    - listitem:
+      - paragraph:
+        - text: Go to your project dashboard and click on
+        - strong: Settings
+        - text: .
+    - listitem:
+      - paragraph:
+        - text: Under the
+        - strong: Git
+        - text: tab, find the
+        - strong: Deploy Hooks
+        - text: section.
+    - listitem:
+      - paragraph:
+        - text: Provide a name for your webhook and the branch you want to trigger the build on. Click
+        - strong: Add
+        - text: and copy the generated URL.
+  - heading "Adding a webhook to Contentful" [level=5]
+  - link "Section titled “Adding a webhook to Contentful”":
+    - /url: "#adding-a-webhook-to-contentful"
+  - paragraph:
+    - text: In your Contentful space
+    - strong: settings
+    - text: ", click on the"
+    - strong: Webhooks
+    - text: tab and create a new webhook by clicking the
+    - strong: Add Webhook
+    - text: button. Provide a name for your webhook and paste the webhook URL you copied in the previous section. Finally, hit
+    - strong: Save
+    - text: to create the webhook.
+  - paragraph: Now, whenever you publish a new blog post in Contentful, a new build will be triggered and your blog will be updated.
+  - heading "More CMS guides" [level=2]
+  - heading "Featured CMS partners" [level=3]
+  - list:
+    - listitem:
+      - heading "CloudCannon" [level=3]:
+        - link "CloudCannon":
+          - /url: /en/guides/cms/cloudcannon/
+      - paragraph: Git-based CMS built for speed, security, and zero headaches.
+  - heading "All CMS guides" [level=3]
+  - list:
+    - listitem:
+      - heading "ApostropheCMS" [level=3]:
+        - link "ApostropheCMS":
+          - /url: /en/guides/cms/apostrophecms/
+    - listitem:
+      - heading "Builder.io" [level=3]:
+        - link "Builder.io":
+          - /url: /en/guides/cms/builderio/
+    - listitem:
+      - heading "ButterCMS" [level=3]:
+        - link "ButterCMS":
+          - /url: /en/guides/cms/buttercms/
+    - listitem:
+      - heading "Caisy" [level=3]:
+        - link "Caisy":
+          - /url: /en/guides/cms/caisy/
+    - listitem:
+      - heading "CloudCannon" [level=3]:
+        - link "CloudCannon":
+          - /url: /en/guides/cms/cloudcannon/
+    - listitem:
+      - heading "Contentful" [level=3]:
+        - link "Contentful":
+          - /url: /en/guides/cms/contentful/
+    - listitem:
+      - heading "Cosmic" [level=3]:
+        - link "Cosmic":
+          - /url: /en/guides/cms/cosmic/
+    - listitem:
+      - heading "Craft CMS" [level=3]:
+        - link "Craft CMS":
+          - /url: /en/guides/cms/craft-cms/
+    - listitem:
+      - heading "Craft Cross CMS" [level=3]:
+        - link "Craft Cross CMS":
+          - /url: /en/guides/cms/craft-cross-cms/
+    - listitem:
+      - heading "Crystallize" [level=3]:
+        - link "Crystallize":
+          - /url: /en/guides/cms/crystallize/
+    - listitem:
+      - heading "DatoCMS" [level=3]:
+        - link "DatoCMS":
+          - /url: /en/guides/cms/datocms/
+    - listitem:
+      - heading "Decap CMS" [level=3]:
+        - link "Decap CMS":
+          - /url: /en/guides/cms/decap-cms/
+    - listitem:
+      - heading "Directus" [level=3]:
+        - link "Directus":
+          - /url: /en/guides/cms/directus/
+    - listitem:
+      - heading "Drupal" [level=3]:
+        - link "Drupal":
+          - /url: /en/guides/cms/drupal/
+    - listitem:
+      - heading "Flotiq" [level=3]:
+        - link "Flotiq":
+          - /url: /en/guides/cms/flotiq/
+    - listitem:
+      - heading "Front Matter CMS" [level=3]:
+        - link "Front Matter CMS":
+          - /url: /en/guides/cms/frontmatter-cms/
+    - listitem:
+      - heading "Ghost" [level=3]:
+        - link "Ghost":
+          - /url: /en/guides/cms/ghost/
+    - listitem:
+      - heading "GitCMS" [level=3]:
+        - link "GitCMS":
+          - /url: /en/guides/cms/gitcms/
+    - listitem:
+      - heading "Hashnode" [level=3]:
+        - link "Hashnode":
+          - /url: /en/guides/cms/hashnode/
+    - listitem:
+      - heading "Hygraph" [level=3]:
+        - link "Hygraph":
+          - /url: /en/guides/cms/hygraph/
+    - listitem:
+      - heading "JekyllPad" [level=3]:
+        - link "JekyllPad":
+          - /url: /en/guides/cms/jekyllpad/
+    - listitem:
+      - heading "Keystatic" [level=3]:
+        - link "Keystatic":
+          - /url: /en/guides/cms/keystatic/
+    - listitem:
+      - heading "KeystoneJS" [level=3]:
+        - link "KeystoneJS":
+          - /url: /en/guides/cms/keystonejs/
+    - listitem:
+      - heading "Kontent.ai" [level=3]:
+        - link "Kontent.ai":
+          - /url: /en/guides/cms/kontent-ai/
+    - listitem:
+      - heading "microCMS" [level=3]:
+        - link "microCMS":
+          - /url: /en/guides/cms/microcms/
+    - listitem:
+      - heading "Optimizely CMS" [level=3]:
+        - link "Optimizely CMS":
+          - /url: /en/guides/cms/optimizely/
+    - listitem:
+      - heading "Pages CMS" [level=3]:
+        - link "Pages CMS":
+          - /url: /en/guides/cms/pages-cms/
+    - listitem:
+      - heading "Payload CMS" [level=3]:
+        - link "Payload CMS":
+          - /url: /en/guides/cms/payload/
+    - listitem:
+      - heading "Prepr CMS" [level=3]:
+        - link "Prepr CMS":
+          - /url: /en/guides/cms/preprcms/
+    - listitem:
+      - heading "Prismic" [level=3]:
+        - link "Prismic":
+          - /url: /en/guides/cms/prismic/
+    - listitem:
+      - heading "Sanity" [level=3]:
+        - link "Sanity":
+          - /url: /en/guides/cms/sanity/
+    - listitem:
+      - heading "Sitecore XM" [level=3]:
+        - link "Sitecore XM":
+          - /url: /en/guides/cms/sitecore/
+    - listitem:
+      - heading "Sitepins" [level=3]:
+        - link "Sitepins":
+          - /url: /en/guides/cms/sitepins/
+    - listitem:
+      - heading "Spinal" [level=3]:
+        - link "Spinal":
+          - /url: /en/guides/cms/spinal/
+    - listitem:
+      - heading "Statamic" [level=3]:
+        - link "Statamic":
+          - /url: /en/guides/cms/statamic/
+    - listitem:
+      - heading "Storyblok" [level=3]:
+        - link "Storyblok":
+          - /url: /en/guides/cms/storyblok/
+    - listitem:
+      - heading "Strapi" [level=3]:
+        - link "Strapi":
+          - /url: /en/guides/cms/strapi/
+    - listitem:
+      - heading "StudioCMS" [level=3]:
+        - link "StudioCMS":
+          - /url: /en/guides/cms/studiocms/
+    - listitem:
+      - heading "TinaCMS" [level=3]:
+        - link "TinaCMS":
+          - /url: /en/guides/cms/tina-cms/
+    - listitem:
+      - heading "Umbraco" [level=3]:
+        - link "Umbraco":
+          - /url: /en/guides/cms/umbraco/
+    - listitem:
+      - heading "Vault CMS" [level=3]:
+        - link "Vault CMS":
+          - /url: /en/guides/cms/vault-cms/
+    - listitem:
+      - heading "Wordpress" [level=3]:
+        - link "Wordpress":
+          - /url: /en/guides/cms/wordpress/
+    - listitem:
+      - heading "Zero" [level=3]:
+        - link "Zero":
+          - /url: /en/guides/cms/zero/
+  - link "Edit page":
+    - /url: https://github.com/withastro/docs/edit/main/src/content/docs/en/guides/cms/contentful.mdx
+  - link "Translate this page":
+    - /url: https://contribute.docs.astro.build/guides/i18n/
+  - link "Previous CloudCannon":
+    - /url: /en/guides/cms/cloudcannon/
+  - link "Next Cosmic":
+    - /url: /en/guides/cms/cosmic/
+  - link "Contribute":
+    - /url: /en/contribute/
+  - link "Community":
+    - /url: https://astro.build/chat
+    - img
+    - text: Community
+  - link "Sponsor":
+    - /url: https://opencollective.com/astrodotbuild

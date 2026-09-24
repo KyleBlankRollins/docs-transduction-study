@@ -1,0 +1,14 @@
+{
+  "first_pass": 1832,
+  "repeats": 367,
+  "order_sha256": "63da66abec7ce602d93ac64bc4481d546426cae61ed4bb569dc6496a8d2d5d12",
+  "packets_sha256": "47344c88f1aba79477e17489e0e7e8bf3329d9f2c441348a2403683d1f9f0c44",
+  "keys_plaintext_sha256": "f80c8a317a9e5c412c09aff63941e9b99e56ac74162e5c52c9ebe105701fd012",
+  "max_packet_bytes": 557993,
+  "per_stage": {
+    "A1": 458,
+    "A2": 458,
+    "A3": 458,
+    "A4": 458
+  }
+}
