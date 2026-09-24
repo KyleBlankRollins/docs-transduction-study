@@ -1,0 +1,293 @@
+# S05 recipes/docker.mdx — AI-assisted review (amendment A3), 2026-09-23.
+specimen = "S05"
+
+[[candidate]]
+id = "S05-O2-at-000462"
+decision = "reject"
+reason = "self_reference: 'This recipe' denotes the containing document"
+
+[[candidate]]
+id = "S05-O1-at-000631"
+decision = "reject"
+reason = "generic: reader-possessive ('your local machine')"
+
+[[candidate]]
+id = "S05-O1-at-000695"
+decision = "reject"
+reason = "generic: reader-possessive inside link text ('your operating system here')"
+
+[[candidate]]
+id = "S05-O1-at-000779"
+decision = "reject"
+reason = "generic: reader-possessive ('your project')"
+
+[[candidate]]
+id = "S05-O2-at-000915"
+decision = "accept"
+reason = "discourse deixis: 'the following section' points to the section with example Dockerfiles"
+host_from = "A Dockerfile in your project."
+host_to = "## Creating a Dockerfile"
+anchor = "use the Dockerfiles in the following section"
+question = "Where does the prerequisites list point you for Dockerfiles to start from?"
+correct = "To the next part of the page, on creating a Dockerfile, which gives examples"
+foil_1 = "To Docker's external reference documentation for Dockerfiles"
+foil_2 = "To the step-by-step recipe at the end of the page"
+evidence = "Creating a Dockerfile"
+gate = "pass"
+
+[[candidate]]
+id = "S05-O1-at-001022"
+decision = "reject"
+reason = "generic: reader-possessive ('your project')"
+
+[[candidate]]
+id = "S05-O1-at-001072"
+decision = "reject"
+reason = "not_referential: predicative definite description of the file's contents"
+
+[[candidate]]
+id = "S05-O1-at-001140"
+decision = "reject"
+reason = "idiom: 'your needs'"
+
+[[candidate]]
+id = "S05-O2-at-001152"
+decision = "reject"
+reason = "self_reference: 'This guide' denotes the containing document"
+
+[[candidate]]
+id = "S05-O1-at-001327"
+decision = "accept"
+reason = "anaphor/cataphor: 'the commands' refers to the npm commands in the example Dockerfiles"
+host_from = "If you're using another package manager than npm"
+host_to = "These are just examples of Dockerfiles."
+anchor = "adjust the commands accordingly"
+question = "If you use a package manager other than npm, what does the page say you must change?"
+correct = "The install and build commands run inside the example Dockerfiles"
+foil_1 = "The port number the container exposes"
+foil_2 = "The base image named at the top of each Dockerfile"
+evidence = "RUN npm install"
+gate = "pass"
+
+[[candidate]]
+id = "S05-O1-at-001534"
+decision = "reject"
+reason = "generic: reader-possessive ('your Astro project')"
+
+[[candidate]]
+id = "S05-O1-at-001848"
+decision = "reject"
+reason = "idiom: 'your needs'"
+
+[[candidate]]
+id = "S05-O1-at-002099"
+decision = "reject"
+reason = "generic: reader-possessive ('your project')"
+
+[[candidate]]
+id = "S05-O1-at-002194"
+decision = "reject"
+reason = "generic: names a kind of Docker instruction, not a textual antecedent"
+
+[[candidate]]
+id = "S05-O1-at-002434"
+decision = "accept"
+reason = "anaphor: 'the same directory as the Dockerfile' resolves to the project root where the Dockerfile was created"
+host_from = "Create a file called `Dockerfile` in your project's root directory."
+host_to = "This file should go in the same directory as the `Dockerfile` itself."
+anchor = "should go in the same directory as the"
+question = "In which folder does the page say the Docker ignore file belongs?"
+correct = "The project's root folder, next to the build-instructions file"
+foil_1 = "A dedicated folder created for the web-server configuration"
+foil_2 = "The build output folder produced by the site build"
+evidence = "Create a file called `Dockerfile` in your project's root directory."
+gate = "pass"
+
+[[candidate]]
+id = "S05-O1-at-002736"
+decision = "reject"
+reason = "exophoric: Apache's own default configuration, not a textual antecedent"
+
+[[candidate]]
+id = "S05-O1-at-003482"
+decision = "accept"
+reason = "anaphor: 'the Dockerfile above' refers to the NGINX Dockerfile immediately preceding"
+host_from = "#### NGINX"
+host_to = "and create a file called `nginx.conf` inside."
+anchor = "In order to build the Dockerfile above"
+question = "Building which example image also requires creating a web-server configuration file?"
+correct = "The static example served by NGINX"
+foil_1 = "The static example served by Apache httpd"
+foil_2 = "The multi-stage server-rendered example"
+evidence = "you'll also need to create a configuration file for NGINX"
+gate = "pass"
+
+[[candidate]]
+id = "S05-O1-at-003597"
+decision = "reject"
+reason = "generic: reader-possessive ('your project')"
+
+[[candidate]]
+id = "S05-O1-at-004709"
+decision = "reject"
+reason = "not_referential: quantity expression ('the build time even by minutes')"
+
+[[candidate]]
+id = "S05-O1-at-004754"
+decision = "reject"
+reason = "generic: 'the size of your dependencies'"
+
+[[candidate]]
+id = "S05-O1-at-004869"
+decision = "reject"
+reason = "code: occurrence inside a code-block comment"
+
+[[candidate]]
+id = "S05-O1-at-004976"
+decision = "reject"
+reason = "code: occurrence inside a code-block comment"
+
+[[candidate]]
+id = "S05-O1-at-005048"
+decision = "reject"
+reason = "code: occurrence inside a code-block comment"
+
+[[candidate]]
+id = "S05-O2-at-005512"
+decision = "accept"
+reason = "cataphoric deixis: 'the following command' points to the docker build command"
+host_from = "Build your container by running the following command"
+host_to = "which you can run locally or deploy to a platform of your choice."
+anchor = "Use any name for"
+question = "What does the first recipe step have you run from the project root?"
+correct = "A container build that tags the image with a name of your choosing"
+foil_1 = "A container run that maps a local port to the container's port"
+foil_2 = "A deployment of the image to a cloud provider"
+evidence = "docker build -t <your-astro-image-name> ."
+gate = "pass"
+
+[[candidate]]
+id = "S05-O1-at-005764"
+decision = "reject"
+reason = "idiom: 'of your choice'"
+
+[[candidate]]
+id = "S05-O1-at-005788"
+decision = "accept"
+reason = "anaphor: 'your image' refers to the image produced by the preceding build step"
+host_from = "Build your container by running the following command"
+host_to = "To run your image as a local container, use the following command."
+anchor = "To run your image as a local container"
+question = "Which image does the page have you run as a local container?"
+correct = "The image produced by the build command in the step before"
+foil_1 = "The official Node base image the Dockerfiles start from"
+foil_2 = "The lightweight Alpine variant suggested as an alternative base"
+evidence = "This will output an image, which you can run locally"
+gate = "pass"
+
+[[candidate]]
+id = "S05-O2-at-005825"
+decision = "accept"
+reason = "cataphoric deixis: 'the following command' points to the docker run command"
+host_from = "To run your image as a local container, use the following command."
+host_to = "You should be able to access your site at"
+anchor = "use the following command. "
+question = "What does the command in the second recipe step do?"
+correct = "Starts the built image, mapping a port on your machine to the container's port"
+foil_1 = "Builds the image and tags it with a chosen name"
+foil_2 = "Uploads the image to a cloud provider"
+evidence = "docker run -p <local-port>:<container-port> <your-astro-image-name>"
+gate = "pass"
+
+[[candidate]]
+id = "S05-O1-at-005898"
+decision = "reject"
+reason = "generic: reader-possessive ('your machine')"
+
+[[candidate]]
+id = "S05-O1-at-006014"
+decision = "accept"
+reason = "anaphor: 'the above examples' refers to the example Dockerfiles and their exposed ports"
+host_from = "Replace `<local-port>` with an open port on your machine."
+host_to = "in the above examples.)"
+anchor = "in the above examples"
+question = "What should replace the container-side port placeholder in the run command?"
+correct = "The port the built example exposes: 4321 for the server image, or 80 or 8080 for the static ones"
+foil_1 = "The port the built example exposes: 3000 for the server image, or 80 or 8080 for the static ones"
+foil_2 = "Any open port on your own machine"
+version_change = true
+superseded_answer = "The port the built example exposes: 3000 for the server image, or 80 or 8080 for the static ones"
+superseded_source = "withastro/docs a4fe77693b97db1ed76f72e251824c0c17631ee9 (parent of default-port change e97f88e6, 2023-08-30) src/content/docs/en/recipes/docker.mdx line 175: container ports 3000, 80, or 8080"
+evidence = "(`4321`, `80`, or `8080` in the above examples.)"
+gate = "pass"
+
+[[candidate]]
+id = "S05-O1-at-006162"
+decision = "reject"
+reason = "generic: reader-possessive ('your site')"
+
+[[candidate]]
+id = "S05-O1-at-006455"
+decision = "reject"
+reason = "not_referential: title of an external page used as link text"
+
+[[candidate]]
+id = "S05-O1-at-006522"
+decision = "reject"
+reason = "exophoric: Docker's own documentation site"
+
+[[relation]]
+id = "S05-R1-001"
+reason = "three ordered recipe steps"
+host_from = "## Recipe"
+host_to = "page in the Docker docs."
+anchor = "Build your container by running the following command"
+question = "According to the recipe, what has to happen before you run the container locally?"
+correct = "You build the image from the project root first"
+foil_1 = "You deploy the image to a cloud provider first"
+foil_2 = "Nothing: building, running, and deploying can be done in any order"
+evidence = "2. To run your image as a local container"
+evidence_implicit = "Second, To run your image as a local container"
+gate = "pass"
+
+[[relation]]
+id = "S05-R3-001"
+reason = "tip aside: optional customization"
+host_from = ":::tip[Keep this in mind]"
+host_from_implicit = "Keep this in mind: These are just examples"
+host_to = "you could use another image, like `node:lts-alpine`:"
+anchor = "You can customize them to your needs"
+question = "How strictly must you follow the example Dockerfiles as written?"
+correct = "Not strictly: they are examples you may adapt, for instance by changing the base image"
+foil_1 = "Exactly as written, or the build will fail"
+foil_2 = "Exactly as written unless you use a different package manager"
+evidence = "You can customize them to your needs."
+gate = "pass"
+
+[[relation]]
+id = "S05-R3-002"
+reason = "caution aside: recommendation scope"
+host_from = ":::caution[Recommendation]"
+host_from_implicit = "Recommendation: Use this approach"
+host_to = "either in Apache or NGINX."
+anchor = "it is recommended to use a custom configuration"
+question = "For a more complex website, how does the page treat using a custom web-server configuration?"
+correct = "As recommended advice, not a hard requirement"
+foil_1 = "As mandatory, because the default setup cannot serve such sites"
+foil_2 = "As discouraged in favor of the default setup"
+evidence = "it is recommended to use a custom configuration"
+gate = "pass"
+
+[[relation]]
+id = "S05-R4-001"
+reason = "prerequisites before the recipe"
+host_from = "## Prerequisites"
+host_from_implicit = "Before you begin, you need the following:"
+host_to = "as a starting point."
+anchor = "Docker installed on your local machine"
+question = "What must already be in place before you follow this page?"
+correct = "Docker installed locally and a Dockerfile in the project"
+foil_1 = "A cloud provider account and an already deployed site"
+foil_2 = "A web-server configuration file in the project"
+evidence = "Docker installed on your local machine"
+gate = "pass"

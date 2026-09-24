@@ -1,0 +1,734 @@
+# S11 guides/cms/builderio.mdx — AI-assisted review (amendment A3), 2026-09-23.
+specimen = "S11"
+
+[[candidate]]
+id = "S11-O2-at-000559"
+decision = "reject"
+reason = "self_reference: 'This recipe' denotes the containing document"
+
+[[candidate]]
+id = "S11-O1-at-001099"
+decision = "reject"
+reason = "generic: reader-possessive ('your content')"
+
+[[candidate]]
+id = "S11-O1-at-001163"
+decision = "reject"
+reason = "generic: reader-possessive in link text ('your key')"
+
+[[candidate]]
+id = "S11-O1-at-001370"
+decision = "reject"
+reason = "generic: reader-possessive ('the root of your project')"
+
+[[candidate]]
+id = "S11-O1-at-001603"
+decision = "reject"
+reason = "generic: reader-possessive ('your project')"
+
+[[candidate]]
+id = "S11-O1-at-001629"
+decision = "reject"
+reason = "idiom: 'at the time of writing'"
+
+[[candidate]]
+id = "S11-O1-at-001842"
+decision = "reject"
+reason = "generic: reader-possessive ('your environment variables')"
+
+[[candidate]]
+id = "S11-O1-at-003287"
+decision = "reject"
+reason = "not_referential: bridging nominal ('the other parameters')"
+
+[[candidate]]
+id = "S11-O1-at-003454"
+decision = "reject"
+reason = "not_referential: bridging nominal ('the other parameters')"
+
+[[candidate]]
+id = "S11-O1-at-003529"
+decision = "reject"
+reason = "not_referential: UI location ('the upper right')"
+
+[[candidate]]
+id = "S11-O1-at-003678"
+decision = "reject"
+reason = "not_referential: 'the fetch request to Builder's API'"
+
+[[candidate]]
+id = "S11-O1-at-003728"
+decision = "reject"
+reason = "generic: reader-possessive ('your slugs')"
+
+[[candidate]]
+id = "S11-O1-at-003757"
+decision = "reject"
+reason = "generic: reader-possessive ('your site')"
+
+[[candidate]]
+id = "S11-O1-at-003818"
+decision = "reject"
+reason = "heading: occurrence begins in a section heading"
+
+[[candidate]]
+id = "S11-O1-at-003870"
+decision = "reject"
+reason = "not_referential: page named in the same clause"
+
+[[candidate]]
+id = "S11-O1-at-003930"
+decision = "reject"
+reason = "not_referential: element named in the same clause"
+
+[[candidate]]
+id = "S11-O1-at-004447"
+decision = "reject"
+reason = "code: occurrence inside page markup in a code block"
+
+[[candidate]]
+id = "S11-O1-at-004664"
+decision = "reject"
+reason = "code: occurrence inside page markup in a code block"
+
+[[candidate]]
+id = "S11-O1-at-004783"
+decision = "reject"
+reason = "not_referential: 'the content from its CMS'"
+
+[[candidate]]
+id = "S11-O1-at-004873"
+decision = "reject"
+reason = "generic: reader-possessive ('the full URL of your preview')"
+
+[[candidate]]
+id = "S11-O1-at-004913"
+decision = "reject"
+reason = "not_referential: 'the protocol'"
+
+[[candidate]]
+id = "S11-O1-at-004930"
+decision = "reject"
+reason = "generic: reader-possessive ('your clipboard')"
+
+[[candidate]]
+id = "S11-O1-at-004961"
+decision = "reject"
+reason = "generic: reader-possessive ('your host') in an example URL"
+
+[[candidate]]
+id = "S11-O1-at-005024"
+decision = "reject"
+reason = "generic: reader-possessive ('your Builder space')"
+
+[[candidate]]
+id = "S11-O1-at-005049"
+decision = "reject"
+reason = "not_probeable: self-describing relative clause ('the model you've created')"
+
+[[candidate]]
+id = "S11-O1-at-005250"
+decision = "reject"
+reason = "not_referential: UI location ('the upper right')"
+
+[[candidate]]
+id = "S11-O1-at-005300"
+decision = "reject"
+reason = "generic: reader-possessive ('your site')"
+
+[[candidate]]
+id = "S11-O1-at-005444"
+decision = "reject"
+reason = "heading: occurrence is in a section heading"
+
+[[candidate]]
+id = "S11-O1-at-005488"
+decision = "reject"
+reason = "generic: reader-possessive ('your site')"
+
+[[candidate]]
+id = "S11-O1-at-005512"
+decision = "reject"
+reason = "generic: reader-possessive ('your dev server')"
+
+[[candidate]]
+id = "S11-O1-at-005592"
+decision = "reject"
+reason = "generic: reader-possessive ('your Builder space')"
+
+[[candidate]]
+id = "S11-O1-at-005843"
+decision = "reject"
+reason = "not_referential: UI location ('the middle')"
+
+[[candidate]]
+id = "S11-O1-at-005936"
+decision = "reject"
+reason = "not_referential: topic noun ('the preview')"
+
+[[candidate]]
+id = "S11-O1-at-006021"
+decision = "reject"
+reason = "generic: 'the site is live'"
+
+[[candidate]]
+id = "S11-O1-at-006053"
+decision = "reject"
+reason = "generic: reader-possessive ('your dev server')"
+
+[[candidate]]
+id = "S11-O1-at-006098"
+decision = "reject"
+reason = "not_referential: both URLs are identified in the same item"
+
+[[candidate]]
+id = "S11-O1-at-006206"
+decision = "reject"
+reason = "not_referential: 'the full URL including the protocol'"
+
+[[candidate]]
+id = "S11-O1-at-006479"
+decision = "reject"
+reason = "generic: reader-possessive ('your project')"
+
+[[candidate]]
+id = "S11-O1-at-006820"
+decision = "reject"
+reason = "generic: reader-possessive ('your post')"
+
+[[candidate]]
+id = "S11-O1-at-006913"
+decision = "reject"
+reason = "not_referential: UI location ('the text field above the editor')"
+
+[[candidate]]
+id = "S11-O1-at-006951"
+decision = "reject"
+reason = "generic: reader-possessive ('your entry')"
+
+[[candidate]]
+id = "S11-O1-at-007003"
+decision = "reject"
+reason = "not_referential: named app"
+
+[[candidate]]
+id = "S11-O1-at-007074"
+decision = "reject"
+reason = "not_referential: UI location ('the upper right corner')"
+
+[[candidate]]
+id = "S11-O1-at-008435"
+decision = "reject"
+reason = "generic: reader-possessive ('your Builder model')"
+
+[[candidate]]
+id = "S11-O1-at-008717"
+decision = "reject"
+reason = "generic: reader-possessive ('your Astro project')"
+
+[[candidate]]
+id = "S11-O1-at-008871"
+decision = "reject"
+reason = "not_referential: named API"
+
+[[candidate]]
+id = "S11-O1-at-009039"
+decision = "reject"
+reason = "not_referential: page named in the same clause"
+
+[[candidate]]
+id = "S11-O1-at-009560"
+decision = "reject"
+reason = "not_referential: 'the Builder API'"
+
+[[candidate]]
+id = "S11-O1-at-010762"
+decision = "reject"
+reason = "code: occurrence inside a code comment"
+
+[[candidate]]
+id = "S11-O1-at-011253"
+decision = "reject"
+reason = "code: occurrence inside page markup in a code block"
+
+[[candidate]]
+id = "S11-O1-at-011362"
+decision = "reject"
+reason = "code: occurrence inside page markup in a code block"
+
+[[candidate]]
+id = "S11-O1-at-011414"
+decision = "reject"
+reason = "not_referential: variables named in the same clause"
+
+[[candidate]]
+id = "S11-O1-at-011640"
+decision = "reject"
+reason = "generic: reader-possessive ('your index route')"
+
+[[candidate]]
+id = "S11-O1-at-011679"
+decision = "reject"
+reason = "not_referential: 'the individual blog post page'"
+
+[[candidate]]
+id = "S11-O1-at-011726"
+decision = "reject"
+reason = "heading: occurrence begins in a section heading"
+
+[[candidate]]
+id = "S11-O1-at-011913"
+decision = "reject"
+reason = "generic: reader-possessive ('your project')"
+
+[[candidate]]
+id = "S11-O1-at-012026"
+decision = "reject"
+reason = "generic: reader-possessive ('your content')"
+
+[[candidate]]
+id = "S11-O1-at-012086"
+decision = "reject"
+reason = "generic: reader-possessive ('your hosting provider')"
+
+[[candidate]]
+id = "S11-O1-at-012198"
+decision = "reject"
+reason = "not_referential: named UI ('the Builder editor')"
+
+[[candidate]]
+id = "S11-O1-at-012251"
+decision = "reject"
+reason = "generic: reader-possessive ('your site dashboard')"
+
+[[candidate]]
+id = "S11-O1-at-012618"
+decision = "reject"
+reason = "generic: reader-possessive ('your project dashboard')"
+
+[[candidate]]
+id = "S11-O1-at-013050"
+decision = "reject"
+reason = "generic: reader-possessive ('your Builder dashboard')"
+
+[[candidate]]
+id = "S11-O1-at-013166"
+decision = "reject"
+reason = "not_referential: UI location ('the bottom')"
+
+[[candidate]]
+id = "S11-O1-at-013410"
+decision = "reject"
+reason = "not_referential: 'the payload disabled'"
+
+[[candidate]]
+id = "S11-O1-at-013472"
+decision = "reject"
+reason = "generic: reader-possessive ('your hosting provider')"
+
+[[candidate]]
+id = "S11-O1-at-013519"
+decision = "reject"
+reason = "generic: reader-possessive ('your site')"
+
+[[candidate]]
+id = "S11-O1-at-013658"
+decision = "reject"
+reason = "not_referential: named UI ('the Builder editor')"
+
+[[candidate]]
+id = "S11-O1-at-013678"
+decision = "reject"
+reason = "generic: reader-possessive ('your hosting provider')"
+
+[[candidate]]
+id = "S11-O1-at-013739"
+decision = "reject"
+reason = "not_referential: 'the newly published data'"
+
+[[candidate]]
+id = "S11-O1-at-013878"
+decision = "reject"
+reason = "not_referential: link label"
+
+[[candidate]]
+id = "S11-O1-at-014374"
+decision = "reject"
+reason = "generic: reader-possessive ('your API calls')"
+[[candidate]]
+id = "S11-O2-at-001435"
+decision = "accept"
+reason = "cataphoric deixis: 'the following variables' points to the .env block"
+host_from = "To add your Builder API key and your Builder model name to Astro"
+host_to = "Now, you should be able to use this API key in your project."
+anchor = "and add the following variables"
+question = "Which values does the environment file hold for this setup?"
+correct = "The public API key and the name of the content model"
+foil_1 = "A private key and project ID for a service account"
+foil_2 = "The address of the preview page"
+evidence = "BUILDER_BLOGPOST_MODEL='blogpost'"
+gate = "pass"
+
+[[candidate]]
+id = "S11-O2-at-002947"
+decision = "accept"
+reason = "cataphoric deixis: 'the following fields and values' points to the model settings list"
+host_from = "In the Builder app create the model that will represent a blog post"
+host_to = "**Description:** \"This model is for a blog post\""
+anchor = "to create model with the following fields and values"
+question = "What kind of model is created for the blog post?"
+correct = "A section-type model named for blog posts"
+foil_1 = "A page-type model"
+foil_2 = "A data-type model"
+evidence = "**Type:** Section"
+gate = "pass"
+
+[[candidate]]
+id = "S11-O1-at-003079"
+decision = "accept"
+reason = "anaphor: 'your new model' refers to the blog post model just created"
+host_from = "In the Builder app create the model that will represent a blog post"
+host_to = "(leave the other parameters as their defaults)"
+anchor = "In your new model use the"
+question = "In which model do you add the two custom text fields?"
+correct = "The blog post model created just before"
+foil_1 = "A separate new model created for each field"
+foil_2 = "The default page model that comes with the space"
+evidence = "**Name:** \"blogpost\""
+gate = "pass"
+
+[[candidate]]
+id = "S11-O2-at-004129"
+decision = "accept"
+reason = "cataphoric deixis: 'the following content' points to the preview page code"
+host_from = "Then add the following content:"
+host_to = "tells Builder where to insert the content from its CMS."
+anchor = "Then add the following content"
+question = "What does the content of the preview page include?"
+correct = "A header and footer around the Builder web component, given the model and key"
+foil_1 = "A list of post titles fetched from the content API"
+foil_2 = "A dynamic route that renders one post's HTML"
+evidence = "<builder-component model={builderModel} api-key={builderAPIpublicKey}"
+gate = "pass"
+
+[[candidate]]
+id = "S11-O1-at-004712"
+decision = "accept"
+reason = "anaphor: 'the above example' refers to the preview page code, competing with later page examples"
+host_from = "Then add the following content:"
+host_to = "tells Builder where to insert the content from its CMS."
+anchor = "tells Builder where to insert"
+question = "In which example does the custom Builder element mark where CMS content is inserted?"
+correct = "The preview page code shown just before"
+foil_1 = "The post page, which sets HTML on a fragment"
+foil_2 = "The index page that lists posts"
+evidence = "<builder-component"
+gate = "pass"
+
+[[candidate]]
+id = "S11-O1-at-005084"
+decision = "accept"
+reason = "anaphor: 'the URL from step 1' refers to the preview address copied in the first step, competing with the production address"
+host_from = "Copy the full URL of your preview"
+host_to = "Make sure the URL is complete and includes the protocol, for example `https://`."
+anchor = "paste the URL from step"
+question = "Which address do you paste into the model's preview field?"
+correct = "The full preview-page address copied in the first step"
+foil_1 = "Your production site's address"
+foil_2 = "The Builder API endpoint"
+evidence = "Copy the full URL of your preview"
+gate = "pass"
+
+[[candidate]]
+id = "S11-O1-at-005719"
+decision = "accept"
+reason = "anaphor: 'the Builder editor that just opened' refers to the editor opened by creating a new entry"
+host_from = "Make sure your site is live"
+host_to = "in the middle."
+anchor = "the Builder editor that just opened"
+question = "Where should you see the preview page with a large add-block area?"
+correct = "In the editor that opened after creating a new content entry"
+foil_1 = "On the live site's index route"
+foil_2 = "In the Models tab of the space"
+evidence = "click on **New** to create a new content entry"
+gate = "pass"
+
+[[candidate]]
+id = "S11-O2-at-006710"
+decision = "accept"
+reason = "cataphoric deixis: 'the following values' points to the title and slug values"
+host_from = "In Builder's visual editor, create a new content entry with the following values:"
+host_to = "**slug:** 'first-post-woohoo'"
+anchor = "create a new content entry with the following values"
+question = "What slug does the first example post use?"
+correct = "A lowercase, hyphenated version of the post's title"
+foil_1 = "A number giving the post's position"
+foil_2 = "The title text itself, punctuation included"
+evidence = "**slug:** 'first-post-woohoo'"
+gate = "pass"
+
+[[candidate]]
+id = "S11-O2-at-007282"
+decision = "accept"
+reason = "cataphoric deixis: 'the following content' points to the index page code"
+host_from = "Add the following content to `src/pages/index.astro`"
+host_to = "should match the names of the custom data fields you've added to your Builder model."
+anchor = "in order to fetch and display a list of all post titles"
+question = "What does the content added to the index page do?"
+correct = "Fetches every post's title and slug and lists the titles as links"
+foil_1 = "Renders a single post's HTML"
+foil_2 = "Shows Builder's visual editor"
+evidence = "in order to fetch and display a list of all post titles, each linking to its own page"
+gate = "pass"
+
+[[candidate]]
+id = "S11-O2-at-009762"
+decision = "accept"
+reason = "cataphoric deixis: 'the following code snippet' points to the dynamic post page code"
+host_from = "This file must contain:"
+host_to = "need to be created twice"
+anchor = "Each of these is highlighted in the following code snippet"
+question = "In the post page code, how is the post content rendered?"
+correct = "Through a fragment whose HTML is set from the fetched post"
+foil_1 = "Through the Builder web component"
+foil_2 = "As a list of links to other posts"
+evidence = "<Fragment set:html={postHTML} />"
+gate = "pass"
+
+[[candidate]]
+id = "S11-O1-at-012558"
+decision = "accept"
+reason = "anaphor: 'the generated URL' refers to the Netlify build hook created in the previous step"
+host_from = "Under the **Continuous Deployment** tab"
+host_to = "Click on **Save** and copy the generated URL."
+anchor = "Provide a name for your webhook and select the branch"
+question = "In the Netlify steps, what address do you copy at the end?"
+correct = "The address of the build hook you just added"
+foil_1 = "Your site's production address"
+foil_2 = "The Builder API key"
+evidence = "click on **Add build hook**"
+gate = "pass"
+
+[[candidate]]
+id = "S11-O1-at-012838"
+decision = "accept"
+reason = "anaphor: 'the generated URL' refers to the Vercel deploy hook being added"
+host_from = "Under the **Git** tab, find the **Deploy Hooks** section."
+host_to = "Click **Add** and copy the generated URL."
+anchor = "Provide a name for your webhook and the branch"
+question = "In the Vercel steps, what address do you copy at the end?"
+correct = "The address of the deploy hook you just added"
+foil_1 = "Your project's production address"
+foil_2 = "The Builder API key"
+evidence = "find the **Deploy Hooks** section"
+gate = "pass"
+
+[[relation]]
+id = "S11-R1-001"
+reason = "ordered steps for setting the preview address"
+host_from = "Copy the full URL of your preview"
+host_to = "Click the **Save** button in the upper right."
+anchor = "paste the URL from step"
+question = "When setting the preview address, what do you do right after copying it?"
+correct = "Paste it into the preview field of your model in the Models tab"
+foil_1 = "Click the save button"
+foil_2 = "Deploy the site"
+evidence = "2. Go to the **Models** tab"
+evidence_implicit = "Second, Go to the **Models** tab"
+gate = "pass"
+
+[[relation]]
+id = "S11-R1-002"
+reason = "ordered steps for testing the preview"
+host_from = "Make sure your site is live"
+host_to = "in the middle."
+anchor = "the Builder editor that just opened"
+question = "When testing the preview setup, what do you do after confirming the site is live?"
+correct = "Create a new content entry for the blog post model"
+foil_1 = "Paste the preview address into the model"
+foil_2 = "Publish the entry"
+evidence = "2. In your Builder space under the **Content** tab"
+evidence_implicit = "Second, In your Builder space under the **Content** tab"
+gate = "pass"
+
+[[relation]]
+id = "S11-R1-003"
+reason = "ordered steps for creating a post"
+host_from = "In Builder's visual editor, create a new content entry with the following values:"
+host_to = "as well as some post content."
+anchor = "give your entry a name"
+question = "When creating a blog post, what do you do right before clicking publish?"
+correct = "Name the entry in the text field above the editor"
+foil_1 = "Add a text block with post content"
+foil_2 = "Create more posts"
+evidence = "4. When you're ready click the **Publish** button"
+evidence_implicit = "Fourth, When you're ready click the **Publish** button"
+gate = "pass"
+
+[[relation]]
+id = "S11-R1-004"
+reason = "ordered Netlify build hook steps"
+host_from = "Go to your site dashboard"
+host_to = "Click on **Save** and copy the generated URL."
+anchor = "Provide a name for your webhook and select the branch"
+question = "In the Netlify steps, what comes right before naming the webhook?"
+correct = "Adding a build hook in the continuous deployment settings"
+foil_1 = "Copying the generated address"
+foil_2 = "Opening the Git tab"
+evidence = "2. Under the **Continuous Deployment** tab"
+evidence_implicit = "Second, Under the **Continuous Deployment** tab"
+gate = "pass"
+
+[[relation]]
+id = "S11-R1-005"
+reason = "ordered Vercel deploy hook steps"
+host_from = "Go to your project dashboard and click on **Settings**."
+host_to = "Click **Add** and copy the generated URL."
+anchor = "Provide a name for your webhook and the branch"
+question = "In the Vercel steps, what do you do first?"
+correct = "Open the settings of your project dashboard"
+foil_1 = "Find the deploy hooks section"
+foil_2 = "Copy the generated address"
+evidence = "2. Under the **Git** tab"
+evidence_implicit = "Second, Under the **Git** tab"
+gate = "pass"
+
+[[relation]]
+id = "S11-R1-006"
+reason = "ordered Builder webhook steps"
+host_from = "In your Builder dashboard, go into your"
+host_to = "Click **Done** to save this selection."
+anchor = "Add a new webhook by clicking on"
+question = "When adding the webhook in Builder, what is the last step?"
+correct = "Turning off the payload under the advanced options and saving"
+foil_1 = "Pasting the hosting provider's address"
+foil_2 = "Opening the model's webhook settings"
+evidence = "3. Click on **Show Advanced**"
+evidence_implicit = "Finally, Click on **Show Advanced**"
+gate = "pass"
+
+[[relation]]
+id = "S11-R3-001"
+reason = "note aside: no need to protect the public key"
+host = """:::note
+At the time of writing, [this key is public](https://www.builder.io/c/docs/using-your-api-key#prerequisites), so you don't have to worry about hiding or encrypting it."""
+host_implicit = "Note: At the time of writing, [this key is public](https://www.builder.io/c/docs/using-your-api-key#prerequisites), so you don't have to worry about hiding or encrypting it."
+anchor = "so you don't have to worry about hiding or encrypting it"
+question = "What does the page say about protecting the Builder API key?"
+correct = "There is no need to hide or encrypt it, since it was public at the time of writing"
+foil_1 = "It must be encrypted before use"
+foil_2 = "It must never be stored in the environment file"
+evidence = "so you don't have to worry about hiding or encrypting it"
+gate = "pass"
+
+[[relation]]
+id = "S11-R3-002"
+reason = "tip aside: optional videos"
+host_from = ":::tip[For visual types]"
+host_from_implicit = "For visual types: You can find videos"
+host_to = "#creating-a-blog-article-model)."
+anchor = "You can find videos showing this procedure"
+question = "How does the page present the videos showing this procedure?"
+correct = "As an optional resource for visual learners"
+foil_1 = "As required viewing before creating the model"
+foil_2 = "As a warning that the written steps are outdated"
+evidence = "You can find videos showing this procedure"
+gate = "pass"
+
+[[relation]]
+id = "S11-R3-003"
+reason = "caution aside: slug pitfalls"
+host_from = ":::caution[Slugs]"
+host_from_implicit = "Slugs: There are some pitfalls"
+host_to = "will depend on that."
+anchor = "There are some pitfalls with the"
+question = "What does the page warn about the slug field?"
+correct = "Slugs must not be just numbers and must be unique"
+foil_1 = "Slugs must match the post title exactly"
+foil_2 = "Slugs are optional and can be left blank"
+evidence = "Make sure your slug is not just a number."
+gate = "pass"
+
+[[relation]]
+id = "S11-R3-004"
+reason = "tip aside: advice when deploying"
+host = """:::tip
+When you deploy your site, change the preview URL to match your production URL, for example `https://myAwesomeAstroBlog.com/builder-preview`."""
+host_implicit = "As a helpful tip, When you deploy your site, change the preview URL to match your production URL, for example `https://myAwesomeAstroBlog.com/builder-preview`."
+anchor = "change the preview URL to match your production URL"
+question = "How does the page present changing the preview address when you deploy?"
+correct = "As advice to switch it to your production address"
+foil_1 = "As unnecessary, since the local address also works after deploying"
+foil_2 = "As impossible, because the address cannot change after saving"
+evidence = "change the preview URL to match your production URL"
+gate = "pass"
+
+[[relation]]
+id = "S11-R3-005"
+reason = "tip aside: optional troubleshooting"
+host_from = ":::tip[Troubleshooting]"
+host_from_implicit = "Troubleshooting: Things can sometimes go wrong"
+host_to = "(https://www.builder.io/c/docs/guides/preview-url-working)."
+anchor = "you can try one of these things"
+question = "How does the page present its list of checks for a preview that is not working?"
+correct = "As optional troubleshooting ideas to try if something goes wrong"
+foil_1 = "As required steps for every setup"
+foil_2 = "As a warning that the preview never works in virtual environments"
+evidence = "you can try one of these things"
+gate = "pass"
+
+[[relation]]
+id = "S11-R3-006"
+reason = "tip aside: optional alternative"
+host_from = ":::tip[Framework integrations]"
+host_from_implicit = "Framework integrations: If you are using"
+host_to = "through the REST API."
+anchor = "as an alternative to making raw fetch calls"
+question = "How does the page present using one of Builder's framework integrations?"
+correct = "As an optional alternative to raw fetch calls for projects using a framework"
+foil_1 = "As required for fetching any content"
+foil_2 = "As discouraged in favor of the raw API"
+evidence = "as an alternative to making raw fetch calls"
+gate = "pass"
+
+[[relation]]
+id = "S11-R3-007"
+reason = "note aside: required duplication"
+host_from = ":::note\nThe variables"
+host_from_implicit = "Note: The variables"
+host_to = "#getstaticpaths)."
+anchor = "need to be created twice"
+question = "Why must the model and key variables be created twice in the post page?"
+correct = "Because the static-paths function runs in its own isolated scope"
+foil_1 = "Because the environment file is read only once"
+foil_2 = "Because the preview page needs its own copy"
+evidence = "runs in its own isolated scope"
+gate = "pass"
+
+[[relation]]
+id = "S11-R3-008"
+reason = "tip aside: optional pointer"
+host_from = ":::tip[Official resource]"
+host_from_implicit = "Official resource: See"
+host_to = "for more information."
+anchor = "guide on adding webhooks"
+question = "How does the page present Builder's guide on adding webhooks?"
+correct = "As an optional pointer to more information"
+foil_1 = "As required reading before adding a webhook"
+foil_2 = "As outdated and to be avoided"
+evidence = "for more information."
+gate = "pass"
+
+[[relation]]
+id = "S11-R4-001"
+reason = "prerequisites before starting"
+host_from = "## Prerequisites"
+host_from_implicit = "Before you begin, you need the following:"
+host_to = "#finding-your-public-api-key)."
+anchor = "A Builder account and space"
+question = "What do you need before starting this recipe?"
+correct = "A Builder account with a space, and its public API key"
+foil_1 = "A hosting provider account with build hooks"
+foil_2 = "A JavaScript framework integration for Builder"
+evidence = "**A Builder API key**"
+gate = "pass"

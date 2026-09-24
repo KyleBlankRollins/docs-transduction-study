@@ -1,0 +1,227 @@
+# S07 guides/framework-components.mdx — AI-assisted review (amendment A3), 2026-09-23.
+specimen = "S07"
+
+[[candidate]]
+id = "S07-O1-at-000368"
+decision = "reject"
+reason = "idiom: 'of your choice'"
+
+[[candidate]]
+id = "S07-O1-at-001069"
+decision = "reject"
+reason = "generic: reader-possessive ('your project')"
+
+[[candidate]]
+id = "S07-O1-at-001241"
+decision = "reject"
+reason = "idiom: 'of your choice'"
+
+[[candidate]]
+id = "S07-O1-at-001344"
+decision = "reject"
+reason = "exophoric: templates on an external site"
+
+[[candidate]]
+id = "S07-O1-at-001522"
+decision = "reject"
+reason = "generic: reader-possessive ('your components')"
+
+[[candidate]]
+id = "S07-O1-at-001686"
+decision = "reject"
+reason = "generic: reader-possessive ('your Astro component script')"
+
+[[candidate]]
+id = "S07-O1-at-001725"
+decision = "accept"
+reason = "anaphor: 'the component' refers back to the imported framework component, competing with the importing Astro component"
+host_from = "To use a framework component, import it from its relative path"
+host_to = "in the component template."
+anchor = "Then, use the component alongside other components"
+question = "After the import, which component is placed in the template next to HTML elements and expressions?"
+correct = "The framework component that was imported"
+foil_1 = "The Astro component doing the importing"
+foil_2 = "A newly created wrapper component"
+evidence = "To use a framework component, import it from its relative path"
+gate = "pass"
+
+[[candidate]]
+id = "S07-O1-at-001809"
+decision = "accept"
+reason = "bridging anaphor: 'the component template' is the template of the Astro component whose script does the import"
+host_from = "To use a framework component, import it from its relative path"
+host_to = "in the component template."
+anchor = "JSX-like expressions in the component template"
+question = "Whose template is the framework component used in?"
+correct = "The template of the Astro component that imports it"
+foil_1 = "The framework component's own markup"
+foil_2 = "A shared layout that every page uses"
+evidence = "import it from its relative path in your Astro component script"
+gate = "pass"
+
+[[candidate]]
+id = "S07-O1-at-002288"
+decision = "reject"
+reason = "not_referential: technical role noun ('the client')"
+
+[[candidate]]
+id = "S07-O1-at-002533"
+decision = "reject"
+reason = "generic: reader-possessive ('your component') used generically"
+
+[[candidate]]
+id = "S07-O1-at-002579"
+decision = "reject"
+reason = "not_referential: technical role noun ('the browser')"
+
+[[candidate]]
+id = "S07-O1-at-002977"
+decision = "reject"
+reason = "code: occurrence inside a code comment"
+
+[[candidate]]
+id = "S07-O1-at-003255"
+decision = "reject"
+reason = "code: occurrence inside a code comment"
+
+[[candidate]]
+id = "S07-O1-at-003513"
+decision = "reject"
+reason = "code: occurrence inside a code comment"
+
+[[candidate]]
+id = "S07-O1-at-003544"
+decision = "reject"
+reason = "code: occurrence inside a code comment"
+
+[[candidate]]
+id = "S07-O1-at-003626"
+decision = "reject"
+reason = "generic: kind reference with apposition ('The JavaScript framework (React, Svelte, etc.)')"
+
+[[candidate]]
+id = "S07-O1-at-003815"
+decision = "reject"
+reason = "not_referential: sortal 'the same framework' within one sentence"
+
+[[candidate]]
+id = "S07-O1-at-004132"
+decision = "reject"
+reason = "not_referential: 'the appropriate time'"
+
+[[candidate]]
+id = "S07-O1-at-004647"
+decision = "reject"
+reason = "not_referential: sortal 'the same Astro component'"
+
+[[candidate]]
+id = "S07-O1-at-004781"
+decision = "reject"
+reason = "code: occurrence inside a code comment"
+
+[[candidate]]
+id = "S07-O1-at-005207"
+decision = "reject"
+reason = "not_referential: sortal 'the same file extension'"
+
+[[candidate]]
+id = "S07-O1-at-006645"
+decision = "reject"
+reason = "generic: generic component reference"
+
+[[candidate]]
+id = "S07-O1-at-010424"
+decision = "reject"
+reason = "not_referential: named pattern in link text"
+
+[[candidate]]
+id = "S07-O1-at-010558"
+decision = "reject"
+reason = "generic: reader-possessive ('your framework components')"
+
+[[relation]]
+id = "S07-R3-001"
+reason = "tip aside: optional suggestion"
+host = """:::tip
+Want to see an example for the framework of your choice? Visit [astro.new](https://astro.new/latest/frameworks) and select one of the framework templates."""
+host_implicit = "As a helpful tip, Want to see an example for the framework of your choice? Visit [astro.new](https://astro.new/latest/frameworks) and select one of the framework templates."
+anchor = "Want to see an example for the framework"
+question = "How does the page present visiting the site of framework example templates?"
+correct = "As an optional suggestion for seeing examples"
+foil_1 = "As a required step before installing a framework integration"
+foil_2 = "As a warning about unsupported frameworks"
+evidence = ":::tip"
+evidence_implicit = "As a helpful tip"
+gate = "pass"
+
+[[relation]]
+id = "S07-R3-002"
+reason = "note aside with a firm instruction"
+host_from = ":::note[Accessibility]"
+host_from_implicit = "Accessibility: Most framework-specific accessibility patterns"
+host_to = "properly loaded and executed at the appropriate time!"
+anchor = "Be sure to choose a client directive"
+question = "How firmly does the page ask you to pick a directive that loads accessibility scripts properly?"
+correct = "Firmly: you are told to make sure of it"
+foil_1 = "Loosely: it is an optional nicety you can skip"
+foil_2 = "Not at all: it happens automatically without any choice"
+evidence = "Be sure to choose a client directive"
+gate = "pass"
+
+[[relation]]
+id = "S07-R3-003"
+reason = "caution aside: restriction scope"
+host = """:::caution
+Only **Astro** components (`.astro`) can contain components from multiple frameworks."""
+host_implicit = "Use caution here: Only **Astro** components (`.astro`) can contain components from multiple frameworks."
+anchor = "can contain components from multiple frameworks"
+question = "Which kind of component is allowed to contain components from several frameworks?"
+correct = "Astro components alone"
+foil_1 = "Any framework component, as long as it is hydrated"
+foil_2 = "JSX-based framework components such as React and Preact"
+evidence = "Only **Astro** components (`.astro`) can contain components from multiple frameworks."
+gate = "pass"
+
+[[relation]]
+id = "S07-R3-004"
+reason = "caution aside: prohibition"
+host = """:::caution
+Remember: framework component files themselves (e.g. `.jsx`, `.svelte`) cannot mix multiple frameworks."""
+host_implicit = "Use caution here: Remember: framework component files themselves (e.g. `.jsx`, `.svelte`) cannot mix multiple frameworks."
+anchor = "cannot mix multiple frameworks"
+question = "Can a single framework component file combine more than one framework?"
+correct = "No: such a file cannot mix frameworks"
+foil_1 = "Yes, if each framework's integration is installed"
+foil_2 = "Yes, but only among JSX-based frameworks"
+evidence = "cannot mix multiple frameworks"
+gate = "pass"
+
+[[relation]]
+id = "S07-R3-005"
+reason = "note aside: hard limitation"
+host_from = ":::note\nAstro components are always rendered to static HTML"
+host_from_implicit = "Note: Astro components are always rendered to static HTML"
+host_to = "Instead, use named slots."
+anchor = "Instead, use named slots"
+question = "What does the page say about passing render props to framework components from an Astro component?"
+correct = "It will not work; slots with names should be used instead"
+foil_1 = "It works but is discouraged for performance reasons"
+foil_2 = "It works only when a client directive is added"
+evidence = "will not work"
+gate = "pass"
+
+[[relation]]
+id = "S07-R3-006"
+reason = "legacy match is an <aside> HTML element inside a JSX code example"
+invalid = true
+gate = "fail"
+failed_arm = "both"
+reason_gate = "Not a force relation: the inventory matched the literal <aside> element in the MySidebar.jsx code example; no admonition or modal force exists in either A0 arm"
+
+[[relation]]
+id = "S07-R3-007"
+reason = "legacy match is an <aside> HTML element inside a Svelte code example"
+invalid = true
+gate = "fail"
+failed_arm = "both"
+reason_gate = "Not a force relation: the inventory matched the literal <aside> element in the MySidebar.svelte code example; no admonition or modal force exists in either A0 arm"

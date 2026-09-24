@@ -1,0 +1,534 @@
+# S12 guides/cms/contentful.mdx — AI-assisted review (amendment A3), 2026-09-23.
+specimen = "S12"
+
+[[candidate]]
+id = "S12-O2-at-000562"
+decision = "reject"
+reason = "self_reference: 'this section' denotes the containing section"
+
+[[candidate]]
+id = "S12-O1-at-001277"
+decision = "reject"
+reason = "generic: reader-possessive ('your Contentful dashboard') nested in an accepted deictic phrase"
+
+[[candidate]]
+id = "S12-O1-at-001434"
+decision = "reject"
+reason = "not_referential: field definition"
+
+[[candidate]]
+id = "S12-O1-at-001513"
+decision = "reject"
+reason = "not_referential: field definition"
+
+[[candidate]]
+id = "S12-O1-at-001566"
+decision = "reject"
+reason = "generic: reader-possessive ('your Contentful space')"
+
+[[candidate]]
+id = "S12-O1-at-001633"
+decision = "reject"
+reason = "not_referential: field definition"
+
+[[candidate]]
+id = "S12-O1-at-001688"
+decision = "reject"
+reason = "generic: reader-possessive ('your Contentful space')"
+
+[[candidate]]
+id = "S12-O1-at-001747"
+decision = "reject"
+reason = "generic: reader-possessive ('your Contentful space')"
+
+[[candidate]]
+id = "S12-O1-at-002071"
+decision = "reject"
+reason = "generic: reader-possessive ('your project')"
+
+[[candidate]]
+id = "S12-O1-at-002130"
+decision = "reject"
+reason = "generic: reader-possessive ('your Contentful environment variables')"
+
+[[candidate]]
+id = "S12-O1-at-002799"
+decision = "reject"
+reason = "generic: reader-possessive ('your Contentful space')"
+
+[[candidate]]
+id = "S12-O1-at-002985"
+decision = "reject"
+reason = "not_referential: appositive descriptor"
+
+[[candidate]]
+id = "S12-O1-at-003671"
+decision = "reject"
+reason = "generic: reader-possessive ('your project')"
+
+[[candidate]]
+id = "S12-O1-at-004361"
+decision = "reject"
+reason = "not_referential: named app"
+
+[[candidate]]
+id = "S12-O1-at-004813"
+decision = "reject"
+reason = "generic: reader-possessive ('your Contentful account')"
+
+[[candidate]]
+id = "S12-O1-at-005026"
+decision = "reject"
+reason = "generic: reader-possessive ('your component')"
+
+[[candidate]]
+id = "S12-O1-at-005865"
+decision = "reject"
+reason = "generic: reader-possessive ('your content')"
+
+[[candidate]]
+id = "S12-O1-at-006049"
+decision = "reject"
+reason = "not_probeable: antecedent is the entire preceding integration section (about 5,500 characters)"
+
+[[candidate]]
+id = "S12-O1-at-006124"
+decision = "reject"
+reason = "not_referential: predicative ('as the CMS')"
+
+[[candidate]]
+id = "S12-O2-at-006186"
+decision = "reject"
+reason = "self_reference: 'this tutorial' denotes the containing section"
+
+[[candidate]]
+id = "S12-O1-at-006356"
+decision = "reject"
+reason = "generic: reader-possessive ('your content model')"
+
+[[candidate]]
+id = "S12-O1-at-006649"
+decision = "reject"
+reason = "generic: reader-possessive ('your Contentful space')"
+
+[[candidate]]
+id = "S12-O1-at-007082"
+decision = "reject"
+reason = "not_referential: bridging nominal ('the other parameters')"
+
+[[candidate]]
+id = "S12-O1-at-007278"
+decision = "reject"
+reason = "not_referential: bridging nominal ('the other parameters')"
+
+[[candidate]]
+id = "S12-O1-at-007503"
+decision = "reject"
+reason = "generic: reader-possessive ('your changes')"
+
+[[candidate]]
+id = "S12-O1-at-007549"
+decision = "reject"
+reason = "generic: reader-possessive ('your Contentful space')"
+
+[[candidate]]
+id = "S12-O1-at-007913"
+decision = "reject"
+reason = "generic: reader-possessive ('your entry')"
+
+[[candidate]]
+id = "S12-O1-at-007947"
+decision = "reject"
+reason = "generic: reader-possessive ('your first blog post')"
+
+[[candidate]]
+id = "S12-O1-at-008330"
+decision = "reject"
+reason = "generic: reader-possessive ('your blog post entries response')"
+
+[[candidate]]
+id = "S12-O1-at-009190"
+decision = "reject"
+reason = "not_referential: page named in the same clause"
+
+[[candidate]]
+id = "S12-O2-at-009237"
+decision = "reject"
+reason = "self_reference: 'this example' denotes the procedure being described"
+
+[[candidate]]
+id = "S12-O1-at-009454"
+decision = "reject"
+reason = "generic: reader-possessive ('your response')"
+
+[[candidate]]
+id = "S12-O1-at-009762"
+decision = "reject"
+reason = "generic: reader-possessive ('your blog posts')"
+
+[[candidate]]
+id = "S12-O1-at-009864"
+decision = "reject"
+reason = "generic: reader-possessive ('your returned data')"
+
+[[candidate]]
+id = "S12-O1-at-010002"
+decision = "reject"
+reason = "idiom: 'at the same time'"
+
+[[candidate]]
+id = "S12-O1-at-012100"
+decision = "reject"
+reason = "generic: reader-possessive ('your data')"
+
+[[candidate]]
+id = "S12-O1-at-012644"
+decision = "reject"
+reason = "not_referential: 'the page component as props'"
+
+[[candidate]]
+id = "S12-O1-at-013360"
+decision = "reject"
+reason = "not_referential: 'the property inside params'"
+
+[[candidate]]
+id = "S12-O1-at-013400"
+decision = "reject"
+reason = "not_referential: 'the name of the dynamic route' stated in the next sentence"
+
+[[candidate]]
+id = "S12-O1-at-013547"
+decision = "reject"
+reason = "not_probeable: sole referent (the dynamic page)"
+
+[[candidate]]
+id = "S12-O1-at-013726"
+decision = "reject"
+reason = "not_referential: 'the page props'"
+
+[[candidate]]
+id = "S12-O1-at-013754"
+decision = "reject"
+reason = "generic: reader-possessive ('your blog post')"
+
+[[candidate]]
+id = "S12-O1-at-014965"
+decision = "reject"
+reason = "not_referential: 'the data from Contentful'"
+
+[[candidate]]
+id = "S12-O1-at-015108"
+decision = "reject"
+reason = "not_referential: 'the slug from the URL'"
+
+[[candidate]]
+id = "S12-O1-at-015485"
+decision = "reject"
+reason = "not_probeable: sole referent (the requested entry)"
+
+[[candidate]]
+id = "S12-O1-at-015526"
+decision = "reject"
+reason = "generic: 'the user' as any visitor"
+
+[[candidate]]
+id = "S12-O1-at-016036"
+decision = "reject"
+reason = "not_referential: 'the template section'"
+
+[[candidate]]
+id = "S12-O1-at-018022"
+decision = "reject"
+reason = "heading: occurrence begins in a section heading"
+
+[[candidate]]
+id = "S12-O1-at-018213"
+decision = "reject"
+reason = "generic: reader-possessive ('your project')"
+
+[[candidate]]
+id = "S12-O1-at-018326"
+decision = "reject"
+reason = "generic: reader-possessive ('your content')"
+
+[[candidate]]
+id = "S12-O1-at-018386"
+decision = "reject"
+reason = "generic: reader-possessive ('your hosting provider')"
+
+[[candidate]]
+id = "S12-O1-at-018555"
+decision = "reject"
+reason = "generic: reader-possessive ('your site dashboard')"
+
+[[candidate]]
+id = "S12-O1-at-018932"
+decision = "reject"
+reason = "generic: reader-possessive ('your project dashboard')"
+
+[[candidate]]
+id = "S12-O1-at-019224"
+decision = "reject"
+reason = "generic: reader-possessive ('your Contentful space')"
+
+[[candidate]]
+id = "S12-O1-at-019481"
+decision = "reject"
+reason = "not_probeable: sole referent ('the webhook' being created)"
+
+[[candidate]]
+id = "S12-O1-at-019586"
+decision = "reject"
+reason = "generic: reader-possessive ('your blog')"
+[[candidate]]
+id = "S12-O2-at-001248"
+decision = "accept"
+reason = "cataphoric deixis: 'the following credentials' points to the three-item credential list"
+host_from = "**Contentful credentials** - You can find"
+host_to = "_unpublished_ content from your Contentful space."
+anchor = "You can find the following credentials in your"
+question = "Which credentials does the page have you look up in the dashboard's API key settings?"
+correct = "The space ID plus the delivery and preview access tokens"
+foil_1 = "A management token and an environment ID"
+foil_2 = "The webhook address from your hosting provider"
+evidence = "**Contentful preview access token**"
+gate = "pass"
+
+[[candidate]]
+id = "S12-O2-at-001848"
+decision = "accept"
+reason = "cataphoric deixis: 'the following variables' points to the .env block"
+host_from = "credentials to Astro, create an `.env` file"
+host_to = "Now, you can use these environment variables in your project."
+anchor = "file in the root of your project with the following variables"
+question = "Which variables does the environment file define?"
+correct = "The space ID plus the delivery and preview tokens"
+foil_1 = "A management token and an organization ID"
+foil_2 = "The webhook address for rebuilds"
+evidence = "CONTENTFUL_PREVIEW_TOKEN=YOUR_PREVIEW_TOKEN"
+gate = "pass"
+
+[[candidate]]
+id = "S12-O2-at-002838"
+decision = "accept"
+reason = "cataphoric deixis: 'the following' points to the two-package list"
+host_from = "To connect with your Contentful space, install both of the following"
+host_to = "a package to render Contentful's rich text fields to HTML."
+anchor = "install both of the following"
+question = "Which packages does the page have you install?"
+correct = "The official JavaScript SDK and a renderer that turns rich text into HTML"
+foil_1 = "Only the official JavaScript SDK"
+foil_2 = "The SDK and a Markdown parser"
+evidence = "a package to render Contentful's rich text fields to HTML"
+gate = "pass"
+
+[[candidate]]
+id = "S12-O2-at-006738"
+decision = "accept"
+reason = "cataphoric deixis: 'the following fields and values' points to the model settings list"
+host_from = "in the **Content model** section, create a new content model"
+host_to = "This content type is for a blog post"
+anchor = "create a new content model with the following fields and values"
+question = "What is the new content model described as being for?"
+correct = "Holding blog posts"
+foil_1 = "Holding author profiles"
+foil_2 = "Holding site-wide settings"
+evidence = "**Description:** This content type is for a blog post"
+gate = "pass"
+
+[[candidate]]
+id = "S12-O1-at-006887"
+decision = "accept"
+reason = "anaphor: 'your newly created content type' refers to the blog post model just created"
+host_from = "in the **Content model** section, create a new content model"
+host_to = "use the **Add Field** button to add 5 new fields"
+anchor = "In your newly created content type"
+question = "To which content type do you add the five new fields?"
+correct = "The blog post content type created just before"
+foil_1 = "A separate content type made for each field"
+foil_2 = "The space's default content type"
+evidence = "**Name:** Blog Post"
+gate = "pass"
+
+[[candidate]]
+id = "S12-O2-at-006974"
+decision = "accept"
+reason = "cataphoric deixis: 'the following parameters' points to the five-field list"
+host_from = "use the **Add Field** button to add 5 new fields"
+host_to = "**API identifier:** `content`"
+anchor = "button to add 5 new fields with the following parameters"
+question = "What kind of field holds the post's content?"
+correct = "A rich text field"
+foil_1 = "A plain text field"
+foil_2 = "A date and time field"
+evidence = "5. Rich text field"
+gate = "pass"
+
+[[candidate]]
+id = "S12-O1-at-007643"
+decision = "accept"
+reason = "anaphor: 'the fields' refers to the fields defined on the new content type"
+host_from = "In the **Content** section of your Contentful space"
+host_to = "**Content:** `This is my first blog post!`"
+anchor = "create a new entry by clicking the"
+question = "When creating the first entry, which fields do you fill in?"
+correct = "The fields defined on the content type: title, slug, description, date, and content"
+foil_1 = "Only a title and a slug"
+foil_2 = "The space ID and access tokens"
+evidence = "**Slug:** `astro-is-amazing`"
+gate = "pass"
+
+[[candidate]]
+id = "S12-O1-at-009885"
+decision = "accept"
+reason = "cataphor: 'The example below' refers to the mapping code that follows"
+host_from = "This fetch call will return an array of your blog posts"
+host_to = "reformats the date to a more readable format."
+anchor = "properties from our Content model to create a blog post preview"
+question = "What does the example that follows do with the returned entries?"
+correct = "Maps each entry's fields into a preview object and reformats the date"
+foil_1 = "Renders each entry's rich text content as HTML"
+foil_2 = "Filters out entries that are unpublished"
+evidence = "reformats the date to a more readable format"
+gate = "pass"
+
+[[candidate]]
+id = "S12-O1-at-018840"
+decision = "accept"
+reason = "anaphor: 'the generated URL' refers to the Netlify build hook created in the previous step"
+host_from = "Under the **Continuous Deployment** tab"
+host_to = "Click on **Save** and copy the generated URL."
+anchor = "Provide a name for your webhook and select the branch"
+question = "In the Netlify steps, what address do you copy at the end?"
+correct = "The address of the build hook you just added"
+foil_1 = "Your site's production address"
+foil_2 = "Your space's API address"
+evidence = "click on **Add build hook**"
+gate = "pass"
+
+[[candidate]]
+id = "S12-O1-at-019154"
+decision = "accept"
+reason = "anaphor: 'the generated URL' refers to the Vercel deploy hook being added"
+host_from = "Under the **Git** tab, find the **Deploy Hooks** section."
+host_to = "Click **Add** and copy the generated URL."
+anchor = "Provide a name for your webhook and the branch"
+question = "In the Vercel steps, what address do you copy at the end?"
+correct = "The address of the deploy hook you just added"
+foil_1 = "Your project's production address"
+foil_2 = "Your space's API address"
+evidence = "find the **Deploy Hooks** section"
+gate = "pass"
+
+[[relation]]
+id = "S12-R1-001"
+reason = "ordered Netlify build hook steps"
+host_from = "To set up a webhook in Netlify:"
+host_to = "Click on **Save** and copy the generated URL."
+anchor = "To set up a webhook in Netlify"
+question = "In the Netlify steps, what comes right before naming the webhook?"
+correct = "Adding a build hook in the continuous deployment settings"
+foil_1 = "Copying the generated address"
+foil_2 = "Opening the Git tab"
+evidence = "2. Under the **Continuous Deployment** tab"
+evidence_implicit = "Second, Under the **Continuous Deployment** tab"
+gate = "pass"
+
+[[relation]]
+id = "S12-R1-002"
+reason = "ordered Vercel deploy hook steps"
+host_from = "To set up a webhook in Vercel:"
+host_to = "Click **Add** and copy the generated URL."
+anchor = "To set up a webhook in Vercel"
+question = "In the Vercel steps, what do you do first?"
+correct = "Open the settings of your project dashboard"
+foil_1 = "Find the deploy hooks section"
+foil_2 = "Copy the generated address"
+evidence = "1. Go to your project dashboard"
+evidence_implicit = "First, Go to your project dashboard"
+gate = "pass"
+
+[[relation]]
+id = "S12-R2-001"
+reason = "package-manager alternatives for installing the SDK packages"
+host_from = "To connect with your Contentful space, install both of the following"
+host_to = "Next, create a new file called `contentful.ts`"
+anchor = "install both of the following"
+question = "How are the three commands for installing the CMS packages related?"
+correct = "They are alternatives: run only the one for your package manager"
+foil_1 = "Run all three in sequence"
+foil_2 = "Run the npm one first, then the others"
+evidence = "<Fragment slot=\"pnpm\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S12-R3-001"
+reason = "tip aside: optional further reading"
+host = """:::tip
+Read more about [using environment variables](/en/guides/environment-variables/) and `.env` files in Astro."""
+host_implicit = "As a helpful tip, Read more about [using environment variables](/en/guides/environment-variables/) and `.env` files in Astro."
+anchor = "using environment variables"
+question = "How does the page present reading more about environment variables?"
+correct = "As optional further reading"
+foil_1 = "As a required step before adding credentials"
+foil_2 = "As a warning about exposing secrets"
+evidence = ":::tip"
+evidence_implicit = "As a helpful tip"
+gate = "pass"
+
+[[relation]]
+id = "S12-R3-002"
+reason = "caution aside: development versus build content"
+host_from = ":::caution\nWhile in development mode"
+host_from_implicit = "Use caution here: While in development mode"
+host_to = "only published content will be available at build time."
+anchor = "This means that only published content will be available"
+question = "What does the page warn about which content is visible in development versus at build time?"
+correct = "Development shows unpublished content through the preview API; builds include only published content"
+foil_1 = "Both development and builds show unpublished content"
+foil_2 = "Development shows only published content, while builds include drafts"
+evidence = "This means that only published content will be available at build time."
+gate = "pass"
+
+[[relation]]
+id = "S12-R3-003"
+reason = "tip aside: optional pointer for empty spaces"
+host_from = ":::tip\nIf you have an empty Contentful space"
+host_from_implicit = "As a helpful tip, If you have an empty Contentful space"
+host_to = "a basic blog model for your content."
+anchor = "If you have an empty Contentful space"
+question = "How does the page present the section on setting up a content model?"
+correct = "As an optional pointer if your space is empty"
+foil_1 = "As required before fetching any data"
+foil_2 = "As a warning that empty spaces cannot be queried"
+evidence = "If you have an empty Contentful space, check out"
+gate = "pass"
+
+[[relation]]
+id = "S12-R4-001"
+reason = "prerequisites before integrating"
+host_from = "### Prerequisites\n\nTo get started, you will need to have the following:"
+host_from_implicit = "Before you begin, you need the following:\n\nTo get started, you will need to have the following:"
+host_to = "_unpublished_ content from your Contentful space."
+anchor = "To get started, you will need to have the following"
+question = "What must you have before integrating the CMS with Astro?"
+correct = "An Astro project, a Contentful account with a space, and the space's credentials"
+foil_1 = "A content model for blog posts"
+foil_2 = "A hosting provider with build hooks"
+evidence = "**Contentful credentials**"
+gate = "pass"
+
+[[relation]]
+id = "S12-R4-002"
+reason = "prerequisites before the blog tutorial"
+host_from = "### Prerequisites\n\n1. **A Contentful space**"
+host_from_implicit = "Before you begin, you need the following:\n\n1. **A Contentful space**"
+host_to = "for more details on how to set up an Astro project with Contentful."
+anchor = "we recommend starting with an empty space"
+question = "What does the blog tutorial require before you start?"
+correct = "A space, ideally empty, and an Astro project already integrated with the SDK"
+foil_1 = "A deployed site with a rebuild webhook"
+foil_2 = "Existing blog posts in the space"
+evidence = "we recommend starting with an empty space"
+gate = "pass"

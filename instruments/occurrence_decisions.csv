@@ -1,0 +1,581 @@
+instance_id,specimen_id,relation_type,expression,explicit_start,explicit_end,implicit_start,implicit_end,occurrence_rank,legacy_id,legacy_accept,legacy_reason,decision,reason,reviewed
+S01-O1-at-000571,S01,O1,the community,571,584,571,584,1,S01-O1-010,NO,generic,reject,exophoric: the wider community,2026-09-23
+S01-O1-at-001009,S01,O1,your project,1009,1021,1009,1021,1,S01-O1-048,YES,generic,reject,generic: reader-possessive ('your project'),2026-09-23
+S01-O1-at-001094,S01,O1,the build process,1094,1111,1094,1111,1,S01-O1-009,YES,,reject,generic: 'the build process',2026-09-23
+S01-O1-at-001344,S01,O1,your Astro project for authentication,1344,1381,1337,1374,1,S01-O1-028,YES,,reject,generic: reader-possessive ('your Astro project'),2026-09-23
+S01-O1-at-001645,S01,O1,the setup of official integrations,1645,1679,1635,1669,1,S01-O1-024,YES,,reject,not_referential: 'the setup of official integrations',2026-09-23
+S01-O1-at-002412,S01,O1,the same time,2412,2425,2423,2436,1,S01-O1-023,NO,idiom,reject,idiom: 'at the same time',2026-09-23
+S01-O1-at-003573,S01,O1,your Astro project,3573,3591,3615,3633,1,S01-O1-027,YES,,reject,generic: reader-possessive ('your Astro project'),2026-09-23
+S01-O1-at-003742,S01,O1,your integration inline,3742,3765,3784,3807,1,S01-O1-039,YES,not_probeable,reject,generic: reader-possessive ('your integration'),2026-09-23
+S01-O1-at-003779,S01,O1,your config file,3779,3795,3821,3837,1,S01-O1-034,YES,not_probeable,reject,generic: reader-possessive ('your config file'),2026-09-23
+S01-O1-at-005684,S01,O1,your chosen integration in,5684,5710,5777,5803,1,S01-O1-030,YES,,reject,generic: reader-possessive ('your chosen integration'),2026-09-23
+S01-O1-at-005834,S01,O1,the actual integration object,5834,5863,5919,5948,1,S01-O1-008,YES,not_probeable,reject,not_referential: descriptive definite ('the actual integration object'),2026-09-23
+S01-O1-at-006026,S01,O1,"your integration with function arguments
+  sitemap",6026,6076,6111,6161,1,S01-O1-040,NO,not_probeable,reject,code: occurrence inside a code comment,2026-09-23
+S01-O1-at-007847,S01,O1,the integration from your project,7847,7880,8010,8043,1,S01-O1-016,YES,not_probeable,reject,generic: 'the integration' repeats the generic 'an integration' in the same sentence,2026-09-23
+S01-O1-at-008632,S01,O1,the community in the,8632,8652,8798,8818,1,S01-O1-011,YES,not_probeable,reject,exophoric: the wider community,2026-09-23
+S01-O1-at-008803,S01,O1,"your own integration
+
+Astro",8803,8830,8969,8996,1,S01-O1-042,YES,,reject,heading: occurrence is in a section heading,2026-09-23
+S01-O1-at-009274,S01,O1,the wider Astro community at large,9274,9308,9440,9474,1,S01-O1-026,YES,,reject,exophoric: the wider community,2026-09-23
+S01-O1-at-009572,S01,O1,the Astro community,9572,9591,9738,9757,1,S01-O1-006,YES,,reject,exophoric: the wider community,2026-09-23
+S01-O1-at-009693,S01,O1,the entire public catalog,9693,9718,9859,9884,1,S01-O1-014,YES,,reject,exophoric: npm's public catalog,2026-09-23
+S01-O1-at-009956,S01,O1,your component quickly,9956,9978,10112,10134,1,S01-O1-033,NO,duplicate_boundary,reject,generic: reader-possessive ('your component'),2026-09-23
+S01-O1-at-011047,S01,O1,your development environment to use,11047,11082,11213,11248,1,S01-O1-035,YES,,reject,generic: reader-possessive ('your development environment'),2026-09-23
+S01-O1-at-011105,S01,O1,your project,11105,11117,11271,11283,2,S01-O1-048,YES,generic,reject,generic: reader-possessive ('your project'),2026-09-23
+S01-O1-at-011418,S01,O1,the package,11418,11429,11584,11595,1,S01-O1-020,NO,generic,reject,code: occurrence inside a FileTree listing,2026-09-23
+S01-O1-at-011594,S01,O1,the component,11594,11607,11760,11773,1,S01-O1-012,YES,generic,reject,not_probeable: sole referent is named in the same sentence,2026-09-23
+S01-O1-at-011632,S01,O1,the project root,11632,11648,11798,11814,1,S01-O1-021,YES,not_probeable,reject,not_referential: bridging nominal ('the project root'),2026-09-23
+S01-O1-at-012352,S01,O1,your individual package,12352,12375,12539,12562,1,S01-O1-037,YES,not_probeable,reject,generic: reader-possessive ('your individual package'),2026-09-23
+S01-O1-at-013235,S01,O1,The module format used by Node,13235,13265,13422,13452,1,S01-O1-004,YES,not_probeable,reject,not_referential: field definition,2026-09-23
+S01-O1-at-013476,S01,O1,The url to the project homepage,13476,13507,13663,13694,1,S01-O1-005,YES,not_probeable,reject,not_referential: field definition,2026-09-23
+S01-O1-at-013669,S01,O1,your project,13669,13681,13856,13868,3,S01-O1-048,YES,generic,reject,generic: reader-possessive ('your project'),2026-09-23
+S01-O1-at-014264,S01,O1,your package,14264,14276,14451,14463,1,S01-O1-043,NO,generic,reject,generic: reader-possessive ('your package'),2026-09-23
+S01-O1-at-014324,S01,O1,your package to work,14324,14344,14511,14531,1,S01-O1-047,YES,not_probeable,reject,generic: reader-possessive ('your package'),2026-09-23
+S01-O1-at-014528,S01,O1,your component,14528,14542,14715,14729,1,S01-O1-031,YES,generic,reject,generic: reader-possessive ('your component'),2026-09-23
+S01-O1-at-014570,S01,O1,your component on npm,14570,14591,14757,14778,1,S01-O1-032,YES,not_probeable,reject,generic: reader-possessive in link text,2026-09-23
+S01-O1-at-014810,S01,O1,the Astro ecosystem,14810,14829,14997,15016,1,S01-O1-007,YES,not_probeable,reject,exophoric: the Astro ecosystem,2026-09-23
+S01-O1-at-015124,S01,O1,The main,15124,15132,15319,15327,1,S01-O1-003,YES,generic,reject,not_referential: field definition ('The main package entrypoint'),2026-09-23
+S01-O1-at-015170,S01,O1,your package is imported,15170,15194,15365,15389,1,S01-O1-045,YES,not_probeable,reject,generic: reader-possessive ('your package'),2026-09-23
+S01-O1-at-016188,S01,O1,your package inside of your project,16188,16223,16383,16418,1,S01-O1-044,YES,,reject,generic: reader-possessive ('your package'),2026-09-23
+S01-O1-at-016325,S01,O1,your package,16325,16337,16520,16532,2,S01-O1-043,NO,generic,reject,generic: reader-possessive ('your package'),2026-09-23
+S01-O1-at-016452,S01,O1,your now,16452,16460,16647,16655,1,S01-O1-041,YES,generic,reject,generic: reader-possessive ('your now-extracted components'),2026-09-23
+S01-O1-at-016661,S01,O1,the meantime,16661,16673,16856,16868,1,S01-O1-018,NO,idiom,reject,idiom: 'in the meantime',2026-09-23
+S01-O1-at-017000,S01,O1,the output of the,17000,17017,17246,17263,1,S01-O1-019,YES,,reject,not_referential: 'the output of the',2026-09-23
+S01-O1-at-017785,S01,O1,your package,17785,17797,18023,18035,3,S01-O1-043,NO,generic,reject,generic: reader-possessive ('your package'),2026-09-23
+S01-O1-at-018021,S01,O1,your integration,18021,18037,18270,18286,1,S01-O1-038,YES,generic,reject,generic: reader-possessive ('your integration'),2026-09-23
+S01-O1-at-018389,S01,O1,The integrations library reads the,18389,18423,18635,18669,1,S01-O1-001,YES,,reject,not_referential: explicitly named ('The integrations library'),2026-09-23
+S01-O1-at-018545,S01,O1,your brand in the library,18545,18570,18791,18816,1,S01-O1-029,YES,,reject,generic: reader-possessive ('your brand'),2026-09-23
+S01-O1-at-018577,S01,O1,your package is published you can,18577,18610,18823,18856,1,S01-O1-046,YES,,reject,generic: reader-possessive ('your package'),2026-09-23
+S01-O1-at-018917,S01,O1,the updated information and we,18917,18947,19174,19204,1,S01-O1-025,YES,,reject,not_referential: 'the updated information',2026-09-23
+S01-O1-at-018961,S01,O1,the custom,18961,18971,19218,19228,1,S01-O1-013,YES,generic,reject,not_referential: 'the custom' fields named in the same clause,2026-09-23
+S01-O1-at-019063,S01,O1,the required,19063,19075,19317,19329,1,S01-O1-022,YES,generic,reject,not_referential: 'the required' keywords are listed in the same clause,2026-09-23
+S01-O1-at-020285,S01,O1,your work,20285,20294,20342,20351,1,S01-O1-049,NO,generic,reject,generic: reader-possessive ('your work'),2026-09-23
+S01-O2-at-003064,S01,O2,the following command,3064,3085,3088,3109,1,S01-O2-003,YES,not_probeable,accept,cataphoric deixis: 'the following command' points to the tabbed install commands for missing packages,2026-09-23
+S01-O1-at-005129,S01,O1,the integration to your,5129,5152,5222,5245,1,S01-O1-017,YES,not_probeable,accept,"anaphor: 'the integration' refers to the sitemap integration installed in the previous step, competing with the Vue example above",2026-09-23
+S01-O1-at-008267,S01,O1,the integration from your,8267,8292,8441,8466,1,S01-O1-015,NO,duplicate_boundary,accept,anaphor: 'the integration' in step two refers to the integration uninstalled in step one,2026-09-23
+S01-O2-at-011443,S01,O2,This example,11443,11455,11609,11621,1,S01-O2-002,YES,,accept,discourse deixis: 'This example' points to the directory tree shown just before,2026-09-23
+S01-O2-at-011756,S01,O2,this example,11756,11768,11922,11934,1,S01-O2-004,YES,,accept,discourse deixis: 'this example' points to the workspaces configuration just shown,2026-09-23
+S01-O2-at-013900,S01,O2,this example,13900,13912,14087,14099,2,S01-O2-004,YES,,accept,discourse deixis: 'this example' points to the exports map just shown,2026-09-23
+S01-O2-at-014362,S01,O2,this list,14362,14371,14549,14558,1,S01-O2-005,YES,not_probeable,accept,"discourse deixis: 'this list' refers to the files field being described, competing with exports and keywords",2026-09-23
+S01-O2-at-015015,S01,O2,See below,15015,15024,15213,15222,1,S01-O2-001,YES,not_probeable,accept,discourse deixis: 'See below' points to the later integrations-library section,2026-09-23
+S01-O1-at-016972,S01,O1,your fixtures,16972,16985,17218,17231,1,S01-O1-036,YES,generic,accept,anaphor: 'your fixtures' refers to the fixture pages created in the preceding steps,2026-09-23
+S01-O1-at-018228,S01,O1,The library is automatically updated weekly,18228,18271,18474,18517,1,S01-O1-002,YES,,accept,"anaphor: 'The library' refers to the integrations library named just before, competing with npm",2026-09-23
+S02-O1-at-000623,S02,O1,the framework,623,636,623,636,1,S02-O1-015,YES,generic,accept,anaphor: 'the framework' refers back to Astro,2026-09-23
+S02-O2-at-000639,S02,O2,This guide,639,649,639,649,1,S02-O2-001,YES,,reject,self_reference: 'This guide' denotes the containing document,2026-09-23
+S02-O1-at-000965,S02,O1,the latest documentation,965,989,965,989,1,S02-O1-019,YES,,reject,"exophoric: the live documentation site, not a textual antecedent",2026-09-23
+S02-O1-at-001369,S02,O1,The server is free,1369,1387,1359,1377,1,S02-O1-003,YES,,accept,"anaphor: 'The server' refers to the documentation MCP server, competing with AI models and kapa.ai nearby",2026-09-23
+S02-O1-at-001560,S02,O1,the Astro documentation,1560,1583,1550,1573,1,S02-O1-005,YES,,reject,exophoric: proper reference to the documentation corpus,2026-09-23
+S02-O1-at-002019,S02,O1,your chosen tool,2019,2035,2009,2025,1,S02-O1-033,YES,,reject,generic: reader-possessive ('your chosen tool'),2026-09-23
+S02-O2-at-002099,S02,O2,the following configuration in your tool,2099,2139,2089,2129,1,S02-O2-004,NO,duplicate_boundary,accept,cataphoric deixis: 'the following configuration' points to the tabbed JSON configurations,2026-09-23
+S02-O1-at-002862,S02,O1,the command line,2862,2878,2914,2930,1,S02-O1-009,YES,,reject,not_referential: generic 'the command line',2026-09-23
+S02-O1-at-003004,S02,O1,the terminal command,3004,3024,3056,3076,1,S02-O1-027,YES,not_probeable,accept,cataphor: 'the terminal command' refers to the claude mcp add command that follows,2026-09-23
+S02-O2-at-003591,S02,O2,the following to the workflow file,3591,3625,3643,3677,1,S02-O2-007,YES,not_probeable,accept,cataphoric deixis: 'the following' points to the workflow YAML snippet,2026-09-23
+S02-O1-at-003693,S02,O1,your workflow configuration,3693,3720,3745,3772,1,S02-O1-039,NO,not_probeable,reject,code: occurrence inside a YAML comment,2026-09-23
+S02-O1-at-004115,S02,O1,the Claude Code GitHub Action,4115,4144,4167,4196,1,S02-O1-006,YES,not_probeable,reject,not_referential: link label,2026-09-23
+S02-O1-at-004432,S02,O1,the global level in the,4432,4455,4484,4507,1,S02-O1-017,YES,not_probeable,reject,not_referential: 'the global level',2026-09-23
+S02-O1-at-004985,S02,O1,the button below,4985,5001,5037,5053,1,S02-O1-007,YES,,accept,cataphor: 'the button below' refers to the Add to Cursor link button,2026-09-23
+S02-O1-at-005549,S02,O1,the button below,5549,5565,5601,5617,2,S02-O1-007,YES,,accept,cataphor: 'the button below' refers to the Add to VS Code link button,2026-09-23
+S02-O2-at-006250,S02,O2,the following configuration,6250,6277,6348,6375,1,S02-O2-003,YES,not_probeable,accept,cataphoric deixis: 'the following configuration' points to the Warp JSON entry,2026-09-23
+S02-O1-at-007249,S02,O1,the server URL,7249,7263,7391,7405,1,S02-O1-024,YES,,reject,not_referential: value given in the same clause,2026-09-23
+S02-O1-at-007308,S02,O1,the name to,7308,7319,7457,7468,1,S02-O1-020,YES,,reject,not_referential: 'the name' with value given in the same clause,2026-09-23
+S02-O1-at-007872,S02,O1,your editor,7872,7883,8047,8058,1,S02-O1-034,YES,generic,reject,generic: reader-possessive ('your editor'),2026-09-23
+S02-O2-at-007892,S02,O2,the following configuration to your,7892,7927,8073,8108,1,S02-O2-006,NO,duplicate_boundary,accept,cataphoric deixis: 'the following configuration' points to the Windsurf proxy JSON entry,2026-09-23
+S02-O1-at-007923,S02,O1,your Windsurf MCP settings,7923,7949,8104,8130,1,S02-O1-031,YES,not_probeable,reject,generic: reader-possessive ('your Windsurf MCP settings') nested in an accepted deictic phrase,2026-09-23
+S02-O1-at-008181,S02,O1,the configuration and restart Windsurf,8181,8219,8369,8407,1,S02-O1-012,NO,duplicate_boundary,reject,not_probeable: only candidate referent is the file opened one step earlier; no plausible competing referent for a relational foil,2026-09-23
+S02-O1-at-008531,S02,O1,the global level in the,8531,8554,8710,8733,2,S02-O1-017,YES,not_probeable,reject,not_referential: 'the global level',2026-09-23
+S02-O2-at-009228,S02,O2,the following configuration to,9228,9258,9448,9478,1,S02-O2-005,YES,not_probeable,accept,cataphoric deixis: 'the following configuration' points to the Antigravity JSON entry,2026-09-23
+S02-O1-at-009462,S02,O1,the file and click,9462,9480,9689,9707,1,S02-O1-014,YES,not_probeable,reject,not_probeable: only candidate referent is the file opened one step earlier; no plausible competing referent for a relational foil,2026-09-23
+S02-O1-at-009757,S02,O1,your editor,9757,9768,10010,10021,2,S02-O1-034,YES,generic,reject,generic: reader-possessive ('your editor'),2026-09-23
+S02-O2-at-009777,S02,O2,the following configuration to your,9777,9812,10036,10071,2,S02-O2-006,NO,duplicate_boundary,accept,cataphoric deixis: 'the following configuration' points to the Zed context-server JSON,2026-09-23
+S02-O1-at-009808,S02,O1,your Zed MCP settings,9808,9829,10067,10088,1,S02-O1-032,YES,not_probeable,reject,generic: reader-possessive ('your Zed MCP settings') nested in an accepted deictic phrase,2026-09-23
+S02-O1-at-010074,S02,O1,the configuration,10074,10091,10340,10357,1,S02-O1-011,YES,generic,reject,not_probeable: only candidate referent is the file opened two steps earlier; no plausible competing referent for a relational foil,2026-09-23
+S02-O1-at-010581,S02,O1,the button below,10581,10597,10838,10854,3,S02-O1-007,YES,,accept,cataphor: 'the button below' refers to the Add to Raycast link button,2026-09-23
+S02-O1-at-011195,S02,O1,your Opencode configuration file,11195,11227,11452,11484,1,S02-O1-030,YES,,reject,generic: reader-possessive ('your Opencode configuration file'),2026-09-23
+S02-O2-at-012079,S02,O2,the following to your repository,12079,12111,12336,12368,1,S02-O2-008,YES,,accept,cataphoric deixis: 'the following' points to the Copilot coding agent JSON,2026-09-23
+S02-O1-at-012669,S02,O1,your AI tool questions about Astro,12669,12703,12926,12960,1,S02-O1-028,YES,,reject,generic: reader-possessive ('your AI tool'),2026-09-23
+S02-O1-at-012752,S02,O1,the latest docs,12752,12767,13009,13024,1,S02-O1-018,YES,,reject,exophoric: the live documentation,2026-09-23
+S02-O1-at-013282,S02,O1,your tool supports streamable HTTP transport,13282,13326,13528,13572,1,S02-O1-038,YES,,reject,generic: reader-possessive ('your tool'),2026-09-23
+S02-O1-at-013341,S02,O1,the server URL is correct,13341,13366,13587,13612,1,S02-O1-025,YES,,reject,not_referential: value given in the same item,2026-09-23
+S02-O1-at-013413,S02,O1,your tool has proper internet access,13413,13449,13659,13695,1,S02-O1-037,YES,,reject,generic: reader-possessive ('your tool'),2026-09-23
+S02-O1-at-013461,S02,O1,your specific tool,13461,13479,13707,13725,1,S02-O1-036,YES,,reject,generic: reader-possessive ('your specific tool'),2026-09-23
+S02-O1-at-013676,S02,O1,The same technology that powers Astro,13676,13713,13922,13959,1,S02-O1-002,YES,idiom,reject,"not_probeable: antecedent (the indexing API) is about 12,000 characters earlier; a host would span most of the page, and locally the expression restates its own description",2026-09-23
+S02-O1-at-013895,S02,O1,your project code in natural language,13895,13932,14141,14178,1,S02-O1-035,YES,,reject,generic: reader-possessive ('your project code'),2026-09-23
+S02-O1-at-013934,S02,O1,Your conversation is automatically threaded,13934,13977,14180,14223,1,S02-O1-004,YES,,reject,generic: reader-possessive ('Your conversation'),2026-09-23
+S02-O1-at-014061,S02,O1,the chatbot are public,14061,14083,14307,14329,1,S02-O1-008,YES,,accept,"anaphor: 'the chatbot' refers to the Discord AI chatbot, competing with the regular support channel",2026-09-23
+S02-O1-at-014271,S02,O1,the community,14271,14284,14517,14530,1,S02-O1-010,NO,generic,reject,exophoric: the volunteer community,2026-09-23
+S02-O1-at-014616,S02,O1,the server runs,14616,14631,14862,14877,1,S02-O1-026,YES,,accept,"anaphor: 'the server' refers to the dev server, competing with the MCP server discussed earlier",2026-09-23
+S02-O1-at-014682,S02,O1,the dev server starts,14682,14703,14928,14949,1,S02-O1-013,YES,,reject,"not_referential: explicitly named ('the dev server'), no resolution needed",2026-09-23
+S02-O1-at-014715,S02,O1,the server,14715,14725,14961,14971,1,S02-O1-023,YES,generic,accept,anaphor: 'the server' refers to the dev server whose start writes the lock file,2026-09-23
+S02-O1-at-014803,S02,O1,the same project,14803,14819,15049,15065,1,S02-O1-022,YES,idiom,reject,not_referential: sortal 'the same project',2026-09-23
+S02-O1-at-015182,S02,O1,the full list of,15182,15198,15428,15444,1,S02-O1-016,YES,not_probeable,reject,not_referential: 'the full list of',2026-09-23
+S02-O1-at-015267,S02,O1,The dev server exposes a,15267,15291,15513,15537,1,S02-O1-001,YES,,reject,not_referential: explicitly named ('The dev server'),2026-09-23
+S02-O1-at-016160,S02,O1,the latest documentation,16160,16184,16406,16430,2,S02-O1-019,YES,,reject,exophoric: the live documentation,2026-09-23
+S02-O1-at-016471,S02,O1,your AI tool supports it,16471,16495,16717,16741,1,S02-O1-029,YES,,reject,generic: reader-possessive ('your AI tool'),2026-09-23
+S02-O1-at-016574,S02,O1,the ones listed above,16574,16595,16820,16841,1,S02-O1-021,YES,,accept,"anaphor: 'the ones listed above' refers to the preceding tips, competing with 'server rules' earlier",2026-09-23
+S02-O2-at-016583,S02,O2,listed above,16583,16595,16829,16841,1,S02-O2-002,YES,,reject,fragment: nested in the accepted overlapping occurrence with the same referent,2026-09-23
+S03-O1-at-001365,S03,O1,the bare minimum JS you,1365,1388,1365,1388,1,S03-O1-002,YES,,reject,not_referential: 'the bare minimum JS you'll need',2026-09-23
+S03-O1-at-001638,S03,O1,your preference,1638,1653,1638,1653,1,S03-O1-021,NO,generic,reject,idiom: 'your preference',2026-09-23
+S03-O1-at-002425,S03,O1,the frontmatter of server,2425,2450,2416,2441,1,S03-O1-004,YES,,reject,generic: kind reference ('the frontmatter of server-side components'),2026-09-23
+S03-O1-at-002680,S03,O1,the value received by,2680,2701,2671,2692,1,S03-O1-015,YES,,reject,not_referential: 'the value received by',2026-09-23
+S03-O1-at-003383,S03,O1,the same,3383,3391,3374,3382,1,S03-O1-009,YES,idiom,reject,not_referential: sortal 'the same $ shortcut',2026-09-23
+S03-O1-at-004251,S03,O1,your components,4251,4266,4242,4257,1,S03-O1-018,YES,generic,reject,generic: reader-possessive ('your components'),2026-09-23
+S03-O1-at-004540,S03,O1,the same state,4540,4554,4531,4545,1,S03-O1-010,YES,idiom,reject,not_referential: sortal 'the same state',2026-09-23
+S03-O1-at-004976,S03,O1,your favorite UI framework,4976,5002,4964,4990,1,S03-O1-019,YES,not_probeable,reject,idiom: 'your favorite UI framework',2026-09-23
+S03-O1-at-006097,S03,O1,the completed example,6097,6118,6079,6100,1,S03-O1-003,YES,,reject,not_referential: link label,2026-09-23
+S03-O1-at-006196,S03,O1,your machine or online via StackBlitz,6196,6233,6178,6215,1,S03-O1-020,YES,not_probeable,reject,generic: reader-possessive ('your machine'),2026-09-23
+S03-O1-at-007508,S03,O1,the store value with the,7508,7532,7570,7594,1,S03-O1-014,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-007607,S03,O1,the imported store using,7607,7631,7669,7693,1,S03-O1-005,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-007952,S03,O1,the store value with the,7952,7976,8004,8028,2,S03-O1-014,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-008051,S03,O1,the imported store using,8051,8075,8103,8127,2,S03-O1-005,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-008396,S03,O1,the store value with the,8396,8420,8438,8462,3,S03-O1-014,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-008495,S03,O1,the imported store using,8495,8519,8537,8561,3,S03-O1-005,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-008799,S03,O1,the store value,8799,8814,8831,8846,1,S03-O1-013,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-009000,S03,O1,the imported store using,9000,9024,9022,9046,4,S03-O1-005,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-009227,S03,O1,the store value with the,9227,9251,9249,9273,4,S03-O1-014,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-011039,S03,O1,the standard,11039,11051,11050,11062,1,S03-O1-012,YES,generic,reject,not_referential: descriptive definite ('the standard get() and set() helpers'),2026-09-23
+S03-O1-at-011216,S03,O1,the items inside your cart,11216,11242,11224,11250,1,S03-O1-007,YES,,reject,generic: reader-possessive ('your cart'),2026-09-23
+S03-O1-at-011551,S03,O1,the shape if you,11551,11567,11559,11575,1,S03-O1-011,YES,not_probeable,reject,not_referential: bridging nominal ('the shape'),2026-09-23
+S03-O1-at-012501,S03,O1,your cart,12501,12510,12537,12546,1,S03-O1-017,YES,generic,reject,generic: reader-possessive ('your cart'),2026-09-23
+S03-O1-at-012604,S03,O1,the quantity by,12604,12619,12640,12655,1,S03-O1-008,YES,not_probeable,reject,not_referential: bridging nominal ('the quantity'),2026-09-23
+S03-O1-at-014053,S03,O1,the value when an,14053,14070,14115,14132,1,S03-O1-016,YES,,reject,not_referential: 'the value' restates the store value named in the preceding sentence,2026-09-23
+S03-O1-at-014609,S03,O1,the item info for simplicity,14609,14637,14748,14776,1,S03-O1-006,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-015193,S03,O1,the item info for simplicity,15193,15221,15322,15350,2,S03-O1-006,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-015777,S03,O1,the item info for simplicity,15777,15805,15896,15924,3,S03-O1-006,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-016398,S03,O1,the item info for simplicity,16398,16426,16507,16535,4,S03-O1-006,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-016934,S03,O1,the item info for simplicity,16934,16962,17033,17061,5,S03-O1-006,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-018029,S03,O1,Your cart is empty,18029,18047,18177,18195,1,S03-O1-001,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-018769,S03,O1,Your cart is empty,18769,18787,18907,18925,2,S03-O1-001,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-019515,S03,O1,Your cart is empty,19515,19533,19643,19661,3,S03-O1-001,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-020062,S03,O1,Your cart is empty,20062,20080,20180,20198,4,S03-O1-001,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-020531,S03,O1,Your cart is empty,20531,20549,20639,20657,5,S03-O1-001,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-020941,S03,O1,the completed example,20941,20962,21018,21039,2,S03-O1-003,YES,,reject,not_referential: link label,2026-09-23
+S03-O1-at-021040,S03,O1,your machine or online via StackBlitz,21040,21077,21117,21154,2,S03-O1-020,YES,not_probeable,reject,generic: reader-possessive ('your machine'),2026-09-23
+S03-O2-at-002497,S03,O2,the following restrictions,2497,2523,2488,2514,1,S03-O2-001,YES,,accept,cataphoric deixis: 'the following restrictions' points to the bulleted restrictions,2026-09-23
+S04-O1-at-000979,S04,O1,the client side of your app,979,1006,1004,1031,1,S04-O1-010,YES,,reject,generic: 'the client side of your app',2026-09-23
+S04-O1-at-001029,S04,O1,the Firebase console under,1029,1055,1054,1080,1,S04-O1-006,YES,,reject,exophoric: the vendor console,2026-09-23
+S04-O1-at-001107,S04,O1,Your apps,1107,1116,1132,1141,1,S04-O1-004,NO,generic,reject,not_referential: UI section label,2026-09-23
+S04-O1-at-001221,S04,O1,the server side of your app,1221,1248,1246,1273,1,S04-O1-019,YES,,reject,generic: 'the server side of your app',2026-09-23
+S04-O1-at-001275,S04,O1,the Firebase console under,1275,1301,1300,1326,2,S04-O1-006,YES,,reject,exophoric: the vendor console,2026-09-23
+S04-O1-at-001430,S04,O1,your Firebase credentials to Astro,1430,1464,1455,1489,1,S04-O1-030,YES,not_probeable,reject,generic: reader-possessive ('your Firebase credentials'),2026-09-23
+S04-O1-at-001976,S04,O1,your project,1976,1988,2001,2013,1,S04-O1-037,YES,generic,reject,generic: reader-possessive ('your project'),2026-09-23
+S04-O1-at-002035,S04,O1,your Firebase environment variables,2035,2070,2060,2095,1,S04-O1-031,YES,not_probeable,reject,generic: reader-possessive ('your Firebase environment variables'),2026-09-23
+S04-O1-at-002087,S04,O1,the file,2087,2095,2112,2120,1,S04-O1-013,YES,generic,reject,not_referential: file named in the same clause,2026-09-23
+S04-O1-at-002146,S04,O1,your types,2146,2156,2171,2181,1,S04-O1-038,YES,generic,reject,generic: reader-possessive ('your types'),2026-09-23
+S04-O1-at-004212,S04,O1,your own web app credentials,4212,4240,4264,4292,1,S04-O1-036,YES,not_probeable,reject,generic: reader-possessive ('your own web app credentials'),2026-09-23
+S04-O1-at-005337,S04,O1,the server by Firebase,5337,5359,5386,5408,1,S04-O1-018,NO,not_probeable,reject,code: occurrence inside a code comment,2026-09-23
+S04-O1-at-005670,S04,O1,your own project credentials,5670,5698,5717,5745,1,S04-O1-035,YES,not_probeable,reject,generic: reader-possessive ('your own project credentials'),2026-09-23
+S04-O1-at-006134,S04,O1,the Firebase console under,6134,6160,6203,6229,3,S04-O1-006,YES,,reject,exophoric: the vendor console,2026-09-23
+S04-O1-at-007679,S04,O1,the use of,7679,7689,7755,7765,1,S04-O1-022,YES,not_probeable,reject,not_referential: 'the use of',2026-09-23
+S04-O1-at-007930,S04,O1,the signin endpoint,7930,7949,8001,8020,1,S04-O1-020,YES,,reject,not_referential: explicitly named endpoint,2026-09-23
+S04-O1-at-007999,S04,O1,your needs,7999,8009,8070,8080,1,S04-O1-034,NO,generic,reject,idiom: 'your needs',2026-09-23
+S04-O1-at-008379,S04,O1,the signout endpoint,8379,8399,8445,8465,1,S04-O1-021,YES,not_probeable,reject,not_referential: explicitly named endpoint,2026-09-23
+S04-O1-at-008449,S04,O1,your needs,8449,8459,8515,8525,2,S04-O1-034,NO,generic,reject,idiom: 'your needs',2026-09-23
+S04-O1-at-009469,S04,O1,the register endpoint,9469,9490,9530,9551,1,S04-O1-017,YES,not_probeable,reject,not_referential: explicitly named endpoint,2026-09-23
+S04-O1-at-009540,S04,O1,your needs,9540,9550,9601,9611,3,S04-O1-034,NO,generic,reject,idiom: 'your needs',2026-09-23
+S04-O1-at-011191,S04,O1,the user is authenticated,11191,11216,11249,11274,1,S04-O1-025,YES,not_probeable,reject,generic: 'the user' as any visitor,2026-09-23
+S04-O1-at-011785,S04,O1,the user is authenticated,11785,11810,11843,11868,2,S04-O1-025,YES,not_probeable,reject,code: occurrence inside a code comment,2026-09-23
+S04-O1-at-013611,S04,O1,the user,13611,13619,13669,13677,1,S04-O1-023,NO,generic,reject,generic: 'the user' as any visitor,2026-09-23
+S04-O1-at-013643,S04,O1,the Firebase server app,13643,13666,13701,13724,1,S04-O1-007,YES,not_probeable,reject,not_probeable: self-describing ('the Firebase server app'); the only competitor is excluded by the expression's own wording,2026-09-23
+S04-O1-at-013671,S04,O1,the user is not authenticated,13671,13700,13729,13758,1,S04-O1-026,YES,not_probeable,reject,generic: 'the user' as any visitor,2026-09-23
+S04-O1-at-013980,S04,O1,the user to the,13980,13995,14038,14053,1,S04-O1-028,YES,not_probeable,reject,generic: 'the user' as any visitor,2026-09-23
+S04-O1-at-014830,S04,O1,your app,14830,14838,14888,14896,1,S04-O1-032,YES,generic,reject,generic: reader-possessive ('your app'),2026-09-23
+S04-O1-at-014867,S04,O1,the Firebase console,14867,14887,14925,14945,1,S04-O1-005,YES,,reject,exophoric: the vendor console,2026-09-23
+S04-O1-at-014894,S04,O1,the Firebase console,14894,14914,14952,14972,2,S04-O1-005,YES,,reject,exophoric: the vendor console,2026-09-23
+S04-O1-at-015054,S04,O1,the providers you want to use,15054,15083,15112,15141,1,S04-O1-016,YES,,reject,generic: 'the providers you want to use',2026-09-23
+S04-O1-at-015544,S04,O1,the user is authenticated,15544,15569,15602,15627,3,S04-O1-025,YES,not_probeable,reject,code: occurrence inside a code comment,2026-09-23
+S04-O1-at-017952,S04,O1,the user signs in,17952,17969,18010,18027,1,S04-O1-027,YES,not_probeable,reject,generic: 'the user' as any visitor,2026-09-23
+S04-O2-at-018644,S04,O2,this recipe,18644,18655,18727,18738,1,S04-O2-009,YES,,reject,self_reference: 'this recipe' denotes the containing section,2026-09-23
+S04-O1-at-018657,S04,O1,the Firestore collection will be called,18657,18696,18740,18779,1,S04-O1-008,YES,,reject,not_referential: naming statement ('the Firestore collection will be called friends'),2026-09-23
+S04-O1-at-019164,S04,O1,the friends collection,19164,19186,19247,19269,1,S04-O1-014,YES,,reject,not_referential: explicitly named collection,2026-09-23
+S04-O1-at-019239,S04,O1,the friends collection,19239,19261,19322,19344,2,S04-O1-014,YES,,reject,not_referential: explicitly named collection,2026-09-23
+S04-O1-at-019316,S04,O1,the friends collection,19316,19338,19399,19421,3,S04-O1-014,YES,,reject,not_referential: explicitly named collection,2026-09-23
+S04-O1-at-020433,S04,O1,your needs,20433,20443,20514,20524,4,S04-O1-034,NO,generic,reject,idiom: 'your needs',2026-09-23
+S04-O1-at-022029,S04,O1,your needs,22029,22039,22105,22115,5,S04-O1-034,NO,generic,reject,idiom: 'your needs',2026-09-23
+S04-O1-at-022682,S04,O1,the details of a friend,22682,22705,22755,22778,1,S04-O1-011,YES,,reject,generic: 'the details of a friend',2026-09-23
+S04-O1-at-023844,S04,O1,the user clicks the delete button,23844,23877,23917,23950,1,S04-O1-024,YES,not_probeable,reject,generic: 'the user' as any visitor,2026-09-23
+S04-O1-at-024677,S04,O1,your friend,24677,24688,24750,24761,1,S04-O1-033,NO,not_probeable,reject,code: occurrence inside page markup in a code block,2026-09-23
+S04-O1-at-025757,S04,O1,the details of a friend,25757,25780,25830,25853,2,S04-O1-011,YES,,reject,generic: 'the details of a friend',2026-09-23
+S04-O1-at-026757,S04,O1,the user to the edit page,26757,26782,26830,26855,1,S04-O1-029,YES,not_probeable,reject,generic: 'the user' as any visitor,2026-09-23
+S04-O1-at-027696,S04,O1,the pages,27696,27705,27769,27778,1,S04-O1-015,YES,generic,reject,not_referential: 'all the pages' summarizing prior steps,2026-09-23
+S04-O2-at-001521,S04,O2,the following variables,1521,1544,1546,1569,1,S04-O2-006,YES,not_probeable,accept,cataphoric deixis: 'the following variables' points to the .env block,2026-09-23
+S04-O2-at-002999,S04,O2,the following packages using the single command below for your preferred package manager,2999,3087,3032,3120,1,S04-O2-004,YES,,accept,cataphoric deixis: 'the following packages' points to the two-item package list,2026-09-23
+S04-O2-at-003677,S04,O2,the following code to initialize,3677,3709,3731,3763,1,S04-O2-001,YES,not_probeable,accept,cataphoric deixis: 'the following code' points to the client initialization file,2026-09-23
+S04-O2-at-004267,S04,O2,the following code to initialize,4267,4299,4316,4348,2,S04-O2-001,YES,not_probeable,accept,cataphoric deixis: 'the following code' points to the server initialization file,2026-09-23
+S04-O2-at-006275,S04,O2,the following three,6275,6294,6344,6363,1,S04-O2-005,YES,,accept,cataphoric deixis: 'the following three' points to the endpoint list,2026-09-23
+S04-O1-at-010234,S04,O1,The example,10234,10245,10292,10303,1,S04-O1-002,YES,generic,accept,cataphor: 'The example ... below' refers to the registration page code that follows,2026-09-23
+S04-O1-at-013841,S04,O1,the button will send a,13841,13863,13899,13921,1,S04-O1-009,YES,,accept,"anaphor: 'the button' refers to the sign-out button on the dashboard, competing with other buttons on the page",2026-09-23
+S04-O1-at-013916,S04,O1,The endpoint will delete the user,13916,13949,13974,14007,1,S04-O1-001,YES,idiom,accept,anaphor: 'The endpoint' refers to the sign-out endpoint just mentioned,2026-09-23
+S04-O1-at-015086,S04,O1,The example below uses the,15086,15112,15144,15170,1,S04-O1-003,YES,,accept,cataphor: 'The example below' refers to the modified sign-in page code,2026-09-23
+S04-O1-at-015217,S04,O1,the existing form,15217,15234,15275,15292,1,S04-O1-012,YES,not_probeable,accept,anaphor: 'the existing form' refers to the email/password form already on the sign-in page,2026-09-23
+S04-O2-at-018741,S04,O2,the following fields,18741,18761,18824,18844,1,S04-O2-002,YES,,accept,cataphoric deixis: 'the following fields' points to the field list,2026-09-23
+S04-O2-at-019092,S04,O2,the following ways,19092,19110,19175,19193,1,S04-O2-007,YES,,accept,cataphoric deixis: 'the following ways' points to the endpoint list,2026-09-23
+S04-O1-at-022795,S04,O1,The example,22795,22806,22868,22879,2,S04-O1-002,YES,generic,accept,cataphor: 'The example ... below' refers to the add page code that follows,2026-09-23
+S04-O2-at-023742,S04,O2,this page,23742,23751,23815,23824,1,S04-O2-008,YES,,accept,"discourse deixis: 'this page' refers to the edit page, competing with other pages listed",2026-09-23
+S04-O2-at-023879,S04,O2,this page,23879,23888,23952,23961,2,S04-O2-008,YES,,accept,discourse deixis: second 'this page' also refers to the edit page,2026-09-23
+S04-O2-at-027723,S04,O2,the following file structure,27723,27751,27796,27824,1,S04-O2-003,YES,not_probeable,accept,cataphoric deixis: 'the following file structure' points to the final file tree,2026-09-23
+S05-O2-at-000462,S05,O2,This recipe,462,473,462,473,1,S05-O2-002,YES,,reject,self_reference: 'This recipe' denotes the containing document,2026-09-23
+S05-O1-at-000631,S05,O1,your local machine,631,649,657,675,1,S05-O1-018,YES,,reject,generic: reader-possessive ('your local machine'),2026-09-23
+S05-O1-at-000695,S05,O1,your operating system here,695,721,721,747,1,S05-O1-021,YES,,reject,generic: reader-possessive inside link text ('your operating system here'),2026-09-23
+S05-O1-at-000779,S05,O1,your project,779,791,805,817,1,S05-O1-022,YES,generic,reject,generic: reader-possessive ('your project'),2026-09-23
+S05-O2-at-000915,S05,O2,the following section as a starting point,915,956,941,982,1,S05-O2-005,YES,,accept,discourse deixis: 'the following section' points to the section with example Dockerfiles,2026-09-23
+S05-O1-at-001022,S05,O1,your project,1022,1034,1048,1060,2,S05-O1-022,YES,generic,reject,generic: reader-possessive ('your project'),2026-09-23
+S05-O1-at-001072,S05,O1,the instructions to build your site,1072,1107,1098,1133,1,S05-O1-008,YES,,reject,not_referential: predicative definite description of the file's contents,2026-09-23
+S05-O1-at-001140,S05,O1,your needs,1140,1150,1166,1176,1,S05-O1-020,NO,generic,reject,idiom: 'your needs',2026-09-23
+S05-O2-at-001152,S05,O2,This guide,1152,1162,1178,1188,1,S05-O2-001,YES,,reject,self_reference: 'This guide' denotes the containing document,2026-09-23
+S05-O1-at-001327,S05,O1,the commands accordingly,1327,1351,1353,1377,1,S05-O1-006,YES,,accept,anaphor/cataphor: 'the commands' refers to the npm commands in the example Dockerfiles,2026-09-23
+S05-O1-at-001534,S05,O1,your Astro project,1534,1552,1560,1578,1,S05-O1-014,YES,not_probeable,reject,generic: reader-possessive ('your Astro project'),2026-09-23
+S05-O1-at-001848,S05,O1,your needs,1848,1858,1867,1877,2,S05-O1-020,NO,generic,reject,idiom: 'your needs',2026-09-23
+S05-O1-at-002099,S05,O1,your project is best practice,2099,2128,2115,2144,1,S05-O1-023,YES,not_probeable,reject,generic: reader-possessive ('your project'),2026-09-23
+S05-O1-at-002194,S05,O1,the Docker,2194,2204,2210,2220,1,S05-O1-001,YES,generic,reject,"generic: names a kind of Docker instruction, not a textual antecedent",2026-09-23
+S05-O1-at-002434,S05,O1,the same directory as the,2434,2459,2450,2475,1,S05-O1-010,YES,idiom,accept,anaphor: 'the same directory as the Dockerfile' resolves to the project root where the Dockerfile was created,2026-09-23
+S05-O1-at-002736,S05,O1,the default configuration,2736,2761,2752,2777,1,S05-O1-007,YES,not_probeable,reject,"exophoric: Apache's own default configuration, not a textual antecedent",2026-09-23
+S05-O1-at-003482,S05,O1,the Dockerfile above,3482,3502,3484,3504,1,S05-O1-003,YES,not_probeable,accept,anaphor: 'the Dockerfile above' refers to the NGINX Dockerfile immediately preceding,2026-09-23
+S05-O1-at-003597,S05,O1,your project,3597,3609,3599,3611,3,S05-O1-022,YES,generic,reject,generic: reader-possessive ('your project'),2026-09-23
+S05-O1-at-004709,S05,O1,the build time even by minutes,4709,4739,4711,4741,1,S05-O1-005,YES,not_probeable,reject,not_referential: quantity expression ('the build time even by minutes'),2026-09-23
+S05-O1-at-004754,S05,O1,the size of your dependencies,4754,4783,4756,4785,1,S05-O1-011,YES,not_probeable,reject,generic: 'the size of your dependencies',2026-09-23
+S05-O1-at-004869,S05,O1,the package,4869,4880,4871,4882,1,S05-O1-009,NO,not_probeable,reject,code: occurrence inside a code-block comment,2026-09-23
+S05-O1-at-004976,S05,O1,the source code,4976,4991,4978,4993,1,S05-O1-012,NO,not_probeable,reject,code: occurrence inside a code-block comment,2026-09-23
+S05-O1-at-005048,S05,O1,the source code changes,5048,5071,5050,5073,1,S05-O1-013,NO,not_probeable,reject,code: occurrence inside a code-block comment,2026-09-23
+S05-O2-at-005512,S05,O2,the following command in your project,5512,5549,5550,5587,1,S05-O2-004,NO,duplicate_boundary,accept,cataphoric deixis: 'the following command' points to the docker build command,2026-09-23
+S05-O1-at-005764,S05,O1,your choice,5764,5775,5802,5813,1,S05-O1-016,NO,generic,reject,idiom: 'of your choice',2026-09-23
+S05-O1-at-005788,S05,O1,your image as a local container,5788,5819,5831,5862,1,S05-O1-017,YES,not_probeable,accept,anaphor: 'your image' refers to the image produced by the preceding build step,2026-09-23
+S05-O2-at-005825,S05,O2,the following command,5825,5846,5868,5889,1,S05-O2-003,YES,not_probeable,accept,cataphoric deixis: 'the following command' points to the docker run command,2026-09-23
+S05-O1-at-005898,S05,O1,your machine,5898,5910,5941,5953,1,S05-O1-019,YES,generic,reject,generic: reader-possessive ('your machine'),2026-09-23
+S05-O1-at-006014,S05,O1,the above examples,6014,6032,6057,6075,1,S05-O1-004,YES,idiom,accept,anaphor: 'the above examples' refers to the example Dockerfiles and their exposed ports,2026-09-23
+S05-O1-at-006162,S05,O1,your site at,6162,6174,6205,6217,1,S05-O1-024,YES,not_probeable,reject,generic: reader-possessive ('your site'),2026-09-23
+S05-O1-at-006455,S05,O1,your app,6455,6463,6504,6512,1,S05-O1-015,YES,generic,reject,not_referential: title of an external page used as link text,2026-09-23
+S05-O1-at-006522,S05,O1,the Docker docs,6522,6537,6571,6586,1,S05-O1-002,YES,,reject,exophoric: Docker's own documentation site,2026-09-23
+S06-O1-at-000490,S06,O1,your own server,490,505,490,505,1,S06-O1-019,YES,,reject,generic: reader-possessive ('your own server'),2026-09-23
+S06-O1-at-000627,S06,O1,the edge,627,635,627,635,1,S06-O1-007,NO,generic,reject,not_referential: technical idiom ('the edge'),2026-09-23
+S06-O2-at-000649,S06,O2,This guide,649,659,649,659,1,S06-O2-001,YES,,reject,self_reference: 'This guide' denotes the containing document,2026-09-23
+S06-O1-at-000795,S06,O1,the Deno Deploy CLI,795,814,795,814,1,S06-O1-001,YES,,reject,"not_referential: product name, not an anaphor",2026-09-23
+S06-O2-at-000834,S06,O2,This guide,834,844,861,871,2,S06-O2-001,YES,,reject,self_reference: 'This guide' denotes the containing document,2026-09-23
+S06-O1-at-001257,S06,O1,your Astro project using Deno,1257,1286,1284,1313,1,S06-O1-011,YES,,reject,generic: reader-possessive ('your Astro project'),2026-09-23
+S06-O1-at-001391,S06,O1,your project,1391,1403,1454,1466,1,S06-O1-021,YES,generic,reject,generic: reader-possessive ('your project'),2026-09-23
+S06-O1-at-001425,S06,O1,your preferred package manager,1425,1455,1488,1518,1,S06-O1-020,YES,not_probeable,reject,generic: reader-possessive ('your preferred package manager'),2026-09-23
+S06-O1-at-001889,S06,O1,the changes below,1889,1906,1966,1983,1,S06-O1-005,YES,not_probeable,accept,cataphor: 'the changes below' refers to the configuration code block that follows,2026-09-23
+S06-O1-at-002202,S06,O1,the change below,2202,2218,2285,2301,1,S06-O1-004,YES,not_probeable,accept,cataphor: 'the change below' refers to the package.json diff that follows,2026-09-23
+S06-O1-at-003151,S06,O1,your own server,3151,3166,3231,3246,2,S06-O1-019,YES,,reject,heading: occurrence is in a section heading,2026-09-23
+S06-O1-at-003184,S06,O1,your project onto your server,3184,3213,3300,3329,1,S06-O1-023,YES,,reject,generic: reader-possessive ('your project onto your server'),2026-09-23
+S06-O1-at-003984,S06,O1,your application with the following command,3984,4027,4133,4176,1,S06-O1-016,NO,duplicate_boundary,reject,generic: reader-possessive ('your application'); the nested deictic occurrence is reviewed separately,2026-09-23
+S06-O2-at-004006,S06,O2,the following command,4006,4027,4155,4176,1,S06-O2-002,YES,not_probeable,accept,cataphoric deixis: 'the following command' points to the static/SSR start commands,2026-09-23
+S06-O1-at-004357,S06,O1,your project is stored on GitHub,4357,4389,4525,4557,1,S06-O1-022,YES,not_probeable,reject,generic: reader-possessive ('your project'),2026-09-23
+S06-O1-at-004500,S06,O1,your Astro site,4500,4515,4668,4683,1,S06-O1-012,YES,,reject,generic: reader-possessive ('your Astro site'),2026-09-23
+S06-O1-at-004644,S06,O1,your GitHub account,4644,4663,4853,4872,1,S06-O1-014,YES,,reject,generic: reader-possessive ('your GitHub account'),2026-09-23
+S06-O1-at-004727,S06,O1,your repository,4727,4742,4940,4955,1,S06-O1-024,YES,generic,accept,anaphor: 'your repository' refers to the GitHub repository the code was pushed to in step one,2026-09-23
+S06-O1-at-004897,S06,O1,your Astro project,4897,4915,5112,5130,1,S06-O1-010,YES,,reject,generic: reader-possessive ('your Astro project'),2026-09-23
+S06-O1-at-004982,S06,O1,the YAML below,4982,4996,5197,5211,1,S06-O1-002,YES,,accept,cataphor: 'the YAML below' refers to the workflow examples that follow,2026-09-23
+S06-O1-at-005017,S06,O1,the YAML given by Deno Deploy,5017,5046,5232,5261,1,S06-O1-003,YES,not_probeable,reject,exophoric: refers to an external artifact (Deno Deploy's generated YAML) not present in the text,2026-09-23
+S06-O1-at-005504,S06,O1,"the repository
+
+            steps",5504,5537,5795,5828,1,S06-O1-009,NO,not_probeable,reject,code: occurrence inside a YAML code block,2026-09-23
+S06-O1-at-006633,S06,O1,"the repository
+
+            steps",6633,6666,6902,6935,2,S06-O1-009,NO,not_probeable,reject,code: occurrence inside a YAML code block,2026-09-23
+S06-O1-at-007427,S06,O1,your configured deploy branch,7427,7456,7671,7700,1,S06-O1-017,YES,not_probeable,accept,anaphor: 'your configured deploy branch' refers to the branch chosen in the repository-selection step,2026-09-23
+S06-O1-at-007458,S06,O1,the deploy should begin automatically,7458,7495,7702,7739,1,S06-O1-006,YES,,reject,not_referential: event nominal ('the deploy') without a distinct antecedent,2026-09-23
+S06-O1-at-007515,S06,O1,the progress using the,7515,7537,7759,7781,1,S06-O1-008,YES,,reject,not_referential: bridging nominal ('the progress'),2026-09-23
+S06-O1-at-007555,S06,O1,your GitHub repository page,7555,7582,7799,7826,1,S06-O1-015,YES,,reject,generic: reader-possessive ('your GitHub repository page'),2026-09-23
+S06-O1-at-008555,S06,O1,your deploys on,8555,8570,8868,8883,1,S06-O1-018,YES,not_probeable,reject,generic: reader-possessive ('your deploys'),2026-09-23
+S06-O1-at-008737,S06,O1,your preferred package manager,8737,8767,9056,9086,2,S06-O1-020,YES,not_probeable,reject,generic: reader-possessive ('your preferred package manager'),2026-09-23
+S06-O1-at-009722,S06,O1,your Astro site in one step,9722,9749,10071,10098,1,S06-O1-013,YES,not_probeable,reject,generic: reader-possessive ('your Astro site'),2026-09-23
+S07-O1-at-000368,S07,O1,the UI frameworks of your choice,368,400,368,400,1,S07-O1-003,YES,,reject,idiom: 'of your choice',2026-09-23
+S07-O1-at-001069,S07,O1,your project,1069,1081,1069,1081,1,S07-O1-023,YES,generic,reject,generic: reader-possessive ('your project'),2026-09-23
+S07-O1-at-001241,S07,O1,the framework of your choice,1241,1269,1252,1280,1,S07-O1-011,YES,,reject,idiom: 'of your choice',2026-09-23
+S07-O1-at-001344,S07,O1,the framework templates,1344,1367,1355,1378,1,S07-O1-012,YES,,reject,exophoric: templates on an external site,2026-09-23
+S07-O1-at-001522,S07,O1,your components can live together in,1522,1558,1530,1566,1,S07-O1-021,YES,,reject,generic: reader-possessive ('your components'),2026-09-23
+S07-O1-at-001686,S07,O1,your Astro component script,1686,1713,1694,1721,1,S07-O1-019,YES,,reject,generic: reader-possessive ('your Astro component script'),2026-09-23
+S07-O1-at-001725,S07,O1,the component alongside other components,1725,1765,1733,1773,1,S07-O1-009,NO,duplicate_boundary,accept,"anaphor: 'the component' refers back to the imported framework component, competing with the importing Astro component",2026-09-23
+S07-O1-at-001809,S07,O1,the component template,1809,1831,1817,1839,1,S07-O1-010,YES,not_probeable,accept,bridging anaphor: 'the component template' is the template of the Astro component whose script does the import,2026-09-23
+S07-O1-at-002288,S07,O1,the client,2288,2298,2296,2306,1,S07-O1-006,YES,generic,reject,not_referential: technical role noun ('the client'),2026-09-23
+S07-O1-at-002533,S07,O1,your component,2533,2547,2541,2555,1,S07-O1-020,YES,generic,reject,generic: reader-possessive ('your component') used generically,2026-09-23
+S07-O1-at-002579,S07,O1,the browser,2579,2590,2587,2598,1,S07-O1-005,YES,generic,reject,not_referential: technical role noun ('the browser'),2026-09-23
+S07-O1-at-002977,S07,O1,the browser,2977,2988,2985,2996,2,S07-O1-005,YES,generic,reject,code: occurrence inside a code comment,2026-09-23
+S07-O1-at-003255,S07,O1,the page loads,3255,3269,3263,3277,1,S07-O1-013,NO,not_probeable,reject,code: occurrence inside a code comment,2026-09-23
+S07-O1-at-003513,S07,O1,the server,3513,3523,3521,3531,1,S07-O1-018,NO,not_probeable,reject,code: occurrence inside a code comment,2026-09-23
+S07-O1-at-003544,S07,O1,the client when the page loads,3544,3574,3552,3582,1,S07-O1-007,NO,not_probeable,reject,code: occurrence inside a code comment,2026-09-23
+S07-O1-at-003626,S07,O1,The JavaScript framework,3626,3650,3634,3658,1,S07-O1-001,YES,not_probeable,reject,"generic: kind reference with apposition ('The JavaScript framework (React, Svelte, etc.)')",2026-09-23
+S07-O1-at-003815,S07,O1,the same framework,3815,3833,3823,3841,1,S07-O1-016,YES,idiom,reject,not_referential: sortal 'the same framework' within one sentence,2026-09-23
+S07-O1-at-004132,S07,O1,the appropriate time,4132,4152,4132,4152,1,S07-O1-004,YES,,reject,not_referential: 'the appropriate time',2026-09-23
+S07-O1-at-004647,S07,O1,the same Astro component,4647,4671,4644,4668,1,S07-O1-014,YES,idiom,reject,not_referential: sortal 'the same Astro component',2026-09-23
+S07-O1-at-004781,S07,O1,the same page,4781,4794,4778,4791,1,S07-O1-017,NO,not_probeable,reject,code: occurrence inside a code comment,2026-09-23
+S07-O1-at-005207,S07,O1,the same file extension,5207,5230,5204,5227,1,S07-O1-015,YES,idiom,reject,not_referential: sortal 'the same file extension',2026-09-23
+S07-O1-at-006645,S07,O1,the component,6645,6658,6646,6659,1,S07-O1-008,YES,generic,reject,generic: generic component reference,2026-09-23
+S07-O1-at-010424,S07,O1,the Astro,10424,10433,10424,10433,1,S07-O1-002,YES,generic,reject,not_referential: named pattern in link text,2026-09-23
+S07-O1-at-010558,S07,O1,your framework components,10558,10583,10558,10583,1,S07-O1-022,YES,not_probeable,reject,generic: reader-possessive ('your framework components'),2026-09-23
+S08-O1-at-000658,S08,O1,your Astro website,658,676,658,676,1,S08-O1-005,YES,,reject,"generic: reader-possessive ('your Astro website'); referent is the reader's own project, no textual antecedent to resolve",2026-09-23
+S08-O1-at-000697,S08,O1,the dev tools you need,697,719,697,719,1,S08-O1-003,YES,,reject,"heading: occurrence is a section heading naming its own content, not running-text reference",2026-09-23
+S08-O1-at-000859,S08,O1,your site,859,868,859,868,1,S08-O1-012,YES,generic,reject,generic: reader-possessive ('your site'),2026-09-23
+S08-O1-at-001116,S08,O1,your machine,1116,1128,1116,1128,1,S08-O1-009,YES,generic,reject,generic: reader-possessive ('your machine'),2026-09-23
+S08-O1-at-001165,S08,O1,your system,1165,1176,1165,1176,1,S08-O1-013,YES,generic,reject,generic: reader-possessive ('your system'),2026-09-23
+S08-O1-at-001329,S08,O1,The current minimum supported version is,1329,1369,1329,1369,1,S08-O1-001,YES,,reject,not_referential: predicative definite description whose value is stated in the same clause,2026-09-23
+S08-O2-at-001512,S08,O2,the following command in your terminal,1512,1550,1512,1550,1,S08-O2-002,YES,not_probeable,accept,cataphoric deixis: 'the following command' points to the code block that follows,2026-09-23
+S08-O1-at-001784,S08,O1,the required,1784,1796,1784,1796,1,S08-O1-004,YES,generic,accept,elliptical anaphor: 'the required' resolves to the minimum supported Node.js version stated earlier,2026-09-23
+S08-O1-at-002019,S08,O1,your code,2019,2028,2019,2028,1,S08-O1-007,NO,generic,reject,generic: reader-possessive ('your code'),2026-09-23
+S08-O2-at-002053,S08,O2,This tutorial,2053,2066,2046,2059,1,S08-O2-001,YES,,reject,self_reference: 'This tutorial' denotes the containing document; no alternative referent to probe,2026-09-23
+S08-O1-at-002120,S08,O1,your operating system,2120,2141,2113,2134,1,S08-O1-010,YES,,reject,generic: reader-possessive ('your operating system'),2026-09-23
+S08-O1-at-002262,S08,O1,your choice,2262,2273,2288,2299,1,S08-O1-006,NO,generic,reject,"idiom: 'of your choice' is idiomatic, not referential",2026-09-23
+S08-O2-at-002349,S08,O2,the following is,2349,2365,2367,2383,1,S08-O2-003,YES,,reject,not_probeable: quiz prompt pointing at interactive option sets; a probe could only restate the options,2026-09-23
+S08-O1-at-002409,S08,O1,your files and their content,2409,2437,2427,2455,1,S08-O1-008,YES,,reject,generic: reader-possessive ('your files and their content'),2026-09-23
+S08-O1-at-002682,S08,O1,your repository,2682,2697,2700,2715,1,S08-O1-011,YES,generic,reject,generic: reader-possessive ('your repository'),2026-09-23
+S08-O1-at-003225,S08,O1,the command line in a terminal,3225,3255,3243,3273,1,S08-O1-002,YES,,reject,"generic: checklist item naming a kind of tool, not resolving a specific antecedent",2026-09-23
+S08-O1-at-001537,S08,O1,your terminal,1537,1550,1537,1550,1,S08-O1-014,YES,generic,reject,generic: reader-possessive ('your terminal') nested in an accepted deictic phrase,2026-09-23
+S09-O1-at-000702,S09,O1,your project,702,714,702,714,1,S09-O1-036,YES,generic,reject,generic: reader-possessive ('your project'),2026-09-23
+S09-O1-at-001356,S09,O1,your existing JSX components,1356,1384,1356,1384,1,S09-O1-027,YES,,reject,generic: reader-possessive ('your existing JSX components'),2026-09-23
+S09-O1-at-001693,S09,O1,your Next,1693,1702,1693,1702,1,S09-O1-019,YES,generic,reject,generic: reader-possessive ('your Next.js site'),2026-09-23
+S09-O1-at-001827,S09,O1,your project,1827,1839,1827,1839,2,S09-O1-036,YES,generic,reject,generic: reader-possessive ('your project'),2026-09-23
+S09-O1-at-001897,S09,O1,your home page,1897,1911,1897,1911,1,S09-O1-029,YES,,reject,generic: reader-possessive ('your home page'),2026-09-23
+S09-O1-at-002057,S09,O1,your code into a,2057,2073,2057,2073,1,S09-O1-025,YES,,reject,generic: reader-possessive ('your code'),2026-09-23
+S09-O1-at-002553,S09,O1,your Next,2553,2562,2553,2562,2,S09-O1-019,YES,generic,reject,heading: occurrence is in a section heading,2026-09-23
+S09-O1-at-002777,S09,O1,your package manager to launch Astro,2777,2813,2777,2813,1,S09-O1-033,YES,,reject,generic: reader-possessive ('your package manager'),2026-09-23
+S09-O1-at-004399,S09,O1,your Next project to Astro,4399,4425,4420,4446,1,S09-O1-022,YES,,reject,generic: reader-possessive ('your Next project'),2026-09-23
+S09-O1-at-004496,S09,O1,your new Astro site,4496,4515,4517,4536,1,S09-O1-031,YES,,reject,generic: reader-possessive ('your new Astro site'),2026-09-23
+S09-O1-at-004610,S09,O1,your Next project,4610,4627,4631,4648,1,S09-O1-021,YES,,reject,generic: reader-possessive ('your Next project'),2026-09-23
+S09-O1-at-004646,S09,O1,your new Astro site,4646,4665,4667,4686,2,S09-O1-031,YES,,reject,generic: reader-possessive ('your new Astro site'),2026-09-23
+S09-O1-at-004676,S09,O1,your source code in,4676,4695,4697,4716,1,S09-O1-039,YES,,reject,heading: occurrence is in a section heading,2026-09-23
+S09-O1-at-005092,S09,O1,your site,5092,5101,5155,5164,1,S09-O1-038,YES,generic,reject,generic: reader-possessive ('your site'),2026-09-23
+S09-O1-at-005319,S09,O1,the contents of your,5319,5339,5382,5402,1,S09-O1-009,YES,,reject,generic: reader-possessive ('the contents of your src folder'),2026-09-23
+S09-O1-at-005972,S09,O1,the basis for your HTML template,5972,6004,6027,6059,1,S09-O1-006,YES,,reject,not_referential: 'the basis for your HTML template',2026-09-23
+S09-O1-at-006463,S09,O1,the HTML template directly in Astro,6463,6498,6518,6553,1,S09-O1-003,YES,,reject,generic: 'the HTML template' as a kind,2026-09-23
+S09-O1-at-006622,S09,O1,your Next function,6622,6640,6677,6695,1,S09-O1-020,YES,,reject,generic: reader-possessive ('your Next function'),2026-09-23
+S09-O1-at-006804,S09,O1,your Astro file,6804,6819,6859,6874,1,S09-O1-018,YES,,reject,generic: reader-possessive in link text,2026-09-23
+S09-O1-at-007089,S09,O1,your local files,7089,7105,7144,7160,1,S09-O1-030,YES,,reject,generic: reader-possessive ('your local files'),2026-09-23
+S09-O1-at-009010,S09,O1,your Next,9010,9019,9109,9118,3,S09-O1-019,YES,generic,reject,generic: reader-possessive ('your Next.js layouts'),2026-09-23
+S09-O1-at-009614,S09,O1,the standard HTML templating,9614,9642,9713,9741,1,S09-O1-017,YES,not_probeable,reject,not_referential: 'the standard HTML templating',2026-09-23
+S09-O1-at-010146,S09,O1,Your Next project may have a,10146,10174,10245,10273,1,S09-O1-001,YES,not_probeable,reject,generic: reader-possessive ('your Next project'),2026-09-23
+S09-O1-at-010245,S09,O1,your app,10245,10253,10344,10352,1,S09-O1-024,YES,generic,reject,generic: reader-possessive ('your app'),2026-09-23
+S09-O1-at-012085,S09,O1,your posts either live in,12085,12110,12252,12277,1,S09-O1-035,YES,not_probeable,reject,generic: reader-possessive ('your posts'),2026-09-23
+S09-O1-at-012165,S09,O1,your page content must live within,12165,12199,12332,12366,1,S09-O1-034,YES,,reject,generic: reader-possessive ('your page content'),2026-09-23
+S09-O1-at-012303,S09,O1,Your existing Next JSX,12303,12325,12470,12492,1,S09-O1-002,YES,,reject,generic: reader-possessive ('your existing Next JSX pages'),2026-09-23
+S09-O1-at-013305,S09,O1,your content,13305,13317,13472,13484,1,S09-O1-026,NO,generic,reject,generic: reader-possessive ('your content'),2026-09-23
+S09-O1-at-013337,S09,O1,the content yourself and,13337,13361,13504,13528,1,S09-O1-008,YES,,reject,not_referential: 'the content yourself',2026-09-23
+S09-O1-at-013558,S09,O1,the output of the build step,13558,13586,13725,13753,1,S09-O1-013,YES,,reject,not_referential: 'the output of the build step',2026-09-23
+S09-O1-at-013685,S09,O1,the markup of your Next site,13685,13713,13852,13880,1,S09-O1-011,YES,,reject,generic: reader-possessive ('the markup of your Next site'),2026-09-23
+S09-O1-at-013814,S09,O1,your React components,13814,13835,13981,14002,1,S09-O1-023,YES,,reject,generic: reader-possessive ('your React components'),2026-09-23
+S09-O1-at-014231,S09,O1,your own,14231,14239,14398,14406,1,S09-O1-032,NO,generic,reject,generic: reader-possessive ('your own Link component'),2026-09-23
+S09-O1-at-015789,S09,O1,your project source,15789,15808,15956,15975,1,S09-O1-037,YES,,reject,generic: reader-possessive ('your project source'),2026-09-23
+S09-O1-at-017434,S09,O1,your existing Tailwind code are required,17434,17474,17601,17641,1,S09-O1-028,YES,not_probeable,reject,generic: reader-possessive ('your existing Tailwind code'),2026-09-23
+S09-O1-at-017812,S09,O1,your React components,17812,17833,17979,18000,2,S09-O1-023,YES,,reject,generic: reader-possessive ('your React components'),2026-09-23
+S09-O1-at-018542,S09,O1,the Images Guide,18542,18558,18709,18725,1,S09-O1-004,YES,,reject,not_referential: named guide,2026-09-23
+S09-O1-at-018731,S09,O1,the first,18731,18740,18898,18907,1,S09-O1-010,YES,generic,reject,not_referential: quantity ('the first 151'),2026-09-23
+S09-O1-at-018760,S09,O1,the REST Pok,18760,18772,18927,18939,1,S09-O1-005,YES,idiom,reject,not_referential: named external API,2026-09-23
+S09-O1-at-018923,S09,O1,the return,18923,18933,19126,19136,1,S09-O1-015,YES,generic,reject,not_referential: descriptive definite naming its own referent,2026-09-23
+S09-O1-at-020780,S09,O1,the case of any,20780,20795,20988,21003,1,S09-O1-007,YES,idiom,reject,not_referential: 'the case of any',2026-09-23
+S09-O1-at-022076,S09,O1,the page templating,22076,22095,22290,22309,1,S09-O1-014,YES,not_probeable,reject,not_referential: 'the page templating',2026-09-23
+S09-O1-at-006726,S09,O1,the official integration installed,6726,6760,6781,6815,1,S09-O1-012,YES,,accept,"anaphor: 'the official integration' refers to the React integration named earlier, competing with the MDX integration",2026-09-23
+S09-O1-at-010713,S09,O1,the returned JSX,10713,10729,10848,10864,1,S09-O1-016,YES,,accept,"anaphor: 'the returned JSX' refers to the custom document component shown just before, competing with the app-directory files",2026-09-23
+S09-O1-at-011641,S09,O1,the returned JSX,11641,11657,11810,11826,2,S09-O1-016,YES,,accept,anaphor: 'the returned JSX' refers to the app-directory layout and head files shown just before,2026-09-23
+S09-O2-at-024636,S09,O2,this list,24636,24645,24834,24843,1,S09-O2-001,YES,,accept,discourse deixis: 'this list' refers to the community resources list above,2026-09-23
+S10-O1-at-000604,S10,O1,your UI framework components,604,632,604,632,1,S10-O1-027,YES,,reject,generic: reader-possessive ('your UI framework components'),2026-09-23
+S10-O1-at-001101,S10,O1,your Astro project,1101,1119,1101,1119,1,S10-O1-025,YES,not_probeable,reject,generic: reader-possessive ('your Astro project'),2026-09-23
+S10-O1-at-002137,S10,O1,your component,2137,2151,2137,2151,1,S10-O1-028,YES,generic,reject,generic: reader-possessive ('your component'),2026-09-23
+S10-O1-at-002944,S10,O1,your tests using the,2944,2964,2944,2964,1,S10-O1-035,YES,,reject,generic: reader-possessive ('your tests'),2026-09-23
+S10-O1-at-003156,S10,O1,the CLI steps to choose JavaScript,3156,3190,3156,3190,1,S10-O1-003,YES,,reject,exophoric: prompts of an external CLI,2026-09-23
+S10-O1-at-003208,S10,O1,your test folder,3208,3224,3208,3224,1,S10-O1-033,YES,not_probeable,reject,generic: reader-possessive ('your test folder'),2026-09-23
+S10-O1-at-003574,S10,O1,your first Playwright test,3574,3600,3595,3621,1,S10-O1-031,YES,not_probeable,reject,heading: occurrence is in a section heading,2026-09-23
+S10-O2-at-003636,S10,O2,This example,3636,3648,3693,3705,1,S10-O2-001,YES,not_probeable,reject,self_reference: 'This example' denotes the procedure being described,2026-09-23
+S10-O2-at-004052,S10,O2,the following test file in,4052,4078,4115,4141,1,S10-O2-008,NO,duplicate_boundary,reject,fragment: same referent as the adjacent accepted deictic occurrence in the same step,2026-09-23
+S10-O1-at-004199,S10,O1,the value of the page,4199,4220,4262,4283,1,S10-O1-024,YES,not_probeable,reject,not_referential: 'the value of the page title',2026-09-23
+S10-O1-at-004240,S10,O1,the page you are testing,4240,4264,4303,4327,1,S10-O1-013,YES,not_probeable,reject,generic: 'the page you are testing',2026-09-23
+S10-O1-at-005393,S10,O1,the full HTML Test Report,5393,5418,5470,5495,1,S10-O1-009,YES,not_probeable,reject,not_referential: explicitly named report,2026-09-23
+S10-O1-at-005905,S10,O1,the Playwright configuration file,5905,5938,5982,6015,1,S10-O1-005,YES,,reject,not_referential: explicitly named file,2026-09-23
+S10-O1-at-006080,S10,O1,the project root,6080,6096,6193,6209,1,S10-O1-014,YES,,reject,generic: 'the project root',2026-09-23
+S10-O1-at-006208,S10,O1,the command value to,6208,6228,6326,6346,1,S10-O1-007,YES,not_probeable,reject,not_referential: 'the command value',2026-09-23
+S10-O1-at-006727,S10,O1,the Playwright tests,6727,6747,6851,6871,1,S10-O1-006,YES,not_probeable,reject,not_referential: explicitly named tests,2026-09-23
+S10-O1-at-007056,S10,O1,the modern web,7056,7070,7172,7186,1,S10-O1-011,YES,,reject,idiom: 'the modern web',2026-09-23
+S10-O1-at-007122,S10,O1,your Astro site,7122,7137,7238,7253,1,S10-O1-026,YES,,reject,generic: reader-possessive ('your Astro site'),2026-09-23
+S10-O1-at-007189,S10,O1,the package manager of your choice,7189,7223,7305,7339,1,S10-O1-012,YES,,reject,idiom: 'the package manager of your choice',2026-09-23
+S10-O1-at-007283,S10,O1,your project,7283,7295,7399,7411,1,S10-O1-032,YES,generic,reject,generic: reader-possessive ('your project'),2026-09-23
+S10-O1-at-007620,S10,O1,the root of your project,7620,7644,7757,7781,1,S10-O1-016,YES,not_probeable,reject,generic: reader-possessive ('the root of your project'),2026-09-23
+S10-O1-at-007867,S10,O1,your first Cypress test,7867,7890,8004,8027,1,S10-O1-029,YES,not_probeable,reject,heading: occurrence is in a section heading,2026-09-23
+S10-O2-at-007926,S10,O2,This example,7926,7938,8099,8111,2,S10-O2-001,YES,not_probeable,reject,self_reference: 'This example' denotes the procedure being described,2026-09-23
+S10-O1-at-009520,S10,O1,the test using the Cypress App,9520,9550,9671,9701,1,S10-O1-021,YES,not_probeable,reject,not_probeable: sole referent (the same test) with no competing referent,2026-09-23
+S10-O1-at-009620,S10,O1,the Cypress App is launched,9620,9647,9771,9798,1,S10-O1-004,YES,not_probeable,reject,not_referential: explicitly named app,2026-09-23
+S10-O1-at-009728,S10,O1,the test run is finished,9728,9752,9879,9903,1,S10-O1-020,YES,not_probeable,reject,not_referential: 'the test run',2026-09-23
+S10-O1-at-010044,S10,O1,the test,10044,10052,10187,10195,1,S10-O1-018,YES,generic,reject,not_referential: aside title label,2026-09-23
+S10-O1-at-010068,S10,O1,your test really does work,10068,10094,10211,10237,1,S10-O1-034,YES,not_probeable,reject,generic: reader-possessive ('your test'),2026-09-23
+S10-O1-at-010313,S10,O1,the test again,10313,10327,10456,10470,1,S10-O1-019,YES,not_probeable,reject,not_probeable: 'the test again' with a single possible referent,2026-09-23
+S10-O1-at-010598,S10,O1,Your App,10598,10606,10738,10746,1,S10-O1-001,NO,generic,reject,not_referential: external page title in link text,2026-09-23
+S10-O1-at-011058,S10,O1,the CLI steps to choose JavaScript,11058,11092,11198,11232,2,S10-O1-003,YES,,reject,exophoric: prompts of an external CLI,2026-09-23
+S10-O1-at-011110,S10,O1,your test folder,11110,11126,11250,11266,2,S10-O1-033,YES,not_probeable,reject,generic: reader-possessive ('your test folder'),2026-09-23
+S10-O1-at-011518,S10,O1,your first Nightwatch test,11518,11544,11679,11705,1,S10-O1-030,YES,not_probeable,reject,heading: occurrence is in a section heading,2026-09-23
+S10-O2-at-011580,S10,O2,This example,11580,11592,11777,11789,3,S10-O2-001,YES,not_probeable,reject,self_reference: 'This example' denotes the procedure being described,2026-09-23
+S10-O1-at-012221,S10,O1,the title is correct,12221,12241,12424,12444,1,S10-O1-023,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S10-O1-at-013032,S10,O1,the tests with the,13032,13050,13207,13225,1,S10-O1-022,YES,,reject,not_referential: 'the tests with the',2026-09-23
+S10-O1-at-013254,S10,O1,the terminal,13254,13266,13465,13477,1,S10-O1-017,YES,generic,reject,generic: 'the terminal' nested in an accepted deictic phrase,2026-09-23
+S10-O1-at-013516,S10,O1,the relevant browser installed,13516,13546,13727,13757,1,S10-O1-015,YES,,reject,not_referential: 'the relevant browser',2026-09-23
+S10-O1-at-013758,S10,O1,the full HTML Test Report,13758,13783,13976,14001,2,S10-O1-009,YES,not_probeable,reject,not_referential: explicitly named report,2026-09-23
+S10-O2-at-002069,S10,O2,as explained above,2069,2087,2069,2087,1,S10-O2-002,YES,not_probeable,accept,discourse deixis: 'as explained above' points back to the Vitest setup section,2026-09-23
+S10-O1-at-003659,S10,O1,the example page,3659,3675,3716,3732,1,S10-O1-008,YES,not_probeable,accept,"cataphor: 'the example page ... below' refers to the Playwright section's example page, competing with the Cypress page",2026-09-23
+S10-O2-at-004106,S10,O2,the following test into the file to verify that the page meta information is correct,4106,4190,4169,4253,1,S10-O2-010,YES,not_probeable,accept,cataphoric deixis: 'the following test' points to the Playwright test code,2026-09-23
+S10-O2-at-005434,S10,O2,the following command,5434,5455,5511,5532,1,S10-O2-003,YES,not_probeable,accept,cataphoric deixis: 'the following command' points to the Playwright report command,2026-09-23
+S10-O1-at-006809,S10,O1,the links below,6809,6824,6925,6940,1,S10-O1-010,YES,,accept,"cataphor: 'the links below' refers to the Playwright resource links, competing with other tools' link lists",2026-09-23
+S10-O2-at-007685,S10,O2,the following content,7685,7706,7822,7843,1,S10-O2-005,YES,not_probeable,accept,cataphoric deixis: 'the following content' points to the Cypress configuration code,2026-09-23
+S10-O1-at-007949,S10,O1,the example page,7949,7965,8122,8138,2,S10-O1-008,YES,not_probeable,accept,"cataphor: 'the example page ... below' refers to the Cypress section's example page, which differs from the other sections' pages",2026-09-23
+S10-O2-at-008421,S10,O2,the following test in the file to verify that the page title and header are correct,8421,8504,8600,8683,1,S10-O2-009,YES,not_probeable,accept,cataphoric deixis: 'the following test' points to the Cypress test code,2026-09-23
+S10-O2-at-009444,S10,O2,the following command,9444,9465,9595,9616,2,S10-O2-003,YES,not_probeable,accept,cataphoric deixis: 'the following command' points to the Cypress run command,2026-09-23
+S10-O2-at-009560,S10,O2,the following command,9560,9581,9711,9732,3,S10-O2-003,YES,not_probeable,accept,cataphoric deixis: 'the following command' points to the Cypress open command,2026-09-23
+S10-O2-at-010111,S10,O2,the following line in the,10111,10136,10254,10279,1,S10-O2-006,YES,not_probeable,accept,cataphoric deixis: 'the following line' points to the diffed heading line,2026-09-23
+S10-O1-at-010471,S10,O1,the links below,10471,10486,10611,10626,2,S10-O1-010,YES,,accept,cataphor: 'the links below' refers to the Cypress resource links,2026-09-23
+S10-O1-at-011603,S10,O1,the example page,11603,11619,11800,11816,3,S10-O1-008,YES,not_probeable,accept,cataphor: 'the example page ... below' refers to the Nightwatch section's example page,2026-09-23
+S10-O2-at-012008,S10,O2,the following test file,12008,12031,12211,12234,1,S10-O2-007,YES,not_probeable,accept,cataphoric deixis: 'the following test file' points to the Nightwatch test code,2026-09-23
+S10-O1-at-013172,S10,O1,the CLI steps below,13172,13191,13347,13366,1,S10-O1-002,YES,,accept,cataphor: 'the CLI steps below' refers to the Nightwatch run steps,2026-09-23
+S10-O2-at-013229,S10,O2,the following command in the terminal,13229,13266,13440,13477,1,S10-O2-004,YES,not_probeable,accept,cataphoric deixis: 'the following command' points to the Nightwatch run command,2026-09-23
+S10-O2-at-013799,S10,O2,the following command,13799,13820,14017,14038,4,S10-O2-003,YES,not_probeable,accept,cataphoric deixis: 'the following command' points to the Nightwatch report command,2026-09-23
+S10-O1-at-014050,S10,O1,the links below,14050,14065,14268,14283,3,S10-O1-010,YES,,accept,cataphor: 'the links below' refers to the Nightwatch resource links,2026-09-23
+S11-O2-at-000559,S11,O2,This recipe,559,570,559,570,1,S11-O2-001,YES,,reject,self_reference: 'This recipe' denotes the containing document,2026-09-23
+S11-O1-at-001099,S11,O1,your content from Builder,1099,1124,1125,1150,1,S11-O1-044,YES,,reject,generic: reader-possessive ('your content'),2026-09-23
+S11-O1-at-001163,S11,O1,your key,1163,1171,1189,1197,1,S11-O1-054,YES,generic,reject,generic: reader-possessive in link text ('your key'),2026-09-23
+S11-O1-at-001370,S11,O1,the root of your project,1370,1394,1396,1420,1,S11-O1-028,YES,not_probeable,reject,generic: reader-possessive ('the root of your project'),2026-09-23
+S11-O1-at-001603,S11,O1,your project,1603,1615,1629,1641,1,S11-O1-057,YES,generic,reject,generic: reader-possessive ('your project'),2026-09-23
+S11-O1-at-001629,S11,O1,the time of writing,1629,1648,1653,1672,1,S11-O1-032,NO,idiom,reject,idiom: 'at the time of writing',2026-09-23
+S11-O1-at-001842,S11,O1,your environment variables,1842,1868,1863,1889,1,S11-O1-047,YES,not_probeable,reject,generic: reader-possessive ('your environment variables'),2026-09-23
+S11-O1-at-003287,S11,O1,the other parameters as their defaults,3287,3325,3298,3336,1,S11-O1-021,YES,idiom,reject,not_referential: bridging nominal ('the other parameters'),2026-09-23
+S11-O1-at-003454,S11,O1,the other parameters as their defaults,3454,3492,3465,3503,2,S11-O1-021,YES,idiom,reject,not_referential: bridging nominal ('the other parameters'),2026-09-23
+S11-O1-at-003529,S11,O1,the upper right,3529,3544,3540,3555,1,S11-O1-033,YES,,reject,not_referential: UI location ('the upper right'),2026-09-23
+S11-O1-at-003678,S11,O1,the fetch request to Builder,3678,3706,3678,3706,1,S11-O1-012,YES,,reject,not_referential: 'the fetch request to Builder's API',2026-09-23
+S11-O1-at-003728,S11,O1,your slugs are unique,3728,3749,3728,3749,1,S11-O1-065,YES,,reject,generic: reader-possessive ('your slugs'),2026-09-23
+S11-O1-at-003757,S11,O1,your site,3757,3766,3757,3766,1,S11-O1-060,YES,generic,reject,generic: reader-possessive ('your site'),2026-09-23
+S11-O1-at-003818,S11,O1,"the preview
+
+To use Builder",3818,3845,3815,3842,1,S11-O1-025,YES,,reject,heading: occurrence begins in a section heading,2026-09-23
+S11-O1-at-003870,S11,O1,the page,3870,3878,3867,3875,1,S11-O1-022,YES,generic,reject,not_referential: page named in the same clause,2026-09-23
+S11-O1-at-003930,S11,O1,the special,3930,3941,3927,3938,1,S11-O1-030,YES,generic,reject,not_referential: element named in the same clause,2026-09-23
+S11-O1-at-004447,S11,O1,your header,4447,4458,4444,4455,1,S11-O1-049,NO,not_probeable,reject,code: occurrence inside page markup in a code block,2026-09-23
+S11-O1-at-004664,S11,O1,your footer,4664,4675,4661,4672,1,S11-O1-048,NO,not_probeable,reject,code: occurrence inside page markup in a code block,2026-09-23
+S11-O1-at-004783,S11,O1,the content from its CMS,4783,4807,4780,4804,1,S11-O1-011,YES,not_probeable,reject,not_referential: 'the content from its CMS',2026-09-23
+S11-O1-at-004873,S11,O1,the full URL of your preview,4873,4901,4906,4934,1,S11-O1-014,YES,,reject,generic: reader-possessive ('the full URL of your preview'),2026-09-23
+S11-O1-at-004913,S11,O1,the protocol,4913,4925,4946,4958,1,S11-O1-027,YES,generic,reject,not_referential: 'the protocol',2026-09-23
+S11-O1-at-004930,S11,O1,your clipboard,4930,4944,4963,4977,1,S11-O1-042,YES,generic,reject,generic: reader-possessive ('your clipboard'),2026-09-23
+S11-O1-at-004961,S11,O1,your host,4961,4970,4994,5003,1,S11-O1-050,YES,generic,reject,generic: reader-possessive ('your host') in an example URL,2026-09-23
+S11-O1-at-005024,S11,O1,your Builder space,5024,5042,5062,5080,1,S11-O1-040,YES,,reject,generic: reader-possessive ('your Builder space'),2026-09-23
+S11-O1-at-005049,S11,O1,the model you,5049,5062,5087,5100,1,S11-O1-018,YES,,reject,not_probeable: self-describing relative clause ('the model you've created'),2026-09-23
+S11-O1-at-005250,S11,O1,the upper right,5250,5265,5294,5309,2,S11-O1-033,YES,,reject,not_referential: UI location ('the upper right'),2026-09-23
+S11-O1-at-005300,S11,O1,your site,5300,5309,5347,5356,2,S11-O1-060,YES,generic,reject,generic: reader-possessive ('your site'),2026-09-23
+S11-O1-at-005444,S11,O1,the preview URL setup,5444,5465,5488,5509,1,S11-O1-026,YES,,reject,heading: occurrence is in a section heading,2026-09-23
+S11-O1-at-005488,S11,O1,your site is live,5488,5505,5568,5585,1,S11-O1-064,YES,,reject,generic: reader-possessive ('your site'),2026-09-23
+S11-O1-at-005512,S11,O1,your dev server is running,5512,5538,5592,5618,1,S11-O1-045,YES,,reject,generic: reader-possessive ('your dev server'),2026-09-23
+S11-O1-at-005592,S11,O1,your Builder space under the,5592,5620,5677,5705,1,S11-O1-041,YES,,reject,generic: reader-possessive ('your Builder space'),2026-09-23
+S11-O1-at-005843,S11,O1,the middle,5843,5853,5934,5944,1,S11-O1-017,NO,generic,reject,not_referential: UI location ('the middle'),2026-09-23
+S11-O1-at-005936,S11,O1,the preview,5936,5947,6011,6022,1,S11-O1-024,YES,generic,reject,not_referential: topic noun ('the preview'),2026-09-23
+S11-O1-at-006021,S11,O1,the site is live,6021,6037,6096,6112,1,S11-O1-029,YES,,reject,generic: 'the site is live',2026-09-23
+S11-O1-at-006053,S11,O1,your dev server is running,6053,6079,6128,6154,2,S11-O1-045,YES,,reject,generic: reader-possessive ('your dev server'),2026-09-23
+S11-O1-at-006098,S11,O1,the URLs match exactly,6098,6120,6173,6195,1,S11-O1-008,YES,,reject,not_referential: both URLs are identified in the same item,2026-09-23
+S11-O1-at-006206,S11,O1,the full URL including the protocol,6206,6241,6281,6316,1,S11-O1-013,YES,,reject,not_referential: 'the full URL including the protocol',2026-09-23
+S11-O1-at-006479,S11,O1,your project,6479,6491,6554,6566,2,S11-O1-057,YES,generic,reject,generic: reader-possessive ('your project'),2026-09-23
+S11-O1-at-006820,S11,O1,your post using the,6820,6839,6933,6952,1,S11-O1-056,YES,,reject,generic: reader-possessive ('your post'),2026-09-23
+S11-O1-at-006913,S11,O1,the text field above the editor,6913,6944,7030,7061,1,S11-O1-031,YES,,reject,not_referential: UI location ('the text field above the editor'),2026-09-23
+S11-O1-at-006951,S11,O1,your entry a name,6951,6968,7068,7085,1,S11-O1-046,YES,,reject,generic: reader-possessive ('your entry'),2026-09-23
+S11-O1-at-007003,S11,O1,the Builder app,7003,7018,7120,7135,1,S11-O1-003,YES,,reject,not_referential: named app,2026-09-23
+S11-O1-at-007074,S11,O1,the upper right corner,7074,7096,7196,7218,1,S11-O1-034,YES,,reject,not_referential: UI location ('the upper right corner'),2026-09-23
+S11-O1-at-008435,S11,O1,your Builder model,8435,8453,8555,8573,1,S11-O1-039,YES,,reject,generic: reader-possessive ('your Builder model'),2026-09-23
+S11-O1-at-008717,S11,O1,your Astro project you can use,8717,8747,8830,8860,1,S11-O1-037,YES,,reject,generic: reader-possessive ('your Astro project'),2026-09-23
+S11-O1-at-008871,S11,O1,the REST API,8871,8883,8984,8996,1,S11-O1-006,YES,idiom,reject,not_referential: named API,2026-09-23
+S11-O1-at-009039,S11,O1,the page,9039,9047,9149,9157,2,S11-O1-022,YES,generic,reject,not_referential: page named in the same clause,2026-09-23
+S11-O1-at-009560,S11,O1,the Builder API using the,9560,9585,9670,9695,1,S11-O1-002,YES,,reject,not_referential: 'the Builder API',2026-09-23
+S11-O1-at-010762,S11,O1,the url doesn,10762,10775,10872,10885,1,S11-O1-035,NO,not_probeable,reject,code: occurrence inside a code comment,2026-09-23
+S11-O1-at-011253,S11,O1,your header,11253,11264,11363,11374,2,S11-O1-049,NO,not_probeable,reject,code: occurrence inside page markup in a code block,2026-09-23
+S11-O1-at-011362,S11,O1,your footer,11362,11373,11472,11483,2,S11-O1-048,NO,not_probeable,reject,code: occurrence inside page markup in a code block,2026-09-23
+S11-O1-at-011414,S11,O1,The variables,11414,11427,11522,11535,1,S11-O1-001,YES,generic,reject,not_referential: variables named in the same clause,2026-09-23
+S11-O1-at-011640,S11,O1,your index route,11640,11656,11745,11761,1,S11-O1-053,YES,,reject,generic: reader-possessive ('your index route'),2026-09-23
+S11-O1-at-011679,S11,O1,the individual blog post page,11679,11708,11784,11813,1,S11-O1-016,YES,,reject,not_referential: 'the individual blog post page',2026-09-23
+S11-O1-at-011726,S11,O1,"your site
+
+To deploy your website",11726,11759,11831,11864,1,S11-O1-061,YES,,reject,heading: occurrence begins in a section heading,2026-09-23
+S11-O1-at-011913,S11,O1,your project is using Astro,11913,11940,12018,12045,1,S11-O1-059,YES,,reject,generic: reader-possessive ('your project'),2026-09-23
+S11-O1-at-012026,S11,O1,your content changes,12026,12046,12131,12151,1,S11-O1-043,YES,,reject,generic: reader-possessive ('your content'),2026-09-23
+S11-O1-at-012086,S11,O1,your hosting provider,12086,12107,12191,12212,1,S11-O1-051,YES,,reject,generic: reader-possessive ('your hosting provider'),2026-09-23
+S11-O1-at-012198,S11,O1,the Builder editor,12198,12216,12303,12321,1,S11-O1-004,YES,,reject,not_referential: named UI ('the Builder editor'),2026-09-23
+S11-O1-at-012251,S11,O1,your site dashboard,12251,12270,12392,12411,1,S11-O1-062,YES,,reject,generic: reader-possessive ('your site dashboard'),2026-09-23
+S11-O1-at-012618,S11,O1,your project dashboard and click on,12618,12653,12798,12833,1,S11-O1-058,YES,,reject,generic: reader-possessive ('your project dashboard'),2026-09-23
+S11-O1-at-013050,S11,O1,your Builder dashboard,13050,13072,13259,13281,1,S11-O1-038,YES,,reject,generic: reader-possessive ('your Builder dashboard'),2026-09-23
+S11-O1-at-013166,S11,O1,the bottom,13166,13176,13375,13385,1,S11-O1-010,NO,generic,reject,not_referential: UI location ('the bottom'),2026-09-23
+S11-O1-at-013410,S11,O1,the payload disabled,13410,13430,13630,13650,1,S11-O1-023,YES,,reject,not_referential: 'the payload disabled',2026-09-23
+S11-O1-at-013472,S11,O1,your hosting provider,13472,13493,13692,13713,2,S11-O1-051,YES,,reject,generic: reader-possessive ('your hosting provider'),2026-09-23
+S11-O1-at-013519,S11,O1,your site grows,13519,13534,13739,13754,1,S11-O1-063,YES,,reject,generic: reader-possessive ('your site'),2026-09-23
+S11-O1-at-013658,S11,O1,the Builder editor,13658,13676,13870,13888,2,S11-O1-004,YES,,reject,not_referential: named UI ('the Builder editor'),2026-09-23
+S11-O1-at-013678,S11,O1,your hosting provider rebuilds your site,13678,13718,13890,13930,1,S11-O1-052,YES,,reject,generic: reader-possessive ('your hosting provider'),2026-09-23
+S11-O1-at-013739,S11,O1,the newly published data for you,13739,13771,13951,13983,1,S11-O1-019,YES,,reject,not_referential: 'the newly published data',2026-09-23
+S11-O1-at-013878,S11,O1,the official Builder,13878,13898,14090,14110,1,S11-O1-020,YES,,reject,not_referential: link label,2026-09-23
+S11-O1-at-014374,S11,O1,your API calls,14374,14388,14586,14600,1,S11-O1-036,YES,,reject,generic: reader-possessive ('your API calls'),2026-09-23
+S11-O2-at-001435,S11,O2,the following variables,1435,1458,1461,1484,1,S11-O2-007,YES,not_probeable,accept,cataphoric deixis: 'the following variables' points to the .env block,2026-09-23
+S11-O2-at-002947,S11,O2,the following fields and values,2947,2978,2958,2989,1,S11-O2-005,YES,,accept,cataphoric deixis: 'the following fields and values' points to the model settings list,2026-09-23
+S11-O1-at-003079,S11,O1,your new model use the,3079,3101,3090,3112,1,S11-O1-055,YES,,accept,anaphor: 'your new model' refers to the blog post model just created,2026-09-23
+S11-O2-at-004129,S11,O2,the following content,4129,4150,4126,4147,1,S11-O2-003,YES,not_probeable,accept,cataphoric deixis: 'the following content' points to the preview page code,2026-09-23
+S11-O1-at-004712,S11,O1,the above example,4712,4729,4709,4726,1,S11-O1-009,YES,idiom,accept,"anaphor: 'the above example' refers to the preview page code, competing with later page examples",2026-09-23
+S11-O1-at-005084,S11,O1,the URL from step,5084,5101,5122,5139,1,S11-O1-007,YES,,accept,"anaphor: 'the URL from step 1' refers to the preview address copied in the first step, competing with the production address",2026-09-23
+S11-O1-at-005719,S11,O1,the Builder editor that just opened,5719,5754,5810,5845,1,S11-O1-005,YES,,accept,anaphor: 'the Builder editor that just opened' refers to the editor opened by creating a new entry,2026-09-23
+S11-O2-at-006710,S11,O2,the following values,6710,6730,6818,6838,1,S11-O2-006,YES,,accept,cataphoric deixis: 'the following values' points to the title and slug values,2026-09-23
+S11-O2-at-007282,S11,O2,the following content to,7282,7306,7402,7426,1,S11-O2-004,YES,not_probeable,accept,cataphoric deixis: 'the following content' points to the index page code,2026-09-23
+S11-O2-at-009762,S11,O2,the following code snippet,9762,9788,9872,9898,1,S11-O2-002,YES,not_probeable,accept,cataphoric deixis: 'the following code snippet' points to the dynamic post page code,2026-09-23
+S11-O1-at-012558,S11,O1,the generated URL,12558,12575,12710,12727,1,S11-O1-015,YES,,accept,anaphor: 'the generated URL' refers to the Netlify build hook created in the previous step,2026-09-23
+S11-O1-at-012838,S11,O1,the generated URL,12838,12855,13029,13046,2,S11-O1-015,YES,,accept,anaphor: 'the generated URL' refers to the Vercel deploy hook being added,2026-09-23
+S12-O2-at-000562,S12,O2,this section,562,574,562,574,1,S12-O2-007,YES,,reject,self_reference: 'this section' denotes the containing section,2026-09-23
+S12-O1-at-001277,S12,O1,your Contentful dashboard,1277,1302,1302,1327,1,S12-O1-024,YES,,reject,generic: reader-possessive ('your Contentful dashboard') nested in an accepted deictic phrase,2026-09-23
+S12-O1-at-001434,S12,O1,The ID of your Contentful space,1434,1465,1459,1490,1,S12-O1-001,YES,,reject,not_referential: field definition,2026-09-23
+S12-O1-at-001513,S12,O1,The access token to consume,1513,1540,1538,1565,1,S12-O1-002,YES,,reject,not_referential: field definition,2026-09-23
+S12-O1-at-001566,S12,O1,your Contentful space,1566,1587,1591,1612,1,S12-O1-026,YES,,reject,generic: reader-possessive ('your Contentful space'),2026-09-23
+S12-O1-at-001633,S12,O1,The access token to consume,1633,1660,1658,1685,2,S12-O1-002,YES,,reject,not_referential: field definition,2026-09-23
+S12-O1-at-001688,S12,O1,your Contentful space,1688,1709,1713,1734,2,S12-O1-026,YES,,reject,generic: reader-possessive ('your Contentful space'),2026-09-23
+S12-O1-at-001747,S12,O1,your Contentful space,1747,1768,1772,1793,3,S12-O1-026,YES,,reject,generic: reader-possessive ('your Contentful space'),2026-09-23
+S12-O1-at-002071,S12,O1,your project,2071,2083,2096,2108,1,S12-O1-041,YES,generic,reject,generic: reader-possessive ('your project'),2026-09-23
+S12-O1-at-002130,S12,O1,your Contentful environment variables,2130,2167,2155,2192,1,S12-O1-025,YES,not_probeable,reject,generic: reader-possessive ('your Contentful environment variables'),2026-09-23
+S12-O1-at-002799,S12,O1,your Contentful space,2799,2820,2832,2853,4,S12-O1-026,YES,,reject,generic: reader-possessive ('your Contentful space'),2026-09-23
+S12-O1-at-002985,S12,O1,the official Contentful SDK for JavaScript,2985,3027,3018,3060,1,S12-O1-013,YES,,reject,not_referential: appositive descriptor,2026-09-23
+S12-O1-at-003671,S12,O1,your project,3671,3683,3725,3737,2,S12-O1-041,YES,generic,reject,generic: reader-possessive ('your project'),2026-09-23
+S12-O1-at-004361,S12,O1,the Contentful web app,4361,4383,4422,4444,1,S12-O1-006,YES,,reject,not_referential: named app,2026-09-23
+S12-O1-at-004813,S12,O1,your Contentful account by using the,4813,4849,4871,4907,1,S12-O1-023,YES,,reject,generic: reader-possessive ('your Contentful account'),2026-09-23
+S12-O1-at-005026,S12,O1,your component might look like this,5026,5061,5084,5119,1,S12-O1-032,YES,not_probeable,reject,generic: reader-possessive ('your component'),2026-09-23
+S12-O1-at-005865,S12,O1,your content,5865,5877,5934,5946,1,S12-O1-033,YES,generic,reject,generic: reader-possessive ('your content'),2026-09-23
+S12-O1-at-006049,S12,O1,the setup above,6049,6064,6115,6130,1,S12-O1-018,YES,,reject,"not_probeable: antecedent is the entire preceding integration section (about 5,500 characters)",2026-09-23
+S12-O1-at-006124,S12,O1,the CMS,6124,6131,6190,6197,1,S12-O1-005,YES,generic,reject,not_referential: predicative ('as the CMS'),2026-09-23
+S12-O2-at-006186,S12,O2,this tutorial,6186,6199,6277,6290,1,S12-O2-008,YES,,reject,self_reference: 'this tutorial' denotes the containing section,2026-09-23
+S12-O1-at-006356,S12,O1,your content model,6356,6374,6447,6465,1,S12-O1-035,YES,,reject,generic: reader-possessive ('your content model'),2026-09-23
+S12-O1-at-006649,S12,O1,your Contentful space,6649,6670,6740,6761,5,S12-O1-026,YES,,reject,generic: reader-possessive ('your Contentful space'),2026-09-23
+S12-O1-at-007082,S12,O1,the other parameters as their defaults,7082,7120,7173,7211,1,S12-O1-014,YES,idiom,reject,not_referential: bridging nominal ('the other parameters'),2026-09-23
+S12-O1-at-007278,S12,O1,the other parameters as their defaults,7278,7316,7369,7407,2,S12-O1-014,YES,idiom,reject,not_referential: bridging nominal ('the other parameters'),2026-09-23
+S12-O1-at-007503,S12,O1,your changes,7503,7515,7594,7606,1,S12-O1-031,YES,generic,reject,generic: reader-possessive ('your changes'),2026-09-23
+S12-O1-at-007549,S12,O1,your Contentful space,7549,7570,7640,7661,6,S12-O1-026,YES,,reject,generic: reader-possessive ('your Contentful space'),2026-09-23
+S12-O1-at-007913,S12,O1,your entry,7913,7923,8004,8014,1,S12-O1-037,YES,generic,reject,generic: reader-possessive ('your entry'),2026-09-23
+S12-O1-at-007947,S12,O1,your first blog post,7947,7967,8038,8058,1,S12-O1-038,YES,,reject,generic: reader-possessive ('your first blog post'),2026-09-23
+S12-O1-at-008330,S12,O1,your blog post entries response,8330,8361,8421,8452,1,S12-O1-028,YES,not_probeable,reject,generic: reader-possessive ('your blog post entries response'),2026-09-23
+S12-O1-at-009190,S12,O1,the home page,9190,9203,9281,9294,1,S12-O1-011,YES,not_probeable,reject,not_referential: page named in the same clause,2026-09-23
+S12-O2-at-009237,S12,O2,this example,9237,9249,9328,9340,1,S12-O2-006,YES,,reject,self_reference: 'this example' denotes the procedure being described,2026-09-23
+S12-O1-at-009454,S12,O1,your response,9454,9467,9545,9558,1,S12-O1-044,YES,generic,reject,generic: reader-possessive ('your response'),2026-09-23
+S12-O1-at-009762,S12,O1,your blog posts at,9762,9780,9853,9871,1,S12-O1-029,YES,not_probeable,reject,generic: reader-possessive ('your blog posts'),2026-09-23
+S12-O1-at-009864,S12,O1,your returned data,9864,9882,9955,9973,1,S12-O1-045,YES,,reject,generic: reader-possessive ('your returned data'),2026-09-23
+S12-O1-at-010002,S12,O1,the same time,10002,10015,10093,10106,1,S12-O1-017,NO,idiom,reject,idiom: 'at the same time',2026-09-23
+S12-O1-at-012100,S12,O1,your data inside a,12100,12118,12191,12209,1,S12-O1-036,YES,not_probeable,reject,generic: reader-possessive ('your data'),2026-09-23
+S12-O1-at-012644,S12,O1,the page component as props,12644,12671,12735,12762,1,S12-O1-016,YES,not_probeable,reject,not_referential: 'the page component as props',2026-09-23
+S12-O1-at-013360,S12,O1,The property inside,13360,13379,13451,13470,1,S12-O1-004,YES,not_probeable,reject,not_referential: 'the property inside params',2026-09-23
+S12-O1-at-013400,S12,O1,the name of the dynamic route,13400,13429,13491,13520,1,S12-O1-012,YES,not_probeable,reject,not_referential: 'the name of the dynamic route' stated in the next sentence,2026-09-23
+S12-O1-at-013547,S12,O1,the page,13547,13555,13638,13646,1,S12-O1-015,YES,generic,reject,not_probeable: sole referent (the dynamic page),2026-09-23
+S12-O1-at-013726,S12,O1,the page,13726,13734,13817,13825,2,S12-O1-015,YES,generic,reject,not_referential: 'the page props',2026-09-23
+S12-O1-at-013754,S12,O1,your blog post,13754,13768,13845,13859,1,S12-O1-027,YES,not_probeable,reject,generic: reader-possessive ('your blog post'),2026-09-23
+S12-O1-at-014965,S12,O1,the data from Contentful,14965,14989,15056,15080,1,S12-O1-007,YES,,reject,not_referential: 'the data from Contentful',2026-09-23
+S12-O1-at-015108,S12,O1,the slug from the URL,15108,15129,15199,15220,1,S12-O1-019,YES,not_probeable,reject,not_referential: 'the slug from the URL',2026-09-23
+S12-O1-at-015485,S12,O1,the entry is not found,15485,15507,15576,15598,1,S12-O1-008,YES,not_probeable,reject,not_probeable: sole referent (the requested entry),2026-09-23
+S12-O1-at-015526,S12,O1,the user to the,15526,15541,15617,15632,1,S12-O1-021,YES,not_probeable,reject,generic: 'the user' as any visitor,2026-09-23
+S12-O1-at-016036,S12,O1,the template section,16036,16056,16127,16147,1,S12-O1-020,YES,not_probeable,reject,not_referential: 'the template section',2026-09-23
+S12-O1-at-018022,S12,O1,"your site
+
+To deploy your website",18022,18055,18113,18146,1,S12-O1-046,YES,not_probeable,reject,heading: occurrence begins in a section heading,2026-09-23
+S12-O1-at-018213,S12,O1,your project is using Astro,18213,18240,18304,18331,1,S12-O1-043,YES,,reject,generic: reader-possessive ('your project'),2026-09-23
+S12-O1-at-018326,S12,O1,your content changes,18326,18346,18417,18437,1,S12-O1-034,YES,,reject,generic: reader-possessive ('your content'),2026-09-23
+S12-O1-at-018386,S12,O1,your hosting provider,18386,18407,18477,18498,1,S12-O1-039,YES,,reject,generic: reader-possessive ('your hosting provider'),2026-09-23
+S12-O1-at-018555,S12,O1,your site dashboard and click on,18555,18587,18682,18714,1,S12-O1-047,YES,,reject,generic: reader-possessive ('your site dashboard'),2026-09-23
+S12-O1-at-018932,S12,O1,your project dashboard and click on,18932,18967,19098,19133,1,S12-O1-042,YES,,reject,generic: reader-possessive ('your project dashboard'),2026-09-23
+S12-O1-at-019224,S12,O1,your Contentful space,19224,19245,19393,19414,7,S12-O1-026,YES,,reject,generic: reader-possessive ('your Contentful space'),2026-09-23
+S12-O1-at-019481,S12,O1,the webhook,19481,19492,19650,19661,1,S12-O1-022,YES,generic,reject,not_probeable: sole referent ('the webhook' being created),2026-09-23
+S12-O1-at-019586,S12,O1,your blog will be updated,19586,19611,19755,19780,1,S12-O1-030,YES,,reject,generic: reader-possessive ('your blog'),2026-09-23
+S12-O2-at-001248,S12,O2,the following credentials in your,1248,1281,1273,1306,1,S12-O2-001,YES,,accept,cataphoric deixis: 'the following credentials' points to the three-item credential list,2026-09-23
+S12-O2-at-001848,S12,O2,the following variables,1848,1871,1873,1896,1,S12-O2-005,YES,not_probeable,accept,cataphoric deixis: 'the following variables' points to the .env block,2026-09-23
+S12-O2-at-002838,S12,O2,the following using the single command below for your preferred package manager,2838,2917,2871,2950,1,S12-O2-004,YES,,accept,cataphoric deixis: 'the following' points to the two-package list,2026-09-23
+S12-O2-at-006738,S12,O2,the following fields and values,6738,6769,6829,6860,1,S12-O2-002,YES,,accept,cataphoric deixis: 'the following fields and values' points to the model settings list,2026-09-23
+S12-O1-at-006887,S12,O1,your newly created content type,6887,6918,6978,7009,1,S12-O1-040,YES,,accept,anaphor: 'your newly created content type' refers to the blog post model just created,2026-09-23
+S12-O2-at-006974,S12,O2,the following parameters,6974,6998,7065,7089,1,S12-O2-003,YES,,accept,cataphoric deixis: 'the following parameters' points to the five-field list,2026-09-23
+S12-O1-at-007643,S12,O1,the fields,7643,7653,7734,7744,1,S12-O1-009,YES,generic,accept,anaphor: 'the fields' refers to the fields defined on the new content type,2026-09-23
+S12-O1-at-009885,S12,O1,The example below returns the,9885,9914,9976,10005,1,S12-O1-003,YES,,accept,cataphor: 'The example below' refers to the mapping code that follows,2026-09-23
+S12-O1-at-018840,S12,O1,the generated URL,18840,18857,18978,18995,1,S12-O1-010,YES,,accept,anaphor: 'the generated URL' refers to the Netlify build hook created in the previous step,2026-09-23
+S12-O1-at-019154,S12,O1,the generated URL,19154,19171,19331,19348,2,S12-O1-010,YES,,accept,anaphor: 'the generated URL' refers to the Vercel deploy hook being added,2026-09-23

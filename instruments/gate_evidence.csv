@@ -1,0 +1,487 @@
+instance_id,arm,answer,evidence,gate
+S01-O2-at-003064,explicit,Your package manager's command to install the missing package by name,npm install [package-name],pass
+S01-O2-at-003064,implicit,Your package manager's command to install the missing package by name,npm install [package-name],pass
+S01-O1-at-005129,explicit,The sitemap integration installed in the step before,"For example, to install the `@astrojs/sitemap` integration:",pass
+S01-O1-at-005129,implicit,The sitemap integration installed in the step before,"For example, to install the `@astrojs/sitemap` integration:",pass
+S01-O1-at-008267,explicit,The same integration you uninstalled in the first step,first uninstall the integration from your project,pass
+S01-O1-at-008267,implicit,The same integration you uninstalled in the first step,first uninstall the integration from your project,pass
+S01-O2-at-011443,explicit,One component package plus a demo folder for testing and demonstration,"creates a project with a single package, named `my-component`",pass
+S01-O2-at-011443,implicit,One component package plus a demo folder for testing and demonstration,"creates a project with a single package, named `my-component`",pass
+S01-O2-at-011756,explicit,"The workspaces setting in the root package file, listing the demo and packages folders","""workspaces"": [""demo"", ""packages/*""]",pass
+S01-O2-at-011756,implicit,"The workspaces setting in the root package file, listing the demo and packages folders","""workspaces"": [""demo"", ""packages/*""]",pass
+S01-O2-at-013900,explicit,The Astro component file mapped to that subpath,"""./astro"": ""./MyAstroComponent.astro"",",pass
+S01-O2-at-013900,implicit,The Astro component file mapped to that subpath,"""./astro"": ""./MyAstroComponent.astro"",",pass
+S01-O2-at-014362,explicit,The files field that lists what is included,##### `files`,pass
+S01-O2-at-014362,implicit,The files field that lists what is included,##### `files`,pass
+S01-O2-at-015015,explicit,To a later section of the page about the integrations library,[See below](#integrations-library),pass
+S01-O2-at-015015,implicit,To a later section of the page about the integrations library,[See below](#integrations-library),pass
+S01-O1-at-016972,explicit,The fixture test pages added in the earlier steps,Add a new page for every test that you'd like to run.,pass
+S01-O1-at-016972,implicit,The fixture test pages added in the earlier steps,Add a new page for every test that you'd like to run.,pass
+S01-O1-at-018228,explicit,The integrations library on the Astro site,adding your integration to our [integrations library](https://astro.build/integrations/)!,pass
+S01-O1-at-018228,implicit,The integrations library on the Astro site,adding your integration to our [integrations library](https://astro.build/integrations/)!,pass
+S01-R1-001,explicit,Installing the package with your package manager,2. Import the integration,pass
+S01-R1-001,implicit,Installing the package with your package manager,"Finally, Import the integration",pass
+S01-R1-002,explicit,Uninstall its package from the project,"2. Next, remove the integration",pass
+S01-R1-002,implicit,Uninstall its package from the project,"Finally, Next, remove the integration",pass
+S01-R1-003,explicit,Making each page use the component in a different way you want to test,3. Each page should include,pass
+S01-R1-003,implicit,Making each page use the component in a different way you want to test,"Third, Each page should include",pass
+S01-R2-001,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""pnpm"">",pass
+S01-R2-001,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S01-R2-002,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""yarn"">",pass
+S01-R2-002,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S01-R2-003,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""pnpm"">",pass
+S01-R2-003,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S01-R2-004,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""yarn"">",pass
+S01-R2-004,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S01-R2-005,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""pnpm"">",pass
+S01-R2-005,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S01-R2-006,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""yarn"">",pass
+S01-R2-006,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S01-R2-007,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""pnpm"">",pass
+S01-R2-007,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S01-R2-008,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""yarn"">",pass
+S01-R2-008,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S01-R2-009,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""pnpm"">",pass
+S01-R2-009,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S01-R3-001,explicit,As an optional pointer for finding more packages,Browse or search the complete set of hundreds of official and community integrations,pass
+S01-R3-001,implicit,As an optional pointer for finding more packages,Browse or search the complete set of hundreds of official and community integrations,pass
+S01-R3-002,explicit,Only if warnings say a package cannot be found after adding an integration,If you see any warnings like,pass
+S01-R3-002,implicit,Only if warnings say a package cannot be found after adding an integration,If you see any warnings like,pass
+S01-R3-003,explicit,As an optional suggestion if you'd rather not start from scratch alone,"for a community-supported, out-of-the-box template!",pass
+S01-R3-003,implicit,As an optional suggestion if you'd rather not start from scratch alone,"for a community-supported, out-of-the-box template!",pass
+S01-R3-004,explicit,Helpful background rather than a strict requirement,it will help to have a basic understanding of,pass
+S01-R3-004,implicit,Helpful background rather than a strict requirement,it will help to have a basic understanding of,pass
+S01-R3-005,explicit,As a helpful side note,:::tip,pass
+S01-R3-005,implicit,As a helpful side note,As a helpful tip,pass
+S01-R3-006,explicit,As an optional invitation for help or company,:::tip,pass
+S01-R3-006,implicit,As an optional invitation for help or company,As a helpful tip,pass
+S01-R3-007,explicit,As an optional fix available by filing an issue,No problem!,pass
+S01-R3-007,implicit,As an optional fix available by filing an issue,No problem!,pass
+S01-R4-001,explicit,"Keywords for dev tools, the dev overlay, or the dev toolbar","| Dev Toolbar       | `devtools`, `dev-overlay`, `dev-toolbar`     |",pass
+S01-R4-001,implicit,"Keywords for dev tools, the dev overlay, or the dev toolbar","For Dev Toolbar: keywords is `devtools`, `dev-overlay`, `dev-toolbar`.",pass
+S02-O1-at-000623,explicit,"Astro itself, the web framework the page covers",have good knowledge of Astro's core APIs and concepts,pass
+S02-O1-at-000623,implicit,"Astro itself, the web framework the page covers",have good knowledge of Astro's core APIs and concepts,pass
+S02-O1-at-001369,explicit,The documentation server that AI tools connect to,the MCP server provides access to the latest Astro documentation,pass
+S02-O1-at-001369,implicit,The documentation server that AI tools connect to,the MCP server provides access to the latest Astro documentation,pass
+S02-O2-at-002099,explicit,"A JSON server entry for the docs server, in a streaming-HTTP or a local-proxy form","""url"": ""https://mcp.docs.astro.build/mcp""",pass
+S02-O2-at-002099,implicit,"A JSON server entry for the docs server, in a streaming-HTTP or a local-proxy form","""url"": ""https://mcp.docs.astro.build/mcp""",pass
+S02-O1-at-003004,explicit,Registers the docs server with the tool over HTTP transport under a chosen name,claude mcp add --transport http astro-docs,pass
+S02-O1-at-003004,implicit,Registers the docs server with the tool over HTTP transport under a chosen name,claude mcp add --transport http astro-docs,pass
+S02-O2-at-003591,explicit,An action step with an MCP configuration for the docs server and its search tool allowed,mcp_config: |,pass
+S02-O2-at-003591,implicit,An action step with an MCP configuration for the docs server and its search tool allowed,mcp_config: |,pass
+S02-O1-at-004985,explicit,Opens a link that adds the docs server to that editor,Add to Cursor,pass
+S02-O1-at-004985,implicit,Opens a link that adds the docs server to that editor,Add to Cursor,pass
+S02-O1-at-005549,explicit,Opens a link that adds the docs server to that editor,Add to VS Code,pass
+S02-O1-at-005549,implicit,Opens a link that adds the docs server to that editor,Add to VS Code,pass
+S02-O2-at-006250,explicit,"A JSON entry that runs the remote proxy through npx, optionally starting on launch","""start_on_launch"": true",pass
+S02-O2-at-006250,implicit,"A JSON entry that runs the remote proxy through npx, optionally starting on launch","""start_on_launch"": true",pass
+S02-O2-at-007892,explicit,One that runs the remote proxy through npx,"""args"": [""-y"", ""mcp-remote"", ""https://mcp.docs.astro.build/mcp""]",pass
+S02-O2-at-007892,implicit,One that runs the remote proxy through npx,"""args"": [""-y"", ""mcp-remote"", ""https://mcp.docs.astro.build/mcp""]",pass
+S02-O2-at-009228,explicit,A server entry giving the docs server's address directly,"""serverUrl"": ""https://mcp.docs.astro.build/mcp""",pass
+S02-O2-at-009228,implicit,A server entry giving the docs server's address directly,"""serverUrl"": ""https://mcp.docs.astro.build/mcp""",pass
+S02-O2-at-009777,explicit,An enabled context-server entry pointing at the docs server's address,"""context_servers"": {",pass
+S02-O2-at-009777,implicit,An enabled context-server entry pointing at the docs server's address,"""context_servers"": {",pass
+S02-O1-at-010581,explicit,Opens a link that adds the docs server to that app,Add to Raycast,pass
+S02-O1-at-010581,implicit,Opens a link that adds the docs server to that app,Add to Raycast,pass
+S02-O2-at-012079,explicit,A JSON entry for the docs server over HTTP with its search tool listed,"""tools"": [""mcp__astro-docs__search_astro_docs""]",pass
+S02-O2-at-012079,implicit,A JSON entry for the docs server over HTTP with its search tool listed,"""tools"": [""mcp__astro-docs__search_astro_docs""]",pass
+S02-O1-at-014061,explicit,Those with the AI chatbot in the chat community,is also available as a chatbot in the [Astro Discord],pass
+S02-O1-at-014061,implicit,Those with the AI chatbot in the chat community,is also available as a chatbot in the [Astro Discord],pass
+S02-O1-at-014616,explicit,The local development server started by the dev command,automatically starts the dev server as a detached background process,pass
+S02-O1-at-014616,implicit,The local development server started by the dev command,automatically starts the dev server as a detached background process,pass
+S02-O1-at-014715,explicit,The development server that was started,A lock file (`.astro/dev.json`) is written when the dev server starts,pass
+S02-O1-at-014715,implicit,The development server that was started,A lock file (`.astro/dev.json`) is written when the dev server starts,pass
+S02-O1-at-016574,explicit,"The practices in the earlier tips, such as starting from templates and checking current APIs",**Start with templates**,pass
+S02-O1-at-016574,implicit,"The practices in the earlier tips, such as starting from templates and checking current APIs",**Start with templates**,pass
+S02-R1-001,explicit,Click the add button,"2. Click ""Add"".",pass
+S02-R1-001,implicit,Click the add button,"Second, Click ""Add"".",pass
+S02-R1-002,explicit,Clicking to add a custom connector,"2. Click ""Add custom connector"".",pass
+S02-R1-002,implicit,Clicking to add a custom connector,"Second, Click ""Add custom connector"".",pass
+S02-R1-003,explicit,"Last, after adding the configuration and saving it",3. Save the configuration and restart Windsurf.,pass
+S02-R1-003,implicit,"Last, after adding the configuration and saving it","Finally, Save the configuration and restart Windsurf.",pass
+S02-R1-004,explicit,Saving the file and refreshing in the server management tab,"3. Save the file and click ""Refresh""",pass
+S02-R1-004,implicit,Saving the file and refreshing in the server management tab,"Finally, Save the file and click ""Refresh""",pass
+S02-R1-005,explicit,Add the context-server configuration,2. Add the following configuration to your Zed MCP settings,pass
+S02-R1-005,implicit,Add the context-server configuration,"Second, Add the following configuration to your Zed MCP settings",pass
+S02-R2-001,explicit,They are alternatives: use either the streaming HTTP entry or the local proxy entry,"<TabItem label=""Local Proxy"">",pass
+S02-R2-001,implicit,They are alternatives: use either the streaming HTTP entry or the local proxy entry,"These are alternatives — use exactly one, not all of them.",pass
+S02-R3-001,explicit,"As a side explanation, not a required action",is a standardized way for AI tools to access external tools and data sources,pass
+S02-R3-001,implicit,"As a side explanation, not a required action",is a standardized way for AI tools to access external tools and data sources,pass
+S02-R3-002,explicit,"As something to do every time, because AI makes mistakes",always review generated code carefully and test thoroughly,pass
+S02-R3-002,implicit,"As something to do every time, because AI makes mistakes",always review generated code carefully and test thoroughly,pass
+S03-O2-at-002497,explicit,"Server-side writes don't reach client components, stores can't be passed as props, and server components can't subscribe to changes","You cannot pass a Nano Store as a ""prop"" to client-side components.",pass
+S03-O2-at-002497,implicit,"Server-side writes don't reach client components, stores can't be passed as props, and server components can't subscribe to changes","You cannot pass a Nano Store as a ""prop"" to client-side components.",pass
+S03-R2-001,explicit,They are alternatives: run only the one for the UI framework you use,"<Fragment slot=""vue"">",pass
+S03-R2-001,implicit,They are alternatives: run only the one for the UI framework you use,"These are alternatives — use exactly one, not all of them.",pass
+S03-R2-002,explicit,They are alternatives: use the one written for your UI framework,"<Fragment slot=""svelte"">",pass
+S03-R2-002,implicit,They are alternatives: use the one written for your UI framework,"These are alternatives — use exactly one, not all of them.",pass
+S03-R2-003,explicit,They are alternatives: use the one written for your UI framework,"<Fragment slot=""solid"">",pass
+S03-R2-003,implicit,They are alternatives: use the one written for your UI framework,"These are alternatives — use exactly one, not all of them.",pass
+S03-R2-004,explicit,They are alternatives: use either the JavaScript or the TypeScript version,"<Fragment slot=""ts"">",pass
+S03-R2-004,implicit,They are alternatives: use either the JavaScript or the TypeScript version,"These are alternatives — use exactly one, not all of them.",pass
+S03-R2-005,explicit,They are alternatives: use either the JavaScript or the TypeScript version,"<Fragment slot=""ts"">",pass
+S03-R2-005,implicit,They are alternatives: use either the JavaScript or the TypeScript version,"These are alternatives — use exactly one, not all of them.",pass
+S03-R2-006,explicit,They are alternatives: use the one written for your UI framework,"<Fragment slot=""react"">",pass
+S03-R2-006,implicit,They are alternatives: use the one written for your UI framework,"These are alternatives — use exactly one, not all of them.",pass
+S03-R2-007,explicit,They are alternatives: use the one written for your UI framework,"<Fragment slot=""preact"">",pass
+S03-R2-007,implicit,They are alternatives: use the one written for your UI framework,"These are alternatives — use exactly one, not all of them.",pass
+S03-R3-001,explicit,"Not recommended, though you may still try it if you understand the restrictions",is not recommended because of the following restrictions,pass
+S03-R3-001,implicit,"Not recommended, though you may still try it if you understand the restrictions",is not recommended because of the following restrictions,pass
+S03-R3-002,explicit,None is needed; the stores work like Svelte's standard stores,No helper package here!,pass
+S03-R3-002,implicit,None is needed; the stores work like Svelte's standard stores,No helper package here!,pass
+S03-R3-003,explicit,"As a recommended good choice, not a requirement",are a great choice for objects you write to regularly!,pass
+S03-R3-003,implicit,"As a recommended good choice, not a requirement",are a great choice for objects you write to regularly!,pass
+S03-R3-004,explicit,"Whenever the store value is rendered to the interface, not for reads during events",should be used whenever the store value is being rendered to the UI,pass
+S03-R3-004,implicit,"Whenever the store value is rendered to the interface, not for reads during events",should be used whenever the store value is being rendered to the UI,pass
+S03-R3-005,explicit,,,fail
+S03-R3-005,implicit,,,fail
+S03-R3-006,explicit,,,fail
+S03-R3-006,implicit,,,fail
+S03-R3-007,explicit,,,fail
+S03-R3-007,implicit,,,fail
+S03-R3-008,explicit,,,fail
+S03-R3-008,implicit,,,fail
+S03-R3-009,explicit,,,fail
+S03-R3-009,implicit,,,fail
+S03-R3-010,explicit,,,fail
+S03-R3-010,implicit,,,fail
+S03-R3-011,explicit,,,fail
+S03-R3-011,implicit,,,fail
+S03-R3-012,explicit,,,fail
+S03-R3-012,implicit,,,fail
+S03-R3-013,explicit,,,fail
+S03-R3-013,implicit,,,fail
+S03-R3-014,explicit,,,fail
+S03-R3-014,implicit,,,fail
+S04-O2-at-001521,explicit,"Service-account values such as the private key, project ID, and client email",FIREBASE_PRIVATE_KEY=YOUR_PRIVATE_KEY,pass
+S04-O2-at-001521,implicit,"Service-account values such as the private key, project ID, and client email",FIREBASE_PRIVATE_KEY=YOUR_PRIVATE_KEY,pass
+S04-O2-at-002999,explicit,The client SDK for the browser and the admin SDK for the server,`firebase-admin` - the Firebase Admin SDK for the server side,pass
+S04-O2-at-002999,implicit,The client SDK for the browser and the admin SDK for the server,`firebase-admin` - the Firebase Admin SDK for the server side,pass
+S04-O2-at-003677,explicit,Initializes the SDK in the browser with the web app credentials,add the following code to initialize Firebase in the client using your web app credentials,pass
+S04-O2-at-003677,implicit,Initializes the SDK in the browser with the web app credentials,add the following code to initialize Firebase in the client using your web app credentials,pass
+S04-O2-at-004267,explicit,"Initializes the admin SDK from the service-account values, or with defaults in production",credential: cert(serviceAccount as ServiceAccount),pass
+S04-O2-at-004267,implicit,"Initializes the admin SDK from the service-account values, or with defaults in production",credential: cert(serviceAccount as ServiceAccount),pass
+S04-O2-at-006275,explicit,"Sign-in, sign-out, and registration endpoints",`GET /api/auth/signout` - to sign out a user,pass
+S04-O2-at-006275,implicit,"Sign-in, sign-out, and registration endpoints",`GET /api/auth/signout` - to sign out a user,pass
+S04-O1-at-010234,explicit,"To the registration endpoint, which creates the user and redirects to sign-in",send a `POST` request to the `/api/auth/register` endpoint,pass
+S04-O1-at-010234,implicit,"To the registration endpoint, which creates the user and redirects to sign-in",send a `POST` request to the `/api/auth/register` endpoint,pass
+S04-O1-at-013841,explicit,The sign-out button on the dashboard page,a button to sign out,pass
+S04-O1-at-013841,implicit,The sign-out button on the dashboard page,a button to sign out,pass
+S04-O1-at-013916,explicit,The sign-out endpoint that the dashboard's button calls,request to the `/api/auth/signout` endpoint,pass
+S04-O1-at-013916,implicit,The sign-out endpoint that the dashboard's button calls,request to the `/api/auth/signout` endpoint,pass
+S04-O1-at-015086,explicit,Google's OAuth sign-in,**Google** provider.,pass
+S04-O1-at-015086,implicit,Google's OAuth sign-in,**Google** provider.,pass
+S04-O1-at-015217,explicit,The email-and-password form already on the sign-in page,Edit the `signin.astro` page to add:,pass
+S04-O1-at-015217,implicit,The email-and-password form already on the sign-in page,Edit the `signin.astro` page to add:,pass
+S04-O2-at-018741,explicit,"An auto-generated ID, a name string, an age number, and a best-friend boolean",`age`: a number field,pass
+S04-O2-at-018741,implicit,"An auto-generated ID, a name string, an age number, and a best-friend boolean",`age`: a number field,pass
+S04-O2-at-019092,explicit,"Creating, updating, and deleting documents in the friends collection",`DELETE /api/friends/:id`: to delete a document,pass
+S04-O2-at-019092,implicit,"Creating, updating, and deleting documents in the friends collection",`DELETE /api/friends/:id`: to delete a document,pass
+S04-O1-at-022795,explicit,"To the friends endpoint, which creates a new friend and redirects to the dashboard",send a `POST` request to the `/api/friends` endpoint,pass
+S04-O1-at-022795,implicit,"To the friends endpoint, which creates a new friend and redirects to the dashboard",send a `POST` request to the `/api/friends` endpoint,pass
+S04-O2-at-023742,explicit,The edit page for that friend,`src/pages/edit/[id].astro` will contain a form to edit a friend data,pass
+S04-O2-at-023742,implicit,The edit page for that friend,`src/pages/edit/[id].astro` will contain a form to edit a friend data,pass
+S04-O2-at-023879,explicit,The edit page for that friend,and a button to delete a friend,pass
+S04-O2-at-023879,implicit,The edit page for that friend,and a button to delete a friend,pass
+S04-O2-at-027723,explicit,"In an edit folder under pages, as a file named by ID","- edit
+      - [id].astro",pass
+S04-O2-at-027723,implicit,"In an edit folder under pages, as a file named by ID","- edit
+      - [id].astro",pass
+S04-R2-001,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""pnpm"">",pass
+S04-R2-001,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S04-R3-001,explicit,As optional further reading,:::tip,pass
+S04-R3-001,implicit,As optional further reading,As a helpful tip,pass
+S04-R3-002,explicit,As something you must remember to do,Remember to replace the `firebaseConfig` object,pass
+S04-R3-002,implicit,As something you must remember to do,Remember to replace the `firebaseConfig` object,pass
+S04-R3-003,explicit,As something you must remember to do,Remember to replace the `serviceAccount` object,pass
+S04-R3-003,implicit,As something you must remember to do,Remember to replace the `serviceAccount` object,pass
+S04-R3-004,explicit,Only one cookie with a specific required name is allowed; others are not visible to the app,Any other cookies the client sends will not be visible to your application.,pass
+S04-R3-004,implicit,Only one cookie with a specific required name is allowed; others are not visible to the app,Any other cookies the client sends will not be visible to your application.,pass
+S04-R3-005,explicit,As optional: the endpoint is a basic version you may extend,You can add more logic to this endpoint to suit your needs.,pass
+S04-R3-005,implicit,As optional: the endpoint is a basic version you may extend,You can add more logic to this endpoint to suit your needs.,pass
+S04-R3-006,explicit,As optional: the endpoint is a basic version you may extend,You can add more logic to this endpoint to suit your needs.,pass
+S04-R3-006,implicit,As optional: the endpoint is a basic version you may extend,You can add more logic to this endpoint to suit your needs.,pass
+S04-R3-007,explicit,As optional: the endpoint is a basic version you may extend,You can add more logic to this endpoint to suit your needs.,pass
+S04-R3-007,implicit,As optional: the endpoint is a basic version you may extend,You can add more logic to this endpoint to suit your needs.,pass
+S04-R3-008,explicit,As optional: the endpoint is a basic version you may extend,You can add more logic to this endpoint to suit your needs.,pass
+S04-R3-008,implicit,As optional: the endpoint is a basic version you may extend,You can add more logic to this endpoint to suit your needs.,pass
+S04-R3-009,explicit,As optional: the endpoint is a basic version you may extend,You can add more logic to this endpoint to suit your needs.,pass
+S04-R3-009,implicit,As optional: the endpoint is a basic version you may extend,You can add more logic to this endpoint to suit your needs.,pass
+S04-R4-001,explicit,"A backend project with a web app, an Astro project with server output, and two sets of credentials",You will need two sets of credentials to connect Astro to Firebase,pass
+S04-R4-001,implicit,"A backend project with a web app, an Astro project with server output, and two sets of credentials",You will need two sets of credentials to connect Astro to Firebase,pass
+S04-R4-002,explicit,Email and password sign-in,A Firebase project with email/password authentication enabled,pass
+S04-R4-002,implicit,Email and password sign-in,A Firebase project with email/password authentication enabled,pass
+S04-R4-003,explicit,"A project already initialized with the backend, and a backend project that has a Firestore database",A Firebase project with a Firestore database.,pass
+S04-R4-003,implicit,"A project already initialized with the backend, and a backend project that has a Firestore database",A Firebase project with a Firestore database.,pass
+S05-O2-at-000915,explicit,"To the next part of the page, on creating a Dockerfile, which gives examples",Creating a Dockerfile,pass
+S05-O2-at-000915,implicit,"To the next part of the page, on creating a Dockerfile, which gives examples",Creating a Dockerfile,pass
+S05-O1-at-001327,explicit,The install and build commands run inside the example Dockerfiles,RUN npm install,pass
+S05-O1-at-001327,implicit,The install and build commands run inside the example Dockerfiles,RUN npm install,pass
+S05-O1-at-002434,explicit,"The project's root folder, next to the build-instructions file",Create a file called `Dockerfile` in your project's root directory.,pass
+S05-O1-at-002434,implicit,"The project's root folder, next to the build-instructions file",Create a file called `Dockerfile` in your project's root directory.,pass
+S05-O1-at-003482,explicit,The static example served by NGINX,you'll also need to create a configuration file for NGINX,pass
+S05-O1-at-003482,implicit,The static example served by NGINX,you'll also need to create a configuration file for NGINX,pass
+S05-O2-at-005512,explicit,A container build that tags the image with a name of your choosing,docker build -t <your-astro-image-name> .,pass
+S05-O2-at-005512,implicit,A container build that tags the image with a name of your choosing,docker build -t <your-astro-image-name> .,pass
+S05-O1-at-005788,explicit,The image produced by the build command in the step before,"This will output an image, which you can run locally",pass
+S05-O1-at-005788,implicit,The image produced by the build command in the step before,"This will output an image, which you can run locally",pass
+S05-O2-at-005825,explicit,"Starts the built image, mapping a port on your machine to the container's port",docker run -p <local-port>:<container-port> <your-astro-image-name>,pass
+S05-O2-at-005825,implicit,"Starts the built image, mapping a port on your machine to the container's port",docker run -p <local-port>:<container-port> <your-astro-image-name>,pass
+S05-O1-at-006014,explicit,"The port the built example exposes: 4321 for the server image, or 80 or 8080 for the static ones","(`4321`, `80`, or `8080` in the above examples.)",pass
+S05-O1-at-006014,implicit,"The port the built example exposes: 4321 for the server image, or 80 or 8080 for the static ones","(`4321`, `80`, or `8080` in the above examples.)",pass
+S05-R1-001,explicit,You build the image from the project root first,2. To run your image as a local container,pass
+S05-R1-001,implicit,You build the image from the project root first,"Second, To run your image as a local container",pass
+S05-R3-001,explicit,"Not strictly: they are examples you may adapt, for instance by changing the base image",You can customize them to your needs.,pass
+S05-R3-001,implicit,"Not strictly: they are examples you may adapt, for instance by changing the base image",You can customize them to your needs.,pass
+S05-R3-002,explicit,"As recommended advice, not a hard requirement",it is recommended to use a custom configuration,pass
+S05-R3-002,implicit,"As recommended advice, not a hard requirement",it is recommended to use a custom configuration,pass
+S05-R4-001,explicit,Docker installed locally and a Dockerfile in the project,Docker installed on your local machine,pass
+S05-R4-001,implicit,Docker installed locally and a Dockerfile in the project,Docker installed on your local machine,pass
+S06-O1-at-001889,explicit,Set server output and register the adapter imported from Deno's own package scope,import deno from '@deno/astro-adapter';,pass
+S06-O1-at-001889,implicit,Set server output and register the adapter imported from Deno's own package scope,import deno from '@deno/astro-adapter';,pass
+S06-O1-at-002202,explicit,It swaps the Astro preview command for Deno running the built server entry file,"""preview"": ""deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs""",pass
+S06-O1-at-002202,implicit,It swaps the Astro preview command for Deno running the built server entry file,"""preview"": ""deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs""",pass
+S06-O2-at-004006,explicit,"A Deno command serving the build: a file server for static output, or the server entry for on-demand output",deno run -A jsr:@std/http/file-server dist,pass
+S06-O2-at-004006,implicit,"A Deno command serving the build: a file server for static output, or the server entry for on-demand output",deno run -A jsr:@std/http/file-server dist,pass
+S06-O1-at-004727,explicit,The GitHub repository you pushed your code to at the start of this route,Push your code to a public or private GitHub repository.,pass
+S06-O1-at-004727,implicit,The GitHub repository you pushed your code to at the start of this route,Push your code to a public or private GitHub repository.,pass
+S06-O1-at-004982,explicit,The page's own workflow examples shown right after that instruction,uses: denoland/deployctl@v1,pass
+S06-O1-at-004982,implicit,The page's own workflow examples shown right after that instruction,uses: denoland/deployctl@v1,pass
+S06-O1-at-007427,explicit,The branch you chose to deploy from when setting up the project,the branch you want to deploy from,pass
+S06-O1-at-007427,implicit,The branch you chose to deploy from when setting up the project,the branch you want to deploy from,pass
+S06-R1-001,explicit,Updating the Astro configuration file to use the Deno adapter,3. Update your `preview` script,pass
+S06-R1-001,implicit,Updating the Astro configuration file to use the Deno adapter,"Finally, Update your `preview` script",pass
+S06-R1-002,explicit,Install the project's dependencies,2. Install the project dependencies,pass
+S06-R1-002,implicit,Install the project's dependencies,"Second, Install the project dependencies",pass
+S06-R1-003,explicit,"Choosing the repository, the branch, and the GitHub Action mode",3. Select your repository,pass
+S06-R1-003,implicit,"Choosing the repository, the branch, and the GitHub Action mode","Third, Select your repository",pass
+S06-R1-004,explicit,Build the site with your package manager,2. Build your Astro site with your preferred package manager,pass
+S06-R1-004,implicit,Build the site with your package manager,"Second, Build your Astro site with your preferred package manager",pass
+S06-R2-001,explicit,As alternatives: run only the one for the package manager you use,"<Fragment slot=""pnpm"">",pass
+S06-R2-001,implicit,As alternatives: run only the one for the package manager you use,"These are alternatives — use exactly one, not all of them.",pass
+S06-R2-002,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""yarn"">",pass
+S06-R2-002,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S06-R2-003,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""pnpm"">",pass
+S06-R2-003,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S06-R2-004,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""yarn"">",pass
+S06-R2-004,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S06-R2-005,explicit,They are alternatives: use the one matching a static or an on-demand rendered build,"<Fragment slot=""ssr"">",pass
+S06-R2-005,implicit,They are alternatives: use the one matching a static or an on-demand rendered build,"These are alternatives — use exactly one, not all of them.",pass
+S06-R2-006,explicit,They are alternatives: use the one matching a static or an on-demand rendered site,"<Fragment slot=""ssr"">",pass
+S06-R2-006,implicit,They are alternatives: use the one matching a static or an on-demand rendered site,"These are alternatives — use exactly one, not all of them.",pass
+S06-R2-007,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""pnpm"">",pass
+S06-R2-007,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S06-R2-008,explicit,They are alternatives: use the one matching a static or an on-demand rendered build,"<Fragment slot=""ssr"">",pass
+S06-R2-008,implicit,They are alternatives: use the one matching a static or an on-demand rendered build,"These are alternatives — use exactly one, not all of them.",pass
+S06-R2-009,explicit,They are alternatives for static versus on-demand builds; add only one,"<Fragment slot=""ssr"">",pass
+S06-R2-009,implicit,They are alternatives for static versus on-demand builds; add only one,"These are alternatives — use exactly one, not all of them.",pass
+S06-R2-010,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""pnpm"">",pass
+S06-R2-010,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S06-R4-001,explicit,The Deno runtime,This guide assumes you already have [Deno](https://deno.com/) installed.,pass
+S06-R4-001,implicit,The Deno runtime,This guide assumes you already have [Deno](https://deno.com/) installed.,pass
+S07-O1-at-001725,explicit,The framework component that was imported,"To use a framework component, import it from its relative path",pass
+S07-O1-at-001725,implicit,The framework component that was imported,"To use a framework component, import it from its relative path",pass
+S07-O1-at-001809,explicit,The template of the Astro component that imports it,import it from its relative path in your Astro component script,pass
+S07-O1-at-001809,implicit,The template of the Astro component that imports it,import it from its relative path in your Astro component script,pass
+S07-R3-001,explicit,As an optional suggestion for seeing examples,:::tip,pass
+S07-R3-001,implicit,As an optional suggestion for seeing examples,As a helpful tip,pass
+S07-R3-002,explicit,Firmly: you are told to make sure of it,Be sure to choose a client directive,pass
+S07-R3-002,implicit,Firmly: you are told to make sure of it,Be sure to choose a client directive,pass
+S07-R3-003,explicit,Astro components alone,Only **Astro** components (`.astro`) can contain components from multiple frameworks.,pass
+S07-R3-003,implicit,Astro components alone,Only **Astro** components (`.astro`) can contain components from multiple frameworks.,pass
+S07-R3-004,explicit,No: such a file cannot mix frameworks,cannot mix multiple frameworks,pass
+S07-R3-004,implicit,No: such a file cannot mix frameworks,cannot mix multiple frameworks,pass
+S07-R3-005,explicit,It will not work; slots with names should be used instead,will not work,pass
+S07-R3-005,implicit,It will not work; slots with names should be used instead,will not work,pass
+S07-R3-006,explicit,,,fail
+S07-R3-006,implicit,,,fail
+S07-R3-007,explicit,,,fail
+S07-R3-007,implicit,,,fail
+S08-O2-at-001512,explicit,"Node with its short version flag, printing the installed version",node -v,pass
+S08-O2-at-001512,implicit,"Node with its short version flag, printing the installed version",node -v,pass
+S08-O1-at-001784,explicit,"Version 22.12.0, the minimum stated earlier in the section",The current minimum supported version is `v22.12.0`,pass
+S08-O1-at-001784,implicit,"Version 22.12.0, the minimum stated earlier in the section",The current minimum supported version is `v22.12.0`,pass
+S08-R1-001,explicit,,,fail
+S08-R1-001,implicit,,,fail
+S08-R3-001,explicit,"Optional: the tutorial uses one editor, but any editor for your platform works",but you can use any editor for your operating system,pass
+S08-R3-001,implicit,"Optional: the tutorial uses one editor, but any editor for your platform works",but you can use any editor for your operating system,pass
+S09-O1-at-006726,explicit,The official React integration,you can [use existing React components in your Astro file],pass
+S09-O1-at-006726,implicit,The official React integration,you can [use existing React components in your Astro file],pass
+S09-O1-at-010713,explicit,The custom document component shown just before the steps,`pages/_document.jsx` file that imports React components,pass
+S09-O1-at-010713,implicit,The custom document component shown just before the steps,`pages/_document.jsx` file that imports React components,pass
+S09-O1-at-011641,explicit,The app directory's layout and head files shown just before,a `layout.jsx` file to customize the `<html>` and `<body>` contents,pass
+S09-O1-at-011641,implicit,The app directory's layout and head files shown just before,a `layout.jsx` file to customize the `<html>` and `<body>` contents,pass
+S09-O2-at-024636,explicit,The page's list of community resources about migrating,[add it to this list],pass
+S09-O2-at-024636,implicit,The page's list of community resources about migrating,[add it to this list],pass
+S09-R1-001,explicit,Copying or moving the other files and folders into src,2. **Copy or Move**,pass
+S09-R1-001,implicit,Copying or moving the other files and folders into src,"Finally, **Copy or Move**",pass
+S09-R1-002,explicit,Replace React components with standard HTML tags and a slot,2. Replace any React components,pass
+S09-R1-002,implicit,Replace React components with standard HTML tags and a slot,"Finally, Replace any React components",pass
+S09-R1-003,explicit,Replace both files with one layout that has a page shell and a slot,2. Replace both these files,pass
+S09-R1-003,implicit,Replace both files with one layout that has a page shell and a slot,"Finally, Replace both these files",pass
+S09-R1-004,explicit,"Adding the needed imports, props, and JavaScript","3. Add any needed imports, props, and JavaScript",pass
+S09-R1-004,implicit,"Adding the needed imports, props, and JavaScript","Finally, Add any needed imports, props, and JavaScript",pass
+S09-R2-001,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""pnpm"">",pass
+S09-R2-001,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S09-R2-002,explicit,"They are two versions of the same component, one in Next's JSX and one in Astro","<Fragment slot=""astro"">",pass
+S09-R2-002,implicit,"They are two versions of the same component, one in Next's JSX and one in Astro",If you are using astro:,pass
+S09-R3-001,explicit,As an optional pointer,:::tip,pass
+S09-R3-001,implicit,As an optional pointer,As a helpful tip,pass
+S09-R3-002,explicit,As an optional invitation to add it to the list,add it to this list,pass
+S09-R3-002,implicit,As an optional invitation to add it to the list,add it to this list,pass
+S10-O2-at-002069,explicit,"As in the earlier section, using Astro's Vite configuration helper",Use Astro’s `getViteConfig()` helper,pass
+S10-O2-at-002069,implicit,"As in the earlier section, using Astro's Vite configuration helper",Use Astro’s `getViteConfig()` helper,pass
+S10-O1-at-003659,explicit,"A title and a description meta tag, with an empty body",<body></body>,pass
+S10-O1-at-003659,implicit,"A title and a description meta tag, with an empty body",<body></body>,pass
+S10-O2-at-004106,explicit,That the page's title matches the expected text,await expect(page).toHaveTitle('Astro is awesome!');,pass
+S10-O2-at-004106,implicit,That the page's title matches the expected text,await expect(page).toHaveTitle('Astro is awesome!');,pass
+S10-O2-at-005434,explicit,Opens the full HTML report of test results,npx playwright show-report,pass
+S10-O2-at-005434,implicit,Opens the full HTML report of test results,npx playwright show-report,pass
+S10-O1-at-006809,explicit,Its getting-started page and its guide to using a development server,[Getting started with Playwright],pass
+S10-O1-at-006809,implicit,Its getting-started page and its guide to using a development server,[Getting started with Playwright],pass
+S10-O2-at-007685,explicit,An end-to-end section with the support file turned off,supportFile: false,pass
+S10-O2-at-007685,implicit,An end-to-end section with the support file turned off,supportFile: false,pass
+S10-O1-at-007949,explicit,"A title, a description meta tag, and a main heading greeting the world",<h1>Hello world from Astro</h1>,pass
+S10-O1-at-007949,implicit,"A title, a description meta tag, and a main heading greeting the world",<h1>Hello world from Astro</h1>,pass
+S10-O2-at-008421,explicit,That both the page title and the main heading have the expected text,"page.get('h1').should('have.text', 'Hello world from Astro');",pass
+S10-O2-at-008421,implicit,That both the page title and the main heading have the expected text,"page.get('h1').should('have.text', 'Hello world from Astro');",pass
+S10-O2-at-009444,explicit,"Cypress's run command, after starting the dev server",npx cypress run,pass
+S10-O2-at-009444,implicit,"Cypress's run command, after starting the dev server",npx cypress run,pass
+S10-O2-at-009560,explicit,Cypress's open command,npx cypress open,pass
+S10-O2-at-009560,implicit,Cypress's open command,npx cypress open,pass
+S10-O2-at-010111,explicit,"The main heading text in the example page, so it no longer matches",<h1>Hello from Astro</h1>,pass
+S10-O2-at-010111,implicit,"The main heading text in the example page, so it no longer matches",<h1>Hello from Astro</h1>,pass
+S10-O1-at-010471,explicit,Its introduction guide and its guide to testing your app,[Introduction to Cypress],pass
+S10-O1-at-010471,implicit,Its introduction guide and its guide to testing your app,[Introduction to Cypress],pass
+S10-O1-at-011603,explicit,"A title and a description meta tag, with an empty body",<body></body>,pass
+S10-O1-at-011603,implicit,"A title and a description meta tag, with an empty body",<body></body>,pass
+S10-O2-at-012008,explicit,That the page title equals the expected text,browser.assert.titleEquals('Astro is awesome!'),pass
+S10-O2-at-012008,implicit,That the page title equals the expected text,browser.assert.titleEquals('Astro is awesome!'),pass
+S10-O1-at-013172,explicit,"Running all or one test, optionally in a specific browser, and opening the HTML report","To run all tests, enter the following command in the terminal",pass
+S10-O1-at-013172,implicit,"Running all or one test, optionally in a specific browser, and opening the HTML report","To run all tests, enter the following command in the terminal",pass
+S10-O2-at-013229,explicit,"Runs the tests, optionally only one named file",npx nightwatch test/index.js,pass
+S10-O2-at-013229,implicit,"Runs the tests, optionally only one named file",npx nightwatch test/index.js,pass
+S10-O2-at-013799,explicit,Opens the full HTML report,npx nightwatch test/index.ts --open,pass
+S10-O2-at-013799,implicit,Opens the full HTML report,npx nightwatch test/index.ts --open,pass
+S10-O1-at-014050,explicit,Its overview and its introduction to writing tests,[Intro to Nightwatch],pass
+S10-O1-at-014050,implicit,Its overview and its introduction to writing tests,[Intro to Nightwatch],pass
+S10-R1-001,explicit,Choosing a page to test,2. Create a new folder and add,pass
+S10-R1-001,implicit,Choosing a page to test,"Finally, Create a new folder and add",pass
+S10-R1-002,explicit,After running the test from the command line,2. To see the full HTML Test Report,pass
+S10-R1-002,implicit,After running the test from the command line,"Finally, To see the full HTML Test Report",pass
+S10-R1-003,explicit,"Build the site, then run the end-to-end test script",3. Run `npm run build`,pass
+S10-R1-003,implicit,"Build the site, then run the end-to-end test script","Finally, Run `npm run build`",pass
+S10-R1-004,explicit,Creating the test file in the end-to-end folder,2. Create an `index.cy.js` file,pass
+S10-R1-004,implicit,Creating the test file in the end-to-end folder,"Finally, Create an `index.cy.js` file",pass
+S10-R1-005,explicit,Creating a test folder and adding the test file,2. Create a new folder `src/test/`,pass
+S10-R1-005,implicit,Creating a test folder and adding the test file,"Finally, Create a new folder `src/test/`",pass
+S10-R1-006,explicit,After running the tests,2. To see the full HTML Test Report,pass
+S10-R1-006,implicit,After running the tests,"Finally, To see the full HTML Test Report",pass
+S10-R2-001,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""pnpm"">",pass
+S10-R2-001,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S10-R2-002,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""yarn"">",pass
+S10-R2-002,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S10-R2-003,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""pnpm"">",pass
+S10-R2-003,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S10-R3-001,explicit,As an optional convenience for shorter addresses in tests,for a more convenient URL.,pass
+S10-R3-001,implicit,As an optional convenience for shorter addresses in tests,for a more convenient URL.,pass
+S10-R3-002,explicit,As an optional recommendation to better resemble the live site,"Run your tests against your production code to more closely resemble your live, deployed site.",pass
+S10-R3-002,implicit,As an optional recommendation to better resemble the live site,"Run your tests against your production code to more closely resemble your live, deployed site.",pass
+S10-R3-003,explicit,As an optional convenience for shorter addresses in tests,for a more convenient URL.,pass
+S10-R3-003,implicit,As an optional convenience for shorter addresses in tests,for a more convenient URL.,pass
+S10-R3-004,explicit,As an optional check that the test really works,you can change the following line,pass
+S10-R3-004,implicit,As an optional check that the test really works,you can change the following line,pass
+S10-R3-005,explicit,As an optional convenience for shorter addresses in tests,for a more convenient URL.,pass
+S10-R3-005,implicit,As an optional convenience for shorter addresses in tests,for a more convenient URL.,pass
+S10-R3-006,explicit,As an optional recommendation to better resemble the live site,"Run your tests against your production code to more closely resemble your live, deployed site.",pass
+S10-R3-006,implicit,As an optional recommendation to better resemble the live site,"Run your tests against your production code to more closely resemble your live, deployed site.",pass
+S11-O2-at-001435,explicit,The public API key and the name of the content model,BUILDER_BLOGPOST_MODEL='blogpost',pass
+S11-O2-at-001435,implicit,The public API key and the name of the content model,BUILDER_BLOGPOST_MODEL='blogpost',pass
+S11-O2-at-002947,explicit,A section-type model named for blog posts,**Type:** Section,pass
+S11-O2-at-002947,implicit,A section-type model named for blog posts,**Type:** Section,pass
+S11-O1-at-003079,explicit,The blog post model created just before,"**Name:** ""blogpost""",pass
+S11-O1-at-003079,implicit,The blog post model created just before,"**Name:** ""blogpost""",pass
+S11-O2-at-004129,explicit,"A header and footer around the Builder web component, given the model and key",<builder-component model={builderModel} api-key={builderAPIpublicKey},pass
+S11-O2-at-004129,implicit,"A header and footer around the Builder web component, given the model and key",<builder-component model={builderModel} api-key={builderAPIpublicKey},pass
+S11-O1-at-004712,explicit,The preview page code shown just before,<builder-component,pass
+S11-O1-at-004712,implicit,The preview page code shown just before,<builder-component,pass
+S11-O1-at-005084,explicit,The full preview-page address copied in the first step,Copy the full URL of your preview,pass
+S11-O1-at-005084,implicit,The full preview-page address copied in the first step,Copy the full URL of your preview,pass
+S11-O1-at-005719,explicit,In the editor that opened after creating a new content entry,click on **New** to create a new content entry,pass
+S11-O1-at-005719,implicit,In the editor that opened after creating a new content entry,click on **New** to create a new content entry,pass
+S11-O2-at-006710,explicit,"A lowercase, hyphenated version of the post's title",**slug:** 'first-post-woohoo',pass
+S11-O2-at-006710,implicit,"A lowercase, hyphenated version of the post's title",**slug:** 'first-post-woohoo',pass
+S11-O2-at-007282,explicit,Fetches every post's title and slug and lists the titles as links,"in order to fetch and display a list of all post titles, each linking to its own page",pass
+S11-O2-at-007282,implicit,Fetches every post's title and slug and lists the titles as links,"in order to fetch and display a list of all post titles, each linking to its own page",pass
+S11-O2-at-009762,explicit,Through a fragment whose HTML is set from the fetched post,<Fragment set:html={postHTML} />,pass
+S11-O2-at-009762,implicit,Through a fragment whose HTML is set from the fetched post,<Fragment set:html={postHTML} />,pass
+S11-O1-at-012558,explicit,The address of the build hook you just added,click on **Add build hook**,pass
+S11-O1-at-012558,implicit,The address of the build hook you just added,click on **Add build hook**,pass
+S11-O1-at-012838,explicit,The address of the deploy hook you just added,find the **Deploy Hooks** section,pass
+S11-O1-at-012838,implicit,The address of the deploy hook you just added,find the **Deploy Hooks** section,pass
+S11-R1-001,explicit,Paste it into the preview field of your model in the Models tab,2. Go to the **Models** tab,pass
+S11-R1-001,implicit,Paste it into the preview field of your model in the Models tab,"Second, Go to the **Models** tab",pass
+S11-R1-002,explicit,Create a new content entry for the blog post model,2. In your Builder space under the **Content** tab,pass
+S11-R1-002,implicit,Create a new content entry for the blog post model,"Second, In your Builder space under the **Content** tab",pass
+S11-R1-003,explicit,Name the entry in the text field above the editor,4. When you're ready click the **Publish** button,pass
+S11-R1-003,implicit,Name the entry in the text field above the editor,"Fourth, When you're ready click the **Publish** button",pass
+S11-R1-004,explicit,Adding a build hook in the continuous deployment settings,2. Under the **Continuous Deployment** tab,pass
+S11-R1-004,implicit,Adding a build hook in the continuous deployment settings,"Second, Under the **Continuous Deployment** tab",pass
+S11-R1-005,explicit,Open the settings of your project dashboard,2. Under the **Git** tab,pass
+S11-R1-005,implicit,Open the settings of your project dashboard,"Second, Under the **Git** tab",pass
+S11-R1-006,explicit,Turning off the payload under the advanced options and saving,3. Click on **Show Advanced**,pass
+S11-R1-006,implicit,Turning off the payload under the advanced options and saving,"Finally, Click on **Show Advanced**",pass
+S11-R3-001,explicit,"There is no need to hide or encrypt it, since it was public at the time of writing",so you don't have to worry about hiding or encrypting it,pass
+S11-R3-001,implicit,"There is no need to hide or encrypt it, since it was public at the time of writing",so you don't have to worry about hiding or encrypting it,pass
+S11-R3-002,explicit,As an optional resource for visual learners,You can find videos showing this procedure,pass
+S11-R3-002,implicit,As an optional resource for visual learners,You can find videos showing this procedure,pass
+S11-R3-003,explicit,Slugs must not be just numbers and must be unique,Make sure your slug is not just a number.,pass
+S11-R3-003,implicit,Slugs must not be just numbers and must be unique,Make sure your slug is not just a number.,pass
+S11-R3-004,explicit,As advice to switch it to your production address,change the preview URL to match your production URL,pass
+S11-R3-004,implicit,As advice to switch it to your production address,change the preview URL to match your production URL,pass
+S11-R3-005,explicit,As optional troubleshooting ideas to try if something goes wrong,you can try one of these things,pass
+S11-R3-005,implicit,As optional troubleshooting ideas to try if something goes wrong,you can try one of these things,pass
+S11-R3-006,explicit,As an optional alternative to raw fetch calls for projects using a framework,as an alternative to making raw fetch calls,pass
+S11-R3-006,implicit,As an optional alternative to raw fetch calls for projects using a framework,as an alternative to making raw fetch calls,pass
+S11-R3-007,explicit,Because the static-paths function runs in its own isolated scope,runs in its own isolated scope,pass
+S11-R3-007,implicit,Because the static-paths function runs in its own isolated scope,runs in its own isolated scope,pass
+S11-R3-008,explicit,As an optional pointer to more information,for more information.,pass
+S11-R3-008,implicit,As an optional pointer to more information,for more information.,pass
+S11-R4-001,explicit,"A Builder account with a space, and its public API key",**A Builder API key**,pass
+S11-R4-001,implicit,"A Builder account with a space, and its public API key",**A Builder API key**,pass
+S12-O2-at-001248,explicit,The space ID plus the delivery and preview access tokens,**Contentful preview access token**,pass
+S12-O2-at-001248,implicit,The space ID plus the delivery and preview access tokens,**Contentful preview access token**,pass
+S12-O2-at-001848,explicit,The space ID plus the delivery and preview tokens,CONTENTFUL_PREVIEW_TOKEN=YOUR_PREVIEW_TOKEN,pass
+S12-O2-at-001848,implicit,The space ID plus the delivery and preview tokens,CONTENTFUL_PREVIEW_TOKEN=YOUR_PREVIEW_TOKEN,pass
+S12-O2-at-002838,explicit,The official JavaScript SDK and a renderer that turns rich text into HTML,a package to render Contentful's rich text fields to HTML,pass
+S12-O2-at-002838,implicit,The official JavaScript SDK and a renderer that turns rich text into HTML,a package to render Contentful's rich text fields to HTML,pass
+S12-O2-at-006738,explicit,Holding blog posts,**Description:** This content type is for a blog post,pass
+S12-O2-at-006738,implicit,Holding blog posts,**Description:** This content type is for a blog post,pass
+S12-O1-at-006887,explicit,The blog post content type created just before,**Name:** Blog Post,pass
+S12-O1-at-006887,implicit,The blog post content type created just before,**Name:** Blog Post,pass
+S12-O2-at-006974,explicit,A rich text field,5. Rich text field,pass
+S12-O2-at-006974,implicit,A rich text field,5. Rich text field,pass
+S12-O1-at-007643,explicit,"The fields defined on the content type: title, slug, description, date, and content",**Slug:** `astro-is-amazing`,pass
+S12-O1-at-007643,implicit,"The fields defined on the content type: title, slug, description, date, and content",**Slug:** `astro-is-amazing`,pass
+S12-O1-at-009885,explicit,Maps each entry's fields into a preview object and reformats the date,reformats the date to a more readable format,pass
+S12-O1-at-009885,implicit,Maps each entry's fields into a preview object and reformats the date,reformats the date to a more readable format,pass
+S12-O1-at-018840,explicit,The address of the build hook you just added,click on **Add build hook**,pass
+S12-O1-at-018840,implicit,The address of the build hook you just added,click on **Add build hook**,pass
+S12-O1-at-019154,explicit,The address of the deploy hook you just added,find the **Deploy Hooks** section,pass
+S12-O1-at-019154,implicit,The address of the deploy hook you just added,find the **Deploy Hooks** section,pass
+S12-R1-001,explicit,Adding a build hook in the continuous deployment settings,2. Under the **Continuous Deployment** tab,pass
+S12-R1-001,implicit,Adding a build hook in the continuous deployment settings,"Second, Under the **Continuous Deployment** tab",pass
+S12-R1-002,explicit,Open the settings of your project dashboard,1. Go to your project dashboard,pass
+S12-R1-002,implicit,Open the settings of your project dashboard,"First, Go to your project dashboard",pass
+S12-R2-001,explicit,They are alternatives: run only the one for your package manager,"<Fragment slot=""pnpm"">",pass
+S12-R2-001,implicit,They are alternatives: run only the one for your package manager,"These are alternatives — use exactly one, not all of them.",pass
+S12-R3-001,explicit,As optional further reading,:::tip,pass
+S12-R3-001,implicit,As optional further reading,As a helpful tip,pass
+S12-R3-002,explicit,Development shows unpublished content through the preview API; builds include only published content,This means that only published content will be available at build time.,pass
+S12-R3-002,implicit,Development shows unpublished content through the preview API; builds include only published content,This means that only published content will be available at build time.,pass
+S12-R3-003,explicit,As an optional pointer if your space is empty,"If you have an empty Contentful space, check out",pass
+S12-R3-003,implicit,As an optional pointer if your space is empty,"If you have an empty Contentful space, check out",pass
+S12-R4-001,explicit,"An Astro project, a Contentful account with a space, and the space's credentials",**Contentful credentials**,pass
+S12-R4-001,implicit,"An Astro project, a Contentful account with a space, and the space's credentials",**Contentful credentials**,pass
+S12-R4-002,explicit,"A space, ideally empty, and an Astro project already integrated with the SDK",we recommend starting with an empty space,pass
+S12-R4-002,implicit,"A space, ideally empty, and an Astro project already integrated with the SDK",we recommend starting with an empty space,pass

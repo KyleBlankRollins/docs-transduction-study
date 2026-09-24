@@ -1,0 +1,135 @@
+# S08 tutorial/1-setup/1.mdx — AI-assisted review (amendment A3), 2026-09-23.
+specimen = "S08"
+
+[[candidate]]
+id = "S08-O1-at-000658"
+decision = "reject"
+reason = "generic: reader-possessive ('your Astro website'); referent is the reader's own project, no textual antecedent to resolve"
+
+[[candidate]]
+id = "S08-O1-at-000697"
+decision = "reject"
+reason = "heading: occurrence is a section heading naming its own content, not running-text reference"
+
+[[candidate]]
+id = "S08-O1-at-000859"
+decision = "reject"
+reason = "generic: reader-possessive ('your site')"
+
+[[candidate]]
+id = "S08-O1-at-001116"
+decision = "reject"
+reason = "generic: reader-possessive ('your machine')"
+
+[[candidate]]
+id = "S08-O1-at-001165"
+decision = "reject"
+reason = "generic: reader-possessive ('your system')"
+
+[[candidate]]
+id = "S08-O1-at-001329"
+decision = "reject"
+reason = "not_referential: predicative definite description whose value is stated in the same clause"
+
+[[candidate]]
+id = "S08-O2-at-001512"
+decision = "accept"
+reason = "cataphoric deixis: 'the following command' points to the code block that follows"
+host_from = "To check to see whether you already have a compatible version installed"
+host_to = "you're good to go!"
+anchor = "run the following command in your terminal"
+question = "When the page asks you to check your installed runtime, what exactly are you told to run?"
+correct = "Node with its short version flag, printing the installed version"
+foil_1 = "The Astro CLI's own version check"
+foil_2 = "The package manager's install command for Node"
+evidence = "node -v"
+gate = "pass"
+
+[[candidate]]
+id = "S08-O1-at-001784"
+decision = "accept"
+reason = "elliptical anaphor: 'the required' resolves to the minimum supported Node.js version stated earlier"
+host_from = "Astro supports **even-numbered** Node.js versions."
+host_to = "then you need to [install a compatible Node.js version](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)."
+anchor = "a version number lower than the required"
+question = "A reported runtime version below which threshold means you must install a different release?"
+correct = "Version 22.12.0, the minimum stated earlier in the section"
+foil_1 = "Version 18.20.8, the minimum for the even-numbered 18 line"
+foil_2 = "Version 22.20.0, as shown in the example output"
+version_change = true
+superseded_answer = "Version 18.20.8, the minimum for the even-numbered 18 line"
+superseded_source = "withastro/docs 273ebfb5cf36de0bbb815d65bc18a8da5386de97 (parent of Astro v6.0 commit 35e6c431, 2026-03-10) src/content/docs/en/tutorial/1-setup/1.mdx line 31: minimum supported versions v18.20.8, v20.3.0, and v22.0.0"
+evidence = "The current minimum supported version is `v22.12.0`"
+gate = "pass"
+
+[[candidate]]
+id = "S08-O1-at-002019"
+decision = "reject"
+reason = "generic: reader-possessive ('your code')"
+
+[[candidate]]
+id = "S08-O2-at-002053"
+decision = "reject"
+reason = "self_reference: 'This tutorial' denotes the containing document; no alternative referent to probe"
+
+[[candidate]]
+id = "S08-O1-at-002120"
+decision = "reject"
+reason = "generic: reader-possessive ('your operating system')"
+
+[[candidate]]
+id = "S08-O1-at-002262"
+decision = "reject"
+reason = "idiom: 'of your choice' is idiomatic, not referential"
+
+[[candidate]]
+id = "S08-O2-at-002349"
+decision = "reject"
+reason = "not_probeable: quiz prompt pointing at interactive option sets; a probe could only restate the options"
+
+[[candidate]]
+id = "S08-O1-at-002409"
+decision = "reject"
+reason = "generic: reader-possessive ('your files and their content')"
+
+[[candidate]]
+id = "S08-O1-at-002682"
+decision = "reject"
+reason = "generic: reader-possessive ('your repository')"
+
+[[candidate]]
+id = "S08-O1-at-003225"
+decision = "reject"
+reason = "generic: checklist item naming a kind of tool, not resolving a specific antecedent"
+
+[[relation]]
+id = "S08-R1-001"
+reason = "single-step Steps block"
+host_from = "[Download and install VS Code](https://code.visualstudio.com/#alt-downloads)"
+host_to = "or another code editor of your choice."
+anchor = "or another code editor of your choice"
+question = "In what order must the setup actions in the editor step be performed?"
+correct = "There is a single action, so no ordering applies"
+foil_1 = "Install the editor only after installing the runtime"
+gate = "fail"
+failed_arm = "both"
+reason_gate = "The Steps block contains one step; no sequence relation between actions is answerable from either A0 arm"
+
+[[relation]]
+id = "S08-R3-001"
+reason = "tip aside marking advisory force"
+host = """:::tip[We'll use...]
+This tutorial will use **VS Code**, but you can use any editor for your operating system."""
+host_implicit = "We'll use...: This tutorial will use **VS Code**, but you can use any editor for your operating system."
+anchor = "but you can use any editor for"
+question = "How binding is the tutorial's choice of code editor for the reader?"
+correct = "Optional: the tutorial uses one editor, but any editor for your platform works"
+foil_1 = "Required: the tutorial's steps only work with the editor it names"
+foil_2 = "Required only on some operating systems"
+evidence = "but you can use any editor for your operating system"
+gate = "pass"
+
+[[candidate]]
+id = "S08-O1-at-001537"
+decision = "reject"
+reason = "generic: reader-possessive ('your terminal') nested in an accepted deictic phrase"

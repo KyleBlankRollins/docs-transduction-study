@@ -1,0 +1,434 @@
+# S03 recipes/sharing-state-islands.mdx — AI-assisted review (amendment A3), 2026-09-23.
+specimen = "S03"
+
+[[candidate]]
+id = "S03-O1-at-001365"
+decision = "reject"
+reason = "not_referential: 'the bare minimum JS you'll need'"
+
+[[candidate]]
+id = "S03-O1-at-001638"
+decision = "reject"
+reason = "idiom: 'your preference'"
+
+[[candidate]]
+id = "S03-O1-at-002425"
+decision = "reject"
+reason = "generic: kind reference ('the frontmatter of server-side components')"
+
+[[candidate]]
+id = "S03-O1-at-002680"
+decision = "reject"
+reason = "not_referential: 'the value received by'"
+
+[[candidate]]
+id = "S03-O1-at-003383"
+decision = "reject"
+reason = "not_referential: sortal 'the same $ shortcut'"
+
+[[candidate]]
+id = "S03-O1-at-004251"
+decision = "reject"
+reason = "generic: reader-possessive ('your components')"
+
+[[candidate]]
+id = "S03-O1-at-004540"
+decision = "reject"
+reason = "not_referential: sortal 'the same state'"
+
+[[candidate]]
+id = "S03-O1-at-004976"
+decision = "reject"
+reason = "idiom: 'your favorite UI framework'"
+
+[[candidate]]
+id = "S03-O1-at-006097"
+decision = "reject"
+reason = "not_referential: link label"
+
+[[candidate]]
+id = "S03-O1-at-006196"
+decision = "reject"
+reason = "generic: reader-possessive ('your machine')"
+
+[[candidate]]
+id = "S03-O1-at-007508"
+decision = "reject"
+reason = "code: occurrence inside a code block"
+
+[[candidate]]
+id = "S03-O1-at-007607"
+decision = "reject"
+reason = "code: occurrence inside a code block"
+
+[[candidate]]
+id = "S03-O1-at-007952"
+decision = "reject"
+reason = "code: occurrence inside a code block"
+
+[[candidate]]
+id = "S03-O1-at-008051"
+decision = "reject"
+reason = "code: occurrence inside a code block"
+
+[[candidate]]
+id = "S03-O1-at-008396"
+decision = "reject"
+reason = "code: occurrence inside a code block"
+
+[[candidate]]
+id = "S03-O1-at-008495"
+decision = "reject"
+reason = "code: occurrence inside a code block"
+
+[[candidate]]
+id = "S03-O1-at-008799"
+decision = "reject"
+reason = "code: occurrence inside a code block"
+
+[[candidate]]
+id = "S03-O1-at-009000"
+decision = "reject"
+reason = "code: occurrence inside a code block"
+
+[[candidate]]
+id = "S03-O1-at-009227"
+decision = "reject"
+reason = "code: occurrence inside a code block"
+
+[[candidate]]
+id = "S03-O1-at-011039"
+decision = "reject"
+reason = "not_referential: descriptive definite ('the standard get() and set() helpers')"
+
+[[candidate]]
+id = "S03-O1-at-011216"
+decision = "reject"
+reason = "generic: reader-possessive ('your cart')"
+
+[[candidate]]
+id = "S03-O1-at-011551"
+decision = "reject"
+reason = "not_referential: bridging nominal ('the shape')"
+
+[[candidate]]
+id = "S03-O1-at-012501"
+decision = "reject"
+reason = "generic: reader-possessive ('your cart')"
+
+[[candidate]]
+id = "S03-O1-at-012604"
+decision = "reject"
+reason = "not_referential: bridging nominal ('the quantity')"
+
+[[candidate]]
+id = "S03-O1-at-014053"
+decision = "reject"
+reason = "not_referential: 'the value' restates the store value named in the preceding sentence"
+
+[[candidate]]
+id = "S03-O1-at-014609"
+decision = "reject"
+reason = "code: occurrence inside a code block"
+
+[[candidate]]
+id = "S03-O1-at-015193"
+decision = "reject"
+reason = "code: occurrence inside a code block"
+
+[[candidate]]
+id = "S03-O1-at-015777"
+decision = "reject"
+reason = "code: occurrence inside a code block"
+
+[[candidate]]
+id = "S03-O1-at-016398"
+decision = "reject"
+reason = "code: occurrence inside a code block"
+
+[[candidate]]
+id = "S03-O1-at-016934"
+decision = "reject"
+reason = "code: occurrence inside a code block"
+
+[[candidate]]
+id = "S03-O1-at-018029"
+decision = "reject"
+reason = "code: occurrence inside a code block"
+
+[[candidate]]
+id = "S03-O1-at-018769"
+decision = "reject"
+reason = "code: occurrence inside a code block"
+
+[[candidate]]
+id = "S03-O1-at-019515"
+decision = "reject"
+reason = "code: occurrence inside a code block"
+
+[[candidate]]
+id = "S03-O1-at-020062"
+decision = "reject"
+reason = "code: occurrence inside a code block"
+
+[[candidate]]
+id = "S03-O1-at-020531"
+decision = "reject"
+reason = "code: occurrence inside a code block"
+
+[[candidate]]
+id = "S03-O1-at-020941"
+decision = "reject"
+reason = "not_referential: link label"
+
+[[candidate]]
+id = "S03-O1-at-021040"
+decision = "reject"
+reason = "generic: reader-possessive ('your machine')"
+[[candidate]]
+id = "S03-O2-at-002497"
+decision = "accept"
+reason = "cataphoric deixis: 'the following restrictions' points to the bulleted restrictions"
+host_from = "Nano Stores can be used in `<script>` tags"
+host_to = "since Astro components do not re-render."
+anchor = "is not recommended because of the following restrictions"
+question = "Why does the page advise against using the store library in the frontmatter of server-side components?"
+correct = "Server-side writes don't reach client components, stores can't be passed as props, and server components can't subscribe to changes"
+foil_1 = "The library is too large to ship with server-rendered pages"
+foil_2 = "Server-side components cannot import third-party packages"
+evidence = "You cannot pass a Nano Store as a \"prop\" to client-side components."
+gate = "pass"
+
+[[relation]]
+id = "S03-R2-001"
+reason = "framework alternatives for installing the store helpers"
+host_from = "To get started, install Nano Stores alongside their helper package"
+host_to = "You can jump into the [Nano Stores usage guide](https://github.com/nanostores/nanostores#guide)"
+anchor = "alongside their helper package for"
+question = "How are the five framework-specific install commands for the store library related?"
+correct = "They are alternatives: run only the one for the UI framework you use"
+foil_1 = "Run all of them so every framework is supported"
+foil_2 = "Run the base package command first, then each helper in turn"
+evidence = "<Fragment slot=\"vue\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S03-R2-002"
+reason = "framework alternatives for the toggle component"
+host_from = "We'll start by wiring up our `CartFlyoutToggle`:"
+host_to = "Then, we can read `isCartOpen` from our `CartFlyout` component:"
+anchor = "We'll start by wiring up our"
+question = "How are the five versions of the cart toggle button component related?"
+correct = "They are alternatives: use the one written for your UI framework"
+foil_1 = "All five are needed, one for each page of the store"
+foil_2 = "They are successive refinements to apply in order"
+evidence = "<Fragment slot=\"svelte\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S03-R2-003"
+reason = "framework alternatives for reading the open state in the flyout"
+host_from = "Then, we can read `isCartOpen` from our `CartFlyout` component:"
+host_to = "### Using \"maps\""
+anchor = "Then, we can read"
+question = "How are the five versions of the flyout component that reads the open state related?"
+correct = "They are alternatives: use the one written for your UI framework"
+foil_1 = "All five are needed, one for each interactive element"
+foil_2 = "They are successive refinements to apply in order"
+evidence = "<Fragment slot=\"solid\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S03-R2-004"
+reason = "JavaScript/TypeScript alternatives for the cart store file"
+host_from = "Let's add a `cartItem` store to our `cartStore.js` from earlier."
+host_to = "Now, let's export an `addCartItem` helper for our components to use."
+anchor = "You can also switch to a TypeScript file"
+question = "How are the two versions of the cart store file, plain JavaScript and TypeScript, related?"
+correct = "They are alternatives: use either the JavaScript or the TypeScript version"
+foil_1 = "Both are needed: one declares the types and the other the store"
+foil_2 = "The TypeScript version is added after the JavaScript one"
+evidence = "<Fragment slot=\"ts\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S03-R2-005"
+reason = "JavaScript/TypeScript alternatives for the add-to-cart helper"
+host_from = "Now, let's export an `addCartItem` helper for our components to use."
+host_to = "You may have noticed we're calling"
+anchor = "helper for our components to use"
+question = "How are the two versions of the add-to-cart helper related?"
+correct = "They are alternatives: use either the JavaScript or the TypeScript version"
+foil_1 = "Both are needed: one runs on the server and one in the browser"
+foil_2 = "The TypeScript version extends the JavaScript one and is appended"
+evidence = "<Fragment slot=\"ts\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S03-R2-006"
+reason = "framework alternatives for the add-to-cart form"
+host_from = "With our store in place, we can call this function inside our `AddToCartForm`"
+host_to = "Finally, we'll render those cart items inside our `CartFlyout`:"
+anchor = "With our store in place"
+question = "How are the five versions of the add-to-cart form component related?"
+correct = "They are alternatives: use the one written for your UI framework"
+foil_1 = "All five are needed, one per product"
+foil_2 = "They are successive refinements to apply in order"
+evidence = "<Fragment slot=\"react\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S03-R2-007"
+reason = "framework alternatives for rendering the cart items"
+host_from = "Finally, we'll render those cart items inside our `CartFlyout`:"
+host_to = "Now, you should have a fully interactive ecommerce example"
+anchor = "render those cart items inside our"
+question = "How are the five versions of the flyout that lists cart items related?"
+correct = "They are alternatives: use the one written for your UI framework"
+foil_1 = "All five are needed, one for each cart item"
+foil_2 = "They are successive refinements to apply in order"
+evidence = "<Fragment slot=\"preact\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S03-R3-001"
+reason = "FAQ note aside: 'not recommended' scope"
+host_from = ":::note[FAQ]"
+host_from_implicit = "FAQ: <details>"
+host_to = "built for reactivity to changes on the **client** specifically."
+anchor = "you can give Nano Stores a try"
+question = "How does the page treat using the store library in the frontmatter of server-side components?"
+correct = "Not recommended, though you may still try it if you understand the restrictions"
+foil_1 = "Forbidden: it fails to build"
+foil_2 = "The recommended default approach"
+evidence = "is not recommended because of the following restrictions"
+gate = "pass"
+
+[[relation]]
+id = "S03-R3-002"
+reason = "note aside inside the Svelte tab"
+host = """:::note
+  No helper package here! Nano Stores can be used like standard Svelte stores."""
+host_implicit = "Note: No helper package here! Nano Stores can be used like standard Svelte stores."
+anchor = "No helper package here"
+question = "For Svelte, what does the page say about installing a framework helper package?"
+correct = "None is needed; the stores work like Svelte's standard stores"
+foil_1 = "A Svelte-specific helper package is required"
+foil_2 = "The helper is optional but recommended"
+evidence = "No helper package here!"
+gate = "pass"
+
+[[relation]]
+id = "S03-R3-003"
+reason = "tip aside: recommendation"
+host = """:::tip
+**[Maps](https://github.com/nanostores/nanostores#maps) are a great choice for objects you write to regularly!**"""
+host_implicit = "As a helpful tip, **[Maps](https://github.com/nanostores/nanostores#maps) are a great choice for objects you write to regularly!**"
+anchor = "are a great choice for objects you write to regularly"
+question = "How does the page present using maps for objects you write to often?"
+correct = "As a recommended good choice, not a requirement"
+foil_1 = "As required for any object kept in shared state"
+foil_2 = "As discouraged in favor of atoms"
+evidence = "are a great choice for objects you write to regularly!"
+gate = "pass"
+
+[[relation]]
+id = "S03-R3-004"
+reason = "note aside: when the hook should be used"
+host_from = ":::note\n<details>"
+host_from_implicit = "Note: <details>"
+host_to = "we don't need `useStore` here."
+anchor = "is meant to trigger component re-renders"
+question = "According to the explanation, when should the store-reading hook be used?"
+correct = "Whenever the store value is rendered to the interface, not for reads during events"
+foil_1 = "For every read of a store, including inside event handlers"
+foil_2 = "Only inside server-side components"
+evidence = "should be used whenever the store value is being rendered to the UI"
+gate = "pass"
+
+[[relation]]
+id = "S03-R3-005"
+reason = "legacy match is an <aside> HTML element inside a component code example"
+invalid = true
+gate = "fail"
+failed_arm = "both"
+reason_gate = "Not a force relation: the inventory matched a literal <aside> element in a CartFlyout code example; no admonition or modal force exists in either A0 arm"
+
+[[relation]]
+id = "S03-R3-006"
+reason = "legacy match is an <aside> HTML element inside a component code example"
+invalid = true
+gate = "fail"
+failed_arm = "both"
+reason_gate = "Not a force relation: the inventory matched a literal <aside> element in a CartFlyout code example; no admonition or modal force exists in either A0 arm"
+
+[[relation]]
+id = "S03-R3-007"
+reason = "legacy match is an <aside> HTML element inside a component code example"
+invalid = true
+gate = "fail"
+failed_arm = "both"
+reason_gate = "Not a force relation: the inventory matched a literal <aside> element in a CartFlyout code example; no admonition or modal force exists in either A0 arm"
+
+[[relation]]
+id = "S03-R3-008"
+reason = "legacy match is an <aside> HTML element inside a component code example"
+invalid = true
+gate = "fail"
+failed_arm = "both"
+reason_gate = "Not a force relation: the inventory matched a literal <aside> element in a CartFlyout code example; no admonition or modal force exists in either A0 arm"
+
+[[relation]]
+id = "S03-R3-009"
+reason = "legacy match is an <aside> HTML element inside a component code example"
+invalid = true
+gate = "fail"
+failed_arm = "both"
+reason_gate = "Not a force relation: the inventory matched a literal <aside> element in a CartFlyout code example; no admonition or modal force exists in either A0 arm"
+
+[[relation]]
+id = "S03-R3-010"
+reason = "legacy match is an <aside> HTML element inside a component code example"
+invalid = true
+gate = "fail"
+failed_arm = "both"
+reason_gate = "Not a force relation: the inventory matched a literal <aside> element in a CartFlyout code example; no admonition or modal force exists in either A0 arm"
+
+[[relation]]
+id = "S03-R3-011"
+reason = "legacy match is an <aside> HTML element inside a component code example"
+invalid = true
+gate = "fail"
+failed_arm = "both"
+reason_gate = "Not a force relation: the inventory matched a literal <aside> element in a CartFlyout code example; no admonition or modal force exists in either A0 arm"
+
+[[relation]]
+id = "S03-R3-012"
+reason = "legacy match is an <aside> HTML element inside a component code example"
+invalid = true
+gate = "fail"
+failed_arm = "both"
+reason_gate = "Not a force relation: the inventory matched a literal <aside> element in a CartFlyout code example; no admonition or modal force exists in either A0 arm"
+
+[[relation]]
+id = "S03-R3-013"
+reason = "legacy match is an <aside> HTML element inside a component code example"
+invalid = true
+gate = "fail"
+failed_arm = "both"
+reason_gate = "Not a force relation: the inventory matched a literal <aside> element in a CartFlyout code example; no admonition or modal force exists in either A0 arm"
+
+[[relation]]
+id = "S03-R3-014"
+reason = "legacy match is an <aside> HTML element inside a component code example"
+invalid = true
+gate = "fail"
+failed_arm = "both"
+reason_gate = "Not a force relation: the inventory matched a literal <aside> element in a CartFlyout code example; no admonition or modal force exists in either A0 arm"

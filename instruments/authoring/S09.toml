@@ -1,0 +1,381 @@
+# S09 guides/migrate-to-astro/from-nextjs.mdx — AI-assisted review (amendment A3), 2026-09-23.
+specimen = "S09"
+
+[[candidate]]
+id = "S09-O1-at-000702"
+decision = "reject"
+reason = "generic: reader-possessive ('your project')"
+
+[[candidate]]
+id = "S09-O1-at-001356"
+decision = "reject"
+reason = "generic: reader-possessive ('your existing JSX components')"
+
+[[candidate]]
+id = "S09-O1-at-001693"
+decision = "reject"
+reason = "generic: reader-possessive ('your Next.js site')"
+
+[[candidate]]
+id = "S09-O1-at-001827"
+decision = "reject"
+reason = "generic: reader-possessive ('your project')"
+
+[[candidate]]
+id = "S09-O1-at-001897"
+decision = "reject"
+reason = "generic: reader-possessive ('your home page')"
+
+[[candidate]]
+id = "S09-O1-at-002057"
+decision = "reject"
+reason = "generic: reader-possessive ('your code')"
+
+[[candidate]]
+id = "S09-O1-at-002553"
+decision = "reject"
+reason = "heading: occurrence is in a section heading"
+
+[[candidate]]
+id = "S09-O1-at-002777"
+decision = "reject"
+reason = "generic: reader-possessive ('your package manager')"
+
+[[candidate]]
+id = "S09-O1-at-004399"
+decision = "reject"
+reason = "generic: reader-possessive ('your Next project')"
+
+[[candidate]]
+id = "S09-O1-at-004496"
+decision = "reject"
+reason = "generic: reader-possessive ('your new Astro site')"
+
+[[candidate]]
+id = "S09-O1-at-004610"
+decision = "reject"
+reason = "generic: reader-possessive ('your Next project')"
+
+[[candidate]]
+id = "S09-O1-at-004646"
+decision = "reject"
+reason = "generic: reader-possessive ('your new Astro site')"
+
+[[candidate]]
+id = "S09-O1-at-004676"
+decision = "reject"
+reason = "heading: occurrence is in a section heading"
+
+[[candidate]]
+id = "S09-O1-at-005092"
+decision = "reject"
+reason = "generic: reader-possessive ('your site')"
+
+[[candidate]]
+id = "S09-O1-at-005319"
+decision = "reject"
+reason = "generic: reader-possessive ('the contents of your src folder')"
+
+[[candidate]]
+id = "S09-O1-at-005972"
+decision = "reject"
+reason = "not_referential: 'the basis for your HTML template'"
+
+[[candidate]]
+id = "S09-O1-at-006463"
+decision = "reject"
+reason = "generic: 'the HTML template' as a kind"
+
+[[candidate]]
+id = "S09-O1-at-006622"
+decision = "reject"
+reason = "generic: reader-possessive ('your Next function')"
+
+[[candidate]]
+id = "S09-O1-at-006804"
+decision = "reject"
+reason = "generic: reader-possessive in link text"
+
+[[candidate]]
+id = "S09-O1-at-007089"
+decision = "reject"
+reason = "generic: reader-possessive ('your local files')"
+
+[[candidate]]
+id = "S09-O1-at-009010"
+decision = "reject"
+reason = "generic: reader-possessive ('your Next.js layouts')"
+
+[[candidate]]
+id = "S09-O1-at-009614"
+decision = "reject"
+reason = "not_referential: 'the standard HTML templating'"
+
+[[candidate]]
+id = "S09-O1-at-010146"
+decision = "reject"
+reason = "generic: reader-possessive ('your Next project')"
+
+[[candidate]]
+id = "S09-O1-at-010245"
+decision = "reject"
+reason = "generic: reader-possessive ('your app')"
+
+[[candidate]]
+id = "S09-O1-at-012085"
+decision = "reject"
+reason = "generic: reader-possessive ('your posts')"
+
+[[candidate]]
+id = "S09-O1-at-012165"
+decision = "reject"
+reason = "generic: reader-possessive ('your page content')"
+
+[[candidate]]
+id = "S09-O1-at-012303"
+decision = "reject"
+reason = "generic: reader-possessive ('your existing Next JSX pages')"
+
+[[candidate]]
+id = "S09-O1-at-013305"
+decision = "reject"
+reason = "generic: reader-possessive ('your content')"
+
+[[candidate]]
+id = "S09-O1-at-013337"
+decision = "reject"
+reason = "not_referential: 'the content yourself'"
+
+[[candidate]]
+id = "S09-O1-at-013558"
+decision = "reject"
+reason = "not_referential: 'the output of the build step'"
+
+[[candidate]]
+id = "S09-O1-at-013685"
+decision = "reject"
+reason = "generic: reader-possessive ('the markup of your Next site')"
+
+[[candidate]]
+id = "S09-O1-at-013814"
+decision = "reject"
+reason = "generic: reader-possessive ('your React components')"
+
+[[candidate]]
+id = "S09-O1-at-014231"
+decision = "reject"
+reason = "generic: reader-possessive ('your own Link component')"
+
+[[candidate]]
+id = "S09-O1-at-015789"
+decision = "reject"
+reason = "generic: reader-possessive ('your project source')"
+
+[[candidate]]
+id = "S09-O1-at-017434"
+decision = "reject"
+reason = "generic: reader-possessive ('your existing Tailwind code')"
+
+[[candidate]]
+id = "S09-O1-at-017812"
+decision = "reject"
+reason = "generic: reader-possessive ('your React components')"
+
+[[candidate]]
+id = "S09-O1-at-018542"
+decision = "reject"
+reason = "not_referential: named guide"
+
+[[candidate]]
+id = "S09-O1-at-018731"
+decision = "reject"
+reason = "not_referential: quantity ('the first 151')"
+
+[[candidate]]
+id = "S09-O1-at-018760"
+decision = "reject"
+reason = "not_referential: named external API"
+
+[[candidate]]
+id = "S09-O1-at-018923"
+decision = "reject"
+reason = "not_referential: descriptive definite naming its own referent"
+
+[[candidate]]
+id = "S09-O1-at-020780"
+decision = "reject"
+reason = "not_referential: 'the case of any'"
+
+[[candidate]]
+id = "S09-O1-at-022076"
+decision = "reject"
+reason = "not_referential: 'the page templating'"
+[[candidate]]
+id = "S09-O1-at-006726"
+decision = "accept"
+reason = "anaphor: 'the official integration' refers to the React integration named earlier, competing with the MDX integration"
+host_from = "5. Decide whether any imported components also need to be converted to Astro."
+host_from_implicit = "5. Decide whether any imported components also need to be converted to Astro."
+host_to = "especially if they do not need to be interactive!"
+anchor = "the official integration installed"
+question = "Which integration must be installed to keep using existing React components in an Astro file?"
+correct = "The official React integration"
+foil_1 = "The official MDX integration"
+foil_2 = "An adapter for server rendering"
+evidence = "you can [use existing React components in your Astro file]"
+gate = "pass"
+
+[[candidate]]
+id = "S09-O1-at-010713"
+decision = "accept"
+reason = "anaphor: 'the returned JSX' refers to the custom document component shown just before, competing with the app-directory files"
+host_from = "Your Next project may have a"
+host_to = "and other HTML standard tags."
+anchor = "file that imports React components to customize"
+question = "When migrating from the pages directory, whose returned JSX becomes the new layout file?"
+correct = "The custom document component shown just before the steps"
+foil_1 = "The app directory's layout and head files"
+foil_2 = "The page component being converted"
+evidence = "`pages/_document.jsx` file that imports React components"
+gate = "pass"
+
+[[candidate]]
+id = "S09-O1-at-011641"
+decision = "accept"
+reason = "anaphor: 'the returned JSX' refers to the app-directory layout and head files shown just before"
+host_from = "directory layout files are created with two files"
+host_to = "instead of React's `{children}` prop:"
+anchor = "are created with two files"
+question = "When migrating from the app directory, whose returned JSX is used for the new layout?"
+correct = "The app directory's layout and head files shown just before"
+foil_1 = "The custom document file from the pages directory"
+foil_2 = "The page component being converted"
+evidence = "a `layout.jsx` file to customize the `<html>` and `<body>` contents"
+gate = "pass"
+
+[[candidate]]
+id = "S09-O2-at-024636"
+decision = "accept"
+reason = "discourse deixis: 'this list' refers to the community resources list above"
+host_from = "## Community Resources"
+host_to = "from-nextjs.mdx)!"
+anchor = "a helpful video or blog post about converting"
+question = "Which list does the closing note invite you to add a helpful video or post to?"
+correct = "The page's list of community resources about migrating"
+foil_1 = "The theme showcase for starter themes"
+foil_2 = "The list of official starter templates"
+evidence = "[add it to this list]"
+gate = "pass"
+
+[[relation]]
+id = "S09-R1-001"
+reason = "ordered steps for putting source code in src"
+host_from = "Following [Astro's project structure](/en/basics/project-structure/):"
+host_to = "`src/styles`, `src/scripts`."
+anchor = "folder untouched"
+question = "In the steps for putting source code into the src folder, what is the second step?"
+correct = "Copying or moving the other files and folders into src"
+foil_1 = "Leaving the static assets folder untouched"
+foil_2 = "Creating the Astro configuration file"
+evidence = "2. **Copy or Move**"
+evidence_implicit = "Finally, **Copy or Move**"
+gate = "pass"
+
+[[relation]]
+id = "S09-R1-002"
+reason = "ordered steps for migrating from the pages directory"
+host_from = "Your Next project may have a"
+host_to = "and other HTML standard tags."
+anchor = "file that imports React components to customize"
+question = "When migrating from the pages directory, what do you do after making the new layout file?"
+correct = "Replace React components with standard HTML tags and a slot"
+foil_1 = "Copy the document file over unchanged"
+foil_2 = "Create a separate head file"
+evidence = "2. Replace any React components"
+evidence_implicit = "Finally, Replace any React components"
+gate = "pass"
+
+[[relation]]
+id = "S09-R1-003"
+reason = "ordered steps for migrating from the app directory"
+host_from = "directory layout files are created with two files"
+host_to = "instead of React's `{children}` prop:"
+anchor = "are created with two files"
+question = "When migrating from the app directory, what is the second step?"
+correct = "Replace both files with one layout that has a page shell and a slot"
+foil_1 = "Make a new layout from the returned JSX"
+foil_2 = "Keep the head file as a separate component"
+evidence = "2. Replace both these files"
+evidence_implicit = "Finally, Replace both these files"
+gate = "pass"
+
+[[relation]]
+id = "S09-R1-004"
+reason = "ordered guided-example steps"
+host_from = "Here's how to recreate that in `src/pages/index.astro`"
+host_to = "wraps the page templating."
+anchor = "Add any needed imports, props, and JavaScript"
+question = "In the guided example, what comes after creating the new index page?"
+correct = "Adding the needed imports, props, and JavaScript"
+foil_1 = "Identifying the returned JSX"
+foil_2 = "Deleting the old Next page"
+evidence = "3. Add any needed imports, props, and JavaScript"
+evidence_implicit = "Finally, Add any needed imports, props, and JavaScript"
+gate = "pass"
+
+[[relation]]
+id = "S09-R2-001"
+reason = "package-manager alternatives for creating a project"
+host_from = "You can pass a `--template` argument"
+host_to = "Then, copy your existing Next project files over"
+anchor = "to start a new Astro project with one of our official starters"
+question = "How are the three commands for creating the new project related?"
+correct = "They are alternatives: run only the one for your package manager"
+foil_1 = "Run all three in sequence"
+foil_2 = "Run the npm one first, then the others"
+evidence = "<Fragment slot=\"pnpm\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S09-R2-002"
+reason = "two versions of one component in the comparison tabs"
+host_from = "Compare the following Next component and a corresponding Astro component:"
+host_to = "### Migrating Layout Files"
+anchor = "and a corresponding Astro component"
+question = "How are the two code samples in the component comparison related?"
+correct = "They are two versions of the same component, one in Next's JSX and one in Astro"
+foil_1 = "They are two halves of one component that must be combined"
+foil_2 = "The Astro sample imports and wraps the JSX sample"
+evidence = "<Fragment slot=\"astro\">"
+evidence_implicit = "If you are using astro:"
+gate = "pass"
+
+[[relation]]
+id = "S09-R3-001"
+reason = "tip aside: optional pointer"
+host = """:::tip
+Visit https://astro.new for the full list of official starter templates, and links for opening a new project in StackBlitz or CodeSandbox."""
+host_implicit = "As a helpful tip, Visit https://astro.new for the full list of official starter templates, and links for opening a new project in StackBlitz or CodeSandbox."
+anchor = "for the full list of official starter templates"
+question = "How does the page present visiting the site listing official starter templates?"
+correct = "As an optional pointer"
+foil_1 = "As a required step before creating a project"
+foil_2 = "As a warning about unofficial templates"
+evidence = ":::tip"
+evidence_implicit = "As a helpful tip"
+gate = "pass"
+
+[[relation]]
+id = "S09-R3-002"
+reason = "note aside: optional invitation"
+host_from = ":::note[Have a resource to share?]"
+host_from_implicit = "Have a resource to share?: If you found"
+host_to = "from-nextjs.mdx)!"
+anchor = "a helpful video or blog post about converting"
+question = "How does the page present contributing a helpful migration resource?"
+correct = "As an optional invitation to add it to the list"
+foil_1 = "As expected of anyone who has migrated a site"
+foil_2 = "As a warning against unofficial resources"
+evidence = "add it to this list"
+gate = "pass"

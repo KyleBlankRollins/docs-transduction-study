@@ -1,0 +1,532 @@
+# S02 guides/build-with-ai.mdx — AI-assisted review (amendment A3), 2026-09-23.
+specimen = "S02"
+
+[[candidate]]
+id = "S02-O1-at-000623"
+decision = "accept"
+reason = "anaphor: 'the framework' refers back to Astro"
+host_from = "AI-powered editors and agentic coding tools generally have good knowledge"
+host_to = "recent changes to the framework."
+anchor = "recent changes to the framework"
+question = "According to the opening, AI tools may miss recent changes to what?"
+correct = "Astro itself, the web framework the page covers"
+foil_1 = "The AI tools' own underlying models"
+foil_2 = "The protocol that connects tools to data sources"
+evidence = "have good knowledge of Astro's core APIs and concepts"
+gate = "pass"
+
+[[candidate]]
+id = "S02-O2-at-000639"
+decision = "reject"
+reason = "self_reference: 'This guide' denotes the containing document"
+
+[[candidate]]
+id = "S02-O1-at-000965"
+decision = "reject"
+reason = "exophoric: the live documentation site, not a textual antecedent"
+
+[[candidate]]
+id = "S02-O1-at-001369"
+decision = "accept"
+reason = "anaphor: 'The server' refers to the documentation MCP server, competing with AI models and kapa.ai nearby"
+host_from = "Unlike AI models trained on static data"
+host_to = "to maintain an up-to-date index of the Astro documentation."
+anchor = "and runs remotely with nothing to install locally"
+question = "What does the page describe as free, open-source, and running remotely?"
+correct = "The documentation server that AI tools connect to"
+foil_1 = "The third-party indexing service it relies on"
+foil_2 = "The AI models trained on static data"
+evidence = "the MCP server provides access to the latest Astro documentation"
+gate = "pass"
+
+[[candidate]]
+id = "S02-O1-at-001560"
+decision = "reject"
+reason = "exophoric: proper reference to the documentation corpus"
+
+[[candidate]]
+id = "S02-O1-at-002019"
+decision = "reject"
+reason = "generic: reader-possessive ('your chosen tool')"
+
+[[candidate]]
+id = "S02-O2-at-002099"
+decision = "accept"
+reason = "cataphoric deixis: 'the following configuration' points to the tabbed JSON configurations"
+host_from = "Many tools support a common JSON configuration format for MCP servers."
+host_to = "#### Claude Code CLI"
+anchor = "the following configuration in your tool"
+question = "For manual setup, what does the page have you add to your tool's server settings?"
+correct = "A JSON server entry for the docs server, in a streaming-HTTP or a local-proxy form"
+foil_1 = "A shell command that installs the server globally"
+foil_2 = "A workflow file for continuous integration"
+evidence = "\"url\": \"https://mcp.docs.astro.build/mcp\""
+gate = "pass"
+
+[[candidate]]
+id = "S02-O1-at-002862"
+decision = "reject"
+reason = "not_referential: generic 'the command line'"
+
+[[candidate]]
+id = "S02-O1-at-003004"
+decision = "accept"
+reason = "cataphor: 'the terminal command' refers to the claude mcp add command that follows"
+host_from = "Install using the terminal command:"
+host_to = "[More info on using MCP servers with Claude Code](https://docs.anthropic.com/en/docs/claude-code/mcp)"
+anchor = "Install using the terminal command"
+question = "For the command-line coding tool from Anthropic, what does the install command do?"
+correct = "Registers the docs server with the tool over HTTP transport under a chosen name"
+foil_1 = "Runs the docs server locally through a proxy started with npx"
+foil_2 = "Adds the docs server to a GitHub Actions workflow"
+evidence = "claude mcp add --transport http astro-docs"
+gate = "pass"
+
+[[candidate]]
+id = "S02-O2-at-003591"
+decision = "accept"
+reason = "cataphoric deixis: 'the following' points to the workflow YAML snippet"
+host_from = "by adding the following to the workflow file:"
+host_to = "#using-custom-mcp-configuration)"
+anchor = "by adding the following to the workflow file"
+question = "What does the page have you add to the workflow file for the GitHub Action?"
+correct = "An action step with an MCP configuration for the docs server and its search tool allowed"
+foil_1 = "A separate job that installs the docs server with npx"
+foil_2 = "A repository secret holding the docs server's address"
+evidence = "mcp_config: |"
+gate = "pass"
+
+[[candidate]]
+id = "S02-O1-at-003693"
+decision = "reject"
+reason = "code: occurrence inside a YAML comment"
+
+[[candidate]]
+id = "S02-O1-at-004115"
+decision = "reject"
+reason = "not_referential: link label"
+
+[[candidate]]
+id = "S02-O1-at-004432"
+decision = "reject"
+reason = "not_referential: 'the global level'"
+
+[[candidate]]
+id = "S02-O1-at-004985"
+decision = "accept"
+reason = "cataphor: 'the button below' refers to the Add to Cursor link button"
+host_from = "[Cursor](https://cursor.com) is an AI code editor."
+host_to = "[More info on using MCP servers with Cursor](https://docs.cursor.com/context/mcp)"
+anchor = "Adding the Astro Docs MCP server allows Cursor"
+question = "For the Cursor editor, what does the install button on the page do?"
+correct = "Opens a link that adds the docs server to that editor"
+foil_1 = "Opens that editor's MCP documentation page"
+foil_2 = "Downloads and installs the editor itself"
+evidence = "Add to Cursor"
+gate = "pass"
+
+[[candidate]]
+id = "S02-O1-at-005549"
+decision = "accept"
+reason = "cataphor: 'the button below' refers to the Add to VS Code link button"
+host_from = "[Visual Studio Code](https://code.visualstudio.com) supports MCP servers"
+host_to = "(https://code.visualstudio.com/docs/copilot/chat/mcp-servers#_add-an-mcp-server)"
+anchor = "Adding the Astro Docs MCP server allows VS Code"
+question = "For Microsoft's code editor, what does the install button on the page do?"
+correct = "Opens a link that adds the docs server to that editor"
+foil_1 = "Opens that editor's MCP documentation page"
+foil_2 = "Enables the editor's chat assistant"
+evidence = "Add to VS Code"
+gate = "pass"
+
+[[candidate]]
+id = "S02-O2-at-006250"
+decision = "accept"
+reason = "cataphoric deixis: 'the following configuration' points to the Warp JSON entry"
+host_from = "Enter the following configuration. You can optionally configure"
+host_to = "Click \"Save\"."
+anchor = "to activate on startup using the"
+question = "In the Warp setup, what do you enter after clicking the add button?"
+correct = "A JSON entry that runs the remote proxy through npx, optionally starting on launch"
+foil_1 = "Only the server address in a text field"
+foil_2 = "A shell command that installs the server"
+evidence = "\"start_on_launch\": true"
+gate = "pass"
+
+[[candidate]]
+id = "S02-O1-at-007249"
+decision = "reject"
+reason = "not_referential: value given in the same clause"
+
+[[candidate]]
+id = "S02-O1-at-007308"
+decision = "reject"
+reason = "not_referential: 'the name' with value given in the same clause"
+
+[[candidate]]
+id = "S02-O1-at-007872"
+decision = "reject"
+reason = "generic: reader-possessive ('your editor')"
+
+[[candidate]]
+id = "S02-O2-at-007892"
+decision = "accept"
+reason = "cataphoric deixis: 'the following configuration' points to the Windsurf proxy JSON entry"
+host_from = "Windsurf doesn't support streaming HTTP, so it requires a local proxy configuration:"
+host_to = "Save the configuration and restart Windsurf."
+anchor = "so it requires a local proxy configuration"
+question = "In the Windsurf setup, what kind of server entry goes into its MCP settings?"
+correct = "One that runs the remote proxy through npx"
+foil_1 = "One that points directly at the server over streaming HTTP"
+foil_2 = "One that registers the server through a terminal command"
+evidence = "\"args\": [\"-y\", \"mcp-remote\", \"https://mcp.docs.astro.build/mcp\"]"
+gate = "pass"
+
+[[candidate]]
+id = "S02-O1-at-007923"
+decision = "reject"
+reason = "generic: reader-possessive ('your Windsurf MCP settings') nested in an accepted deictic phrase"
+
+[[candidate]]
+id = "S02-O1-at-008181"
+decision = "reject"
+reason = "not_probeable: only candidate referent is the file opened one step earlier; no plausible competing referent for a relational foil"
+
+[[candidate]]
+id = "S02-O1-at-008531"
+decision = "reject"
+reason = "not_referential: 'the global level'"
+
+[[candidate]]
+id = "S02-O2-at-009228"
+decision = "accept"
+reason = "cataphoric deixis: 'the following configuration' points to the Antigravity JSON entry"
+host_from = "Add the following configuration to `mcp_config.json`:"
+host_to = "in the \"Manage MCPs\" tab."
+anchor = "and click \"Refresh\""
+question = "In the Antigravity setup, what is added to its MCP configuration file?"
+correct = "A server entry giving the docs server's address directly"
+foil_1 = "A server entry that runs the remote proxy through npx"
+foil_2 = "An environment variable holding an API key"
+evidence = "\"serverUrl\": \"https://mcp.docs.astro.build/mcp\""
+gate = "pass"
+
+[[candidate]]
+id = "S02-O1-at-009462"
+decision = "reject"
+reason = "not_probeable: only candidate referent is the file opened one step earlier; no plausible competing referent for a relational foil"
+
+[[candidate]]
+id = "S02-O1-at-009757"
+decision = "reject"
+reason = "generic: reader-possessive ('your editor')"
+
+[[candidate]]
+id = "S02-O2-at-009777"
+decision = "accept"
+reason = "cataphoric deixis: 'the following configuration' points to the Zed context-server JSON"
+host_from = "Open `~/.config/zed/settings.json` in your editor."
+host_to = "Save the configuration."
+anchor = "Zed MCP settings"
+question = "In the Zed setup, what is added to its settings?"
+correct = "An enabled context-server entry pointing at the docs server's address"
+foil_1 = "A server entry that runs the remote proxy through npx"
+foil_2 = "An extension installed from the editor's marketplace"
+evidence = "\"context_servers\": {"
+gate = "pass"
+
+[[candidate]]
+id = "S02-O1-at-009808"
+decision = "reject"
+reason = "generic: reader-possessive ('your Zed MCP settings') nested in an accepted deictic phrase"
+
+[[candidate]]
+id = "S02-O1-at-010074"
+decision = "reject"
+reason = "not_probeable: only candidate referent is the file opened two steps earlier; no plausible competing referent for a relational foil"
+
+[[candidate]]
+id = "S02-O1-at-010581"
+decision = "accept"
+reason = "cataphor: 'the button below' refers to the Add to Raycast link button"
+host_from = "[Raycast](https://www.raycast.com/) can connect to MCP servers"
+host_to = "[More info on using MCP servers with Raycast](https://manual.raycast.com/model-context-protocol)"
+anchor = "allows Raycast to access the latest Astro documentation"
+question = "For the Raycast launcher, what does the install button on the page do?"
+correct = "Opens a link that adds the docs server to that app"
+foil_1 = "Opens that app's documentation about the protocol"
+foil_2 = "Installs the app itself"
+evidence = "Add to Raycast"
+gate = "pass"
+
+[[candidate]]
+id = "S02-O1-at-011195"
+decision = "reject"
+reason = "generic: reader-possessive ('your Opencode configuration file')"
+
+[[candidate]]
+id = "S02-O2-at-012079"
+decision = "accept"
+reason = "cataphoric deixis: 'the following' points to the Copilot coding agent JSON"
+host_from = "by adding the following to your repository"
+host_to = "extend-coding-agent-with-mcp)."
+anchor = "Copilot coding agent settings available at"
+question = "For GitHub's coding agent, what does the page have you add to the repository's agent settings?"
+correct = "A JSON entry for the docs server over HTTP with its search tool listed"
+foil_1 = "A workflow step that uses Anthropic's action"
+foil_2 = "A local proxy command started with npx"
+evidence = "\"tools\": [\"mcp__astro-docs__search_astro_docs\"]"
+gate = "pass"
+
+[[candidate]]
+id = "S02-O1-at-012669"
+decision = "reject"
+reason = "generic: reader-possessive ('your AI tool')"
+
+[[candidate]]
+id = "S02-O1-at-012752"
+decision = "reject"
+reason = "exophoric: the live documentation"
+
+[[candidate]]
+id = "S02-O1-at-013282"
+decision = "reject"
+reason = "generic: reader-possessive ('your tool')"
+
+[[candidate]]
+id = "S02-O1-at-013341"
+decision = "reject"
+reason = "not_referential: value given in the same item"
+
+[[candidate]]
+id = "S02-O1-at-013413"
+decision = "reject"
+reason = "generic: reader-possessive ('your tool')"
+
+[[candidate]]
+id = "S02-O1-at-013461"
+decision = "reject"
+reason = "generic: reader-possessive ('your specific tool')"
+
+[[candidate]]
+id = "S02-O1-at-013676"
+decision = "reject"
+reason = "not_probeable: antecedent (the indexing API) is about 12,000 characters earlier; a host would span most of the page, and locally the expression restates its own description"
+
+[[candidate]]
+id = "S02-O1-at-013895"
+decision = "reject"
+reason = "generic: reader-possessive ('your project code')"
+
+[[candidate]]
+id = "S02-O1-at-013934"
+decision = "reject"
+reason = "generic: reader-possessive ('Your conversation')"
+
+[[candidate]]
+id = "S02-O1-at-014061"
+decision = "accept"
+reason = "anaphor: 'the chatbot' refers to the Discord AI chatbot, competing with the regular support channel"
+host_from = "The same technology that powers Astro"
+host_to = "please create a thread in our regular `#support` channel."
+anchor = "are subject to the same server rules"
+question = "Which conversations are described as public and not actively visited by volunteer helpers?"
+correct = "Those with the AI chatbot in the chat community"
+foil_1 = "Threads in the regular human support channel"
+foil_2 = "Issues opened in the docs server's repository"
+evidence = "is also available as a chatbot in the [Astro Discord]"
+gate = "pass"
+
+[[candidate]]
+id = "S02-O1-at-014271"
+decision = "reject"
+reason = "exophoric: the volunteer community"
+
+[[candidate]]
+id = "S02-O1-at-014616"
+decision = "accept"
+reason = "anaphor: 'the server' refers to the dev server, competing with the MCP server discussed earlier"
+host_from = "When an AI coding agent is detected"
+host_to = "while the server runs."
+anchor = "continue working while the server runs"
+question = "In background mode, which server keeps running while the agent continues working?"
+correct = "The local development server started by the dev command"
+foil_1 = "The documentation MCP server"
+foil_2 = "The production preview server"
+evidence = "automatically starts the dev server as a detached background process"
+gate = "pass"
+
+[[candidate]]
+id = "S02-O1-at-014682"
+decision = "reject"
+reason = "not_referential: explicitly named ('the dev server'), no resolution needed"
+
+[[candidate]]
+id = "S02-O1-at-014715"
+decision = "accept"
+reason = "anaphor: 'the server' refers to the dev server whose start writes the lock file"
+host_from = "A lock file (`.astro/dev.json`) is written"
+host_to = "from being started for the same project."
+anchor = "port, and PID"
+question = "Whose address, port, and process ID does the lock file record?"
+correct = "The development server that was started"
+foil_1 = "The documentation MCP server"
+foil_2 = "The AI agent's own process"
+evidence = "A lock file (`.astro/dev.json`) is written when the dev server starts"
+gate = "pass"
+
+[[candidate]]
+id = "S02-O1-at-014803"
+decision = "reject"
+reason = "not_referential: sortal 'the same project'"
+
+[[candidate]]
+id = "S02-O1-at-015182"
+decision = "reject"
+reason = "not_referential: 'the full list of'"
+
+[[candidate]]
+id = "S02-O1-at-015267"
+decision = "reject"
+reason = "not_referential: explicitly named ('The dev server')"
+
+[[candidate]]
+id = "S02-O1-at-016160"
+decision = "reject"
+reason = "exophoric: the live documentation"
+
+[[candidate]]
+id = "S02-O1-at-016471"
+decision = "reject"
+reason = "generic: reader-possessive ('your AI tool')"
+
+[[candidate]]
+id = "S02-O1-at-016574"
+decision = "accept"
+reason = "anaphor: 'the ones listed above' refers to the preceding tips, competing with 'server rules' earlier"
+host_from = "**Start with templates**"
+host_to = "such as the ones listed above."
+anchor = "such as the ones listed above"
+question = "Which best practices does the last tip suggest enforcing with project rules?"
+correct = "The practices in the earlier tips, such as starting from templates and checking current APIs"
+foil_1 = "The chat server's rules for language and behavior"
+foil_2 = "Coding standards published by the docs server"
+evidence = "**Start with templates**"
+gate = "pass"
+
+[[candidate]]
+id = "S02-O2-at-016583"
+decision = "reject"
+reason = "fragment: nested in the accepted overlapping occurrence with the same referent"
+
+[[relation]]
+id = "S02-R1-001"
+reason = "ordered Warp setup"
+host_from = "Open your Warp settings and go to"
+host_to = "Click \"Save\"."
+anchor = "Open your Warp settings"
+question = "In the Warp setup, what do you do right after opening the server management screen?"
+correct = "Click the add button"
+foil_1 = "Enter the JSON configuration"
+foil_2 = "Click the save button"
+evidence = "2. Click \"Add\"."
+evidence_implicit = "Second, Click \"Add\"."
+gate = "pass"
+
+[[relation]]
+id = "S02-R1-002"
+reason = "ordered Claude.ai setup"
+host_from = "Navigate to the [Claude.ai connector settings]"
+host_to = "Set the name to \"Astro docs\"."
+anchor = "You may need to scroll down to find this option"
+question = "In the Claude.ai setup, what comes right before entering the server address?"
+correct = "Clicking to add a custom connector"
+foil_1 = "Setting the connector's name"
+foil_2 = "Opening the connector settings"
+evidence = "2. Click \"Add custom connector\"."
+evidence_implicit = "Second, Click \"Add custom connector\"."
+gate = "pass"
+
+[[relation]]
+id = "S02-R1-003"
+reason = "ordered Windsurf setup"
+host_from = "Open `~/.codeium/windsurf/mcp_config.json` in your editor."
+host_to = "Save the configuration and restart Windsurf."
+anchor = "Save the configuration and restart Windsurf"
+question = "In the Windsurf setup, when do you restart the editor?"
+correct = "Last, after adding the configuration and saving it"
+foil_1 = "First, before opening the configuration file"
+foil_2 = "After opening the file but before adding the configuration"
+evidence = "3. Save the configuration and restart Windsurf."
+evidence_implicit = "Finally, Save the configuration and restart Windsurf."
+gate = "pass"
+
+[[relation]]
+id = "S02-R1-004"
+reason = "ordered Antigravity setup"
+host_from = "Open `~/.gemini/antigravity/mcp_config.json`"
+host_to = "in the \"Manage MCPs\" tab."
+anchor = "Connecting Custom MCP Servers guide"
+question = "In the Antigravity setup, what is the final action?"
+correct = "Saving the file and refreshing in the server management tab"
+foil_1 = "Adding the server configuration"
+foil_2 = "Opening the configuration file via the linked guide"
+evidence = "3. Save the file and click \"Refresh\""
+evidence_implicit = "Finally, Save the file and click \"Refresh\""
+gate = "pass"
+
+[[relation]]
+id = "S02-R1-005"
+reason = "ordered Zed setup"
+host_from = "Open `~/.config/zed/settings.json` in your editor."
+host_to = "Save the configuration."
+anchor = "Zed MCP settings"
+question = "In the Zed setup, what do you do between opening the settings file and saving?"
+correct = "Add the context-server configuration"
+foil_1 = "Restart the editor"
+foil_2 = "Enable the editor's AI features"
+evidence = "2. Add the following configuration to your Zed MCP settings"
+evidence_implicit = "Second, Add the following configuration to your Zed MCP settings"
+gate = "pass"
+
+[[relation]]
+id = "S02-R2-001"
+reason = "tabbed alternative manual configurations"
+host_from = "Many tools support a common JSON configuration format for MCP servers."
+host_to = "#### Claude Code CLI"
+anchor = "Many tools support a common JSON configuration format"
+question = "How are the two manual-setup configurations related?"
+correct = "They are alternatives: use either the streaming HTTP entry or the local proxy entry"
+foil_1 = "Both are required: the proxy entry supplements the HTTP entry"
+foil_2 = "The proxy entry is for testing and the HTTP entry for production"
+evidence = "<TabItem label=\"Local Proxy\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S02-R3-001"
+reason = "tip aside: definitional side note"
+host = """:::tip[What is MCP?]
+[Model Context Protocol](https://modelcontextprotocol.io/) (MCP) is a standardized way for AI tools to access external tools and data sources."""
+host_implicit = "What is MCP?: [Model Context Protocol](https://modelcontextprotocol.io/) (MCP) is a standardized way for AI tools to access external tools and data sources."
+anchor = "is a standardized way for AI tools to access external tools"
+question = "How does the page present its explanation of what the protocol is?"
+correct = "As a side explanation, not a required action"
+foil_1 = "As a required step before installation"
+foil_2 = "As a warning about a limitation"
+evidence = "is a standardized way for AI tools to access external tools and data sources"
+gate = "pass"
+
+[[relation]]
+id = "S02-R3-002"
+reason = "note aside: 'always' review and test"
+host_from = ":::note[Remember]"
+host_from_implicit = "Remember: The Astro Docs MCP server provides access"
+host_to = "always review generated code carefully and test thoroughly."
+anchor = "always review generated code carefully"
+question = "How does the page frame reviewing and testing AI-generated code?"
+correct = "As something to do every time, because AI makes mistakes"
+foil_1 = "As optional once the docs server is configured"
+foil_2 = "As unnecessary because the server keeps answers current"
+evidence = "always review generated code carefully and test thoroughly"
+gate = "pass"

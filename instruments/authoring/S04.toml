@@ -1,0 +1,638 @@
+# S04 guides/backend/firebase.mdx — AI-assisted review (amendment A3), 2026-09-23.
+specimen = "S04"
+
+[[candidate]]
+id = "S04-O1-at-000979"
+decision = "reject"
+reason = "generic: 'the client side of your app'"
+
+[[candidate]]
+id = "S04-O1-at-001029"
+decision = "reject"
+reason = "exophoric: the vendor console"
+
+[[candidate]]
+id = "S04-O1-at-001107"
+decision = "reject"
+reason = "not_referential: UI section label"
+
+[[candidate]]
+id = "S04-O1-at-001221"
+decision = "reject"
+reason = "generic: 'the server side of your app'"
+
+[[candidate]]
+id = "S04-O1-at-001275"
+decision = "reject"
+reason = "exophoric: the vendor console"
+
+[[candidate]]
+id = "S04-O1-at-001430"
+decision = "reject"
+reason = "generic: reader-possessive ('your Firebase credentials')"
+
+[[candidate]]
+id = "S04-O1-at-001976"
+decision = "reject"
+reason = "generic: reader-possessive ('your project')"
+
+[[candidate]]
+id = "S04-O1-at-002035"
+decision = "reject"
+reason = "generic: reader-possessive ('your Firebase environment variables')"
+
+[[candidate]]
+id = "S04-O1-at-002087"
+decision = "reject"
+reason = "not_referential: file named in the same clause"
+
+[[candidate]]
+id = "S04-O1-at-002146"
+decision = "reject"
+reason = "generic: reader-possessive ('your types')"
+
+[[candidate]]
+id = "S04-O1-at-004212"
+decision = "reject"
+reason = "generic: reader-possessive ('your own web app credentials')"
+
+[[candidate]]
+id = "S04-O1-at-005337"
+decision = "reject"
+reason = "code: occurrence inside a code comment"
+
+[[candidate]]
+id = "S04-O1-at-005670"
+decision = "reject"
+reason = "generic: reader-possessive ('your own project credentials')"
+
+[[candidate]]
+id = "S04-O1-at-006134"
+decision = "reject"
+reason = "exophoric: the vendor console"
+
+[[candidate]]
+id = "S04-O1-at-007679"
+decision = "reject"
+reason = "not_referential: 'the use of'"
+
+[[candidate]]
+id = "S04-O1-at-007930"
+decision = "reject"
+reason = "not_referential: explicitly named endpoint"
+
+[[candidate]]
+id = "S04-O1-at-007999"
+decision = "reject"
+reason = "idiom: 'your needs'"
+
+[[candidate]]
+id = "S04-O1-at-008379"
+decision = "reject"
+reason = "not_referential: explicitly named endpoint"
+
+[[candidate]]
+id = "S04-O1-at-008449"
+decision = "reject"
+reason = "idiom: 'your needs'"
+
+[[candidate]]
+id = "S04-O1-at-009469"
+decision = "reject"
+reason = "not_referential: explicitly named endpoint"
+
+[[candidate]]
+id = "S04-O1-at-009540"
+decision = "reject"
+reason = "idiom: 'your needs'"
+
+[[candidate]]
+id = "S04-O1-at-011191"
+decision = "reject"
+reason = "generic: 'the user' as any visitor"
+
+[[candidate]]
+id = "S04-O1-at-011785"
+decision = "reject"
+reason = "code: occurrence inside a code comment"
+
+[[candidate]]
+id = "S04-O1-at-013611"
+decision = "reject"
+reason = "generic: 'the user' as any visitor"
+
+[[candidate]]
+id = "S04-O1-at-013643"
+decision = "reject"
+reason = "not_probeable: self-describing ('the Firebase server app'); the only competitor is excluded by the expression's own wording"
+
+[[candidate]]
+id = "S04-O1-at-013671"
+decision = "reject"
+reason = "generic: 'the user' as any visitor"
+
+[[candidate]]
+id = "S04-O1-at-013980"
+decision = "reject"
+reason = "generic: 'the user' as any visitor"
+
+[[candidate]]
+id = "S04-O1-at-014830"
+decision = "reject"
+reason = "generic: reader-possessive ('your app')"
+
+[[candidate]]
+id = "S04-O1-at-014867"
+decision = "reject"
+reason = "exophoric: the vendor console"
+
+[[candidate]]
+id = "S04-O1-at-014894"
+decision = "reject"
+reason = "exophoric: the vendor console"
+
+[[candidate]]
+id = "S04-O1-at-015054"
+decision = "reject"
+reason = "generic: 'the providers you want to use'"
+
+[[candidate]]
+id = "S04-O1-at-015544"
+decision = "reject"
+reason = "code: occurrence inside a code comment"
+
+[[candidate]]
+id = "S04-O1-at-017952"
+decision = "reject"
+reason = "generic: 'the user' as any visitor"
+
+[[candidate]]
+id = "S04-O2-at-018644"
+decision = "reject"
+reason = "self_reference: 'this recipe' denotes the containing section"
+
+[[candidate]]
+id = "S04-O1-at-018657"
+decision = "reject"
+reason = "not_referential: naming statement ('the Firestore collection will be called friends')"
+
+[[candidate]]
+id = "S04-O1-at-019164"
+decision = "reject"
+reason = "not_referential: explicitly named collection"
+
+[[candidate]]
+id = "S04-O1-at-019239"
+decision = "reject"
+reason = "not_referential: explicitly named collection"
+
+[[candidate]]
+id = "S04-O1-at-019316"
+decision = "reject"
+reason = "not_referential: explicitly named collection"
+
+[[candidate]]
+id = "S04-O1-at-020433"
+decision = "reject"
+reason = "idiom: 'your needs'"
+
+[[candidate]]
+id = "S04-O1-at-022029"
+decision = "reject"
+reason = "idiom: 'your needs'"
+
+[[candidate]]
+id = "S04-O1-at-022682"
+decision = "reject"
+reason = "generic: 'the details of a friend'"
+
+[[candidate]]
+id = "S04-O1-at-023844"
+decision = "reject"
+reason = "generic: 'the user' as any visitor"
+
+[[candidate]]
+id = "S04-O1-at-024677"
+decision = "reject"
+reason = "code: occurrence inside page markup in a code block"
+
+[[candidate]]
+id = "S04-O1-at-025757"
+decision = "reject"
+reason = "generic: 'the details of a friend'"
+
+[[candidate]]
+id = "S04-O1-at-026757"
+decision = "reject"
+reason = "generic: 'the user' as any visitor"
+
+[[candidate]]
+id = "S04-O1-at-027696"
+decision = "reject"
+reason = "not_referential: 'all the pages' summarizing prior steps"
+[[candidate]]
+id = "S04-O2-at-001521"
+decision = "accept"
+reason = "cataphoric deixis: 'the following variables' points to the .env block"
+host_from = "To add your Firebase credentials to Astro"
+host_to = "Now, these environment variables are available for use in your project."
+anchor = "file in the root of your project with the following variables"
+question = "What does the environment file hold for connecting the app to the backend?"
+correct = "Service-account values such as the private key, project ID, and client email"
+foil_1 = "The browser app's configuration object values"
+foil_2 = "The name of the session cookie"
+evidence = "FIREBASE_PRIVATE_KEY=YOUR_PRIVATE_KEY"
+gate = "pass"
+
+[[candidate]]
+id = "S04-O2-at-002999"
+decision = "accept"
+reason = "cataphoric deixis: 'the following packages' points to the two-item package list"
+host_from = "To connect Astro with Firebase, install the following packages"
+host_to = "the Firebase Admin SDK for the server side"
+anchor = "install the following packages using the single command below"
+question = "Which packages does the page have you install to connect to the backend?"
+correct = "The client SDK for the browser and the admin SDK for the server"
+foil_1 = "Only the admin SDK for the server"
+foil_2 = "The client SDK plus an Astro server adapter"
+evidence = "`firebase-admin` - the Firebase Admin SDK for the server side"
+gate = "pass"
+
+[[candidate]]
+id = "S04-O2-at-003677"
+decision = "accept"
+reason = "cataphoric deixis: 'the following code' points to the client initialization file"
+host_from = "In `client.ts`, add the following code"
+host_to = "Remember to replace the `firebaseConfig` object with your own web app credentials."
+anchor = "Firebase in the client using your web app credentials"
+question = "What does the code added to the client file do?"
+correct = "Initializes the SDK in the browser with the web app credentials"
+foil_1 = "Initializes the admin SDK with the service account"
+foil_2 = "Defines the authentication endpoints"
+evidence = "add the following code to initialize Firebase in the client using your web app credentials"
+gate = "pass"
+
+[[candidate]]
+id = "S04-O2-at-004267"
+decision = "accept"
+reason = "cataphoric deixis: 'the following code' points to the server initialization file"
+host_from = "In `server.ts`, add the following code"
+host_to = "Remember to replace the `serviceAccount` object with your own project credentials."
+anchor = "Firebase in the server using your project credentials"
+question = "What does the code added to the server file do?"
+correct = "Initializes the admin SDK from the service-account values, or with defaults in production"
+foil_1 = "Initializes the browser SDK with the web app credentials"
+foil_2 = "Creates the session cookie for signed-in users"
+evidence = "credential: cert(serviceAccount as ServiceAccount)"
+gate = "pass"
+
+[[candidate]]
+id = "S04-O2-at-006275"
+decision = "accept"
+reason = "cataphoric deixis: 'the following three' points to the endpoint list"
+host_from = "Firebase authentication in Astro requires the following three"
+host_to = "to register a user"
+anchor = "requires the following three"
+question = "Which server endpoints does authentication require?"
+correct = "Sign-in, sign-out, and registration endpoints"
+foil_1 = "Endpoints to create, update, and delete friend records"
+foil_2 = "A single login endpoint that handles every action"
+evidence = "`GET /api/auth/signout` - to sign out a user"
+gate = "pass"
+
+[[candidate]]
+id = "S04-O1-at-010234"
+decision = "accept"
+reason = "cataphor: 'The example ... below' refers to the registration page code that follows"
+host_from = "The example `src/pages/register.astro` below"
+host_to = "then will redirect the user to the `/signin` page."
+anchor = "This endpoint will create a new user using the data from the form"
+question = "Where does the form in the registration page example send its request?"
+correct = "To the registration endpoint, which creates the user and redirects to sign-in"
+foil_1 = "To the sign-in endpoint"
+foil_2 = "To the endpoint that creates friend records"
+evidence = "send a `POST` request to the `/api/auth/register` endpoint"
+gate = "pass"
+
+[[candidate]]
+id = "S04-O1-at-013841"
+decision = "accept"
+reason = "anaphor: 'the button' refers to the sign-out button on the dashboard, competing with other buttons on the page"
+host_from = "The example page below displays the user's name and a button to sign out."
+host_to = "request to the `/api/auth/signout` endpoint."
+anchor = "Clicking the button will send a"
+question = "Clicking which button sends a request to the sign-out endpoint?"
+correct = "The sign-out button on the dashboard page"
+foil_1 = "The sign-in-with-Google button"
+foil_2 = "The login button of the sign-in form"
+evidence = "a button to sign out"
+gate = "pass"
+
+[[candidate]]
+id = "S04-O1-at-013916"
+decision = "accept"
+reason = "anaphor: 'The endpoint' refers to the sign-out endpoint just mentioned"
+host_from = "The example page below displays the user's name and a button to sign out."
+host_to = "The endpoint will delete the user's session cookie and redirect the user to the `/signin` page."
+anchor = "The endpoint will delete the user's session cookie"
+question = "Which endpoint deletes the session cookie and redirects to the sign-in page?"
+correct = "The sign-out endpoint that the dashboard's button calls"
+foil_1 = "The sign-in endpoint"
+foil_2 = "The registration endpoint"
+evidence = "request to the `/api/auth/signout` endpoint"
+gate = "pass"
+
+[[candidate]]
+id = "S04-O1-at-015086"
+decision = "accept"
+reason = "cataphor: 'The example below' refers to the modified sign-in page code"
+host_from = "The example below uses the"
+host_to = "in the existing `<script>`."
+anchor = "a button to sign in with Google underneath"
+question = "Which sign-in provider does the page's code example add?"
+correct = "Google's OAuth sign-in"
+foil_1 = "GitHub's OAuth sign-in"
+foil_2 = "Email and password only, with no external provider"
+evidence = "**Google** provider."
+gate = "pass"
+
+[[candidate]]
+id = "S04-O1-at-015217"
+decision = "accept"
+reason = "anaphor: 'the existing form' refers to the email/password form already on the sign-in page"
+host_from = "The example below uses the"
+host_to = "in the existing `<script>`."
+anchor = "underneath the existing form"
+question = "Underneath what does the new provider sign-in button go?"
+correct = "The email-and-password form already on the sign-in page"
+foil_1 = "The dashboard's sign-out button"
+foil_2 = "The registration page's form"
+evidence = "Edit the `signin.astro` page to add:"
+gate = "pass"
+
+[[candidate]]
+id = "S04-O2-at-018741"
+decision = "accept"
+reason = "cataphoric deixis: 'the following fields' points to the field list"
+host_from = "In this recipe, the Firestore collection will be called"
+host_to = "a boolean field"
+anchor = "and will contain documents with"
+question = "Which fields do the documents in the example collection contain?"
+correct = "An auto-generated ID, a name string, an age number, and a best-friend boolean"
+foil_1 = "A name, an email address, and a password"
+foil_2 = "An ID and a session cookie"
+evidence = "`age`: a number field"
+gate = "pass"
+
+[[candidate]]
+id = "S04-O2-at-019092"
+decision = "accept"
+reason = "cataphoric deixis: 'the following ways' points to the endpoint list"
+host_from = "Create two new files in a new directory `src/pages/api/friends/`"
+host_to = "to delete a document in the friends collection."
+anchor = "to interact with the Firestore database in the following ways"
+question = "In what ways will the two new endpoints work with the database?"
+correct = "Creating, updating, and deleting documents in the friends collection"
+foil_1 = "Signing users in and out"
+foil_2 = "Only reading and listing documents"
+evidence = "`DELETE /api/friends/:id`: to delete a document"
+gate = "pass"
+
+[[candidate]]
+id = "S04-O1-at-022795"
+decision = "accept"
+reason = "cataphor: 'The example ... below' refers to the add page code that follows"
+host_from = "The example `src/pages/add.astro` below"
+host_to = "then will redirect the user to the `/dashboard` page."
+anchor = "This endpoint will create a new friend using the data from the form"
+question = "Where does the form in the add-record example send its request?"
+correct = "To the friends endpoint, which creates a new friend and redirects to the dashboard"
+foil_1 = "To the endpoint for one friend's ID"
+foil_2 = "To the registration endpoint"
+evidence = "send a `POST` request to the `/api/friends` endpoint"
+gate = "pass"
+
+[[candidate]]
+id = "S04-O2-at-023742"
+decision = "accept"
+reason = "discourse deixis: 'this page' refers to the edit page, competing with other pages listed"
+host_from = "`src/pages/edit/[id].astro` will contain a form to edit"
+host_to = "endpoint to delete a friend."
+anchor = "to update a friend data"
+question = "Which page sends an update request for a specific friend when its form is submitted?"
+correct = "The edit page for that friend"
+foil_1 = "The page for adding a friend"
+foil_2 = "The friend details page"
+evidence = "`src/pages/edit/[id].astro` will contain a form to edit a friend data"
+gate = "pass"
+
+[[candidate]]
+id = "S04-O2-at-023879"
+decision = "accept"
+reason = "discourse deixis: second 'this page' also refers to the edit page"
+host_from = "`src/pages/edit/[id].astro` will contain a form to edit"
+host_to = "endpoint to delete a friend."
+anchor = "clicks the delete button"
+question = "Which page sends a delete request when its delete button is clicked?"
+correct = "The edit page for that friend"
+foil_1 = "The dashboard that lists friends"
+foil_2 = "The friend details page"
+evidence = "and a button to delete a friend"
+gate = "pass"
+
+[[candidate]]
+id = "S04-O2-at-027723"
+decision = "accept"
+reason = "cataphoric deixis: 'the following file structure' points to the final file tree"
+host_from = "After creating all the pages, you should have the following file structure:"
+host_to = "## Community Resources"
+anchor = "you should have the following file structure"
+question = "In the final file structure, where does the page for editing a friend sit?"
+correct = "In an edit folder under pages, as a file named by ID"
+foil_1 = "Directly in the pages folder"
+foil_2 = "Under the API friends folder"
+evidence = "- edit\n      - [id].astro"
+gate = "pass"
+
+[[relation]]
+id = "S04-R2-001"
+reason = "package-manager alternatives for installing the SDKs"
+host_from = "To connect Astro with Firebase, install the following packages"
+host_to = "Next, create a folder named `firebase` in the `src/` directory"
+anchor = "install the following packages using the single command below"
+question = "How are the three commands for installing the backend SDKs related?"
+correct = "They are alternatives: run only the one for your package manager"
+foil_1 = "Run all three in sequence"
+foil_2 = "Run the npm one first, then the others"
+evidence = "<Fragment slot=\"pnpm\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S04-R3-001"
+reason = "tip aside: optional further reading"
+host = """:::tip
+Read more about [environment variables](/en/guides/environment-variables/) and `.env` files in Astro."""
+host_implicit = "As a helpful tip, Read more about [environment variables](/en/guides/environment-variables/) and `.env` files in Astro."
+anchor = "Read more about"
+question = "How does the page present reading more about environment variables?"
+correct = "As optional further reading"
+foil_1 = "As a required step before adding credentials"
+foil_2 = "As a warning about exposing secrets"
+evidence = ":::tip"
+evidence_implicit = "As a helpful tip"
+gate = "pass"
+
+[[relation]]
+id = "S04-R3-002"
+reason = "note aside: instruction to replace client credentials"
+host = """:::note
+Remember to replace the `firebaseConfig` object with your own web app credentials."""
+host_implicit = "Note: Remember to replace the `firebaseConfig` object with your own web app credentials."
+anchor = "with your own web app credentials"
+question = "How does the page treat replacing the client configuration object with your own credentials?"
+correct = "As something you must remember to do"
+foil_1 = "As optional, since the placeholder values work for testing"
+foil_2 = "As unnecessary, because the environment file already supplies them"
+evidence = "Remember to replace the `firebaseConfig` object"
+gate = "pass"
+
+[[relation]]
+id = "S04-R3-003"
+reason = "note aside: instruction to replace server credentials"
+host = """:::note
+Remember to replace the `serviceAccount` object with your own project credentials."""
+host_implicit = "Note: Remember to replace the `serviceAccount` object with your own project credentials."
+anchor = "with your own project credentials"
+question = "How does the page treat replacing the server's service-account object with your own credentials?"
+correct = "As something you must remember to do"
+foil_1 = "As optional, since the defaults are used everywhere"
+foil_2 = "As unnecessary outside production"
+evidence = "Remember to replace the `serviceAccount` object"
+gate = "pass"
+
+[[relation]]
+id = "S04-R3-004"
+reason = "caution aside: cookie restriction"
+host_from = ":::caution\nFirebase only allows"
+host_from_implicit = "Use caution here: Firebase only allows"
+host_to = "will not be visible to your application."
+anchor = "Any other cookies the client sends will not be visible"
+question = "What does the page warn about cookies?"
+correct = "Only one cookie with a specific required name is allowed; others are not visible to the app"
+foil_1 = "Any number of cookies is allowed if they are signed"
+foil_2 = "Cookies must be avoided entirely in favor of request headers"
+evidence = "Any other cookies the client sends will not be visible to your application."
+gate = "pass"
+
+[[relation]]
+id = "S04-R3-005"
+reason = "note aside: optional extension of the sign-in endpoint"
+host = """:::note
+This is a basic implementation of the signin endpoint. You can add more logic to this endpoint to suit your needs."""
+host_implicit = "Note: This is a basic implementation of the signin endpoint. You can add more logic to this endpoint to suit your needs."
+anchor = "This is a basic implementation of the signin endpoint"
+question = "How does the page present adding more logic to the sign-in endpoint?"
+correct = "As optional: the endpoint is a basic version you may extend"
+foil_1 = "As required before the endpoint will work"
+foil_2 = "As discouraged: the endpoint should stay as written"
+evidence = "You can add more logic to this endpoint to suit your needs."
+gate = "pass"
+
+[[relation]]
+id = "S04-R3-006"
+reason = "note aside: optional extension of the sign-out endpoint"
+host = """:::note
+This is a basic implementation of the signout endpoint. You can add more logic to this endpoint to suit your needs."""
+host_implicit = "Note: This is a basic implementation of the signout endpoint. You can add more logic to this endpoint to suit your needs."
+anchor = "This is a basic implementation of the signout endpoint"
+question = "How does the page present adding more logic to the sign-out endpoint?"
+correct = "As optional: the endpoint is a basic version you may extend"
+foil_1 = "As required before the endpoint will work"
+foil_2 = "As discouraged: the endpoint should stay as written"
+evidence = "You can add more logic to this endpoint to suit your needs."
+gate = "pass"
+
+[[relation]]
+id = "S04-R3-007"
+reason = "note aside: optional extension of the register endpoint"
+host = """:::note
+This is a basic implementation of the register endpoint. You can add more logic to this endpoint to suit your needs."""
+host_implicit = "Note: This is a basic implementation of the register endpoint. You can add more logic to this endpoint to suit your needs."
+anchor = "This is a basic implementation of the register endpoint"
+question = "How does the page present adding more logic to the registration endpoint?"
+correct = "As optional: the endpoint is a basic version you may extend"
+foil_1 = "As required before the endpoint will work"
+foil_2 = "As discouraged: the endpoint should stay as written"
+evidence = "You can add more logic to this endpoint to suit your needs."
+gate = "pass"
+
+[[relation]]
+id = "S04-R3-008"
+reason = "note aside: optional extension of the friends endpoint; host extends to the next sentence for a unique markup-free anchor"
+host_from = ":::note\nThis is a basic implementation of the `friends` endpoint."
+host_from_implicit = "Note: This is a basic implementation of the `friends` endpoint."
+host_to = "will contain the code to update and delete a document in the friends collection:"
+anchor = "will contain the code to update and delete a document"
+question = "How does the page present adding more logic to the endpoint that creates friend records?"
+correct = "As optional: the endpoint is a basic version you may extend"
+foil_1 = "As required before the endpoint will work"
+foil_2 = "As discouraged: the endpoint should stay as written"
+evidence = "You can add more logic to this endpoint to suit your needs."
+gate = "pass"
+
+[[relation]]
+id = "S04-R3-009"
+reason = "note aside: optional extension of the friend-by-ID endpoint; host extends to the next sentence for a unique markup-free anchor"
+host_from = ":::note\nThis is a basic implementation of the `friends/:id` endpoint."
+host_from_implicit = "Note: This is a basic implementation of the `friends/:id` endpoint."
+host_to = "After creating server endpoints for Firestore"
+anchor = "After creating server endpoints for Firestore"
+question = "How does the page present adding more logic to the endpoint for updating and deleting a friend?"
+correct = "As optional: the endpoint is a basic version you may extend"
+foil_1 = "As required before the endpoint will work"
+foil_2 = "As discouraged: the endpoint should stay as written"
+evidence = "You can add more logic to this endpoint to suit your needs."
+gate = "pass"
+
+[[relation]]
+id = "S04-R4-001"
+reason = "prerequisites before initializing Firebase"
+host_from = "### Prerequisites\n\n- A [Firebase project with a web app configured]"
+host_from_implicit = "Before you begin, you need the following:\n\n- A [Firebase project with a web app configured]"
+host_to = "Generate new private key*."
+anchor = "Firebase project with a web app configured"
+question = "What must be in place before initializing the backend in the project?"
+correct = "A backend project with a web app, an Astro project with server output, and two sets of credentials"
+foil_1 = "A site already deployed to the backend's hosting"
+foil_2 = "A database with a friends collection"
+evidence = "You will need two sets of credentials to connect Astro to Firebase"
+gate = "pass"
+
+[[relation]]
+id = "S04-R4-002"
+reason = "prerequisites before adding authentication"
+host_from = "### Prerequisites\n\n- An Astro project [initialized with Firebase]"
+host_from_implicit = "Before you begin, you need the following:\n\n- An Astro project [initialized with Firebase]"
+host_to = "*Authentication > Sign-in* method."
+anchor = "with email/password authentication enabled"
+question = "Which sign-in method must be enabled in the backend console before adding authentication?"
+correct = "Email and password sign-in"
+foil_1 = "Google sign-in"
+foil_2 = "Anonymous sign-in"
+evidence = "A Firebase project with email/password authentication enabled"
+gate = "pass"
+
+[[relation]]
+id = "S04-R4-003"
+reason = "prerequisites before connecting to Firestore"
+host_from = "### Prerequisites\n\n- An Astro project initialized with Firebase as described"
+host_from_implicit = "Before you begin, you need the following:\n\n- An Astro project initialized with Firebase as described"
+host_to = "set up a Firestore database](https://firebase.google.com/docs/firestore/quickstart)."
+anchor = "A Firebase project with a Firestore database"
+question = "What must exist before connecting the project to the database?"
+correct = "A project already initialized with the backend, and a backend project that has a Firestore database"
+foil_1 = "A friends collection already filled with documents"
+foil_2 = "OAuth sign-in providers enabled"
+evidence = "A Firebase project with a Firestore database."
+gate = "pass"

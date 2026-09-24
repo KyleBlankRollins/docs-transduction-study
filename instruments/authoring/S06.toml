@@ -1,0 +1,419 @@
+# S06 guides/deploy/deno.mdx — AI-assisted review (amendment A3), 2026-09-23.
+specimen = "S06"
+
+[[candidate]]
+id = "S06-O1-at-000490"
+decision = "reject"
+reason = "generic: reader-possessive ('your own server')"
+
+[[candidate]]
+id = "S06-O1-at-000627"
+decision = "reject"
+reason = "not_referential: technical idiom ('the edge')"
+
+[[candidate]]
+id = "S06-O2-at-000649"
+decision = "reject"
+reason = "self_reference: 'This guide' denotes the containing document"
+
+[[candidate]]
+id = "S06-O1-at-000795"
+decision = "reject"
+reason = "not_referential: product name, not an anaphor"
+
+[[candidate]]
+id = "S06-O2-at-000834"
+decision = "reject"
+reason = "self_reference: 'This guide' denotes the containing document"
+
+[[candidate]]
+id = "S06-O1-at-001257"
+decision = "reject"
+reason = "generic: reader-possessive ('your Astro project')"
+
+[[candidate]]
+id = "S06-O1-at-001391"
+decision = "reject"
+reason = "generic: reader-possessive ('your project')"
+
+[[candidate]]
+id = "S06-O1-at-001425"
+decision = "reject"
+reason = "generic: reader-possessive ('your preferred package manager')"
+
+[[candidate]]
+id = "S06-O1-at-001889"
+decision = "accept"
+reason = "cataphor: 'the changes below' refers to the configuration code block that follows"
+host_from = "Update your `astro.config.mjs` project configuration file with the changes below."
+host_to = "Update your `preview` script in `package.json` with the change below."
+anchor = "project configuration file with the changes below"
+question = "What changes does the page have you make to the Astro configuration file?"
+correct = "Set server output and register the adapter imported from Deno's own package scope"
+foil_1 = "Set server output and register the adapter imported from Astro's own package scope"
+foil_2 = "Replace the preview script with a Deno command"
+version_change = true
+superseded_answer = "Set server output and register the adapter imported from Astro's own package scope"
+superseded_source = "withastro/docs 24f6bc4f27b3861736d903e2f815a5b9946783f4 (parent of adapter rename e84444f1, 2024-09-16) src/content/docs/en/guides/deploy/deno.mdx line 48: import deno from '@astrojs/deno'"
+evidence = "import deno from '@deno/astro-adapter';"
+gate = "pass"
+
+[[candidate]]
+id = "S06-O1-at-002202"
+decision = "accept"
+reason = "cataphor: 'the change below' refers to the package.json diff that follows"
+host_from = "Update your `preview` script in `package.json` with the change below."
+host_to = "You can now use this command to preview your production Astro site locally with Deno."
+anchor = "with the change below"
+question = "What change does the page make to the preview script?"
+correct = "It swaps the Astro preview command for Deno running the built server entry file"
+foil_1 = "It adds a new script that builds and deploys in one step"
+foil_2 = "It switches the development script to run under Deno"
+evidence = "\"preview\": \"deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs\""
+gate = "pass"
+
+[[candidate]]
+id = "S06-O1-at-003151"
+decision = "reject"
+reason = "heading: occurrence is in a section heading"
+
+[[candidate]]
+id = "S06-O1-at-003184"
+decision = "reject"
+reason = "generic: reader-possessive ('your project onto your server')"
+
+[[candidate]]
+id = "S06-O1-at-003984"
+decision = "reject"
+reason = "generic: reader-possessive ('your application'); the nested deictic occurrence is reviewed separately"
+
+[[candidate]]
+id = "S06-O2-at-004006"
+decision = "accept"
+reason = "cataphoric deixis: 'the following command' points to the static/SSR start commands"
+host_from = "Start your application with the following command:"
+host_to = "### GitHub Actions Deployment"
+anchor = "Start your application with the following"
+question = "What does the last step for running on your own server have you run?"
+correct = "A Deno command serving the build: a file server for static output, or the server entry for on-demand output"
+foil_1 = "The package manager's build script"
+foil_2 = "The Deno Deploy command-line deploy tool"
+evidence = "deno run -A jsr:@std/http/file-server dist"
+gate = "pass"
+
+[[candidate]]
+id = "S06-O1-at-004357"
+decision = "reject"
+reason = "generic: reader-possessive ('your project')"
+
+[[candidate]]
+id = "S06-O1-at-004500"
+decision = "reject"
+reason = "generic: reader-possessive ('your Astro site')"
+
+[[candidate]]
+id = "S06-O1-at-004644"
+decision = "reject"
+reason = "generic: reader-possessive ('your GitHub account')"
+
+[[candidate]]
+id = "S06-O1-at-004727"
+decision = "accept"
+reason = "anaphor: 'your repository' refers to the GitHub repository the code was pushed to in step one"
+host_from = "Push your code to a public or private GitHub repository."
+host_to = "and cannot use Automatic mode.)"
+anchor = "the branch you want to deploy from"
+question = "When setting up the Deno Deploy project, which repository do you select?"
+correct = "The GitHub repository you pushed your code to at the start of this route"
+foil_1 = "A new repository that Deno Deploy creates for the project"
+foil_2 = "The repository containing the Deno adapter's source"
+evidence = "Push your code to a public or private GitHub repository."
+gate = "pass"
+
+[[candidate]]
+id = "S06-O1-at-004897"
+decision = "reject"
+reason = "generic: reader-possessive ('your Astro project')"
+
+[[candidate]]
+id = "S06-O1-at-004982"
+decision = "accept"
+reason = "cataphor: 'the YAML below' refers to the workflow examples that follow"
+host_from = "In your Astro project, create a new file at"
+host_to = "After committing this YAML file"
+anchor = "and paste in the YAML below"
+question = "Where does the content for the new workflow file come from?"
+correct = "The page's own workflow examples shown right after that instruction"
+foil_1 = "The workflow file that Deno Deploy generates for you"
+foil_2 = "The adapter repository's example configuration"
+evidence = "uses: denoland/deployctl@v1"
+gate = "pass"
+
+[[candidate]]
+id = "S06-O1-at-005017"
+decision = "reject"
+reason = "exophoric: refers to an external artifact (Deno Deploy's generated YAML) not present in the text"
+
+[[candidate]]
+id = "S06-O1-at-005504"
+decision = "reject"
+reason = "code: occurrence inside a YAML code block"
+
+[[candidate]]
+id = "S06-O1-at-006633"
+decision = "reject"
+reason = "code: occurrence inside a YAML code block"
+
+[[candidate]]
+id = "S06-O1-at-007427"
+decision = "accept"
+reason = "anaphor: 'your configured deploy branch' refers to the branch chosen in the repository-selection step"
+host_from = "Select your repository, the branch you want to deploy from"
+host_to = "the deploy should begin automatically!"
+anchor = "your configured deploy branch"
+question = "Pushing to which branch starts the GitHub Actions deployment automatically?"
+correct = "The branch you chose to deploy from when setting up the project"
+foil_1 = "Any branch in the repository"
+foil_2 = "The branch named in the workflow's project field"
+evidence = "the branch you want to deploy from"
+gate = "pass"
+
+[[candidate]]
+id = "S06-O1-at-007458"
+decision = "reject"
+reason = "not_referential: event nominal ('the deploy') without a distinct antecedent"
+
+[[candidate]]
+id = "S06-O1-at-007515"
+decision = "reject"
+reason = "not_referential: bridging nominal ('the progress')"
+
+[[candidate]]
+id = "S06-O1-at-007555"
+decision = "reject"
+reason = "generic: reader-possessive ('your GitHub repository page')"
+
+[[candidate]]
+id = "S06-O1-at-008555"
+decision = "reject"
+reason = "generic: reader-possessive ('your deploys')"
+
+[[candidate]]
+id = "S06-O1-at-008737"
+decision = "reject"
+reason = "generic: reader-possessive ('your preferred package manager')"
+
+[[candidate]]
+id = "S06-O1-at-009722"
+decision = "reject"
+reason = "generic: reader-possessive ('your Astro site')"
+
+[[relation]]
+id = "S06-R1-001"
+reason = "ordered setup for on-demand rendering"
+host_from = "To enable on-demand rendering in your Astro project using Deno"
+host_to = "You can now use this command to preview your production Astro site locally with Deno."
+anchor = "your project’s dependencies"
+question = "In the on-demand rendering setup, what comes immediately before updating the preview script?"
+correct = "Updating the Astro configuration file to use the Deno adapter"
+foil_1 = "Running the preview command"
+foil_2 = "Building the site for production"
+evidence = "3. Update your `preview` script"
+evidence_implicit = "Finally, Update your `preview` script"
+gate = "pass"
+
+[[relation]]
+id = "S06-R1-002"
+reason = "ordered steps for running on your own server"
+host_from = "Copy your project onto your server."
+host_to = "Start your application with the following command:"
+anchor = "Copy your project onto your server"
+question = "When running on your own server, what do you do immediately after copying the project?"
+correct = "Install the project's dependencies"
+foil_1 = "Build the site"
+foil_2 = "Start the application"
+evidence = "2. Install the project dependencies"
+evidence_implicit = "Second, Install the project dependencies"
+gate = "pass"
+
+[[relation]]
+id = "S06-R1-003"
+reason = "ordered GitHub Actions setup"
+host_from = "Push your code to a public or private GitHub repository."
+host_to = "and select **GitHub Action** mode."
+anchor = "Push your code to a public or private"
+question = "In the GitHub Actions route, what comes right after signing in and starting a new project?"
+correct = "Choosing the repository, the branch, and the GitHub Action mode"
+foil_1 = "Creating the workflow file in the project"
+foil_2 = "Pushing the code to GitHub"
+evidence = "3. Select your repository"
+evidence_implicit = "Third, Select your repository"
+gate = "pass"
+
+[[relation]]
+id = "S06-R1-004"
+reason = "ordered CLI deployment"
+host_from = "Install the [Deno Deploy CLI](https://docs.deno.com/deploy/manual/deployctl)."
+host_to = "Run `deployctl` to deploy!"
+anchor = "deno install -gArf"
+question = "In the command-line route, what must you do before running the deploy tool?"
+correct = "Build the site with your package manager"
+foil_1 = "Add a combined build-and-deploy script"
+foil_2 = "Push the code to GitHub"
+evidence = "2. Build your Astro site with your preferred package manager"
+evidence_implicit = "Second, Build your Astro site with your preferred package manager"
+gate = "pass"
+
+[[relation]]
+id = "S06-R2-001"
+reason = "package-manager alternatives for installing the adapter"
+host_from = "Install [the `@deno/astro-adapter` adapter][deno-adapter]"
+host_to = "Update your `astro.config.mjs` project configuration file with the changes below."
+anchor = "your project’s dependencies"
+question = "When installing the Deno adapter package, how should the npm, pnpm, and yarn commands be used?"
+correct = "As alternatives: run only the one for the package manager you use"
+foil_1 = "All of them, one after another in the order shown"
+foil_2 = "The first one, then the others to confirm the install"
+evidence = "<Fragment slot=\"pnpm\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S06-R2-002"
+reason = "package-manager alternatives for the preview command"
+host_from = "You can now use this command to preview your production Astro site locally with Deno."
+host_to = "## How to deploy"
+anchor = "to preview your production Astro site locally"
+question = "For previewing the production site locally with Deno, how are the three preview commands related?"
+correct = "They are alternatives: run only the one for your package manager"
+foil_1 = "Run all three in sequence"
+foil_2 = "Run the npm one first, then the others"
+evidence = "<Fragment slot=\"yarn\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S06-R2-003"
+reason = "package-manager alternatives for installing dependencies on your server; host extends to the next uniquely locatable prose (the build-step sentence recurs verbatim once list numbers are not rendered)"
+host_from = "Install the project dependencies using your preferred package manager:"
+host_to = "Start your application with the following command:"
+anchor = "Install the project dependencies"
+question = "When installing dependencies on your own server, how are the three install commands related?"
+correct = "They are alternatives: run only the one for your package manager"
+foil_1 = "Run all three in sequence"
+foil_2 = "Run the npm one first, then the others"
+evidence = "<Fragment slot=\"pnpm\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S06-R2-004"
+reason = "package-manager alternatives for building on your server; host starts at the previous step because the build-step sentence recurs verbatim once list numbers are not rendered"
+host_from = "Install the project dependencies using your preferred package manager:"
+host_to = "Start your application with the following command:"
+anchor = "Start your application with the following"
+question = "When building the site on your own server, how are the three build commands related?"
+correct = "They are alternatives: run only the one for your package manager"
+foil_1 = "Run all three in sequence"
+foil_2 = "Run the npm one first, then the others"
+evidence = "<Fragment slot=\"yarn\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S06-R2-005"
+reason = "static/SSR alternatives for starting the application"
+host_from = "Start your application with the following command:"
+host_to = "### GitHub Actions Deployment"
+anchor = "Start your application with the following"
+question = "When starting the application on your own server, how are the two start commands related?"
+correct = "They are alternatives: use the one matching a static or an on-demand rendered build"
+foil_1 = "Run both: first the static file server, then the server entry"
+foil_2 = "Run the file server on the server and the other one locally"
+evidence = "<Fragment slot=\"ssr\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S06-R2-006"
+reason = "static/SSR alternatives for the workflow file"
+host_from = "In your Astro project, create a new file at"
+host_to = "After committing this YAML file"
+anchor = "and paste in the YAML below"
+question = "How are the two workflow files shown for the GitHub Actions setup related?"
+correct = "They are alternatives: use the one matching a static or an on-demand rendered site"
+foil_1 = "Both are needed: one builds and the other uploads"
+foil_2 = "The second continues the first and is appended to it"
+evidence = "<Fragment slot=\"ssr\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S06-R2-007"
+reason = "package-manager alternatives for building before CLI deploy; host starts at the preceding install step because the build-step sentence recurs verbatim once list numbers are not rendered"
+host_from = "Install the [Deno Deploy CLI](https://docs.deno.com/deploy/manual/deployctl)."
+host_to = "Run `deployctl` to deploy!"
+anchor = "to deploy!"
+question = "Before deploying with the command-line tool, how are the three build commands related?"
+correct = "They are alternatives: run only the one for your package manager"
+foil_1 = "Run all three in sequence"
+foil_2 = "Run the npm one first, then the others"
+evidence = "<Fragment slot=\"pnpm\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S06-R2-008"
+reason = "static/SSR alternatives for the deploy command"
+host_from = "Run `deployctl` to deploy!"
+host_to = "You can track all your deploys on"
+anchor = "You can track all your deploys"
+question = "How are the two command-line deploy commands on the page related?"
+correct = "They are alternatives: use the one matching a static or an on-demand rendered build"
+foil_1 = "Run both: first the static one, then the server one"
+foil_2 = "The first uploads files and the second activates the deployment"
+evidence = "<Fragment slot=\"ssr\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S06-R2-009"
+reason = "static/SSR alternatives for the combined deploy script"
+host_from = "To simplify the build and deploy into one command"
+host_to = "Then you can use this command to build and deploy your Astro site in one step."
+anchor = "To simplify the build and deploy into one command"
+question = "How are the two package-file script examples for a one-command deploy related?"
+correct = "They are alternatives for static versus on-demand builds; add only one"
+foil_1 = "Both scripts must be added to the package file"
+foil_2 = "The first is for local testing and the second for production"
+evidence = "<Fragment slot=\"ssr\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S06-R2-010"
+reason = "package-manager alternatives for the combined deploy command"
+host_from = "Then you can use this command to build and deploy your Astro site in one step."
+host_to = "yarn run deno-deploy"
+anchor = "in one step"
+question = "How are the three commands for running the combined deploy script related?"
+correct = "They are alternatives: run only the one for your package manager"
+foil_1 = "Run all three in sequence"
+foil_2 = "Run the npm one first, then the others"
+evidence = "<Fragment slot=\"pnpm\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S06-R4-001"
+reason = "requirement before following the guide"
+host_from = "## Requirements"
+host_from_implicit = "Before you begin, you need the following:"
+host_to = "installed."
+anchor = "assumes you already have"
+question = "What does the page assume is already installed before you start?"
+correct = "The Deno runtime"
+foil_1 = "The Deno Deploy command-line tool"
+foil_2 = "The Deno adapter package"
+evidence = "This guide assumes you already have [Deno](https://deno.com/) installed."
+gate = "pass"

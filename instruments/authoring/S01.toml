@@ -1,0 +1,669 @@
+# S01 guides/integrations.mdx — AI-assisted review (amendment A3), 2026-09-23.
+specimen = "S01"
+
+[[candidate]]
+id = "S01-O1-at-000571"
+decision = "reject"
+reason = "exophoric: the wider community"
+
+[[candidate]]
+id = "S01-O1-at-001009"
+decision = "reject"
+reason = "generic: reader-possessive ('your project')"
+
+[[candidate]]
+id = "S01-O1-at-001094"
+decision = "reject"
+reason = "generic: 'the build process'"
+
+[[candidate]]
+id = "S01-O1-at-001344"
+decision = "reject"
+reason = "generic: reader-possessive ('your Astro project')"
+
+[[candidate]]
+id = "S01-O1-at-001645"
+decision = "reject"
+reason = "not_referential: 'the setup of official integrations'"
+
+[[candidate]]
+id = "S01-O1-at-002412"
+decision = "reject"
+reason = "idiom: 'at the same time'"
+
+[[candidate]]
+id = "S01-O1-at-003573"
+decision = "reject"
+reason = "generic: reader-possessive ('your Astro project')"
+
+[[candidate]]
+id = "S01-O1-at-003742"
+decision = "reject"
+reason = "generic: reader-possessive ('your integration')"
+
+[[candidate]]
+id = "S01-O1-at-003779"
+decision = "reject"
+reason = "generic: reader-possessive ('your config file')"
+
+[[candidate]]
+id = "S01-O1-at-005684"
+decision = "reject"
+reason = "generic: reader-possessive ('your chosen integration')"
+
+[[candidate]]
+id = "S01-O1-at-005834"
+decision = "reject"
+reason = "not_referential: descriptive definite ('the actual integration object')"
+
+[[candidate]]
+id = "S01-O1-at-006026"
+decision = "reject"
+reason = "code: occurrence inside a code comment"
+
+[[candidate]]
+id = "S01-O1-at-007847"
+decision = "reject"
+reason = "generic: 'the integration' repeats the generic 'an integration' in the same sentence"
+
+[[candidate]]
+id = "S01-O1-at-008632"
+decision = "reject"
+reason = "exophoric: the wider community"
+
+[[candidate]]
+id = "S01-O1-at-008803"
+decision = "reject"
+reason = "heading: occurrence is in a section heading"
+
+[[candidate]]
+id = "S01-O1-at-009274"
+decision = "reject"
+reason = "exophoric: the wider community"
+
+[[candidate]]
+id = "S01-O1-at-009572"
+decision = "reject"
+reason = "exophoric: the wider community"
+
+[[candidate]]
+id = "S01-O1-at-009693"
+decision = "reject"
+reason = "exophoric: npm's public catalog"
+
+[[candidate]]
+id = "S01-O1-at-009956"
+decision = "reject"
+reason = "generic: reader-possessive ('your component')"
+
+[[candidate]]
+id = "S01-O1-at-011047"
+decision = "reject"
+reason = "generic: reader-possessive ('your development environment')"
+
+[[candidate]]
+id = "S01-O1-at-011105"
+decision = "reject"
+reason = "generic: reader-possessive ('your project')"
+
+[[candidate]]
+id = "S01-O1-at-011418"
+decision = "reject"
+reason = "code: occurrence inside a FileTree listing"
+
+[[candidate]]
+id = "S01-O1-at-011594"
+decision = "reject"
+reason = "not_probeable: sole referent is named in the same sentence"
+
+[[candidate]]
+id = "S01-O1-at-011632"
+decision = "reject"
+reason = "not_referential: bridging nominal ('the project root')"
+
+[[candidate]]
+id = "S01-O1-at-012352"
+decision = "reject"
+reason = "generic: reader-possessive ('your individual package')"
+
+[[candidate]]
+id = "S01-O1-at-013235"
+decision = "reject"
+reason = "not_referential: field definition"
+
+[[candidate]]
+id = "S01-O1-at-013476"
+decision = "reject"
+reason = "not_referential: field definition"
+
+[[candidate]]
+id = "S01-O1-at-013669"
+decision = "reject"
+reason = "generic: reader-possessive ('your project')"
+
+[[candidate]]
+id = "S01-O1-at-014264"
+decision = "reject"
+reason = "generic: reader-possessive ('your package')"
+
+[[candidate]]
+id = "S01-O1-at-014324"
+decision = "reject"
+reason = "generic: reader-possessive ('your package')"
+
+[[candidate]]
+id = "S01-O1-at-014528"
+decision = "reject"
+reason = "generic: reader-possessive ('your component')"
+
+[[candidate]]
+id = "S01-O1-at-014570"
+decision = "reject"
+reason = "generic: reader-possessive in link text"
+
+[[candidate]]
+id = "S01-O1-at-014810"
+decision = "reject"
+reason = "exophoric: the Astro ecosystem"
+
+[[candidate]]
+id = "S01-O1-at-015124"
+decision = "reject"
+reason = "not_referential: field definition ('The main package entrypoint')"
+
+[[candidate]]
+id = "S01-O1-at-015170"
+decision = "reject"
+reason = "generic: reader-possessive ('your package')"
+
+[[candidate]]
+id = "S01-O1-at-016188"
+decision = "reject"
+reason = "generic: reader-possessive ('your package')"
+
+[[candidate]]
+id = "S01-O1-at-016325"
+decision = "reject"
+reason = "generic: reader-possessive ('your package')"
+
+[[candidate]]
+id = "S01-O1-at-016452"
+decision = "reject"
+reason = "generic: reader-possessive ('your now-extracted components')"
+
+[[candidate]]
+id = "S01-O1-at-016661"
+decision = "reject"
+reason = "idiom: 'in the meantime'"
+
+[[candidate]]
+id = "S01-O1-at-017000"
+decision = "reject"
+reason = "not_referential: 'the output of the'"
+
+[[candidate]]
+id = "S01-O1-at-017785"
+decision = "reject"
+reason = "generic: reader-possessive ('your package')"
+
+[[candidate]]
+id = "S01-O1-at-018021"
+decision = "reject"
+reason = "generic: reader-possessive ('your integration')"
+
+[[candidate]]
+id = "S01-O1-at-018389"
+decision = "reject"
+reason = "not_referential: explicitly named ('The integrations library')"
+
+[[candidate]]
+id = "S01-O1-at-018545"
+decision = "reject"
+reason = "generic: reader-possessive ('your brand')"
+
+[[candidate]]
+id = "S01-O1-at-018577"
+decision = "reject"
+reason = "generic: reader-possessive ('your package')"
+
+[[candidate]]
+id = "S01-O1-at-018917"
+decision = "reject"
+reason = "not_referential: 'the updated information'"
+
+[[candidate]]
+id = "S01-O1-at-018961"
+decision = "reject"
+reason = "not_referential: 'the custom' fields named in the same clause"
+
+[[candidate]]
+id = "S01-O1-at-019063"
+decision = "reject"
+reason = "not_referential: 'the required' keywords are listed in the same clause"
+
+[[candidate]]
+id = "S01-O1-at-020285"
+decision = "reject"
+reason = "generic: reader-possessive ('your work')"
+[[candidate]]
+id = "S01-O2-at-003064"
+decision = "accept"
+reason = "cataphoric deixis: 'the following command' points to the tabbed install commands for missing packages"
+host_from = "If you see any warnings like"
+host_to = "### Manual installation"
+anchor = "To install these missing packages, run the following command"
+question = "If warnings say a package cannot be found after adding an integration, what are you told to run?"
+correct = "Your package manager's command to install the missing package by name"
+foil_1 = "The add-integration command again for the same integration"
+foil_2 = "The upgrade tool for official integrations"
+evidence = "npm install [package-name]"
+gate = "pass"
+
+[[candidate]]
+id = "S01-O1-at-005129"
+decision = "accept"
+reason = "anaphor: 'the integration' refers to the sitemap integration installed in the previous step, competing with the Vue example above"
+host_from = "For example, to install the `@astrojs/sitemap` integration:"
+host_to = "along with any configuration options:"
+anchor = "Import the integration to your"
+question = "Which integration does the second step import into the configuration file?"
+correct = "The sitemap integration installed in the step before"
+foil_1 = "The Vue integration from the earlier configuration example"
+foil_2 = "A local integration file from the project"
+evidence = "For example, to install the `@astrojs/sitemap` integration:"
+gate = "pass"
+
+[[candidate]]
+id = "S01-O1-at-008267"
+decision = "accept"
+reason = "anaphor: 'the integration' in step two refers to the integration uninstalled in step one"
+host_from = "To remove an integration, first uninstall"
+host_to = "Next, remove the integration from your `astro.config.*` file:"
+anchor = "Next, remove the integration from your"
+question = "In the removal steps, which integration is taken out of the configuration file?"
+correct = "The same integration you uninstalled in the first step"
+foil_1 = "Every integration listed in the configuration"
+foil_2 = "Any integration that depends on the removed one"
+evidence = "first uninstall the integration from your project"
+gate = "pass"
+
+[[candidate]]
+id = "S01-O2-at-011443"
+decision = "accept"
+reason = "discourse deixis: 'This example' points to the directory tree shown just before"
+host_from = "To create a new package, configure your development environment"
+host_to = "for testing and demonstrating the component."
+anchor = "creates a project with a single package"
+question = "What does the example project shown in the directory listing contain?"
+correct = "One component package plus a demo folder for testing and demonstration"
+foil_1 = "Several independent projects, each with its own demo"
+foil_2 = "A single website with no separate package folder"
+evidence = "creates a project with a single package, named `my-component`"
+gate = "pass"
+
+[[candidate]]
+id = "S01-O2-at-011756"
+decision = "accept"
+reason = "discourse deixis: 'this example' points to the workspaces configuration just shown"
+host_from = "This is configured in the project root's `package.json` file:"
+host_to = "where you can install a working copy of Astro."
+anchor = "multiple packages can be developed together"
+question = "Which configuration lets multiple packages be developed together in the example?"
+correct = "The workspaces setting in the root package file, listing the demo and packages folders"
+foil_1 = "The package file inside the component's own folder"
+foil_2 = "The Astro configuration file of the demo site"
+evidence = "\"workspaces\": [\"demo\", \"packages/*\"]"
+gate = "pass"
+
+[[candidate]]
+id = "S01-O2-at-013900"
+decision = "accept"
+reason = "discourse deixis: 'this example' points to the exports map just shown"
+host_from = "The entry points of a package when imported by name."
+host_to = "respectively."
+anchor = "respectively"
+question = "In the exports example, what does importing the package's astro subpath load?"
+correct = "The Astro component file mapped to that subpath"
+foil_1 = "The package's main index entry file"
+foil_2 = "The React component file"
+evidence = "\"./astro\": \"./MyAstroComponent.astro\","
+gate = "pass"
+
+[[candidate]]
+id = "S01-O2-at-014362"
+decision = "accept"
+reason = "discourse deixis: 'this list' refers to the files field being described, competing with exports and keywords"
+host_from = "##### `files`"
+host_to = "you must update this list accordingly."
+anchor = "you must update this list accordingly"
+question = "When you add or change files your package needs, which part of the package file must you update?"
+correct = "The files field that lists what is included"
+foil_1 = "The exports map of entry points"
+foil_2 = "The keywords array"
+evidence = "##### `files`"
+gate = "pass"
+
+[[candidate]]
+id = "S01-O2-at-015015"
+decision = "accept"
+reason = "discourse deixis: 'See below' points to the later integrations-library section"
+host = """:::tip
+Keywords are also used by our [integrations library](https://astro.build/integrations/)! [See below](#integrations-library) for a full list of keywords we look for in npm."""
+host_implicit = "As a helpful tip, Keywords are also used by our [integrations library](https://astro.build/integrations/)! [See below](#integrations-library) for a full list of keywords we look for in npm."
+anchor = "for a full list of keywords we look for in npm"
+question = "Where does the tip send you for the full list of keywords the library looks for?"
+correct = "To a later section of the page about the integrations library"
+foil_1 = "To npm's own package search"
+foil_2 = "To the keywords field description just above"
+evidence = "[See below](#integrations-library)"
+gate = "pass"
+
+[[candidate]]
+id = "S01-O1-at-016972"
+decision = "accept"
+reason = "anaphor: 'your fixtures' refers to the fixture pages created in the preceding steps"
+host_from = "In the meantime, our current recommendation for testing is:"
+host_to = "to what you expected."
+anchor = "to build your fixtures"
+question = "What does the build in the last testing step build?"
+correct = "The fixture test pages added in the earlier steps"
+foil_1 = "The published package for npm"
+foil_2 = "The package's main index entry"
+evidence = "Add a new page for every test that you'd like to run."
+gate = "pass"
+
+[[candidate]]
+id = "S01-O1-at-018228"
+decision = "accept"
+reason = "anaphor: 'The library' refers to the integrations library named just before, competing with npm"
+host_from = "Share your hard work by adding your integration to our [integrations library]"
+host_to = "`astro-integration`, or `withastro` keyword."
+anchor = "is automatically updated weekly"
+question = "What is automatically refreshed every week by pulling in packages with certain keywords?"
+correct = "The integrations library on the Astro site"
+foil_1 = "npm's search catalog"
+foil_2 = "The community component template"
+evidence = "adding your integration to our [integrations library](https://astro.build/integrations/)!"
+gate = "pass"
+
+[[relation]]
+id = "S01-R1-001"
+reason = "ordered manual installation steps"
+host_from = "For example, to install the `@astrojs/sitemap` integration:"
+host_to = "apply any necessary config options to your chosen integration in `astro.config.mjs`."
+anchor = "Install the integration to your project dependencies"
+question = "In the manual sitemap example, what comes before adding the integration to the configuration array?"
+correct = "Installing the package with your package manager"
+foil_1 = "Reading the integration's own documentation for options"
+foil_2 = "Running the automatic add command"
+evidence = "2. Import the integration"
+evidence_implicit = "Finally, Import the integration"
+gate = "pass"
+
+[[relation]]
+id = "S01-R1-002"
+reason = "ordered removal steps"
+host_from = "## Removing an integration"
+host_to = "Next, remove the integration from your `astro.config.*` file:"
+anchor = "To remove an integration, first uninstall"
+question = "When removing an integration, what do you do first?"
+correct = "Uninstall its package from the project"
+foil_1 = "Delete it from the configuration file"
+foil_2 = "Upgrade the remaining integrations"
+evidence = "2. Next, remove the integration"
+evidence_implicit = "Finally, Next, remove the integration"
+gate = "pass"
+
+[[relation]]
+id = "S01-R1-003"
+reason = "ordered testing recommendation"
+host_from = "In the meantime, our current recommendation for testing is:"
+host_to = "to what you expected."
+anchor = "Add a new page for every test"
+question = "In the recommended testing approach, what comes right after adding a page for every test?"
+correct = "Making each page use the component in a different way you want to test"
+foil_1 = "Building the fixtures and comparing the output"
+foil_2 = "Adding the fixtures folder"
+evidence = "3. Each page should include"
+evidence_implicit = "Third, Each page should include"
+gate = "pass"
+
+[[relation]]
+id = "S01-R2-001"
+reason = "package-manager alternatives for adding an integration"
+host_from = "Run the `astro add` command using the package manager of your choice"
+host_to = "It's even possible to add multiple integrations at the same time!"
+anchor = "our automatic integration wizard will update"
+question = "How are the three commands for adding the React integration related?"
+correct = "They are alternatives: run only the one for your package manager"
+foil_1 = "Run all three in sequence"
+foil_2 = "Run the npm one first, then the others"
+evidence = "<Fragment slot=\"pnpm\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S01-R2-002"
+reason = "package-manager alternatives for adding several integrations"
+host_from = "It's even possible to add multiple integrations at the same time!"
+host_to = "If you see any warnings like"
+anchor = "It's even possible to add multiple integrations"
+question = "How are the three commands for adding several integrations at once related?"
+correct = "They are alternatives: run only the one for your package manager"
+foil_1 = "Run all three in sequence, one per integration"
+foil_2 = "Run the npm one first, then the others"
+evidence = "<Fragment slot=\"yarn\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S01-R2-003"
+reason = "package-manager alternatives for installing missing peer packages"
+host_from = "If you see any warnings like"
+host_to = "### Manual installation"
+anchor = "To install these missing packages"
+question = "How are the three commands for installing missing packages related?"
+correct = "They are alternatives: run only the one for your package manager"
+foil_1 = "Run all three in sequence"
+foil_2 = "Run the npm one first, then the others"
+evidence = "<Fragment slot=\"pnpm\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S01-R2-004"
+reason = "package-manager alternatives for installing the sitemap package"
+host_from = "Install the integration to your project dependencies using your preferred package manager:"
+host_to = "Import the integration to your `astro.config.mjs` file"
+anchor = "Install the integration to your project dependencies"
+question = "How are the three commands for installing the sitemap package related?"
+correct = "They are alternatives: run only the one for your package manager"
+foil_1 = "Run all three in sequence"
+foil_2 = "Run the npm one first, then the others"
+evidence = "<Fragment slot=\"yarn\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S01-R2-005"
+reason = "package-manager alternatives for the upgrade tool"
+host_from = "To upgrade all official integrations at once"
+host_to = "### Manual upgrading"
+anchor = "To upgrade all official integrations at once"
+question = "How are the three commands for upgrading everything at once related?"
+correct = "They are alternatives: run only the one for your package manager"
+foil_1 = "Run all three in sequence"
+foil_2 = "Run the npm one first, then the others"
+evidence = "<Fragment slot=\"pnpm\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S01-R2-006"
+reason = "package-manager alternatives for manual upgrades"
+host_from = "To upgrade one or more integrations manually"
+host_to = "## Removing an integration"
+anchor = "use the appropriate command for your package manager"
+question = "How are the three commands for upgrading specific integrations manually related?"
+correct = "They are alternatives: run only the one for your package manager"
+foil_1 = "Run all three in sequence"
+foil_2 = "Run the npm one first, then the others"
+evidence = "<Fragment slot=\"yarn\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S01-R2-007"
+reason = "package-manager alternatives for uninstalling"
+host_from = "To remove an integration, first uninstall"
+host_to = "Next, remove the integration from your"
+anchor = "To remove an integration, first uninstall"
+question = "How are the three uninstall commands in the removal steps related?"
+correct = "They are alternatives: run only the one for your package manager"
+foil_1 = "Run all three in sequence"
+foil_2 = "Run the npm one first, then the others"
+evidence = "<Fragment slot=\"pnpm\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S01-R2-008"
+reason = "package-manager alternatives for creating a component from a template"
+host_from = "To get started developing your component quickly"
+host_to = "### Creating a package"
+anchor = "you can use a template already set up for you"
+question = "How are the three commands for starting from the component template related?"
+correct = "They are alternatives: run only the one for your package manager"
+foil_1 = "Run all three in sequence"
+foil_2 = "Run the npm one first, then the others"
+evidence = "<Fragment slot=\"yarn\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S01-R2-009"
+reason = "package-manager alternatives for creating the demo project"
+host_from = "In this example, multiple packages can be developed together"
+host_to = "There are two initial files that will make up your individual package"
+anchor = "where you can install a working copy of Astro"
+question = "How are the three commands for creating the demo project related?"
+correct = "They are alternatives: run only the one for your package manager"
+foil_1 = "Run all three in sequence"
+foil_2 = "Run the npm one first, then the others"
+evidence = "<Fragment slot=\"pnpm\">"
+evidence_implicit = "These are alternatives — use exactly one, not all of them."
+gate = "pass"
+
+[[relation]]
+id = "S01-R3-001"
+reason = "tip aside: optional pointer to the directory"
+host_from = ":::tip[Integrations directory]"
+host_from_implicit = "Integrations directory: Browse or search"
+host_to = "developer tools, and more."
+anchor = "Browse or search the complete set"
+question = "How does the page present browsing the directory of integrations?"
+correct = "As an optional pointer for finding more packages"
+foil_1 = "As a required step before adding any integration"
+foil_2 = "As a warning about unofficial packages"
+evidence = "Browse or search the complete set of hundreds of official and community integrations"
+gate = "pass"
+
+[[relation]]
+id = "S01-R3-002"
+reason = "note aside: conditional instruction"
+host_from = ":::note[Handling integration dependencies]"
+host_from_implicit = "Handling integration dependencies: If you see any warnings"
+host_to = "To install these missing packages, run the following command:"
+anchor = "your package manager may not have installed"
+question = "When should you run the command for installing missing packages?"
+correct = "Only if warnings say a package cannot be found after adding an integration"
+foil_1 = "Always, after every integration you add"
+foil_2 = "Before adding any integration"
+evidence = "If you see any warnings like"
+gate = "pass"
+
+[[relation]]
+id = "S01-R3-003"
+reason = "tip aside: optional suggestion"
+host_from = ":::tip[Don't want to go it alone?]"
+host_from_implicit = "Don't want to go it alone?: Check out"
+host_to = "for a community-supported, out-of-the-box template!"
+anchor = "for a community-supported, out-of-the-box template"
+question = "How does the page present the community's component template?"
+correct = "As an optional suggestion if you'd rather not start from scratch alone"
+foil_1 = "As the required starting point for publishing"
+foil_2 = "As a deprecated approach to avoid"
+evidence = "for a community-supported, out-of-the-box template!"
+gate = "pass"
+
+[[relation]]
+id = "S01-R3-004"
+reason = "prerequisites note aside: advisory background"
+host_from = ":::note[Prerequisites]"
+host_from_implicit = "Prerequisites: Before diving in"
+host_to = "configuring-npm/package-json#workspaces)"
+anchor = "it will help to have a basic understanding of"
+question = "How necessary does the page say familiarity with modules, package manifests, and workspaces is before creating a package?"
+correct = "Helpful background rather than a strict requirement"
+foil_1 = "Strictly required before you can continue"
+foil_2 = "Irrelevant to creating a package"
+evidence = "it will help to have a basic understanding of"
+gate = "pass"
+
+[[relation]]
+id = "S01-R3-005"
+reason = "tip aside: side note about keywords"
+host = """:::tip
+Keywords are also used by our [integrations library](https://astro.build/integrations/)! [See below](#integrations-library) for a full list of keywords we look for in npm."""
+host_implicit = "As a helpful tip, Keywords are also used by our [integrations library](https://astro.build/integrations/)! [See below](#integrations-library) for a full list of keywords we look for in npm."
+anchor = "Keywords are also used by our"
+question = "How does the page present the fact that the integrations library also uses package keywords?"
+correct = "As a helpful side note"
+foil_1 = "As a requirement for publishing to npm"
+foil_2 = "As a warning that keywords are ignored"
+evidence = ":::tip"
+evidence_implicit = "As a helpful tip"
+gate = "pass"
+
+[[relation]]
+id = "S01-R3-006"
+reason = "tip aside: optional invitation"
+host_from = ":::tip\nDo you need some help building your integration"
+host_from_implicit = "As a helpful tip, Do you need some help building your integration"
+host_to = "Come say hi!"
+anchor = "or just want to meet other integrations builders"
+question = "How does the page present joining the chat channel for integration builders?"
+correct = "As an optional invitation for help or company"
+foil_1 = "As required before listing an integration in the library"
+foil_2 = "As the only support route for integration bugs"
+evidence = ":::tip"
+evidence_implicit = "As a helpful tip"
+gate = "pass"
+
+[[relation]]
+id = "S01-R3-007"
+reason = "tip aside: optional override"
+host_from = ":::tip\nNeed to override the information"
+host_from_implicit = "As a helpful tip, Need to override the information"
+host_to = "is used instead."
+anchor = "Need to override the information our library reads"
+question = "How does the page present overriding the information the library reads from npm?"
+correct = "As an optional fix available by filing an issue"
+foil_1 = "As impossible, because the library only uses npm data"
+foil_2 = "As mandatory for every published package"
+evidence = "No problem!"
+gate = "pass"
+
+[[relation]]
+id = "S01-R4-001"
+reason = "category table: keyword conditions for category placement"
+host_from = "In addition to the required `astro-component`"
+host_to = "will be shown as `Uncategorized`."
+anchor = "special keywords are also used to automatically organize packages"
+question = "Which keywords place a package in the dev toolbar category of the integrations library?"
+correct = "Keywords for dev tools, the dev overlay, or the dev toolbar"
+foil_1 = "Keywords for tooling and utilities"
+foil_2 = "Keywords for performance and SEO"
+evidence = "| Dev Toolbar       | `devtools`, `dev-overlay`, `dev-toolbar`     |"
+evidence_implicit = "For Dev Toolbar: keywords is `devtools`, `dev-overlay`, `dev-toolbar`."
+gate = "pass"
