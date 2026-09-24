@@ -1,0 +1,52 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-5ae47820fb1e9a5e24ba",
+  "assignment_id": "S04-R3-003|implicit|A3",
+  "pass_number": 1,
+  "session_id": "ses_f2b713146ffeyow6Ev2TOd1y77",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "6a340610b87b54eb9553c07ecb5e00afef48e5b1bebbc5a97fe6a8b6bcda92fc",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-5ae47820fb1e9a5e24ba-p1-a1",
+  "response": {
+    "opaque_id": "AI-5ae47820fb1e9a5e24ba",
+    "option_id": "1",
+    "support": "explicit",
+    "evidence": "Note: Remember to replace the serviceAccount object with your own project credentials.",
+    "rationale": "Immediately after presenting the server.ts code that builds the serviceAccount object from environment variables, the artifact includes a note instructing the reader to remember to replace that object with their own project credentials, framing the replacement as a required step the reader must remember to perform."
+  }
+}

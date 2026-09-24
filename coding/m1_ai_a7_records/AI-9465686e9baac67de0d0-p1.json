@@ -1,0 +1,54 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-9465686e9baac67de0d0",
+  "assignment_id": "S11-O2-at-002947|explicit|A1",
+  "pass_number": 1,
+  "session_id": "ses_f2a69e1eaffeTbvoUtvOgql383",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "5c7ebe8143b2e9128d5ba88716e241653002eb6f4cdaf22db195484f8ddb196d",
+  "score": 3,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "quote_verified_after_normalization"
+  ],
+  "attempt": "AI-9465686e9baac67de0d0-p1-a2",
+  "response": {
+    "opaque_id": "AI-9465686e9baac67de0d0",
+    "option_id": "2",
+    "support": "explicit",
+    "evidence": "The instructions below create an Astro blog using a Builder model (Type: \u201cSection\u201d) called `blogpost` that contains two required text fields: `title` and `slug`.",
+    "rationale": "The artifact explicitly states the model type is \"Section\" and its name is \"blogpost\", which is a model for blog posts. This is also confirmed in the step-by-step instructions listing \"Type: Section\" and \"Name: 'blogpost'\"."
+  }
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "attempt": "AI-026182c4c9f2cb36ad0c-p1-a1",
+    "error": "Packet or response identity mismatch"
+  },
+  {
+    "attempt": "AI-09a1aeac597df379bfae-p1-a1",
+    "error": "Packet or response identity mismatch"
+  },
+  {
+    "attempt": "AI-51a205a7fb9b29bb57bb-p1-a1",
+    "error": "Response fields do not match protocol"
+  },
+  {
+    "attempt": "AI-cde3ff5a5a538d55278e-p1-a1",
+    "error": "Packet or response identity mismatch"
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-201bc3d9c6f9d900419e",
+  "assignment_id": "S06-R2-005|explicit|A3",
+  "pass_number": 1,
+  "session_id": "ses_f2b6869b4ffegenPr4h4n46jj4",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "e517e5a48cf355b625009cdc3fe9b6fbdb18cf1bc635594b88c1262f250eb12b",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-201bc3d9c6f9d900419e-p1-a1",
+  "response": {
+    "opaque_id": "AI-201bc3d9c6f9d900419e",
+    "option_id": "2",
+    "support": "explicit",
+    "evidence": "Start your application with the following command: Static On demand Terminal window deno run -A jsr:@std/http/file-server dist Terminal window deno run -A ./dist/server/entry.mjs",
+    "rationale": "The artifact presents the two commands under separate 'Static' and 'On demand' tabs, matching the earlier distinction between static sites and on-demand rendered sites, so each command applies to its corresponding build type rather than both being run together."
+  }
+}

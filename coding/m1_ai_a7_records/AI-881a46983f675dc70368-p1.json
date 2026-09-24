@@ -1,0 +1,52 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-881a46983f675dc70368",
+  "assignment_id": "S03-R3-004|explicit|A2",
+  "pass_number": 1,
+  "session_id": "ses_f2bad124fffeQMr3Evpw9Ag4fG",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "36cb7ee10cafd20eb38c7cb8598fe38f007f8488b62f62daaf07c9baba8fab1c",
+  "score": 2,
+  "score_strict": 2,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-881a46983f675dc70368-p1-a1",
+  "response": {
+    "opaque_id": "AI-881a46983f675dc70368",
+    "option_id": "4",
+    "support": "inferred",
+    "evidence": "The artifact shows `useStore` used in components to read store values for rendering (e.g., CartFlyoutToggle: \"read the store value with the `useStore` hook\"), while the AddToCartForm event handler uses `addCartItem`, which internally uses `cartItems.get()` \u2014 highlighted by the note \"\ud83d\ude4b Why use `.get()` here instead of a `useStore` helper?\"",
+    "rationale": "The artifact never states an explicit rule, but its code examples consistently use the `useStore` hook in components to subscribe to store values that are rendered to the UI, whereas reads occurring inside event-driven logic (the addCartItem helper called on form submit) use `.get()`. This pattern supports the inference that the hook is for rendered reads, not event-time reads."
+  }
+}

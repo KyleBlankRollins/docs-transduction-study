@@ -1,0 +1,54 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-ac6d02dbb3c4cceac769",
+  "assignment_id": "S04-R4-003|explicit|A1",
+  "pass_number": 1,
+  "session_id": "ses_f2a497a70ffeLsX2LA3c50eI9S",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "9b7f92ae1821ba2133b6d979cb5d3706dcac198624ec7750213499a288098122",
+  "score": 2,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "explicit_quote_unverified"
+  ],
+  "attempt": "AI-ac6d02dbb3c4cceac769-p1-a2",
+  "response": {
+    "opaque_id": "AI-ac6d02dbb3c4cceac769",
+    "option_id": "1",
+    "support": "explicit",
+    "evidence": "Under the 'Connecting to Firestore database' section, the Prerequisites list states: 'An Astro project initialized with Firebase as described in the Initializing Firebase in Astro section.' and 'A Firebase project with a Firestore database. You can follow the Firebase documentation to create a new project and set up a Firestore database.'",
+    "rationale": "The prerequisites for connecting to the Firestore database explicitly require both an Astro project already initialized with Firebase and a Firebase project that has a Firestore database. The other options are not prerequisites for this step: OAuth providers relate to the authentication section, and the friends collection is described as the target collection to be created/used, not as something that must already be filled with documents."
+  }
+}

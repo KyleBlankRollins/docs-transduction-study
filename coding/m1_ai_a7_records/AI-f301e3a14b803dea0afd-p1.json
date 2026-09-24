@@ -1,0 +1,54 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-f301e3a14b803dea0afd",
+  "assignment_id": "S04-O2-at-001521|explicit|A3",
+  "pass_number": 1,
+  "session_id": "ses_f2af592c6ffe8Eo0Y8sN7yVIxK",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "1564463099d41abe30f5f3526328a177c01544a843e71230c563570eb5fafbe1",
+  "score": 3,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "quote_verified_after_normalization"
+  ],
+  "attempt": "AI-f301e3a14b803dea0afd-p1-a1",
+  "response": {
+    "opaque_id": "AI-f301e3a14b803dea0afd",
+    "option_id": "1",
+    "support": "explicit",
+    "evidence": "To add your Firebase credentials to Astro, create an .env file in the root of your project with the following variables: .env FIREBASE_PRIVATE_KEY_ID =YOUR_PRIVATE_KEY_ID FIREBASE_PRIVATE_KEY =YOUR_PRIVATE_KEY FIREBASE_PROJECT_ID =YOUR_PROJECT_ID FIREBASE_CLIENT_EMAIL =YOUR_CLIENT_EMAIL ...",
+    "rationale": "The artifact explicitly lists the .env variables, which are the service-account/project credentials (private key, project ID, client email, etc.) used by the server side to connect to Firebase."
+  }
+}

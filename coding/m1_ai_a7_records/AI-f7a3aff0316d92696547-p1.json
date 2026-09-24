@@ -1,0 +1,54 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-f7a3aff0316d92696547",
+  "assignment_id": "S10-R1-001|implicit|A1",
+  "pass_number": 1,
+  "session_id": "ses_f2a9d74d6ffeD8639gDiO7fAdW",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "bdb7254c1c7ab47e396a6145381abb969c08d3351b8ed45101fc414e2035e60d",
+  "score": 3,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "quote_verified_after_normalization"
+  ],
+  "attempt": "AI-f7a3aff0316d92696547-p1-a2",
+  "response": {
+    "opaque_id": "AI-f7a3aff0316d92696547",
+    "option_id": "1",
+    "support": "explicit",
+    "evidence": "First, Choose a page to test. This example will test the example page index.astro below.",
+    "rationale": "In the 'Create your first Playwright test' section, the steps are ordered: first choosing a page to test (the index.astro example), and finally creating a new folder and adding the test file in src/test. Therefore, choosing a page to test comes before adding the test file."
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-e5796df39015bbe605bc",
+  "assignment_id": "S11-R3-006|explicit|A1",
+  "pass_number": 1,
+  "session_id": "ses_f2a7b0d73ffenfhENCaZ8Z1FwF",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "cfd721c4cd2414de212e3372a42b28d4c6867a921021ad73a9399c8a0745d7ae",
+  "score": 3,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "quote_verified_after_normalization"
+  ],
+  "attempt": "AI-e5796df39015bbe605bc-p1-a2",
+  "response": {
+    "opaque_id": "AI-e5796df39015bbe605bc",
+    "option_id": "2",
+    "support": "explicit",
+    "evidence": "If you are using a JavaScript framework (e.g. Svelte, Vue, or React) in your Astro project you can use one of Builder's integrations as an alternative to making raw fetch calls through the REST API.",
+    "rationale": "The page's 'Framework integrations' tip explicitly frames Builder's integrations as something you 'can use' \u2014 an optional choice \u2014 'as an alternative to making raw fetch calls through the REST API' for projects that use a JavaScript framework, matching option 2."
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-2ce36a478c3f74a125ff",
+  "assignment_id": "S04-R4-001|explicit|A1",
+  "pass_number": 1,
+  "session_id": "ses_f2a51000bffe7cjExBk9drSmTH",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "ccc5720ae63706f6c27d9f6ab29db45eaf618fb473cc5eb62f5f1fd18f0b2201",
+  "score": 2,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "explicit_quote_unverified"
+  ],
+  "attempt": "AI-2ce36a478c3f74a125ff-p1-a2",
+  "response": {
+    "opaque_id": "AI-2ce36a478c3f74a125ff",
+    "option_id": "3",
+    "support": "explicit",
+    "evidence": "Under \"Initializing Firebase in Astro > Prerequisites\": \"A Firebase project with a web app configured.\" \"An Astro project with output: 'server' for on-demand rendering enabled.\" \"Firebase credentials: You will need two sets of credentials to connect Astro to Firebase: Web app credentials... Project credentials...\"",
+    "rationale": "The artifact's Prerequisites section explicitly lists exactly these three requirements before initializing Firebase in Astro: a Firebase project with a web app configured, an Astro project with server output enabled, and two sets of Firebase credentials (web app and project/service account credentials)."
+  }
+}

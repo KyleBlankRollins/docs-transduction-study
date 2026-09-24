@@ -1,0 +1,54 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-6f50f01a06bba6d28655",
+  "assignment_id": "S02-O2-at-002099|implicit|A2",
+  "pass_number": 1,
+  "session_id": "ses_f2afed7fbffePDrfruTGM8EMa0",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "f110ec0bea66123408217c468b92dbdc1331c89204974fa093de905084530310",
+  "score": 2,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "explicit_quote_unverified"
+  ],
+  "attempt": "AI-6f50f01a06bba6d28655-p1-a1",
+  "response": {
+    "opaque_id": "AI-6f50f01a06bba6d28655",
+    "option_id": "1",
+    "support": "explicit",
+    "evidence": "\"Many tools support a common JSON configuration format for MCP servers. If there are not specific instructions for your chosen tool, you may be able to add the Astro Docs MCP server by including the following configuration in your tool's MCP settings:\" \u2014 followed by two alternatives: \"If you are using Streamable HTTP:\" with code \"{ \\\"mcpServers\\\": { \\\"Astro docs\\\": { \\\"type\\\": \\\"http\\\", \\\"url\\\": \\\"https://mcp.docs.astro.build/mcp\\\" } } }\" and \"If you are using Local Proxy:\" with code \"{ \\\"mcpServers\\\": { \\\"Astro docs\\\": { \\\"type\\\": \\\"stdio\\\", \\\"command\\\": \\\"npx\\\", \\\"args\\\": [\\\"-y\\\", \\\"mcp-remote\\\", \\\"https://mcp.docs.astro.build/mcp\\\"] } } }\"",
+    "rationale": "The Manual setup section explicitly instructs adding a JSON configuration entry for the Astro Docs MCP server to the tool's MCP settings, offering exactly two alternative forms: a Streamable HTTP (type \"http\") entry or a Local Proxy (type \"stdio\" via npx mcp-remote) entry. This directly matches option 1."
+  }
+}

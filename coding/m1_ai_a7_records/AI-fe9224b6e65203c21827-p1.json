@@ -1,0 +1,54 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-fe9224b6e65203c21827",
+  "assignment_id": "S02-O2-at-003591|explicit|A2",
+  "pass_number": 1,
+  "session_id": "ses_f2b51770fffeYps8D11gAN1FDw",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "ff28cfb92adff237ad557d236d67da970f443e79f9527be6b027833394c7cb80",
+  "score": 2,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "explicit_quote_unverified"
+  ],
+  "attempt": "AI-fe9224b6e65203c21827-p1-a1",
+  "response": {
+    "opaque_id": "AI-fe9224b6e65203c21827",
+    "option_id": "2",
+    "support": "explicit",
+    "evidence": "The page says: \"You can configure it to use the Astro Docs MCP server for documentation access by adding the following to the workflow file:\" and shows a .github/workflows/claude.yml figure containing: \"- uses: anthropics/claude-code-action@beta with: anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }} mcp_config: | { \\\"mcpServers\\\": { \\\"astro-docs\\\": { \\\"type\\\": \\\"http\\\", \\\"url\\\": \\\"https://mcp.docs.astro.build/mcp\\\" } } } allowed_tools: \\\"mcp__astro-docs__search_astro_docs\\\"\"",
+    "rationale": "The workflow snippet is an action step (uses anthropics/claude-code-action@beta) whose 'with' block includes an mcp_config for the Astro docs MCP server and an allowed_tools entry permitting the server's search tool (mcp__astro-docs__search_astro_docs), matching option 2 exactly."
+  }
+}

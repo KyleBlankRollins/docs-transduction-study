@@ -1,0 +1,52 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-f24f0b5a2ef103cd25de",
+  "assignment_id": "S02-R2-001|explicit|A4",
+  "pass_number": 1,
+  "session_id": "ses_f2b7663e1ffepcCxkXPMq7vsZa",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "66aee972ee9369f8e2221e5c47307bb45618b7591126242f12616059839d3455",
+  "score": 1,
+  "score_strict": 1,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-f24f0b5a2ef103cd25de-p1-a1",
+  "response": {
+    "opaque_id": "AI-f24f0b5a2ef103cd25de",
+    "option_id": "4",
+    "support": "absent",
+    "evidence": "",
+    "rationale": "The artifact's 'Manual setup' section is cut off immediately after the heading ('Man'), so no manual-setup configurations are described. The text never mentions a proxy entry, an HTTP entry, or any relationship between two configurations, so the artifact does not say how they are related."
+  }
+}

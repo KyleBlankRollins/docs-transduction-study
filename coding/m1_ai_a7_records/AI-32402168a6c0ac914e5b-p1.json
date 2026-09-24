@@ -1,0 +1,52 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-32402168a6c0ac914e5b",
+  "assignment_id": "S05-O1-at-003482|implicit|A3",
+  "pass_number": 1,
+  "session_id": "ses_f2b36c649ffeI32HEMtafkZ5B4",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "a3ad91bad6b953073ba2d807868b290a14f7e1430f251ee417501672e3d6e6d0",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-32402168a6c0ac914e5b-p1-a1",
+  "response": {
+    "opaque_id": "AI-32402168a6c0ac914e5b",
+    "option_id": "2",
+    "support": "explicit",
+    "evidence": "In order to build the Dockerfile above, you\u2019ll also need to create a configuration file for NGINX. Create a folder called nginx in your project\u2019s root directory and create a file called nginx.conf inside.",
+    "rationale": "The NGINX static example explicitly requires creating an nginx.conf configuration file before the Dockerfile can be built, whereas the Apache example uses the default configuration and the SSR/multi-stage examples require no web-server configuration file."
+  }
+}

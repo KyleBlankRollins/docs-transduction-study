@@ -1,0 +1,52 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-25570852a8c96f3c86e4",
+  "assignment_id": "S10-R2-003|implicit|A4",
+  "pass_number": 1,
+  "session_id": "ses_f2b71a14dffe21D3Dr30FM5N5c",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "a2bcbf7e64c02ade50f8482f94ff2c2ada9237d6b1167d1c26c6aa82cfc588cc",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-25570852a8c96f3c86e4-p1-a1",
+  "response": {
+    "opaque_id": "AI-25570852a8c96f3c86e4",
+    "option_id": "3",
+    "support": "explicit",
+    "evidence": "Choose one of the following options. These are alternatives \u2014 use exactly one, not all of them. If you are using npm: Terminal window npm init nightwatch@latest If you are using pnpm: Terminal window pnpm create nightwatch If you are using yarn: Terminal window yarn",
+    "rationale": "The artifact explicitly states the three commands are alternatives and that exactly one should be used, matching the package manager in use (npm, pnpm, or yarn)."
+  }
+}

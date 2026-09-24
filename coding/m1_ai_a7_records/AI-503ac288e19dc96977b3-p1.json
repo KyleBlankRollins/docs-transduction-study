@@ -1,0 +1,54 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-503ac288e19dc96977b3",
+  "assignment_id": "S06-R1-001|explicit|A1",
+  "pass_number": 1,
+  "session_id": "ses_f2a99fe1affezABxItd84Al5jn",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "12cb3f9c6a39b8b052710df5f61ddcbc3c064fabf3925e9f1ecaf8fc4b46192c",
+  "score": 2,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "explicit_quote_unverified"
+  ],
+  "attempt": "AI-503ac288e19dc96977b3-p1-a2",
+  "response": {
+    "opaque_id": "AI-503ac288e19dc96977b3",
+    "option_id": "3",
+    "support": "explicit",
+    "evidence": "In the ordered steps under \"Adapter for on-demand rendering\", the artifact states: \"Update your astro.config.mjs project configuration file with the changes below.\" (with the config showing \"output: 'server', adapter: deno(),\"), and the very next step says: \"Update your preview script in package.json with the change below.\"",
+    "rationale": "The on-demand rendering setup is presented as a numbered list: (1) install the @deno/astro-adapter adapter, (2) update astro.config.mjs to use the Deno adapter with server output, and (3) update the preview script in package.json. Therefore, the step immediately before updating the preview script is updating the Astro configuration file to use the Deno adapter, matching option 3."
+  }
+}

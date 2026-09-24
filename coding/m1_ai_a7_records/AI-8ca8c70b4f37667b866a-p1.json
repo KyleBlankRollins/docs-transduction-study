@@ -1,0 +1,52 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-8ca8c70b4f37667b866a",
+  "assignment_id": "S01-R2-008|explicit|A1",
+  "pass_number": 1,
+  "session_id": "ses_f2a59848affev7lp4D9bwkSiwi",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "83aabfe9c61d601efa9bd1ab8a67fe71adaca9eab97c37103873f2b5c9def093",
+  "score": 2,
+  "score_strict": 2,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-8ca8c70b4f37667b866a-p1-a2",
+  "response": {
+    "opaque_id": "AI-8ca8c70b4f37667b866a",
+    "option_id": "4",
+    "support": "inferred",
+    "evidence": "The Quick start section presents the same command in three tabs labeled npm, pnpm, and Yarn (e.g., \"npm create astro@latest my-new-component-directory -- --template component\"), matching the pattern used throughout the page where package-manager tabs are alternatives.",
+    "rationale": "The three commands appear as tabbed panels for npm, pnpm, and Yarn, a pattern the page uses elsewhere for interchangeable package-manager-specific commands (e.g., installing integrations). They are therefore alternatives for the user's chosen package manager, not steps to run in sequence."
+  }
+}

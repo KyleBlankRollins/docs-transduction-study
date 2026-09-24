@@ -1,0 +1,54 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-bf1476f51cea816576a5",
+  "assignment_id": "S02-O1-at-005549|implicit|A1",
+  "pass_number": 1,
+  "session_id": "ses_f2a672490ffeH6WZ7XiJQKkgFN",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "c6b034b11f9d60eee6d041200600503fb5d2fc922c5142724603330d1292de1b",
+  "score": 2,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "explicit_quote_unverified"
+  ],
+  "attempt": "AI-bf1476f51cea816576a5-p1-a2",
+  "response": {
+    "opaque_id": "AI-bf1476f51cea816576a5",
+    "option_id": "2",
+    "support": "explicit",
+    "evidence": "In the Visual Studio Code section: \"Install by clicking the button below:\" followed by the link \"<a class=\"sl-link-button not-content primary astro-b66feiu3\" href=\"vscode:mcp/install?%7B%22name%22%3A%22Astro%20docs%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.docs.astro.build%2Fmcp%22%7D\"> ... Add to VS Code\" \u2014 a vscode:mcp/install deep link whose decoded payload is {\"name\":\"Astro docs\",\"url\":\"https://mcp.docs.astro.build/mcp\"}.",
+    "rationale": "Microsoft's code editor is Visual Studio Code. The page's VS Code section presents an 'Add to VS Code' button whose href is a vscode:mcp/install URL embedding the Astro Docs MCP server name and URL (https://mcp.docs.astro.build/mcp). Clicking it therefore opens a link that installs/adds the Astro Docs MCP server to VS Code, matching option 2. Option 3 is wrong because the MCP documentation link is a separate 'More info' link, and option 4 is not supported by the text."
+  }
+}
