@@ -2,6 +2,8 @@
 
 Implements **W8**. Authority: `IMPLEMENTATION_PLAN.md` §2 W8, §3 (`m2_redundancy.csv`); `DESIGN.md` → Measures (M2). Runs **in parallel** with P5–P8 any time after P4 — an ordering the design (v0.5) explicitly permits, because this measure reads no pipeline artifacts and touches nothing either lock freezes.
 
+**Current execution (2026-09-23):** `make m2` captures pinned Astro 7.0.2 CLI/runtime observations in disposable sandboxes and writes an AI-assisted `coding/m2_redundancy.csv` (242 rows). Only eight rows carry capture-backed CLI/runtime judgments; the rest are `unobserved`, not absent. Human judgment tasks below are superseded by A3 only in that the inventory is labeled AI-assisted.
+
 ## Entry gate
 
 - [ ] P4 exit gate passing (`instances.csv` is the row source).

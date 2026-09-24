@@ -1,5 +1,7 @@
 # P8 — M1a coding and intra-rater kappa
 
+**Current execution (2026-09-23):** under amendment A3, M1-AI uses `opencode_runner.py` (`make m1-ai-first-pass`, `make m1-ai-repeat`; outputs `coding/m1_ai.csv`), not `make coding-setup`/`make code`. The seven-day human washout does not apply; the seed-selected 20% repeat runs in fresh sessions. No evaluation is authorized yet. Human M1a is untouched.
+
 Implements **W7** (the run — the harness was built in P5). Authority: `IMPLEMENTATION_PLAN.md` §2 W7, §3 (`m1a.csv`); `DESIGN.md` → Measures (M1a), Blinding, Disconfirming outcomes (the kappa stop rule).
 
 ## Entry gate

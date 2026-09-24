@@ -2,14 +2,16 @@
 
 Implements **W5** and **L2**. Authority: `IMPLEMENTATION_PLAN.md` §2 W5/L2, §3 (`probes.csv`, `gate_exclusions.csv`); `DESIGN.md` → Probes (authoring rules, foil cap, the both-arms gate), Status (what L2 freezes).
 
+**Current execution (2026-09-23):** [amendment A3](../DESIGN.md#ai-assisted-execution-amendment-a3) authorizes AI authoring and gating; the historical HUMAN assignments below no longer reserve those tasks. All 567 occurrence candidates are reviewed and migrated (106 accepted); 242 instances carry per-arm hosts, anchors, and verbatim gate evidence; 229 probes plus 13 dated exclusions pass `make lint-probes`, and `make anchors-a0` verifies unique both-arm A0 resolution. Three version-change probes have verified superseded sources. The gate was run by the authoring assistant (not independent). The AI evaluator protocol is verified offline but not frozen, and **L2 has not been taken**; it awaits the maintainer's approval of the lock package (see runlog). Historical checkmarks below do not override these facts.
+
 ## Entry gate
 
-- [x] P4 exit gate passing (inventory complete, A0 anchors resolve).
-- [x] P5 exit gate passing (pilot disposed of — no pilot material can leak into probe authoring).
+- [ ] P4 exit gate passing (inventory complete, A0 anchors resolve).
+- [ ] P5 exit gate passing (pilot disposed of — no pilot material can leak into probe authoring).
 
 ## Tasks
 
-1. **Build the probe linter** (`make lint-probes`), enforcing by code what memory would rationalize: exactly one probe per instance (full join against `instances.csv`); no probe string appears verbatim in either arm's A0 source; ≤2 foils; foils are *relations*, not paraphrases of absence; `version_change=true` rows have non-empty `superseded_answer` **and** `superseded_source`.
+1. **Build the probe linter** (`make lint-probes`), enforcing by code what memory would rationalize: exactly one probe per instance (full join against `instances.csv`); no probe string appears verbatim in either arm's A0 source; ≤2 foils; foils are _relations_, not paraphrases of absence; `version_change=true` rows have non-empty `superseded_answer` **and** `superseded_source`.
 2. **HUMAN — author the probes.** Probe writing is the instrument. The analyst writes question, correct answer, and foils for every instance, per the design's authoring rules. The agent may surface the instance list and host passages; it does not draft, suggest, or complete probe text.
 3. **HUMAN — the both-arms gate.** The analyst answers every probe from both A0 variants, artifact only. Failures are excluded into `instruments/gate_exclusions.csv` with reasons — before the lock, or they are not exclusions.
 4. **Version-change subset.** Designated against specimen change-versions; every `superseded_answer` verified against a pre-change source (docs tree at a pre-change SHA, or the changelog entry), recorded in `superseded_source`. An unverified superseded answer is not a version-change probe.

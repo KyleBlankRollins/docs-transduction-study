@@ -2,6 +2,8 @@
 
 Implements **W6** (the run — the code was built in P5). Authority: `IMPLEMENTATION_PLAN.md` §2 W6, §3 (`manifest.csv`); `DESIGN.md` → Pipeline, What is scored at A4.
 
+**Current execution (2026-09-23):** the fail-closed driver `study_pipeline.py` (`make artifacts PASSPHRASE_FILE=...`) replaces the legacy A1/A3/A4 chain: it verifies the L2 commit and lock set, includes A2, resolves anchors through `locators.py`, and packages M1-AI packets with sealed keys (superseding the human harness `setup` for AI work). Tested on synthetic fixtures only; it refuses to run while L2 is blank. Checkboxes below remain open.
+
 ## Entry gate
 
 **This is the registration boundary.** The design's rule — no A1–A5 artifact of a study specimen before the L2 commit — is enforced here, as a gate rather than a rule:

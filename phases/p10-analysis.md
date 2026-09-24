@@ -2,6 +2,8 @@
 
 Implements **W9**. Authority: `IMPLEMENTATION_PLAN.md` §2 W9; `DESIGN.md` → Analysis plan (pre-specified outputs), Disconfirming outcomes, Limitations.
 
+**Current execution (2026-09-23):** `analysis.py` (`make kappa`, `make analyze`) implements the pre-specified M1-AI tables against synthetic data, gated on coverage, isolation, one configuration, and kappa >= 0.6. Outputs are exploratory and model-conditioned; the trajectory figure is not yet generated. No real records exist.
+
 ## Entry gate
 
 - [ ] P7 and P8 exit gates re-run and passing.

@@ -2,18 +2,20 @@
 
 **Status: engineering scaffolding. Not part of the registration.**
 
+**2026-09-23 execution amendment:** [DESIGN.md amendment A3](../DESIGN.md#ai-assisted-execution-amendment-a3) authorizes AI-assisted execution and supersedes the human-only assignments below where specified. AI outputs are not human M1a; Phase 1's model-free claims are withdrawn. P8's human seven-day/kappa gates do not certify AI work: a separate frozen fresh-context evaluation and repeatability protocol is required. All unrelated entry/exit gates, the pre-L2 artifact boundary, and evidence requirements remain binding. The historical phase instructions are retained for comparison, not permission to falsely mark human steps complete.
+
 These files break `IMPLEMENTATION_PLAN.md` into discrete phases an AI agent can execute. Where a phase file and the plan disagree, the plan wins; where the plan and `DESIGN.md` disagree, the design wins and the downstream files get fixed.
 
 ## Namespaces — read this first
 
 Four numbering systems coexist in this study. Do not conflate them:
 
-| Prefix | Meaning | Owner |
-| ------ | ------- | ----- |
-| **P0–P11** | Implementation phases — these files | This directory |
-| **W0–W10** | Work packages | `IMPLEMENTATION_PLAN.md` §2 |
-| **A0–A5** | Pipeline stages | `DESIGN.md` → Pipeline |
-| **Phase 1 / Phase 2** | The study's model-free vs. model-in-the-loop halves | `DESIGN.md` → Phasing |
+| Prefix                | Meaning                                             | Owner                       |
+| --------------------- | --------------------------------------------------- | --------------------------- |
+| **P0–P11**            | Implementation phases — these files                 | This directory              |
+| **W0–W10**            | Work packages                                       | `IMPLEMENTATION_PLAN.md` §2 |
+| **A0–A5**             | Pipeline stages                                     | `DESIGN.md` → Pipeline      |
+| **Phase 1 / Phase 2** | The study's model-free vs. model-in-the-loop halves | `DESIGN.md` → Phasing       |
 
 P0–P10 implement the study's Phase 1. P11 is the study's Phase 2.
 
@@ -41,19 +43,19 @@ These hold in every phase and are repeated in the phases where they bind hardest
 
 ## Phase index and dependency graph
 
-| Phase | Implements | Blocks on |
-| ----- | ---------- | --------- |
-| [P0 — Repository foundation](p00-foundation.md) | W0 | — |
-| [P1 — Corpus pin, spike 001, L1 freeze](p01-spike-and-freeze.md) | W1 (pin only), spike, L1 | P0 |
-| [P2 — Specimen selection](p02-specimens.md) | W1 | P1 (L1 taken) |
-| [P3 — De-marking transform](p03-demark.md) | W2 | P2, spike PASS |
-| [P4 — Relation inventory](p04-inventory.md) | W3 | P3 |
-| [P5 — Pilot: build pipeline + harness, shake down](p05-pilot.md) | W4, and the *build* halves of W6/W7 | P3 (transform final); P4 not required |
-| [P6 — Probe authoring and L2 lock](p06-probes-and-lock.md) | W5, L2 | P4, P5 |
-| [P7 — Artifact generation A1–A4](p07-artifacts.md) | W6 (run) | P6 (L2 taken) |
-| [P8 — M1a coding and kappa](p08-coding.md) | W7 (run) | P7 |
-| [P9 — M2 redundancy inventory](p09-redundancy.md) | W8 | P4; parallel with P5–P8 |
-| [P10 — Phase 1 analysis](p10-analysis.md) | W9 | P7, P8; P9 for the redundancy map |
-| [P11 — Phase 2 study (deferred)](p11-phase2-study.md) | W10 | P10, and an explicit human go decision |
+| Phase                                                            | Implements                          | Blocks on                              |
+| ---------------------------------------------------------------- | ----------------------------------- | -------------------------------------- |
+| [P0 — Repository foundation](p00-foundation.md)                  | W0                                  | —                                      |
+| [P1 — Corpus pin, spike 001, L1 freeze](p01-spike-and-freeze.md) | W1 (pin only), spike, L1            | P0                                     |
+| [P2 — Specimen selection](p02-specimens.md)                      | W1                                  | P1 (L1 taken)                          |
+| [P3 — De-marking transform](p03-demark.md)                       | W2                                  | P2, spike PASS                         |
+| [P4 — Relation inventory](p04-inventory.md)                      | W3                                  | P3                                     |
+| [P5 — Pilot: build pipeline + harness, shake down](p05-pilot.md) | W4, and the _build_ halves of W6/W7 | P3 (transform final); P4 not required  |
+| [P6 — Probe authoring and L2 lock](p06-probes-and-lock.md)       | W5, L2                              | P4, P5                                 |
+| [P7 — Artifact generation A1–A4](p07-artifacts.md)               | W6 (run)                            | P6 (L2 taken)                          |
+| [P8 — M1a coding and kappa](p08-coding.md)                       | W7 (run)                            | P7                                     |
+| [P9 — M2 redundancy inventory](p09-redundancy.md)                | W8                                  | P4; parallel with P5–P8                |
+| [P10 — Phase 1 analysis](p10-analysis.md)                        | W9                                  | P7, P8; P9 for the redundancy map      |
+| [P11 — Phase 2 study (deferred)](p11-phase2-study.md)            | W10                                 | P10, and an explicit human go decision |
 
-Sequencing note recorded here because the plan implies it without stating it: the pilot (P5) exercises the pipeline stages and coding harness end-to-end **before L2**, so that code is *built* in P5 against the pilot page and only *run* against study specimens in P7/P8. W6 and W7 in the plan describe the run; their code exists earlier.
+Sequencing note recorded here because the plan implies it without stating it: the pilot (P5) exercises the pipeline stages and coding harness end-to-end **before L2**, so that code is _built_ in P5 against the pilot page and only _run_ against study specimens in P7/P8. W6 and W7 in the plan describe the run; their code exists earlier.

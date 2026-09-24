@@ -16,12 +16,12 @@ Decisions from here on get a record in [`decisions/`](decisions/) — what was c
 
 ### Resolved — now specified in the design (v0.4)
 
-| Was                                                                                                             | Resolution                                                                                                                                       | Where it lives now                                    |
-| --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------- |
-| **D-1.** Procedure and checklist disagreed on when the design is frozen, leaving the registration SHA ambiguous | Two locks: **L1** design freeze before specimen selection, **L2** instrument lock after the both-arms gate. Separate frontmatter fields for each | Design → _Status_, _Procedure_, _Execution checklist_ |
-| **D-4.** Nothing said which chunk a probe is answered against at A4                                             | The chunk containing the first character of the instance's host passage, plus a `spans_chunks` flag broken out in the H3 analysis                | Design → _What is scored at A4_, _Analysis plan_      |
-| **D-5.** No rule for locating an instance inside an artifact                                                    | Per-arm anchors and host passages, resolved by script, verified for every instance before L2                                                     | Design → _Relation taxonomy_                          |
-| **D-7.** The design's `MUST` → "needs to" is ungrammatical applied mechanically, in the implicit arm only        | D4 lowercases the keyword instead — RFC 8174 makes capitalization the marking. D4 instances reported separately from D3 within R3               | Design → _The marking manipulation_, _Analysis plan_; [ADR-0001](decisions/0001-lowercase-rfc2119-keywords.md) |
+| Was                                                                                                             | Resolution                                                                                                                                       | Where it lives now                                                                                             |
+| --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| **D-1.** Procedure and checklist disagreed on when the design is frozen, leaving the registration SHA ambiguous | Two locks: **L1** design freeze before specimen selection, **L2** instrument lock after the both-arms gate. Separate frontmatter fields for each | Design → _Status_, _Procedure_, _Execution checklist_                                                          |
+| **D-4.** Nothing said which chunk a probe is answered against at A4                                             | The chunk containing the first character of the instance's host passage, plus a `spans_chunks` flag broken out in the H3 analysis                | Design → _What is scored at A4_, _Analysis plan_                                                               |
+| **D-5.** No rule for locating an instance inside an artifact                                                    | Per-arm anchors and host passages, resolved by script, verified for every instance before L2                                                     | Design → _Relation taxonomy_                                                                                   |
+| **D-7.** The design's `MUST` → "needs to" is ungrammatical applied mechanically, in the implicit arm only       | D4 lowercases the keyword instead — RFC 8174 makes capitalization the marking. D4 instances reported separately from D3 within R3                | Design → _The marking manipulation_, _Analysis plan_; [ADR-0001](decisions/0001-lowercase-rfc2119-keywords.md) |
 
 A fourth change went in alongside them: **D2, D3, and D4 insert language rather than only removing structure**, so the inserted wording now comes from a frozen, committed template set rather than being written per specimen. That is a constraint on W2 below, and the design states the consequence plainly — if exceptions turn out to be frequent, the mechanical-manipulation claim is false and gets reported as false.
 
@@ -53,7 +53,7 @@ Three options were considered:
 
 **Decision: option 2, with a fidelity check against option 1 during the W4 pilot.** Build the harness, render one specimen through the real pinned site, and diff the extracted A3 text against the harness output for that specimen. If they match, the harness is validated and the finding is portable. If they diverge, record how, and either fix the harness config or fall back to option 1 — the fallback is still open at W4 because it is before L2.
 
-Both arms build through the *same* harness with the same config. Pin Astro and Starlight in the harness lockfile and record the versions in `runlog.md`.
+Both arms build through the _same_ harness with the same config. Pin Astro and Starlight in the harness lockfile and record the versions in `runlog.md`.
 
 The check is not a formality: if the harness renders differently from the site the corpus was written for, every downstream artifact inherits that difference, and it would be discovered only when someone tried to reproduce the study.
 
@@ -103,7 +103,7 @@ Outstanding:
 - Copy the design in (v0.5) as `DESIGN.md`; strip the blog-specific `{# ... #}` author comments or convert them to a `TODO.md` — they are notes to a writer, not part of a registration.
 - Add a remote and set `repository:` in frontmatter to it. Currently there is none.
 - `AMENDMENTS.md` (header + empty table) and `runlog.md`. ✅ `.gitignore`, `LICENSE`, `LICENSE-DATA`.
-- Tighten `requires-python` per *Toolchain* above; replace the `uv init` placeholder `description`.
+- Tighten `requires-python` per _Toolchain_ above; replace the `uv init` placeholder `description`.
 - Decide where Python lives (below), then lay out the rest of §4.
 - `Makefile` or `justfile` for the stage commands.
 - CI running formatting, type checks, and both test suites. Cheap, and it means the published scripts are demonstrably runnable by someone else.
@@ -117,7 +117,7 @@ Adopting it means **separating code from data**, which §4 below now reflects:
 - **Code** — `src/docs_transduction_study/` (Python) and `pipeline/demark/` (Node).
 - **Data and outputs** — `corpus/`, `artifacts/`, `instruments/`, `coding/`, `logs/`, `figures/`.
 
-That split is worth having for its own sake in a study that publishes its dataset: a reader can tell at a glance what is an instrument and what is a result. The design's *Data management* block already reflects it.
+That split is worth having for its own sake in a study that publishes its dataset: a reader can tell at a glance what is an instrument and what is a result. The design's _Data management_ block already reflects it.
 
 **Exit:** `main` has commits; `.gitignore` covers every generated tree; `make help` lists every stage command as a stub; resolved toolchain versions recorded in `runlog.md`.
 
@@ -185,16 +185,16 @@ Commit `specimens.csv`, `instances.csv`, `probes.csv`, `gate_exclusions.csv`, `t
 
 One driver, four deterministic stages, both arms, all committed.
 
-| Stage | Implementation                                       | Watch for                                                                                                                                                           |
-| ----- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| A1    | Two full `astro build` runs of the pinned docs tree, explicit and implicit ([ADR-0003](decisions/0003-two-full-site-builds.md)) | Identical page sets and routes in both; record Node version, package manager, and build determinism                                                                 |
-| A2    | Playwright accessibility snapshot of the served page, **default page state, no interaction** — the design's registered policy | Inactive tab panels are typically *absent* from the accessibility tree, not flattened — so R2 evidence may die at A2, not A3. The pilot confirms the shape so it cannot surprise the analysis |
-| A3    | HTML → text, from the article element only, via a **named, versioned extractor in plain-text (no-markup) mode** | Config recorded; this matches the design's A3 definition. A bespoke tag-stripper makes A3 a study artifact rather than a realistic stage; full-page extraction pulls in sidebar, header, footer, and search chrome |
-| A4    | Fixed-size, no-overlap chunker, **character-based, not token-based** — a tokenizer would smuggle a model-family artifact into the model-free phase 1 | Parameters recorded, script committed, chunk size justified in `runlog.md` as a configured choice — the design already concedes this is a configuration, not a fact |
+| Stage | Implementation                                                                                                                                                    | Watch for                                                                                                                                                                                                                  |
+| ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A1    | Two full `astro build` runs of the pinned docs tree, explicit and implicit ([ADR-0003](decisions/0003-two-full-site-builds.md))                                   | Identical page sets and routes in both; record Node version, package manager, and build determinism                                                                                                                        |
+| A2    | Playwright accessibility snapshot of the served page, **default page state, no interaction** — the design's registered policy                                     | Inactive tab panels are typically _absent_ from the accessibility tree, not flattened — so R2 evidence may die at A2, not A3. The pilot confirms the shape so it cannot surprise the analysis                              |
+| A3    | HTML → text, from exactly one `.sl-markdown-content` element with no fallback (amendment A4), via a **named, versioned extractor in plain-text (no-markup) mode** | Config recorded; this matches the amended design's A3 definition. A bespoke tag-stripper makes A3 a study artifact rather than a realistic stage; full-page extraction pulls in sidebar, header, footer, and search chrome |
+| A4    | Fixed-size, no-overlap chunker, **character-based, not token-based** — a tokenizer would smuggle a model-family artifact into the model-free phase 1              | Parameters recorded, script committed, chunk size justified in `runlog.md` as a configured choice — the design already concedes this is a configuration, not a fact                                                        |
 
 Then `anchors.py` locates every instance in every artifact and emits the per-instance A4 chunk selection plus `spans_chunks` per D-4.
 
-Anchor matching runs through the **committed normalization spec**, frozen at L2 — smart quotes, dash conversion, entity encoding, and markup stripping break verbatim matching on ordinary pages, so exact-match resolution would fail for boring reasons. An anchor that fails to resolve after L2 is repaired as a **mechanical amendment** per the design (results-not-seen). The exit criterion below means 100% *after normalization, with any repairs logged* — not that failures are unrepresentable.
+Anchor matching runs through the **committed normalization spec**, frozen at L2 — smart quotes, dash conversion, entity encoding, and markup stripping break verbatim matching on ordinary pages, so exact-match resolution would fail for boring reasons. An anchor that fails to resolve after L2 is repaired as a **mechanical amendment** per the design (results-not-seen). The exit criterion below means 100% _after normalization, with any repairs logged_ — not that failures are unrepresentable.
 
 **Exit:** `artifacts/` populated for both arms at A1–A4; anchor resolution 100% at A1–A3; A4 chunk assignment complete.
 
@@ -308,19 +308,19 @@ figures/                   Generated figures
 
 Order-of-magnitude, for sequencing rather than scheduling.
 
-| Milestone | Effort                                                | Note                                      |
-| --------- | ----------------------------------------------------- | ----------------------------------------- |
-| W0        | ~0.5 day remaining                                    | Python and Node toolchains already landed |
-| W1        | 1–2 days                                              | Selection judgment is most of it          |
-| Spike 001 | 2 days, timeboxed                                     | Gates W2's architecture and W6's build strategy |
+| Milestone | Effort                                                | Note                                                                        |
+| --------- | ----------------------------------------------------- | --------------------------------------------------------------------------- |
+| W0        | ~0.5 day remaining                                    | Python and Node toolchains already landed                                   |
+| W1        | 1–2 days                                              | Selection judgment is most of it                                            |
+| Spike 001 | 2 days, timeboxed                                     | Gates W2's architecture and W6's build strategy                             |
 | W2        | 4–6 days                                              | Surgical patching is more work than serializing; prototype rules carry over |
-| W3        | 2–3 days                                              | O1/O2 classification is manual            |
-| W4 pilot  | 1–2 days                                              | Pays for itself                           |
-| W5        | 3–4 days                                              | ~120–200 probes, each gated twice         |
-| W6        | 2–3 days                                              | Mostly plumbing; A2 may surprise          |
-| W7        | 2 days build, then **coding time + a hard 7-day gap** | The re-code interval is real elapsed time |
-| W8        | 1–2 days                                              | Parallelizable from W3                    |
-| W9        | 2–3 days                                              |                                           |
+| W3        | 2–3 days                                              | O1/O2 classification is manual                                              |
+| W4 pilot  | 1–2 days                                              | Pays for itself                                                             |
+| W5        | 3–4 days                                              | ~120–200 probes, each gated twice                                           |
+| W6        | 2–3 days                                              | Mostly plumbing; A2 may surprise                                            |
+| W7        | 2 days build, then **coding time + a hard 7-day gap** | The re-code interval is real elapsed time                                   |
+| W8        | 1–2 days                                              | Parallelizable from W3                                                      |
+| W9        | 2–3 days                                              |                                                                             |
 
 The critical path is corpus pin + fixture pages → spike 001 → L1 → W1 → W2 → W3 → W5 → L2 → W6 → W7, with the ≥7-day re-code interval as an unavoidable wall-clock cost that should be planned around rather than absorbed at the end.
 
@@ -332,14 +332,14 @@ The spike sits **before L1** deliberately. Two days spent there is cheaper than 
 
 Distinct from the design's validity threats — these are ways the _build_ fails.
 
-| Risk                                                                               | Mitigation                                                                                                                                                                                                         |
-| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| The de-marking transform needs per-specimen tuning to produce readable MDX         | Freeze templates at L2 and treat any needed exception as an amendment with the specimen named. If exceptions are frequent, the mechanical-manipulation claim is false and that must be reported, not patched over. |
-| Cell minimums unreachable from 8–12 specimens                                      | Discovered at W3, before L2, when widening selection is still free                                                                                                                                                 |
-| Astro's `<Steps>` and `<Tabs>` compile to markup the a11y snapshot flattens anyway | Detect at W4 pilot; it is a finding about A2, not a blocker, but it should not be a surprise at analysis                                                                                                           |
-| Coding fatigue degrades later scores                                               | Randomized order already spreads this across cells; cap sessions and record `session_id` in `m1a.csv`                                                                                                              |
-| Sealed mapping leaks into the working tree                                         | The mapping is encrypted at rest with its checksum in `runlog.md` (W7); the `code` entry point's read path contains no mapping and cannot resolve an opaque ID                                                     |
-| Phase 2 blocked by Inspect API drift, or a phase-2 dependency with no Python 3.14 wheel | Versions pinned in `uv.lock` and recorded in `runlog.md`; verify Inspect's current API against its documentation, not from memory                                                                             |
+| Risk                                                                                    | Mitigation                                                                                                                                                                                                         |
+| --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| The de-marking transform needs per-specimen tuning to produce readable MDX              | Freeze templates at L2 and treat any needed exception as an amendment with the specimen named. If exceptions are frequent, the mechanical-manipulation claim is false and that must be reported, not patched over. |
+| Cell minimums unreachable from 8–12 specimens                                           | Discovered at W3, before L2, when widening selection is still free                                                                                                                                                 |
+| Astro's `<Steps>` and `<Tabs>` compile to markup the a11y snapshot flattens anyway      | Detect at W4 pilot; it is a finding about A2, not a blocker, but it should not be a surprise at analysis                                                                                                           |
+| Coding fatigue degrades later scores                                                    | Randomized order already spreads this across cells; cap sessions and record `session_id` in `m1a.csv`                                                                                                              |
+| Sealed mapping leaks into the working tree                                              | The mapping is encrypted at rest with its checksum in `runlog.md` (W7); the `code` entry point's read path contains no mapping and cannot resolve an opaque ID                                                     |
+| Phase 2 blocked by Inspect API drift, or a phase-2 dependency with no Python 3.14 wheel | Versions pinned in `uv.lock` and recorded in `runlog.md`; verify Inspect's current API against its documentation, not from memory                                                                                  |
 
 ---
 

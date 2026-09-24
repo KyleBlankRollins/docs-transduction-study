@@ -1,6 +1,6 @@
 # P5 — Pilot: build the pipeline and harness, shake down end-to-end
 
-Implements **W4**, plus the **build halves of W6 and W7** — the pilot cannot run A1→A4 and a coding dry run unless the stage drivers and coding harness exist, so they are built here and merely *run* in P7/P8. Authority: `IMPLEMENTATION_PLAN.md` §2 W4/W6/W7, ADR-0003; `DESIGN.md` → Status (pilot carve-out), Pipeline (A2 policy, A3 extractor, A4 chunker, normalization spec).
+Implements **W4**, plus the **build halves of W6 and W7** — the pilot cannot run A1→A4 and a coding dry run unless the stage drivers and coding harness exist, so they are built here and merely _run_ in P7/P8. Authority: `IMPLEMENTATION_PLAN.md` §2 W4/W6/W7, ADR-0003; `DESIGN.md` → Status (pilot carve-out), Pipeline (A2 policy, A3 extractor, A4 chunker, normalization spec).
 
 ## Entry gate
 
@@ -13,7 +13,7 @@ Implements **W4**, plus the **build halves of W6 and W7** — the pilot cannot r
 1. **Build the stage drivers** (`src/docs_transduction_study/stages/`), per the W6 table:
    - **A1** — two full `astro build` runs of the pinned tree (explicit / implicit), ADR-0003, **with the ADR-0005 ad-pinning overlay applied to both trees before either build**. Record Node version and package manager. **Re-score the spike's deferred checks here:** B2 — two clean builds with the overlay → zero differing files — and B3/B4 per the spike brief. Residual nondeterminism is a stop-and-report, not a footnote.
    - **A2** — Playwright accessibility snapshot of the served page, **default page state, no interaction** (registered policy). Expect inactive tab panels to be absent, not flattened; that is a finding about A2, record its shape. **Snapshot the pilot page twice and diff:** the corpus generates tab IDs with client-side `Math.random()`, and the tree must be shown stable across loads (or the instability recorded and taken to the maintainer — it would be a pre-L2 design question).
-   - **A3** — named, versioned extractor in plain-text mode, article element only; config recorded.
+   - **A3** — named, versioned extractor in plain-text mode, exactly one `.sl-markdown-content` element (amendment A4); no fallback; config recorded.
    - **A4** — fixed-size, no-overlap, **character-based** chunker; parameters recorded; size justified in `runlog.md`.
 2. **Build `anchors.py`:** locate instances in artifacts through the committed normalization spec; emit A4 chunk assignment (chunk containing the first character of the host passage) plus `spans_chunks`.
 3. **Build the coding harness** (`coding.py`), two entry points per W7: `setup` (shuffle by seed, opaque IDs, manifest, mapping encrypted at rest) and `code` (presents artifact + probe + randomized options; captures choice and explicit/inferred flag; **its read path contains no mapping**; requires an interactive TTY and refuses piped input — a structural barrier against automated coding). Append-only `m1a.csv` writes, enforced in code and unit-tested.
