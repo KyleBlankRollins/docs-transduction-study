@@ -2,6 +2,19 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-24 — `make artifacts-resume` fell through to generation (no archive change)
+
+The CLI edit adding `resume` had not applied (the dispatch block had been
+reformatted), so `resume` reached the catch-all branch and started `run_study`:
+it materialised and built a temporary explicit tree, then stopped at the
+archive guard ("artifacts/a1/explicit already exists") before copying anything.
+Verified afterwards: the temporary tree was removed, no build processes remain,
+and the archive passes the integrity checks unchanged (6,313 A1 pages per arm;
+238 chunks rebuild A3; A3 re-extracts identically from A1). No packets were
+written. The unintended rebuild's output was never copied, compared, or read.
+Fix: explicit dispatch for `run` and `resume` with no generating fallback, and a
+CLI-level test that `resume` never calls generation. Reported, not hidden.
+
 ## 2026-09-24 — First complete generation; one anchor failure repaired as A6
 
 `make artifacts` (maintainer-run) completed A1 (both arms plus the clean repeat;

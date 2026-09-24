@@ -427,3 +427,17 @@ def test_resume_repackages_archive_without_building(
     chunk.write_text("tampered")
     with pytest.raises(pipeline.PipelineError, match="does not match its index"):
         pipeline.resume_study(out, passphrase_file=passphrase, repo=repo, **options)
+
+
+def test_cli_resume_never_runs_generation(tmp_path, monkeypatch):
+    calls = []
+    monkeypatch.setattr(
+        pipeline, "resume_study", lambda out, **kw: calls.append("resume") or {}
+    )
+    monkeypatch.setattr(
+        pipeline, "run_study", lambda out, **kw: calls.append("run") or {}
+    )
+    pipeline.main(["resume", "--out", str(tmp_path), "--passphrase-file", "p"])
+    assert calls == ["resume"]
+    pipeline.main(["run", "--out", str(tmp_path), "--passphrase-file", "p"])
+    assert calls == ["resume", "run"]

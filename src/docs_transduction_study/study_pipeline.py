@@ -826,7 +826,7 @@ def dry_run(repo: Path = REPO_ROOT) -> dict[str, Any]:
     }
 
 
-def main() -> None:
+def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
     dry = sub.add_parser("dry-run", help="assignment plan only; no artifacts")
@@ -842,7 +842,7 @@ def main() -> None:
     resume.add_argument("--out", type=Path, default=REPO_ROOT / "artifacts")
     resume.add_argument("--passphrase-file", type=Path, required=True)
     sub.add_parser("verify-lock", help="check the recorded L2 commit and lock set")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     try:
         if args.command == "verify-lock":
             print(json.dumps(verify_lock(), indent=2))
@@ -851,12 +851,15 @@ def main() -> None:
             args.out.parent.mkdir(parents=True, exist_ok=True)
             args.out.write_text(json.dumps(result, indent=2), encoding="utf-8")
             print(json.dumps(result["summary"], indent=2))
+        elif args.command == "resume":
+            # Never builds: resolves and packages the archived A1-A4 only.
+            result = resume_study(args.out, passphrase_file=args.passphrase_file)
+            print(json.dumps(result, indent=2))
+        elif args.command == "run":
+            result = run_study(args.out, passphrase_file=args.passphrase_file)
+            print(json.dumps(result, indent=2))
         else:
-            print(
-                json.dumps(
-                    run_study(args.out, passphrase_file=args.passphrase_file), indent=2
-                )
-            )
+            raise PipelineError(f"Unknown command {args.command!r}")
     except PipelineError as error:
         print(f"ERROR: {error}", file=sys.stderr)
         raise SystemExit(1) from error
