@@ -2,6 +2,19 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-24 — Artifact archive committed with Git LFS (maintainer decision)
+
+The maintainer chose Git LFS for the full-site trees. Installed git-lfs 3.8.0
+(Homebrew), enabled it for this repository only (`git lfs install --local`), and
+tracked `artifacts/a1/**` and `artifacts/assignments/*.jsonl` (`.gitattributes`,
+commit `1bc9964f`). Commit `43a56def` archives 18,493 artifact files: 18,130 as
+LFS objects (18,128 A1 files; the two packet files, including the 164 MB
+`packets.jsonl`) and the rest (A2 snapshots, A3 text, A4 chunks, indexes,
+manifests, sealed keys) as regular files; no regular blob exceeds 1 MB. Local
+LFS store: 1.9 GB (identical files across arms deduplicate). The repository has
+no remote, so nothing was pushed; pushing later will upload about 1.9 GB of LFS
+objects, subject to the host's LFS storage and bandwidth limits.
+
 ## 2026-09-24 — Assignments packaged from the archive (resume); no evaluation yet
 
 `make artifacts-resume` verified the lock (L2 `ace31884` with A5, A6), passed the
