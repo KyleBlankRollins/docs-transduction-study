@@ -380,7 +380,10 @@ def build(
                 instances.append(
                     {name: base[name] for name in INSTANCE_FIELDS}
                     | {
-                        "notes": f"{base['notes']}; reviewed {date}: invalid instance, excluded"
+                        "notes": re.split(
+                            r"; reviewed \d{4}-\d{2}-\d{2}: ", base["notes"]
+                        )[0]
+                        + f"; reviewed {date}: invalid instance, excluded"
                     }
                 )
                 exclusions.append(
@@ -420,7 +423,12 @@ def build(
                 relation_type, demark_rule = occurrence["relation_type"], ""
             else:
                 assert base is not None
-                notes = base["notes"] + (
+                # The legacy note is kept; any earlier review suffix is replaced
+                # so recompiling is idempotent.
+                legacy_note = re.split(
+                    r"; reviewed \d{4}-\d{2}-\d{2}: ", base["notes"]
+                )[0]
+                notes = legacy_note + (
                     f"; reviewed {date}: {entry['reason']}"
                     if entry.get("reason")
                     else ""

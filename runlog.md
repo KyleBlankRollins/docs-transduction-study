@@ -2,6 +2,15 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-23 — Pre-lock check found a non-idempotent recompile (fixed before L2)
+
+Recompiling the instrument appended a second "reviewed" note to R-row notes,
+because relation notes were read back from the compiler's own output. The
+compiler now replaces any prior review suffix; two consecutive recompiles are
+byte-identical, and `instances.csv` returned to the approved sha256
+`f92c8d6c8ad64a8cae1c7e8ba419a02a8106aa1fdecb1995610fd6121117da44`. Probes,
+exclusions, and provenance files were unchanged. Regression test added.
+
 ## 2026-09-23 — Approved live smoke test passed; M1-AI protocol frozen
 
 On maintainer approval, `opencode_runner smoke` ran three disposable synthetic

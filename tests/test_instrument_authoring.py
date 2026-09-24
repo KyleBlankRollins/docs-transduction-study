@@ -281,3 +281,14 @@ def test_hosts_may_not_start_inside_code(workspace):
         rejected(first) + accepted(second, host_from="npm install thing") + RELATION,
     )
     assert any("inside a code block" in error for error in summary["errors"])
+
+
+def test_recompiling_is_idempotent(workspace):
+    path, (first, second) = workspace
+    text = rejected(first) + accepted(second) + RELATION
+    run(path, text, write=True)
+    instances = path / "instruments" / "instances.csv"
+    once = instances.read_bytes()
+    run(path, text, write=True)
+    assert instances.read_bytes() == once
+    assert once.count(b"reviewed 2026-09-23") == 2
