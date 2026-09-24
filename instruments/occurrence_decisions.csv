@@ -116,42 +116,42 @@ S02-O1-at-016574,S02,O1,the ones listed above,16574,16595,16820,16841,1,S02-O1-0
 S02-O2-at-016583,S02,O2,listed above,16583,16595,16829,16841,1,S02-O2-002,YES,,reject,fragment: nested in the accepted overlapping occurrence with the same referent,2026-09-23
 S03-O1-at-001365,S03,O1,the bare minimum JS you,1365,1388,1365,1388,1,S03-O1-002,YES,,reject,not_referential: 'the bare minimum JS you'll need',2026-09-23
 S03-O1-at-001638,S03,O1,your preference,1638,1653,1638,1653,1,S03-O1-021,NO,generic,reject,idiom: 'your preference',2026-09-23
-S03-O1-at-002425,S03,O1,the frontmatter of server,2425,2450,2416,2441,1,S03-O1-004,YES,,reject,generic: kind reference ('the frontmatter of server-side components'),2026-09-23
-S03-O1-at-002680,S03,O1,the value received by,2680,2701,2671,2692,1,S03-O1-015,YES,,reject,not_referential: 'the value received by',2026-09-23
-S03-O1-at-003383,S03,O1,the same,3383,3391,3374,3382,1,S03-O1-009,YES,idiom,reject,not_referential: sortal 'the same $ shortcut',2026-09-23
-S03-O1-at-004251,S03,O1,your components,4251,4266,4242,4257,1,S03-O1-018,YES,generic,reject,generic: reader-possessive ('your components'),2026-09-23
-S03-O1-at-004540,S03,O1,the same state,4540,4554,4531,4545,1,S03-O1-010,YES,idiom,reject,not_referential: sortal 'the same state',2026-09-23
-S03-O1-at-004976,S03,O1,your favorite UI framework,4976,5002,4964,4990,1,S03-O1-019,YES,not_probeable,reject,idiom: 'your favorite UI framework',2026-09-23
-S03-O1-at-006097,S03,O1,the completed example,6097,6118,6079,6100,1,S03-O1-003,YES,,reject,not_referential: link label,2026-09-23
-S03-O1-at-006196,S03,O1,your machine or online via StackBlitz,6196,6233,6178,6215,1,S03-O1-020,YES,not_probeable,reject,generic: reader-possessive ('your machine'),2026-09-23
-S03-O1-at-007508,S03,O1,the store value with the,7508,7532,7570,7594,1,S03-O1-014,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
-S03-O1-at-007607,S03,O1,the imported store using,7607,7631,7669,7693,1,S03-O1-005,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
-S03-O1-at-007952,S03,O1,the store value with the,7952,7976,8004,8028,2,S03-O1-014,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
-S03-O1-at-008051,S03,O1,the imported store using,8051,8075,8103,8127,2,S03-O1-005,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
-S03-O1-at-008396,S03,O1,the store value with the,8396,8420,8438,8462,3,S03-O1-014,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
-S03-O1-at-008495,S03,O1,the imported store using,8495,8519,8537,8561,3,S03-O1-005,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
-S03-O1-at-008799,S03,O1,the store value,8799,8814,8831,8846,1,S03-O1-013,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
-S03-O1-at-009000,S03,O1,the imported store using,9000,9024,9022,9046,4,S03-O1-005,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
-S03-O1-at-009227,S03,O1,the store value with the,9227,9251,9249,9273,4,S03-O1-014,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
-S03-O1-at-011039,S03,O1,the standard,11039,11051,11050,11062,1,S03-O1-012,YES,generic,reject,not_referential: descriptive definite ('the standard get() and set() helpers'),2026-09-23
-S03-O1-at-011216,S03,O1,the items inside your cart,11216,11242,11224,11250,1,S03-O1-007,YES,,reject,generic: reader-possessive ('your cart'),2026-09-23
-S03-O1-at-011551,S03,O1,the shape if you,11551,11567,11559,11575,1,S03-O1-011,YES,not_probeable,reject,not_referential: bridging nominal ('the shape'),2026-09-23
-S03-O1-at-012501,S03,O1,your cart,12501,12510,12537,12546,1,S03-O1-017,YES,generic,reject,generic: reader-possessive ('your cart'),2026-09-23
-S03-O1-at-012604,S03,O1,the quantity by,12604,12619,12640,12655,1,S03-O1-008,YES,not_probeable,reject,not_referential: bridging nominal ('the quantity'),2026-09-23
-S03-O1-at-014053,S03,O1,the value when an,14053,14070,14115,14132,1,S03-O1-016,YES,,reject,not_referential: 'the value' restates the store value named in the preceding sentence,2026-09-23
-S03-O1-at-014609,S03,O1,the item info for simplicity,14609,14637,14748,14776,1,S03-O1-006,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
-S03-O1-at-015193,S03,O1,the item info for simplicity,15193,15221,15322,15350,2,S03-O1-006,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
-S03-O1-at-015777,S03,O1,the item info for simplicity,15777,15805,15896,15924,3,S03-O1-006,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
-S03-O1-at-016398,S03,O1,the item info for simplicity,16398,16426,16507,16535,4,S03-O1-006,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
-S03-O1-at-016934,S03,O1,the item info for simplicity,16934,16962,17033,17061,5,S03-O1-006,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
-S03-O1-at-018029,S03,O1,Your cart is empty,18029,18047,18177,18195,1,S03-O1-001,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
-S03-O1-at-018769,S03,O1,Your cart is empty,18769,18787,18907,18925,2,S03-O1-001,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
-S03-O1-at-019515,S03,O1,Your cart is empty,19515,19533,19643,19661,3,S03-O1-001,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
-S03-O1-at-020062,S03,O1,Your cart is empty,20062,20080,20180,20198,4,S03-O1-001,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
-S03-O1-at-020531,S03,O1,Your cart is empty,20531,20549,20639,20657,5,S03-O1-001,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
-S03-O1-at-020941,S03,O1,the completed example,20941,20962,21018,21039,2,S03-O1-003,YES,,reject,not_referential: link label,2026-09-23
-S03-O1-at-021040,S03,O1,your machine or online via StackBlitz,21040,21077,21117,21154,2,S03-O1-020,YES,not_probeable,reject,generic: reader-possessive ('your machine'),2026-09-23
-S03-O2-at-002497,S03,O2,the following restrictions,2497,2523,2488,2514,1,S03-O2-001,YES,,accept,cataphoric deixis: 'the following restrictions' points to the bulleted restrictions,2026-09-23
+S03-O1-at-002425,S03,O1,the frontmatter of server,2425,2450,2417,2442,1,S03-O1-004,YES,,reject,generic: kind reference ('the frontmatter of server-side components'),2026-09-23
+S03-O1-at-002680,S03,O1,the value received by,2680,2701,2672,2693,1,S03-O1-015,YES,,reject,not_referential: 'the value received by',2026-09-23
+S03-O1-at-003383,S03,O1,the same,3383,3391,3375,3383,1,S03-O1-009,YES,idiom,reject,not_referential: sortal 'the same $ shortcut',2026-09-23
+S03-O1-at-004251,S03,O1,your components,4251,4266,4243,4258,1,S03-O1-018,YES,generic,reject,generic: reader-possessive ('your components'),2026-09-23
+S03-O1-at-004540,S03,O1,the same state,4540,4554,4532,4546,1,S03-O1-010,YES,idiom,reject,not_referential: sortal 'the same state',2026-09-23
+S03-O1-at-004976,S03,O1,your favorite UI framework,4976,5002,4965,4991,1,S03-O1-019,YES,not_probeable,reject,idiom: 'your favorite UI framework',2026-09-23
+S03-O1-at-006097,S03,O1,the completed example,6097,6118,6080,6101,1,S03-O1-003,YES,,reject,not_referential: link label,2026-09-23
+S03-O1-at-006196,S03,O1,your machine or online via StackBlitz,6196,6233,6179,6216,1,S03-O1-020,YES,not_probeable,reject,generic: reader-possessive ('your machine'),2026-09-23
+S03-O1-at-007508,S03,O1,the store value with the,7508,7532,7571,7595,1,S03-O1-014,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-007607,S03,O1,the imported store using,7607,7631,7670,7694,1,S03-O1-005,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-007952,S03,O1,the store value with the,7952,7976,8005,8029,2,S03-O1-014,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-008051,S03,O1,the imported store using,8051,8075,8104,8128,2,S03-O1-005,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-008396,S03,O1,the store value with the,8396,8420,8439,8463,3,S03-O1-014,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-008495,S03,O1,the imported store using,8495,8519,8538,8562,3,S03-O1-005,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-008799,S03,O1,the store value,8799,8814,8832,8847,1,S03-O1-013,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-009000,S03,O1,the imported store using,9000,9024,9023,9047,4,S03-O1-005,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-009227,S03,O1,the store value with the,9227,9251,9250,9274,4,S03-O1-014,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-011039,S03,O1,the standard,11039,11051,11051,11063,1,S03-O1-012,YES,generic,reject,not_referential: descriptive definite ('the standard get() and set() helpers'),2026-09-23
+S03-O1-at-011216,S03,O1,the items inside your cart,11216,11242,11225,11251,1,S03-O1-007,YES,,reject,generic: reader-possessive ('your cart'),2026-09-23
+S03-O1-at-011551,S03,O1,the shape if you,11551,11567,11560,11576,1,S03-O1-011,YES,not_probeable,reject,not_referential: bridging nominal ('the shape'),2026-09-23
+S03-O1-at-012501,S03,O1,your cart,12501,12510,12538,12547,1,S03-O1-017,YES,generic,reject,generic: reader-possessive ('your cart'),2026-09-23
+S03-O1-at-012604,S03,O1,the quantity by,12604,12619,12641,12656,1,S03-O1-008,YES,not_probeable,reject,not_referential: bridging nominal ('the quantity'),2026-09-23
+S03-O1-at-014053,S03,O1,the value when an,14053,14070,14117,14134,1,S03-O1-016,YES,,reject,not_referential: 'the value' restates the store value named in the preceding sentence,2026-09-23
+S03-O1-at-014609,S03,O1,the item info for simplicity,14609,14637,14750,14778,1,S03-O1-006,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-015193,S03,O1,the item info for simplicity,15193,15221,15324,15352,2,S03-O1-006,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-015777,S03,O1,the item info for simplicity,15777,15805,15898,15926,3,S03-O1-006,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-016398,S03,O1,the item info for simplicity,16398,16426,16509,16537,4,S03-O1-006,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-016934,S03,O1,the item info for simplicity,16934,16962,17035,17063,5,S03-O1-006,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-018029,S03,O1,Your cart is empty,18029,18047,18179,18197,1,S03-O1-001,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-018769,S03,O1,Your cart is empty,18769,18787,18909,18927,2,S03-O1-001,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-019515,S03,O1,Your cart is empty,19515,19533,19645,19663,3,S03-O1-001,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-020062,S03,O1,Your cart is empty,20062,20080,20182,20200,4,S03-O1-001,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-020531,S03,O1,Your cart is empty,20531,20549,20641,20659,5,S03-O1-001,NO,not_probeable,reject,code: occurrence inside a code block,2026-09-23
+S03-O1-at-020941,S03,O1,the completed example,20941,20962,21020,21041,2,S03-O1-003,YES,,reject,not_referential: link label,2026-09-23
+S03-O1-at-021040,S03,O1,your machine or online via StackBlitz,21040,21077,21119,21156,2,S03-O1-020,YES,not_probeable,reject,generic: reader-possessive ('your machine'),2026-09-23
+S03-O2-at-002497,S03,O2,the following restrictions,2497,2523,2489,2515,1,S03-O2-001,YES,,accept,cataphoric deixis: 'the following restrictions' points to the bulleted restrictions,2026-09-23
 S04-O1-at-000979,S04,O1,the client side of your app,979,1006,1004,1031,1,S04-O1-010,YES,,reject,generic: 'the client side of your app',2026-09-23
 S04-O1-at-001029,S04,O1,the Firebase console under,1029,1055,1054,1080,1,S04-O1-006,YES,,reject,exophoric: the vendor console,2026-09-23
 S04-O1-at-001107,S04,O1,Your apps,1107,1116,1132,1141,1,S04-O1-004,NO,generic,reject,not_referential: UI section label,2026-09-23

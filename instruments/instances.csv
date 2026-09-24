@@ -2038,7 +2038,9 @@ If you are using ts:
   
 
 
-Note: <details>
+Note:
+
+<details>
 
 <summary>**🙋 Why use `.get()` here instead of a `useStore` helper?**</summary>
 
@@ -2617,7 +2619,9 @@ Nano Stores can be used in `<script>` tags to [share state between `.astro` comp
 - You cannot pass a Nano Store as a ""prop"" to client-side components.
 - You cannot subscribe to store changes from a `.astro` file, since Astro components do not re-render.
 
-If you understand these restrictions and still find a use case, you can give Nano Stores a try! Just remember that Nano Stores are built for reactivity to changes on the **client** specifically.","FAQ: <details>
+If you understand these restrictions and still find a use case, you can give Nano Stores a try! Just remember that Nano Stores are built for reactivity to changes on the **client** specifically.","FAQ:
+
+<details>
 <summary>**🙋 Can I use Nano Stores in `.astro` files or other server-side components?**</summary>
 
 Nano Stores can be used in `<script>` tags to [share state between `.astro` components](/en/recipes/sharing-state/). However, Using Nano Stores in the frontmatter of server-side components is not recommended because of the following restrictions:
@@ -2635,7 +2639,9 @@ S03-R3-004,S03,R3,is meant to trigger component re-renders,is meant to trigger c
 
 <summary>**🙋 Why use `.get()` here instead of a `useStore` helper?**</summary>
 
-You may have noticed we're calling `cartItems.get()` here, instead of grabbing that `useStore` helper from our React / Preact / Solid / Vue examples. This is because **useStore is meant to trigger component re-renders.** In other words, `useStore` should be used whenever the store value is being rendered to the UI. Since we're reading the value when an **event** is triggered (`addToCart` in this case), and we aren't trying to render that value, we don't need `useStore` here.","Note: <details>
+You may have noticed we're calling `cartItems.get()` here, instead of grabbing that `useStore` helper from our React / Preact / Solid / Vue examples. This is because **useStore is meant to trigger component re-renders.** In other words, `useStore` should be used whenever the store value is being rendered to the UI. Since we're reading the value when an **event** is triggered (`addToCart` in this case), and we aren't trying to render that value, we don't need `useStore` here.","Note:
+
+<details>
 
 <summary>**🙋 Why use `.get()` here instead of a `useStore` helper?**</summary>
 
@@ -2656,7 +2662,7 @@ S03-O2-at-002497,S03,O2,is not recommended because of the following restrictions
 - You cannot subscribe to store changes from a `.astro` file, since Astro components do not re-render.","Nano Stores can be used in `<script>` tags to [share state between `.astro` components](/en/recipes/sharing-state/). However, Using Nano Stores in the frontmatter of server-side components is not recommended because of the following restrictions:
 - Writing to a store from a `.astro` file or [non-hydrated component](/en/guides/framework-components/#hydrating-interactive-components) will _not_ affect the value received by [client-side components](/en/reference/directives-reference/#client-directives).
 - You cannot pass a Nano Store as a ""prop"" to client-side components.
-- You cannot subscribe to store changes from a `.astro` file, since Astro components do not re-render.",,"Occurrence 'the following restrictions' at explicit A0 chars [2497,2523), implicit [2488,2514); legacy S03-O2-001 (YES, occurrence 1); reviewed 2026-09-23: cataphoric deixis: 'the following restrictions' points to the bulleted restrictions"
+- You cannot subscribe to store changes from a `.astro` file, since Astro components do not re-render.",,"Occurrence 'the following restrictions' at explicit A0 chars [2497,2523), implicit [2489,2515); legacy S03-O2-001 (YES, occurrence 1); reviewed 2026-09-23: cataphoric deixis: 'the following restrictions' points to the bulleted restrictions"
 S04-R2-001,S04,R2,install the following packages using the single command below,install the following packages using the single command below,"To connect Astro with Firebase, install the following packages using the single command below for your preferred package manager:
 
 - `firebase` - the Firebase SDK for the client side

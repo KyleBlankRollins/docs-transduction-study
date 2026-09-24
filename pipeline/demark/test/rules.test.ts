@@ -1,3 +1,6 @@
+import remarkMdx from "remark-mdx";
+import remarkParse from "remark-parse";
+import { unified } from "unified";
 import { describe, expect, it } from "vitest";
 import { buildKeywordPattern } from "../src/rules/d4-keywords.js";
 import { out, run, templates } from "./helpers.js";
@@ -299,6 +302,14 @@ describe("Parser integrity — <details>/<summary> inside directives", () => {
     "",
     "Regular content after the aside.",
   ].join("\n");
+
+  it("puts the force phrase in its own paragraph before block HTML so output is valid MDX (A5)", () => {
+    const result = out(faqSource);
+    expect(result).toMatch(/^FAQ:\n\n<details>/m);
+    // Parse the real output with MDX, without the demark preprocessing that
+    // masks <details>; this is the parse the Astro build performs.
+    expect(() => unified().use(remarkParse).use(remarkMdx).parse(result)).not.toThrow();
+  });
 
   it("preserves <details> tags inside ::: directives (no placeholder leakage)", () => {
     const result = out(faqSource);

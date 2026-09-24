@@ -32,6 +32,16 @@ function isAsideType(value: string): value is AsideType {
   return (ASIDE_TYPES as readonly string[]).includes(value);
 }
 
+/**
+ * Join the force phrase to the aside body. A body that opens with a block-level
+ * HTML/JSX element (e.g. `<details>`) must start its own paragraph: written on
+ * the phrase's line it becomes inline JSX that MDX rejects as unclosed
+ * (amendment A5, 2026-09-23).
+ */
+export function joinPhrase(phrase: string, body: string): string {
+  return /^<[A-Za-z]/.test(body) ? `${phrase}\n\n${body}` : `${phrase} ${body}`;
+}
+
 function forcePhrase(t: Templates["d3_force_aside"], type: string, title: string | undefined): string {
   if (title !== undefined && title.trim() !== "") return fill(t.titled, { title: title.trim() });
   return isAsideType(type) ? t[type] : t.default;
@@ -87,7 +97,7 @@ export const d3Asides: Rule = {
 
         const phrase = forcePhrase(t, node.name, title);
         const trimmedBody = trimSourceLines(innerContent);
-        const replacement = `${phrase} ${trimmedBody}`;
+        const replacement = joinPhrase(phrase, trimmedBody);
 
         patches.push({ start, end, replacement: replacement + "\n" });
         record(ctx, "D3", `:::${node.name} directive`, line);
@@ -109,7 +119,7 @@ export const d3Asides: Rule = {
 
         const phrase = forcePhrase(t, type, title);
         const trimmedBody = trimSourceLines(innerContent);
-        const replacement = `${phrase} ${trimmedBody}`;
+        const replacement = joinPhrase(phrase, trimmedBody);
 
         patches.push({ start, end, replacement: replacement + "\n" });
         record(ctx, "D3", `<Aside type="${type}">`, line);

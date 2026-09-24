@@ -1,5 +1,13 @@
 # Amendments
 
+## A5 — 2026-09-23 (post-L2, mechanical)
+
+**Change:** mechanical repair of the implicit arm after L2. De-marking rule D3 wrote an aside's force phrase and its first body line on one line; when the body began with block HTML, S03 (`recipes/sharing-state-islands.mdx`) became `FAQ: <details>` and `Note: <details>`, which MDX parses as unclosed inline JSX, so the implicit arm could not build. D3 now puts the phrase in its own paragraph before a body that opens with an HTML/JSX element (`FAQ:` / blank line / `<details>`). `make demark` regenerated the implicit arm: only those two S03 asides changed (one line break each); all 24 corpus files parse with the pinned `@mdx-js/mdx` 3.1.1. Recompiling the instrument changed only three S03 implicit host passages (whitespace-identical: S03-R2-005, S03-R3-001, S03-R3-004) and one note's implicit offsets (S03-O2-at-002497); occurrence-decision offsets for S03 shifted by 1-2 characters. Probes, answers, foils, exclusions, gate evidence, templates, and the seed are unchanged.
+
+**Rationale:** the build failure made the locked implicit S03 unbuildable. Template wording and the rule's meaning (the aside becomes prose carrying the same force) are unchanged; only a line break moves. Excluding S03 would have removed 12 retained instances and changed the specimen list. Maintainer approved on 2026-09-23.
+
+**Results seen?** No. The first generation run built the explicit A1 tree before the implicit build failed; that partial output (9,064 files, manifest sha256 `3253f8ef6b96e947ba575ec086b910043982db9595c6e521d4345e0f24fbd78b`) was never opened and was deleted so the artifact set is generated once, from one run. No A2-A4, packets, or evaluations existed.
+
 ## A4 — 2026-09-23
 
 **Change:** `DESIGN.md` v0.8→v0.9 replaces the A3 extraction target `<article>` with exactly one `.sl-markdown-content`. No fallback to `article`, `main`, or `body`; zero or multiple matches fail. All text inside the container remains, including generated in-content navigation, subject to pilot assessment before L2.

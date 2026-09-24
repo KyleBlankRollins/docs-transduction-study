@@ -2,6 +2,28 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-23 — Amendment A5 applied (D3 paragraph fix); partial A1 disposed
+
+On maintainer approval: D3 fix plus a Vitest regression that parses real output
+with `remark-mdx` (45 demark tests pass); `make demark` regenerated the implicit
+arm, changing only S03's two `<details>` asides; all 24 corpus files parse with
+the pinned MDX compiler. The occurrence-review offsets were regenerated
+(`review_o1_o2`; only S03 implicit offsets moved, +1/+2) and the instrument
+recompiled: `instances.csv` changed in three S03 implicit hosts (whitespace only)
+and one note; `probes.csv`, `gate_exclusions.csv`, and `gate_evidence.csv` are
+byte-identical; `make lint-probes` and `make anchors-a0` pass (229 retained).
+
+The partial explicit A1 tree from the stopped run (9,064 files, 6,313 HTML) was
+deleted unopened after recording a path/checksum manifest (sha256
+`3253f8ef6b96e947ba575ec086b910043982db9595c6e521d4345e0f24fbd78b`, kept in
+gitignored `build/`). The study driver now compiles all corpus files with the
+pinned MDX compiler before any build (verified to catch the pre-amendment
+file), and `verify-lock` accepts lock-file changes only through amendment
+commits listed in DESIGN frontmatter `instrument_amendment_commits` that
+descend from L2, are in HEAD's history, and touch `AMENDMENTS.md`; it also
+refuses uncommitted changes under `instruments/`, `corpus/`, or
+`pipeline/demark/`.
+
 ## 2026-09-23 — First study generation stopped: implicit S03 does not parse as MDX
 
 `make artifacts` (after L2, maintainer-initiated) built the explicit arm and
