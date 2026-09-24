@@ -1,0 +1,11 @@
+{
+  "capture_id": "version",
+  "command": "astro --version",
+  "project": "static",
+  "exit_code": 0,
+  "stdout": "  \u001b[42m\u001b[30m astro \u001b[39m\u001b[49m \u001b[32mv7.0.2\u001b[39m\n",
+  "stderr": "",
+  "node_version": "v22.19.0",
+  "captured_at": "2026-09-24T00:46:28.903276+00:00",
+  "label": "AI-assisted observation (amendment A3)"
+}

@@ -1,0 +1,11 @@
+{
+  "capture_id": "build-static",
+  "command": "astro build",
+  "project": "static-project",
+  "exit_code": 0,
+  "stdout": "\u001b[2m19:46:30\u001b[22m \u001b[34m[types]\u001b[39m Generated \u001b[2m50ms\u001b[22m\n\u001b[2m19:46:30\u001b[22m \u001b[34m[build]\u001b[39m output: \u001b[34m\"static\"\u001b[39m\n\u001b[2m19:46:30\u001b[22m \u001b[34m[build]\u001b[39m mode: \u001b[34m\"static\"\u001b[39m\n\u001b[2m19:46:30\u001b[22m \u001b[34m[build]\u001b[39m directory: \u001b[34m<sandbox>/dist/\u001b[39m\n\u001b[2m19:46:30\u001b[22m \u001b[34m[build]\u001b[39m Collecting build info...\n\u001b[2m19:46:30\u001b[22m \u001b[34m[build]\u001b[39m \u001b[32m\u2713 Completed in 67ms.\u001b[39m\n\u001b[2m19:46:30\u001b[22m \u001b[34m[build]\u001b[39m Building static entrypoints...\n\u001b[2m19:46:30\u001b[22m \u001b[34m[vite]\u001b[39m \u001b[32m\u2713 built in 62ms\u001b[39m\n\u001b[2m19:46:30\u001b[22m \u001b[34m[vite]\u001b[39m \u001b[32m\u2713 built in 11ms\u001b[39m\n\u001b[2m19:46:30\u001b[22m \u001b[34m[build]\u001b[39m Rearranging server assets...\n\n\u001b[42m\u001b[30m generating static routes \u001b[39m\u001b[49m\n\u001b[2m19:46:30\u001b[22m   \u001b[34m\u251c\u2500\u001b[39m \u001b[2m/index.html\u001b[22m \u001b[2m(+5ms)\u001b[22m \n\u001b[2m19:46:30\u001b[22m \u001b[32m\u2713 Completed in 13ms.\n\u001b[39m\n\u001b[2m19:46:30\u001b[22m \u001b[34m[build]\u001b[39m \u001b[32m\u2713 Completed in 104ms.\u001b[39m\n\u001b[2m19:46:30\u001b[22m \u001b[34m[build]\u001b[39m 1 page(s) built in \u001b[1m172ms\u001b[22m\n\u001b[2m19:46:30\u001b[22m \u001b[34m[build]\u001b[39m \u001b[1mComplete!\u001b[22m\n",
+  "stderr": "",
+  "node_version": "v22.19.0",
+  "captured_at": "2026-09-24T00:46:30.998076+00:00",
+  "label": "AI-assisted observation (amendment A3)"
+}

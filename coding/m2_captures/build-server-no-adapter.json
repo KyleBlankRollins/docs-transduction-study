@@ -1,0 +1,11 @@
+{
+  "capture_id": "build-server-no-adapter",
+  "command": "astro build",
+  "project": "server-project",
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "\u001b[31m[NoAdapterInstalled]\u001b[39m Cannot use server-rendered pages without an adapter. Please install and configure the appropriate server adapter for your final deployment.\n  \u001b[1mHint:\u001b[22m\n\u001b[33m    See \u001b[4mhttps://docs.astro.build/en/guides/on-demand-rendering/\u001b[24m for more information.\u001b[39m\n  \u001b[1mError reference:\u001b[22m\n    \u001b[36m\u001b[4mhttps://docs.astro.build/en/reference/errors/no-adapter-installed/\u001b[24m\u001b[39m\n  \u001b[1mLocation:\u001b[22m\n    \u001b[4m<repo>/vendor/astro-docs/node_modules/.pnpm/astro@7.0.2_@astrojs+markdown-remark@7.2.0_@emnapi+core@1.11.1_@emnapi+runtime@1.11.1_@_1c2dac61e22a703beb513ca09e0a513a/node_modules/astro/dist/core/build/index.js:85:13\u001b[24m\n  \u001b[1mStack trace:\u001b[22m\n\u001b[2m    at AstroBuilder.setup (file://<repo>/vendor/astro-docs/node_modules/.pnpm/astro@7.0.2_@astrojs+markdown-remark@7.2.0_@emnapi+core@1.11.1_@emnapi+runtime@1.11.1_@_1c2dac61e22a703beb513ca09e0a513a/node_modules/astro/dist/core/build/index.js:85:13)\n    at async build (file://<repo>/vendor/astro-docs/node_modules/.pnpm/astro@7.0.2_@astrojs+markdown-remark@7.2.0_@emnapi+core@1.11.1_@emnapi+runtime@1.11.1_@_1c2dac61e22a703beb513ca09e0a513a/node_modules/astro/dist/core/build/index.js:48:3)\n    at async runCommand (file://<repo>/vendor/astro-docs/node_modules/.pnpm/astro@7.0.2_@astrojs+markdown-remark@7.2.0_@emnapi+core@1.11.1_@emnapi+runtime@1.11.1_@_1c2dac61e22a703beb513ca09e0a513a/node_modules/astro/dist/cli/index.js:192:7)\u001b[22m\n",
+  "node_version": "v22.19.0",
+  "captured_at": "2026-09-24T00:46:31.460276+00:00",
+  "label": "AI-assisted observation (amendment A3)"
+}

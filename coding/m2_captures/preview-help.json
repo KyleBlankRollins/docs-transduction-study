@@ -1,0 +1,11 @@
+{
+  "capture_id": "preview-help",
+  "command": "astro preview --help",
+  "project": "static",
+  "exit_code": 0,
+  "stdout": "\n  \u001b[32mastro preview\u001b[39m \u001b[1m[...flags]\u001b[22m\n\n  \u001b[47m\u001b[30m Flags \u001b[39m\u001b[49m\n                   --port  \u001b[2mSpecify which port to run on. Defaults to 4321.\u001b[22m\n                   --host  \u001b[2mListen on all addresses, including LAN and public addresses.\u001b[22m\n  --host <custom-address>  \u001b[2mExpose on a network IP address at <custom-address>\u001b[22m\n                   --open  \u001b[2mAutomatically open the app in the browser on server start\u001b[22m\n          --allowed-hosts  \u001b[2mSpecify a comma-separated list of allowed hosts or allow any hostname.\u001b[22m\n              --help (-h)  \u001b[2mSee all available flags.\u001b[22m\n\nStarts a local server to serve your static dist/ directory. Check \u001b[36mhttps://docs.astro.build/en/reference/cli-reference/#astro-preview\u001b[39m for more information.\n\n",
+  "stderr": "",
+  "node_version": "v22.19.0",
+  "captured_at": "2026-09-24T00:46:30.375209+00:00",
+  "label": "AI-assisted observation (amendment A3)"
+}

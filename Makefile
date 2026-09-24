@@ -8,7 +8,7 @@ VENDOR_DIR := vendor/astro-docs
 EXPLICIT_DIR := corpus/explicit
 IMPLICIT_DIR := corpus/implicit
 BUILD_DIR := build
-STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts assign-anchors review-o1-o2 classify-o1-o2 pilot lint-probes probe-sheet seed artifacts anchors coding-setup code kappa analyze
+STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts assign-anchors review-o1-o2 classify-o1-o2 pilot lint-probes probe-sheet seed instrument-check artifacts anchors assignment-dry-run opencode-preflight m1-ai-first-pass m1-ai-repeat m2 coding-setup code kappa analyze
 
 .PHONY: help check $(STAGES)
 
@@ -96,45 +96,55 @@ classify-o1-o2:
 inventory-counts:
 	uv run python -m docs_transduction_study.inventory_counts --instances instruments/instances.csv --specimens corpus/specimens.csv
 
-# Build the implicit pilot page, then run the full A1-A4 pipeline + A2
-# with B2/B3/B4 checks enabled. Does NOT process study specimens.
+# Verify production pilot snapshots, extraction, and clean-build determinism.
 pilot:
 	@printf '>>> Running pilot (P5)...\n'
 	@mkdir -p artifacts/pilot
 	@mkdir -p /tmp/pilot
 	@printf '  De-marking pilot page for implicit arm...\n'
 	@npm run demark --prefix $(DEMARK_DIR) --silent -- --mode demark \
-		--in "$(VENDOR_DIR)/src/content/docs/en/install-and-setup.mdx" \
+		--in "$(CURDIR)/$(VENDOR_DIR)/src/content/docs/en/install-and-setup.mdx" \
 		--out "/tmp/pilot/install-and-setup-implicit.mdx" \
 		--templates "$(CURDIR)/$(DEMARK_DIR)/templates.json" \
 		--report "/tmp/pilot-demark-report.json" 2>&1
 	@printf '  Building explicit + implicit arms with ADR-0005 overlay...\n'
 	@uv run python -m docs_transduction_study.stages.a1_build \
 		--pilot "install-and-setup.mdx" \
-		--pilot-only \
-		--out artifacts/pilot/a1 2>&1 | tee artifacts/pilot/build.log
-	@printf '  Full A3 extraction (article-only)...\n'
+		--pilot-only --verify-pilot \
+		--out artifacts/pilot/a1
+	@printf '  Full A3 extraction (.sl-markdown-content only)...\n'
 	@uv run python -m docs_transduction_study.stages.a3_extract \
-		--artifacts artifacts/pilot/a1/artifacts --out artifacts/pilot/a3 2>&1 | tee artifacts/pilot/extract.log
+		--artifacts artifacts/pilot/a1/artifacts --out artifacts/pilot/a3
 	@printf '  A4 chunking...\n'
 	@uv run python -m docs_transduction_study.stages.a4_chunk \
-		--in-dir artifacts/pilot/a3 --out artifacts/pilot/a4 --size 1500 2>&1 | tee artifacts/pilot/chunk.log
-	@printf '\nPilot pipeline complete — see artifacts/pilot/\n'
+		--in-dir artifacts/pilot/a3 --out artifacts/pilot/a4 --size 1500
+	@printf '\nPilot pipeline checks complete; see artifacts/pilot/a1/verification.json.\n'
 	@printf 'Check:  ls artifacts/pilot/a1/artifacts/  (should have explicit/ and implicit/)\n'
-	@printf 'Check:  ls artifacts/pilot/a3/explicit/    (should have install-and-setup.txt)\n'
-	@printf 'Check:  ls artifacts/pilot/a4/explicit/    (should have chunk files)\n'
+	@printf 'Check:  ls artifacts/pilot/a3/explicit/en/install-and-setup/\n'
+	@printf 'Check:  ls artifacts/pilot/a4/explicit/en/install-and-setup/\n'
 
+# P7: fail-closed study generation (verified L2 required; A1-A4, anchor
+# resolution, and M1-AI packets). PASSPHRASE_FILE must live outside the repo.
 artifacts:
-	@printf '>>> Generating A1-A4 artifacts for both arms...\n'
-	@mkdir -p artifacts/a1 artifacts/a3 artifacts/a4
-	@uv run python -m docs_transduction_study.stages.a1_build --out artifacts/a1 2>&1 | tee artifacts/a1/build.log
-	@uv run python -m docs_transduction_study.stages.a3_extract --artifacts artifacts/a1/artifacts --out artifacts/a3 2>&1 | tee artifacts/a3/extract.log
-	@uv run python -m docs_transduction_study.stages.a4_chunk --in-dir artifacts/a3 --out artifacts/a4 --size 1500 2>&1 | tee artifacts/a4/chunk.log
-	@printf 'Artifacts generated.\n'
+	@test -n "$(PASSPHRASE_FILE)" || { printf 'PASSPHRASE_FILE=/path/outside/repo is required\n' >&2; exit 1; }
+	uv run python -m docs_transduction_study.study_pipeline run --out artifacts --passphrase-file "$(PASSPHRASE_FILE)"
 
+# Anchor/host resolution now runs inside `make artifacts` (study_pipeline);
+# this target checks the recorded L2 without generating anything.
 anchors:
-	@printf '>>> Resolving anchors in artifacts...\n'
-	@uv run python -m docs_transduction_study.anchors --instances instruments/instances.csv --a4-dir artifacts/a4 2>&1
+	uv run python -m docs_transduction_study.study_pipeline verify-lock
+
+# Assignment order, repeat sample, and call volume from instrument + seed only.
+assignment-dry-run:
+	uv run python -m docs_transduction_study.study_pipeline dry-run
+
+# Validate the reviewed authoring files against both A0 arms without writing.
+instrument-check:
+	uv run python -m docs_transduction_study.instrument_authoring --check
+
+# Offline isolation evidence for the OpenCode evaluator (no provider call).
+opencode-preflight:
+	uv run python -m docs_transduction_study.opencode_runner preflight
 
 coding-setup:
 	@printf '>>> Setting up coding session...\n'
@@ -162,9 +172,31 @@ probe-sheet:
 seed:
 	@uv run python -m docs_transduction_study.seed
 
-kappa analyze:
-	@printf '%s\n' "$(MAKECMDGOALS): not implemented" >&2
-	@exit 1
+# M1-AI evaluation (paid/quota-consuming: requires explicit approval and a
+# budget). Repeats run only after the first pass; both use identical packets.
+m1-ai-first-pass:
+	@test -n "$(MAX_INVOCATIONS)" -a -n "$(PASSPHRASE_FILE)" || { printf 'MAX_INVOCATIONS and PASSPHRASE_FILE are required\n' >&2; exit 1; }
+	uv run python -m docs_transduction_study.opencode_runner run --packets artifacts/assignments/packets.jsonl --keys artifacts/private/keys.jsonl.enc --passphrase-file "$(PASSPHRASE_FILE)" --output coding --pass-number 1 --max-invocations $(MAX_INVOCATIONS)
+
+m1-ai-repeat:
+	@test -n "$(MAX_INVOCATIONS)" -a -n "$(PASSPHRASE_FILE)" || { printf 'MAX_INVOCATIONS and PASSPHRASE_FILE are required\n' >&2; exit 1; }
+	uv run python -m docs_transduction_study.opencode_runner run --packets artifacts/assignments/repeat_packets.jsonl --keys artifacts/private/keys.jsonl.enc --passphrase-file "$(PASSPHRASE_FILE)" --output coding --pass-number 2 --max-invocations $(MAX_INVOCATIONS)
+
+# M2 (AI-assisted): bounded CLI/runtime captures in a disposable sandbox,
+# inventory from coding/m2_judgments.csv, validation, and the redundancy map.
+m2:
+	uv run python -m docs_transduction_study.m2_redundancy capture
+	uv run python -m docs_transduction_study.m2_redundancy inventory
+	uv run python -m docs_transduction_study.m2_redundancy validate
+	uv run python -m docs_transduction_study.m2_redundancy map
+
+# Repeatability/coverage/isolation gate only (AI repeatability, not human reliability).
+kappa:
+	uv run python -m docs_transduction_study.analysis --gate-only
+
+# Pre-specified exploratory M1-AI tables; withheld unless the gate passes.
+analyze:
+	uv run python -m docs_transduction_study.analysis
 
 corpus-report:
 	uv run python -m docs_transduction_study.corpus_report

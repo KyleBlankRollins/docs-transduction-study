@@ -1,0 +1,11 @@
+{
+  "capture_id": "build-help",
+  "command": "astro build --help",
+  "project": "static",
+  "exit_code": 0,
+  "stdout": "\n  \u001b[32mastro build\u001b[39m \u001b[1m[...flags]\u001b[22m\n\n  \u001b[47m\u001b[30m Flags \u001b[39m\u001b[49m\n  --outDir <directory>  \u001b[2mSpecify the output directory for the build.\u001b[22m\n                --mode  \u001b[2mSpecify the mode of the project. Defaults to \"production\".\u001b[22m\n           --devOutput  \u001b[2mOutput a development-based build similar to code transformed in `astro dev`.\u001b[22m\n               --force  \u001b[2mClear the content layer and content collection cache, forcing a full rebuild.\u001b[22m\n           --help (-h)  \u001b[2mSee all available flags.\u001b[22m\n\nBuilds your site for deployment.\n\n",
+  "stderr": "",
+  "node_version": "v22.19.0",
+  "captured_at": "2026-09-24T00:46:30.107910+00:00",
+  "label": "AI-assisted observation (amendment A3)"
+}

@@ -1,0 +1,11 @@
+{
+  "capture_id": "add-help",
+  "command": "astro add --help",
+  "project": "static",
+  "exit_code": 0,
+  "stdout": "\n  \u001b[32mastro add\u001b[39m \u001b[1m[...integrations] [...adapters]\u001b[22m\n\n  \u001b[47m\u001b[30m Flags \u001b[39m\u001b[49m\n       --yes  \u001b[2mAccept all prompts.\u001b[22m\n      --help  \u001b[2mShow this help message.\u001b[22m\n\n  \u001b[47m\u001b[30m UI Frameworks \u001b[39m\u001b[49m\n       react  \u001b[2mastro add react\u001b[22m\n      preact  \u001b[2mastro add preact\u001b[22m\n         vue  \u001b[2mastro add vue\u001b[22m\n      svelte  \u001b[2mastro add svelte\u001b[22m\n    solid-js  \u001b[2mastro add solid-js\u001b[22m\n         lit  \u001b[2mastro add lit\u001b[22m\n    alpinejs  \u001b[2mastro add alpinejs\u001b[22m\n\n  \u001b[47m\u001b[30m Documentation Frameworks \u001b[39m\u001b[49m\n   starlight  \u001b[2mastro add starlight\u001b[22m\n\n  \u001b[47m\u001b[30m SSR Adapters \u001b[39m\u001b[49m\n     netlify  \u001b[2mastro add netlify\u001b[22m\n      vercel  \u001b[2mastro add vercel\u001b[22m\n        deno  \u001b[2mastro add deno\u001b[22m\n  cloudflare  \u001b[2mastro add cloudflare\u001b[22m\n        node  \u001b[2mastro add node\u001b[22m\n\n  \u001b[47m\u001b[30m Others \u001b[39m\u001b[49m\n    tailwind  \u001b[2mastro add tailwind\u001b[22m\n         mdx  \u001b[2mastro add mdx\u001b[22m\n     markdoc  \u001b[2mastro add markdoc\u001b[22m\n   partytown  \u001b[2mastro add partytown\u001b[22m\n     sitemap  \u001b[2mastro add sitemap\u001b[22m\n\nFor more integrations, check out: \u001b[36mhttps://astro.build/integrations\u001b[39m\n\n",
+  "stderr": "",
+  "node_version": "v22.19.0",
+  "captured_at": "2026-09-24T00:46:29.351366+00:00",
+  "label": "AI-assisted observation (amendment A3)"
+}

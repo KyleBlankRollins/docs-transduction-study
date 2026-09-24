@@ -1,0 +1,11 @@
+{
+  "capture_id": "help",
+  "command": "astro --help",
+  "project": "static",
+  "exit_code": 0,
+  "stdout": "\n  \u001b[42m\u001b[30m astro \u001b[39m\u001b[49m \u001b[32mv7.0.2\u001b[39m Build faster websites.\n\n  \u001b[32mastro\u001b[39m \u001b[1m[command] [...flags]\u001b[22m\n\n  \u001b[47m\u001b[30m Commands \u001b[39m\u001b[49m\n                add  \u001b[2mAdd an integration.\u001b[22m\n              build  \u001b[2mBuild your project and write it to disk.\u001b[22m\n              check  \u001b[2mCheck your project for errors.\u001b[22m\n         create-key  \u001b[2mCreate a cryptography key\u001b[22m\n                dev  \u001b[2mStart the development server.\u001b[22m\n               docs  \u001b[2mOpen documentation in your web browser.\u001b[22m\n               info  \u001b[2mList info about your current Astro setup.\u001b[22m\n            preview  \u001b[2mPreview your build locally.\u001b[22m\n               sync  \u001b[2mGenerate content collection types.\u001b[22m\n        preferences  \u001b[2mConfigure user preferences.\u001b[22m\n          telemetry  \u001b[2mConfigure telemetry settings.\u001b[22m\n\n  \u001b[47m\u001b[30m Global Flags \u001b[39m\u001b[49m\n    --config <path>  \u001b[2mSpecify your config file.\u001b[22m\n      --root <path>  \u001b[2mSpecify your project root folder.\u001b[22m\n       --site <url>  \u001b[2mSpecify your project site.\u001b[22m\n  --base <pathname>  \u001b[2mSpecify your project base.\u001b[22m\n          --verbose  \u001b[2mEnable verbose logging.\u001b[22m\n           --silent  \u001b[2mDisable all logging.\u001b[22m\n          --version  \u001b[2mShow the version number and exit.\u001b[22m\n             --help  \u001b[2mShow this help message.\u001b[22m\n             --json  \u001b[2mEnables JSON logging.\u001b[22m\n\n",
+  "stderr": "",
+  "node_version": "v22.19.0",
+  "captured_at": "2026-09-24T00:46:28.967419+00:00",
+  "label": "AI-assisted observation (amendment A3)"
+}
