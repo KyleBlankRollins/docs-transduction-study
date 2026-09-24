@@ -136,6 +136,14 @@ is not a failover.
 
 ## Scoring and Records
 
+**Amendment A7 (2026-09-24):** analysis uses A7 scores as primary and strict
+scores alongside. A7 verifies quotes against readable text (entities decoded,
+tags and A2 snapshot syntax removed, folded; `…` fragments in order) and scores
+by option: correct 3 with a verified explicit quote, otherwise 2; foil 0;
+absence 1; flags record every departure from the strict rules below. A7 scores
+are derived from retained answers by `make rescore-a7`. The strict rules below
+remain in force for the append-only records.
+
 The evaluator returns `opaque_id`, `option_id`, `support`, `evidence`, and
 `rationale`. The scorer uses exact option IDs: correct with explicit support = 3;
 correct with inferred support = 2; absence option = 1; foil = 0. An explicit

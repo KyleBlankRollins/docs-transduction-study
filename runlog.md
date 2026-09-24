@@ -2,6 +2,21 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-24 — Amendment A7 (M1-AI quote verification and option scoring)
+
+The maintainer decided to amend quote handling rather than accept an incomplete
+first pass, choosing readable-text normalization with in-order `…` fragments
+(at least 12 folded characters each) and option-based scoring with flags for
+unverifiable quotes. Implemented `coding_ai.readable_text`, `quote_verified`,
+and `score_response_a7` (strict `score_response` unchanged), `rescore_a7.py`
+(`make rescore-a7`; derived records in `coding/m1_ai_a7_records/`), and
+analysis over either record set (`make kappa` / `make analyze` report A7 primary
+and strict alongside). Tests cover entities, tags, snapshot nodes, fragment
+order and length, single-line A3/A4 text, flags, and deterministic rescoring.
+Exposure before the decision: rejection messages, categorized evidence strings,
+and three retry outcomes; no scores were tabulated. The transport retry started
+before A7 continues under the old code; its answers are rescored afterwards.
+
 ## 2026-09-24 — First pass completed with engineering failures; export fix
 
 `make m1-ai-first-pass MAX_INVOCATIONS=1950` (maintainer-run, approved) attempted

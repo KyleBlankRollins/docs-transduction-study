@@ -5,11 +5,15 @@ from __future__ import annotations
 import csv
 import datetime
 import hashlib
+import html
 import json
 import math
+import re
 from collections import Counter
 from pathlib import Path
 from typing import Any
+
+from docs_transduction_study import locators
 
 ABSENT = "The text does not say"
 PROTOCOL_VERSION = "m1-ai-1"
@@ -102,6 +106,104 @@ def score_response(
     if choice != key["correct_id"]:
         return 0
     return 3 if support == "explicit" else 2
+
+
+# Amendment A7 (2026-09-24): quote verification against readable text.
+A7_VERSION = "m1-ai-1+A7"
+MIN_FRAGMENT = 12
+SNAPSHOT_LINE = re.compile(
+    r'^\s*-\s+(?:/url:.*|[a-z]+(?:\s+"((?:[^"\\]|\\.)*)")?(?:\s+\[[^\]]*\])*:?\s*(.*))$'
+)
+
+
+def is_snapshot(text: str) -> bool:
+    """A2 artifacts are YAML accessibility snapshots: most lines are '- ' nodes."""
+    lines = [line for line in text.splitlines() if line.strip()]
+    nodes = sum(line.lstrip().startswith("- ") for line in lines)
+    # A3/A4 text is a single whitespace-collapsed line, never a snapshot.
+    return len(lines) >= 3 and nodes >= 0.8 * len(lines)
+
+
+def readable_text(text: str, snapshot: bool | None = None) -> str:
+    """Readable text: snapshot nodes become their names and values (A2 only),
+    HTML/JSX tags are removed, and entities are decoded."""
+    if snapshot is None:
+        snapshot = is_snapshot(text)
+    lines = []
+    for line in text.splitlines():
+        match = SNAPSHOT_LINE.match(line) if snapshot else None
+        if match is None:
+            lines.append(line)
+        elif not line.lstrip("- ").startswith("/url:"):
+            name, value = match.group(1) or "", match.group(2) or ""
+            if value.startswith('"') and value.endswith('"') and len(value) > 1:
+                value = value[1:-1]
+            lines.append(f"{name} {value}".replace('\\"', '"'))
+    joined = re.sub(r"<[^<>]+>", " ", "\n".join(lines))
+    return html.unescape(joined)
+
+
+def quote_verified(evidence: str, artifact: str) -> bool:
+    """A7: the quote, or each '…'-joined fragment in order, occurs in the
+    artifact's readable text after case, quote, dash, and whitespace folding."""
+    snapshot = is_snapshot(artifact)
+    folded, _ = locators.fold(readable_text(artifact, snapshot))
+    fragments = [
+        locators.fold(readable_text(part, snapshot))[0]
+        for part in re.split(r"\.\.\.|\u2026", evidence)
+    ]
+    fragments = [part for part in fragments if part]
+    if not fragments:
+        return False
+    if len(fragments) > 1 and any(len(part) < MIN_FRAGMENT for part in fragments):
+        return False
+    position = 0
+    for part in fragments:
+        found = folded.find(part, position)
+        if found < 0:
+            return False
+        position = found + len(part)
+    return True
+
+
+def score_response_a7(
+    packet: dict[str, Any], key: dict[str, Any], response: dict[str, str]
+) -> tuple[int, list[str]]:
+    """A7 score by the chosen option, with flags; structural errors stay invalid.
+
+    Foil = 0; absence option = 1; correct option = 3 with explicit support and
+    a verified quote, otherwise 2. Flags record every departure from the strict
+    rules so the strict result can be reported alongside.
+    """
+    digest = hashlib.sha256(json.dumps(packet, sort_keys=True).encode()).hexdigest()
+    if digest != key["packet_sha256"] or response.get("opaque_id") != key["opaque_id"]:
+        raise ValueError("Packet or response identity mismatch")
+    if set(response) != {"opaque_id", "option_id", "support", "evidence", "rationale"}:
+        raise ValueError("Response fields do not match protocol")
+    choice, support = response["option_id"], response["support"]
+    if choice not in {option["id"] for option in packet["options"]}:
+        raise ValueError("Unknown option")
+    if support not in {"explicit", "inferred", "absent"}:
+        raise ValueError("Unknown support type")
+    flags: list[str] = []
+    if choice == key["absent_id"]:
+        if support != "absent" or response["evidence"]:
+            flags.append("absence_with_support_or_quote")
+        return 1, flags
+    if support == "absent":
+        flags.append("substantive_choice_with_absent_support")
+    if choice != key["correct_id"]:
+        return 0, flags
+    if support == "explicit":
+        evidence = response["evidence"]
+        if evidence.strip() and evidence in packet["artifact"]:
+            return 3, flags
+        if evidence.strip() and quote_verified(evidence, packet["artifact"]):
+            return 3, [*flags, "quote_verified_after_normalization"]
+        return 2, [*flags, "explicit_quote_unverified"]
+    if support == "inferred" and not response["rationale"].strip():
+        flags.append("inferred_without_rationale")
+    return 2, flags
 
 
 def repeat_sample(opaque_ids: list[str], seed: str) -> list[str]:

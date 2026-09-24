@@ -8,7 +8,7 @@ VENDOR_DIR := vendor/astro-docs
 EXPLICIT_DIR := corpus/explicit
 IMPLICIT_DIR := corpus/implicit
 BUILD_DIR := build
-STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts assign-anchors review-o1-o2 classify-o1-o2 pilot lint-probes probe-sheet seed instrument-check artifacts artifacts-resume anchors assignment-dry-run opencode-preflight m1-ai-first-pass m1-ai-repeat m2 coding-setup code kappa analyze
+STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts assign-anchors review-o1-o2 classify-o1-o2 pilot lint-probes probe-sheet seed instrument-check artifacts artifacts-resume anchors assignment-dry-run opencode-preflight m1-ai-first-pass m1-ai-repeat rescore-a7 m2 coding-setup code kappa analyze
 
 .PHONY: help check $(STAGES)
 
@@ -196,13 +196,22 @@ m2:
 	uv run python -m docs_transduction_study.m2_redundancy validate
 	uv run python -m docs_transduction_study.m2_redundancy map
 
-# Repeatability/coverage/isolation gate only (AI repeatability, not human reliability).
-kappa:
-	uv run python -m docs_transduction_study.analysis --gate-only
+# Amendment A7: rescore retained answers (quote verification on readable
+# text; score by option with flags). Derived; strict records stay untouched.
+rescore-a7:
+	@test -n "$(PASSPHRASE_FILE)" || { printf 'PASSPHRASE_FILE is required\n' >&2; exit 1; }
+	uv run python -m docs_transduction_study.rescore_a7 --passphrase-file "$(PASSPHRASE_FILE)"
 
-# Pre-specified exploratory M1-AI tables; withheld unless the gate passes.
+# Repeatability/coverage/isolation gate (AI repeatability, not human
+# reliability): A7 primary, strict alongside.
+kappa:
+	uv run python -m docs_transduction_study.analysis --gate-only --records m1_ai_a7_records
+	uv run python -m docs_transduction_study.analysis --gate-only --records m1_ai_records
+
+# Pre-specified exploratory M1-AI tables; each version withheld unless its gate passes.
 analyze:
-	uv run python -m docs_transduction_study.analysis
+	uv run python -m docs_transduction_study.analysis --records m1_ai_a7_records --out analysis/m1_ai_a7
+	uv run python -m docs_transduction_study.analysis --records m1_ai_records --out analysis/m1_ai_strict
 
 corpus-report:
 	uv run python -m docs_transduction_study.corpus_report

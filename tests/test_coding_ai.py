@@ -162,3 +162,79 @@ def test_records_are_append_only_and_sessions_are_fresh(tmp_path):
     )
     assert len(list((tmp_path / coding_ai.RECORDS_DIR).glob("*.json"))) == 2
     assert len((tmp_path / "m1_ai.csv").read_text().splitlines()) == 3
+
+
+SNAPSHOT = """- paragraph:
+  - text: You can set
+  - code: "\\"baseUrl\\": x"
+  - link "Model Context Protocol":
+    - /url: https://example.com
+  - text: is standard."""
+
+
+@pytest.mark.parametrize(
+    ("evidence", "artifact", "verified"),
+    [
+        (
+            "Don't run npm build.",
+            "<p>Don&#39;t run <code>npm</code>\n build.</p>",
+            True,
+        ),
+        (
+            'You can set "baseUrl": x Model Context Protocol is standard.',
+            SNAPSHOT,
+            True,
+        ),
+        (
+            "Install before starting … start the server",
+            "Install before starting. Then start the server.",
+            True,
+        ),
+        (
+            "start the server … Install before starting",
+            "Install before starting. Then start the server.",
+            False,
+        ),
+        ("Install … server", "Install before starting. Then start the server.", False),
+        ("An invented sentence", "Install before starting.", False),
+        ("- import the file", "- import the file today", True),
+    ],
+)
+def test_a7_quote_verification(evidence, artifact, verified):
+    assert coding_ai.quote_verified(evidence, artifact) is verified
+
+
+def test_a7_scores_by_option_with_flags():
+    packet, key = packet_and_key()
+    exact = response(packet, key["correct_id"])
+    assert coding_ai.score_response_a7(packet, key, exact) == (3, [])
+    loose = response(packet, key["correct_id"], evidence="install  BEFORE starting")
+    assert coding_ai.score_response_a7(packet, key, loose) == (
+        3,
+        ["quote_verified_after_normalization"],
+    )
+    unverified = response(packet, key["correct_id"], evidence="Invented quote")
+    assert coding_ai.score_response_a7(packet, key, unverified) == (
+        2,
+        ["explicit_quote_unverified"],
+    )
+    with pytest.raises(ValueError, match="verbatim"):
+        coding_ai.score_response(packet, key, unverified)
+    absence = response(packet, key["absent_id"], "explicit", "Install before starting.")
+    assert coding_ai.score_response_a7(packet, key, absence) == (
+        1,
+        ["absence_with_support_or_quote"],
+    )
+    foil = next(
+        o["id"]
+        for o in packet["options"]
+        if o["id"] not in {key["correct_id"], key["absent_id"]}
+    )
+    assert (
+        coding_ai.score_response_a7(
+            packet, key, response(packet, foil, evidence="nope")
+        )[0]
+        == 0
+    )
+    with pytest.raises(ValueError, match="identity"):
+        coding_ai.score_response_a7(packet, key, {**exact, "opaque_id": "AI-other"})

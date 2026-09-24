@@ -35,11 +35,17 @@ STAGES = ("A1", "A2", "A3", "A4")
 SCORES = (0, 1, 2, 3)
 
 
-def load_records(path: Path) -> list[dict[str, Any]]:
-    """Load retained JSON records (the source of truth, not the CSV summary)."""
+def load_records(
+    path: Path, records_dir: str = coding_ai.RECORDS_DIR
+) -> list[dict[str, Any]]:
+    """Load retained JSON records (the source of truth, not the CSV summary).
+
+    ``m1_ai_records`` holds strict-protocol records; ``m1_ai_a7_records`` holds
+    amendment-A7 rescoring of the retained answers.
+    """
     return [
         json.loads(item.read_text(encoding="utf-8"))
-        for item in sorted((path / coding_ai.RECORDS_DIR).glob("*.json"))
+        for item in sorted((path / records_dir).glob("*.json"))
     ]
 
 
@@ -204,11 +210,12 @@ def analyze(
     seed: str,
     spans: dict[tuple[str, str], bool],
     out: Path,
+    records_dir: str = coding_ai.RECORDS_DIR,
 ) -> dict[str, Any]:
-    records = load_records(coding_dir)
+    records = load_records(coding_dir, records_dir)
     status = gate(records, expected_ids, seed)
     out.mkdir(parents=True, exist_ok=True)
-    report: dict[str, Any] = {"label": LABEL, "gate": status}
+    report: dict[str, Any] = {"label": LABEL, "scoring": records_dir, "gate": status}
     if not status["substantive_findings_allowed"]:
         report["engineering"] = {
             "records": len(records),
@@ -282,6 +289,11 @@ def main() -> None:
     parser.add_argument("--artifacts", type=Path, default=Path("artifacts"))
     parser.add_argument("--out", type=Path, default=Path("analysis/m1_ai"))
     parser.add_argument("--gate-only", action="store_true")
+    parser.add_argument(
+        "--records",
+        default="m1_ai_a7_records",
+        help="m1_ai_a7_records (amendment A7, primary) or m1_ai_records (strict)",
+    )
     args = parser.parse_args()
     instrument = study_pipeline.load_instrument()
     plan = study_pipeline.assignment_plan(instrument)
@@ -289,7 +301,11 @@ def main() -> None:
     if args.gate_only:
         print(
             json.dumps(
-                gate(load_records(args.coding_dir), expected, instrument["seed"]),
+                gate(
+                    load_records(args.coding_dir, args.records),
+                    expected,
+                    instrument["seed"],
+                ),
                 indent=2,
             )
         )
@@ -302,7 +318,13 @@ def main() -> None:
                 spans[(record["instance_id"], arm)] = record[arm]["spans_chunks"]
     instances = {row["instance_id"]: row for row in instrument["instances"]}
     report = analyze(
-        args.coding_dir, instances, expected, instrument["seed"], spans, args.out
+        args.coding_dir,
+        instances,
+        expected,
+        instrument["seed"],
+        spans,
+        args.out,
+        args.records,
     )
     print(json.dumps(report["gate"], indent=2))
 
