@@ -2,6 +2,27 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-23 — First study generation stopped: implicit S03 does not parse as MDX
+
+`make artifacts` (after L2, maintainer-initiated) built the explicit arm and
+copied its complete A1 output to `artifacts/a1/explicit/` (1.4 GB; not opened or
+inspected by anyone), then the implicit build failed:
+`Expected a closing tag for <details> (33:6) before the end of paragraph`. The
+driver stopped; no implicit output, repeat build, A2-A4, anchors, or packets
+exist. Nothing was committed.
+
+Reproduced without any build by compiling all 24 corpus files with the pinned
+`@mdx-js/mdx` 3.1.1: only `corpus/implicit/recipes/sharing-state-islands.mdx`
+(S03) fails. Cause: the D3 aside rule writes the aside title and the aside's
+first line together; S03's asides begin with a block-level `<details>`, giving
+`FAQ: <details>` (line 33) and `Note: <details>` (line 435), which MDX parses as
+unclosed inline JSX. The explicit arm is unaffected.
+
+The 2026-08-26 "both arms built" result most likely predates commit `59404855`
+(19:33, restoring the `<details>` tags); the entry was committed 20 minutes later,
+so the current implicit S03 was apparently never built. The build check did copy
+implicit sources correctly. Awaiting a maintainer decision (post-L2 amendment).
+
 ## 2026-09-23 — First `make artifacts` attempt refused (tilde path); nothing generated
 
 `make artifacts PASSPHRASE_FILE=~/.config/...` passed the quoted path unexpanded;
