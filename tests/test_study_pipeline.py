@@ -180,6 +180,7 @@ def run(repo, out, passphrase, **kwargs):
         "builder": fake_builder(),
         "snapshotter": fake_snapshotter,
         "lock_verifier": locked,
+        "mdx_checker": lambda _repo: [],
     }
     options.update(kwargs)
     return pipeline.run_study(out, passphrase_file=passphrase, repo=repo, **options)
@@ -341,6 +342,39 @@ def test_verify_lock_checks_real_commit_and_contents(repo):
     (repo / "instruments" / "probes.csv").write_text("changed\n")
     with pytest.raises(pipeline.PipelineError, match="differs"):
         pipeline.verify_lock(repo)
+
+    def head():
+        return subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=repo,
+            capture_output=True,
+            text=True,
+            check=True,
+        ).stdout.strip()
+
+    def design(amendments):
+        (repo / "DESIGN.md").write_text(
+            f'---\ninstrument_locked: "2026-10-01"\ninstrument_lock_commit: "{sha}"\n'
+            f'instrument_amendment_commits: "{amendments}"\n---\n'
+        )
+
+    git(repo, *ident, "commit", "-q", "-am", "undocumented change")
+    design(head())
+    with pytest.raises(pipeline.PipelineError, match="AMENDMENTS.md"):
+        pipeline.verify_lock(repo)
+    (repo / "AMENDMENTS.md").write_text("A5\n")
+    (repo / "instruments" / "probes.csv").write_text("amended\n")
+    git(repo, *ident, "add", "AMENDMENTS.md", "instruments/probes.csv")
+    git(repo, *ident, "commit", "-q", "-m", "A5")
+    amendment = head()
+    design("")
+    with pytest.raises(pipeline.PipelineError, match="differs"):
+        pipeline.verify_lock(repo)
+    design(amendment)
+    assert pipeline.verify_lock(repo)["reference"] == amendment
+    (repo / "corpus" / "explicit" / "guides" / "page.mdx").write_text("edited")
+    with pytest.raises(pipeline.PipelineError, match="Uncommitted"):
+        pipeline.verify_lock(repo)
     (repo / "DESIGN.md").write_text(
         '---\ninstrument_locked: "2026-10-01"\ninstrument_lock_commit: "deadbeef"\n---\n'
     )
@@ -354,3 +388,14 @@ def test_tilde_passphrase_paths_are_expanded(repo, tmp_path, passphrase, monkeyp
     assert run(repo, tmp_path / "out", tilde)["assignments"]["first_pass"] == 8
     with pytest.raises(pipeline.PipelineError, match="missing or empty"):
         run(repo, tmp_path / "out2", pipeline.Path("~") / "absent")
+
+
+def test_mdx_parse_failure_stops_before_any_build(repo, tmp_path, passphrase):
+    with pytest.raises(pipeline.PipelineError, match="do not parse as MDX"):
+        run(
+            repo,
+            tmp_path / "out",
+            passphrase,
+            mdx_checker=lambda _repo: ["page.mdx: bad"],
+        )
+    assert not (tmp_path / "out").exists()

@@ -65,7 +65,11 @@ def read_lock_fields(design: str) -> dict[str, str]:
     """Return the L2 frontmatter fields (empty strings when absent or blank)."""
     frontmatter = design.split("\n---", 1)[0] if design.startswith("---") else ""
     fields = {}
-    for name in ("instrument_locked", "instrument_lock_commit"):
+    for name in (
+        "instrument_locked",
+        "instrument_lock_commit",
+        "instrument_amendment_commits",
+    ):
         match = re.search(
             rf"^{name}:\s*\"?([^\"\n]*)\"?\s*$", frontmatter, re.MULTILINE
         )
@@ -102,13 +106,114 @@ def verify_lock(repo: Path = REPO_ROOT) -> dict[str, str]:
         raise PipelineError(
             f"L2 commit must change only lock-set files: {sorted(set(changed) - set(LOCK_FILES))}"
         )
+    reference = full
+    amendments = [
+        sha.strip()
+        for sha in fields["instrument_amendment_commits"].split(",")
+        if sha.strip()
+    ]
+    for amendment in amendments:
+        # Post-L2 instrument changes are valid only as documented amendment
+        # commits listed in DESIGN.md, descending from L2 and in HEAD's history.
+        if _git("cat-file", "-t", amendment, repo=repo).stdout.strip() != b"commit":
+            raise PipelineError(f"Amendment commit {amendment} does not exist")
+        resolved = _git("rev-parse", amendment, repo=repo).stdout.decode().strip()
+        if (
+            _git(
+                "merge-base", "--is-ancestor", reference, resolved, repo=repo
+            ).returncode
+            != 0
+        ):
+            raise PipelineError(f"Amendment {amendment} does not descend from the lock")
+        if (
+            _git("merge-base", "--is-ancestor", resolved, "HEAD", repo=repo).returncode
+            != 0
+        ):
+            raise PipelineError(f"Amendment {amendment} is not an ancestor of HEAD")
+        touched = (
+            _git("show", "--name-only", "--format=", resolved, repo=repo)
+            .stdout.decode()
+            .split()
+        )
+        if "AMENDMENTS.md" not in touched:
+            raise PipelineError(
+                f"Amendment {amendment} does not record itself in AMENDMENTS.md"
+            )
+        reference = resolved
     for name in (*LOCK_FILES, *FROZEN_CODE):
-        committed = _git("show", f"{full}:{name}", repo=repo)
+        committed = _git("show", f"{reference}:{name}", repo=repo)
         if committed.returncode != 0 or committed.stdout != (repo / name).read_bytes():
             raise PipelineError(
-                f"{name} differs from the L2 commit; an amendment is required"
+                f"{name} differs from the L2 commit and recorded amendments; an amendment is required"
             )
-    return {"commit": full, "date": fields["instrument_locked"]}
+    dirty = _git(
+        "status",
+        "--porcelain",
+        "--",
+        "instruments",
+        "corpus",
+        "coding/seed",
+        "pipeline/demark",
+        repo=repo,
+    ).stdout.strip()
+    if dirty:
+        raise PipelineError(
+            "Uncommitted changes under instruments/, corpus/, or pipeline/demark/"
+        )
+    return {
+        "commit": full,
+        "date": fields["instrument_locked"],
+        "amendments": ",".join(amendments),
+        "reference": reference,
+    }
+
+
+MDX_CHECK = """
+import { readFileSync } from 'fs';
+const [mdx, directive, ...files] = process.argv.slice(2);
+const { compile } = await import(mdx);
+const remarkDirective = (await import(directive)).default;
+let failed = 0;
+for (const file of files) {
+  const source = readFileSync(file, 'utf8').replace(/^---\\n[\\s\\S]*?\\n---\\n/, '');
+  try { await compile(source, { remarkPlugins: [remarkDirective] }); }
+  catch (error) { failed++; console.log(file + ': ' + String(error.reason || error.message).split('\\n')[0]); }
+}
+process.exit(failed ? 1 : 0);
+"""
+
+
+def check_mdx(repo: Path = REPO_ROOT) -> list[str]:
+    """Compile every corpus file with the pinned MDX compiler before any build."""
+    modules = REPO_ROOT / "vendor" / "astro-docs" / "node_modules" / ".pnpm"
+    mdx = sorted(modules.glob("@mdx-js+mdx@*/node_modules/@mdx-js/mdx/index.js"))
+    directive = sorted(
+        modules.glob("remark-directive@*/node_modules/remark-directive/index.js")
+    )
+    if not mdx or not directive:
+        raise PipelineError(
+            "Pinned MDX compiler not found for the pre-build parse check"
+        )
+    with (repo / "corpus" / "specimens.csv").open(encoding="utf-8") as handle:
+        paths = [row["source_path"] for row in csv.DictReader(handle)]
+    files = [str(repo / "corpus" / arm / path) for arm in ARMS for path in paths]
+    with tempfile.NamedTemporaryFile("w", suffix=".mjs", delete=False) as script:
+        script.write(MDX_CHECK)
+    try:
+        result = subprocess.run(
+            ["node", script.name, mdx[-1].as_uri(), directive[-1].as_uri(), *files],
+            capture_output=True,
+            text=True,
+            check=False,
+            timeout=300,
+        )
+    finally:
+        os.unlink(script.name)
+    return (
+        [line for line in result.stdout.splitlines() if line]
+        if result.returncode
+        else []
+    )
 
 
 def load_instrument(repo: Path = REPO_ROOT) -> dict[str, Any]:
@@ -546,8 +651,12 @@ def run_study(
     builder: Builder | None = None,
     snapshotter: Snapshotter | None = None,
     lock_verifier: Callable[[Path], dict[str, str]] = verify_lock,
+    mdx_checker: Callable[[Path], list[str]] | None = None,
 ) -> dict[str, Any]:
     lock = lock_verifier(repo)
+    failures = (mdx_checker or check_mdx)(repo)
+    if failures:
+        raise PipelineError("Corpus files do not parse as MDX: " + "; ".join(failures))
     if passphrase_file is not None:
         # Make passes quoted paths, so the shell never expands "~".
         passphrase_file = passphrase_file.expanduser()
