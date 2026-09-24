@@ -1,5 +1,6 @@
 import csv
 import json
+import shutil
 import subprocess
 
 import pytest
@@ -399,3 +400,30 @@ def test_mdx_parse_failure_stops_before_any_build(repo, tmp_path, passphrase):
             mdx_checker=lambda _repo: ["page.mdx: bad"],
         )
     assert not (tmp_path / "out").exists()
+
+
+def test_resume_repackages_archive_without_building(
+    repo, tmp_path, passphrase, monkeypatch
+):
+    out = tmp_path / "out"
+    run(repo, out, passphrase)
+    generated = json.loads((out / "study-manifest.json").read_text())
+    shutil.rmtree(out / "assignments")
+    shutil.rmtree(out / "private")
+    options = {"lock_verifier": locked, "mdx_checker": lambda _repo: []}
+    resumed = pipeline.resume_study(
+        out, passphrase_file=passphrase, repo=repo, **options
+    )
+    assert resumed["resumed_from_archive"] and resumed["generation_manifest_verified"]
+    assert (
+        resumed["assignments"]["packets_sha256"]
+        == generated["assignments"]["packets_sha256"]
+    )
+    with pytest.raises(pipeline.PipelineError, match="already packaged"):
+        pipeline.resume_study(out, passphrase_file=passphrase, repo=repo, **options)
+    shutil.rmtree(out / "assignments")
+    shutil.rmtree(out / "private")
+    chunk = next((out / "a4").rglob("chunk-0000.txt"))
+    chunk.write_text("tampered")
+    with pytest.raises(pipeline.PipelineError, match="does not match its index"):
+        pipeline.resume_study(out, passphrase_file=passphrase, repo=repo, **options)

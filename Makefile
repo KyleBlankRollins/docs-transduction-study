@@ -8,7 +8,7 @@ VENDOR_DIR := vendor/astro-docs
 EXPLICIT_DIR := corpus/explicit
 IMPLICIT_DIR := corpus/implicit
 BUILD_DIR := build
-STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts assign-anchors review-o1-o2 classify-o1-o2 pilot lint-probes probe-sheet seed instrument-check artifacts anchors assignment-dry-run opencode-preflight m1-ai-first-pass m1-ai-repeat m2 coding-setup code kappa analyze
+STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts assign-anchors review-o1-o2 classify-o1-o2 pilot lint-probes probe-sheet seed instrument-check artifacts artifacts-resume anchors assignment-dry-run opencode-preflight m1-ai-first-pass m1-ai-repeat m2 coding-setup code kappa analyze
 
 .PHONY: help check $(STAGES)
 
@@ -128,6 +128,12 @@ pilot:
 artifacts:
 	@test -n "$(PASSPHRASE_FILE)" || { printf 'PASSPHRASE_FILE=/path/outside/repo is required\n' >&2; exit 1; }
 	uv run python -m docs_transduction_study.study_pipeline run --out artifacts --passphrase-file "$(PASSPHRASE_FILE)"
+
+# After a mechanical anchor amendment: resolve and package the archived A1-A4
+# (integrity-checked; never rebuilds).
+artifacts-resume:
+	@test -n "$(PASSPHRASE_FILE)" || { printf 'PASSPHRASE_FILE=/path/outside/repo is required\n' >&2; exit 1; }
+	uv run python -m docs_transduction_study.study_pipeline resume --out artifacts --passphrase-file "$(PASSPHRASE_FILE)"
 
 # Anchor/host resolution now runs inside `make artifacts` (study_pipeline);
 # this target checks the recorded L2 without generating anything.

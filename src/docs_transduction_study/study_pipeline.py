@@ -643,6 +643,22 @@ def package_assignments(
     return manifest
 
 
+def _validated_passphrase(passphrase_file: Path | None, repo: Path) -> Path:
+    if passphrase_file is not None:
+        # Make passes quoted paths, so the shell never expands "~".
+        passphrase_file = passphrase_file.expanduser()
+    if passphrase_file is None or any(
+        passphrase_file.resolve().is_relative_to(root.resolve())
+        for root in (REPO_ROOT, repo)
+    ):
+        raise PipelineError(
+            "A passphrase file outside the repository is required before generation"
+        )
+    if not passphrase_file.is_file() or not passphrase_file.read_text().strip():
+        raise PipelineError(f"Passphrase file is missing or empty: {passphrase_file}")
+    return passphrase_file
+
+
 def run_study(
     out: Path,
     *,
@@ -657,18 +673,7 @@ def run_study(
     failures = (mdx_checker or check_mdx)(repo)
     if failures:
         raise PipelineError("Corpus files do not parse as MDX: " + "; ".join(failures))
-    if passphrase_file is not None:
-        # Make passes quoted paths, so the shell never expands "~".
-        passphrase_file = passphrase_file.expanduser()
-    if passphrase_file is None or any(
-        passphrase_file.resolve().is_relative_to(root.resolve())
-        for root in (REPO_ROOT, repo)
-    ):
-        raise PipelineError(
-            "A passphrase file outside the repository is required before generation"
-        )
-    if not passphrase_file.is_file() or not passphrase_file.read_text().strip():
-        raise PipelineError(f"Passphrase file is missing or empty: {passphrase_file}")
+    passphrase_file = _validated_passphrase(passphrase_file, repo)
     # Resolved at call time so tests can forbid the real build and browser.
     builder = builder or _default_builder
     snapshotter = snapshotter or _default_snapshotter
@@ -681,10 +686,112 @@ def run_study(
     manifest["a3"] = extract_a3(out, routes)
     chunks = chunk_a4(out, routes)
     (out / "a4-index.json").write_text(json.dumps(chunks, indent=2), encoding="utf-8")
+    (out / "generation-manifest.json").write_text(
+        json.dumps({**manifest, "stages": archived_stages(out, routes)}, indent=2),
+        encoding="utf-8",
+    )
     resolved = resolve_instances(out, instrument, chunks, repo / "corpus")
     (out / "anchor-assignments.json").write_text(
         json.dumps(resolved, indent=2), encoding="utf-8"
     )
+    manifest["assignments"] = package_assignments(
+        out, instrument, resolved, passphrase_file=passphrase_file
+    )
+    (out / "study-manifest.json").write_text(
+        json.dumps(manifest, indent=2), encoding="utf-8"
+    )
+    return manifest
+
+
+def archived_stages(out: Path, routes: dict[str, str]) -> dict[str, Any]:
+    """Integrity-check archived A1-A4 without building; return their hashes.
+
+    A3 is re-extracted from the archived A1 HTML and must equal the archived
+    text; every A4 chunk must match its index and the chunks must rebuild A3.
+    """
+    from docs_transduction_study.stages.a3_extract import extract_article_text
+
+    pages = {arm: _checksums(out / "a1" / arm) for arm in ARMS}
+    if not pages["explicit"] or set(pages["explicit"]) != set(pages["implicit"]):
+        raise PipelineError("Archived A1 page sets are missing or differ between arms")
+    chunks = json.loads((out / "a4-index.json").read_text(encoding="utf-8"))
+    stages: dict[str, Any] = {"a1_pages": len(pages["explicit"]), "specimens": {}}
+    for arm in ARMS:
+        for sid, route in routes.items():
+            text = (out / "a3" / arm / Path(route).with_suffix(".txt")).read_text(
+                encoding="utf-8"
+            )
+            if extract_article_text(out / "a1" / arm / route)[0] != text:
+                raise PipelineError(
+                    f"Archived A3 differs from its A1 source: {arm}/{sid}"
+                )
+            snapshot = out / "a2" / arm / sid / "snapshot-1.txt"
+            if not snapshot.is_file():
+                raise PipelineError(f"Archived A2 snapshot missing: {arm}/{sid}")
+            page_chunks = sorted(
+                (c for c in chunks if c["arm"] == arm and c["route"] == route),
+                key=lambda c: c["chunk_index"],
+            )
+            rebuilt = ""
+            for chunk in page_chunks:
+                piece = (out / chunk["chunk_path"]).read_text(encoding="utf-8")
+                if hashlib.sha256(piece.encode()).hexdigest() != chunk["sha256"]:
+                    raise PipelineError(
+                        f"A4 chunk does not match its index: {chunk['chunk_path']}"
+                    )
+                rebuilt += piece
+            if rebuilt != text:
+                raise PipelineError(f"Archived A4 does not rebuild A3: {arm}/{sid}")
+            stages["specimens"][f"{arm}/{sid}"] = {
+                "a1_sha256": pages[arm][route],
+                "a2_sha256": hashlib.sha256(snapshot.read_bytes()).hexdigest(),
+                "a3_sha256": hashlib.sha256(text.encode()).hexdigest(),
+                "a4_chunks": len(page_chunks),
+            }
+    return stages
+
+
+def resume_study(
+    out: Path,
+    *,
+    passphrase_file: Path | None,
+    repo: Path = REPO_ROOT,
+    lock_verifier: Callable[[Path], dict[str, str]] = verify_lock,
+    mdx_checker: Callable[[Path], list[str]] | None = None,
+) -> dict[str, Any]:
+    """Resolve and package against archived A1-A4 after an amendment; never builds."""
+    lock = lock_verifier(repo)
+    failures = (mdx_checker or check_mdx)(repo)
+    if failures:
+        raise PipelineError("Corpus files do not parse as MDX: " + "; ".join(failures))
+    passphrase_file = _validated_passphrase(passphrase_file, repo)
+    if (out / "assignments").exists() or (out / "private").exists():
+        raise PipelineError("Assignments already packaged; nothing to resume")
+    for part in ("a1", "a2", "a3", "a4-index.json"):
+        if not (out / part).exists():
+            raise PipelineError(f"Archived stage missing ({part}); resume never builds")
+    instrument = load_instrument(repo)
+    routes = {sid: route_for(path) for sid, path in instrument["specimens"].items()}
+    stages = archived_stages(out, routes)
+    generation = out / "generation-manifest.json"
+    if generation.exists():
+        recorded = json.loads(generation.read_text(encoding="utf-8"))["stages"]
+        if recorded != stages:
+            raise PipelineError(
+                "Archived artifacts differ from their generation manifest"
+            )
+    chunks = json.loads((out / "a4-index.json").read_text(encoding="utf-8"))
+    resolved = resolve_instances(out, instrument, chunks, repo / "corpus")
+    (out / "anchor-assignments.json").write_text(
+        json.dumps(resolved, indent=2), encoding="utf-8"
+    )
+    manifest: dict[str, Any] = {
+        "lock": lock,
+        "chunk_size": CHUNK_SIZE,
+        "resumed_from_archive": True,
+        "generation_manifest_verified": generation.exists(),
+        "stages": stages,
+    }
     manifest["assignments"] = package_assignments(
         out, instrument, resolved, passphrase_file=passphrase_file
     )
@@ -729,6 +836,11 @@ def main() -> None:
     run = sub.add_parser("run", help="generate study artifacts (requires verified L2)")
     run.add_argument("--out", type=Path, default=REPO_ROOT / "artifacts")
     run.add_argument("--passphrase-file", type=Path, required=True)
+    resume = sub.add_parser(
+        "resume", help="resolve and package archived A1-A4 (no build)"
+    )
+    resume.add_argument("--out", type=Path, default=REPO_ROOT / "artifacts")
+    resume.add_argument("--passphrase-file", type=Path, required=True)
     sub.add_parser("verify-lock", help="check the recorded L2 commit and lock set")
     args = parser.parse_args()
     try:
