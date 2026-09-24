@@ -346,3 +346,11 @@ def test_verify_lock_checks_real_commit_and_contents(repo):
     )
     with pytest.raises(pipeline.PipelineError, match="does not exist"):
         pipeline.verify_lock(repo)
+
+
+def test_tilde_passphrase_paths_are_expanded(repo, tmp_path, passphrase, monkeypatch):
+    monkeypatch.setenv("HOME", str(passphrase.parent.parent))
+    tilde = pipeline.Path("~") / passphrase.parent.name / passphrase.name
+    assert run(repo, tmp_path / "out", tilde)["assignments"]["first_pass"] == 8
+    with pytest.raises(pipeline.PipelineError, match="missing or empty"):
+        run(repo, tmp_path / "out2", pipeline.Path("~") / "absent")

@@ -681,7 +681,7 @@ def load_batch(
 
         if passphrase_file is None:
             raise RunnerError("Sealed keys require --passphrase-file")
-        key_text = unseal(keys, passphrase_file).decode("utf-8")
+        key_text = unseal(keys, passphrase_file.expanduser()).decode("utf-8")
     else:
         key_text = keys.read_text(encoding="utf-8")
     loaded = [

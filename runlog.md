@@ -2,6 +2,16 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-23 — First `make artifacts` attempt refused (tilde path); nothing generated
+
+`make artifacts PASSPHRASE_FILE=~/.config/...` passed the quoted path unexpanded;
+the driver resolved `~` as a repository-relative directory and correctly refused
+it as "inside the repository" before any work. Verified: no build, no sandbox,
+and `artifacts/` is the empty directory left by the pilot disposal. The driver
+and runner now expand `~` and require an existing, non-empty passphrase file.
+Engineering fix only; the frozen instrument code (`locators.py`, `coding_ai.py`)
+is untouched, and `make anchors` still verifies L2.
+
 ## 2026-09-23 — L2 taken: instrument locked
 
 **L2 commit:** `ace31884f457b5e63b061e3584678552276b11a7` (2026-09-23), "L2: instrument lock",

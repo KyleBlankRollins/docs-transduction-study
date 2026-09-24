@@ -548,6 +548,9 @@ def run_study(
     lock_verifier: Callable[[Path], dict[str, str]] = verify_lock,
 ) -> dict[str, Any]:
     lock = lock_verifier(repo)
+    if passphrase_file is not None:
+        # Make passes quoted paths, so the shell never expands "~".
+        passphrase_file = passphrase_file.expanduser()
     if passphrase_file is None or any(
         passphrase_file.resolve().is_relative_to(root.resolve())
         for root in (REPO_ROOT, repo)
@@ -555,6 +558,8 @@ def run_study(
         raise PipelineError(
             "A passphrase file outside the repository is required before generation"
         )
+    if not passphrase_file.is_file() or not passphrase_file.read_text().strip():
+        raise PipelineError(f"Passphrase file is missing or empty: {passphrase_file}")
     # Resolved at call time so tests can forbid the real build and browser.
     builder = builder or _default_builder
     snapshotter = snapshotter or _default_snapshotter
