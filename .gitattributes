@@ -1,0 +1,2 @@
+artifacts/a1/** filter=lfs diff=lfs merge=lfs -text
+artifacts/assignments/*.jsonl filter=lfs diff=lfs merge=lfs -text
