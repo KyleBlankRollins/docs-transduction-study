@@ -497,9 +497,11 @@ def main() -> None:
     for err in report.errors:
         print(f"ERROR: {err}")
     if report.count:
-        print(f"\n{report.count} error(s) — probes are not locked.")
+        print(f"\n{report.count} error(s) — probes do not pass lint.")
         sys.exit(1)
-    print("lint-probes: PASS — probes are locked.")
+    print(
+        "lint-probes: PASS (structural lint only; not semantic gate evidence or an L2 lock)."
+    )
 
 
 if __name__ == "__main__":
