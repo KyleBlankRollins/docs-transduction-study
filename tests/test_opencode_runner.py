@@ -36,7 +36,7 @@ class FakeCLI:
         self.last_session = None
         self.last_input = None
 
-    def __call__(self, args, *, input, cwd, env, timeout):
+    def __call__(self, args, *, input, cwd, env, timeout, stdout_path=None):
         self.calls.append({"args": args, "cwd": cwd, "env": env, "input": input})
         assert not Path(cwd).resolve().is_relative_to(runner.REPO_ROOT)
         command = args[1:]
@@ -378,7 +378,8 @@ FAKE_PROVIDER = Path(__file__).parent / "fixtures" / "fake_openai_provider.py"
     or not runner.DEFAULT_BINARY.exists(),
     reason="set DTS_OPENCODE_LOOPBACK=1 to run the real CLI against a loopback fake provider",
 )
-def test_real_cli_against_loopback_provider(tmp_path):
+@pytest.mark.parametrize("artifact_bytes", [0, 300_000])
+def test_real_cli_against_loopback_provider(tmp_path, artifact_bytes):
     import socket
     import time
 
@@ -386,6 +387,21 @@ def test_real_cli_against_loopback_provider(tmp_path):
         sock.bind(("127.0.0.1", 0))
         port = sock.getsockname()[1]
     packet, key = packet_and_key()
+    if artifact_bytes:
+        # Exports of full-page sessions exceed the 64 KiB pipe truncation.
+        artifact = 'Install "first".\nThen start.\n' + "Filler text. " * (
+            artifact_bytes // 13
+        )
+        packet, key = coding_ai.prepare_packet(
+            "SYNTH-LARGE",
+            artifact,
+            {
+                "question": "Which action comes first?",
+                "correct_answer": "Installation precedes startup",
+                "foil_1": "Startup precedes installation",
+            },
+            "synthetic-seed",
+        )
     log = tmp_path / "requests.jsonl"
     server = subprocess.Popen(
         [

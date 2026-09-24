@@ -2,6 +2,31 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-24 — First pass completed with engineering failures; export fix
+
+`make m1-ai-first-pass MAX_INVOCATIONS=1950` (maintainer-run, approved) attempted
+all 1,832 first-pass packets once (1,832 invocations): 759 recorded, 612
+invalid_response, 460 export_failed, 1 timeout. No quota or rate error.
+
+**Export failures (runner defect):** all 458 A1 attempts and 2 A2 attempts
+failed because `opencode export` output piped to the runner was truncated at
+exactly 65,536 bytes (OpenCode/Bun truncates piped stdout at exit); full-page
+sessions export far more. Isolation could not be verified, so nothing was
+recorded; answers remain only in the retained event streams and are not used.
+Fix: `run` and `export` stdout now go to files. Proven with the real CLI
+loopback test at a 300 KB artifact (passes). These 461 transport failures are
+retryable once under the frozen policy; a retry needs a new invocation budget.
+
+**Invalid responses (policy consequence):** 591 rejected because the explicit
+quote was not a verbatim substring of the artifact (A2 364, A3 158, A4 90 among
+all invalids): 363 not found even after folding (mostly A2, where sentences are
+split across snapshot nodes), 147 joined fragments with an ellipsis, 81 differ
+only in quotes/dashes/markup/whitespace. Also 17 absence choices with a quote,
+3 opaque-ID mismatches, 1 field mismatch. Under the frozen protocol these are
+final, so first-pass coverage cannot be complete and substantive findings would
+be blocked. Only rejection messages and evidence strings were examined; no score
+distributions have been computed. Awaiting a maintainer decision.
+
 ## 2026-09-24 — Artifact archive committed with Git LFS (maintainer decision)
 
 The maintainer chose Git LFS for the full-site trees. Installed git-lfs 3.8.0

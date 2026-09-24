@@ -173,16 +173,38 @@ def _default_executor(
     cwd: Path,
     env: dict[str, str],
     timeout: float,
+    stdout_path: Path | None = None,
 ) -> subprocess.CompletedProcess[str]:
-    return subprocess.run(
-        args,
-        input=input,
-        cwd=cwd,
-        env=env,
-        timeout=timeout,
-        capture_output=True,
-        text=True,
-        check=False,
+    """Run a command; with ``stdout_path``, stdout goes to a file, not a pipe.
+
+    OpenCode (Bun) truncates stdout written to a pipe at 64 KiB when the
+    process exits; exports of full-page sessions are far larger.
+    """
+    if stdout_path is None:
+        return subprocess.run(
+            args,
+            input=input,
+            cwd=cwd,
+            env=env,
+            timeout=timeout,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    with stdout_path.open("w", encoding="utf-8") as handle:
+        result = subprocess.run(
+            args,
+            input=input,
+            cwd=cwd,
+            env=env,
+            timeout=timeout,
+            stdout=handle,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=False,
+        )
+    return subprocess.CompletedProcess(
+        args, result.returncode, stdout_path.read_text(encoding="utf-8"), result.stderr
     )
 
 
@@ -537,6 +559,7 @@ def run_assignment(
                 cwd=work,
                 env=env,
                 timeout=config.timeout_seconds,
+                stdout_path=attempt_dir / "events.jsonl",
             )
         except subprocess.TimeoutExpired:
             return finish("timeout", f"exceeded {config.timeout_seconds}s")
@@ -570,6 +593,7 @@ def run_assignment(
             cwd=work,
             env=env,
             timeout=60,
+            stdout_path=attempt_dir / "export.json",
         )
         if exported.returncode != 0:
             return finish("export_failed", exported.stderr[:300], session_id=session_id)
