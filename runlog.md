@@ -2,6 +2,21 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-24 — Assignments packaged from the archive (resume); no evaluation yet
+
+`make artifacts-resume` verified the lock (L2 `ace31884` with A5, A6), passed the
+archive integrity checks, resolved all 229 retained instances in both arms, and
+packaged 1,832 first-pass packets (458 per stage) plus 367 seed-selected repeats.
+Order sha256 `63da66ab…d5d12` matches the pre-L2 dry run; packets sha256
+`47344c88f1aba79477e17489e0e7e8bf3329d9f2c441348a2403683d1f9f0c44`; keys sealed
+(`artifacts/private/keys.jsonl.enc`, mode 600; plaintext sha256 `f80c8a31…fd012`).
+Sizes (bytes): A1 median 289 KB / max 545 KB; A2 39 / 53 KB; A3 15 / 29 KB; A4
+2.4 / 2.6 KB; largest packet 558 KB; first pass 164 MB, repeats 33 MB.
+`spans_chunks`: explicit 54/229, implicit 66/229. Anchor absent from the A2
+snapshot (recorded, not a failure; default-hidden content possible): explicit 4,
+implicit 3. No provider call. The 2.7 GB `artifacts/` tree is untracked pending a
+storage decision.
+
 ## 2026-09-24 — `make artifacts-resume` fell through to generation (no archive change)
 
 The CLI edit adding `resume` had not applied (the dispatch block had been
