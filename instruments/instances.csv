@@ -6372,10 +6372,14 @@ S10-O2-at-012008,S10,O2,and add the following test file:,and add the following t
 S10-O2-at-013229,S10,O2,"To run all tests, enter the following command","To run all tests, enter the following command","To run all tests, enter the following command in the terminal. Optionally, include the file name to run just the single test:
 
     ```sh
-    npx nightwatch test/index.js","To run all tests, enter the following command in the terminal. Optionally, include the file name to run just the single test:
+    npx nightwatch test/index.js
+    ```
+    Additionally, you can run the tests against a specific browser using the","To run all tests, enter the following command in the terminal. Optionally, include the file name to run just the single test:
 
     ```sh
-    npx nightwatch test/index.js",,"Occurrence 'the following command in the terminal' at explicit A0 chars [13229,13266), implicit [13440,13477); legacy S10-O2-004 (YES, occurrence 1); reviewed 2026-09-23: cataphoric deixis: 'the following command' points to the Nightwatch run command"
+    npx nightwatch test/index.js
+    ```
+    Additionally, you can run the tests against a specific browser using the",,"Occurrence 'the following command in the terminal' at explicit A0 chars [13229,13266), implicit [13440,13477); legacy S10-O2-004 (YES, occurrence 1); reviewed 2026-09-23: cataphoric deixis: 'the following command' points to the Nightwatch run command; host ends at the next prose sentence (amendment A6: a code-line end locator also matched a rendered code-frame title)"
 S10-O2-at-013799,S10,O2,against a specific browser using the,against a specific browser using the,"Additionally, you can run the tests against a specific browser using the `--environment` or `-e` CLI argument. If you don't have the relevant browser installed, Nightwatch will attempt to set it up for you using [Selenium Manager](https://www.selenium.dev/blog/2022/introducing-selenium-manager/):
 
     ```sh

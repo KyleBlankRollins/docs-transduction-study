@@ -1,5 +1,13 @@
 # Amendments
 
+## A6 — 2026-09-24 (post-L2, mechanical anchor repair)
+
+**Change:** mechanical anchor repair after L2 (P7 task 3). In the first complete generation run, resolution failed for one instance only, S10-O2-at-013229, in both arms: its host ended on the code line `npx nightwatch test/index.js`, and the end locator (`est/index.js`) also matched the rendered code-frame title `src/test/index.js` of a later block (Expressive Code renders a fence's `title` as text; the A0 projection omits fence info lines). The host now ends at the next prose sentence ("Additionally, you can run the tests against a specific browser using the"), in both arms. Only that instance's two host passages and its review note changed; its probe, answer, foils, anchor, and gate evidence are unchanged, and the evidence quote remains inside the host. `locators.py` is unchanged; all other 228 retained instances had resolved.
+
+**Rationale:** the registered procedure treats an anchor that fails to resolve as an anchor defect, repaired mechanically and results-not-seen, with resolution re-run against the archived artifacts rather than the build.
+
+**Results seen?** No. To diagnose, the author read only the two end-locator matches in the S10 A3 text (about 50 characters of context each). No packets or evaluations existed. The archived A1-A4 (6,313 A1 pages per arm; 238 A4 chunks) passed integrity checks and are reused unchanged via `make artifacts-resume`.
+
 ## A5 — 2026-09-23 (post-L2, mechanical)
 
 **Change:** mechanical repair of the implicit arm after L2. De-marking rule D3 wrote an aside's force phrase and its first body line on one line; when the body began with block HTML, S03 (`recipes/sharing-state-islands.mdx`) became `FAQ: <details>` and `Note: <details>`, which MDX parses as unclosed inline JSX, so the implicit arm could not build. D3 now puts the phrase in its own paragraph before a body that opens with an HTML/JSX element (`FAQ:` / blank line / `<details>`). `make demark` regenerated the implicit arm: only those two S03 asides changed (one line break each); all 24 corpus files parse with the pinned `@mdx-js/mdx` 3.1.1. Recompiling the instrument changed only three S03 implicit host passages (whitespace-identical: S03-R2-005, S03-R3-001, S03-R3-004) and one note's implicit offsets (S03-O2-at-002497); occurrence-decision offsets for S03 shifted by 1-2 characters. Probes, answers, foils, exclusions, gate evidence, templates, and the seed are unchanged.

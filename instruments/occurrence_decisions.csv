@@ -421,7 +421,7 @@ S10-O1-at-010471,S10,O1,the links below,10471,10486,10611,10626,2,S10-O1-010,YES
 S10-O1-at-011603,S10,O1,the example page,11603,11619,11800,11816,3,S10-O1-008,YES,not_probeable,accept,cataphor: 'the example page ... below' refers to the Nightwatch section's example page,2026-09-23
 S10-O2-at-012008,S10,O2,the following test file,12008,12031,12211,12234,1,S10-O2-007,YES,not_probeable,accept,cataphoric deixis: 'the following test file' points to the Nightwatch test code,2026-09-23
 S10-O1-at-013172,S10,O1,the CLI steps below,13172,13191,13347,13366,1,S10-O1-002,YES,,accept,cataphor: 'the CLI steps below' refers to the Nightwatch run steps,2026-09-23
-S10-O2-at-013229,S10,O2,the following command in the terminal,13229,13266,13440,13477,1,S10-O2-004,YES,not_probeable,accept,cataphoric deixis: 'the following command' points to the Nightwatch run command,2026-09-23
+S10-O2-at-013229,S10,O2,the following command in the terminal,13229,13266,13440,13477,1,S10-O2-004,YES,not_probeable,accept,cataphoric deixis: 'the following command' points to the Nightwatch run command; host ends at the next prose sentence (amendment A6: a code-line end locator also matched a rendered code-frame title),2026-09-23
 S10-O2-at-013799,S10,O2,the following command,13799,13820,14017,14038,4,S10-O2-003,YES,not_probeable,accept,cataphoric deixis: 'the following command' points to the Nightwatch report command,2026-09-23
 S10-O1-at-014050,S10,O1,the links below,14050,14065,14268,14283,3,S10-O1-010,YES,,accept,cataphor: 'the links below' refers to the Nightwatch resource links,2026-09-23
 S11-O2-at-000559,S11,O2,This recipe,559,570,559,570,1,S11-O2-001,YES,,reject,self_reference: 'This recipe' denotes the containing document,2026-09-23

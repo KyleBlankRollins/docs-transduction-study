@@ -2,6 +2,25 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-24 — First complete generation; one anchor failure repaired as A6
+
+`make artifacts` (maintainer-run) completed A1 (both arms plus the clean repeat;
+determinism passed), A2, A3, and A4 (238 specimen chunks), then stopped at anchor
+resolution: S10-O2-at-013229 failed in both arms (end locator matched twice). All
+other 228 retained instances resolved. Diagnosis read only the two match
+contexts in the S10 A3 text: the rendered code-frame title `src/test/index.js`
+duplicated the code-line end locator. Repaired by amendment A6 (host ends at the
+next prose sentence); only that instance's hosts and note changed; lint and A0
+checks pass, and the new host resolves in both archived A3 texts.
+
+Added `study_pipeline resume` / `make artifacts-resume`: it verifies the lock,
+re-extracts A3 from archived A1 and requires equality, checks every A4 chunk
+against its index and that chunks rebuild A3, then resolves and packages; it
+never builds. The archive passed (6,313 A1 pages per arm; 24 specimen-arms; 238
+chunks). Future runs also write `generation-manifest.json` after A4 so resumes
+compare against generation-time hashes (this run predates it; its hashes are
+recorded at resume).
+
 ## 2026-09-23 — A5 amendment commit recorded
 
 Amendment A5 is commit `e36209b4e6a04fe8fb22b67c3c12a3170e977051`, recorded in DESIGN frontmatter as
