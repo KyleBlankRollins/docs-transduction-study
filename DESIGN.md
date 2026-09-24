@@ -8,14 +8,14 @@ status: "design"
 design_version: "0.9"
 registered: "2026-08-02"
 registration_commit: "75667a9a494b076e79e9f5aba5bd0dc932d890a1"
-instrument_locked: ""
-instrument_lock_commit: ""
+instrument_locked: "2026-09-23"
+instrument_lock_commit: "ace31884f457b5e63b061e3584678552276b11a7"
 repository: "docs-transduction-study — separate repository, not this one"
 ---
 
 ## Status
 
-**Design — registered 2026-08-02 (L1, commit `75667a9a`); instrument not yet locked, not yet run.** Version 0.9 includes amendments A1–A4. **A3 changes the study to AI-assisted execution and withdraws the model-free Phase 1 claim.** The original methodological text below is retained to make the departure auditable; where it conflicts, [AI-assisted execution](#ai-assisted-execution-amendment-a3) governs. A4 corrects the A3 extraction selector to `.sl-markdown-content`. See the [Amendment log](#amendment-log).
+**Design — registered 2026-08-02 (L1, commit `75667a9a`); instrument locked 2026-09-23 (L2, commit `ace31884`); not yet run.** Version 0.9 includes amendments A1–A4. **A3 changes the study to AI-assisted execution and withdraws the model-free Phase 1 claim.** The original methodological text below is retained to make the departure auditable; where it conflicts, [AI-assisted execution](#ai-assisted-execution-amendment-a3) governs. A4 corrects the A3 extraction selector to `.sl-markdown-content`. See the [Amendment log](#amendment-log).
 
 Registration happens in **two locks**, because two different things need protecting and they are ready at different times:
 

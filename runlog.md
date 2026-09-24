@@ -2,6 +2,24 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-23 — L2 taken: instrument locked
+
+**L2 commit:** `ace31884f457b5e63b061e3584678552276b11a7` (2026-09-23), "L2: instrument lock",
+on branch `l2-readiness`. Decision-taker: the maintainer (Kyle Rollins), who
+approved L2 after the smoke test and protocol freeze. The commit changes only
+`coding/seed` (raw seed, per the maintainer's decision),
+`instruments/instances.csv`, `instruments/probes.csv`, and
+`instruments/gate_exclusions.csv`; `corpus/specimens.csv` and
+`pipeline/demark/templates.json` are unchanged and present in its tree.
+Lock-set sha256 values match `L2_APPROVAL_PACKAGE.md`. Instrument: 242 instances,
+229 probes, 13 dated exclusions, 3 version-change probes. The frozen locator spec
+(`locators.py`) and scoring/prompt code (`coding_ai.py`) are in the lock commit's
+tree and are checked by `verify-lock`.
+
+From here, any instrument change is an amendment. No study artifact has been
+generated; `make artifacts` requires a separate go-ahead and a passphrase file
+outside the repository.
+
 ## 2026-09-23 — Pre-lock check found a non-idempotent recompile (fixed before L2)
 
 Recompiling the instrument appended a second "reviewed" note to R-row notes,
