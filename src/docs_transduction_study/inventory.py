@@ -309,59 +309,65 @@ def surface_o_candidates(
             continue
 
         explicit_text = explicit_file.read_text(encoding="utf-8")
-        body = _strip_frontmatter(explicit_text)
-
-        seq: dict[str, int] = {}
-
-        def next_seq(rt: str, _seq: dict[str, int] = seq) -> int:
-            _seq[rt] = _seq.get(rt, 0) + 1
-            return _seq[rt]
+        body = re.sub(
+            r"\A---\n.*?\n---\n|^import[^\n]*\n",
+            lambda match: "".join(
+                "\n" if char == "\n" else " " for char in match.group()
+            ),
+            explicit_text,
+            flags=re.DOTALL | re.MULTILINE,
+        )
 
         # O1: Referring expressions
-        o1_matches: set[str] = set()
+        o1_matches: dict[tuple[int, int], str] = {}
         for m in _O1_PATTERN.finditer(body):
             expr = m.group(0).strip()
             if 2 <= len(expr.split()) <= 6:
-                o1_matches.add(expr)
-        for expr in sorted(o1_matches):
+                o1_matches[(m.start(), m.end())] = expr
+        for (start, end), expr in sorted(o1_matches.items()):
             instances.append(
                 Instance(
-                    instance_id=_instance_id(sid, "O1", next_seq("O1")),
+                    instance_id=f"{sid}-O1-at-{start:06d}",
                     specimen_id=sid,
                     relation_type="O1",
                     demark_rule="",
-                    notes=f"Referring expression candidate: '{expr}'",
+                    notes=f"Referring expression candidate: '{expr}'; A0 chars [{start},{end})",
                 )
             )
 
         # O2: Deictic expressions
-        o2_matches: dict[str, str] = {}  # expr -> source hint
+        o2_matches: dict[tuple[int, int], tuple[str, str]] = {}
         for m in _O2_DEICTIC_NOUN.finditer(body):
-            o2_matches[m.group(0).strip()] = "deictic noun"
+            o2_matches[(m.start(), m.end())] = (m.group(0).strip(), "deictic noun")
         for m in _O2_LOCATIVE.finditer(body):
-            o2_matches[m.group(0).strip()] = "locative"
+            o2_matches[(m.start(), m.end())] = (m.group(0).strip(), "locative")
         for m in _O2_REFERENTIAL.finditer(body):
-            o2_matches[m.group(0).strip()] = "referential"
+            o2_matches[(m.start(), m.end())] = (m.group(0).strip(), "referential")
         # Rerouted from O1: "this X" — demonstrative/cataphoric → O2
         for m in _O2_THIS_PHRASE.finditer(body):
-            o2_matches[m.group(0).strip()] = "rerouted from O1 (this/demonstrative)"
+            o2_matches[(m.start(), m.end())] = (
+                m.group(0).strip(),
+                "rerouted from O1 (this/demonstrative)",
+            )
         # Rerouted from O1: "the following X" — cataphoric → O2
         for m in _O2_FOLLOWING.finditer(body):
-            o2_matches[m.group(0).strip()] = "rerouted from O1 (cataphoric)"
-        for expr in sorted(o2_matches.keys()):
-            source = o2_matches[expr]
+            o2_matches[(m.start(), m.end())] = (
+                m.group(0).strip(),
+                "rerouted from O1 (cataphoric)",
+            )
+        for (start, end), (expr, source) in sorted(o2_matches.items()):
             instances.append(
                 Instance(
-                    instance_id=_instance_id(sid, "O2", next_seq("O2")),
+                    instance_id=f"{sid}-O2-at-{start:06d}",
                     specimen_id=sid,
                     relation_type="O2",
                     demark_rule="",
-                    notes=f"Deictic expression candidate ({source}): '{expr}'",
+                    notes=f"Deictic expression candidate ({source}): '{expr}'; A0 chars [{start},{end})",
                 )
             )
 
-        o1 = seq.get("O1", 0)
-        o2 = seq.get("O2", 0)
+        o1 = len(o1_matches)
+        o2 = len(o2_matches)
         print(f"  {sid}: O1={o1} O2={o2}")
 
     return instances
@@ -392,6 +398,14 @@ def write_instances_csv(instances: list[Instance], output: Path) -> None:
                 existing[inst.instance_id] = inst
 
     merged: dict[str, Instance] = dict(existing)
+    if any("-at-" in instance.instance_id for instance in instances) and any(
+        instance.relation_type in {"O1", "O2"} and "-at-" not in instance.instance_id
+        for instance in existing.values()
+    ):
+        raise ValueError(
+            "Cannot merge occurrence candidates into the legacy string-keyed inventory; "
+            "write a separate review file and migrate classified occurrences explicitly"
+        )
     for inst in instances:
         if inst.instance_id not in merged:
             merged[inst.instance_id] = inst

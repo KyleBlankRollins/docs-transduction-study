@@ -1,9 +1,7 @@
-"""A3 — Named, versioned extractor in plain-text mode, article element only.
+"""A3 — Plain-text extraction from the amended content-container selector.
 
-Extracts text from the <article> element using BeautifulSoup (version recorded).
-Output is plain text with no structure preserved. Raises ValueError if no
-<article> element is found — the registered target is article-only, with no
-fallback to <main> or <body> (which would introduce theme chrome).
+Extracts exactly one .sl-markdown-content element using BeautifulSoup.
+No fallback to article, main, or body is allowed (amendment A4).
 
 Usage:
     uv run python -m docs_transduction_study.stages.a3_extract [--artifacts DIR] [--out DIR]
@@ -18,32 +16,35 @@ import sys
 from pathlib import Path
 from typing import Any
 
+import bs4
 from bs4 import BeautifulSoup
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 ARTIFACTS_DIR = REPO_ROOT / "artifacts"
+EXTRACTOR_NAME = "BeautifulSoup"
+EXTRACTOR_VERSION = bs4.__version__
+EXTRACTION_TARGET = ".sl-markdown-content"
+OUTPUT_MODE = "plain text (get_text with separator=' ')"
 
 
 def extract_article_text(html_path: Path) -> tuple[str, dict]:
-    """Extract plain text from the <article> element.
-
-    Raises ValueError if no <article> is found — the registered extraction
-    target is article-only with no fallback. Fallback would introduce theme
-    chrome into A3 artifacts.
-    """
+    """Extract the single registered content container, without a fallback."""
     html = html_path.read_text(encoding="utf-8")
     soup = BeautifulSoup(html, "html.parser")
-    article = soup.find("article")
-    if article is None:
+    containers = soup.select(EXTRACTION_TARGET)
+    if len(containers) != 1:
         raise ValueError(
-            f"No <article> element in {html_path}. A3 requires article-only extraction."
+            f"Expected exactly one {EXTRACTION_TARGET} element in {html_path}; "
+            f"found {len(containers)}. A3 has no fallback."
         )
-    text = re.sub(r"\s+", " ", article.get_text(separator=" ")).strip()
+    text = re.sub(r"\s+", " ", containers[0].get_text(separator=" ")).strip()
+    if not text:
+        raise ValueError(f"Empty content container in {html_path}")
     return text, {
         "html_path": str(html_path),
         "extractor_name": EXTRACTOR_NAME,
         "extractor_version": EXTRACTOR_VERSION,
-        "extraction_target": "article",
+        "extraction_target": EXTRACTION_TARGET,
         "output_mode": OUTPUT_MODE,
         "char_count": len(text),
     }
@@ -51,6 +52,15 @@ def extract_article_text(html_path: Path) -> tuple[str, dict]:
 
 def run_extraction(artifacts_in: Path, out_dir: Path) -> dict[str, Any]:
     """Run A3 extraction for both arms. Raises on first extraction failure."""
+    page_sets = {
+        arm: {
+            page.relative_to(artifacts_in / arm)
+            for page in (artifacts_in / arm).rglob("*.html")
+        }
+        for arm in ("explicit", "implicit")
+    }
+    if not page_sets["explicit"] or page_sets["explicit"] != page_sets["implicit"]:
+        raise ValueError("A3 requires nonempty, matching page sets in both arms")
     out_dir.mkdir(parents=True, exist_ok=True)
     results: dict[str, Any] = {
         "extractor": {
@@ -64,9 +74,6 @@ def run_extraction(artifacts_in: Path, out_dir: Path) -> dict[str, Any]:
 
     for arm in ("explicit", "implicit"):
         arm_dir = artifacts_in / arm
-        if not arm_dir.exists():
-            print(f"  WARNING: {arm_dir} not found", file=sys.stderr)
-            continue
 
         arm_out = out_dir / arm
         arm_out.mkdir(parents=True, exist_ok=True)
@@ -113,8 +120,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-EXTRACTOR_NAME = "BeautifulSoup"
-EXTRACTOR_VERSION = "4.15.0"
-EXTRACTION_TARGET = "article element only (<article>)"
-OUTPUT_MODE = "plain text (get_text with separator=' ')"

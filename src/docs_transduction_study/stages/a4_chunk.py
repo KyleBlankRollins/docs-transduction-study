@@ -21,15 +21,23 @@ ARTIFACTS_DIR = REPO_ROOT / "artifacts"
 
 def chunk_text(text: str, chunk_size: int) -> list[str]:
     """Split text into fixed-size, no-overlap character chunks."""
-    return [
-        text[i : i + chunk_size]
-        for i in range(0, len(text), chunk_size)
-        if text[i : i + chunk_size].strip()
-    ]
+    if chunk_size <= 0:
+        raise ValueError("Chunk size must be positive")
+    return [text[i : i + chunk_size] for i in range(0, len(text), chunk_size)]
 
 
 def run_chunking(text_dir: Path, out_dir: Path, chunk_size: int) -> dict[str, Any]:
     """Run A4 chunking for both arms."""
+    if chunk_size <= 0:
+        raise ValueError("Chunk size must be positive")
+    page_sets = {
+        arm: {
+            page.relative_to(text_dir / arm) for page in (text_dir / arm).rglob("*.txt")
+        }
+        for arm in ("explicit", "implicit")
+    }
+    if not page_sets["explicit"] or page_sets["explicit"] != page_sets["implicit"]:
+        raise ValueError("A4 requires nonempty, matching page sets in both arms")
     out_dir.mkdir(parents=True, exist_ok=True)
     results: dict[str, Any] = {
         "parameters": {
@@ -48,9 +56,6 @@ def run_chunking(text_dir: Path, out_dir: Path, chunk_size: int) -> dict[str, An
 
     for arm in ("explicit", "implicit"):
         arm_dir = text_dir / arm
-        if not arm_dir.exists():
-            print(f"  WARNING: {arm_dir} not found", file=sys.stderr)
-            continue
 
         pages = []
         for txt_path in sorted(arm_dir.rglob("*.txt")):
@@ -70,27 +75,24 @@ def run_chunking(text_dir: Path, out_dir: Path, chunk_size: int) -> dict[str, An
 
         for page in pages:
             text = page["text"]
-            chunk_size_local = chunk_size
-            i = 0
-            while i < len(text):
-                chunk_text_val = text[i : i + chunk_size_local]
-                if chunk_text_val.strip():
-                    base = Path(page["relative_path"]).with_suffix("")
-                    chunk_name = f"{base}-chunk-{total_chunks:04d}.txt"
-                    chunk_path = arm_out / chunk_name
-                    chunk_path.parent.mkdir(parents=True, exist_ok=True)
-                    chunk_path.write_text(chunk_text_val, encoding="utf-8")
-                    chunk_index.append(
-                        {
-                            "chunk_path": str(chunk_path),
-                            "page": page["relative_path"],
-                            "chunk_index": total_chunks,
-                            "char_count": len(chunk_text_val),
-                            "chunk_start": i,
-                        }
-                    )
-                    total_chunks += 1
-                i += chunk_size_local
+            if not text.strip():
+                raise ValueError(f"Empty A3 page: {page['relative_path']}")
+            for page_index, chunk_text_val in enumerate(chunk_text(text, chunk_size)):
+                base = Path(page["relative_path"]).with_suffix("")
+                chunk_name = f"{base}-chunk-{total_chunks:04d}.txt"
+                chunk_path = arm_out / chunk_name
+                chunk_path.parent.mkdir(parents=True, exist_ok=True)
+                chunk_path.write_text(chunk_text_val, encoding="utf-8")
+                chunk_index.append(
+                    {
+                        "chunk_path": str(chunk_path),
+                        "page": page["relative_path"],
+                        "chunk_index": total_chunks,
+                        "char_count": len(chunk_text_val),
+                        "chunk_start": page_index * chunk_size,
+                    }
+                )
+                total_chunks += 1
 
         (arm_out / "_chunk_index.json").write_text(
             json.dumps(chunk_index, indent=2), encoding="utf-8"

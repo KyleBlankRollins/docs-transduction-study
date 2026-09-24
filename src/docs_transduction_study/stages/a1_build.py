@@ -12,9 +12,13 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
+import json
+import re
 import shutil
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 from typing import Any
 
@@ -69,12 +73,14 @@ def _apply_overlay(tree_dir: Path) -> None:
     """Apply the ADR-0005 ad-pinning overlay to a materialised tree."""
     target = tree_dir / "src" / "components" / "RightSidebar" / "RandomizedAd.astro"
     overlay_file = OVERLAY_SRC / "components" / "RightSidebar" / "RandomizedAd.astro"
-    if overlay_file.exists():
-        target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(overlay_file, target)
-        print(f"  overlay applied: {target}", file=sys.stderr)
-    else:
-        print(f"  WARNING: overlay file not found at {overlay_file}", file=sys.stderr)
+    if not overlay_file.is_file():
+        raise FileNotFoundError(f"ADR-0005 overlay is missing: {overlay_file}")
+    if not target.is_file():
+        raise FileNotFoundError(
+            f"Overlay target is missing from the pinned tree: {target}"
+        )
+    shutil.copy2(overlay_file, target)
+    print(f"  overlay applied: {target}", file=sys.stderr)
 
 
 def _materialise_tree(
@@ -89,13 +95,13 @@ def _materialise_tree(
         VENDOR_DIR,
         tree_dir,
         symlinks=True,
-        ignore=shutil.ignore_patterns(".git", "node_modules"),
+        ignore=shutil.ignore_patterns(".git", "node_modules", "dist", ".astro"),
         dirs_exist_ok=True,
     )
     _apply_overlay(tree_dir)
     print(f"  installing deps in {tree_dir.name}...", file=sys.stderr)
     result = _run(
-        ["pnpm", "install", "--prefer-offline"],
+        ["pnpm", "install", "--frozen-lockfile", "--prefer-offline"],
         cwd=tree_dir,
         log=BUILD_DIR / f"logs/pnpm-install-{arm}.log",
     )
@@ -117,9 +123,12 @@ def _override_specimens(tree_dir: Path, arm: str) -> None:
             source_path = row["source_path"]
             src_file = source_dir / source_path
             dst_file = dst_base / source_path
-            if not src_file.exists():
-                print(f"  WARNING: {src_file} not found, skipping", file=sys.stderr)
-                continue
+            if not src_file.is_file():
+                raise FileNotFoundError(f"Specimen source is missing: {src_file}")
+            if not dst_file.is_file():
+                raise FileNotFoundError(
+                    f"Specimen route is missing from the pinned tree: {dst_file}"
+                )
             dst_file.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(src_file, dst_file)
 
@@ -142,6 +151,7 @@ def _override_pilot(tree_dir: Path, arm: str, pilot_src: str) -> None:
             shutil.copy2(implicit_src, dst_file)
             print(f"  pilot (implicit): {implicit_src}", file=sys.stderr)
             return
+        raise FileNotFoundError(f"De-marked implicit pilot is missing: {implicit_src}")
 
     # Explicit arm (or fallback if no implicit copy found)
     candidates = [
@@ -172,9 +182,26 @@ def _build(tree_dir: Path, arm: str) -> int:
     return result.returncode
 
 
-def _copy_artifacts(arm: str, tree_dir: Path, out_dir: Path) -> int:
+def _copy_artifacts(
+    arm: str, tree_dir: Path, out_dir: Path, *, pilot_page: str | None = None
+) -> int:
     """Copy built HTML from tree_dir/dist/ into artifacts/{arm}/."""
     dist = tree_dir / "dist"
+    if pilot_page is not None:
+        page_path = Path(pilot_page)
+        if page_path.is_absolute() or ".." in page_path.parts:
+            raise ValueError("Pilot page must be relative to the English docs root")
+        relative_html = Path("en") / page_path.with_suffix("") / "index.html"
+        source = dist / relative_html
+        if not source.is_file():
+            raise FileNotFoundError(f"Expected compiled pilot HTML not found: {source}")
+        target = out_dir / arm
+        shutil.rmtree(target, ignore_errors=True)
+        destination = target / relative_html
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, destination)
+        print(f"  Copied pilot HTML only to {destination}", file=sys.stderr)
+        return 1
     if not dist.exists():
         print(f"  No dist/ found for {arm}", file=sys.stderr)
         return 0
@@ -220,6 +247,8 @@ def _b3_b4_extraction_check(out_dir: Path, arm: str) -> None:
     print(f"\n--- B3/B4 extraction check ({arm}) ---", file=sys.stderr)
     from bs4 import BeautifulSoup
 
+    from docs_transduction_study.stages.a3_extract import extract_article_text
+
     tree = out_dir / f"chrome-check-{arm}"
     shutil.rmtree(tree, ignore_errors=True)
     _materialise_tree(tree, arm)
@@ -230,8 +259,7 @@ def _b3_b4_extraction_check(out_dir: Path, arm: str) -> None:
     for page in pages:
         html = page.read_text(encoding="utf-8")
         soup = BeautifulSoup(html, "html.parser")
-        article = soup.find("article") or soup.find("main") or soup.find("body")
-        article_text = article.get_text(separator=" ") if article else ""
+        article_text, _ = extract_article_text(page)
         body = soup.find("body")
         body_text = body.get_text(separator=" ") if body else ""
         total_chars += len(body_text)
@@ -250,17 +278,149 @@ def _b3_b4_extraction_check(out_dir: Path, arm: str) -> None:
     print(f"  Pages sampled: {len(pages)}", file=sys.stderr)
 
 
+def _html_checksums(dist: Path) -> dict[str, str]:
+    checksums = {
+        path.relative_to(dist).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
+        for path in sorted(dist.rglob("*.html"))
+    }
+    if not checksums:
+        raise ValueError("Determinism requires nonempty compiled HTML output")
+    return checksums
+
+
+def _pilot_chrome_metrics(
+    html: str, text: str, chunk_size: int = 1500
+) -> dict[str, Any]:
+    from bs4 import BeautifulSoup
+
+    content = BeautifulSoup(html, "html.parser").select_one(".sl-markdown-content")
+    if content is None:
+        raise ValueError("Pilot chrome assessment requires the extraction container")
+    labels = [
+        re.sub(r"\s+", " ", element.get_text(separator=" ")).strip()
+        for element in content.select(
+            ".sl-anchor-link .sr-only, .expressive-code figcaption.header .sr-only"
+        )
+    ]
+    spans: list[tuple[int, int]] = []
+    for label in set(labels):
+        if not label:
+            continue
+        matches = list(re.finditer(re.escape(label), text))
+        if len(matches) != labels.count(label):
+            raise ValueError(
+                "Generated chrome text is ambiguous in extracted pilot text"
+            )
+        spans.extend((match.start(), match.end()) for match in matches)
+    chunk_fractions = [
+        sum(
+            max(0, min(end, offset + chunk_size) - max(start, offset))
+            for start, end in spans
+        )
+        / len(text[offset : offset + chunk_size])
+        for offset in range(0, len(text), chunk_size)
+    ]
+    return {
+        "identified_labels": len(labels),
+        "identified_chrome_chars": sum(end - start for start, end in spans),
+        "identified_chrome_fraction": sum(end - start for start, end in spans)
+        / len(text),
+        "chunk_fractions": chunk_fractions,
+        "scope": "Generated heading-anchor and code-window labels; tab labels retained as relational evidence",
+    }
+
+
+def _verify_pilot_page(tree: Path, pilot_page: str, out_dir: Path) -> dict[str, Any]:
+    from bs4 import BeautifulSoup
+
+    from docs_transduction_study import anchors
+    from docs_transduction_study.stages.a2_snapshot import run_snapshot
+    from docs_transduction_study.stages.a3_extract import extract_article_text
+    from docs_transduction_study.stages.a4_chunk import chunk_text
+
+    route = f"/en/{Path(pilot_page).with_suffix('').as_posix()}/"
+    page = tree / "dist" / route.lstrip("/") / "index.html"
+    text, metadata = extract_article_text(page)
+    soup = BeautifulSoup(page.read_text(encoding="utf-8"), "html.parser")
+    content = soup.select_one(".sl-markdown-content")
+    assert content is not None
+    body = soup.find("body")
+    assert body is not None
+    body_text = re.sub(r"\s+", " ", body.get_text(separator=" ")).strip()
+    chunks = chunk_text(text, 1500)
+    if "".join(chunks) != text:
+        raise ValueError("Pilot chunks do not reconstruct extracted text")
+    chunk_index = [
+        {
+            "chunk_start": offset,
+            "char_count": len(text[offset : offset + 1500]),
+            "chunk_index": offset // 1500,
+        }
+        for offset in range(0, len(text), 1500)
+    ]
+    resolved = []
+    for paragraph in content.find_all("p")[:3]:
+        passage = re.sub(r"\s+", " ", paragraph.get_text(separator=" ")).strip()
+        offset = anchors.resolve_anchor_offset(passage, text)
+        if offset is None:
+            raise ValueError("Pilot paragraph anchor did not resolve")
+        chunk = anchors.find_chunk_for_offset(offset, chunk_index)
+        if chunk is None:
+            raise ValueError("Pilot paragraph has no assigned chunk")
+        resolved.append(
+            {
+                "offset": offset,
+                "chunk_index": chunk["chunk_index"],
+                "spans_chunks": anchors.compute_spans_chunks(
+                    passage, text, chunk_index
+                ),
+            }
+        )
+    snapshots = run_snapshot(tree / "dist", route, out_dir=out_dir)
+    if not snapshots.get("stable"):
+        raise ValueError(f"Pilot A2 snapshots unstable or unavailable: {snapshots}")
+    return {
+        "extraction": metadata,
+        "body_chars": len(body_text),
+        "content_chars": len(text),
+        "outside_content_chars": len(body_text) - len(text),
+        "structural_chrome_inside": len(content.select("nav,header,footer")),
+        "generated_chrome": _pilot_chrome_metrics(
+            page.read_text(encoding="utf-8"), text
+        ),
+        "tab_panels_html": len(content.select('[role="tabpanel"]')),
+        "hidden_tab_panels_html": len(content.select('[role="tabpanel"][hidden]')),
+        "chunks": len(chunks),
+        "chunk_reconstruction": True,
+        "paragraph_anchor_checks": resolved,
+        "a2": snapshots,
+    }
+
+
 def run_builds(
     out_dir: Path,
     *,
     pilot_page: str | None = None,
     skip_determinism: bool = False,
     skip_chrome: bool = False,
+    verify_pilot: bool = False,
 ) -> dict[str, Any]:
     """Run the A1 stage: materialise, overlay, build both arms.
 
     Returns a dict with results for runlog recording.
     """
+    from docs_transduction_study.seed import _instrument_locked
+
+    if verify_pilot and pilot_page is None:
+        raise ValueError("Pilot verification requires a pilot page")
+    if pilot_page is None and not _instrument_locked(REPO_ROOT / "DESIGN.md"):
+        raise ValueError("Study artifact generation is forbidden before L2")
+    if pilot_page is not None:
+        with SPECIMENS_CSV.open(encoding="utf-8", newline="") as handle:
+            if any(row["source_path"] == pilot_page for row in csv.DictReader(handle)):
+                raise ValueError("Pilot page must not be a study specimen")
+        if not skip_determinism or not skip_chrome:
+            raise ValueError("Pilot builds require isolated pilot-only checks")
     out_dir.mkdir(parents=True, exist_ok=True)
     versions = _record_version_info()
     print(
@@ -273,15 +433,57 @@ def run_builds(
         "build_exit_codes": {},
         "pages_copied": {},
     }
+    explicit_checksums: dict[str, str] = {}
 
     for arm in ("explicit", "implicit"):
+        if pilot_page is not None:
+            with tempfile.TemporaryDirectory(prefix=f"study-pilot-{arm}-") as temporary:
+                tree = Path(temporary) / "tree"
+                _materialise_tree(tree, arm, pilot_page=pilot_page)
+                rc = _build(tree, arm)
+                results["build_exit_codes"][arm] = rc
+                if rc != 0:
+                    raise RuntimeError(f"Pilot {arm} build failed with exit code {rc}")
+                results["pages_copied"][arm] = _copy_artifacts(
+                    arm, tree, out_dir / "artifacts", pilot_page=pilot_page
+                )
+                if verify_pilot:
+                    results.setdefault("pilot_checks", {})[arm] = _verify_pilot_page(
+                        tree, pilot_page, out_dir / "a2" / arm
+                    )
+                    if arm == "explicit":
+                        explicit_checksums = _html_checksums(tree / "dist")
+            continue
         tree = out_dir / "trees" / arm
         _materialise_tree(tree, arm, pilot_page=pilot_page)
         rc = _build(tree, arm)
         results["build_exit_codes"][arm] = rc
         if rc == 0:
-            n = _copy_artifacts(arm, tree, out_dir / "artifacts")
+            n = _copy_artifacts(arm, tree, out_dir / "artifacts", pilot_page=pilot_page)
             results["pages_copied"][arm] = n
+
+    if verify_pilot:
+        with tempfile.TemporaryDirectory(prefix="study-pilot-repeat-") as temporary:
+            tree = Path(temporary) / "tree"
+            _materialise_tree(tree, "explicit", pilot_page=pilot_page)
+            if _build(tree, "explicit-repeat") != 0:
+                raise RuntimeError("Repeated explicit pilot build failed")
+            repeated = _html_checksums(tree / "dist")
+        differences = sorted(
+            path
+            for path in explicit_checksums.keys() | repeated.keys()
+            if explicit_checksums.get(path) != repeated.get(path)
+        )
+        results["determinism_pages"] = len(explicit_checksums)
+        results["determinism_differing"] = differences
+        results["determinism_pass"] = not differences
+        (out_dir / "verification.json").write_text(
+            json.dumps(results, indent=2), encoding="utf-8"
+        )
+        if differences:
+            raise ValueError(
+                f"Pilot build nondeterminism: {len(differences)} differing HTML files"
+            )
 
     # Determinism check (B2)
     if not skip_determinism:
@@ -325,13 +527,17 @@ def main() -> None:
         action="store_true",
         help="Process only the pilot page; skip B2/B3/B4 and specimen materialisation",
     )
+    parser.add_argument("--verify-pilot", action="store_true")
     args = parser.parse_args()
+    if args.pilot_only and not args.pilot:
+        parser.error("--pilot-only requires --pilot")
 
     results = run_builds(
         args.out,
         pilot_page=args.pilot,
         skip_determinism=args.skip_determinism or args.pilot_only,
         skip_chrome=args.skip_chrome or args.pilot_only,
+        verify_pilot=args.verify_pilot,
     )
 
     rc_explicit = results["build_exit_codes"]["explicit"]

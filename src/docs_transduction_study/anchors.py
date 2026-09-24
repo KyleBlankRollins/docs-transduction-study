@@ -41,10 +41,33 @@ def resolve_anchor_offset(anchor: str, text: str) -> int | None:
     """Return char offset of anchor in text, or None if not found.
     Normalizes both inputs per the committed spec. No fuzzy fallback.
     """
-    norm_a = _normalize(anchor)
-    norm_t = _normalize(text)
-    idx = norm_t.find(norm_a)
-    return idx if idx >= 0 else None
+    span = resolve_anchor_span(anchor, text)
+    return span[0] if span else None
+
+
+def resolve_anchor_span(anchor: str, text: str) -> tuple[int, int] | None:
+    """Resolve normalized text to original, exclusive-end character coordinates."""
+    target = _normalize(anchor)
+    if not target:
+        return None
+    normalized: list[str] = []
+    positions: list[tuple[int, int]] = []
+    for match in re.finditer(r"\S+|\s+", text):
+        token = match.group()
+        if token.isspace():
+            if normalized:
+                normalized.append(" ")
+                positions.append((match.start(), match.end()))
+            continue
+        normalized.append(_normalize(token))
+        for index, char in enumerate(token):
+            positions.extend(
+                [(match.start() + index, match.start() + index + 1)] * len(char.lower())
+            )
+    index = "".join(normalized).find(target)
+    if index < 0:
+        return None
+    return positions[index][0], positions[index + len(target) - 1][1]
 
 
 def find_chunk_for_offset(offset: int, chunks: list[dict]) -> dict | None:
@@ -61,13 +84,11 @@ def compute_spans_chunks(hp: str, a3_text: str, chunks: list[dict]) -> bool:
     """Check if host passage crosses a chunk boundary in this arm.
     Uses inclusive-exclusive range: start <= offset < start + char_count.
     """
-    norm_hp = _normalize(hp)
-    norm_t = _normalize(a3_text)
-    start = norm_t.find(norm_hp)
-    if start < 0:
+    span = resolve_anchor_span(hp, a3_text)
+    if span is None:
         return False
-    # Last character position (inclusive) of the host passage
-    last_char = start + len(norm_hp) - 1
+    start, end = span
+    last_char = end - 1
     sc = find_chunk_for_offset(start, chunks)
     ec = find_chunk_for_offset(last_char, chunks)
     if sc is None or ec is None:
@@ -80,7 +101,9 @@ def assign_chunks(
 ) -> dict[str, Any]:
     """Assign A4 chunks to all instances and compute spans_chunks per arm."""
     if out_path is None:
-        out_path = instances_csv
+        out_path = a4_dir.parent / "anchor_assignments.csv"
+    if out_path.resolve() == instances_csv.resolve():
+        raise ValueError("Chunk assignment cannot overwrite the source instrument")
 
     with instances_csv.open("r", encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
@@ -90,21 +113,29 @@ def assign_chunks(
         for row in csv.DictReader(f):
             spec_paths[row["specimen_id"]] = row["source_path"]
 
+    if not rows:
+        raise ValueError("Instance inventory is empty")
     fieldnames = list(rows[0].keys())
-    for fn in ("chunk_explicit", "chunk_implicit", "spans_chunks"):
+    for fn in (
+        "chunk_explicit",
+        "chunk_implicit",
+        "spans_chunks_explicit",
+        "spans_chunks_implicit",
+    ):
         if fn not in fieldnames:
             fieldnames.append(fn)
 
     total = 0
     resolved = 0
+    failures: list[str] = []
 
     for row in rows:
         sid = row["specimen_id"]
         source_path = spec_paths.get(sid)
         if not source_path:
+            failures.append(f"{row['instance_id']}: unknown specimen")
             continue
         total += 1
-        spans_any = False
 
         for arm, anchor_key, host_key in [
             ("explicit", "anchor_explicit", "host_passage_explicit"),
@@ -112,49 +143,57 @@ def assign_chunks(
         ]:
             anchor = row.get(anchor_key, "").strip()
             host = row.get(host_key, "").strip()
-            if not anchor:
+            row[f"chunk_{arm}"] = ""
+            row[f"spans_chunks_{arm}"] = ""
+            if not anchor or not host:
+                failures.append(f"{row['instance_id']}/{arm}: missing anchor or host")
                 continue
 
             # Find A3 text for this specimen
             a3_dir = a4_dir.parent / "a3" / arm
-            a3_txt = a3_dir / (
-                source_path.replace(".mdx", ".txt").replace(".md", ".txt")
-            )
+            page_key = Path("en") / Path(source_path).with_suffix("") / "index.txt"
+            a3_txt = a3_dir / page_key
             if not a3_txt.exists():
-                a3_txt = a3_dir / source_path.replace(".mdx", ".md")
-            if not a3_txt.exists():
+                failures.append(f"{row['instance_id']}/{arm}: missing A3 page")
                 continue
 
             a3_text = a3_txt.read_text(encoding="utf-8")
-            offset = resolve_anchor_offset(anchor, a3_text)
-            if offset is None:
+            host_span = resolve_anchor_span(host, a3_text)
+            if host_span is None or resolve_anchor_offset(anchor, host) is None:
+                failures.append(
+                    f"{row['instance_id']}/{arm}: anchor or host unresolved"
+                )
                 continue
 
             # Load and filter chunk index to this page only (fix Finding 5)
             a4_arm_dir = a4_dir / arm
             cidx_path = a4_arm_dir / "_chunk_index.json"
             if not cidx_path.exists():
+                failures.append(f"{row['instance_id']}/{arm}: missing chunk index")
                 continue
 
             all_chunks = json.loads(cidx_path.read_text(encoding="utf-8"))
-            page_key = Path(a3_txt.name)
-            page_chunks = [
-                c for c in all_chunks if Path(c.get("page", "")).name == page_key.name
-            ]
+            page_chunks = [c for c in all_chunks if Path(c.get("page", "")) == page_key]
             if not page_chunks:
+                failures.append(f"{row['instance_id']}/{arm}: missing page chunks")
                 continue
 
-            chunk = find_chunk_for_offset(offset, page_chunks)
-            if chunk:
+            chunk = find_chunk_for_offset(host_span[0], page_chunks)
+            end_chunk = find_chunk_for_offset(host_span[1] - 1, page_chunks)
+            if chunk and end_chunk:
                 row[f"chunk_{arm}"] = chunk["chunk_path"]
                 resolved += 1
+                row[f"spans_chunks_{arm}"] = str(
+                    chunk["chunk_index"] != end_chunk["chunk_index"]
+                )
+            else:
+                failures.append(
+                    f"{row['instance_id']}/{arm}: host outside indexed chunks"
+                )
 
-                # spans_chunks: check host passage boundary crossing
-                if host and compute_spans_chunks(host, a3_text, page_chunks):
-                    spans_any = True
-
-        row["spans_chunks"] = "True" if spans_any else "False"
-
+    if failures:
+        raise ValueError("Chunk assignment failed: " + "; ".join(failures))
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     with out_path.open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
@@ -171,7 +210,8 @@ def main() -> None:
     args = parser.parse_args()
     results = assign_chunks(args.instances, args.a4_dir, args.output)
     print(
-        f"Resolved anchors: {results['resolved']}/{results['total']}", file=sys.stderr
+        f"Resolved anchors: {results['resolved']}/{2 * results['total']}",
+        file=sys.stderr,
     )
     if results["resolved"] == 0 and results["total"] > 0:
         print("WARNING: No anchors resolved.", file=sys.stderr)
