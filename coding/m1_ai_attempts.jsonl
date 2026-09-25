@@ -4586,3 +4586,738 @@
 {"at": "2026-09-24T23:25:27.192217+00:00", "event": "result", "tag": "AI-25bf43ad5e5d74f0b050-p1", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
 {"at": "2026-09-24T23:25:27.572950+00:00", "event": "invoke", "tag": "AI-9e790e68d16d131ee345-p1", "attempt": 2}
 {"at": "2026-09-24T23:25:40.346541+00:00", "event": "result", "tag": "AI-9e790e68d16d131ee345-p1", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:48:23.865146+00:00", "event": "preflight", "checked_at": "2026-09-25T02:48:21.133059+00:00", "cli_version": "1.18.32", "effective_config_sha256": "c820df1469f55b63d6f75606f1dadcba7d832472031dc7fc8a411c47c4364eb7", "skills": ["customize-opencode"], "disabled_tools": ["bash", "edit", "glob", "grep", "invalid", "question", "read", "skill", "task", "todowrite", "webfetch", "websearch", "write"], "agent_prompt_matches": true, "session_history": "empty"}
+{"at": "2026-09-25T02:48:24.132039+00:00", "event": "invoke", "tag": "AI-bbb10bba99e1fc1def11-p2", "attempt": 1}
+{"at": "2026-09-25T02:48:28.237650+00:00", "event": "result", "tag": "AI-bbb10bba99e1fc1def11-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:48:28.347013+00:00", "event": "invoke", "tag": "AI-d5b9933b28612031f728-p2", "attempt": 1}
+{"at": "2026-09-25T02:48:33.175877+00:00", "event": "result", "tag": "AI-d5b9933b28612031f728-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:48:33.284815+00:00", "event": "invoke", "tag": "AI-b21931f4bed4115001f6-p2", "attempt": 1}
+{"at": "2026-09-25T02:48:41.973106+00:00", "event": "result", "tag": "AI-b21931f4bed4115001f6-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:48:42.079522+00:00", "event": "invoke", "tag": "AI-f80d112236f53e80a906-p2", "attempt": 1}
+{"at": "2026-09-25T02:48:54.143644+00:00", "event": "result", "tag": "AI-f80d112236f53e80a906-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:48:54.253209+00:00", "event": "invoke", "tag": "AI-bc971e21af0dcced0525-p2", "attempt": 1}
+{"at": "2026-09-25T02:48:59.218736+00:00", "event": "result", "tag": "AI-bc971e21af0dcced0525-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:48:59.319681+00:00", "event": "invoke", "tag": "AI-92e84986e03129f53777-p2", "attempt": 1}
+{"at": "2026-09-25T02:49:05.137762+00:00", "event": "result", "tag": "AI-92e84986e03129f53777-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:49:05.247263+00:00", "event": "invoke", "tag": "AI-7a139ab70d7816531652-p2", "attempt": 1}
+{"at": "2026-09-25T02:49:08.934746+00:00", "event": "result", "tag": "AI-7a139ab70d7816531652-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:49:09.038892+00:00", "event": "invoke", "tag": "AI-fbeab256ca4b7c16aa65-p2", "attempt": 1}
+{"at": "2026-09-25T02:49:14.029109+00:00", "event": "result", "tag": "AI-fbeab256ca4b7c16aa65-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:49:14.137299+00:00", "event": "invoke", "tag": "AI-fa0a794250b78b4425a8-p2", "attempt": 1}
+{"at": "2026-09-25T02:49:27.782363+00:00", "event": "result", "tag": "AI-fa0a794250b78b4425a8-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:49:28.174117+00:00", "event": "invoke", "tag": "AI-7b127805883547ff1a23-p2", "attempt": 1}
+{"at": "2026-09-25T02:49:33.663669+00:00", "event": "result", "tag": "AI-7b127805883547ff1a23-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:49:33.771358+00:00", "event": "invoke", "tag": "AI-bb23b6f817ec8191c071-p2", "attempt": 1}
+{"at": "2026-09-25T02:49:39.299893+00:00", "event": "result", "tag": "AI-bb23b6f817ec8191c071-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T02:49:39.402367+00:00", "event": "invoke", "tag": "AI-4fbe6766227f4840bfb0-p2", "attempt": 1}
+{"at": "2026-09-25T02:49:48.178025+00:00", "event": "result", "tag": "AI-4fbe6766227f4840bfb0-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:49:48.280992+00:00", "event": "invoke", "tag": "AI-69f497998bb51c4cdb27-p2", "attempt": 1}
+{"at": "2026-09-25T02:49:54.682146+00:00", "event": "result", "tag": "AI-69f497998bb51c4cdb27-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:49:54.786903+00:00", "event": "invoke", "tag": "AI-fd84dcc8591e32d206d0-p2", "attempt": 1}
+{"at": "2026-09-25T02:50:04.272453+00:00", "event": "result", "tag": "AI-fd84dcc8591e32d206d0-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:50:04.379468+00:00", "event": "invoke", "tag": "AI-a0526ab81260f9d89877-p2", "attempt": 1}
+{"at": "2026-09-25T02:50:08.685421+00:00", "event": "result", "tag": "AI-a0526ab81260f9d89877-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:50:08.786530+00:00", "event": "invoke", "tag": "AI-84ae16fbed35faefd5fe-p2", "attempt": 1}
+{"at": "2026-09-25T02:50:13.554728+00:00", "event": "result", "tag": "AI-84ae16fbed35faefd5fe-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:50:13.662980+00:00", "event": "invoke", "tag": "AI-fa729339fe566594c400-p2", "attempt": 1}
+{"at": "2026-09-25T02:50:23.632801+00:00", "event": "result", "tag": "AI-fa729339fe566594c400-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:50:23.741065+00:00", "event": "invoke", "tag": "AI-b7369aaef1b9c7f4b9e0-p2", "attempt": 1}
+{"at": "2026-09-25T02:50:31.395531+00:00", "event": "result", "tag": "AI-b7369aaef1b9c7f4b9e0-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:50:31.503546+00:00", "event": "invoke", "tag": "AI-8698c428c2885db00bde-p2", "attempt": 1}
+{"at": "2026-09-25T02:50:35.727938+00:00", "event": "result", "tag": "AI-8698c428c2885db00bde-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:50:35.837571+00:00", "event": "invoke", "tag": "AI-0e657fb1cb365d4f64a3-p2", "attempt": 1}
+{"at": "2026-09-25T02:50:45.706192+00:00", "event": "result", "tag": "AI-0e657fb1cb365d4f64a3-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:50:45.840817+00:00", "event": "invoke", "tag": "AI-5b9f6ed728b5bc5943f1-p2", "attempt": 1}
+{"at": "2026-09-25T02:50:53.985773+00:00", "event": "result", "tag": "AI-5b9f6ed728b5bc5943f1-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:50:54.097156+00:00", "event": "invoke", "tag": "AI-f791c31e6f35eefbb514-p2", "attempt": 1}
+{"at": "2026-09-25T02:50:59.922227+00:00", "event": "result", "tag": "AI-f791c31e6f35eefbb514-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:51:00.032633+00:00", "event": "invoke", "tag": "AI-7ff8ac2062a33d3d3cff-p2", "attempt": 1}
+{"at": "2026-09-25T02:51:06.693450+00:00", "event": "result", "tag": "AI-7ff8ac2062a33d3d3cff-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:51:06.798446+00:00", "event": "invoke", "tag": "AI-e6b5025937d8a7bf9c65-p2", "attempt": 1}
+{"at": "2026-09-25T02:51:10.830978+00:00", "event": "result", "tag": "AI-e6b5025937d8a7bf9c65-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T02:51:10.936792+00:00", "event": "invoke", "tag": "AI-02517089de8697d7f8c4-p2", "attempt": 1}
+{"at": "2026-09-25T02:51:21.167566+00:00", "event": "result", "tag": "AI-02517089de8697d7f8c4-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:51:21.275293+00:00", "event": "invoke", "tag": "AI-fe075bedf86d0d26c0ee-p2", "attempt": 1}
+{"at": "2026-09-25T02:51:25.580779+00:00", "event": "result", "tag": "AI-fe075bedf86d0d26c0ee-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:51:25.685222+00:00", "event": "invoke", "tag": "AI-7b20d2a0d37e8cf93de9-p2", "attempt": 1}
+{"at": "2026-09-25T02:51:30.395506+00:00", "event": "result", "tag": "AI-7b20d2a0d37e8cf93de9-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T02:51:30.497777+00:00", "event": "invoke", "tag": "AI-d856b6a2b194d73a555d-p2", "attempt": 1}
+{"at": "2026-09-25T02:51:35.161566+00:00", "event": "result", "tag": "AI-d856b6a2b194d73a555d-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T02:51:35.265508+00:00", "event": "invoke", "tag": "AI-e5fee5d9b05058b80fd3-p2", "attempt": 1}
+{"at": "2026-09-25T02:51:39.954818+00:00", "event": "result", "tag": "AI-e5fee5d9b05058b80fd3-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:51:40.065685+00:00", "event": "invoke", "tag": "AI-f19808428e95bb661c3c-p2", "attempt": 1}
+{"at": "2026-09-25T02:51:43.314424+00:00", "event": "result", "tag": "AI-f19808428e95bb661c3c-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:51:43.417139+00:00", "event": "invoke", "tag": "AI-881a46983f675dc70368-p2", "attempt": 1}
+{"at": "2026-09-25T02:52:06.656121+00:00", "event": "result", "tag": "AI-881a46983f675dc70368-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:52:06.759125+00:00", "event": "invoke", "tag": "AI-0b1cbb38552728351513-p2", "attempt": 1}
+{"at": "2026-09-25T02:52:14.752411+00:00", "event": "result", "tag": "AI-0b1cbb38552728351513-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:52:14.861261+00:00", "event": "invoke", "tag": "AI-802a3bc73604d9385da6-p2", "attempt": 1}
+{"at": "2026-09-25T02:52:18.223748+00:00", "event": "result", "tag": "AI-802a3bc73604d9385da6-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:52:18.326272+00:00", "event": "invoke", "tag": "AI-e36dc8aca05ecbd2a708-p2", "attempt": 1}
+{"at": "2026-09-25T02:52:23.396879+00:00", "event": "result", "tag": "AI-e36dc8aca05ecbd2a708-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:52:23.501111+00:00", "event": "invoke", "tag": "AI-47c57b4e3a513ec507c9-p2", "attempt": 1}
+{"at": "2026-09-25T02:52:32.130349+00:00", "event": "result", "tag": "AI-47c57b4e3a513ec507c9-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:52:32.239053+00:00", "event": "invoke", "tag": "AI-302c1c42c6fd949b2e7a-p2", "attempt": 1}
+{"at": "2026-09-25T02:52:37.193358+00:00", "event": "result", "tag": "AI-302c1c42c6fd949b2e7a-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:52:37.297319+00:00", "event": "invoke", "tag": "AI-ce40eb14c76c56524874-p2", "attempt": 1}
+{"at": "2026-09-25T02:52:43.304820+00:00", "event": "result", "tag": "AI-ce40eb14c76c56524874-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:52:43.409273+00:00", "event": "invoke", "tag": "AI-fc709dda5d3cdc9a213c-p2", "attempt": 1}
+{"at": "2026-09-25T02:52:53.031791+00:00", "event": "result", "tag": "AI-fc709dda5d3cdc9a213c-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:52:53.140984+00:00", "event": "invoke", "tag": "AI-a5061b133644b36c9ee3-p2", "attempt": 1}
+{"at": "2026-09-25T02:53:01.327021+00:00", "event": "result", "tag": "AI-a5061b133644b36c9ee3-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:53:01.444552+00:00", "event": "invoke", "tag": "AI-aec2c7d85d1f1b919193-p2", "attempt": 1}
+{"at": "2026-09-25T02:53:06.258699+00:00", "event": "result", "tag": "AI-aec2c7d85d1f1b919193-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:53:06.366856+00:00", "event": "invoke", "tag": "AI-eec78947b9c9f09dee12-p2", "attempt": 1}
+{"at": "2026-09-25T02:53:12.404426+00:00", "event": "result", "tag": "AI-eec78947b9c9f09dee12-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:53:12.512813+00:00", "event": "invoke", "tag": "AI-d3d7a0ba9ea3a0539f9e-p2", "attempt": 1}
+{"at": "2026-09-25T02:53:20.455765+00:00", "event": "result", "tag": "AI-d3d7a0ba9ea3a0539f9e-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:53:20.558767+00:00", "event": "invoke", "tag": "AI-c48b3a874589ff723f6d-p2", "attempt": 1}
+{"at": "2026-09-25T02:53:32.528076+00:00", "event": "result", "tag": "AI-c48b3a874589ff723f6d-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:53:32.635706+00:00", "event": "invoke", "tag": "AI-1bda19cc1911237fec42-p2", "attempt": 1}
+{"at": "2026-09-25T02:53:42.103836+00:00", "event": "result", "tag": "AI-1bda19cc1911237fec42-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:53:42.211215+00:00", "event": "invoke", "tag": "AI-ba7c18a867e4e0b6e807-p2", "attempt": 1}
+{"at": "2026-09-25T02:53:46.089326+00:00", "event": "result", "tag": "AI-ba7c18a867e4e0b6e807-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T02:53:46.190383+00:00", "event": "invoke", "tag": "AI-c2fd34150a8e9c487513-p2", "attempt": 1}
+{"at": "2026-09-25T02:53:51.545371+00:00", "event": "result", "tag": "AI-c2fd34150a8e9c487513-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:53:51.652063+00:00", "event": "invoke", "tag": "AI-28b7f9567f9f6857c0ca-p2", "attempt": 1}
+{"at": "2026-09-25T02:53:56.236914+00:00", "event": "result", "tag": "AI-28b7f9567f9f6857c0ca-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:53:56.349182+00:00", "event": "invoke", "tag": "AI-2d214937d4c607f684be-p2", "attempt": 1}
+{"at": "2026-09-25T02:54:00.146728+00:00", "event": "result", "tag": "AI-2d214937d4c607f684be-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:54:00.247958+00:00", "event": "invoke", "tag": "AI-8abd27c7d1586905256d-p2", "attempt": 1}
+{"at": "2026-09-25T02:54:04.117502+00:00", "event": "result", "tag": "AI-8abd27c7d1586905256d-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:54:04.226075+00:00", "event": "invoke", "tag": "AI-545e37c1b10dee63fd5c-p2", "attempt": 1}
+{"at": "2026-09-25T02:54:09.824654+00:00", "event": "result", "tag": "AI-545e37c1b10dee63fd5c-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:54:09.932407+00:00", "event": "invoke", "tag": "AI-0b45c98549c2cf96690a-p2", "attempt": 1}
+{"at": "2026-09-25T02:54:14.356104+00:00", "event": "result", "tag": "AI-0b45c98549c2cf96690a-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:54:14.459204+00:00", "event": "invoke", "tag": "AI-79cd28ce1a27914169b4-p2", "attempt": 1}
+{"at": "2026-09-25T02:54:19.161517+00:00", "event": "result", "tag": "AI-79cd28ce1a27914169b4-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:54:19.265230+00:00", "event": "invoke", "tag": "AI-6e87966078a6639dae4c-p2", "attempt": 1}
+{"at": "2026-09-25T02:54:27.443697+00:00", "event": "result", "tag": "AI-6e87966078a6639dae4c-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:54:27.551178+00:00", "event": "invoke", "tag": "AI-6458c1e709590a8e476a-p2", "attempt": 1}
+{"at": "2026-09-25T02:54:31.567574+00:00", "event": "result", "tag": "AI-6458c1e709590a8e476a-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:54:31.676322+00:00", "event": "invoke", "tag": "AI-e583c43cff893bd64213-p2", "attempt": 1}
+{"at": "2026-09-25T02:54:43.786963+00:00", "event": "result", "tag": "AI-e583c43cff893bd64213-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:54:43.889837+00:00", "event": "invoke", "tag": "AI-874a018b584699ca59eb-p2", "attempt": 1}
+{"at": "2026-09-25T02:54:48.727248+00:00", "event": "result", "tag": "AI-874a018b584699ca59eb-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:54:48.835045+00:00", "event": "invoke", "tag": "AI-e81617508761a13aff32-p2", "attempt": 1}
+{"at": "2026-09-25T02:54:52.450519+00:00", "event": "result", "tag": "AI-e81617508761a13aff32-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:54:52.559323+00:00", "event": "invoke", "tag": "AI-61a44ce6aef9cfa6c69d-p2", "attempt": 1}
+{"at": "2026-09-25T02:54:56.787119+00:00", "event": "result", "tag": "AI-61a44ce6aef9cfa6c69d-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:54:56.889825+00:00", "event": "invoke", "tag": "AI-1f1ad3c3d24afd77b557-p2", "attempt": 1}
+{"at": "2026-09-25T02:55:06.590228+00:00", "event": "result", "tag": "AI-1f1ad3c3d24afd77b557-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:55:06.698507+00:00", "event": "invoke", "tag": "AI-90bf9a79c32d8ba2e127-p2", "attempt": 1}
+{"at": "2026-09-25T02:55:13.626042+00:00", "event": "result", "tag": "AI-90bf9a79c32d8ba2e127-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:55:13.729673+00:00", "event": "invoke", "tag": "AI-4763c60a7d8e627f95f4-p2", "attempt": 1}
+{"at": "2026-09-25T02:55:29.356667+00:00", "event": "result", "tag": "AI-4763c60a7d8e627f95f4-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:55:29.463941+00:00", "event": "invoke", "tag": "AI-ebc6f8611879582e2204-p2", "attempt": 1}
+{"at": "2026-09-25T02:55:33.591495+00:00", "event": "result", "tag": "AI-ebc6f8611879582e2204-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:55:33.698501+00:00", "event": "invoke", "tag": "AI-d8f7335c8db4e22809a7-p2", "attempt": 1}
+{"at": "2026-09-25T02:55:37.710834+00:00", "event": "result", "tag": "AI-d8f7335c8db4e22809a7-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:55:37.816174+00:00", "event": "invoke", "tag": "AI-ff1ac8325604a4019d38-p2", "attempt": 1}
+{"at": "2026-09-25T02:55:43.288623+00:00", "event": "result", "tag": "AI-ff1ac8325604a4019d38-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:55:43.396123+00:00", "event": "invoke", "tag": "AI-f05dd25bc721ec857507-p2", "attempt": 1}
+{"at": "2026-09-25T02:55:47.707187+00:00", "event": "result", "tag": "AI-f05dd25bc721ec857507-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:55:47.815824+00:00", "event": "invoke", "tag": "AI-efc99a5610d963d0857a-p2", "attempt": 1}
+{"at": "2026-09-25T02:55:56.768735+00:00", "event": "result", "tag": "AI-efc99a5610d963d0857a-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:55:56.878106+00:00", "event": "invoke", "tag": "AI-9798dd1638f50b5ae70e-p2", "attempt": 1}
+{"at": "2026-09-25T02:56:01.434043+00:00", "event": "result", "tag": "AI-9798dd1638f50b5ae70e-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T02:56:01.536841+00:00", "event": "invoke", "tag": "AI-51a205a7fb9b29bb57bb-p2", "attempt": 1}
+{"at": "2026-09-25T02:56:08.243019+00:00", "event": "result", "tag": "AI-51a205a7fb9b29bb57bb-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:56:08.350604+00:00", "event": "invoke", "tag": "AI-b4fd9b8dc2e747a32a36-p2", "attempt": 1}
+{"at": "2026-09-25T02:56:14.612969+00:00", "event": "result", "tag": "AI-b4fd9b8dc2e747a32a36-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:56:14.715674+00:00", "event": "invoke", "tag": "AI-b362663cd87de4ac140c-p2", "attempt": 1}
+{"at": "2026-09-25T02:56:19.096463+00:00", "event": "result", "tag": "AI-b362663cd87de4ac140c-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:56:19.206605+00:00", "event": "invoke", "tag": "AI-b6801c5498fa46257d87-p2", "attempt": 1}
+{"at": "2026-09-25T02:56:23.549880+00:00", "event": "result", "tag": "AI-b6801c5498fa46257d87-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:56:23.658380+00:00", "event": "invoke", "tag": "AI-5e9be38b24f57445abb3-p2", "attempt": 1}
+{"at": "2026-09-25T02:56:28.508410+00:00", "event": "result", "tag": "AI-5e9be38b24f57445abb3-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:56:28.617936+00:00", "event": "invoke", "tag": "AI-6a9e71fd7993271395da-p2", "attempt": 1}
+{"at": "2026-09-25T02:56:33.247522+00:00", "event": "result", "tag": "AI-6a9e71fd7993271395da-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:56:33.354412+00:00", "event": "invoke", "tag": "AI-b21488bc24d928cd0950-p2", "attempt": 1}
+{"at": "2026-09-25T02:56:38.706267+00:00", "event": "result", "tag": "AI-b21488bc24d928cd0950-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:56:38.815062+00:00", "event": "invoke", "tag": "AI-d1e1d03b3c6dad0212ab-p2", "attempt": 1}
+{"at": "2026-09-25T02:56:42.655977+00:00", "event": "result", "tag": "AI-d1e1d03b3c6dad0212ab-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:56:42.760895+00:00", "event": "invoke", "tag": "AI-830a517fde3b2497aaf0-p2", "attempt": 1}
+{"at": "2026-09-25T02:56:58.503577+00:00", "event": "result", "tag": "AI-830a517fde3b2497aaf0-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:56:58.612330+00:00", "event": "invoke", "tag": "AI-d095b466a6fb7508c71c-p2", "attempt": 1}
+{"at": "2026-09-25T02:57:09.177409+00:00", "event": "result", "tag": "AI-d095b466a6fb7508c71c-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:57:09.286783+00:00", "event": "invoke", "tag": "AI-9179e98e2100b1c8116d-p2", "attempt": 1}
+{"at": "2026-09-25T02:57:22.976944+00:00", "event": "result", "tag": "AI-9179e98e2100b1c8116d-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:57:23.244005+00:00", "event": "invoke", "tag": "AI-d00e4d32ae4e37e5ef5c-p2", "attempt": 1}
+{"at": "2026-09-25T02:57:36.763098+00:00", "event": "result", "tag": "AI-d00e4d32ae4e37e5ef5c-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:57:36.952609+00:00", "event": "invoke", "tag": "AI-75f6a4b67138cde14171-p2", "attempt": 1}
+{"at": "2026-09-25T02:57:41.716726+00:00", "event": "result", "tag": "AI-75f6a4b67138cde14171-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:57:41.824796+00:00", "event": "invoke", "tag": "AI-84824fddf9011b83924f-p2", "attempt": 1}
+{"at": "2026-09-25T02:57:56.245126+00:00", "event": "result", "tag": "AI-84824fddf9011b83924f-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:57:56.348800+00:00", "event": "invoke", "tag": "AI-8528cfc6688780747af1-p2", "attempt": 1}
+{"at": "2026-09-25T02:58:00.607539+00:00", "event": "result", "tag": "AI-8528cfc6688780747af1-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:58:00.714379+00:00", "event": "invoke", "tag": "AI-b77e30a3af6985853379-p2", "attempt": 1}
+{"at": "2026-09-25T02:58:04.502179+00:00", "event": "result", "tag": "AI-b77e30a3af6985853379-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:58:04.606127+00:00", "event": "invoke", "tag": "AI-d2b4112ef517c06342b0-p2", "attempt": 1}
+{"at": "2026-09-25T02:58:08.708508+00:00", "event": "result", "tag": "AI-d2b4112ef517c06342b0-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:58:08.813151+00:00", "event": "invoke", "tag": "AI-376017a095a2031fa13f-p2", "attempt": 1}
+{"at": "2026-09-25T02:58:18.612021+00:00", "event": "result", "tag": "AI-376017a095a2031fa13f-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:58:18.721558+00:00", "event": "invoke", "tag": "AI-70cad70f12ca2baa8430-p2", "attempt": 1}
+{"at": "2026-09-25T02:58:33.787607+00:00", "event": "result", "tag": "AI-70cad70f12ca2baa8430-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:58:33.895773+00:00", "event": "invoke", "tag": "AI-6f14784b287879239ebe-p2", "attempt": 1}
+{"at": "2026-09-25T02:58:37.173113+00:00", "event": "result", "tag": "AI-6f14784b287879239ebe-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:58:37.281628+00:00", "event": "invoke", "tag": "AI-c668465d988263b7d63b-p2", "attempt": 1}
+{"at": "2026-09-25T02:58:42.183194+00:00", "event": "result", "tag": "AI-c668465d988263b7d63b-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:58:42.291877+00:00", "event": "invoke", "tag": "AI-65d0554887db12373b10-p2", "attempt": 1}
+{"at": "2026-09-25T02:58:46.585349+00:00", "event": "result", "tag": "AI-65d0554887db12373b10-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:58:46.688927+00:00", "event": "invoke", "tag": "AI-bed50401a2ba0cb29794-p2", "attempt": 1}
+{"at": "2026-09-25T02:58:52.077904+00:00", "event": "result", "tag": "AI-bed50401a2ba0cb29794-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:58:52.186207+00:00", "event": "invoke", "tag": "AI-33734b7b4c746fa61805-p2", "attempt": 1}
+{"at": "2026-09-25T02:58:57.492036+00:00", "event": "result", "tag": "AI-33734b7b4c746fa61805-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:58:57.600082+00:00", "event": "invoke", "tag": "AI-e04a7d48ec080d76dc7a-p2", "attempt": 1}
+{"at": "2026-09-25T02:59:02.184176+00:00", "event": "result", "tag": "AI-e04a7d48ec080d76dc7a-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:59:02.293219+00:00", "event": "invoke", "tag": "AI-2d258ac6c24408989d87-p2", "attempt": 1}
+{"at": "2026-09-25T02:59:07.448652+00:00", "event": "result", "tag": "AI-2d258ac6c24408989d87-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:59:07.551682+00:00", "event": "invoke", "tag": "AI-f375a773eb1209e2b485-p2", "attempt": 1}
+{"at": "2026-09-25T02:59:16.338465+00:00", "event": "result", "tag": "AI-f375a773eb1209e2b485-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:59:16.442739+00:00", "event": "invoke", "tag": "AI-43b3fa3933a32011acb5-p2", "attempt": 1}
+{"at": "2026-09-25T02:59:20.316535+00:00", "event": "result", "tag": "AI-43b3fa3933a32011acb5-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:59:20.421104+00:00", "event": "invoke", "tag": "AI-e9a3d279899769c81519-p2", "attempt": 1}
+{"at": "2026-09-25T02:59:24.806328+00:00", "event": "result", "tag": "AI-e9a3d279899769c81519-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:59:24.913196+00:00", "event": "invoke", "tag": "AI-703ee22fa4e27dda911b-p2", "attempt": 1}
+{"at": "2026-09-25T02:59:29.083068+00:00", "event": "result", "tag": "AI-703ee22fa4e27dda911b-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:59:29.188480+00:00", "event": "invoke", "tag": "AI-e36f45354eff21a38ab1-p2", "attempt": 1}
+{"at": "2026-09-25T02:59:33.647819+00:00", "event": "result", "tag": "AI-e36f45354eff21a38ab1-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:59:33.759552+00:00", "event": "invoke", "tag": "AI-af00ffd52d62d57958e8-p2", "attempt": 1}
+{"at": "2026-09-25T02:59:46.096442+00:00", "event": "result", "tag": "AI-af00ffd52d62d57958e8-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:59:46.205867+00:00", "event": "invoke", "tag": "AI-9927ab7332805fc5e579-p2", "attempt": 1}
+{"at": "2026-09-25T02:59:51.057120+00:00", "event": "result", "tag": "AI-9927ab7332805fc5e579-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T02:59:51.166274+00:00", "event": "invoke", "tag": "AI-069c9e1431ebf8ff2627-p2", "attempt": 1}
+{"at": "2026-09-25T02:59:58.365778+00:00", "event": "result", "tag": "AI-069c9e1431ebf8ff2627-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T02:59:58.470726+00:00", "event": "invoke", "tag": "AI-b4db6da4be5090b346ea-p2", "attempt": 1}
+{"at": "2026-09-25T03:00:03.739085+00:00", "event": "result", "tag": "AI-b4db6da4be5090b346ea-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:00:03.842264+00:00", "event": "invoke", "tag": "AI-f3d19bb2089f50423f9a-p2", "attempt": 1}
+{"at": "2026-09-25T03:00:09.544007+00:00", "event": "result", "tag": "AI-f3d19bb2089f50423f9a-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:00:09.649361+00:00", "event": "invoke", "tag": "AI-fbe036bb81d139257d97-p2", "attempt": 1}
+{"at": "2026-09-25T03:00:16.969350+00:00", "event": "result", "tag": "AI-fbe036bb81d139257d97-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:00:17.079859+00:00", "event": "invoke", "tag": "AI-bde4f2cdd107ac7b7f2e-p2", "attempt": 1}
+{"at": "2026-09-25T03:00:20.693179+00:00", "event": "result", "tag": "AI-bde4f2cdd107ac7b7f2e-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:00:20.803492+00:00", "event": "invoke", "tag": "AI-142ef7e7a5baa2e0c8d2-p2", "attempt": 1}
+{"at": "2026-09-25T03:00:26.662041+00:00", "event": "result", "tag": "AI-142ef7e7a5baa2e0c8d2-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:00:26.771970+00:00", "event": "invoke", "tag": "AI-f071591d0d84258826f0-p2", "attempt": 1}
+{"at": "2026-09-25T03:00:34.231693+00:00", "event": "result", "tag": "AI-f071591d0d84258826f0-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:00:34.335347+00:00", "event": "invoke", "tag": "AI-cb3883a6cf55f0537905-p2", "attempt": 1}
+{"at": "2026-09-25T03:00:39.951770+00:00", "event": "result", "tag": "AI-cb3883a6cf55f0537905-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:00:40.056144+00:00", "event": "invoke", "tag": "AI-86d6c92ec8c6926416c5-p2", "attempt": 1}
+{"at": "2026-09-25T03:00:45.487192+00:00", "event": "result", "tag": "AI-86d6c92ec8c6926416c5-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:00:45.593138+00:00", "event": "invoke", "tag": "AI-319204683a9c064ce794-p2", "attempt": 1}
+{"at": "2026-09-25T03:00:57.347506+00:00", "event": "result", "tag": "AI-319204683a9c064ce794-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:00:57.457539+00:00", "event": "invoke", "tag": "AI-9e8936ccf5d940121c1f-p2", "attempt": 1}
+{"at": "2026-09-25T03:01:05.831000+00:00", "event": "result", "tag": "AI-9e8936ccf5d940121c1f-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:01:05.939691+00:00", "event": "invoke", "tag": "AI-7db5ea8590b5b4485456-p2", "attempt": 1}
+{"at": "2026-09-25T03:01:11.373934+00:00", "event": "result", "tag": "AI-7db5ea8590b5b4485456-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:01:11.479096+00:00", "event": "invoke", "tag": "AI-b90793ae1ab05d021fe8-p2", "attempt": 1}
+{"at": "2026-09-25T03:01:22.303195+00:00", "event": "result", "tag": "AI-b90793ae1ab05d021fe8-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:01:22.413173+00:00", "event": "invoke", "tag": "AI-08629b83fa63c6263035-p2", "attempt": 1}
+{"at": "2026-09-25T03:01:26.852074+00:00", "event": "result", "tag": "AI-08629b83fa63c6263035-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:01:26.961208+00:00", "event": "invoke", "tag": "AI-61803bca456ca390e315-p2", "attempt": 1}
+{"at": "2026-09-25T03:01:31.688332+00:00", "event": "result", "tag": "AI-61803bca456ca390e315-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:01:31.795011+00:00", "event": "invoke", "tag": "AI-792b1cd5318ad5bd2b52-p2", "attempt": 1}
+{"at": "2026-09-25T03:01:44.801139+00:00", "event": "result", "tag": "AI-792b1cd5318ad5bd2b52-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:01:44.910116+00:00", "event": "invoke", "tag": "AI-200a7dce99a4da66d143-p2", "attempt": 1}
+{"at": "2026-09-25T03:01:49.635167+00:00", "event": "result", "tag": "AI-200a7dce99a4da66d143-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:01:49.739829+00:00", "event": "invoke", "tag": "AI-9c0636bd6c00ec4bf1eb-p2", "attempt": 1}
+{"at": "2026-09-25T03:01:55.225280+00:00", "event": "result", "tag": "AI-9c0636bd6c00ec4bf1eb-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:01:55.331178+00:00", "event": "invoke", "tag": "AI-8a1b150b55c6850a89b3-p2", "attempt": 1}
+{"at": "2026-09-25T03:02:07.359374+00:00", "event": "result", "tag": "AI-8a1b150b55c6850a89b3-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:02:07.469710+00:00", "event": "invoke", "tag": "AI-3fa2f6d4e043e904b21c-p2", "attempt": 1}
+{"at": "2026-09-25T03:02:15.404166+00:00", "event": "result", "tag": "AI-3fa2f6d4e043e904b21c-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:02:15.512794+00:00", "event": "invoke", "tag": "AI-bfdc53ba9893806a2614-p2", "attempt": 1}
+{"at": "2026-09-25T03:02:22.700718+00:00", "event": "result", "tag": "AI-bfdc53ba9893806a2614-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:02:22.806516+00:00", "event": "invoke", "tag": "AI-530b3ea40e0b19c033ef-p2", "attempt": 1}
+{"at": "2026-09-25T03:02:26.883308+00:00", "event": "result", "tag": "AI-530b3ea40e0b19c033ef-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:02:26.989197+00:00", "event": "invoke", "tag": "AI-c65ba784c51957d51834-p2", "attempt": 1}
+{"at": "2026-09-25T03:02:34.768105+00:00", "event": "result", "tag": "AI-c65ba784c51957d51834-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:02:34.872024+00:00", "event": "invoke", "tag": "AI-ef4771e6564f1eabbc82-p2", "attempt": 1}
+{"at": "2026-09-25T03:02:38.217988+00:00", "event": "result", "tag": "AI-ef4771e6564f1eabbc82-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:02:38.321586+00:00", "event": "invoke", "tag": "AI-f4061779f71ffad713ad-p2", "attempt": 1}
+{"at": "2026-09-25T03:02:44.987784+00:00", "event": "result", "tag": "AI-f4061779f71ffad713ad-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:02:45.093514+00:00", "event": "invoke", "tag": "AI-e08c03d537010b058e17-p2", "attempt": 1}
+{"at": "2026-09-25T03:02:49.929065+00:00", "event": "result", "tag": "AI-e08c03d537010b058e17-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:02:50.033648+00:00", "event": "invoke", "tag": "AI-cce0a80022f8c012c8af-p2", "attempt": 1}
+{"at": "2026-09-25T03:02:58.987774+00:00", "event": "result", "tag": "AI-cce0a80022f8c012c8af-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:02:59.093686+00:00", "event": "invoke", "tag": "AI-7046e11a65cf17ec1fa2-p2", "attempt": 1}
+{"at": "2026-09-25T03:03:07.850983+00:00", "event": "result", "tag": "AI-7046e11a65cf17ec1fa2-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:03:07.961277+00:00", "event": "invoke", "tag": "AI-92ec09e1b5bb2605dc59-p2", "attempt": 1}
+{"at": "2026-09-25T03:03:12.052736+00:00", "event": "result", "tag": "AI-92ec09e1b5bb2605dc59-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:03:12.159707+00:00", "event": "invoke", "tag": "AI-401231ef3e2cec40a2ca-p2", "attempt": 1}
+{"at": "2026-09-25T03:03:16.812163+00:00", "event": "result", "tag": "AI-401231ef3e2cec40a2ca-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:03:16.925573+00:00", "event": "invoke", "tag": "AI-82c65d7bbb5d48a95761-p2", "attempt": 1}
+{"at": "2026-09-25T03:03:26.448940+00:00", "event": "result", "tag": "AI-82c65d7bbb5d48a95761-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:03:26.559442+00:00", "event": "invoke", "tag": "AI-0a5d79631259d80f9d6e-p2", "attempt": 1}
+{"at": "2026-09-25T03:03:31.818486+00:00", "event": "result", "tag": "AI-0a5d79631259d80f9d6e-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:03:31.928340+00:00", "event": "invoke", "tag": "AI-f83542ac09add45f8bfa-p2", "attempt": 1}
+{"at": "2026-09-25T03:03:37.654389+00:00", "event": "result", "tag": "AI-f83542ac09add45f8bfa-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:03:37.765443+00:00", "event": "invoke", "tag": "AI-1205767baf0e761d8507-p2", "attempt": 1}
+{"at": "2026-09-25T03:03:41.982429+00:00", "event": "result", "tag": "AI-1205767baf0e761d8507-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:03:42.086571+00:00", "event": "invoke", "tag": "AI-564193a742252c709fca-p2", "attempt": 1}
+{"at": "2026-09-25T03:03:46.440267+00:00", "event": "result", "tag": "AI-564193a742252c709fca-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:03:46.551762+00:00", "event": "invoke", "tag": "AI-b037396b6a148037a0a0-p2", "attempt": 1}
+{"at": "2026-09-25T03:03:51.141628+00:00", "event": "result", "tag": "AI-b037396b6a148037a0a0-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:03:51.245210+00:00", "event": "invoke", "tag": "AI-fdfedeb58c5377f2001d-p2", "attempt": 1}
+{"at": "2026-09-25T03:03:59.275776+00:00", "event": "result", "tag": "AI-fdfedeb58c5377f2001d-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:03:59.385730+00:00", "event": "invoke", "tag": "AI-349b900f62a3d06791cc-p2", "attempt": 1}
+{"at": "2026-09-25T03:04:12.652771+00:00", "event": "result", "tag": "AI-349b900f62a3d06791cc-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:04:12.764013+00:00", "event": "invoke", "tag": "AI-7ef09e6a06d31001a017-p2", "attempt": 1}
+{"at": "2026-09-25T03:04:24.590456+00:00", "event": "result", "tag": "AI-7ef09e6a06d31001a017-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:04:24.735216+00:00", "event": "invoke", "tag": "AI-1f81b7fc1a459173df70-p2", "attempt": 1}
+{"at": "2026-09-25T03:04:40.770002+00:00", "event": "result", "tag": "AI-1f81b7fc1a459173df70-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:04:40.874928+00:00", "event": "invoke", "tag": "AI-a6cc4e5304ffe7de6716-p2", "attempt": 1}
+{"at": "2026-09-25T03:04:54.831332+00:00", "event": "result", "tag": "AI-a6cc4e5304ffe7de6716-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:04:54.941971+00:00", "event": "invoke", "tag": "AI-e97337fd4d895b17fd51-p2", "attempt": 1}
+{"at": "2026-09-25T03:05:02.806035+00:00", "event": "result", "tag": "AI-e97337fd4d895b17fd51-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:05:02.911525+00:00", "event": "invoke", "tag": "AI-08a4ada61ef5eea2f734-p2", "attempt": 1}
+{"at": "2026-09-25T03:05:11.515211+00:00", "event": "result", "tag": "AI-08a4ada61ef5eea2f734-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:05:11.626073+00:00", "event": "invoke", "tag": "AI-22546e80dbfcabb5d87c-p2", "attempt": 1}
+{"at": "2026-09-25T03:05:22.962897+00:00", "event": "result", "tag": "AI-22546e80dbfcabb5d87c-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:05:23.072639+00:00", "event": "invoke", "tag": "AI-edc0bb63b7a71c2f6257-p2", "attempt": 1}
+{"at": "2026-09-25T03:05:28.229753+00:00", "event": "result", "tag": "AI-edc0bb63b7a71c2f6257-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:05:28.335345+00:00", "event": "invoke", "tag": "AI-c468ea2836ffded6b151-p2", "attempt": 1}
+{"at": "2026-09-25T03:05:36.339965+00:00", "event": "result", "tag": "AI-c468ea2836ffded6b151-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:05:36.448712+00:00", "event": "invoke", "tag": "AI-83afe04d6225b9d3826d-p2", "attempt": 1}
+{"at": "2026-09-25T03:05:41.305516+00:00", "event": "result", "tag": "AI-83afe04d6225b9d3826d-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:05:41.411685+00:00", "event": "invoke", "tag": "AI-73e882153b9e61e12a26-p2", "attempt": 1}
+{"at": "2026-09-25T03:05:47.752276+00:00", "event": "result", "tag": "AI-73e882153b9e61e12a26-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:05:47.860175+00:00", "event": "invoke", "tag": "AI-c8ce484682534dc8d4e9-p2", "attempt": 1}
+{"at": "2026-09-25T03:06:05.310258+00:00", "event": "result", "tag": "AI-c8ce484682534dc8d4e9-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:06:05.422013+00:00", "event": "invoke", "tag": "AI-763bc3aded51a15d52ea-p2", "attempt": 1}
+{"at": "2026-09-25T03:06:09.948953+00:00", "event": "result", "tag": "AI-763bc3aded51a15d52ea-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:06:10.052868+00:00", "event": "invoke", "tag": "AI-ca1898a72e4e8c7d0c2d-p2", "attempt": 1}
+{"at": "2026-09-25T03:06:14.777971+00:00", "event": "result", "tag": "AI-ca1898a72e4e8c7d0c2d-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:06:14.883491+00:00", "event": "invoke", "tag": "AI-e335b874b2b35e1f7699-p2", "attempt": 1}
+{"at": "2026-09-25T03:06:23.127781+00:00", "event": "result", "tag": "AI-e335b874b2b35e1f7699-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:06:23.240713+00:00", "event": "invoke", "tag": "AI-55e3d80e38b5c86a211e-p2", "attempt": 1}
+{"at": "2026-09-25T03:06:26.807924+00:00", "event": "result", "tag": "AI-55e3d80e38b5c86a211e-p2", "status": "invalid_response", "detail": "Absence choice requires absent support and no quote"}
+{"at": "2026-09-25T03:06:26.919836+00:00", "event": "invoke", "tag": "AI-e0f1ae94213c29d88289-p2", "attempt": 1}
+{"at": "2026-09-25T03:06:32.455743+00:00", "event": "result", "tag": "AI-e0f1ae94213c29d88289-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:06:32.561760+00:00", "event": "invoke", "tag": "AI-a32afece0a8841e15026-p2", "attempt": 1}
+{"at": "2026-09-25T03:06:37.844771+00:00", "event": "result", "tag": "AI-a32afece0a8841e15026-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:06:37.956641+00:00", "event": "invoke", "tag": "AI-fea5ba478e650ef96ee7-p2", "attempt": 1}
+{"at": "2026-09-25T03:06:43.180264+00:00", "event": "result", "tag": "AI-fea5ba478e650ef96ee7-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:06:43.285800+00:00", "event": "invoke", "tag": "AI-d813ded1007e3feb7f77-p2", "attempt": 1}
+{"at": "2026-09-25T03:06:47.297282+00:00", "event": "result", "tag": "AI-d813ded1007e3feb7f77-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:06:47.403177+00:00", "event": "invoke", "tag": "AI-47041234a383f988687a-p2", "attempt": 1}
+{"at": "2026-09-25T03:06:55.220457+00:00", "event": "result", "tag": "AI-47041234a383f988687a-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:06:55.331575+00:00", "event": "invoke", "tag": "AI-2226fa5f5f69ee8d1728-p2", "attempt": 1}
+{"at": "2026-09-25T03:06:58.982791+00:00", "event": "result", "tag": "AI-2226fa5f5f69ee8d1728-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:06:59.092426+00:00", "event": "invoke", "tag": "AI-ab2ffc237173a2cf53fc-p2", "attempt": 1}
+{"at": "2026-09-25T03:07:03.079001+00:00", "event": "result", "tag": "AI-ab2ffc237173a2cf53fc-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:07:03.184456+00:00", "event": "invoke", "tag": "AI-1bbf4bf85408af6e1beb-p2", "attempt": 1}
+{"at": "2026-09-25T03:07:12.047958+00:00", "event": "result", "tag": "AI-1bbf4bf85408af6e1beb-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:07:12.173131+00:00", "event": "invoke", "tag": "AI-6bdf9fbcf39eeed73e99-p2", "attempt": 1}
+{"at": "2026-09-25T03:07:23.581689+00:00", "event": "result", "tag": "AI-6bdf9fbcf39eeed73e99-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:07:23.710228+00:00", "event": "invoke", "tag": "AI-7d2907ceed99abd936d9-p2", "attempt": 1}
+{"at": "2026-09-25T03:07:35.246302+00:00", "event": "result", "tag": "AI-7d2907ceed99abd936d9-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:07:35.361547+00:00", "event": "invoke", "tag": "AI-f17470c16d7323d72c7e-p2", "attempt": 1}
+{"at": "2026-09-25T03:07:47.042072+00:00", "event": "result", "tag": "AI-f17470c16d7323d72c7e-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:07:47.159747+00:00", "event": "invoke", "tag": "AI-e9a5559c33fc444c40ba-p2", "attempt": 1}
+{"at": "2026-09-25T03:07:54.232018+00:00", "event": "result", "tag": "AI-e9a5559c33fc444c40ba-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:07:54.350560+00:00", "event": "invoke", "tag": "AI-0dc257ece334fd44dc54-p2", "attempt": 1}
+{"at": "2026-09-25T03:07:58.760017+00:00", "event": "result", "tag": "AI-0dc257ece334fd44dc54-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:07:58.877540+00:00", "event": "invoke", "tag": "AI-f07e613e4649ab3c4ad9-p2", "attempt": 1}
+{"at": "2026-09-25T03:08:03.572966+00:00", "event": "result", "tag": "AI-f07e613e4649ab3c4ad9-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:08:03.684526+00:00", "event": "invoke", "tag": "AI-4f70fa20168f3d94440c-p2", "attempt": 1}
+{"at": "2026-09-25T03:08:08.183408+00:00", "event": "result", "tag": "AI-4f70fa20168f3d94440c-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:08:08.301178+00:00", "event": "invoke", "tag": "AI-77038ee34e25a4352921-p2", "attempt": 1}
+{"at": "2026-09-25T03:08:11.801365+00:00", "event": "result", "tag": "AI-77038ee34e25a4352921-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:08:11.912072+00:00", "event": "invoke", "tag": "AI-f99db5c1c2f10b99111d-p2", "attempt": 1}
+{"at": "2026-09-25T03:08:16.501434+00:00", "event": "result", "tag": "AI-f99db5c1c2f10b99111d-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:08:16.634964+00:00", "event": "invoke", "tag": "AI-cc320e47a6cc37cb4f0c-p2", "attempt": 1}
+{"at": "2026-09-25T03:08:21.948318+00:00", "event": "result", "tag": "AI-cc320e47a6cc37cb4f0c-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:08:22.068373+00:00", "event": "invoke", "tag": "AI-e9f83779f2565cfa1d32-p2", "attempt": 1}
+{"at": "2026-09-25T03:08:34.480310+00:00", "event": "result", "tag": "AI-e9f83779f2565cfa1d32-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:08:34.598040+00:00", "event": "invoke", "tag": "AI-95fbbae9822e68a09af2-p2", "attempt": 1}
+{"at": "2026-09-25T03:08:39.998755+00:00", "event": "result", "tag": "AI-95fbbae9822e68a09af2-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:08:40.116682+00:00", "event": "invoke", "tag": "AI-ff2d80fa3d2f5c508893-p2", "attempt": 1}
+{"at": "2026-09-25T03:08:45.801806+00:00", "event": "result", "tag": "AI-ff2d80fa3d2f5c508893-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:08:45.919399+00:00", "event": "invoke", "tag": "AI-60831db9bdb534761225-p2", "attempt": 1}
+{"at": "2026-09-25T03:08:51.150945+00:00", "event": "result", "tag": "AI-60831db9bdb534761225-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:08:51.270241+00:00", "event": "invoke", "tag": "AI-bda173397feccf1533ad-p2", "attempt": 1}
+{"at": "2026-09-25T03:08:59.254215+00:00", "event": "result", "tag": "AI-bda173397feccf1533ad-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:08:59.366128+00:00", "event": "invoke", "tag": "AI-fcfc353071500c90ecb0-p2", "attempt": 1}
+{"at": "2026-09-25T03:09:12.138364+00:00", "event": "result", "tag": "AI-fcfc353071500c90ecb0-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:09:12.257285+00:00", "event": "invoke", "tag": "AI-027cca3addf42a749294-p2", "attempt": 1}
+{"at": "2026-09-25T03:09:17.227077+00:00", "event": "result", "tag": "AI-027cca3addf42a749294-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:09:17.348628+00:00", "event": "invoke", "tag": "AI-e3669ae83e828536b751-p2", "attempt": 1}
+{"at": "2026-09-25T03:09:28.345723+00:00", "event": "result", "tag": "AI-e3669ae83e828536b751-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:09:28.456887+00:00", "event": "invoke", "tag": "AI-cc20d8299f3156fd12f6-p2", "attempt": 1}
+{"at": "2026-09-25T03:09:32.704137+00:00", "event": "result", "tag": "AI-cc20d8299f3156fd12f6-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:09:32.824452+00:00", "event": "invoke", "tag": "AI-d9f6ac58cd92badfc435-p2", "attempt": 1}
+{"at": "2026-09-25T03:09:42.109632+00:00", "event": "result", "tag": "AI-d9f6ac58cd92badfc435-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:09:42.229002+00:00", "event": "invoke", "tag": "AI-5157d8c827c5ab5714ef-p2", "attempt": 1}
+{"at": "2026-09-25T03:09:50.838186+00:00", "event": "result", "tag": "AI-5157d8c827c5ab5714ef-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:09:50.958529+00:00", "event": "invoke", "tag": "AI-aa29f485b9e7748cae09-p2", "attempt": 1}
+{"at": "2026-09-25T03:10:02.504155+00:00", "event": "result", "tag": "AI-aa29f485b9e7748cae09-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:10:02.621214+00:00", "event": "invoke", "tag": "AI-c81e897942390f519d99-p2", "attempt": 1}
+{"at": "2026-09-25T03:10:08.055073+00:00", "event": "result", "tag": "AI-c81e897942390f519d99-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:10:08.165879+00:00", "event": "invoke", "tag": "AI-13445459112031fb2df8-p2", "attempt": 1}
+{"at": "2026-09-25T03:10:12.787370+00:00", "event": "result", "tag": "AI-13445459112031fb2df8-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:10:12.906608+00:00", "event": "invoke", "tag": "AI-c06706c04d28319bb0d8-p2", "attempt": 1}
+{"at": "2026-09-25T03:10:16.769754+00:00", "event": "result", "tag": "AI-c06706c04d28319bb0d8-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:10:16.883442+00:00", "event": "invoke", "tag": "AI-77def81d7e31ade558b2-p2", "attempt": 1}
+{"at": "2026-09-25T03:10:24.092366+00:00", "event": "result", "tag": "AI-77def81d7e31ade558b2-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:10:24.211685+00:00", "event": "invoke", "tag": "AI-ce1f54dddf4ecc106fb6-p2", "attempt": 1}
+{"at": "2026-09-25T03:10:27.686494+00:00", "event": "result", "tag": "AI-ce1f54dddf4ecc106fb6-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:10:27.797437+00:00", "event": "invoke", "tag": "AI-2d22617acc0ed3c9b3fd-p2", "attempt": 1}
+{"at": "2026-09-25T03:10:31.750913+00:00", "event": "result", "tag": "AI-2d22617acc0ed3c9b3fd-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:10:31.869820+00:00", "event": "invoke", "tag": "AI-63cf3ca3856990183d01-p2", "attempt": 1}
+{"at": "2026-09-25T03:10:35.579241+00:00", "event": "result", "tag": "AI-63cf3ca3856990183d01-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:10:35.696481+00:00", "event": "invoke", "tag": "AI-fe8a359ec0dda8ac479f-p2", "attempt": 1}
+{"at": "2026-09-25T03:10:40.292984+00:00", "event": "result", "tag": "AI-fe8a359ec0dda8ac479f-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:10:40.405520+00:00", "event": "invoke", "tag": "AI-dd3e6758b612e0be96d6-p2", "attempt": 1}
+{"at": "2026-09-25T03:10:56.281872+00:00", "event": "result", "tag": "AI-dd3e6758b612e0be96d6-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:10:56.400634+00:00", "event": "invoke", "tag": "AI-2d551cc8fdfc7666db12-p2", "attempt": 1}
+{"at": "2026-09-25T03:11:01.260597+00:00", "event": "result", "tag": "AI-2d551cc8fdfc7666db12-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:11:01.379115+00:00", "event": "invoke", "tag": "AI-7a432c965384c526ae3e-p2", "attempt": 1}
+{"at": "2026-09-25T03:11:06.128505+00:00", "event": "result", "tag": "AI-7a432c965384c526ae3e-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:11:06.247873+00:00", "event": "invoke", "tag": "AI-4c5c743c86f406e353c5-p2", "attempt": 1}
+{"at": "2026-09-25T03:11:09.952510+00:00", "event": "result", "tag": "AI-4c5c743c86f406e353c5-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:11:10.065259+00:00", "event": "invoke", "tag": "AI-95a72dd2a79ef5375063-p2", "attempt": 1}
+{"at": "2026-09-25T03:11:23.147683+00:00", "event": "result", "tag": "AI-95a72dd2a79ef5375063-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:11:23.268678+00:00", "event": "invoke", "tag": "AI-d6b9eb7420e58b4ccc54-p2", "attempt": 1}
+{"at": "2026-09-25T03:11:27.086158+00:00", "event": "result", "tag": "AI-d6b9eb7420e58b4ccc54-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:11:27.203708+00:00", "event": "invoke", "tag": "AI-593c873897babd1c54f2-p2", "attempt": 1}
+{"at": "2026-09-25T03:11:31.613598+00:00", "event": "result", "tag": "AI-593c873897babd1c54f2-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:11:31.732819+00:00", "event": "invoke", "tag": "AI-36def52c8e0f42dde8dd-p2", "attempt": 1}
+{"at": "2026-09-25T03:11:36.361871+00:00", "event": "result", "tag": "AI-36def52c8e0f42dde8dd-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:11:36.481914+00:00", "event": "invoke", "tag": "AI-8be34b60c9f8f6eb6015-p2", "attempt": 1}
+{"at": "2026-09-25T03:11:59.596580+00:00", "event": "result", "tag": "AI-8be34b60c9f8f6eb6015-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:11:59.714401+00:00", "event": "invoke", "tag": "AI-8ee2219de44b4e5b7db8-p2", "attempt": 1}
+{"at": "2026-09-25T03:12:03.629958+00:00", "event": "result", "tag": "AI-8ee2219de44b4e5b7db8-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:12:03.741499+00:00", "event": "invoke", "tag": "AI-73eee8867293e9f4071f-p2", "attempt": 1}
+{"at": "2026-09-25T03:12:07.312511+00:00", "event": "result", "tag": "AI-73eee8867293e9f4071f-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:12:07.424274+00:00", "event": "invoke", "tag": "AI-ddcbcfcdb26660954be2-p2", "attempt": 1}
+{"at": "2026-09-25T03:12:12.297474+00:00", "event": "result", "tag": "AI-ddcbcfcdb26660954be2-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:12:12.417534+00:00", "event": "invoke", "tag": "AI-41ec472a7ec99d37eef2-p2", "attempt": 1}
+{"at": "2026-09-25T03:12:16.860115+00:00", "event": "result", "tag": "AI-41ec472a7ec99d37eef2-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:12:16.978212+00:00", "event": "invoke", "tag": "AI-bdc9682fe1e023824973-p2", "attempt": 1}
+{"at": "2026-09-25T03:12:21.162933+00:00", "event": "result", "tag": "AI-bdc9682fe1e023824973-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:12:21.275482+00:00", "event": "invoke", "tag": "AI-759a802900a7be089412-p2", "attempt": 1}
+{"at": "2026-09-25T03:12:26.138591+00:00", "event": "result", "tag": "AI-759a802900a7be089412-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:12:26.251836+00:00", "event": "invoke", "tag": "AI-25e97cfad61afac42153-p2", "attempt": 1}
+{"at": "2026-09-25T03:12:38.519835+00:00", "event": "result", "tag": "AI-25e97cfad61afac42153-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:12:38.639794+00:00", "event": "invoke", "tag": "AI-1720484d448f75d07d97-p2", "attempt": 1}
+{"at": "2026-09-25T03:12:51.797630+00:00", "event": "result", "tag": "AI-1720484d448f75d07d97-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:12:51.917786+00:00", "event": "invoke", "tag": "AI-72698a17bd0f45b17709-p2", "attempt": 1}
+{"at": "2026-09-25T03:13:00.574013+00:00", "event": "result", "tag": "AI-72698a17bd0f45b17709-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:13:00.686595+00:00", "event": "invoke", "tag": "AI-13c45594dcc403ad5a90-p2", "attempt": 1}
+{"at": "2026-09-25T03:13:05.762741+00:00", "event": "result", "tag": "AI-13c45594dcc403ad5a90-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:13:05.883824+00:00", "event": "invoke", "tag": "AI-e4740ceb2be9cac3c33e-p2", "attempt": 1}
+{"at": "2026-09-25T03:13:15.533586+00:00", "event": "result", "tag": "AI-e4740ceb2be9cac3c33e-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:13:15.649182+00:00", "event": "invoke", "tag": "AI-0cb0f06266e14751b3db-p2", "attempt": 1}
+{"at": "2026-09-25T03:13:24.089273+00:00", "event": "result", "tag": "AI-0cb0f06266e14751b3db-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:13:24.201525+00:00", "event": "invoke", "tag": "AI-e4502c62ecfd4581fce4-p2", "attempt": 1}
+{"at": "2026-09-25T03:13:27.612624+00:00", "event": "result", "tag": "AI-e4502c62ecfd4581fce4-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:13:27.724629+00:00", "event": "invoke", "tag": "AI-3e3efed8319b0f15c4b7-p2", "attempt": 1}
+{"at": "2026-09-25T03:13:38.910038+00:00", "event": "result", "tag": "AI-3e3efed8319b0f15c4b7-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:13:39.029365+00:00", "event": "invoke", "tag": "AI-c998811acc17c0a93669-p2", "attempt": 1}
+{"at": "2026-09-25T03:13:43.831125+00:00", "event": "result", "tag": "AI-c998811acc17c0a93669-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:13:43.944337+00:00", "event": "invoke", "tag": "AI-665672c405564522968b-p2", "attempt": 1}
+{"at": "2026-09-25T03:13:51.957242+00:00", "event": "result", "tag": "AI-665672c405564522968b-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:13:52.070438+00:00", "event": "invoke", "tag": "AI-4380676cacb03d52b74e-p2", "attempt": 1}
+{"at": "2026-09-25T03:13:55.778370+00:00", "event": "result", "tag": "AI-4380676cacb03d52b74e-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:13:55.898834+00:00", "event": "invoke", "tag": "AI-8cd78f1d764293a2f693-p2", "attempt": 1}
+{"at": "2026-09-25T03:14:00.564640+00:00", "event": "result", "tag": "AI-8cd78f1d764293a2f693-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:14:00.687539+00:00", "event": "invoke", "tag": "AI-ee13dd1032f309f4d212-p2", "attempt": 1}
+{"at": "2026-09-25T03:14:09.733544+00:00", "event": "result", "tag": "AI-ee13dd1032f309f4d212-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:14:09.852770+00:00", "event": "invoke", "tag": "AI-23c018473cbe3b4a6670-p2", "attempt": 1}
+{"at": "2026-09-25T03:14:15.252821+00:00", "event": "result", "tag": "AI-23c018473cbe3b4a6670-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:14:15.366407+00:00", "event": "invoke", "tag": "AI-e4cab0a43e9bdee95b60-p2", "attempt": 1}
+{"at": "2026-09-25T03:14:26.862592+00:00", "event": "result", "tag": "AI-e4cab0a43e9bdee95b60-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:14:26.982937+00:00", "event": "invoke", "tag": "AI-06c4c17467099b03e425-p2", "attempt": 1}
+{"at": "2026-09-25T03:14:32.401019+00:00", "event": "result", "tag": "AI-06c4c17467099b03e425-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:14:32.521929+00:00", "event": "invoke", "tag": "AI-63ca3eee60a1000a617e-p2", "attempt": 1}
+{"at": "2026-09-25T03:14:36.306862+00:00", "event": "result", "tag": "AI-63ca3eee60a1000a617e-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:14:36.419699+00:00", "event": "invoke", "tag": "AI-6f81870ded4fd319a248-p2", "attempt": 1}
+{"at": "2026-09-25T03:14:43.407271+00:00", "event": "result", "tag": "AI-6f81870ded4fd319a248-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:14:43.528160+00:00", "event": "invoke", "tag": "AI-d722df70610e90644807-p2", "attempt": 1}
+{"at": "2026-09-25T03:14:47.366402+00:00", "event": "result", "tag": "AI-d722df70610e90644807-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:14:47.520432+00:00", "event": "invoke", "tag": "AI-b339407a01e9cc4b7c8d-p2", "attempt": 1}
+{"at": "2026-09-25T03:14:52.596018+00:00", "event": "result", "tag": "AI-b339407a01e9cc4b7c8d-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:14:52.709388+00:00", "event": "invoke", "tag": "AI-97509497a70a9a6dd157-p2", "attempt": 1}
+{"at": "2026-09-25T03:14:57.596302+00:00", "event": "result", "tag": "AI-97509497a70a9a6dd157-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:14:57.716728+00:00", "event": "invoke", "tag": "AI-569d7e27e9fbb8ac5c01-p2", "attempt": 1}
+{"at": "2026-09-25T03:15:01.158792+00:00", "event": "result", "tag": "AI-569d7e27e9fbb8ac5c01-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:15:01.268524+00:00", "event": "invoke", "tag": "AI-c4dd377c6973cd101251-p2", "attempt": 1}
+{"at": "2026-09-25T03:15:12.420904+00:00", "event": "result", "tag": "AI-c4dd377c6973cd101251-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:15:12.558066+00:00", "event": "invoke", "tag": "AI-37af50ddaac2ac780aa3-p2", "attempt": 1}
+{"at": "2026-09-25T03:15:20.611971+00:00", "event": "result", "tag": "AI-37af50ddaac2ac780aa3-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:15:20.732067+00:00", "event": "invoke", "tag": "AI-92d836afc5c7234cbb33-p2", "attempt": 1}
+{"at": "2026-09-25T03:15:24.854035+00:00", "event": "result", "tag": "AI-92d836afc5c7234cbb33-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:15:24.985576+00:00", "event": "invoke", "tag": "AI-c86dc65d85267fe7dfcc-p2", "attempt": 1}
+{"at": "2026-09-25T03:15:29.231229+00:00", "event": "result", "tag": "AI-c86dc65d85267fe7dfcc-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:15:29.353191+00:00", "event": "invoke", "tag": "AI-8829e8efb4283c867bd2-p2", "attempt": 1}
+{"at": "2026-09-25T03:15:33.183815+00:00", "event": "result", "tag": "AI-8829e8efb4283c867bd2-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:15:33.296199+00:00", "event": "invoke", "tag": "AI-bf95376ebc2c9d37a86a-p2", "attempt": 1}
+{"at": "2026-09-25T03:15:37.148284+00:00", "event": "result", "tag": "AI-bf95376ebc2c9d37a86a-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:15:37.261546+00:00", "event": "invoke", "tag": "AI-ee54538c920e5256d00f-p2", "attempt": 1}
+{"at": "2026-09-25T03:15:45.641173+00:00", "event": "result", "tag": "AI-ee54538c920e5256d00f-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:15:45.760426+00:00", "event": "invoke", "tag": "AI-0be7ace17a402c9f9a73-p2", "attempt": 1}
+{"at": "2026-09-25T03:15:51.671557+00:00", "event": "result", "tag": "AI-0be7ace17a402c9f9a73-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:15:51.785044+00:00", "event": "invoke", "tag": "AI-04245eee8fc543b4e32f-p2", "attempt": 1}
+{"at": "2026-09-25T03:15:57.469887+00:00", "event": "result", "tag": "AI-04245eee8fc543b4e32f-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:15:57.584355+00:00", "event": "invoke", "tag": "AI-28c94b8cd215ad8b3f09-p2", "attempt": 1}
+{"at": "2026-09-25T03:16:03.243104+00:00", "event": "result", "tag": "AI-28c94b8cd215ad8b3f09-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:16:03.357530+00:00", "event": "invoke", "tag": "AI-d5008094b03d1d754e8c-p2", "attempt": 1}
+{"at": "2026-09-25T03:16:17.610396+00:00", "event": "result", "tag": "AI-d5008094b03d1d754e8c-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:16:17.731711+00:00", "event": "invoke", "tag": "AI-83a321680c39e1de1819-p2", "attempt": 1}
+{"at": "2026-09-25T03:16:21.501021+00:00", "event": "result", "tag": "AI-83a321680c39e1de1819-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:16:21.619859+00:00", "event": "invoke", "tag": "AI-92738b6a9ca6a8cadabc-p2", "attempt": 1}
+{"at": "2026-09-25T03:16:26.605867+00:00", "event": "result", "tag": "AI-92738b6a9ca6a8cadabc-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:16:26.727655+00:00", "event": "invoke", "tag": "AI-2f0916466a850341d0df-p2", "attempt": 1}
+{"at": "2026-09-25T03:16:36.684352+00:00", "event": "result", "tag": "AI-2f0916466a850341d0df-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:16:36.804464+00:00", "event": "invoke", "tag": "AI-d2ed4a048cafb1a43631-p2", "attempt": 1}
+{"at": "2026-09-25T03:16:40.333976+00:00", "event": "result", "tag": "AI-d2ed4a048cafb1a43631-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:16:40.448151+00:00", "event": "invoke", "tag": "AI-8bceeea69274c3322df0-p2", "attempt": 1}
+{"at": "2026-09-25T03:16:44.663874+00:00", "event": "result", "tag": "AI-8bceeea69274c3322df0-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:16:44.780733+00:00", "event": "invoke", "tag": "AI-9c05dd76743a42ca83f9-p2", "attempt": 1}
+{"at": "2026-09-25T03:16:59.397172+00:00", "event": "result", "tag": "AI-9c05dd76743a42ca83f9-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:16:59.520864+00:00", "event": "invoke", "tag": "AI-ee641b9dfb5ffb8f1111-p2", "attempt": 1}
+{"at": "2026-09-25T03:17:08.309062+00:00", "event": "result", "tag": "AI-ee641b9dfb5ffb8f1111-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:17:08.443360+00:00", "event": "invoke", "tag": "AI-f9401d2d1993ff1b7788-p2", "attempt": 1}
+{"at": "2026-09-25T03:17:13.785020+00:00", "event": "result", "tag": "AI-f9401d2d1993ff1b7788-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:17:13.909161+00:00", "event": "invoke", "tag": "AI-20bdd94e8c1a08dc3d65-p2", "attempt": 1}
+{"at": "2026-09-25T03:17:19.338927+00:00", "event": "result", "tag": "AI-20bdd94e8c1a08dc3d65-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:17:19.463218+00:00", "event": "invoke", "tag": "AI-038f8bd35172c03c4571-p2", "attempt": 1}
+{"at": "2026-09-25T03:17:29.057325+00:00", "event": "result", "tag": "AI-038f8bd35172c03c4571-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:17:29.175679+00:00", "event": "invoke", "tag": "AI-365e3357af43bc151fdd-p2", "attempt": 1}
+{"at": "2026-09-25T03:18:17.058876+00:00", "event": "result", "tag": "AI-365e3357af43bc151fdd-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:18:17.180159+00:00", "event": "invoke", "tag": "AI-e8cf489a622690c5582e-p2", "attempt": 1}
+{"at": "2026-09-25T03:18:21.445911+00:00", "event": "result", "tag": "AI-e8cf489a622690c5582e-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:18:21.565909+00:00", "event": "invoke", "tag": "AI-8427f68c6f37c4033709-p2", "attempt": 1}
+{"at": "2026-09-25T03:18:25.554028+00:00", "event": "result", "tag": "AI-8427f68c6f37c4033709-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:18:25.676076+00:00", "event": "invoke", "tag": "AI-ffc1c608aa4a9288e5b4-p2", "attempt": 1}
+{"at": "2026-09-25T03:18:30.298975+00:00", "event": "result", "tag": "AI-ffc1c608aa4a9288e5b4-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:18:30.412412+00:00", "event": "invoke", "tag": "AI-2eccf230e5a65e32592e-p2", "attempt": 1}
+{"at": "2026-09-25T03:18:39.053823+00:00", "event": "result", "tag": "AI-2eccf230e5a65e32592e-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:18:39.174386+00:00", "event": "invoke", "tag": "AI-b6846539f51385da08a7-p2", "attempt": 1}
+{"at": "2026-09-25T03:18:43.708234+00:00", "event": "result", "tag": "AI-b6846539f51385da08a7-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:18:43.821455+00:00", "event": "invoke", "tag": "AI-af2b1d1425693b0a7585-p2", "attempt": 1}
+{"at": "2026-09-25T03:18:49.027193+00:00", "event": "result", "tag": "AI-af2b1d1425693b0a7585-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:18:49.148540+00:00", "event": "invoke", "tag": "AI-783b56068221d6093598-p2", "attempt": 1}
+{"at": "2026-09-25T03:18:52.832711+00:00", "event": "result", "tag": "AI-783b56068221d6093598-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:18:52.946920+00:00", "event": "invoke", "tag": "AI-a26852912e3b4602d8ec-p2", "attempt": 1}
+{"at": "2026-09-25T03:18:57.773534+00:00", "event": "result", "tag": "AI-a26852912e3b4602d8ec-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:18:57.897122+00:00", "event": "invoke", "tag": "AI-689952c471025e60204d-p2", "attempt": 1}
+{"at": "2026-09-25T03:19:01.994971+00:00", "event": "result", "tag": "AI-689952c471025e60204d-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:19:02.117621+00:00", "event": "invoke", "tag": "AI-bf979b970c49653b63c3-p2", "attempt": 1}
+{"at": "2026-09-25T03:19:15.292478+00:00", "event": "result", "tag": "AI-bf979b970c49653b63c3-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:19:15.415861+00:00", "event": "invoke", "tag": "AI-59542bed2736eb06f467-p2", "attempt": 1}
+{"at": "2026-09-25T03:19:19.521333+00:00", "event": "result", "tag": "AI-59542bed2736eb06f467-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:19:19.634745+00:00", "event": "invoke", "tag": "AI-1c6291246b981c9f4808-p2", "attempt": 1}
+{"at": "2026-09-25T03:19:23.241976+00:00", "event": "result", "tag": "AI-1c6291246b981c9f4808-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:19:23.357877+00:00", "event": "invoke", "tag": "AI-c6752a0216312c43d800-p2", "attempt": 1}
+{"at": "2026-09-25T03:19:29.526839+00:00", "event": "result", "tag": "AI-c6752a0216312c43d800-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:19:29.640465+00:00", "event": "invoke", "tag": "AI-69965596098a0f28b689-p2", "attempt": 1}
+{"at": "2026-09-25T03:19:34.764182+00:00", "event": "result", "tag": "AI-69965596098a0f28b689-p2", "status": "invalid_response", "detail": "Absence choice requires absent support and no quote"}
+{"at": "2026-09-25T03:19:34.889806+00:00", "event": "invoke", "tag": "AI-0983bc3d162f58927e6b-p2", "attempt": 1}
+{"at": "2026-09-25T03:19:38.856069+00:00", "event": "result", "tag": "AI-0983bc3d162f58927e6b-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:19:38.970294+00:00", "event": "invoke", "tag": "AI-77c35b4af1def800b380-p2", "attempt": 1}
+{"at": "2026-09-25T03:19:43.122276+00:00", "event": "result", "tag": "AI-77c35b4af1def800b380-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:19:43.249469+00:00", "event": "invoke", "tag": "AI-591255e79df5acfff89c-p2", "attempt": 1}
+{"at": "2026-09-25T03:20:03.689044+00:00", "event": "result", "tag": "AI-591255e79df5acfff89c-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:20:03.809988+00:00", "event": "invoke", "tag": "AI-266fb4427108300dd1f7-p2", "attempt": 1}
+{"at": "2026-09-25T03:20:08.055974+00:00", "event": "result", "tag": "AI-266fb4427108300dd1f7-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:20:08.179013+00:00", "event": "invoke", "tag": "AI-6b1bf09c78db3945b6cc-p2", "attempt": 1}
+{"at": "2026-09-25T03:20:12.054900+00:00", "event": "result", "tag": "AI-6b1bf09c78db3945b6cc-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:20:12.168879+00:00", "event": "invoke", "tag": "AI-4762c45e8330a3ae3b62-p2", "attempt": 1}
+{"at": "2026-09-25T03:20:18.689402+00:00", "event": "result", "tag": "AI-4762c45e8330a3ae3b62-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:20:18.803655+00:00", "event": "invoke", "tag": "AI-45695db8bf52593dffda-p2", "attempt": 1}
+{"at": "2026-09-25T03:20:24.286739+00:00", "event": "result", "tag": "AI-45695db8bf52593dffda-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:20:24.401145+00:00", "event": "invoke", "tag": "AI-291572b6c7569fef97f3-p2", "attempt": 1}
+{"at": "2026-09-25T03:20:28.911551+00:00", "event": "result", "tag": "AI-291572b6c7569fef97f3-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:20:29.026202+00:00", "event": "invoke", "tag": "AI-2d9108a517ae90cc5a58-p2", "attempt": 1}
+{"at": "2026-09-25T03:20:35.602940+00:00", "event": "result", "tag": "AI-2d9108a517ae90cc5a58-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:20:35.725756+00:00", "event": "invoke", "tag": "AI-584406420e612893106b-p2", "attempt": 1}
+{"at": "2026-09-25T03:20:40.204285+00:00", "event": "result", "tag": "AI-584406420e612893106b-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:20:40.327478+00:00", "event": "invoke", "tag": "AI-895aaf442e0f5eefa3ef-p2", "attempt": 1}
+{"at": "2026-09-25T03:20:54.301265+00:00", "event": "result", "tag": "AI-895aaf442e0f5eefa3ef-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:20:54.422350+00:00", "event": "invoke", "tag": "AI-7f42f86a3752c332b46b-p2", "attempt": 1}
+{"at": "2026-09-25T03:20:59.328511+00:00", "event": "result", "tag": "AI-7f42f86a3752c332b46b-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:20:59.450749+00:00", "event": "invoke", "tag": "AI-c518297bc4118b2b4b56-p2", "attempt": 1}
+{"at": "2026-09-25T03:21:05.892568+00:00", "event": "result", "tag": "AI-c518297bc4118b2b4b56-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:21:06.008221+00:00", "event": "invoke", "tag": "AI-70def931907d9ae6b175-p2", "attempt": 1}
+{"at": "2026-09-25T03:21:09.599114+00:00", "event": "result", "tag": "AI-70def931907d9ae6b175-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:21:09.713428+00:00", "event": "invoke", "tag": "AI-efd571d513eaa262867c-p2", "attempt": 1}
+{"at": "2026-09-25T03:21:15.570798+00:00", "event": "result", "tag": "AI-efd571d513eaa262867c-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:21:15.687069+00:00", "event": "invoke", "tag": "AI-84d0fbf7d4821a5b294b-p2", "attempt": 1}
+{"at": "2026-09-25T03:21:19.879263+00:00", "event": "result", "tag": "AI-84d0fbf7d4821a5b294b-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:21:20.003587+00:00", "event": "invoke", "tag": "AI-6b0a34ab67c59e317584-p2", "attempt": 1}
+{"at": "2026-09-25T03:21:29.404950+00:00", "event": "result", "tag": "AI-6b0a34ab67c59e317584-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:21:29.525066+00:00", "event": "invoke", "tag": "AI-f2a1d97b84e39b782621-p2", "attempt": 1}
+{"at": "2026-09-25T03:21:33.077470+00:00", "event": "result", "tag": "AI-f2a1d97b84e39b782621-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:21:33.204720+00:00", "event": "invoke", "tag": "AI-a80f32892a71fc7c695f-p2", "attempt": 1}
+{"at": "2026-09-25T03:21:38.205039+00:00", "event": "result", "tag": "AI-a80f32892a71fc7c695f-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:21:38.318495+00:00", "event": "invoke", "tag": "AI-bae206323f61393d87ee-p2", "attempt": 1}
+{"at": "2026-09-25T03:21:46.794872+00:00", "event": "result", "tag": "AI-bae206323f61393d87ee-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:21:46.917502+00:00", "event": "invoke", "tag": "AI-a4034d807d5b91326806-p2", "attempt": 1}
+{"at": "2026-09-25T03:21:51.396073+00:00", "event": "result", "tag": "AI-a4034d807d5b91326806-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:21:51.513951+00:00", "event": "invoke", "tag": "AI-691cbf10caac4616d9e2-p2", "attempt": 1}
+{"at": "2026-09-25T03:21:57.452361+00:00", "event": "result", "tag": "AI-691cbf10caac4616d9e2-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:21:57.566626+00:00", "event": "invoke", "tag": "AI-5071254ac1852c1a8e78-p2", "attempt": 1}
+{"at": "2026-09-25T03:22:02.991838+00:00", "event": "result", "tag": "AI-5071254ac1852c1a8e78-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:22:03.107475+00:00", "event": "invoke", "tag": "AI-c4f93a637f6b405201db-p2", "attempt": 1}
+{"at": "2026-09-25T03:22:08.084637+00:00", "event": "result", "tag": "AI-c4f93a637f6b405201db-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:22:08.199679+00:00", "event": "invoke", "tag": "AI-cf7bee6eb5118f55f857-p2", "attempt": 1}
+{"at": "2026-09-25T03:22:12.714070+00:00", "event": "result", "tag": "AI-cf7bee6eb5118f55f857-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:22:12.828109+00:00", "event": "invoke", "tag": "AI-efe5c0d2a080ed247e14-p2", "attempt": 1}
+{"at": "2026-09-25T03:22:17.926816+00:00", "event": "result", "tag": "AI-efe5c0d2a080ed247e14-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:22:18.041557+00:00", "event": "invoke", "tag": "AI-12a6c193ef56668d1e02-p2", "attempt": 1}
+{"at": "2026-09-25T03:22:21.677679+00:00", "event": "result", "tag": "AI-12a6c193ef56668d1e02-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:22:21.801752+00:00", "event": "invoke", "tag": "AI-40b9ea47e39a66e7b15a-p2", "attempt": 1}
+{"at": "2026-09-25T03:22:25.878040+00:00", "event": "result", "tag": "AI-40b9ea47e39a66e7b15a-p2", "status": "invalid_response", "detail": "Absence choice requires absent support and no quote"}
+{"at": "2026-09-25T03:22:26.001139+00:00", "event": "invoke", "tag": "AI-b7f7f9eba880a8d0f89f-p2", "attempt": 1}
+{"at": "2026-09-25T03:22:32.278876+00:00", "event": "result", "tag": "AI-b7f7f9eba880a8d0f89f-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:22:32.395089+00:00", "event": "invoke", "tag": "AI-7a1c998ed7d5b27fb538-p2", "attempt": 1}
+{"at": "2026-09-25T03:22:37.712685+00:00", "event": "result", "tag": "AI-7a1c998ed7d5b27fb538-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:22:37.837098+00:00", "event": "invoke", "tag": "AI-8b0f9ef0d0c7b919c484-p2", "attempt": 1}
+{"at": "2026-09-25T03:22:42.730756+00:00", "event": "result", "tag": "AI-8b0f9ef0d0c7b919c484-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:22:42.857125+00:00", "event": "invoke", "tag": "AI-eaa05bfb8fdae8ce81f3-p2", "attempt": 1}
+{"at": "2026-09-25T03:22:48.992849+00:00", "event": "result", "tag": "AI-eaa05bfb8fdae8ce81f3-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:22:49.112591+00:00", "event": "invoke", "tag": "AI-52b8d48d66cc9736df24-p2", "attempt": 1}
+{"at": "2026-09-25T03:22:53.434003+00:00", "event": "result", "tag": "AI-52b8d48d66cc9736df24-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:22:53.550313+00:00", "event": "invoke", "tag": "AI-2ba03e85e3f4a2d3fecd-p2", "attempt": 1}
+{"at": "2026-09-25T03:22:58.735713+00:00", "event": "result", "tag": "AI-2ba03e85e3f4a2d3fecd-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:22:58.850921+00:00", "event": "invoke", "tag": "AI-c2cfb2bea45f0ca68a5c-p2", "attempt": 1}
+{"at": "2026-09-25T03:23:03.279339+00:00", "event": "result", "tag": "AI-c2cfb2bea45f0ca68a5c-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:23:03.395612+00:00", "event": "invoke", "tag": "AI-8e344e0dd9b673e704d7-p2", "attempt": 1}
+{"at": "2026-09-25T03:23:15.307472+00:00", "event": "result", "tag": "AI-8e344e0dd9b673e704d7-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:23:15.429646+00:00", "event": "invoke", "tag": "AI-508a1d1de96e8defe57b-p2", "attempt": 1}
+{"at": "2026-09-25T03:23:20.029764+00:00", "event": "result", "tag": "AI-508a1d1de96e8defe57b-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:23:20.146264+00:00", "event": "invoke", "tag": "AI-ad10eb1fd37fa555d1cd-p2", "attempt": 1}
+{"at": "2026-09-25T03:23:24.041871+00:00", "event": "result", "tag": "AI-ad10eb1fd37fa555d1cd-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:23:24.158840+00:00", "event": "invoke", "tag": "AI-5c6c28b0aceb109e3b1b-p2", "attempt": 1}
+{"at": "2026-09-25T03:23:42.740085+00:00", "event": "result", "tag": "AI-5c6c28b0aceb109e3b1b-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:23:42.862914+00:00", "event": "invoke", "tag": "AI-ee241fde3ca6d00358f7-p2", "attempt": 1}
+{"at": "2026-09-25T03:23:47.687917+00:00", "event": "result", "tag": "AI-ee241fde3ca6d00358f7-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:23:47.810472+00:00", "event": "invoke", "tag": "AI-b2d22792448a394d5b06-p2", "attempt": 1}
+{"at": "2026-09-25T03:23:52.395727+00:00", "event": "result", "tag": "AI-b2d22792448a394d5b06-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:23:52.512023+00:00", "event": "invoke", "tag": "AI-cd7df7ce1ab83927032c-p2", "attempt": 1}
+{"at": "2026-09-25T03:23:56.970086+00:00", "event": "result", "tag": "AI-cd7df7ce1ab83927032c-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:23:57.085152+00:00", "event": "invoke", "tag": "AI-fa25e09ed366b23c3d68-p2", "attempt": 1}
+{"at": "2026-09-25T03:24:01.695759+00:00", "event": "result", "tag": "AI-fa25e09ed366b23c3d68-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:24:01.812891+00:00", "event": "invoke", "tag": "AI-07cb55bfd4df7f26c9b7-p2", "attempt": 1}
+{"at": "2026-09-25T03:24:11.472757+00:00", "event": "result", "tag": "AI-07cb55bfd4df7f26c9b7-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:24:11.596322+00:00", "event": "invoke", "tag": "AI-918b7cf0fab91dab2c99-p2", "attempt": 1}
+{"at": "2026-09-25T03:24:23.268156+00:00", "event": "result", "tag": "AI-918b7cf0fab91dab2c99-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:24:23.391535+00:00", "event": "invoke", "tag": "AI-4b012cfdfa294af9ebb5-p2", "attempt": 1}
+{"at": "2026-09-25T03:24:28.380533+00:00", "event": "result", "tag": "AI-4b012cfdfa294af9ebb5-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:24:28.496225+00:00", "event": "invoke", "tag": "AI-385d88437a206430d00c-p2", "attempt": 1}
+{"at": "2026-09-25T03:24:33.252919+00:00", "event": "result", "tag": "AI-385d88437a206430d00c-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:24:33.369072+00:00", "event": "invoke", "tag": "AI-20fbbf0564c693e7d289-p2", "attempt": 1}
+{"at": "2026-09-25T03:24:37.076707+00:00", "event": "result", "tag": "AI-20fbbf0564c693e7d289-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:24:37.192470+00:00", "event": "invoke", "tag": "AI-3cf4c8109efeab67c622-p2", "attempt": 1}
+{"at": "2026-09-25T03:24:45.042084+00:00", "event": "result", "tag": "AI-3cf4c8109efeab67c622-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:24:45.169271+00:00", "event": "invoke", "tag": "AI-b3ef13e3231f770cb7e9-p2", "attempt": 1}
+{"at": "2026-09-25T03:25:08.103779+00:00", "event": "result", "tag": "AI-b3ef13e3231f770cb7e9-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:25:08.219735+00:00", "event": "invoke", "tag": "AI-43c7af88969a769f29d1-p2", "attempt": 1}
+{"at": "2026-09-25T03:25:13.175716+00:00", "event": "result", "tag": "AI-43c7af88969a769f29d1-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:25:13.293180+00:00", "event": "invoke", "tag": "AI-05621ed3e4cfef814b64-p2", "attempt": 1}
+{"at": "2026-09-25T03:25:18.002516+00:00", "event": "result", "tag": "AI-05621ed3e4cfef814b64-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:25:18.120340+00:00", "event": "invoke", "tag": "AI-4b230f43e0691f2777f7-p2", "attempt": 1}
+{"at": "2026-09-25T03:25:27.078676+00:00", "event": "result", "tag": "AI-4b230f43e0691f2777f7-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:25:27.206777+00:00", "event": "invoke", "tag": "AI-0aa7c9ea8f846bb1ec65-p2", "attempt": 1}
+{"at": "2026-09-25T03:25:32.607225+00:00", "event": "result", "tag": "AI-0aa7c9ea8f846bb1ec65-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:25:32.731488+00:00", "event": "invoke", "tag": "AI-befb74634855fc40662b-p2", "attempt": 1}
+{"at": "2026-09-25T03:25:40.455805+00:00", "event": "result", "tag": "AI-befb74634855fc40662b-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:25:40.571564+00:00", "event": "invoke", "tag": "AI-a2ee8f14bf13392f9802-p2", "attempt": 1}
+{"at": "2026-09-25T03:25:46.068788+00:00", "event": "result", "tag": "AI-a2ee8f14bf13392f9802-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:25:46.202836+00:00", "event": "invoke", "tag": "AI-8423eb548329ce3617af-p2", "attempt": 1}
+{"at": "2026-09-25T03:25:49.847239+00:00", "event": "result", "tag": "AI-8423eb548329ce3617af-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:25:49.964778+00:00", "event": "invoke", "tag": "AI-0699aaae313587194289-p2", "attempt": 1}
+{"at": "2026-09-25T03:25:57.395047+00:00", "event": "result", "tag": "AI-0699aaae313587194289-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:25:57.511656+00:00", "event": "invoke", "tag": "AI-0f30cc15cc7822c6fda3-p2", "attempt": 1}
+{"at": "2026-09-25T03:26:02.568056+00:00", "event": "result", "tag": "AI-0f30cc15cc7822c6fda3-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:26:02.692284+00:00", "event": "invoke", "tag": "AI-c4fde86df36804500bab-p2", "attempt": 1}
+{"at": "2026-09-25T03:26:20.324462+00:00", "event": "result", "tag": "AI-c4fde86df36804500bab-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:26:20.449443+00:00", "event": "invoke", "tag": "AI-f4a1c22785b880c0067b-p2", "attempt": 1}
+{"at": "2026-09-25T03:26:24.496692+00:00", "event": "result", "tag": "AI-f4a1c22785b880c0067b-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:26:24.615933+00:00", "event": "invoke", "tag": "AI-32670c3ed360666a0a7a-p2", "attempt": 1}
+{"at": "2026-09-25T03:26:28.854821+00:00", "event": "result", "tag": "AI-32670c3ed360666a0a7a-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:26:28.972459+00:00", "event": "invoke", "tag": "AI-340d49db9c8fed68658d-p2", "attempt": 1}
+{"at": "2026-09-25T03:26:41.778257+00:00", "event": "result", "tag": "AI-340d49db9c8fed68658d-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:26:41.908579+00:00", "event": "invoke", "tag": "AI-068b8c16d41fa27c6236-p2", "attempt": 1}
+{"at": "2026-09-25T03:26:48.458215+00:00", "event": "result", "tag": "AI-068b8c16d41fa27c6236-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:26:48.589500+00:00", "event": "invoke", "tag": "AI-e2715a10bb33a0fa15e3-p2", "attempt": 1}
+{"at": "2026-09-25T03:26:57.132195+00:00", "event": "result", "tag": "AI-e2715a10bb33a0fa15e3-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:26:57.257893+00:00", "event": "invoke", "tag": "AI-fc0bf0b81deb48da2232-p2", "attempt": 1}
+{"at": "2026-09-25T03:27:02.173205+00:00", "event": "result", "tag": "AI-fc0bf0b81deb48da2232-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:27:02.290938+00:00", "event": "invoke", "tag": "AI-6dd5fceec3996cb57ee2-p2", "attempt": 1}
+{"at": "2026-09-25T03:27:06.337143+00:00", "event": "result", "tag": "AI-6dd5fceec3996cb57ee2-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:27:06.456161+00:00", "event": "invoke", "tag": "AI-afe118a4932ae51e5792-p2", "attempt": 1}
+{"at": "2026-09-25T03:27:11.759364+00:00", "event": "result", "tag": "AI-afe118a4932ae51e5792-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:27:11.882203+00:00", "event": "invoke", "tag": "AI-b6e2c6dfb4842c8b35c8-p2", "attempt": 1}
+{"at": "2026-09-25T03:27:16.500047+00:00", "event": "result", "tag": "AI-b6e2c6dfb4842c8b35c8-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:27:16.618757+00:00", "event": "invoke", "tag": "AI-de5f3316af5a8449a906-p2", "attempt": 1}
+{"at": "2026-09-25T03:27:29.603612+00:00", "event": "result", "tag": "AI-de5f3316af5a8449a906-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:27:29.731744+00:00", "event": "invoke", "tag": "AI-80ad8fd168985a9b9c7f-p2", "attempt": 1}
+{"at": "2026-09-25T03:27:41.920371+00:00", "event": "result", "tag": "AI-80ad8fd168985a9b9c7f-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:27:42.044269+00:00", "event": "invoke", "tag": "AI-8ff8738417cf1eecaeac-p2", "attempt": 1}
+{"at": "2026-09-25T03:27:45.653001+00:00", "event": "result", "tag": "AI-8ff8738417cf1eecaeac-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:27:45.770129+00:00", "event": "invoke", "tag": "AI-b7f22f2e2c1da7689b06-p2", "attempt": 1}
+{"at": "2026-09-25T03:27:49.123907+00:00", "event": "result", "tag": "AI-b7f22f2e2c1da7689b06-p2", "status": "invalid_response", "detail": "Absence choice requires absent support and no quote"}
+{"at": "2026-09-25T03:27:49.249508+00:00", "event": "invoke", "tag": "AI-1907870cd4182dfa3b0d-p2", "attempt": 1}
+{"at": "2026-09-25T03:27:53.520211+00:00", "event": "result", "tag": "AI-1907870cd4182dfa3b0d-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:27:53.647055+00:00", "event": "invoke", "tag": "AI-f3fbbe69379efa12a522-p2", "attempt": 1}
+{"at": "2026-09-25T03:28:02.721941+00:00", "event": "result", "tag": "AI-f3fbbe69379efa12a522-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:28:02.847340+00:00", "event": "invoke", "tag": "AI-dcf0869e456fb6786f26-p2", "attempt": 1}
+{"at": "2026-09-25T03:28:06.895566+00:00", "event": "result", "tag": "AI-dcf0869e456fb6786f26-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:28:07.021652+00:00", "event": "invoke", "tag": "AI-7f041ab4a47e245d9057-p2", "attempt": 1}
+{"at": "2026-09-25T03:28:12.245936+00:00", "event": "result", "tag": "AI-7f041ab4a47e245d9057-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:28:12.364735+00:00", "event": "invoke", "tag": "AI-b9673f76896e0a323348-p2", "attempt": 1}
+{"at": "2026-09-25T03:28:22.670158+00:00", "event": "result", "tag": "AI-b9673f76896e0a323348-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:28:22.794707+00:00", "event": "invoke", "tag": "AI-a50c92a449da161cd6cd-p2", "attempt": 1}
+{"at": "2026-09-25T03:28:26.324685+00:00", "event": "result", "tag": "AI-a50c92a449da161cd6cd-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:28:26.442451+00:00", "event": "invoke", "tag": "AI-c84192d72fc1a5f64c36-p2", "attempt": 1}
+{"at": "2026-09-25T03:28:32.134260+00:00", "event": "result", "tag": "AI-c84192d72fc1a5f64c36-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:28:32.258465+00:00", "event": "invoke", "tag": "AI-d6879682bcd1c826a684-p2", "attempt": 1}
+{"at": "2026-09-25T03:28:37.385923+00:00", "event": "result", "tag": "AI-d6879682bcd1c826a684-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:28:37.503485+00:00", "event": "invoke", "tag": "AI-c62b569a8d244e9a4423-p2", "attempt": 1}
+{"at": "2026-09-25T03:28:42.804933+00:00", "event": "result", "tag": "AI-c62b569a8d244e9a4423-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:28:42.928768+00:00", "event": "invoke", "tag": "AI-561402eb125828a95cc1-p2", "attempt": 1}
+{"at": "2026-09-25T03:28:46.516650+00:00", "event": "result", "tag": "AI-561402eb125828a95cc1-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:28:46.635551+00:00", "event": "invoke", "tag": "AI-026182c4c9f2cb36ad0c-p2", "attempt": 1}
+{"at": "2026-09-25T03:28:51.313839+00:00", "event": "result", "tag": "AI-026182c4c9f2cb36ad0c-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:28:51.441331+00:00", "event": "invoke", "tag": "AI-6cd6b9e4cdcd689706d2-p2", "attempt": 1}
+{"at": "2026-09-25T03:28:55.902113+00:00", "event": "result", "tag": "AI-6cd6b9e4cdcd689706d2-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:28:56.019121+00:00", "event": "invoke", "tag": "AI-911d78e6194e24689cf9-p2", "attempt": 1}
+{"at": "2026-09-25T03:29:00.554236+00:00", "event": "result", "tag": "AI-911d78e6194e24689cf9-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:29:00.678111+00:00", "event": "invoke", "tag": "AI-c867bea04a84ce281a4d-p2", "attempt": 1}
+{"at": "2026-09-25T03:29:06.313403+00:00", "event": "result", "tag": "AI-c867bea04a84ce281a4d-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:29:06.431148+00:00", "event": "invoke", "tag": "AI-e113c105fa9c7497c4fb-p2", "attempt": 1}
+{"at": "2026-09-25T03:29:10.671548+00:00", "event": "result", "tag": "AI-e113c105fa9c7497c4fb-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:29:10.789193+00:00", "event": "invoke", "tag": "AI-e24526f9191d8206546f-p2", "attempt": 1}
+{"at": "2026-09-25T03:29:15.386875+00:00", "event": "result", "tag": "AI-e24526f9191d8206546f-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:29:15.514382+00:00", "event": "invoke", "tag": "AI-8e69c59059eb489c5fdb-p2", "attempt": 1}
+{"at": "2026-09-25T03:29:25.380479+00:00", "event": "result", "tag": "AI-8e69c59059eb489c5fdb-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:29:25.498524+00:00", "event": "invoke", "tag": "AI-049d7f2cb256f7975718-p2", "attempt": 1}
+{"at": "2026-09-25T03:29:31.160097+00:00", "event": "result", "tag": "AI-049d7f2cb256f7975718-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:29:31.282016+00:00", "event": "invoke", "tag": "AI-86a1a764acfb30a301c3-p2", "attempt": 1}
+{"at": "2026-09-25T03:29:40.754627+00:00", "event": "result", "tag": "AI-86a1a764acfb30a301c3-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:29:40.880516+00:00", "event": "invoke", "tag": "AI-6aad66c726c8eaf61da2-p2", "attempt": 1}
+{"at": "2026-09-25T03:29:50.440155+00:00", "event": "result", "tag": "AI-6aad66c726c8eaf61da2-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:29:50.565581+00:00", "event": "invoke", "tag": "AI-39d69de231e86013682f-p2", "attempt": 1}
+{"at": "2026-09-25T03:29:57.074887+00:00", "event": "result", "tag": "AI-39d69de231e86013682f-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:29:57.192612+00:00", "event": "invoke", "tag": "AI-3df0477ac7beb69dfe6b-p2", "attempt": 1}
+{"at": "2026-09-25T03:30:06.160888+00:00", "event": "result", "tag": "AI-3df0477ac7beb69dfe6b-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:30:06.287457+00:00", "event": "invoke", "tag": "AI-7e0bcf91045d00cebf6f-p2", "attempt": 1}
+{"at": "2026-09-25T03:30:09.942808+00:00", "event": "result", "tag": "AI-7e0bcf91045d00cebf6f-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:30:10.061526+00:00", "event": "invoke", "tag": "AI-79862d6a8667428b8334-p2", "attempt": 1}
+{"at": "2026-09-25T03:30:20.242693+00:00", "event": "result", "tag": "AI-79862d6a8667428b8334-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:30:20.369905+00:00", "event": "invoke", "tag": "AI-391c28901aa2c266df71-p2", "attempt": 1}
+{"at": "2026-09-25T03:30:23.944510+00:00", "event": "result", "tag": "AI-391c28901aa2c266df71-p2", "status": "recorded", "detail": ""}
+{"at": "2026-09-25T03:30:24.066475+00:00", "event": "invoke", "tag": "AI-676276f25f8a76fd00e1-p2", "attempt": 1}
+{"at": "2026-09-25T03:30:30.300824+00:00", "event": "result", "tag": "AI-676276f25f8a76fd00e1-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:30:30.419818+00:00", "event": "invoke", "tag": "AI-71beac4875f690a5af1e-p2", "attempt": 1}
+{"at": "2026-09-25T03:30:33.982962+00:00", "event": "result", "tag": "AI-71beac4875f690a5af1e-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:30:34.112246+00:00", "event": "invoke", "tag": "AI-c683cde718c8ed9afb48-p2", "attempt": 1}
+{"at": "2026-09-25T03:30:49.319451+00:00", "event": "result", "tag": "AI-c683cde718c8ed9afb48-p2", "status": "invalid_response", "detail": "Explicit support needs a verbatim artifact quote"}
+{"at": "2026-09-25T03:30:49.445738+00:00", "event": "invoke", "tag": "AI-accd0baba4f627184d47-p2", "attempt": 1}
+{"at": "2026-09-25T03:30:55.063961+00:00", "event": "result", "tag": "AI-accd0baba4f627184d47-p2", "status": "invalid_response", "detail": "Repeat requires the original packet and evaluator configuration"}
+{"at": "2026-09-25T03:30:55.187443+00:00", "event": "invoke", "tag": "AI-52c390774c2e09803aa8-p2", "attempt": 1}
+{"at": "2026-09-25T03:31:00.870666+00:00", "event": "result", "tag": "AI-52c390774c2e09803aa8-p2", "status": "recorded", "detail": ""}
