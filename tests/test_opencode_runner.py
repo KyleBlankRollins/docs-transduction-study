@@ -360,13 +360,23 @@ def test_crash_between_json_and_csv_is_reconciled(tmp_path):
     assert len(csv_path.read_text().splitlines()) == 2
 
 
-def test_batch_keys_must_match_packets(tmp_path):
+def test_batch_keys_must_cover_packets(tmp_path):
     packet, key = packet_and_key()
+    _other, other_key = packet_and_key("SYNTH-2")
     (tmp_path / "p.jsonl").write_text(json.dumps(packet) + "\n")
     (tmp_path / "k.jsonl").write_text(
-        json.dumps({**key, "opaque_id": "AI-other"}) + "\n"
+        json.dumps(key) + "\n" + json.dumps(other_key) + "\n"
     )
-    with pytest.raises(runner.RunnerError, match="one-to-one"):
+    # A subset of packets (the repeat file) loads against the full key set.
+    assert runner.load_batch(tmp_path / "p.jsonl", tmp_path / "k.jsonl") == [
+        (packet, key)
+    ]
+    (tmp_path / "k.jsonl").write_text(json.dumps(other_key) + "\n")
+    with pytest.raises(runner.RunnerError, match="no key"):
+        runner.load_batch(tmp_path / "p.jsonl", tmp_path / "k.jsonl")
+    (tmp_path / "p.jsonl").write_text((json.dumps(packet) + "\n") * 2)
+    (tmp_path / "k.jsonl").write_text(json.dumps(key) + "\n")
+    with pytest.raises(runner.RunnerError, match="Duplicate"):
         runner.load_batch(tmp_path / "p.jsonl", tmp_path / "k.jsonl")
 
 

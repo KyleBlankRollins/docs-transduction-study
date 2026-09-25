@@ -713,12 +713,15 @@ def load_batch(
         for line in packets.read_text(encoding="utf-8").splitlines()
         if line
     ]
-    by_id = {
-        key["opaque_id"]: key
-        for key in (json.loads(line) for line in key_text.splitlines() if line)
-    }
-    if len(by_id) != len(loaded) or {p["opaque_id"] for p in loaded} != set(by_id):
-        raise RunnerError("Packets and keys do not match one-to-one")
+    entries = [json.loads(line) for line in key_text.splitlines() if line]
+    by_id = {key["opaque_id"]: key for key in entries}
+    identifiers = [p["opaque_id"] for p in loaded]
+    # Every packet needs exactly one key; extra keys are allowed because the
+    # repeat file is a subset of the full, sealed key set.
+    if len(by_id) != len(entries) or len(set(identifiers)) != len(identifiers):
+        raise RunnerError("Duplicate packet or key identifiers")
+    if missing := sorted(set(identifiers) - set(by_id)):
+        raise RunnerError(f"{len(missing)} packets have no key")
     return [(packet, by_id[packet["opaque_id"]]) for packet in loaded]
 
 
