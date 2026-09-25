@@ -141,3 +141,52 @@ def test_constant_scores_leave_kappa_undefined(tmp_path):
         record["score"] = 3
     status = analysis.gate(records, expected, SEED)
     assert status["kappa"] is None and "kappa undefined" in status["failures"]
+
+
+def test_a8_documented_unscorable_are_excused_and_others_fail(tmp_path):
+    expected = write_records(tmp_path / "coding", drop=1)
+    records = analysis.load_records(tmp_path / "coding")
+    missing = sorted(
+        set(expected) - {r["opaque_id"] for r in records if r["pass_number"] == 1}
+    )
+    assert len(missing) == 1
+    blocked = analysis.gate(records, expected, SEED)
+    assert not blocked["substantive_findings_allowed"]
+    documented = {
+        (missing[0], 1): "invalid under A7: Packet or response identity mismatch"
+    }
+    allowed = analysis.gate(records, expected, SEED, documented)
+    assert allowed["substantive_findings_allowed"], allowed["failures"]
+    assert allowed["coverage"] == f"{len(expected) - 1}/{len(expected)}"
+    assert allowed["excused_first_pass"] == 1 and allowed["documented_unscorable"]
+    sample = coding_ai.repeat_sample(expected, SEED)
+    if missing[0] in sample:
+        assert allowed["repeat_pairs_used"] == len(sample) - 1
+
+
+def test_a8_unscorable_list_is_derived_from_evidence(tmp_path):
+    coding = tmp_path / "coding"
+    coding.mkdir()
+    (coding / "m1_ai_a7_invalid.json").write_text(
+        json.dumps(
+            [
+                {
+                    "attempt": "AI-aaa-p1-a1",
+                    "error": "Response fields do not match protocol",
+                }
+            ]
+        )
+    )
+    ledger = [
+        {"event": "result", "tag": "AI-bbb-p1", "status": "timeout"},
+        {"event": "result", "tag": "AI-bbb-p1", "status": "timeout"},
+        {"event": "result", "tag": "AI-ccc-p1", "status": "export_failed"},
+        {"event": "result", "tag": "AI-ddd-p2", "status": "export_failed"},
+        {"event": "result", "tag": "AI-ddd-p2", "status": "recorded"},
+    ]
+    (coding / "m1_ai_attempts.jsonl").write_text(
+        "".join(json.dumps(e) + "\n" for e in ledger)
+    )
+    documented = analysis.documented_unscorable(coding)
+    assert set(documented) == {("AI-aaa", 1), ("AI-bbb", 1)}
+    assert "2 attempt(s): timeout" in documented[("AI-bbb", 1)]

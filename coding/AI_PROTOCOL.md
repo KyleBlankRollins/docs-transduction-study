@@ -165,6 +165,11 @@ IDs. Freeze and record the available study configuration before study evaluation
 
 ## Repeatability
 
+**Amendment A8 (2026-09-24):** assignments documented as unscorable (structurally
+invalid under A7, or no usable answer after the allowed retries) may be missing;
+reports list them and state coverage. Kappa uses the locked repeat sample minus
+those. Any undocumented gap still blocks substantive findings.
+
 Before first-pass evaluation, save the complete assignment IDs and the
 seed-selected 20% repeat sample, rounded up. Never select repeats after reading
 responses. Each repeat receives the identical packet in a new context under the

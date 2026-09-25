@@ -2,6 +2,21 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-24 — First-pass retry complete; A7 rescoring; amendment A8
+
+Retry of 461 transport failures (maintainer-approved, cap 2,300): 93 recorded,
+367 invalid under the strict rule, 1 repeated timeout; every export parsed. Total
+invocations 2,293. `make rescore-a7`: 1,827 of 1,832 first-pass assignments
+scored under A7 (852 strict-valid, 975 rescued: 485 quotes verified after
+normalization, 469 unverified quotes scored by option, 17 absence choices with a
+quote); 4 remain structurally invalid. No score distributions were examined.
+
+The maintainer chose to excuse documented unscorable assignments (A8) rather
+than let 5 of 1,832 block all findings: `analysis.documented_unscorable` derives
+them from the A7 invalid list and the attempt ledger; the gate lists them,
+states coverage, and computes kappa on the repeat sample minus them. Tests cover
+excused versus undocumented gaps and the derivation.
+
 ## 2026-09-24 — Amendment A7 (M1-AI quote verification and option scoring)
 
 The maintainer decided to amend quote handling rather than accept an incomplete

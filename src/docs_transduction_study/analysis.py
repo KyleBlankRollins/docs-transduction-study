@@ -49,17 +49,79 @@ def load_records(
     ]
 
 
+MAX_ATTEMPTS = 2
+NEVER_EVALUABLE = {"oversize"}
+
+
+def documented_unscorable(coding: Path) -> dict[tuple[str, int], str]:
+    """Amendment A8: assignments that may be missing without failing the gate.
+
+    Only (a) answers that remain structurally invalid under A7 (opaque-ID or
+    field mismatches, unknown options) and (b) assignments whose attempts all
+    ended in transport failure after the allowed retries (or were oversize).
+    Everything else that is missing still fails the gate.
+    """
+    documented: dict[tuple[str, int], str] = {}
+    invalid = coding / "m1_ai_a7_invalid.json"
+    if invalid.exists():
+        for entry in json.loads(invalid.read_text(encoding="utf-8")):
+            opaque, pass_part, _ = entry["attempt"].rsplit("-", 2)
+            documented[(opaque, int(pass_part[1:]))] = (
+                f"invalid under A7: {entry['error']}"
+            )
+    ledger = coding / "m1_ai_attempts.jsonl"
+    if ledger.exists():
+        results: dict[str, list[str]] = defaultdict(list)
+        for line in ledger.read_text(encoding="utf-8").splitlines():
+            event = json.loads(line)
+            if event["event"] == "result":
+                results[event["tag"]].append(event["status"])
+        for tag, statuses in results.items():
+            last = statuses[-1]
+            if last in {"recorded", "invalid_response"}:
+                continue
+            if last in NEVER_EVALUABLE or len(statuses) >= MAX_ATTEMPTS:
+                opaque, pass_part = tag.rsplit("-", 1)
+                documented[(opaque, int(pass_part[1:]))] = (
+                    f"no usable answer after {len(statuses)} attempt(s): {last}"
+                )
+    return documented
+
+
+def _kappa(pairs: list[tuple[int, int]]) -> float | None:
+    count = len(pairs)
+    observed = sum(a == b for a, b in pairs) / count
+    first = Counter(a for a, _ in pairs)
+    second = Counter(b for _, b in pairs)
+    expected = sum(first[s] * second[s] for s in SCORES) / count**2
+    return None if expected == 1 else (observed - expected) / (1 - expected)
+
+
 def gate(
-    records: list[dict[str, Any]], expected_ids: list[str], seed: str
+    records: list[dict[str, Any]],
+    expected_ids: list[str],
+    seed: str,
+    unscorable: dict[tuple[str, int], str] | None = None,
 ) -> dict[str, Any]:
-    """Evaluate the fail-closed gate; never raises for data problems."""
+    """Evaluate the fail-closed gate; never raises for data problems.
+
+    Amendment A8: a locked assignment may be missing only if it is documented
+    as unscorable; repeatability uses the locked repeat sample minus documented
+    unscorable first-pass or repeat assignments.
+    """
+    unscorable = unscorable or {}
     reasons: list[str] = []
     first = {r["opaque_id"]: r["score"] for r in records if r["pass_number"] == 1}
     second = {r["opaque_id"]: r["score"] for r in records if r["pass_number"] == 2}
-    missing = sorted(set(expected_ids) - set(first))
-    foreign = sorted(set(first) - set(expected_ids))
-    if missing:
-        reasons.append(f"{len(missing)} first-pass assignments missing")
+    expected = set(expected_ids)
+    missing = sorted(expected - set(first))
+    excused = [o for o in missing if (o, 1) in unscorable]
+    undocumented = [o for o in missing if (o, 1) not in unscorable]
+    foreign = sorted(set(first) - expected)
+    if undocumented:
+        reasons.append(
+            f"{len(undocumented)} first-pass assignments missing without documentation"
+        )
     if foreign:
         reasons.append(f"{len(foreign)} records outside the locked assignments")
     if not all(r.get("isolation_verified") for r in records):
@@ -67,33 +129,38 @@ def gate(
     configurations = {json.dumps(r["configuration"], sort_keys=True) for r in records}
     if len(configurations) > 1:
         reasons.append("more than one evaluator configuration")
-    kappa: dict[str, Any] | None = None
-    if not missing and not foreign and records:
-        sample = coding_ai.repeat_sample(sorted(expected_ids), seed)
-        try:
-            kappa = coding_ai.repeatability(
-                first,
-                second,
-                sample,
-                expected_ids=sorted(expected_ids),
-                seed=seed,
-                isolation_verified=not reasons,
-            )
-        except ValueError as error:
-            reasons.append(str(error))
-    if kappa is None and not reasons:
-        reasons.append("no records")
-    if kappa is not None:
-        if kappa["kappa"] is None:
+    sample = coding_ai.repeat_sample(sorted(expected), seed) if expected else []
+    eligible = [
+        o for o in sample if (o, 1) not in unscorable and (o, 2) not in unscorable
+    ]
+    repeat_missing = [o for o in eligible if o not in second]
+    if set(second) - set(sample):
+        reasons.append("repeat records outside the locked repeat sample")
+    if repeat_missing:
+        reasons.append(
+            f"{len(repeat_missing)} repeat assignments missing without documentation"
+        )
+    kappa: float | None = None
+    if not reasons and eligible:
+        kappa = _kappa([(first[o], second[o]) for o in eligible])
+        if kappa is None:
             reasons.append("kappa undefined")
-        elif kappa["kappa"] < 0.6:
-            reasons.append(f"kappa {kappa['kappa']:.3f} below 0.6")
+        elif kappa < 0.6:
+            reasons.append(f"kappa {kappa:.3f} below 0.6")
+    elif not records:
+        reasons.append("no records")
     return {
         "first_pass_records": len(first),
         "repeat_records": len(second),
         "expected_first_pass": len(expected_ids),
-        "kappa": kappa["kappa"] if kappa else None,
-        "repeat_sample_size": kappa["sample_size"] if kappa else None,
+        "coverage": f"{len(set(first) & expected)}/{len(expected_ids)}",
+        "documented_unscorable": {
+            f"{o}-p{p}": why for (o, p), why in sorted(unscorable.items())
+        },
+        "excused_first_pass": len(excused),
+        "kappa": kappa,
+        "repeat_sample_size": len(sample),
+        "repeat_pairs_used": len(eligible) if kappa is not None else None,
         "failures": reasons,
         "substantive_findings_allowed": not reasons,
     }
@@ -213,7 +280,7 @@ def analyze(
     records_dir: str = coding_ai.RECORDS_DIR,
 ) -> dict[str, Any]:
     records = load_records(coding_dir, records_dir)
-    status = gate(records, expected_ids, seed)
+    status = gate(records, expected_ids, seed, documented_unscorable(coding_dir))
     out.mkdir(parents=True, exist_ok=True)
     report: dict[str, Any] = {"label": LABEL, "scoring": records_dir, "gate": status}
     if not status["substantive_findings_allowed"]:
@@ -305,6 +372,7 @@ def main() -> None:
                     load_records(args.coding_dir, args.records),
                     expected,
                     instrument["seed"],
+                    documented_unscorable(args.coding_dir),
                 ),
                 indent=2,
             )
