@@ -1,0 +1,31 @@
+{
+  "label": "Exploratory, model-conditioned M1-AI results (amendment A3). Not M1a or M1b; AI repeatability is not human reliability or validity.",
+  "scoring": "m1_ai_records",
+  "gate": {
+    "first_pass_records": 852,
+    "repeat_records": 140,
+    "expected_first_pass": 1832,
+    "coverage": "852/1832",
+    "documented_unscorable": {
+      "AI-026182c4c9f2cb36ad0c-p1": "invalid under A7: Packet or response identity mismatch",
+      "AI-09a1aeac597df379bfae-p1": "invalid under A7: Packet or response identity mismatch",
+      "AI-2e652bb2e0b943ac69cb-p1": "no usable answer after 2 attempt(s): timeout",
+      "AI-51a205a7fb9b29bb57bb-p1": "invalid under A7: Response fields do not match protocol",
+      "AI-cde3ff5a5a538d55278e-p1": "invalid under A7: Packet or response identity mismatch"
+    },
+    "excused_first_pass": 5,
+    "kappa": null,
+    "repeat_sample_size": 367,
+    "repeat_pairs_used": null,
+    "failures": [
+      "975 first-pass assignments missing without documentation",
+      "225 repeat assignments missing without documentation"
+    ],
+    "substantive_findings_allowed": false
+  },
+  "engineering": {
+    "records": 992,
+    "scores_withheld": true,
+    "note": "Substantive findings are blocked; publish this limitation or failure."
+  }
+}

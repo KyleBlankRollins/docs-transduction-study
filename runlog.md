@@ -2,6 +2,27 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-24 — Repeat pass, gate, and pre-specified M1-AI analysis (exploratory)
+
+Repeat pass (maintainer-approved, cap 2,700): 367/367 attempted once, no
+transport failures; 2,660 invocations in total. A7 rescoring: 2,194 records
+(1,827 first pass, 367 repeats); 4 structurally invalid. Gate (A7, primary):
+coverage 1,827/1,832 with 5 documented exclusions; unweighted kappa **0.668**
+over 365 repeat pairs; substantive findings allowed. Strict gate: coverage
+852/1,832, 975 first-pass and 225 repeat assignments missing; blocked, as
+expected under the strict quote rule.
+
+`make analyze` wrote `analysis/m1_ai_a7/` (H1 pooled and per specimen, H2 O1/O2,
+R3 by device, H3 overall and by arm × spans_chunks) and
+`analysis/m1_ai_strict/report.json` (failure report). All outputs are
+exploratory, model-conditioned M1-AI (GLM-5.3-Flash via OpenCode Go), not M1a
+or M1b, and scored under post-hoc amendments A7/A8 decided after partial
+exposure. Pooled explicit-minus-implicit mean gaps: A1 -0.147, A2 -0.099, A3
+-0.071, A4 -0.044. H3 at A4: 120 non-preserved; 6 Corrupted, 42 Absent, 72
+Degraded. R3-D4 has no instances. Nearly all differences lie between scores 2
+and 3 (correct with versus without a verified explicit quote); scores 0 and 1
+are rare.
+
 ## 2026-09-24 — First-pass retry complete; A7 rescoring; amendment A8
 
 Retry of 461 transport failures (maintainer-approved, cap 2,300): 93 recorded,

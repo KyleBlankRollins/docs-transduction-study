@@ -1,0 +1,33 @@
+{
+  "label": "Exploratory, model-conditioned M1-AI results (amendment A3). Not M1a or M1b; AI repeatability is not human reliability or validity.",
+  "scoring": "m1_ai_a7_records",
+  "gate": {
+    "first_pass_records": 1827,
+    "repeat_records": 367,
+    "expected_first_pass": 1832,
+    "coverage": "1827/1832",
+    "documented_unscorable": {
+      "AI-026182c4c9f2cb36ad0c-p1": "invalid under A7: Packet or response identity mismatch",
+      "AI-09a1aeac597df379bfae-p1": "invalid under A7: Packet or response identity mismatch",
+      "AI-2e652bb2e0b943ac69cb-p1": "no usable answer after 2 attempt(s): timeout",
+      "AI-51a205a7fb9b29bb57bb-p1": "invalid under A7: Response fields do not match protocol",
+      "AI-cde3ff5a5a538d55278e-p1": "invalid under A7: Packet or response identity mismatch"
+    },
+    "excused_first_pass": 5,
+    "kappa": 0.6683375990065272,
+    "repeat_sample_size": 367,
+    "repeat_pairs_used": 365,
+    "failures": [],
+    "substantive_findings_allowed": true
+  },
+  "tables": [
+    "h1_gap_per_specimen",
+    "h1_gap_pooled",
+    "h1_per_specimen",
+    "h1_pooled",
+    "h2_observed",
+    "h3_by_arm_spans",
+    "h3_overall",
+    "r3_by_device"
+  ]
+}
