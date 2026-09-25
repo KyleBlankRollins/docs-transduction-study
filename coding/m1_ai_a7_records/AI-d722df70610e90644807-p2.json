@@ -1,0 +1,54 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-d722df70610e90644807",
+  "assignment_id": "S12-O2-at-001248|implicit|A3",
+  "pass_number": 2,
+  "session_id": "ses_f29711a28ffe7xg0VNU5ylkuH1",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "fc5539d6d60c9cf0df6fa4fb4008aa80056c06db3bcce16d351288ee5323ec59",
+  "score": 3,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "quote_verified_after_normalization"
+  ],
+  "attempt": "AI-d722df70610e90644807-p2-a1",
+  "response": {
+    "opaque_id": "AI-d722df70610e90644807",
+    "option_id": "4",
+    "support": "explicit",
+    "evidence": "Contentful credentials - You can find the following credentials in your Contentful dashboard Settings > API keys . ... Contentful space ID - The ID of your Contentful space. Contentful delivery access token - The access token to consume published content from your Contentful space. Contentful preview access token - The access token to consume unpublished content from your Contentful space.",
+    "rationale": "The artifact explicitly lists the space ID, delivery access token, and preview access token as the credentials to find in the dashboard under Settings > API keys, matching option 4."
+  }
+}

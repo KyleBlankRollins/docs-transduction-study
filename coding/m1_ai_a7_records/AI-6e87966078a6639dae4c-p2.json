@@ -1,0 +1,54 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-6e87966078a6639dae4c",
+  "assignment_id": "S09-O1-at-011641|explicit|A2",
+  "pass_number": 2,
+  "session_id": "ses_f2983c8a7ffeNfPBLn2btJEJ53",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "5f1b91cfbfb1a9d31d3d60b1109ea90fccdae9284ff9d9afa554097f0b999e6e",
+  "score": 2,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "explicit_quote_unverified"
+  ],
+  "attempt": "AI-6e87966078a6639dae4c-p2-a1",
+  "response": {
+    "opaque_id": "AI-6e87966078a6639dae4c",
+    "option_id": "4",
+    "support": "explicit",
+    "evidence": "In the section 'Migrating from Next.js' /app directory', after showing app/layout.jsx and app/head.jsx, the artifact says: 'Make a new Astro layout file using only the returned JSX.' and 'Replace both these files with a single Astro layout file that contains a page shell (<html>, <head>, and <body> tags) and a <slot/> instead of React's {children} prop:'",
+    "rationale": "The /app directory migration instructions immediately follow figures of app/layout.jsx (customizing <html> and <body>) and app/head.jsx (customizing <head>). The instruction to use 'only the returned JSX' and to 'replace both these files' refers to those two app-directory files, whose JSX is combined into one Astro layout. The pages-directory _document.jsx is covered in a separate section and is not the source here."
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-de5f3316af5a8449a906",
+  "assignment_id": "S11-O2-at-006710|explicit|A1",
+  "pass_number": 2,
+  "session_id": "ses_f29659c45ffe4Kxzw3ytASrlk0",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "9a6cff438e1b61a421d62d95840404ea6bcd3df48a6be0724c105e815f8df719",
+  "score": 3,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "quote_verified_after_normalization"
+  ],
+  "attempt": "AI-de5f3316af5a8449a906-p2-a1",
+  "response": {
+    "opaque_id": "AI-de5f3316af5a8449a906",
+    "option_id": "1",
+    "support": "explicit",
+    "evidence": "In Builder\u2019s visual editor, create a new content entry with the following values: <strong>title:</strong> \u2018First post, woohoo!\u2019 <strong>slug:</strong> \u2018first-post-woohoo\u2019",
+    "rationale": "The artifact explicitly lists the first example post's title as 'First post, woohoo!' and its slug as 'first-post-woohoo', which is the title lowercased, with punctuation removed and spaces replaced by hyphens."
+  }
+}

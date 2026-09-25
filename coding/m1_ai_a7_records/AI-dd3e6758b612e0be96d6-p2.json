@@ -1,0 +1,54 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-dd3e6758b612e0be96d6",
+  "assignment_id": "S02-R1-005|explicit|A1",
+  "pass_number": 2,
+  "session_id": "ses_f2974cfdcffe2oC4sh4JqouqNm",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "dc4d19a44fbaa5c0de1b383bd7ddc7bed10e72177ddb7e1a41b64b17c35fa32c",
+  "score": 2,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "explicit_quote_unverified"
+  ],
+  "attempt": "AI-dd3e6758b612e0be96d6-p2-a1",
+  "response": {
+    "opaque_id": "AI-dd3e6758b612e0be96d6",
+    "option_id": "3",
+    "support": "explicit",
+    "evidence": "In the Zed section, the steps read: 'Open ~/.config/zed/settings.json in your editor.' then 'Add the following configuration to your Zed MCP settings:' (followed by a JSON block with \"context_servers\" and \"Astro docs\"), then 'Save the configuration.'",
+    "rationale": "The Zed setup is a three-step list: open the settings file, add the context-server configuration, then save. The action between opening and saving is explicitly stated as adding the configuration, matching option 3."
+  }
+}

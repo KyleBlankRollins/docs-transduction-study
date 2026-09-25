@@ -1,0 +1,54 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-0dc257ece334fd44dc54",
+  "assignment_id": "S06-R2-008|implicit|A2",
+  "pass_number": 2,
+  "session_id": "ses_f2977586bffeIonbaDAIL08vWv",
+  "evaluator": "opencode:opencode-go/glm-5.3-flash",
+  "configuration": {
+    "transport": "opencode-runner-1",
+    "cli": "opencode",
+    "cli_version": "1.18.32",
+    "provider": "opencode-go",
+    "model": "glm-5.3-flash",
+    "variant": "default (provider reasoning effort unknown)",
+    "temperature": 0.0,
+    "max_output_tokens": "32000 (OpenCode default cap; verified on loopback)",
+    "top_p": "unknown (not set)",
+    "seed": "unknown (not supported by transport)",
+    "weights": "unknown (provider alias does not pin weights)",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944",
+    "isolation_flags": [
+      "DISABLE_AUTOCOMPACT",
+      "DISABLE_AUTOUPDATE",
+      "DISABLE_CLAUDE_CODE",
+      "DISABLE_DEFAULT_PLUGINS",
+      "DISABLE_EXTERNAL_SKILLS",
+      "DISABLE_LSP_DOWNLOAD",
+      "DISABLE_MODELS_FETCH",
+      "DISABLE_PROJECT_CONFIG",
+      "DISABLE_PRUNE",
+      "DISABLE_SHARE",
+      "PURE"
+    ],
+    "config_sha256": "7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "faa518fdf51880f01c85cc4f62911b115f411e51a61c130b83a8e435ecb2daf4",
+  "score": 2,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "explicit_quote_unverified"
+  ],
+  "attempt": "AI-0dc257ece334fd44dc54-p2-a1",
+  "response": {
+    "opaque_id": "AI-0dc257ece334fd44dc54",
+    "option_id": "4",
+    "support": "explicit",
+    "evidence": "The two commands appear under the same step introduced by: \"Choose one of the following options. These are alternatives \u2014 use exactly one, not all of them.\" The first is labeled \"If you are using static:\" with code \"cd dist && deployctl deploy jsr:@std/http/file-server\", and the second is labeled \"If you are using ssr:\" with code \"deployctl deploy ./dist/server/entry.mjs\".",
+    "rationale": "The page presents the two deployctl commands as mutually exclusive alternatives, selected according to whether the Astro site is a static build or an on-demand rendered (ssr) build, not as sequential steps or as upload/activation stages."
+  }
+}
