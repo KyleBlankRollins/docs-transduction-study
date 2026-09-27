@@ -493,3 +493,17 @@ def test_non_retryable_provider_error_stops_batch(tmp_path):
     with pytest.raises(runner.RunnerError, match="non-retryable"):
         run_one(tmp_path, FakeCLI(events=rejected + "\n", exit=1))
     assert runner.permanent_provider_error([{"data": {"isRetryable": True}}]) is False
+
+
+def test_interrupted_attempt_folder_is_kept_and_skipped(tmp_path):
+    packet, key = packet_and_key()
+    tag = f"{packet['opaque_id']}-p1"
+    orphan = tmp_path / "m1_ai_attempts" / f"{tag}-a1"
+    orphan.mkdir(parents=True)
+    (orphan / "packet.txt").write_text("interrupted")
+    outcome = run_one(
+        tmp_path, FakeCLI(answer_for(packet, key)), packet=packet, key=key
+    )
+    assert outcome.status == "recorded"
+    assert (orphan / "packet.txt").read_text() == "interrupted"
+    assert (tmp_path / "m1_ai_attempts" / f"{tag}-a2" / "result.json").exists()

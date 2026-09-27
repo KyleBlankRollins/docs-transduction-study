@@ -143,11 +143,11 @@ def ask(
         return {"status": "attempts_exhausted"}
     if ledger.invocations() >= ledger.max_invocations:
         raise runner.RunnerError("Audit budget exhausted")
-    attempt = output / "attempts" / f"{tag}-a{len(previous) + 1}"
+    attempt, number = runner.next_attempt_dir(output / "attempts", tag)
     attempt.mkdir(parents=True)
     sent = runner.packet_text(packet)
     (attempt / "packet.txt").write_text(sent, encoding="utf-8")
-    ledger.append({"event": "invoke", "tag": tag, "attempt": len(previous) + 1})
+    ledger.append({"event": "invoke", "tag": tag, "attempt": number})
 
     def finish(status: str, detail: str = "", **extra: Any) -> dict[str, Any]:
         (attempt / "result.json").write_text(

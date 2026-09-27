@@ -64,6 +64,15 @@ def permanent_provider_error(errors: list[Any]) -> bool:
     )
 
 
+def next_attempt_dir(root: Path, tag: str) -> tuple[Path, int]:
+    """First unused attempt number; an interrupted attempt (folder without a
+    result) is kept as evidence and never overwritten."""
+    number = 1
+    while (root / f"{tag}-a{number}").exists():
+        number += 1
+    return root / f"{tag}-a{number}", number
+
+
 TRANSPORT_FAILURES = {"timeout", "exit_status", "no_session", "export_failed"}
 
 
@@ -527,11 +536,11 @@ def run_assignment(
     if len(sent.encode()) > config.max_packet_bytes:
         ledger.append({"event": "result", "tag": tag, "status": "oversize"})
         return Attempt("oversize", f"{len(sent.encode())} bytes")
-    attempt_dir = output / "m1_ai_attempts" / f"{tag}-a{len(prior) + 1}"
+    attempt_dir, attempt_number = next_attempt_dir(output / "m1_ai_attempts", tag)
     attempt_dir.mkdir(parents=True)
     (attempt_dir / "packet.txt").write_text(sent, encoding="utf-8")
     configuration = configuration_record(config, isolation["cli_version"])
-    ledger.append({"event": "invoke", "tag": tag, "attempt": len(prior) + 1})
+    ledger.append({"event": "invoke", "tag": tag, "attempt": attempt_number})
 
     def finish(status: str, detail: str = "", **extra: Any) -> Attempt:
         meta = {
