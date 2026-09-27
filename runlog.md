@@ -2,6 +2,31 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-27 — UNPLANNED exploratory quote diagnostics (maintainer-requested)
+
+After the pre-specified results were seen, the maintainer asked whether the
+implicit arm's higher scores reflect quote verifiability rather than survival.
+`exploratory.py` (first-pass A7 records) wrote
+`analysis/exploratory/quote_diagnostics/`; it is not pre-specified and does not
+replace the pre-specified tables.
+
+**Correctness (score 2-3 versus 0-1), explicit vs implicit:** A1 0.996 vs 0.996;
+A2 0.974 vs 0.987; A3 0.996 vs 0.996; A4 0.904 vs 0.886. Gaps: 0.000, -0.013,
+0.000, +0.017. The pre-specified negative gaps therefore come almost entirely
+from how correct answers were supported (3 versus 2), not from whether the
+relation was answered correctly.
+
+**Support of correct answers (explicit / implicit):** exact quote A1 28/41, A2
+23/34, A3 132/146, A4 133/146; quote verified only after normalization A1
+68/88, A2 86/93, A3 44/47, A4 28/31; unverifiable explicit quote A1 112/96, A2
+90/91, A3 33/30, A4 10/7; support self-reported as inferred A1 20/2, A2 23/8,
+A3 17/4, A4 36/19. The explicit arm has fewer quotable supports and more
+self-reported inference at every stage. Plausible reading (not tested): the
+implicit arm states each relation in a sentence ("These are alternatives — use
+exactly one"), while the explicit arm carries it in structure (tabs, numbering,
+callout type) that offers nothing to quote, so the rubric's "explicit support"
+criterion favours prose statements.
+
 ## 2026-09-24 — Repeat pass, gate, and pre-specified M1-AI analysis (exploratory)
 
 Repeat pass (maintainer-approved, cap 2,700): 367/367 attempted once, no
