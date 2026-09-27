@@ -2,6 +2,14 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-27 — Quote auditor set back to DeepSeek V4 Pro (no calls)
+
+After comparing options (Muse Spark rejected: Go docs state prompts and
+completions may train future Meta models; DeepSeek V4 Flash likely shares the
+Global-region requirement), the maintainer chose DeepSeek V4 Pro and will enable
+Global regions in the workspace. Kimi K3 was never called. Audit calls wait for
+confirmation that the setting is enabled.
+
 ## 2026-09-27 — Quote auditor switched to Kimi K3 (no calls yet)
 
 Maintainer chose `opencode-go/kimi-k3` after DeepSeek V4 Pro required Global
