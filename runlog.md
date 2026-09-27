@@ -2,6 +2,19 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-27 — Quote audit stopped: DeepSeek on Go requires Global regions
+
+The maintainer approved the audit with DeepSeek V4 Pro (cap 120). The first three
+calls failed with HTTP 400 (not retryable): "This Go model requires Global
+regions. Select Global in your workspace's Privacy settings to use it." The run
+was stopped after 4 invocations (the fourth was interrupted); no auditor answer
+exists. The rejections occurred upstream before inference, so billing is
+unlikely but unverified. The runner and audit treated this as a retryable
+transport failure and saved no error detail; both now stop the batch on any
+provider error marked non-retryable (`provider_rejected`) and keep the error
+text. The three failed items remain eligible for one retry. Awaiting a
+maintainer decision on the workspace region setting or another auditor model.
+
 ## 2026-09-27 — UNPLANNED blinded quote audit prepared (no calls yet)
 
 Maintainer chose an isolated AI auditor. `quote_audit.py` draws a seed-ranked,

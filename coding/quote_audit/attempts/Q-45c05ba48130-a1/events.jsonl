@@ -1,0 +1,1 @@
+{"type":"error","timestamp":1790525720549,"sessionID":"ses_f1c63f728ffevzCdggxirMT8Kt","error":{"name":"APIError","data":{"message":"Cannot connect to API: The socket connection was closed unexpectedly. For more information, pass `verbose: true` in the second argument to fetch()","isRetryable":true,"metadata":{"url":"https://opencode.ai/zen/go/v1/chat/completions"}}}}

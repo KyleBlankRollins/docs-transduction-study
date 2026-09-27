@@ -52,6 +52,18 @@ ISOLATION_FLAGS = (
 )
 BUILTIN_SKILLS = {"customize-opencode"}
 QUOTA_MARKERS = ("quota", "rate limit", "rate_limit", "429", "insufficient", "billing")
+
+
+def permanent_provider_error(errors: list[Any]) -> bool:
+    """Provider errors marked non-retryable (e.g. account/region settings)."""
+    return any(
+        isinstance(error, dict)
+        and isinstance(error.get("data"), dict)
+        and error["data"].get("isRetryable") is False
+        for error in errors
+    )
+
+
 TRANSPORT_FAILURES = {"timeout", "exit_status", "no_session", "export_failed"}
 
 
@@ -567,6 +579,12 @@ def run_assignment(
         (attempt_dir / "stderr.txt").write_text(result.stderr, encoding="utf-8")
         events = parse_events(result.stdout)
         error_text = json.dumps(events["errors"]).lower()
+        if permanent_provider_error(events["errors"]):
+            finish("provider_rejected", error_text[:500])
+            raise RunnerError(
+                "Provider rejected the request as non-retryable; batch stopped: "
+                + error_text[:200]
+            )
         if any(marker in error_text for marker in QUOTA_MARKERS):
             finish("quota_or_rate_limit", error_text[:500])
             raise RunnerError(

@@ -185,14 +185,23 @@ def ask(
         except subprocess.TimeoutExpired:
             return finish("timeout")
         events = runner.parse_events(result.stdout)
-        if any(m in json.dumps(events["errors"]).lower() for m in runner.QUOTA_MARKERS):
+        error_text = json.dumps(events["errors"]).lower()
+        if runner.permanent_provider_error(events["errors"]):
+            finish("provider_rejected", error_text[:500])
+            raise runner.RunnerError(
+                "Provider rejected the audit request as non-retryable; stopped: "
+                + error_text[:200]
+            )
+        if any(m in error_text for m in runner.QUOTA_MARKERS):
             finish("quota_or_rate_limit")
             raise runner.RunnerError("Provider quota/rate failure; audit stopped")
         if len(events["sessions"]) != 1:
             return finish("no_session")
         session = events["sessions"][0]
         if events["tool_events"] or events["errors"] or result.returncode != 0:
-            return finish("exit_status", session_id=session)
+            return finish(
+                "exit_status", json.dumps(events["errors"])[:500], session_id=session
+            )
         exported = executor(
             [config.binary, "export", session],
             input=None,

@@ -474,3 +474,22 @@ def test_smoke_is_bounded_and_outside_repository(tmp_path, monkeypatch):
     monkeypatch.setattr(runner, "run_batch", fake_batch)
     runner.smoke(tmp_path / "smoke", CONFIG)
     assert seen == [(3, 6, 1), (1, 6, 2)]
+
+
+def test_non_retryable_provider_error_stops_batch(tmp_path):
+    rejected = json.dumps(
+        {
+            "type": "error",
+            "sessionID": "ses_1",
+            "error": {
+                "name": "APIError",
+                "data": {
+                    "message": "This Go model requires Global regions.",
+                    "isRetryable": False,
+                },
+            },
+        }
+    )
+    with pytest.raises(runner.RunnerError, match="non-retryable"):
+        run_one(tmp_path, FakeCLI(events=rejected + "\n", exit=1))
+    assert runner.permanent_provider_error([{"data": {"isRetryable": True}}]) is False
