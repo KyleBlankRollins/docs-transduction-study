@@ -28,7 +28,9 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = REPO_ROOT / "coding" / "quote_audit"
 SUMMARY = REPO_ROOT / "analysis" / "exploratory" / "quote_audit"
 PER_ARM = 50
-AUDITOR = runner.RunnerConfig(provider="opencode-go", model="deepseek-v4-pro")
+# Kimi K3 (maintainer choice, 2026-09-27; DeepSeek V4 Pro on Go required Global
+# regions). Kimi K3 does not accept a temperature setting: provider default.
+AUDITOR = runner.RunnerConfig(provider="opencode-go", model="kimi-k3", temperature=None)
 CATEGORIES = {
     "F": "Faithful: the quoted words appear on the page (differences only in punctuation, spacing, capitalization, formatting, or text split by labels or headings), without changed meaning or substituted words.",
     "P": "Paraphrase: the page supports the quote's meaning, but the wording is condensed, reordered, combined from separate places, or reworded.",

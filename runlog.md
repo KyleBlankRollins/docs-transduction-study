@@ -2,6 +2,14 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-27 — Quote auditor switched to Kimi K3 (no calls yet)
+
+Maintainer chose `opencode-go/kimi-k3` after DeepSeek V4 Pro required Global
+regions. Kimi K3 is a different family from the GLM evaluator (1M context,
+reasoning model) but does not accept a temperature setting, so the auditor runs
+at the provider default (recorded as temperature not set). Offline preflight
+passed. Catalog price is $3/M input and $15/M output, well above DeepSeek.
+
 ## 2026-09-27 — Quote audit stopped: DeepSeek on Go requires Global regions
 
 The maintainer approved the audit with DeepSeek V4 Pro (cap 120). The first three
