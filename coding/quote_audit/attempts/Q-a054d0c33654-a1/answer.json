@@ -1,0 +1,5 @@
+{
+  "item_id": "Q-a054d0c33654",
+  "category": "F",
+  "rationale": "The page's Playwright section shows the exact example page src/pages/index.astro with the matching title and meta description inside <head> and an empty <body></body> as quoted."
+}

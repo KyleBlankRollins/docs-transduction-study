@@ -1,0 +1,5 @@
+{
+  "item_id": "Q-853b6d667c0c",
+  "category": "F",
+  "rationale": "The page's Cypress example for src/pages/index.astro contains exactly the title 'Astro is awesome!', the meta description 'Pull content from anywhere and serve it fast with Astro's next-gen islands architecture.', and an <h1>Hello world from Astro</h1> in the body, matching the quote."
+}

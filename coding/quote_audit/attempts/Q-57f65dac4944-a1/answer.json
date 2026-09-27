@@ -1,0 +1,5 @@
+{
+  "item_id": "Q-57f65dac4944",
+  "category": "F",
+  "rationale": "The page contains the exact quoted sentence \"Choose one of the following options. These are alternatives \u2014 use exactly one, not all of them.\" followed by \"If you are using js:\" (src/cartStore.js) and \"If you are using ts:\" (src/cartStore.ts), and both blocks include an addCartItem helper."
+}

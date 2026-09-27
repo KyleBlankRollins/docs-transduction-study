@@ -1,0 +1,5 @@
+{
+  "item_id": "Q-304a17036660",
+  "category": "F",
+  "rationale": "The quoted sentence and the three endpoint paths (GET /api/auth/signin, GET /api/auth/signout, POST /api/auth/register) with their purposes all appear verbatim in the page text, differing only in spacing."
+}

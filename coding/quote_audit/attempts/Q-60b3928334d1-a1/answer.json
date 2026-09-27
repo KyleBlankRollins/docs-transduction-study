@@ -1,0 +1,5 @@
+{
+  "item_id": "Q-60b3928334d1",
+  "category": "F",
+  "rationale": "The quoted <header>, <builder-component>, and <footer> strings appear verbatim in the builder-preview.astro code sample, differing only by ellipses that omit the intervening script tag and by minor spacing."
+}

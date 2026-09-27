@@ -1,0 +1,5 @@
+{
+  "item_id": "Q-f79f94519ee1",
+  "category": "F",
+  "rationale": "The Google Antigravity section's mcp_config.json example contains \"astro-docs\": { \"serverUrl\": \"https://mcp.docs.astro.build/mcp\" } exactly as quoted."
+}

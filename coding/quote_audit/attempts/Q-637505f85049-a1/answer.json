@@ -1,0 +1,5 @@
+{
+  "item_id": "Q-637505f85049",
+  "category": "F",
+  "rationale": "The page text contains the exact sentence \"In the above example, <builder-component> tells Builder where to insert the content from its CMS\" immediately after the builder-preview.astro code example, so the quote is faithfully supported."
+}

@@ -2,6 +2,20 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-27 — UNPLANNED blinded quote audit completed (DeepSeek V4 Pro)
+
+After the maintainer enabled Global regions, the audit resumed; a crash on an
+interrupted attempt folder was fixed (next free attempt number, folder kept).
+All 100 items recorded; 104 invocations in total (3 earlier region rejections, 1
+interrupted call). Unblinded categories (Faithful / Paraphrase / Not supported /
+Cannot tell): explicit 43 / 3 / 4 / 0; implicit 46 / 1 / 2 / 1 (n = 50 each).
+By stage, explicit A1 22/1/0/0, A2 14/2/2/0, A3 6/0/1/0, A4 1/0/1/0; implicit A1
+21/0/0/0, A2 18/0/1/1, A3 6/0/1/0, A4 1/1/0/0. Most quotes that A7 could not
+verify were judged faithful in both arms, so the `explicit_quote_unverified`
+flag mostly reflects verifier misses, slightly more often in the explicit arm.
+Caveats: single AI auditor of unknown reliability; blinding partial; 50 items
+per arm. Unplanned and exploratory; the pre-specified results are unchanged.
+
 ## 2026-09-27 — Quote auditor set back to DeepSeek V4 Pro (no calls)
 
 After comparing options (Muse Spark rejected: Go docs state prompts and

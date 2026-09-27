@@ -1,0 +1,11 @@
+arm,stage,n,F,P,N,U,missing
+explicit,A1,23,22,1,0,0,0
+explicit,A2,18,14,2,2,0,0
+explicit,A3,7,6,0,1,0,0
+explicit,A4,2,1,0,1,0,0
+explicit,all,50,43,3,4,0,0
+implicit,A1,21,21,0,0,0,0
+implicit,A2,20,18,0,1,1,0
+implicit,A3,7,6,0,1,0,0
+implicit,A4,2,1,1,0,0,0
+implicit,all,50,46,1,2,1,0

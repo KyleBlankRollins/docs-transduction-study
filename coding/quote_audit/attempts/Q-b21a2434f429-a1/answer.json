@@ -1,0 +1,5 @@
+{
+  "item_id": "Q-b21a2434f429",
+  "category": "N",
+  "rationale": "The quoted HTML block, including the meta description text, does not appear anywhere in the provided page text; the NightwatchJS section only shows a minimal src/pages/index.astro snippet with \"Astro is awesome!\"."
+}

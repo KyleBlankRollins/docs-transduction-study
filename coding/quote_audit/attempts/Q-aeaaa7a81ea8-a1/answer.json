@@ -1,0 +1,5 @@
+{
+  "item_id": "Q-aeaaa7a81ea8",
+  "category": "F",
+  "rationale": "The page's astro.config.mjs example contains `import deno from '@deno/astro-adapter';`, `output: 'server'`, and `adapter: deno()`, matching the quote apart from spacing differences."
+}

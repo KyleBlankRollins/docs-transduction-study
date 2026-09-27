@@ -1,0 +1,5 @@
+{
+  "item_id": "Q-22236631ea56",
+  "category": "N",
+  "rationale": "The page's Cypress section shows the index.astro example with the title and 'Hello world from Astro' heading, but it does not contain the described meta description tag with that content."
+}

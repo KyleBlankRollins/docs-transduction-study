@@ -1,0 +1,5 @@
+{
+  "item_id": "Q-bf7f2217eb89",
+  "category": "F",
+  "rationale": "The page's NightwatchJS section includes the same src/pages/index.astro example with the matching title, meta description, closing head tag, and empty body, differing only in whitespace/tag formatting."
+}

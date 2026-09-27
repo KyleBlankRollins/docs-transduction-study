@@ -1,0 +1,5 @@
+{
+  "item_id": "Q-fe09fce3d82f",
+  "category": "F",
+  "rationale": "The quoted sentences and the terminal command 'npx cypress run' appear verbatim in the page's Cypress 'Running your Cypress tests' section, matching exactly except for the intervening 'Terminal window' label."
+}

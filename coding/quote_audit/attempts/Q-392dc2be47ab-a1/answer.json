@@ -1,0 +1,5 @@
+{
+  "item_id": "Q-392dc2be47ab",
+  "category": "N",
+  "rationale": "The Nightwatch section shows the example page with 'Astro is awesome!' but does not include the quoted <meta name=\"description\"> tag or <body></body>, so the quote is not supported by the page text."
+}

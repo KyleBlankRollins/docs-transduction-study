@@ -1,0 +1,5 @@
+{
+  "item_id": "Q-7a49b7e92694",
+  "category": "F",
+  "rationale": "The quoted sentence and all three NightwatchJS commands appear verbatim in the page's 'Running your NightwatchJS tests' section, including 'npx nightwatch test/index.js', 'npx nightwatch test/index.ts -e firefox', and 'npx nightwatch test/index.ts --open'."
+}

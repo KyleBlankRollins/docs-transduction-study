@@ -1,0 +1,5 @@
+{
+  "item_id": "Q-7261bd98167b",
+  "category": "P",
+  "rationale": "The page shows the addCartItem helper under JavaScript/TypeScript language tabs and includes the sentence about switching to a TypeScript file, but the exact tab/panel IDs and role attributes in the quote do not appear in the provided page text."
+}
