@@ -2,6 +2,20 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-09-27 — UNPLANNED blinded quote audit prepared (no calls yet)
+
+Maintainer chose an isolated AI auditor. `quote_audit.py` draws a seed-ranked,
+stage-stratified sample of first-pass answers flagged
+`explicit_quote_unverified` (50 per arm; 100 items, shuffled) and writes
+`coding/quote_audit/packets.jsonl` (item ID, quote, the artifact's readable
+text, four categories: Faithful, Paraphrase, Not supported, Cannot tell) and a
+separate `key.jsonl`. Arm, stage, instance, and scores are withheld; blinding is
+partial because page text can reveal the arm. Auditor: `opencode-go/deepseek-v4-pro`
+(different model family from the evaluator), same isolation checks and
+file-based output as the runner; offline preflight passed. Packets total 4.48
+MB (median 27 KB, max 107 KB). The sample is fixed once drawn. Calls await a
+separate budget approval.
+
 ## 2026-09-27 — UNPLANNED exploratory quote diagnostics (maintainer-requested)
 
 After the pre-specified results were seen, the maintainer asked whether the
