@@ -30,7 +30,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from docs_transduction_study import coding_ai
+from docs_transduction_study import closed_book, coding_ai
 from docs_transduction_study.opencode_runner import (
     AGENT_PROMPT,
     Ledger,
@@ -70,6 +70,8 @@ class BatchConfig:
     # Matches the OpenCode run's 32,000 output cap; thinking counts toward it.
     max_tokens: int = 32_000
     max_packet_bytes: int = 1_500_000
+    # M1-AI protocol, or the closed-book covariate (amendment A11).
+    protocol: str = coding_ai.PROTOCOL_VERSION
 
     @property
     def evaluator(self) -> str:
@@ -92,10 +94,8 @@ def configuration_record(config: BatchConfig) -> dict[str, Any]:
         "weights": "unknown (model alias does not pin weights)",
         "fallbacks": "none (not sent; not allowed in batches)",
         "tools": "none",
-        "protocol": coding_ai.PROTOCOL_VERSION,
-        "evaluator_prompt_sha256": hashlib.sha256(
-            coding_ai.EVALUATOR_PROMPT.encode()
-        ).hexdigest(),
+        "protocol": config.protocol,
+        "evaluator_prompt_sha256": closed_book.instruction_sha(config.protocol),
         "agent_prompt_sha256": hashlib.sha256(AGENT_PROMPT.encode()).hexdigest(),
     }
 
@@ -423,11 +423,14 @@ def _record_item(
         json.dumps(answer, indent=2), encoding="utf-8"
     )
     packet = json.loads((attempt_dir / "packet.txt").read_text(encoding="utf-8"))
-    if _record_exists(coding, packet["opaque_id"], pass_number):
+    if packet.get("protocol") != config.protocol:
+        raise RunnerError("Packet protocol does not match the runner configuration")
+    recorder, records_dir = closed_book.recorder_for(config.protocol)
+    if _record_exists(coding, packet["opaque_id"], pass_number, records_dir):
         # An interrupted collect recorded this answer but not its result.json.
         return "recorded", "record already retained", extra
     try:
-        summary = coding_ai.record_response(
+        summary = recorder(
             coding,
             packet,
             key,
@@ -457,6 +460,9 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model", default=BatchConfig.model)
     parser.add_argument("--effort", default=BatchConfig.effort)
+    parser.add_argument(
+        "--closed-book", action="store_true", help="closed-book covariate (A11)"
+    )
     sub = parser.add_subparsers(dest="command", required=True)
     est = sub.add_parser("estimate", help="free token count and projected cost")
     est.add_argument("--packets", type=Path, required=True)
@@ -472,7 +478,13 @@ def main(argv: list[str] | None = None) -> int:
     col.add_argument("--passphrase-file", type=Path, default=None)
     col.add_argument("--coding", type=Path, required=True)
     args = parser.parse_args(argv)
-    config = BatchConfig(model=args.model, effort=args.effort)
+    config = BatchConfig(
+        model=args.model,
+        effort=args.effort,
+        protocol=closed_book.CB_PROTOCOL
+        if args.closed_book
+        else coding_ai.PROTOCOL_VERSION,
+    )
     client = anthropic.Anthropic()
     if args.command == "estimate":
         result = estimate(client, _packets(args.packets), config)

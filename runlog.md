@@ -2,6 +2,23 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-11-18 — Amendment A11 adopted (closed-book covariate); no calls yet
+
+The maintainer accepted A11's three choices:
+
+- one closed-book call per assignment (1,832 per evaluator);
+- a closed-book instruction that names the Astro documentation;
+- both evaluators.
+
+Implemented:
+
+- **`closed_book.py`:** packet builder with sealed keys, an option-only scorer, separate records, and the A11 pre-specified analysis.
+- **Both runners** take a closed-book protocol, refuse packets of the other protocol, and route records by protocol. The open-book configuration records are byte-identical to before, checked against the stored Claude batch configuration and a GLM attempt.
+- **Makefile targets** `closed-book-*`, and Git LFS rules for closed-book attempt folders and records.
+- **Tests** on synthetic data only.
+
+No closed-book packet has been built and no call made. The paid runs await separate budget approval (A3).
+
 ## 2026-11-18 — E7 case coding: maintainer review complete
 
 63 cases coded AI-assisted (`e7_cases_coded.csv`). The maintainer reviewed 17:

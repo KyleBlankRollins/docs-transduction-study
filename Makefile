@@ -8,7 +8,7 @@ VENDOR_DIR := vendor/astro-docs
 EXPLICIT_DIR := corpus/explicit
 IMPLICIT_DIR := corpus/implicit
 BUILD_DIR := build
-STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts assign-anchors review-o1-o2 classify-o1-o2 pilot lint-probes probe-sheet seed instrument-check artifacts artifacts-resume anchors assignment-dry-run opencode-preflight m1-ai-first-pass m1-ai-repeat m1-ai-batch-estimate m1-ai-batch-submit m1-ai-batch-collect m1-ai-batch-rescore m1-ai-batch-analyze m1-ai-replication exploratory-plan rescore-a7 m2 coding-setup code kappa analyze
+STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts assign-anchors review-o1-o2 classify-o1-o2 pilot lint-probes probe-sheet seed instrument-check artifacts artifacts-resume anchors assignment-dry-run opencode-preflight m1-ai-first-pass m1-ai-repeat m1-ai-batch-estimate m1-ai-batch-submit m1-ai-batch-collect m1-ai-batch-rescore m1-ai-batch-analyze m1-ai-replication exploratory-plan closed-book-build closed-book-batch-submit closed-book-batch-collect closed-book-glm closed-book-analyze rescore-a7 m2 coding-setup code kappa analyze
 
 .PHONY: help check $(STAGES)
 
@@ -213,6 +213,30 @@ m1-ai-batch-rescore:
 m1-ai-batch-analyze:
 	uv run python -m docs_transduction_study.analysis --coding-dir $(BATCH_CODING) --records m1_ai_a7_records --out analysis/m1_ai_a7_$(BATCH_MODEL)
 	uv run python -m docs_transduction_study.analysis --coding-dir $(BATCH_CODING) --records m1_ai_records --out analysis/m1_ai_strict_$(BATCH_MODEL)
+
+# Closed-book covariate (amendment A11). Paid runs need a separate maintainer
+# approval with a budget and call cap per evaluator (A3).
+CB_PACKETS = artifacts/assignments/closed_book_packets.jsonl
+CB_KEYS = artifacts/private/closed_book_keys.jsonl.enc
+
+closed-book-build:
+	@test -n "$(PASSPHRASE_FILE)" || { printf 'PASSPHRASE_FILE is required\n' >&2; exit 1; }
+	uv run python -m docs_transduction_study.closed_book build --passphrase-file "$(PASSPHRASE_FILE)"
+
+closed-book-batch-submit:
+	@test -n "$(MAX_INVOCATIONS)" || { printf 'MAX_INVOCATIONS is required\n' >&2; exit 1; }
+	uv run python -m docs_transduction_study.batch_runner --model $(BATCH_MODEL) --closed-book submit --packets $(CB_PACKETS) --coding coding/$(BATCH_MODEL)-closed-book --pass-number 1 --max-invocations $(MAX_INVOCATIONS)
+
+closed-book-batch-collect:
+	@test -n "$(PASSPHRASE_FILE)" || { printf 'PASSPHRASE_FILE is required\n' >&2; exit 1; }
+	uv run python -m docs_transduction_study.batch_runner --model $(BATCH_MODEL) --closed-book collect --packets $(CB_PACKETS) --keys $(CB_KEYS) --passphrase-file "$(PASSPHRASE_FILE)" --coding coding/$(BATCH_MODEL)-closed-book
+
+closed-book-glm:
+	@test -n "$(MAX_INVOCATIONS)" -a -n "$(PASSPHRASE_FILE)" || { printf 'MAX_INVOCATIONS and PASSPHRASE_FILE are required\n' >&2; exit 1; }
+	uv run python -m docs_transduction_study.opencode_runner run --closed-book --packets $(CB_PACKETS) --keys $(CB_KEYS) --passphrase-file "$(PASSPHRASE_FILE)" --output coding/glm-5.3-flash-closed-book --pass-number 1 --max-invocations $(MAX_INVOCATIONS)
+
+closed-book-analyze:
+	uv run python -m docs_transduction_study.closed_book analyze
 
 # UNPLANNED exploratory analyses E1-E7 (analysis/exploratory/PLAN.md). Refuses to
 # run unless the plan is committed; no model calls.

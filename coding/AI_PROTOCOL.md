@@ -33,6 +33,12 @@ documented unscorable under A8. Paid runs still need separate approval.
 listed with its reason. The parser is unchanged; such answers are never retried
 or scored.
 
+**Amendment A11 (2026-11-18):** a closed-book covariate (protocol `m1-ai-cb-1`)
+reuses each first-pass packet without its artifact, with a fixed instruction to
+answer from knowledge of the Astro documentation. The system prompt and
+evaluator configurations are unchanged. Answers are scored only by the chosen
+option (correct, foil, declined), and are stored apart from M1-AI records.
+
 ## Selected Model
 
 On 2026-09-23 the maintainer selected `GLM-5.3-Flash` and proposed using the

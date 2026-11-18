@@ -24,7 +24,7 @@ from collections.abc import Callable, Iterator
 from pathlib import Path
 from typing import Any, Self
 
-from docs_transduction_study import coding_ai
+from docs_transduction_study import closed_book, coding_ai
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_BINARY = Path.home() / ".opencode" / "bin" / "opencode"
@@ -90,6 +90,8 @@ class RunnerConfig:
     max_packet_bytes: int = 1_500_000
     binary: str = str(DEFAULT_BINARY)
     expected_version: str = EXPECTED_VERSION
+    # M1-AI protocol, or the closed-book covariate (amendment A11).
+    protocol: str = coding_ai.PROTOCOL_VERSION
     # Test-only provider definition (for a loopback fake). Never set for study use.
     provider_override: dict[str, Any] | None = None
 
@@ -151,10 +153,8 @@ def configuration_record(config: RunnerConfig, cli_version: str) -> dict[str, An
         "top_p": "unknown (not set)",
         "seed": "unknown (not supported by transport)",
         "weights": "unknown (provider alias does not pin weights)",
-        "protocol": coding_ai.PROTOCOL_VERSION,
-        "evaluator_prompt_sha256": hashlib.sha256(
-            coding_ai.EVALUATOR_PROMPT.encode()
-        ).hexdigest(),
+        "protocol": config.protocol,
+        "evaluator_prompt_sha256": closed_book.instruction_sha(config.protocol),
         "agent_prompt_sha256": hashlib.sha256(AGENT_PROMPT.encode()).hexdigest(),
         "isolation_flags": sorted(ISOLATION_FLAGS),
         "config_sha256": _digest(generated),
@@ -486,8 +486,13 @@ class Ledger:
             os.fsync(handle.fileno())
 
 
-def _record_exists(output: Path, opaque_id: str, pass_number: int) -> bool:
-    records = output / coding_ai.RECORDS_DIR
+def _record_exists(
+    output: Path,
+    opaque_id: str,
+    pass_number: int,
+    records_dir: str = coding_ai.RECORDS_DIR,
+) -> bool:
+    records = output / records_dir
     if not records.exists():
         return False
     for path in records.glob("*.json"):
@@ -515,7 +520,10 @@ def run_assignment(
     """Evaluate one packet in a fresh isolated session and record a verified score."""
     opaque_id = packet["opaque_id"]
     tag = f"{opaque_id}-p{pass_number}"
-    if _record_exists(output, opaque_id, pass_number):
+    if packet.get("protocol") != config.protocol:
+        raise RunnerError("Packet protocol does not match the runner configuration")
+    recorder, records_dir = closed_book.recorder_for(config.protocol)
+    if _record_exists(output, opaque_id, pass_number, records_dir):
         return Attempt("already_recorded")
     prior = [
         entry
@@ -650,7 +658,7 @@ def run_assignment(
         json.dumps(answer, indent=2), encoding="utf-8"
     )
     try:
-        summary = coding_ai.record_response(
+        summary = recorder(
             output,
             packet,
             key,
@@ -854,6 +862,9 @@ def main(argv: list[str] | None = None) -> int:
     run.add_argument("--max-invocations", type=int, required=True)
     run.add_argument("--max-attempts", type=int, default=2)
     run.add_argument("--timeout", type=float, default=300.0)
+    run.add_argument(
+        "--closed-book", action="store_true", help="closed-book covariate (A11)"
+    )
     recon = sub.add_parser("reconcile", help="check JSON records against m1_ai.csv")
     recon.add_argument("--output", type=Path, required=True)
     recon.add_argument("--apply", action="store_true")
@@ -867,7 +878,12 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "reconcile":
         print(json.dumps(reconcile(args.output, apply=args.apply), indent=2))
         return 0
-    config = RunnerConfig(timeout_seconds=args.timeout)
+    config = RunnerConfig(
+        timeout_seconds=args.timeout,
+        protocol=closed_book.CB_PROTOCOL
+        if args.closed_book
+        else coding_ai.PROTOCOL_VERSION,
+    )
     counts = run_batch(
         load_batch(args.packets, args.keys, args.passphrase_file),
         pass_number=args.pass_number,

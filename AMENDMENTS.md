@@ -1,5 +1,53 @@
 # Amendments
 
+## A11 — 2026-11-18 (post-L2, closed-book covariate for M1-AI; results seen)
+
+**Change:** runs the registered closed-book covariate for M1-AI. These are the same probes with no artifact attached (DESIGN, *Contamination*: "probe with no artifact … one extra call per probe"). It is used to separate what an evaluator recovers from the artifact from what it already knows. M1-AI records, scoring, and the A7–A10 rules are unchanged.
+
+- **Packets.** One closed-book packet per locked first-pass assignment (1,832). Each keeps that assignment's question, options, and option order, and omits the artifact.
+  - The packet gets its own opaque ID, derived as `opaque_id(assignment_id + "|closed-book", seed)`, and protocol `m1-ai-cb-1`.
+  - Keys are sealed separately (`artifacts/private/closed_book_keys.jsonl.enc`, same passphrase file) and record each packet's hash and correct and absence option IDs.
+  - One call per assignment rather than one per probe (maintainer decision). This keeps each comparison paired on the exact option order. It also gives 8 closed-book answers per instance, which makes the instance-level knowledge measure below stable. The cost is negligible.
+- **Instruction.** The frozen instruction ("Answer using only the supplied artifact") cannot be used: with no artifact, a compliant answer is always "The text does not say". The closed-book packet carries its own fixed instruction:
+
+  > No artifact is supplied. Answer from your own knowledge of the Astro documentation (docs.astro.build), which the question refers to. Do not use tools, repository files, other assignments, or prior responses. Choose exactly one option by its id. If you do not know, choose "The text does not say". Report support as inferred with a brief rationale, or as absent when you choose "The text does not say"; leave evidence empty. Return only JSON with opaque_id, option_id, support, evidence, and rationale.
+
+  The system prompt (`AGENT_PROMPT`) is unchanged. The instruction names the source (maintainer decision), because without it many probes ("In the Nightwatch run steps, …") have no referent, and the covariate would measure guessing rather than familiarity. The "The text does not say" option keeps its wording, so options stay identical to the main packets; here it functions as "do not know".
+- **Scoring.** Closed-book scoring uses only the chosen option:
+  - `cb_correct`: the correct option;
+  - `cb_foil`: a foil;
+  - `cb_declined`: "The text does not say".
+
+  Support, evidence, and quote rules do not apply. Malformed or structurally invalid answers are documented unscorable as under A8 and A10, and refusals as under A9.
+- **Evaluators and transport.** Claude Sonnet 5.5 through `batch_runner.py`, with the A9 configuration except for the packet's instruction. A closed-book collection path is added, because `coding_ai.record_response` scores against an artifact. Records go to `coding/claude-sonnet-5-5-closed-book/`. GLM-5.3-Flash is run as well (maintainer decision), through the OpenCode runner with its frozen configuration except for the packet's instruction, into `coding/glm-5.3-flash-closed-book/`. That needs an OpenCode Go budget and the same collection path. No repeat pass for either evaluator.
+- **Pre-specified analysis.** Fixed here, before any closed-book answer is seen; per evaluator, never pooled:
+  1. **Closed-book accuracy:** the rates of `cb_correct`, `cb_foil`, and `cb_declined`, by relation type. Arms and stages are not distinguished here, because closed-book packets carry no artifact.
+  2. **Known instances:** an instance is *known* if it is `cb_correct` in at least 5 of its 8 closed-book answers.
+  3. **Assignment-level cross-tabulation.** For each arm and stage, open-book (A7) against closed-book outcome:
+     - correct in both, *known*;
+     - open-book correct only, *recovered from the artifact*;
+     - closed-book correct only, *lost despite knowledge*;
+     - correct in neither.
+  4. **Gaps on the unknown subset.** The E1 and E2 gaps in `correct` and `quotable_conditional`, recomputed on instances that are not *known*. They are reported with the plan's page-clustered bootstrap, specimen sign counts, and robustness rule. If only one evaluator is run, robustness uses the specimen criterion alone and is labelled so.
+  5. **Familiarity check:** the explicit-minus-implicit gap in *lost despite knowledge*, per stage. The explicit arm is verbatim training text and the implicit arm is novel prose.
+
+  Reading rules, fixed now:
+  - If most instances are *known*, open-book correctness is treated as uninformative about survival, and only the unknown subset is interpreted.
+  - If the unknown-subset correctness gap is robustly non-zero, it is reported as a survival difference that memory does not explain.
+  - Closed-book `cb_foil` answers are reported as prior intrusion without an artifact. They are not evidence about the pipeline.
+
+**Rationale:** correctness was at or near 99% at A1–A3 in both arms, under both evaluators. The corpus is almost certainly in both models' training data. A near-zero correctness gap could mean either that relations survive equally, or that both arms are answered from memory. The registered closed-book covariate separates the two, and was never run because Phase 2 was not run. At batch prices the Claude run is projected to cost a few dollars: about 0.8M input tokens and about 0.3M output tokens.
+
+**Results seen?** Yes. Everything listed under A9 and A10 had been seen, plus:
+
+- the scored A9 replication and its gates;
+- the pre-specified A9 comparison;
+- every E1–E7 output under the plan committed at `7384b21f`, including the AI-assisted E7 coding (not yet reviewed by the maintainer).
+
+No closed-book answer has been generated or seen.
+
+**Approval still required (A3):** a separate maintainer approval of the paid run, with a budget and call cap per evaluator. Implementation (the closed-book packet builder, sealed keys, collection and scoring path, and the analysis above) is tested on synthetic data and committed before any call.
+
 ## A10 — 2026-11-18 (post-L2, M1-AI coverage gate: malformed answers; decided after partial exposure)
 
 **Change:** an assignment whose retained answer cannot be parsed by the frozen parser is documented unscorable under A8. That is status `malformed_json`: the answer is not one JSON object of strings, optionally inside a single enclosing ```` ```json ```` fence. Such an assignment is listed with its reason ("no usable answer after 1 attempt(s): malformed_json"), like the structurally invalid answers A8 already excuses. Implemented by adding `malformed_json` to `analysis.NEVER_EVALUABLE`. Adopted by the maintainer on 2026-11-18.
