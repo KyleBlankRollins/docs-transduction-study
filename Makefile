@@ -8,7 +8,7 @@ VENDOR_DIR := vendor/astro-docs
 EXPLICIT_DIR := corpus/explicit
 IMPLICIT_DIR := corpus/implicit
 BUILD_DIR := build
-STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts assign-anchors review-o1-o2 classify-o1-o2 pilot lint-probes probe-sheet seed instrument-check artifacts artifacts-resume anchors assignment-dry-run opencode-preflight m1-ai-first-pass m1-ai-repeat rescore-a7 m2 coding-setup code kappa analyze
+STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts assign-anchors review-o1-o2 classify-o1-o2 pilot lint-probes probe-sheet seed instrument-check artifacts artifacts-resume anchors assignment-dry-run opencode-preflight m1-ai-first-pass m1-ai-repeat m1-ai-batch-estimate m1-ai-batch-submit m1-ai-batch-collect rescore-a7 m2 coding-setup code kappa analyze
 
 .PHONY: help check $(STAGES)
 
@@ -187,6 +187,24 @@ m1-ai-first-pass:
 m1-ai-repeat:
 	@test -n "$(MAX_INVOCATIONS)" -a -n "$(PASSPHRASE_FILE)" || { printf 'MAX_INVOCATIONS and PASSPHRASE_FILE are required\n' >&2; exit 1; }
 	uv run python -m docs_transduction_study.opencode_runner run --packets artifacts/assignments/repeat_packets.jsonl --keys artifacts/private/keys.jsonl.enc --passphrase-file "$(PASSPHRASE_FILE)" --output coding --pass-number 2 --max-invocations $(MAX_INVOCATIONS)
+
+# DRAFT Anthropic batch transport (batch_runner.py). Not approved for study use:
+# paid runs need maintainer approval (A3) and an evaluator amendment.
+BATCH_MODEL ?= claude-sonnet-5-5
+BATCH_CODING ?= coding/$(BATCH_MODEL)
+BATCH_PASS ?= 1
+BATCH_PACKETS = $(if $(filter 2,$(BATCH_PASS)),artifacts/assignments/repeat_packets.jsonl,artifacts/assignments/packets.jsonl)
+
+m1-ai-batch-estimate:
+	uv run python -m docs_transduction_study.batch_runner --model $(BATCH_MODEL) estimate --packets $(BATCH_PACKETS)
+
+m1-ai-batch-submit:
+	@test -n "$(MAX_INVOCATIONS)" || { printf 'MAX_INVOCATIONS is required\n' >&2; exit 1; }
+	uv run python -m docs_transduction_study.batch_runner --model $(BATCH_MODEL) submit --packets $(BATCH_PACKETS) --coding $(BATCH_CODING) --pass-number $(BATCH_PASS) --max-invocations $(MAX_INVOCATIONS)
+
+m1-ai-batch-collect:
+	@test -n "$(PASSPHRASE_FILE)" || { printf 'PASSPHRASE_FILE is required\n' >&2; exit 1; }
+	uv run python -m docs_transduction_study.batch_runner --model $(BATCH_MODEL) collect --packets $(BATCH_PACKETS) --keys artifacts/private/keys.jsonl.enc --passphrase-file "$(PASSPHRASE_FILE)" --coding $(BATCH_CODING)
 
 # M2 (AI-assisted): bounded CLI/runtime captures in a disposable sandbox,
 # inventory from coding/m2_judgments.csv, validation, and the redundancy map.
