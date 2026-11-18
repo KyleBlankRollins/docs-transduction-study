@@ -331,3 +331,24 @@ def test_errored_results_split_transient_from_final(tmp_path, kind, status):
     assert br.collect(client, keys, coding=coding, config=CONFIG)["counts"] == {
         status: 1
     }
+
+
+def test_refusal_is_recorded_as_final(tmp_path):
+    pairs = [packet_and_key("A")]
+    refused = message("", stop="refusal")
+    refused.content = []
+    refused.stop_details = NS(category="cyber")
+    client = FakeClient(lambda cid, _: NS(type="succeeded", message=refused))
+    coding = tmp_path / "c"
+    packets = [pairs[0][0]]
+    keys = {p["opaque_id"]: k for p, k in pairs}
+    br.submit(
+        client, packets, pass_number=1, coding=coding, config=CONFIG, max_invocations=10
+    )
+    assert br.collect(client, keys, coding=coding, config=CONFIG)["counts"] == {
+        "refusal": 1
+    }
+    again = br.submit(
+        client, packets, pass_number=1, coding=coding, config=CONFIG, max_invocations=10
+    )
+    assert again["batches"] == []

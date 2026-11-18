@@ -13,6 +13,21 @@ prompt sha256 `a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944`
 generated-config sha256
 `7533af43e4246e65255cf6ef70767b0d61c0790a2756c7e517b19488cf5afacd`.
 
+## Second Evaluator (Amendment A9, 2026-11-18)
+
+An exploratory replication adds a second configuration, stored apart in
+`coding/claude-sonnet-5-5/` and never pooled with the GLM records:
+`batch_runner.configuration_record` (transport `anthropic-batch-runner-1`),
+Anthropic `claude-sonnet-5-5` through the Message Batches API, adaptive
+thinking (API default), effort `high`, output cap 32,000, sampling at provider
+defaults, no tools, no fallback model. The system prompt (`AGENT_PROMPT`), the
+packets, the evaluator instruction, the repeat sample, A7 scoring, and the A8
+gate are unchanged. Each request is stateless (one user message, no tools, no
+history); the retained request body, a response from the configured model
+ending in `end_turn` with only text and thinking blocks, and the message ID
+replace the OpenCode preflight and export checks. Refusals are final and
+documented unscorable under A8. Paid runs still need separate approval.
+
 ## Selected Model
 
 On 2026-09-23 the maintainer selected `GLM-5.3-Flash` and proposed using the

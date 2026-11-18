@@ -2,6 +2,21 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-11-18 — Amendment A9 adopted (second M1-AI evaluator on Claude); no run yet
+
+The maintainer accepted the three open choices in the A9 draft: effort `high`,
+refusals documented unscorable under A8, and a corrected evaluator label for
+batch records. Implemented: `batch_runner.py` records refusals with status
+`refusal`; `analysis.NEVER_EVALUABLE` now includes `refusal`; `rescore_a7.py`
+labels batch rows `anthropic-batch:<model>` (OpenCode labels unchanged); the
+pre-specified replication comparison is `replication.py`; Makefile targets
+`m1-ai-batch-rescore`, `m1-ai-batch-analyze`, `m1-ai-replication`. The GLM gate
+was re-run after the change and is unchanged (coverage 1,827/1,832, 5 excused,
+kappa 0.668 over 365 pairs; no GLM ledger entry has status `refusal`). The
+adopting commit's SHA goes in `DESIGN.md` frontmatter in a follow-up commit, as
+for A5-A8. No Claude answer or
+score has been seen; the paid run awaits a separate budget approval (A3).
+
 ## 2026-11-18 — UNPLANNED Claude token count and paid output-token pilot (Sonnet 5.5, batch)
 
 Maintainer-requested, to cost a possible re-run of M1-AI on Claude. Not an

@@ -36,6 +36,13 @@ FIELDS = [
 ]
 
 
+def evaluator_label(configuration: dict[str, Any]) -> str:
+    """Evaluator name by transport (amendment A9); OpenCode labels are unchanged."""
+    if configuration.get("transport", "").startswith("anthropic-batch"):
+        return f"anthropic-batch:{configuration['model']}"
+    return f"opencode:{configuration['provider']}/{configuration['model']}"
+
+
 def latest_answers(coding: Path) -> dict[tuple[str, int], Path]:
     """Latest usable attempt directory per (opaque ID, pass)."""
     chosen: dict[tuple[str, int], tuple[int, Path]] = {}
@@ -77,7 +84,7 @@ def rescore(coding: Path, keys: dict[str, dict[str, Any]]) -> dict[str, Any]:
                 "assignment_id": key["assignment_id"],
                 "pass_number": pass_number,
                 "session_id": result["session_id"],
-                "evaluator": f"opencode:{result['configuration']['provider']}/{result['configuration']['model']}",
+                "evaluator": evaluator_label(result["configuration"]),
                 "configuration": result["configuration"],
                 "isolation_verified": True,
                 "packet_sha256": key["packet_sha256"],

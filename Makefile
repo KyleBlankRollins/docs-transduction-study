@@ -8,7 +8,7 @@ VENDOR_DIR := vendor/astro-docs
 EXPLICIT_DIR := corpus/explicit
 IMPLICIT_DIR := corpus/implicit
 BUILD_DIR := build
-STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts assign-anchors review-o1-o2 classify-o1-o2 pilot lint-probes probe-sheet seed instrument-check artifacts artifacts-resume anchors assignment-dry-run opencode-preflight m1-ai-first-pass m1-ai-repeat m1-ai-batch-estimate m1-ai-batch-submit m1-ai-batch-collect rescore-a7 m2 coding-setup code kappa analyze
+STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts assign-anchors review-o1-o2 classify-o1-o2 pilot lint-probes probe-sheet seed instrument-check artifacts artifacts-resume anchors assignment-dry-run opencode-preflight m1-ai-first-pass m1-ai-repeat m1-ai-batch-estimate m1-ai-batch-submit m1-ai-batch-collect m1-ai-batch-rescore m1-ai-batch-analyze m1-ai-replication rescore-a7 m2 coding-setup code kappa analyze
 
 .PHONY: help check $(STAGES)
 
@@ -188,8 +188,8 @@ m1-ai-repeat:
 	@test -n "$(MAX_INVOCATIONS)" -a -n "$(PASSPHRASE_FILE)" || { printf 'MAX_INVOCATIONS and PASSPHRASE_FILE are required\n' >&2; exit 1; }
 	uv run python -m docs_transduction_study.opencode_runner run --packets artifacts/assignments/repeat_packets.jsonl --keys artifacts/private/keys.jsonl.enc --passphrase-file "$(PASSPHRASE_FILE)" --output coding --pass-number 2 --max-invocations $(MAX_INVOCATIONS)
 
-# DRAFT Anthropic batch transport (batch_runner.py). Not approved for study use:
-# paid runs need maintainer approval (A3) and an evaluator amendment.
+# Anthropic batch transport (batch_runner.py; amendment A9). Paid runs need a
+# separate maintainer approval with a budget and call cap (A3).
 BATCH_MODEL ?= claude-sonnet-5-5
 BATCH_CODING ?= coding/$(BATCH_MODEL)
 BATCH_PASS ?= 1
@@ -205,6 +205,18 @@ m1-ai-batch-submit:
 m1-ai-batch-collect:
 	@test -n "$(PASSPHRASE_FILE)" || { printf 'PASSPHRASE_FILE is required\n' >&2; exit 1; }
 	uv run python -m docs_transduction_study.batch_runner --model $(BATCH_MODEL) collect --packets $(BATCH_PACKETS) --keys artifacts/private/keys.jsonl.enc --passphrase-file "$(PASSPHRASE_FILE)" --coding $(BATCH_CODING)
+
+m1-ai-batch-rescore:
+	@test -n "$(PASSPHRASE_FILE)" || { printf 'PASSPHRASE_FILE is required\n' >&2; exit 1; }
+	uv run python -m docs_transduction_study.rescore_a7 --coding $(BATCH_CODING) --passphrase-file "$(PASSPHRASE_FILE)"
+
+m1-ai-batch-analyze:
+	uv run python -m docs_transduction_study.analysis --coding-dir $(BATCH_CODING) --records m1_ai_a7_records --out analysis/m1_ai_a7_$(BATCH_MODEL)
+	uv run python -m docs_transduction_study.analysis --coding-dir $(BATCH_CODING) --records m1_ai_records --out analysis/m1_ai_strict_$(BATCH_MODEL)
+
+# Pre-specified A9 comparison of the replication against the GLM analysis.
+m1-ai-replication:
+	uv run python -m docs_transduction_study.replication --replication-coding $(BATCH_CODING) --replication-analysis analysis/m1_ai_a7_$(BATCH_MODEL) --out analysis/replication_$(BATCH_MODEL)
 
 # M2 (AI-assisted): bounded CLI/runtime captures in a disposable sandbox,
 # inventory from coding/m2_judgments.csv, validation, and the redundancy map.

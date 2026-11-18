@@ -1,5 +1,46 @@
 # Amendments
 
+## A9 — 2026-11-18 (post-L2, second M1-AI evaluator on Claude; results seen)
+
+**Change:** adds a second, separately stored M1-AI evaluator configuration and runs the locked first pass and repeat pass through it as an exploratory replication. The GLM-5.3-Flash records and their analysis are unchanged and stay the pre-specified M1-AI result.
+
+- **Configuration** (`batch_runner.configuration_record`, transport `anthropic-batch-runner-1`, introduced in commit `61551ab5`):
+  - Provider and model: Anthropic, `claude-sonnet-5-5`, through the Message Batches API.
+  - Thinking: adaptive, the API default; nothing is sent.
+  - Effort: `high`, the model's default and the setting piloted (maintainer decision).
+  - Output cap: 32,000 tokens, the same as the OpenCode run.
+  - Sampling: temperature and top-p are left at the provider default, because the model rejects non-default values. Seed and weights are unknown.
+  - No tools and no fallback model.
+  - Prompts: the system prompt is the pinned `AGENT_PROMPT` (sha256 `a1bde99e…`). The user message is `packet_text(packet)` verbatim, which carries the frozen evaluator instruction (sha256 `b5e514b8…`).
+- **Unchanged:** the packets (`artifacts/assignments/packets.jsonl` and `repeat_packets.jsonl`, same opaque IDs, option orders and packet hashes), the locked 367-assignment repeat sample, A7 scoring (primary) with strict scores alongside, and the A8 gate (kappa at least 0.6, coverage reported, exclusions listed).
+- **Isolation:** each assignment is one stateless request with a single user message, no tools and no prior turns. That replaces the OpenCode preflight and session-export checks. The evidence kept for every attempt:
+  - the exact request body (`request.json`);
+  - the response, which must come from the configured model, end with `stop_reason: end_turn`, and contain only text and thinking blocks;
+  - the message ID, which stands in for the session ID.
+
+  Blinding is unchanged: the artifact text can still reveal the arm.
+- **Retries:** expired, canceled, and transient server-error results are resubmitted, at most 2 attempts. All other outcomes are final, as in the OpenCode runner.
+- **Refusals:** a response that ends in `stop_reason: refusal` is recorded with status `refusal`, is final, and is never retried. Such an assignment is documented unscorable under A8 (`analysis.NEVER_EVALUABLE`), listed with its reason, so a refusal does not block the gate (maintainer decision). No OpenCode record has this status, so the GLM gate is unchanged.
+- **Storage:** records go to `coding/claude-sonnet-5-5/` in the runner layout; the runner refuses `coding/`. A7 rescoring writes into the same directory (`make m1-ai-batch-rescore`), and analysis writes `analysis/m1_ai_a7_claude-sonnet-5-5/` and `analysis/m1_ai_strict_claude-sonnet-5-5/` (`make m1-ai-batch-analyze`). `rescore_a7.py` now labels these rows `anthropic-batch:<model>`; OpenCode rows keep `opencode:<provider>/<model>` (maintainer decision).
+- **Pre-specified replication comparison**, fixed here before any Claude answer is seen:
+  - The pre-specified tables are produced unchanged for the Claude records.
+  - One comparison is added: for each stage A1–A4, the sign of the pooled explicit-minus-implicit A7 mean gap under each evaluator, and whether the signs agree. The same is reported for the correctness rate (score 2–3 against 0–1).
+  - Evaluators are never pooled, and disagreements are reported, not reconciled.
+  - Implemented as `replication.py` (`make m1-ai-replication`, output `analysis/replication_claude-sonnet-5-5/`). A side whose gate blocks substantive findings is reported as blocked and not compared.
+  - Everything else is exploratory.
+
+**Rationale:** the pre-specified M1-AI results (negative gaps at every stage, carried almost entirely by the 3-versus-2 support distinction) come from one evaluator. A second model family tests whether that pattern belongs to GLM-5.3-Flash or to the artifacts. On the maintainer's $220 budget, Sonnet 5.5 through the Batch API is the only Claude configuration that covers both passes. A free token count measured 121.38M input tokens. A 19-request paid pilot averaged 177 output tokens, which projects to about $123 for both passes (runlog, 2026-11-18). Opus 5.5 would cost about $247.
+
+**Results seen?** Yes, for the study overall. The author, and the AI assistant drafting this amendment, have seen:
+
+- all pre-specified GLM M1-AI results;
+- the unplanned quote diagnostics;
+- the unplanned quote audit.
+
+The direction of the expected pattern is therefore known. For the Claude configuration itself, only token counts and the pilot's usage, stop reasons, and content block types were seen. No Claude answer or score has been read. The replication is exploratory and model-conditioned under A3, and cannot be read as confirmatory.
+
+**Approval still required (A3):** a separate maintainer approval of the paid run, with a budget (projected about $123) and a call cap (`MAX_INVOCATIONS`).
+
 ## A8 — 2026-09-24 (post-L2, M1-AI coverage gate; decided after partial exposure)
 
 **Change:** the M1-AI analysis gate no longer requires every locked assignment to have a record. An assignment may be missing only if it is documented as unscorable by evidence: (a) its retained answer remains structurally invalid under A7 (opaque-ID mismatch, wrong fields, unknown option or support), or (b) all its allowed attempts ended in transport failure (or it was oversize). Any other missing first-pass or repeat assignment still blocks substantive findings. Repeatability is unweighted Cohen's kappa over the locked seed-selected repeat sample minus documented-unscorable assignments; kappa below 0.6 or undefined still blocks. Reports state coverage and list every excused assignment with its reason. Both A7 (primary) and strict analyses use the same documented list, so the strict version still fails wherever quotes are unverifiable.

@@ -1,8 +1,8 @@
-"""Anthropic Message Batches transport for exploratory M1-AI evaluations (DRAFT).
+"""Anthropic Message Batches transport for exploratory M1-AI evaluations (A9).
 
-Not approved for study use: running it requires a separate maintainer approval
-for paid calls (amendment A3) and an amendment recording the new evaluator
-configuration. Nothing here runs at import time.
+Amendment A9 adds this configuration as an exploratory replication. Paid runs
+still need a separate maintainer approval with a budget and call cap (A3).
+Nothing here runs at import time.
 
 Each assignment is one stateless batch request: the pinned ``AGENT_PROMPT`` as
 the system prompt and ``packet_text(packet)`` verbatim as the only user message,
@@ -409,6 +409,10 @@ def _record_item(
         "usage": message.usage.model_dump(mode="json"),
     }
     problems, text = check_message(message, config)
+    if message.stop_reason == "refusal":
+        # Final, never retried; documented unscorable under A8 (amendment A9).
+        details = getattr(message, "stop_details", None)
+        return "refusal", str(getattr(details, "category", "") or ""), extra
     if problems:
         return "isolation_or_output_check", ",".join(problems), extra
     try:
