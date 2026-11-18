@@ -2,6 +2,41 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-11-18 — UNPLANNED exploratory analyses E1–E7 run (plan `7384b21f`)
+
+The plan (`analysis/exploratory/PLAN.md`) was committed at `7384b21f` and the
+script (`exploratory_plan.py`) at `fe4a61b8`, both before any of these
+quantities was computed. `make exploratory-plan` wrote
+`analysis/exploratory/plan-2026-11/`. First-pass A7 records; 5 incomplete pairs
+per evaluator; page-clustered bootstrap, 10,000 resamples.
+
+- **Robust by the plan's rule** (same sign under both evaluators, at least 8 of
+  12 specimens each): the manipulated-relation score gap at A1 (GLM −0.18,
+  Claude −0.20); manipulated-minus-observed difference at A1 (−0.07, −0.31)
+  and A2 (−0.33, −0.25), and the same contrast on quotable support. Nothing at
+  A3–A4 and no relation-type gap is robust.
+- **Observed relations** show no consistent arm gap (A1: GLM −0.11, Claude
+  +0.11), so the GLM H2 O1 pattern that motivated E1 does not replicate.
+  Correctness gaps stay within about three points of zero for both groups.
+- **Composition:** almost the whole score gap lies at the 2|3 boundary.
+- **Evaluator agreement:** kappa 0.84 on correct, 0.37 on the 0–3 score; 374
+  assignments scored 2 by GLM and 3 by Claude. On the 1,325 assignments where
+  they agree, the manipulated-relation gap stays negative at A1–A3.
+- **Within-instance A1→A4 change:** +0.10 (GLM) and +0.03 (Claude), intervals
+  covering zero, 7 and 6 of 12 specimens positive; H1 remains unsupported.
+  Losses to score ≤ 1 occur almost only at A4, equally in both arms.
+- **A4 and chunk boundaries:** Absent answers occur almost only where the host
+  passage spans chunks (explicit arm: GLM 20 of 54 split vs 0 of 175 intact;
+  Claude 21 of 53 vs 0 of 175).
+- **Directional only:** R2 (membership) has the largest implicit advantage; R1
+  (sequence) moves toward the explicit arm by A4.
+- **E7:** case sheet of 23 Corrupted (14 GLM, 9 Claude) and 40 sampled A4
+  Absent answers written with blank categories; coding not yet done.
+
+Reading under the plan: the arm gap is specific to the manipulated relations
+but lies in how quotable the support is, not in whether the relation was
+recovered. Exploratory and model-conditioned throughout.
+
 ## 2026-11-18 — A9 replication scored, analyzed, and compared (exploratory)
 
 After A10 and the records were committed (`0dfdbf57`, `dc9329e7`): A7 rescoring

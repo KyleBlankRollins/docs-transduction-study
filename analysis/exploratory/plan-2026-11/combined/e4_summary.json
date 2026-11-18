@@ -1,0 +1,12 @@
+{
+  "evaluators": [
+    "glm-5.3-flash",
+    "claude-sonnet-5-5"
+  ],
+  "shared_assignments": 1822,
+  "agreement": 0.7272228320526893,
+  "kappa_score": 0.3720360939129662,
+  "kappa_correct": 0.8423526923483671,
+  "agreed_assignments": 1325,
+  "agreed_complete_pairs": 526
+}
