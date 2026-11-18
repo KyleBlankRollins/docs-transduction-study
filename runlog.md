@@ -2,6 +2,34 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-11-18 — UNPLANNED Claude token count and paid output-token pilot (Sonnet 5.5, batch)
+
+Maintainer-requested, to cost a possible re-run of M1-AI on Claude. Not an
+evaluation: no answer keys were loaded and no answers or scores were read.
+
+**Token count (free endpoint, no inference).** All 2,199 packets were sent
+exactly as the runner sends them (system `AGENT_PROMPT`, user
+`packet_text(packet)`) to `count_tokens` under the maintainer's `ant` profile:
+121.38M input tokens (first pass 100.93M, repeat 20.45M; median 10.5K, max
+332K; 204 packets over 200K). Opus 5.5 counts matched Sonnet 5.5 exactly on 40
+packets.
+
+**Pilot (paid, maintainer-approved).** 19 first-pass packets chosen at size
+quantiles of those counts (729 to 216K tokens; the single 332K packet left out
+for cost) were submitted with the draft `batch_runner.py` (commit `61551ab5`):
+`claude-sonnet-5-5`, effort `high`, adaptive thinking, max 32,000 output
+tokens, Message Batches API (batch `msgbatch_01GnZdkHjjkFDWvtfgmeriQA`). Output
+went to a scratch directory outside the repository and was not retained; only
+usage, stop reasons, and content block types were read. All 19 succeeded with
+`end_turn`; 854,236 input tokens (equal to the counts), 3,357 output tokens
+(mean 177, max 362); one response carried a thinking block. Cost about $0.87.
+No study records were created, so these 19 assignments remain unevaluated by
+this configuration.
+
+**Projection (batch prices):** full first pass plus repeat about $123 on Sonnet
+5.5, about $247 on Opus 5.5. A full run still needs separate approval (A3) and
+an amendment recording the new evaluator configuration.
+
 ## 2026-09-27 — UNPLANNED blinded quote audit completed (DeepSeek V4 Pro)
 
 After the maintainer enabled Global regions, the audit resumed; a crash on an
