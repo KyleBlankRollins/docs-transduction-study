@@ -8,7 +8,7 @@ VENDOR_DIR := vendor/astro-docs
 EXPLICIT_DIR := corpus/explicit
 IMPLICIT_DIR := corpus/implicit
 BUILD_DIR := build
-STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts assign-anchors review-o1-o2 classify-o1-o2 pilot lint-probes probe-sheet seed instrument-check artifacts artifacts-resume anchors assignment-dry-run opencode-preflight m1-ai-first-pass m1-ai-repeat m1-ai-batch-estimate m1-ai-batch-submit m1-ai-batch-collect m1-ai-batch-rescore m1-ai-batch-analyze m1-ai-replication rescore-a7 m2 coding-setup code kappa analyze
+STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts assign-anchors review-o1-o2 classify-o1-o2 pilot lint-probes probe-sheet seed instrument-check artifacts artifacts-resume anchors assignment-dry-run opencode-preflight m1-ai-first-pass m1-ai-repeat m1-ai-batch-estimate m1-ai-batch-submit m1-ai-batch-collect m1-ai-batch-rescore m1-ai-batch-analyze m1-ai-replication exploratory-plan rescore-a7 m2 coding-setup code kappa analyze
 
 .PHONY: help check $(STAGES)
 
@@ -213,6 +213,11 @@ m1-ai-batch-rescore:
 m1-ai-batch-analyze:
 	uv run python -m docs_transduction_study.analysis --coding-dir $(BATCH_CODING) --records m1_ai_a7_records --out analysis/m1_ai_a7_$(BATCH_MODEL)
 	uv run python -m docs_transduction_study.analysis --coding-dir $(BATCH_CODING) --records m1_ai_records --out analysis/m1_ai_strict_$(BATCH_MODEL)
+
+# UNPLANNED exploratory analyses E1-E7 (analysis/exploratory/PLAN.md). Refuses to
+# run unless the plan is committed; no model calls.
+exploratory-plan:
+	uv run python -m docs_transduction_study.exploratory_plan
 
 # Pre-specified A9 comparison of the replication against the GLM analysis.
 m1-ai-replication:
