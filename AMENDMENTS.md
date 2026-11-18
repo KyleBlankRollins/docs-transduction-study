@@ -1,5 +1,36 @@
 # Amendments
 
+## A10 — 2026-11-18 (post-L2, M1-AI coverage gate: malformed answers; decided after partial exposure)
+
+**Change:** an assignment whose retained answer cannot be parsed by the frozen parser is documented unscorable under A8. That is status `malformed_json`: the answer is not one JSON object of strings, optionally inside a single enclosing ```` ```json ```` fence. Such an assignment is listed with its reason ("no usable answer after 1 attempt(s): malformed_json"), like the structurally invalid answers A8 already excuses. Implemented by adding `malformed_json` to `analysis.NEVER_EVALUABLE`. Adopted by the maintainer on 2026-11-18.
+
+- **Unchanged:** the parser stays as frozen, with no lenient extraction of JSON from surrounding prose. Malformed answers are not retried, because non-transport outcomes are final. They are never scored.
+- **Scope:** the rule applies to both evaluator configurations.
+  - GLM-5.3-Flash: its ledger has no `malformed_json` status, so its gate, coverage, and kappa are unchanged.
+  - Claude Sonnet 5.5 (A9) first pass: 5 of 1,832 assignments are excused. Each answer is an explanatory paragraph followed by a fenced JSON object, which the parser rejects with "Expecting value: line 1 column 1".
+    - `AI-9f3a2e3d01e814a0024b-p1`
+    - `AI-1bddf8a02624d0782951-p1`
+    - `AI-fcfc353071500c90ecb0-p1`
+    - `AI-090ee4e4c2e1e14fdb12-p1`
+    - `AI-7a1c998ed7d5b27fb538-p1`
+  - Claude repeat pass: no malformed answers.
+
+**Rationale:** A8 excuses answers that are structurally invalid, so that 0.3% unscorable assignments do not block every finding. A malformed answer is the same kind of failure one step earlier: the answer was never usable as a protocol response. A8 omits it only because the GLM run never produced one. Without this rule, 5 of 1,832 (0.3%) would block all substantive A9 findings.
+
+Alternatives considered:
+
+- **Report the replication as blocked.** This is the protocol's fallback, but it would discard 1,827 scorable assignments over a formatting failure.
+- **Parse leniently, taking the JSON out of the prose.** This would recover the 5 answers, but only by changing the frozen parser after seeing the outputs. Exclusion uses none of the answers' content.
+- **Retry the 5.** This would contradict the rule that non-transport outcomes are final, and would select toward a result.
+
+**Results seen?** Partially. All GLM results, the quote diagnostics, and the quote audit had been seen (see A9). For the Claude run, decided after both passes were collected. The author had seen:
+
+- outcome counts by status (first pass: 1,297 recorded, 530 strict-invalid, 5 malformed; repeat: 241 recorded, 126 strict-invalid);
+- the strict failure messages;
+- for the 5 malformed answers, their stop reason, content block types, lengths, and first and last few characters.
+
+No score, score distribution, A7 rescoring, kappa, or arm or stage comparison had been computed or viewed. The rule was fixed before any of them.
+
 ## A9 — 2026-11-18 (post-L2, second M1-AI evaluator on Claude; results seen)
 
 **Change:** adds a second, separately stored M1-AI evaluator configuration and runs the locked first pass and repeat pass through it as an exploratory replication. The GLM-5.3-Flash records and their analysis are unchanged and stay the pre-specified M1-AI result.

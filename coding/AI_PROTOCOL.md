@@ -28,6 +28,11 @@ ending in `end_turn` with only text and thinking blocks, and the message ID
 replace the OpenCode preflight and export checks. Refusals are final and
 documented unscorable under A8. Paid runs still need separate approval.
 
+**Amendment A10 (2026-11-18):** an answer the frozen parser cannot read
+(`malformed_json`) is documented unscorable under A8 after one attempt and
+listed with its reason. The parser is unchanged; such answers are never retried
+or scored.
+
 ## Selected Model
 
 On 2026-09-23 the maintainer selected `GLM-5.3-Flash` and proposed using the

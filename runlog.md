@@ -2,6 +2,25 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-11-18 — A9 run collected; amendment A10 adopted before any scoring
+
+Paid run under the maintainer's approval (budget about $123, cap 2,500 calls).
+First pass: batches `msgbatch_013UA5gmyZAqz5MVhE74t8fM` (945) and
+`msgbatch_01XKUX3xQUPKYdMXNbGmWjrr` (887); repeat: `msgbatch_0176rozxVJSCJoTLEtoTmEvP`
+(367). All 2,199 requests succeeded (none errored, expired, canceled, or
+refused); 2,199 invocations against the cap. Usage 121.38M input and 0.435M
+output tokens, about $123.56 at batch prices. Collection under the frozen
+strict rules: first pass 1,297 recorded, 530 strict-invalid (487 explicit quote
+not verbatim, 43 absence choice with support or quote), 5 `malformed_json`;
+repeat 241 recorded, 126 strict-invalid (100 quote, 7 absence, 19 without a
+strict first-pass baseline). The 5 malformed answers (prose before a fenced
+JSON object) would have blocked the A8 gate; the maintainer adopted A10
+(document them as unscorable) after seeing these counts, the failure messages,
+and the malformed answers' block types, lengths, and first and last few
+characters. No score, distribution, A7 rescoring, kappa, or comparison had been
+computed. The GLM gate was re-run after A10 and is unchanged. The answer-key
+passphrase file was located by the maintainer and used in memory only.
+
 ## 2026-11-18 — Amendment A9 adopted (second M1-AI evaluator on Claude); no run yet
 
 The maintainer accepted the three open choices in the A9 draft: effort `high`,

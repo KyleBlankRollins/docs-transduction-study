@@ -48,3 +48,14 @@ def test_refusal_is_documented_unscorable_after_one_attempt(tmp_path):
     )
     documented = analysis.documented_unscorable(tmp_path)
     assert documented == {("AI-x", 1): "no usable answer after 1 attempt(s): refusal"}
+
+
+def test_malformed_answer_is_documented_unscorable_after_one_attempt(tmp_path):
+    (tmp_path / "m1_ai_attempts.jsonl").write_text(
+        '{"event": "invoke", "tag": "AI-y-p1", "attempt": 1}\n'
+        '{"event": "result", "tag": "AI-y-p1", "status": "malformed_json", '
+        '"detail": "Expecting value: line 1 column 1 (char 0)"}\n'
+    )
+    assert analysis.documented_unscorable(tmp_path) == {
+        ("AI-y", 1): "no usable answer after 1 attempt(s): malformed_json"
+    }

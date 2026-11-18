@@ -50,8 +50,9 @@ def load_records(
 
 
 MAX_ATTEMPTS = 2
-# A9: a provider refusal is final after one attempt, like an oversize packet.
-NEVER_EVALUABLE = {"oversize", "refusal"}
+# Final after one attempt, like an oversize packet: provider refusals (A9) and
+# answers the frozen parser cannot read (A10).
+NEVER_EVALUABLE = {"oversize", "refusal", "malformed_json"}
 
 
 def documented_unscorable(coding: Path) -> dict[tuple[str, int], str]:
@@ -60,7 +61,8 @@ def documented_unscorable(coding: Path) -> dict[tuple[str, int], str]:
     Only (a) answers that remain structurally invalid under A7 (opaque-ID or
     field mismatches, unknown options) and (b) assignments whose attempts all
     ended in transport failure after the allowed retries (or were oversize, or
-    were refused by the provider: amendment A9).
+    were refused by the provider, amendment A9, or could not be parsed,
+    amendment A10).
     Everything else that is missing still fails the gate.
     """
     documented: dict[tuple[str, int], str] = {}
