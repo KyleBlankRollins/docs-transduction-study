@@ -2,6 +2,17 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-11-18 — E7 case coding: maintainer review complete
+
+63 cases coded AI-assisted (`e7_cases_coded.csv`). The maintainer reviewed 17:
+agreed that probe S10-O2-at-013799 ("what does the second command do?") is
+defective (13 cases, category d, across both arms and evaluators; 13 of 23
+Corrupted answers); changed C11 and C13 from (a) to (b), since the explicit
+A2 tree exposes only the active tab panel, so the tab markup itself removed
+the evidence; confirmed C08 (c) and C18 (b); accepted the other 46 rows (all (a)) as
+coded. All 63 reviewed. The probe cannot change after L2; H3 Corrupted counts are to
+be reported with and without it.
+
 ## 2026-11-18 — UNPLANNED exploratory analyses E1–E7 run (plan `7384b21f`)
 
 The plan (`analysis/exploratory/PLAN.md`) was committed at `7384b21f` and the
