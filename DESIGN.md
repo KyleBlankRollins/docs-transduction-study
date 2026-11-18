@@ -4,7 +4,7 @@ description: "Pre-registered design measuring whether explicitly marked pragmati
 keywords: "experiment design, pre-registration, technical writing, documentation, semiotics, communicability, transduction, retrieval, AI agents"
 date: ""
 tags: [technical writing, documentation, AI, research, experiment]
-status: "design"
+status: "run (AI-assisted, exploratory M1-AI)"
 design_version: "0.9"
 registered: "2026-08-02"
 registration_commit: "75667a9a494b076e79e9f5aba5bd0dc932d890a1"
@@ -16,7 +16,7 @@ repository: "docs-transduction-study — separate repository, not this one"
 
 ## Status
 
-**Design — registered 2026-08-02 (L1, commit `75667a9a`); instrument locked 2026-09-23 (L2, commit `ace31884`); not yet run.** Version 0.9 includes amendments A1–A4. **A3 changes the study to AI-assisted execution and withdraws the model-free Phase 1 claim.** The original methodological text below is retained to make the departure auditable; where it conflicts, [AI-assisted execution](#ai-assisted-execution-amendment-a3) governs. A4 corrects the A3 extraction selector to `.sl-markdown-content`. See the [Amendment log](#amendment-log).
+**Registered 2026-08-02 (L1, commit `75667a9a`); instrument locked 2026-09-23 (L2, commit `ace31884`); run under AI-assisted execution (A3).** The exploratory M1-AI measure was run on 2026-09-24 with GLM-5.3-Flash and replicated on 2026-11-18 with Claude Sonnet 5.5 (A9). M2 is a partial, AI-assisted descriptive inventory. Human M1a/M1b coding and Phase 2 have not been run. Results are reported in `analysis/` and logged in `runlog.md`; all are model-conditioned and exploratory, scored under amendments decided after partial exposure (A7, A8, A10). Design text: version 0.9 includes amendments A1–A4; A5–A10 are post-L2 amendments recorded in the [Amendment log](#amendment-log) and `AMENDMENTS.md`. **A3 changes the study to AI-assisted execution and withdraws the model-free Phase 1 claim.** The original methodological text below is retained to make the departure auditable; where it conflicts, [AI-assisted execution](#ai-assisted-execution-amendment-a3) governs. A4 corrects the A3 extraction selector to `.sl-markdown-content`. See the [Amendment log](#amendment-log).
 
 Registration happens in **two locks**, because two different things need protecting and they are ready at different times:
 
