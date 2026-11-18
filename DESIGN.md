@@ -10,7 +10,7 @@ registered: "2026-08-02"
 registration_commit: "75667a9a494b076e79e9f5aba5bd0dc932d890a1"
 instrument_locked: "2026-09-23"
 instrument_lock_commit: "ace31884f457b5e63b061e3584678552276b11a7"
-instrument_amendment_commits: "e36209b4e6a04fe8fb22b67c3c12a3170e977051,d789182e1aec17a6e02bc7fa969a19c1691dd0f0,d20d575250916b3e35fd84a994b21bb6a4091b7b,95361f3fb9de101c59d322e3bd93121bb09f02ed,04864bf61c154094dd3c6ac6b83a825902630b2f"
+instrument_amendment_commits: "e36209b4e6a04fe8fb22b67c3c12a3170e977051,d789182e1aec17a6e02bc7fa969a19c1691dd0f0,d20d575250916b3e35fd84a994b21bb6a4091b7b,95361f3fb9de101c59d322e3bd93121bb09f02ed,04864bf61c154094dd3c6ac6b83a825902630b2f,0dfdbf5719b2c97d548b58aaa2dbb799e96cf353"
 repository: "docs-transduction-study — separate repository, not this one"
 ---
 
