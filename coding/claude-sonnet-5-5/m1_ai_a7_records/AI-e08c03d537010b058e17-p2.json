@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-e08c03d537010b058e17",
+  "assignment_id": "S08-O1-at-001784|explicit|A3",
+  "pass_number": 2,
+  "session_id": "msg_011ChB6iiwxhWh3e5fxyky1F",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "d8e85a9b7e7acf28d9e659110eecc5eefb11a7477bd7a28e471a59d98c30667a",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-e08c03d537010b058e17-p2-a1",
+  "response": {
+    "opaque_id": "AI-e08c03d537010b058e17",
+    "option_id": "2",
+    "support": "explicit",
+    "evidence": "The current minimum supported version is v22.12.0 .",
+    "rationale": "The artifact states v22.12.0 is the minimum supported Node.js version and says a version number lower than the required means a compatible version must be installed. Option 3 is only an example output, and option 1 is not mentioned in the artifact."
+  }
+}

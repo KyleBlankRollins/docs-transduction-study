@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-bc2b1664f44024ec7262",
+  "assignment_id": "S01-R2-001|explicit|A4",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5fxw8qbk4bPPHJZGtb",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "be36a9ea2bb9b6fa8e2066855c78327f8f22918d23e8aa1e20b2e684a1589529",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-bc2b1664f44024ec7262-p1-a1",
+  "response": {
+    "opaque_id": "AI-bc2b1664f44024ec7262",
+    "option_id": "2",
+    "support": "explicit",
+    "evidence": "Run the astro add command using the package manager of your choice and our automatic integration wizard will update your configuration file and install any necessary dependencies.",
+    "rationale": "The artifact tells the reader to run the astro add command using the package manager of their choice. The npm, pnpm, and Yarn commands for adding React are therefore alternatives, and only the one matching the reader's package manager should be run."
+  }
+}

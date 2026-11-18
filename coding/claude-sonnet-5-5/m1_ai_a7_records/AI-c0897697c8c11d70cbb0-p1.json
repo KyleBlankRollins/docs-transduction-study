@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-c0897697c8c11d70cbb0",
+  "assignment_id": "S09-R1-001|implicit|A3",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5gKAJysnDnkNo7GXmm",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "242dee4aaa05ad56f4b1318d93d8c20a685d4c9fbe9fe76c1558ed68d8517c1f",
+  "score": 2,
+  "score_strict": 2,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-c0897697c8c11d70cbb0-p1-a1",
+  "response": {
+    "opaque_id": "AI-c0897697c8c11d70cbb0",
+    "option_id": "2",
+    "support": "inferred",
+    "evidence": "The section says \"Complete the following steps in order. First, Keep Next's public/ folder untouched.\" and then \"Finally, Copy or Move Next's other files and folders (e.g. pages , styles etc.) into Astro's src/ folder\".",
+    "rationale": "The section lists only two ordered steps, labeled \"First\" and \"Finally\". The \"Finally\" step is therefore the second one, and it is copying or moving the other files and folders into src. The text never uses the word \"second\" for this section, so the support is inferred."
+  }
+}

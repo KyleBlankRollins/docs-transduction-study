@@ -1,0 +1,42 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-55e3d80e38b5c86a211e",
+  "assignment_id": "S02-O1-at-016574|explicit|A4",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5fycowGERkfwbYCUpz",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "74083c81299adff4fe4d11eec7b94841ca59499f85a87062128bbb67e265b70f",
+  "score": 1,
+  "score_strict": null,
+  "strict_error": "Absence choice requires absent support and no quote",
+  "flags": [
+    "absence_with_support_or_quote"
+  ],
+  "attempt": "AI-55e3d80e38b5c86a211e-p1-a1",
+  "response": {
+    "opaque_id": "AI-55e3d80e38b5c86a211e",
+    "option_id": "1",
+    "support": "explicit",
+    "evidence": "Use project rules : If your AI tool supports it, set up project rules to enforce best practices and co",
+    "rationale": "The artifact is truncated mid-word right after \"enforce best practices and co\", so it never says which best practices the project rules should enforce. Option 4 would be a guess beyond what the text states."
+  }
+}

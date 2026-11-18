@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-d1a3522d7225b8664ed4",
+  "assignment_id": "S02-R2-001|explicit|A1",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5gKuTaK7WKYhr3uJeE",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "22aec12fd960e7f8cfffcd4da3c453826bc21bb3c2a56bfd5c6de493392446d5",
+  "score": 2,
+  "score_strict": 2,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-d1a3522d7225b8664ed4-p1-a1",
+  "response": {
+    "opaque_id": "AI-d1a3522d7225b8664ed4",
+    "option_id": "4",
+    "support": "inferred",
+    "evidence": "The Manual setup section presents two tabs, \"Streamable HTTP\" and \"Local Proxy\", each with its own full MCP Configuration for the same \"Astro docs\" server pointing at https://mcp.docs.astro.build/mcp. The text says to add \"the following configuration\" and the Troubleshooting section says to \"Verify that your tool supports streamable HTTP transport\". The Windsurf section says \"Windsurf doesn\u2019t support streaming HTTP, so it requires a local proxy configuration\".",
+    "rationale": "Both tab panels define the same server name and URL, so they are two ways of connecting to one server. Tabs imply a choice between them. The Windsurf note shows the proxy is used when streaming HTTP is unsupported. Nothing says both are needed, or that one is for testing and the other for production. The page never states outright that they are alternatives, so support is inferred."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-ac12bd16f7c8a4ce2942",
+  "assignment_id": "S01-O1-at-016972|explicit|A1",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g1zvrdQN18hKBqeN2",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "c84d445e86501772f849b2a1b3fa6b8a512f6cc0bc3216110861fa16cf100e30",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-ac12bd16f7c8a4ce2942-p1-a1",
+  "response": {
+    "opaque_id": "AI-ac12bd16f7c8a4ce2942",
+    "option_id": "4",
+    "support": "explicit",
+    "evidence": "Run <code dir=\"auto\">astro build</code> to build your fixtures, then compare the output of the <code dir=\"auto\">dist/__fixtures__/</code> directory to what you expected.",
+    "rationale": "In the 'Testing your component' section, the last step says to run `astro build` to build your fixtures. The fixtures are the test pages added in the earlier steps (a new page for each test under demo/src/pages/__fixtures__)."
+  }
+}

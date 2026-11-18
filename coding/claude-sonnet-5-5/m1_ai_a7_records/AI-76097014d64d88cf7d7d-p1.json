@@ -1,0 +1,42 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-76097014d64d88cf7d7d",
+  "assignment_id": "S01-O1-at-005129|implicit|A4",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g1k4C3hGg2dmqW5EJ",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "90546c12143194c222bc7d9a2c4d3cba6c1df9c39810dc705fbdae3d5e9f79ec",
+  "score": 1,
+  "score_strict": null,
+  "strict_error": "Absence choice requires absent support and no quote",
+  "flags": [
+    "absence_with_support_or_quote"
+  ],
+  "attempt": "AI-76097014d64d88cf7d7d-p1-a1",
+  "response": {
+    "opaque_id": "AI-76097014d64d88cf7d7d",
+    "option_id": "2",
+    "support": "inferred",
+    "evidence": "The artifact says \"Complete the following steps in order. First, Install the integration to your project dependencies...\" and then cuts off after the npm install command. The second step is never shown. The numbered items in the config example (\"2. Imported from a local JS file\") are comments on three ways to import an integration, not the ordered installation steps.",
+    "rationale": "The ordered installation steps are truncated after the first step, so the text does not say what the second step imports. Reading the second step as the sitemap import, or as the local file in the numbered example, would require assumptions the artifact does not support."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-af5f16d98a3995d3900d",
+  "assignment_id": "S05-O1-at-001327|implicit|A4",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5gK4MHEGPrRreCAE2T",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "866d61dbcbb9cce95c6e96a9b42e50b7d8026f462595b5dbe8755addf621321c",
+  "score": 2,
+  "score_strict": 2,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-af5f16d98a3995d3900d-p1-a1",
+  "response": {
+    "opaque_id": "AI-af5f16d98a3995d3900d",
+    "option_id": "1",
+    "support": "inferred",
+    "evidence": "\"If you\u2019re using another package manager than npm, you\u2019ll need to adjust the commands accordingly.\"",
+    "rationale": "The page says to adjust the commands if you use a package manager other than npm. The only commands in the example Dockerfile that use npm are RUN npm install and RUN npm run build, so option 1 is the match. The page does not name those commands explicitly in that sentence, which is why the support is inferred."
+  }
+}

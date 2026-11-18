@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-7caebb7aa1676841d37a",
+  "assignment_id": "S06-R1-004|implicit|A1",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5fzzerS4mkT4PsS5Mz",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "4714661d311a0de2f4bd16a55a410e401b48792abaa8d88853f9ed10cf243d18",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-7caebb7aa1676841d37a-p1-a1",
+  "response": {
+    "opaque_id": "AI-7caebb7aa1676841d37a",
+    "option_id": "3",
+    "support": "explicit",
+    "evidence": "Second, Build your Astro site with your preferred package manager:",
+    "rationale": "In the CLI Deployment section, the steps are: install the Deno Deploy CLI, then build the Astro site with your package manager, then \"Run deployctl to deploy!\". Building is the required step before running deployctl. The combined script is explicitly optional, and pushing to GitHub belongs to the GitHub Actions route."
+  }
+}

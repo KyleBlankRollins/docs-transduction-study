@@ -1,0 +1,42 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-e335b874b2b35e1f7699",
+  "assignment_id": "S02-O2-at-007892|implicit|A3",
+  "pass_number": 2,
+  "session_id": "msg_011ChB6ik7QFR8wrbAnJegpT",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "20f1f07c8b1f8a1b0a026edcd9857af1d6bebb95cb95c258f2d622a39861048b",
+  "score": 3,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "quote_verified_after_normalization"
+  ],
+  "attempt": "AI-e335b874b2b35e1f7699-p2-a1",
+  "response": {
+    "opaque_id": "AI-e335b874b2b35e1f7699",
+    "option_id": "4",
+    "support": "explicit",
+    "evidence": "Windsurf doesn\u2019t support streaming HTTP, so it requires a local proxy configuration: ... { \"mcpServers\" : { \"Astro docs\" : { \"command\" : \" npx \" , \"args\" : [ \" -y \" , \" mcp-remote \" , \" https://mcp.docs.astro.build/mcp \" ] } } }",
+    "rationale": "The Windsurf section says it needs a local proxy configuration and gives an entry whose command is npx running mcp-remote against the server URL. That matches option 4 and rules out direct streaming HTTP and terminal-command registration."
+  }
+}

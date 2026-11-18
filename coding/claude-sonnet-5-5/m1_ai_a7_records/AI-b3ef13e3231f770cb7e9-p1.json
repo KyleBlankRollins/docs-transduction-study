@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-b3ef13e3231f770cb7e9",
+  "assignment_id": "S06-R2-009|explicit|A1",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5gKuhYVXU6VhbgJ6D7",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "086bc1b468277921e819230c0ca3765c67e12dbf907d82604c35556f062442a0",
+  "score": 2,
+  "score_strict": 2,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-b3ef13e3231f770cb7e9-p1-a1",
+  "response": {
+    "opaque_id": "AI-b3ef13e3231f770cb7e9",
+    "option_id": "1",
+    "support": "inferred",
+    "evidence": "The CLI Deployment step 4 uses a tabbed pair labeled \"Static\" and \"On demand\", each showing a package.json with a \"deno-deploy\" script. The static one runs `npm run build && cd dist && deployctl deploy jsr:@std/http/file-server`; the on-demand one runs `npm run build && deployctl deploy ./dist/server/entry.mjs`.",
+    "rationale": "Both examples define the same script name, \"deno-deploy\", and are presented as mutually exclusive tabs for static versus on-demand sites. The page says to adapt the script for your setup, so only one applies. The page never states \"add only one\" in so many words, so the support is inferred from the tab structure and the shared script name."
+  }
+}

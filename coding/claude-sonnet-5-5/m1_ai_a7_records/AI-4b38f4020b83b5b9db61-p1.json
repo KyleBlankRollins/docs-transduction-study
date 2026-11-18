@@ -1,0 +1,42 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-4b38f4020b83b5b9db61",
+  "assignment_id": "S03-R3-001|explicit|A2",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g16rrMSudvEp7Whae",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "4f156be69b771d478577323d2ae630129443429afc663571497b791854e0cad8",
+  "score": 1,
+  "score_strict": null,
+  "strict_error": "Absence choice requires absent support and no quote",
+  "flags": [
+    "absence_with_support_or_quote"
+  ],
+  "attempt": "AI-4b38f4020b83b5b9db61-p1-a1",
+  "response": {
+    "opaque_id": "AI-4b38f4020b83b5b9db61",
+    "option_id": "4",
+    "support": "absent",
+    "evidence": "The artifact only contains the collapsed FAQ question \"\ud83d\ude4b Can I use Nano Stores in .astro files or other server-side components?\" with no answer text. It never mentions frontmatter.",
+    "rationale": "The page poses the question about server-side components in an FAQ heading, but the answer is not included in the artifact. Nothing in the visible text says the practice is recommended, forbidden, or discouraged, so the text does not say."
+  }
+}

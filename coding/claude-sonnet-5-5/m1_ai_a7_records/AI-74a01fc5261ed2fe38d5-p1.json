@@ -1,0 +1,42 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-74a01fc5261ed2fe38d5",
+  "assignment_id": "S11-R1-003|explicit|A2",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5gKtCwF4ufVX8bkzwd",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "3ead1fceed3c14fb85b59edccb84c67b57ac1e21abb8f8e5cee0b3b7b142d6ab",
+  "score": 2,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "explicit_quote_unverified"
+  ],
+  "attempt": "AI-74a01fc5261ed2fe38d5-p1-a1",
+  "response": {
+    "opaque_id": "AI-74a01fc5261ed2fe38d5",
+    "option_id": "3",
+    "support": "explicit",
+    "evidence": "\"In the text field above the editor, give your entry a name. This is how it will be listed in the Builder app.\" followed immediately by \"When you\u2019re ready click the Publish button in the upper right corner.\"",
+    "rationale": "In the 'Creating a blog post' steps, the step immediately before clicking Publish is naming the entry in the text field above the editor. Adding a block comes earlier, and creating more posts comes after Publish."
+  }
+}

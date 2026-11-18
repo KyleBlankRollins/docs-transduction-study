@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-69965596098a0f28b689",
+  "assignment_id": "S11-R3-002|explicit|A4",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5gJsgaHPhMMP2jKrdz",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "91bcbb421e8526c65b3643f08de6c0c7ae055a9aff4aa15a007fef01cd78d8e6",
+  "score": 2,
+  "score_strict": 2,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-69965596098a0f28b689-p1-a1",
+  "response": {
+    "opaque_id": "AI-69965596098a0f28b689",
+    "option_id": "2",
+    "support": "inferred",
+    "evidence": "\"For visual types You can find videos showing this procedure in one of Builder\u2019s official tutorials .\"",
+    "rationale": "The page says videos are available for visual types (learners) in an official tutorial, which presents them as an optional supplementary resource. It does not say they are required or that the written steps are outdated. The word \"optional\" is not stated explicitly, so the support is inferred."
+  }
+}

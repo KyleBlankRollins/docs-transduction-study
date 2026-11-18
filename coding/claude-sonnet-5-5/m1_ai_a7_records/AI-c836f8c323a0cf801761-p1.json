@@ -1,0 +1,42 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-c836f8c323a0cf801761",
+  "assignment_id": "S02-O2-at-003591|implicit|A3",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g22fmbAUAvforqfnG",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "753cfc4362fcf0fc89dc4b32973b3e140668e47d9fe2763cf19fd715ee89dd62",
+  "score": 2,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "explicit_quote_unverified"
+  ],
+  "attempt": "AI-c836f8c323a0cf801761-p1-a1",
+  "response": {
+    "opaque_id": "AI-c836f8c323a0cf801761",
+    "option_id": "4",
+    "support": "explicit",
+    "evidence": "\"You can configure it to use the Astro Docs MCP server for documentation access by adding the following to the workflow file: .github/workflows/claude.yml # ...rest of your workflow configuration - uses : anthropics/claude-code-action@beta with : anthropic_api_key : ${{ secrets.ANTHROPIC_API_KEY }} mcp_config : | { \\\"mcpServers\\\": { \\\"astro-docs\\\": { \\\"type\\\": \\\"http\\\", \\\"url\\\": \\\"https://mcp.docs.astro.build/mcp\\\" } } } allowed_tools : \\\"mcp__astro-docs__search_astro_docs\\\"\"",
+    "rationale": "The workflow addition is an action step (uses anthropics/claude-code-action) with an mcp_config for the Astro docs server and allowed_tools permitting the search_astro_docs tool. It is not a separate npx job, and the secret shown holds the Anthropic API key, not the server address."
+  }
+}

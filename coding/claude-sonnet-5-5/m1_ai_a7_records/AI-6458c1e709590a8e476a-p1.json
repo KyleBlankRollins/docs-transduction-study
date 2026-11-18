@@ -1,0 +1,42 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-6458c1e709590a8e476a",
+  "assignment_id": "S10-O2-at-004106|implicit|A2",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g1koQUkiidfPK9JUC",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "21947802c9e096e7a466892579a414ba1eb7e17b796704525e98a96379188c13",
+  "score": 3,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "quote_verified_after_normalization"
+  ],
+  "attempt": "AI-6458c1e709590a8e476a-p1-a1",
+  "response": {
+    "opaque_id": "AI-6458c1e709590a8e476a",
+    "option_id": "3",
+    "support": "explicit",
+    "evidence": "test('meta is correct', async ({ page }) => { await page.goto(\"http://localhost:4321/\"); await expect(page).toHaveTitle('Astro is awesome!'); });",
+    "rationale": "The Playwright test in src/test/index.spec.ts calls toHaveTitle('Astro is awesome!'), so it only verifies that the page title matches the expected text. It does not check the h1 heading (that is the Cypress test) or the description meta tag, despite the test being named 'meta is correct'."
+  }
+}

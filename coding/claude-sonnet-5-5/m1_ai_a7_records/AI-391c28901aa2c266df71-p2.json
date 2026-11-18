@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-391c28901aa2c266df71",
+  "assignment_id": "S04-R4-003|implicit|A4",
+  "pass_number": 2,
+  "session_id": "msg_011ChB6inP5dHmLUTzs6APow",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "118c278e40886d1837c100c241da0fb75e0bf62f665097ea8d4c550e407bab20",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-391c28901aa2c266df71-p2-a1",
+  "response": {
+    "opaque_id": "AI-391c28901aa2c266df71",
+    "option_id": "2",
+    "support": "explicit",
+    "evidence": "Before you begin, you need the following: An Astro project initialized with Firebase as described in the Initializing Firebase in Astro section. A Firebase project with a Firestore database.",
+    "rationale": "The artifact lists two prerequisites for connecting to the Firestore database: an Astro project initialized with Firebase, and a Firebase project that has a Firestore database. Option 2 paraphrases both. The other options either claim the text is silent, name a collection of documents that the text never specifies, or name OAuth providers, which are not listed as a prerequisite."
+  }
+}

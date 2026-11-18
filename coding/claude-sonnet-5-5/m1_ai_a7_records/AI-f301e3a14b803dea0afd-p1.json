@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-f301e3a14b803dea0afd",
+  "assignment_id": "S04-O2-at-001521|explicit|A3",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5gMHngEyoqB9a5tuDn",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "1564463099d41abe30f5f3526328a177c01544a843e71230c563570eb5fafbe1",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-f301e3a14b803dea0afd-p1-a1",
+  "response": {
+    "opaque_id": "AI-f301e3a14b803dea0afd",
+    "option_id": "1",
+    "support": "explicit",
+    "evidence": "To add your Firebase credentials to Astro, create an .env file in the root of your project with the following variables: .env FIREBASE_PRIVATE_KEY_ID =YOUR_PRIVATE_KEY_ID FIREBASE_PRIVATE_KEY =YOUR_PRIVATE_KEY FIREBASE_PROJECT_ID =YOUR_PROJECT_ID FIREBASE_CLIENT_EMAIL =YOUR_CLIENT_EMAIL",
+    "rationale": "The .env file holds the Firebase project (service account) credentials used by the server side, including private key, project ID, and client email. The web app config object is placed directly in client.ts, not in .env, and the session cookie name is not stored there."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-28ef21882add0f45e536",
+  "assignment_id": "S02-O2-at-002099|explicit|A1",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5gJyPimpqeFAhhyscn",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "ab031c7ac6fdb48e14b541d467148255d54b10abc0fd9d715154ddf0e3f7a093",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-28ef21882add0f45e536-p1-a1",
+  "response": {
+    "opaque_id": "AI-28ef21882add0f45e536",
+    "option_id": "3",
+    "support": "explicit",
+    "evidence": "you may be able to add the Astro Docs MCP server by including the following configuration in your tool\u2019s MCP settings:",
+    "rationale": "The Manual setup section tells you to add a JSON configuration (mcpServers entry named \"Astro docs\") to your tool's MCP settings, with two tabs: Streamable HTTP (type http, url) and Local Proxy (stdio via npx mcp-remote)."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-47041234a383f988687a",
+  "assignment_id": "S10-O2-at-008421|explicit|A1",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g75mmm4TgRurK3qBS",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "889779596693276b7707963e14361f9e1f06390dd7a35eb80a0e350df6cef636",
+  "score": 3,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "quote_verified_after_normalization"
+  ],
+  "attempt": "AI-47041234a383f988687a-p1-a1",
+  "response": {
+    "opaque_id": "AI-47041234a383f988687a",
+    "option_id": "2",
+    "support": "explicit",
+    "evidence": "page.get('title').should('have.text', 'Astro is awesome!')\n  page.get('h1').should('have.text', 'Hello world from Astro');",
+    "rationale": "The Cypress test in cypress/e2e/index.cy.js asserts the text of both the title element and the h1 heading. The page also says the test verifies that \"the page title and header are correct.\""
+  }
+}

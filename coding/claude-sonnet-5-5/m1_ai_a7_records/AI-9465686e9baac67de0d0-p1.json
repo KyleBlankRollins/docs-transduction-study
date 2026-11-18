@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-9465686e9baac67de0d0",
+  "assignment_id": "S11-O2-at-002947|explicit|A1",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5gHyNaFKkcLDpLsXgb",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "5c7ebe8143b2e9128d5ba88716e241653002eb6f4cdaf22db195484f8ddb196d",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-9465686e9baac67de0d0-p1-a1",
+  "response": {
+    "opaque_id": "AI-9465686e9baac67de0d0",
+    "option_id": "2",
+    "support": "explicit",
+    "evidence": "The instructions below create an Astro blog using a Builder model (Type: \u201cSection\u201d) called <code dir=\"auto\">blogpost</code> that contains two required text fields: <code dir=\"auto\">title</code> and <code dir=\"auto\">slug</code>.",
+    "rationale": "The artifact states the blog post model is of Type \"Section\" and named \"blogpost\", matching option 2. The model list also gives Type: Section and Name: \"blogpost\"."
+  }
+}

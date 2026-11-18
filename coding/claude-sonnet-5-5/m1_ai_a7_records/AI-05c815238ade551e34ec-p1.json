@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-05c815238ade551e34ec",
+  "assignment_id": "S03-R2-003|implicit|A1",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5fxsAcrYfuxqs4qpbF",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "490ad5b7114ae1c225b8a0e492a1e739b1abf13aa10b87a797c83d326f6a53de",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-05c815238ade551e34ec-p1-a1",
+  "response": {
+    "opaque_id": "AI-05c815238ade551e34ec",
+    "option_id": "3",
+    "support": "explicit",
+    "evidence": "Choose one of the following options. These are alternatives \u2014 use exactly one, not all of them.",
+    "rationale": "Before the CartFlyout code blocks (preact, react, solid, svelte, vue), the page says they are alternatives and to use exactly one. Each block is labeled for a specific framework, so you pick the version for your UI framework."
+  }
+}

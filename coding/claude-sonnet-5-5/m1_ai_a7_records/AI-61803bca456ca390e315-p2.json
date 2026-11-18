@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-61803bca456ca390e315",
+  "assignment_id": "S06-R2-008|implicit|A3",
+  "pass_number": 2,
+  "session_id": "msg_011ChB6ik1xbH9Xtrb9rGN2u",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "63f18b66abbd659fbb440635607cf8d54042e6de3574b6732824217c726c07a6",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-61803bca456ca390e315-p2-a1",
+  "response": {
+    "opaque_id": "AI-61803bca456ca390e315",
+    "option_id": "4",
+    "support": "explicit",
+    "evidence": "Choose one of the following options. These are alternatives \u2014 use exactly one, not all of them. If you are using static: Terminal window cd dist && deployctl deploy jsr:@std/http/file-server If you are using ssr: Terminal window deployctl deploy ./dist/server/entry.mjs",
+    "rationale": "The artifact presents the static and ssr deployctl deploy commands as alternatives, stating to use exactly one, chosen by whether the project is static or on-demand rendered (ssr)."
+  }
+}

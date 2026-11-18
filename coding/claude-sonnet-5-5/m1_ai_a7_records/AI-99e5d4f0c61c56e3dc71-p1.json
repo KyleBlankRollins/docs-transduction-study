@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-99e5d4f0c61c56e3dc71",
+  "assignment_id": "S06-R2-007|explicit|A4",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g2K2oL5pikySQmpU1",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "6721b8b16f79c626fbbf53c19939c41ade5c5b54f586edd9add6b30fd77104b5",
+  "score": 2,
+  "score_strict": 2,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-99e5d4f0c61c56e3dc71-p1-a1",
+  "response": {
+    "opaque_id": "AI-99e5d4f0c61c56e3dc71",
+    "option_id": "2",
+    "support": "inferred",
+    "evidence": "The CLI Deployment section says: \"Build your Astro site with your preferred package manager: npm pnpm Yarn Terminal window npm run build Terminal window pnpm run build Terminal window yarn run build\". The earlier YAML comment says: \"Not using npm? Change `npm run build` to `pnpm run build` or `yarn run build`\".",
+    "rationale": "The text presents the three commands as tabbed variants, one per package manager, and tells the reader to build with their \"preferred package manager\". The comment about swapping `npm run build` for `pnpm run build` or `yarn run build` reinforces that they are interchangeable alternatives. Nothing says to run all three or to run the npm one first, so only the one matching your package manager is run."
+  }
+}

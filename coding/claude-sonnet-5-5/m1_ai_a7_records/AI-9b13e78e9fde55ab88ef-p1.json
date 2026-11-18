@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-9b13e78e9fde55ab88ef",
+  "assignment_id": "S10-O2-at-013229|explicit|A3",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g1gb9MjmZDQG1nAfy",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "c265ca926220efd4e9817874e3125948c4a69a5b405ed685d58daf7d1920613b",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-9b13e78e9fde55ab88ef-p1-a1",
+  "response": {
+    "opaque_id": "AI-9b13e78e9fde55ab88ef",
+    "option_id": "1",
+    "support": "explicit",
+    "evidence": "To run all tests, enter the following command in the terminal. Optionally, include the file name to run just the single test: Terminal window npx nightwatch test/index.js",
+    "rationale": "In the 'Running your NightwatchJS tests' section, the first command is `npx nightwatch test/index.js`. The text introduces it as the command to run all tests, with an optional file name to run a single test. This matches option 1."
+  }
+}

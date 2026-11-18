@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-326eafcbb0fa8195e9ba",
+  "assignment_id": "S07-O1-at-001725|implicit|A3",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5gM6P2kJzPDJ9guV2A",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "76b136b033e194987d708a900c8ccb1c4f4448ea56dc55e6f65a748dd7fa7faf",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-326eafcbb0fa8195e9ba-p1-a1",
+  "response": {
+    "opaque_id": "AI-326eafcbb0fa8195e9ba",
+    "option_id": "2",
+    "support": "explicit",
+    "evidence": "To use a framework component, import it from its relative path in your Astro component script. Then, use the component alongside other components, HTML elements and JSX-like expressions in the component template.",
+    "rationale": "The artifact says to import the framework component and then use that component alongside other components, HTML elements, and expressions in the template. The imported framework component is the one placed in the template."
+  }
+}

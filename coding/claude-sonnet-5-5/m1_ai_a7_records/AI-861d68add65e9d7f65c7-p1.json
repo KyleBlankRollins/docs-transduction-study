@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-861d68add65e9d7f65c7",
+  "assignment_id": "S10-O1-at-013172|implicit|A4",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5gKryGxMYgL2dLLbEe",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "8a172455b618686e492e39c87aa5b6876fd6e4bde739900ff99c98a8ad46401e",
+  "score": 2,
+  "score_strict": 2,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-861d68add65e9d7f65c7-p1-a1",
+  "response": {
+    "opaque_id": "AI-861d68add65e9d7f65c7",
+    "option_id": "1",
+    "support": "inferred",
+    "evidence": "\"You can run a single test or several tests at once, testing one or multiple browsers.\" and \"Optionally, you can open the HTML Test Reporter to show a full report and filter test results.\"",
+    "rationale": "The artifact is truncated before the actual command-line steps appear. The section's introduction says it covers running one or several tests, in one or multiple browsers, and optionally opening the HTML report. That matches option 1. Options 2 and 4 describe other content: writing the first test, and installing an editor extension and signing in. Option 3 is not chosen because the text does describe what the section covers."
+  }
+}

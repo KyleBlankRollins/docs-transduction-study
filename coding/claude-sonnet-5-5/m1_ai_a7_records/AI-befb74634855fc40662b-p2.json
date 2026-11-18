@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-befb74634855fc40662b",
+  "assignment_id": "S02-O1-at-005549|explicit|A4",
+  "pass_number": 2,
+  "session_id": "msg_011ChB6im2Diy5JHMZenkrqh",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "658a155029cd7f38209d3076599509721e2a526dd85defdb8a913167351ede51",
+  "score": 2,
+  "score_strict": 2,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-befb74634855fc40662b-p2-a1",
+  "response": {
+    "opaque_id": "AI-befb74634855fc40662b",
+    "option_id": "3",
+    "support": "inferred",
+    "evidence": "The artifact says: \"Adding the Astro Docs MCP server allows VS Code to access the latest Astro documentation... Install by clicking the button below: Add to VS Code\".",
+    "rationale": "The button is labeled \"Add to VS Code\" and is the stated way to install the Astro Docs MCP server in VS Code, so its purpose is to add the docs server to that editor. The artifact never says the button opens a link, so that mechanism is inferred. Options 1 and 4 are not supported: Copilot Chat is mentioned only as the feature that supports MCP servers, and the button is not described as opening a documentation page."
+  }
+}

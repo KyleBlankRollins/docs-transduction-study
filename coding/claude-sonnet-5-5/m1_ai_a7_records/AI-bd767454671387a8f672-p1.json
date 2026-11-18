@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-bd767454671387a8f672",
+  "assignment_id": "S02-O1-at-016574|explicit|A3",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g2jqDTd1bkKmLZfqd",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "c19418ddd02c7e024c1ed6b468a39f56a7a3011d4e1222268474a69ca804afe4",
+  "score": 2,
+  "score_strict": 2,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-bd767454671387a8f672-p1-a1",
+  "response": {
+    "opaque_id": "AI-bd767454671387a8f672",
+    "option_id": "3",
+    "support": "inferred",
+    "evidence": "\"Use project rules : If your AI tool supports it, set up project rules to enforce best practices and coding standards, such as the ones listed above.\"",
+    "rationale": "The last tip says to enforce best practices and coding standards 'such as the ones listed above', which refers to the earlier tips (start with templates, use astro add, verify current APIs). The artifact does not state this in those exact words, so the support is inferred. The docs server's standards and the Discord server rules are not mentioned in this context."
+  }
+}

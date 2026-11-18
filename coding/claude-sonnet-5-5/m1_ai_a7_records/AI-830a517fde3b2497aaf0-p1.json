@@ -1,0 +1,42 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-830a517fde3b2497aaf0",
+  "assignment_id": "S09-O1-at-011641|explicit|A1",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g18qkWazgHQcFRo69",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "d808fd150f56f7f0eca68442c6eb5a9ec9ed0fcdaa58ce7475c1169d8d263aff",
+  "score": 2,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "explicit_quote_unverified"
+  ],
+  "attempt": "AI-830a517fde3b2497aaf0-p1-a1",
+  "response": {
+    "opaque_id": "AI-830a517fde3b2497aaf0",
+    "option_id": "4",
+    "support": "explicit",
+    "evidence": "Next.js\u2019 `app/` directory layout files are created with two files: a `layout.jsx` file to customize the `<html>` and `<body>` contents, and a `head.jsx` file to customize the `<head>` element contents. ... Make a new Astro layout file using only the returned JSX.",
+    "rationale": "In the 'Migrating from Next.js\u2019 /app directory' section, the page shows app/layout.jsx and app/head.jsx, then says to make a new Astro layout file using only the returned JSX. The JSX comes from those two files shown just before."
+  }
+}

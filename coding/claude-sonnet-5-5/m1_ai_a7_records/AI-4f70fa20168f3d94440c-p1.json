@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-4f70fa20168f3d94440c",
+  "assignment_id": "S02-O2-at-006250|explicit|A2",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g1uDv8YGGgcN2PFp7",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "57672977d7c6b099422a614445d31100ddefb12f1ed7dfb2b830465398b6b6e9",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-4f70fa20168f3d94440c-p1-a1",
+  "response": {
+    "opaque_id": "AI-4f70fa20168f3d94440c",
+    "option_id": "1",
+    "support": "explicit",
+    "evidence": "Enter the following configuration. You can optionally configure the Astro MCP server to activate on startup using the",
+    "rationale": "The Warp steps say to click \"Add\" and then enter a JSON configuration with \"command\": \"npx\" and \"args\": [\"-y\", \"mcp-remote\", \"https://mcp.docs.astro.build/mcp\"]. It also includes an optional \"start_on_launch\" flag, which matches option 1."
+  }
+}

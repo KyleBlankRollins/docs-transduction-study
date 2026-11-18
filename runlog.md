@@ -2,6 +2,26 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-11-18 — A9 replication scored, analyzed, and compared (exploratory)
+
+After A10 and the records were committed (`0dfdbf57`, `dc9329e7`): A7 rescoring
+derived 2,194 records (1,827 first pass, 367 repeats; 0 still invalid; the 5
+malformed answers have no answer to rescore). Gate (A7, primary): coverage
+1,827/1,832 with 5 documented exclusions (A10), unweighted kappa **0.848** over
+365 repeat pairs; substantive findings allowed. Strict gate: blocked (530
+first-pass and 124 repeat assignments missing), as for GLM. Outputs:
+`analysis/m1_ai_a7_claude-sonnet-5-5/`, `analysis/m1_ai_strict_claude-sonnet-5-5/`.
+
+Pre-specified A9 comparison (`analysis/replication_claude-sonnet-5-5/`),
+explicit-minus-implicit, GLM vs Claude: mean gap A1 -0.147 / -0.052, A2 -0.099 /
+-0.057, A3 -0.071 / -0.096, A4 -0.044 / -0.024 (signs agree at all four
+stages); correctness gap A1 +0.000 / +0.004, A2 -0.013 / -0.004, A3 -0.000 /
+-0.004, A4 +0.018 / -0.000 (signs agree at A1-A3, disagree at A4; all within
+two percentage points of zero). H3 at A4 under Claude: 112 non-preserved; 5
+Corrupted, 43 Absent, 64 Degraded. All results are exploratory and
+model-conditioned (A3), under amendments decided after partial exposure
+(A7, A8, A10).
+
 ## 2026-11-18 — A9 run collected; amendment A10 adopted before any scoring
 
 Paid run under the maintainer's approval (budget about $123, cap 2,500 calls).

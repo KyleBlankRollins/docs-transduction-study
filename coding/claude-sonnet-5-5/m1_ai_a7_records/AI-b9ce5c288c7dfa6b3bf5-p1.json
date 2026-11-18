@@ -1,0 +1,42 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-b9ce5c288c7dfa6b3bf5",
+  "assignment_id": "S01-O2-at-015015|implicit|A2",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g2LXSE1cQRgtvzqqf",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "1fc1fb1a84ca18ce8ba01a838c6d8133d04202b9728fec6e7e34fa618b47aba5",
+  "score": 2,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "explicit_quote_unverified"
+  ],
+  "attempt": "AI-b9ce5c288c7dfa6b3bf5-p1-a1",
+  "response": {
+    "opaque_id": "AI-b9ce5c288c7dfa6b3bf5",
+    "option_id": "3",
+    "support": "explicit",
+    "evidence": "As a helpful tip, Keywords are also used by our integrations library! See below for a full list of keywords we look for in npm. [link \"See below\" -> /url: \"#integrations-library\"]",
+    "rationale": "The tip's \"See below\" link points to #integrations-library, a later section of the page (Integrations library, which contains the Categories keyword list), not to npm search or the keywords field above."
+  }
+}

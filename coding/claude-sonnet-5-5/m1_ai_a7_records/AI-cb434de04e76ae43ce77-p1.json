@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-cb434de04e76ae43ce77",
+  "assignment_id": "S01-R2-005|explicit|A1",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5gKwvxwuseQ3bK3xzY",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "f51a18591212b995fb77c5aefcf390387fedf462f72117d447eae9a38dc29910",
+  "score": 2,
+  "score_strict": 2,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-cb434de04e76ae43ce77-p1-a1",
+  "response": {
+    "opaque_id": "AI-cb434de04e76ae43ce77",
+    "option_id": "1",
+    "support": "inferred",
+    "evidence": "The Automatic upgrading section shows tabs for npm, pnpm and Yarn, each with the same comment \"# Upgrade Astro and official integrations together to latest\" followed by `npx @astrojs/upgrade`, `pnpm dlx @astrojs/upgrade` and `yarn dlx @astrojs/upgrade`. The page also says \"use the appropriate command for your package manager.\"",
+    "rationale": "The three commands are presented as tabbed, package-manager-specific variants of the same action, so only the one matching your package manager is run. The page never states this outright for the upgrade commands, so I infer it from the tab layout and the identical comment."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-65d252403dd7da1762de",
+  "assignment_id": "S11-R3-003|explicit|A3",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5gMAMdsL5wpcdcDZaB",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "1e61c1c78793be26db59dd887c314d2ec22dd5c1dad699781cb8bc77d4544257",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-65d252403dd7da1762de-p1-a1",
+  "response": {
+    "opaque_id": "AI-65d252403dd7da1762de",
+    "option_id": "4",
+    "support": "explicit",
+    "evidence": "Make sure your slug is not just a number. This seems to break the fetch request to Builder\u2019s API. Make sure your slugs are unique, since your site\u2019s routing will depend on that.",
+    "rationale": "The Slugs warning says a slug must not be just a number and that slugs must be unique, which is option 4. The other options are not supported: the slug is a required field, and nothing says it must match the title."
+  }
+}

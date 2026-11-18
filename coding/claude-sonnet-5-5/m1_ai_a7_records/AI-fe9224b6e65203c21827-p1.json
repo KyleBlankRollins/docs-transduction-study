@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-fe9224b6e65203c21827",
+  "assignment_id": "S02-O2-at-003591|explicit|A2",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g2XgR2AkQaqRnJRFz",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "ff28cfb92adff237ad557d236d67da970f443e79f9527be6b027833394c7cb80",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-fe9224b6e65203c21827-p1-a1",
+  "response": {
+    "opaque_id": "AI-fe9224b6e65203c21827",
+    "option_id": "2",
+    "support": "explicit",
+    "evidence": "You can configure it to use the Astro Docs MCP server for documentation access by adding the following to the workflow file:",
+    "rationale": "The workflow snippet adds a step using anthropics/claude-code-action@beta with an mcp_config defining the astro-docs MCP server URL and allowed_tools: \"mcp__astro-docs__search_astro_docs\", which matches option 2. The secret mentioned there is the Anthropic API key, not the server address, and no npx install job is shown."
+  }
+}

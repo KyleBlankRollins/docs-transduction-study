@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-e24526f9191d8206546f",
+  "assignment_id": "S03-O2-at-002497|explicit|A3",
+  "pass_number": 2,
+  "session_id": "msg_011ChB6iqGiUaXE33H5SMRZ2",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "c35037499ea9cb3e09568d2536d80bce067fe58e2cb5a3ec9fcd9bdc84ecb11b",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-e24526f9191d8206546f-p2-a1",
+  "response": {
+    "opaque_id": "AI-e24526f9191d8206546f",
+    "option_id": "1",
+    "support": "explicit",
+    "evidence": "Using Nano Stores in the frontmatter of server-side components is not recommended because of the following restrictions: Writing to a store from a .astro file or non-hydrated component will not affect the value received by client-side components . You cannot pass a Nano Store as a \u201cprop\u201d to client-side components. You cannot subscribe to store changes from a .astro file, since Astro components do not re-render.",
+    "rationale": "The FAQ lists exactly these three restrictions as the reason for advising against frontmatter use, matching option 1. The other options are not supported: the page does not say third-party imports are blocked, and it describes the library as under 1 KB."
+  }
+}

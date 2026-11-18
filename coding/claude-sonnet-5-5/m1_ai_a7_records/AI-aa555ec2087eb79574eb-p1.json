@@ -1,0 +1,42 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-aa555ec2087eb79574eb",
+  "assignment_id": "S02-O1-at-010581|explicit|A2",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g1zS5244Atqccw5sJ",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "d91994e034116b5a20471788c600def8d5a0b07eb56142e418b4829a00828e91",
+  "score": 2,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "explicit_quote_unverified"
+  ],
+  "attempt": "AI-aa555ec2087eb79574eb-p1-a1",
+  "response": {
+    "opaque_id": "AI-aa555ec2087eb79574eb",
+    "option_id": "4",
+    "support": "explicit",
+    "evidence": "Adding the Astro Docs MCP server allows Raycast to access the latest Astro documentation while answering questions.\" ... \"Install by clicking the button below:\" ... link \"Add to Raycast\": /url: raycast://mcp/install?%7B%22name%22%3A%22Astro%20docs%22...",
+    "rationale": "The \"Add to Raycast\" button is a raycast://mcp/install deep link whose payload names the Astro docs server and the mcp-remote command pointing at https://mcp.docs.astro.build/mcp. Clicking it opens that link, which adds the docs MCP server to Raycast. It does not install Raycast itself, and the separate \"More info\" link is the one that goes to Raycast's documentation."
+  }
+}

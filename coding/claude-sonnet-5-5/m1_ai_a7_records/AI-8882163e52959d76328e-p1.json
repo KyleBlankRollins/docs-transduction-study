@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-8882163e52959d76328e",
+  "assignment_id": "S05-R4-001|explicit|A1",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5gJg38QiEXREcwCBX3",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "fed51212dc3c0a73fe024caa07747d7d6e0610828a506e79e67d15d699699092",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-8882163e52959d76328e-p1-a1",
+  "response": {
+    "opaque_id": "AI-8882163e52959d76328e",
+    "option_id": "2",
+    "support": "explicit",
+    "evidence": "Docker installed on your local machine. You can find <a href=\"https://docs.docker.com/get-docker/\">installation instructions for your operating system here</a>.</li>\n<li>A Dockerfile in your project.",
+    "rationale": "The Prerequisites section lists Docker installed locally and a Dockerfile in the project. It does not require a cloud account or a web-server configuration file; the NGINX config is only needed for one optional static example."
+  }
+}

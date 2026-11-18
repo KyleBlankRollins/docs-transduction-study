@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-1ea4d800076cde7da8bc",
+  "assignment_id": "S04-O2-at-002999|implicit|A4",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5gLMz7CroY7xvscCZq",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "6e0ef09cd735cc1cbb576ac66ae769f6c0dba928d2c9b6206d88fc89c1a114eb",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-1ea4d800076cde7da8bc-p1-a1",
+  "response": {
+    "opaque_id": "AI-1ea4d800076cde7da8bc",
+    "option_id": "3",
+    "support": "explicit",
+    "evidence": "firebase - the Firebase SDK for the client side firebase-admin - the Firebase Admin SDK for the server side",
+    "rationale": "The artifact instructs installing both firebase (client-side SDK) and firebase-admin (server-side Admin SDK), e.g. via `npm install firebase firebase-admin`. No Astro server adapter is mentioned as a package to install."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-d856b6a2b194d73a555d",
+  "assignment_id": "S03-R2-006|implicit|A2",
+  "pass_number": 2,
+  "session_id": "msg_011ChB6ij78fEr8Wtm4FYBjR",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "0d7245948f8f6f4a7ddddf03ca94da426299dfea90f2d7fd025ec22f8a6f4d35",
+  "score": 2,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "explicit_quote_unverified"
+  ],
+  "attempt": "AI-d856b6a2b194d73a555d-p2-a1",
+  "response": {
+    "opaque_id": "AI-d856b6a2b194d73a555d",
+    "option_id": "3",
+    "support": "explicit",
+    "evidence": "Choose one of the following options. These are alternatives \u2014 use exactly one, not all of them. / If you are using preact: ... If you are using react: ... If you are using solid: ... If you are using svelte: ... If you are using vue:",
+    "rationale": "The AddToCartForm component appears in five versions (preact, react, solid, svelte, vue), each labeled by UI framework. The preceding paragraph explicitly says they are alternatives and that exactly one should be used."
+  }
+}

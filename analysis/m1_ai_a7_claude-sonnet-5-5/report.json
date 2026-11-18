@@ -1,0 +1,33 @@
+{
+  "label": "Exploratory, model-conditioned M1-AI results (amendment A3). Not M1a or M1b; AI repeatability is not human reliability or validity.",
+  "scoring": "m1_ai_a7_records",
+  "gate": {
+    "first_pass_records": 1827,
+    "repeat_records": 367,
+    "expected_first_pass": 1832,
+    "coverage": "1827/1832",
+    "documented_unscorable": {
+      "AI-090ee4e4c2e1e14fdb12-p1": "no usable answer after 1 attempt(s): malformed_json",
+      "AI-1bddf8a02624d0782951-p1": "no usable answer after 1 attempt(s): malformed_json",
+      "AI-7a1c998ed7d5b27fb538-p1": "no usable answer after 1 attempt(s): malformed_json",
+      "AI-9f3a2e3d01e814a0024b-p1": "no usable answer after 1 attempt(s): malformed_json",
+      "AI-fcfc353071500c90ecb0-p1": "no usable answer after 1 attempt(s): malformed_json"
+    },
+    "excused_first_pass": 5,
+    "kappa": 0.8484533942287731,
+    "repeat_sample_size": 367,
+    "repeat_pairs_used": 365,
+    "failures": [],
+    "substantive_findings_allowed": true
+  },
+  "tables": [
+    "h1_gap_per_specimen",
+    "h1_gap_pooled",
+    "h1_per_specimen",
+    "h1_pooled",
+    "h2_observed",
+    "h3_by_arm_spans",
+    "h3_overall",
+    "r3_by_device"
+  ]
+}

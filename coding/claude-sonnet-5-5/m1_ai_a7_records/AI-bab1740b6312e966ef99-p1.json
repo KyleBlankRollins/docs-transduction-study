@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-bab1740b6312e966ef99",
+  "assignment_id": "S11-R3-001|implicit|A3",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g14sTW6MADw9tV2kr",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "2a2616f1020bd7e0b78f01958b1ed55502976f3f7ab5fb76005ae9fd7d5ed3e9",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-bab1740b6312e966ef99-p1-a1",
+  "response": {
+    "opaque_id": "AI-bab1740b6312e966ef99",
+    "option_id": "2",
+    "support": "explicit",
+    "evidence": "Note: At the time of writing, this key is public , so you don\u2019t have to worry about hiding or encrypting it.",
+    "rationale": "The artifact states directly that the key is public at the time of writing, so there is no need to hide or encrypt it. This matches option 2. It also tells the reader to store the key in a .env file, which rules out option 1."
+  }
+}

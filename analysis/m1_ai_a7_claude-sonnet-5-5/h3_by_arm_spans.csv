@@ -1,0 +1,5 @@
+arm,spans_chunks,non_preserved,corrupted,absent,degraded,corrupted_to_absent
+explicit,False,23,1,0,22,
+explicit,True,35,2,21,12,0.09523809523809523
+implicit,False,17,1,0,16,
+implicit,True,37,1,22,14,0.045454545454545456

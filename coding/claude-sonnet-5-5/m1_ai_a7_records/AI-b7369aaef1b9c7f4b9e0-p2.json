@@ -1,0 +1,42 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-b7369aaef1b9c7f4b9e0",
+  "assignment_id": "S06-O1-at-001889|implicit|A1",
+  "pass_number": 2,
+  "session_id": "msg_011ChB6ikWiEtzUFb2dLRYdQ",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "2c2f67d7b9afbb351a7b71c8b22c79137573ba40b8e9d2fb49c8573eceea6a73",
+  "score": 3,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "quote_verified_after_normalization"
+  ],
+  "attempt": "AI-b7369aaef1b9c7f4b9e0-p2-a1",
+  "response": {
+    "opaque_id": "AI-b7369aaef1b9c7f4b9e0",
+    "option_id": "4",
+    "support": "explicit",
+    "evidence": "import deno from '@deno/astro-adapter'; export default defineConfig({ output: 'server', adapter: deno(), });",
+    "rationale": "The page's astro.config.mjs example adds an import of the adapter from the '@deno/astro-adapter' package (Deno's scope), sets output to 'server', and registers adapter: deno(). Option 3 describes a package.json change, not the Astro config file. Option 2 names the wrong package scope."
+  }
+}

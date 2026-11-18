@@ -1,0 +1,42 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-c4c502c90bd1277f6d30",
+  "assignment_id": "S02-O1-at-005549|explicit|A1",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5gJiGR8EvwYEvfvCrs",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "7f18b239fc6429796964ad5666e5d6c9656be405bf293855d6b04efe316ba691",
+  "score": 2,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "explicit_quote_unverified"
+  ],
+  "attempt": "AI-c4c502c90bd1277f6d30-p1-a1",
+  "response": {
+    "opaque_id": "AI-c4c502c90bd1277f6d30",
+    "option_id": "4",
+    "support": "explicit",
+    "evidence": "Visual Studio Code section: \"Install by clicking the button below:\" followed by a link button \"Add to VS Code\" with href=\"vscode:mcp/install?%7B%22name%22%3A%22Astro%20docs%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.docs.astro.build%2Fmcp%22%7D\"",
+    "rationale": "The page says the VS Code section's button installs the Astro Docs MCP server. The button is a vscode:mcp/install deep link carrying the Astro docs server name and URL, so it opens a link that adds the docs server to VS Code. The separate \"More info\" link is what points to MCP documentation, not this button."
+  }
+}

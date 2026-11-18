@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-51a205a7fb9b29bb57bb",
+  "assignment_id": "S11-O2-at-004129|implicit|A3",
+  "pass_number": 2,
+  "session_id": "msg_011ChB6ik5fbkyQZomPNEBCZ",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "9e1feb68c08026413e191d7b5371732d0e12923801a3c01553018c4271ce999b",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-51a205a7fb9b29bb57bb-p2-a1",
+  "response": {
+    "opaque_id": "AI-51a205a7fb9b29bb57bb",
+    "option_id": "2",
+    "support": "explicit",
+    "evidence": "< body > < header > This is your header </ header > < builder-component model = { builderModel } api-key = { builderAPIpublicKey } ></ builder-component > < script async src = \" https://cdn.builder.io/js/webcomponents \" ></ script > < footer > This is your footer </ footer > </ body >",
+    "rationale": "The builder-preview.astro page contains a header, a <builder-component> given the model and API key, and a footer. The list of titles belongs to index.astro and the dynamic route to [slug].astro, so options 1 and 4 do not describe the preview page."
+  }
+}

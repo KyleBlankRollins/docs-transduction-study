@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-f375a773eb1209e2b485",
+  "assignment_id": "S06-R2-006|explicit|A1",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5fzA48KCtSrZB8Skgn",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "1ce8e50c813d6491eada663f78f59f0fbddd3d83718eee2c6492b6e1ac9211a1",
+  "score": 2,
+  "score_strict": 2,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-f375a773eb1209e2b485-p1-a1",
+  "response": {
+    "opaque_id": "AI-f375a773eb1209e2b485",
+    "option_id": "3",
+    "support": "inferred",
+    "evidence": "The GitHub Actions step uses a tab group with the tabs \"Static\" and \"On demand\", each holding a full `.github/workflows/deploy.yml`. The Static version has `entrypoint: jsr:@std/http/file-server` and `root: dist`. The On demand version has `entrypoint: dist/server/entry.mjs`.",
+    "rationale": "Both files share the same path and are complete workflows with identical build and upload steps. They differ only in the deploy entrypoint, and they sit in mutually exclusive tabs. The page sets up the choice between a static site and an on-demand rendered site, so the two files are alternatives. The page does not state this in so many words, which is why the support is inferred."
+  }
+}

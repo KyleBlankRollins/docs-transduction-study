@@ -1,0 +1,42 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-d16dabd05cd4a14f3216",
+  "assignment_id": "S02-O2-at-002099|explicit|A4",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g1qFqP4Za7aidDSav",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "11be6dd59ba91ef3716058757515e288d4a35322c4a70f21bd8b5a156a654fd8",
+  "score": 1,
+  "score_strict": null,
+  "strict_error": "Absence choice requires absent support and no quote",
+  "flags": [
+    "absence_with_support_or_quote"
+  ],
+  "attempt": "AI-d16dabd05cd4a14f3216-p1-a1",
+  "response": {
+    "opaque_id": "AI-d16dabd05cd4a14f3216",
+    "option_id": "4",
+    "support": "absent",
+    "evidence": "The artifact cuts off at \"Manual setup Section titled \u201cManual setup\u201d Man\" before any manual setup details. It does give server details (Name: Astro Docs, URL: https://mcp.docs.astro.build/mcp, Transport: Streamable HTTP) and says \"nothing to install locally\", but it does not say what to add in the tool's server settings.",
+    "rationale": "The manual setup section is truncated, so the text does not say what is added. Options 1 and 3 are not supported, since the server runs remotely with nothing to install. Option 2 is plausible but the artifact never mentions a JSON entry or a local-proxy form."
+  }
+}

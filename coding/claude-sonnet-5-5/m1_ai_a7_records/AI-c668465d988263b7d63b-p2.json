@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-c668465d988263b7d63b",
+  "assignment_id": "S12-R4-002|explicit|A3",
+  "pass_number": 2,
+  "session_id": "msg_011ChB6ij1g3K6MQ1QZNR9TL",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "4c9e7a5deda5c0526d1eae22571aed4ef5832785009647c863ea69163998590d",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-c668465d988263b7d63b-p2-a1",
+  "response": {
+    "opaque_id": "AI-c668465d988263b7d63b",
+    "option_id": "2",
+    "support": "explicit",
+    "evidence": "A Contentful space - For this tutorial we recommend starting with an empty space. If you already have a content model, feel free to use it, but you will need to modify our code snippets to match your content model. An Astro project integrated with the Contentful SDK - See integrating with Astro for more details on how to set up an Astro project with Contentful.",
+    "rationale": "The blog tutorial's Prerequisites list a Contentful space (empty space recommended) and an Astro project integrated with the Contentful SDK, which matches option 2."
+  }
+}

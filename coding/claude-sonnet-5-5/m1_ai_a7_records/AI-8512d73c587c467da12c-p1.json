@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-8512d73c587c467da12c",
+  "assignment_id": "S11-R3-004|implicit|A1",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5fyY6QT1Myy1FgB6pf",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "96dfb3f119210cb2fbd170dca2794e7f8f2f032297fe2c8f2b6f8f6ea9083f5f",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-8512d73c587c467da12c-p1-a1",
+  "response": {
+    "opaque_id": "AI-8512d73c587c467da12c",
+    "option_id": "1",
+    "support": "explicit",
+    "evidence": "As a helpful tip, When you deploy your site, change the preview URL to match your production URL, for example <code dir=\"auto\">https://myAwesomeAstroBlog.com/builder-preview</code>.",
+    "rationale": "The page gives a tip to change the preview URL to match the production URL when deploying, which is advice to switch to the production address."
+  }
+}

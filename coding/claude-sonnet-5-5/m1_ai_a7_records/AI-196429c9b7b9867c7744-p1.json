@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-196429c9b7b9867c7744",
+  "assignment_id": "S05-O1-at-003482|explicit|A2",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g14sjzHkMM3HhVpKJ",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "96fd3b39eec91158da95e538e22bf569ee9b6563e364b7cc63ae20212b1f52e1",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-196429c9b7b9867c7744-p1-a1",
+  "response": {
+    "opaque_id": "AI-196429c9b7b9867c7744",
+    "option_id": "3",
+    "support": "explicit",
+    "evidence": "In order to build the Dockerfile above, you\u2019ll also need to create a configuration file for NGINX.",
+    "rationale": "The NGINX static example requires creating an nginx.conf file, while the Apache httpd example uses the default configuration and the multi-stage SSR example has no such requirement."
+  }
+}

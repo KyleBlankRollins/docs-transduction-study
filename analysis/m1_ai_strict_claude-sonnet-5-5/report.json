@@ -1,0 +1,31 @@
+{
+  "label": "Exploratory, model-conditioned M1-AI results (amendment A3). Not M1a or M1b; AI repeatability is not human reliability or validity.",
+  "scoring": "m1_ai_records",
+  "gate": {
+    "first_pass_records": 1297,
+    "repeat_records": 241,
+    "expected_first_pass": 1832,
+    "coverage": "1297/1832",
+    "documented_unscorable": {
+      "AI-090ee4e4c2e1e14fdb12-p1": "no usable answer after 1 attempt(s): malformed_json",
+      "AI-1bddf8a02624d0782951-p1": "no usable answer after 1 attempt(s): malformed_json",
+      "AI-7a1c998ed7d5b27fb538-p1": "no usable answer after 1 attempt(s): malformed_json",
+      "AI-9f3a2e3d01e814a0024b-p1": "no usable answer after 1 attempt(s): malformed_json",
+      "AI-fcfc353071500c90ecb0-p1": "no usable answer after 1 attempt(s): malformed_json"
+    },
+    "excused_first_pass": 5,
+    "kappa": null,
+    "repeat_sample_size": 367,
+    "repeat_pairs_used": null,
+    "failures": [
+      "530 first-pass assignments missing without documentation",
+      "124 repeat assignments missing without documentation"
+    ],
+    "substantive_findings_allowed": false
+  },
+  "engineering": {
+    "records": 1538,
+    "scores_withheld": true,
+    "note": "Substantive findings are blocked; publish this limitation or failure."
+  }
+}

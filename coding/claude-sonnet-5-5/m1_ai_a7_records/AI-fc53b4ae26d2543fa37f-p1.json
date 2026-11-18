@@ -1,0 +1,42 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-fc53b4ae26d2543fa37f",
+  "assignment_id": "S02-O2-at-012079|implicit|A1",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5gLNDzdzRakTv1e83F",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "4155e44259b73e67279e87367e0a031675188e1c8336e4bd03098023da989d51",
+  "score": 3,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "quote_verified_after_normalization"
+  ],
+  "attempt": "AI-fc53b4ae26d2543fa37f-p1-a1",
+  "response": {
+    "opaque_id": "AI-fc53b4ae26d2543fa37f",
+    "option_id": "1",
+    "support": "explicit",
+    "evidence": "\"astro-docs\": { \"type\": \"http\", \"url\": \"https://mcp.docs.astro.build/mcp\", \"tools\": [\"mcp__astro-docs__search_astro_docs\"] }",
+    "rationale": "The GitHub Copilot Coding Agent section says to add a JSON MCP configuration to the repository's Copilot coding agent settings. The entry uses type http, the docs server URL, and lists the search_astro_docs tool. That matches option 1."
+  }
+}

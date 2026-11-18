@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-691cbf10caac4616d9e2",
+  "assignment_id": "S01-R2-002|explicit|A3",
+  "pass_number": 2,
+  "session_id": "msg_011ChB6inGdrBkiJQ1mWy7jw",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "14261654cf9eddcc271aaac9b7e151da8c46d1006b313bc44ace028abc67f90b",
+  "score": 2,
+  "score_strict": 2,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-691cbf10caac4616d9e2-p2-a1",
+  "response": {
+    "opaque_id": "AI-691cbf10caac4616d9e2",
+    "option_id": "4",
+    "support": "inferred",
+    "evidence": "The artifact lists \"npm pnpm Yarn\" tabs followed by three commands for adding multiple integrations: \"npx astro add react sitemap partytown\", \"pnpm astro add react sitemap partytown\", \"yarn astro add react sitemap partytown\". It also says to \"Run the astro add command using the package manager of your choice\".",
+    "rationale": "The three commands are identical apart from the package manager prefix, and the text tells the reader to use the package manager of their choice. They are therefore alternatives, and you run only the one that matches your package manager. The text does not say this in so many words for the multi-integration commands, so the support is inferred."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-c2cb5af3900a53fd0103",
+  "assignment_id": "S04-R3-005|implicit|A4",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g1xCwTYpTqsFHn1Pc",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "e6c9373c6151e1b52bb4a1c18c4038a41537f0a6776b6b5b3fb3c6d1c37a3c75",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-c2cb5af3900a53fd0103-p1-a1",
+  "response": {
+    "opaque_id": "AI-c2cb5af3900a53fd0103",
+    "option_id": "4",
+    "support": "explicit",
+    "evidence": "Note: This is a basic implementation of the signin endpoint. You can add more logic to this endpoint to suit your needs.",
+    "rationale": "The page calls the endpoint a basic implementation and says you can add more logic to suit your needs. That presents extension as optional, not discouraged or required."
+  }
+}

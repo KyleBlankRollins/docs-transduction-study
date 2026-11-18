@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-8ba2b40efdad1f494d96",
+  "assignment_id": "S11-R1-001|implicit|A3",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g19aak39uS7wxKMZa",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "a5cab1fa6a87d8ed92a566e235957f766bac2d780b88f957c7efd185222b582d",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-8ba2b40efdad1f494d96-p1-a1",
+  "response": {
+    "opaque_id": "AI-8ba2b40efdad1f494d96",
+    "option_id": "3",
+    "support": "explicit",
+    "evidence": "First, Copy the full URL of your preview, including the protocol, to your clipboard (e.g. https://{your host}/builder-preview ). Second, Go to the Models tab in your Builder space, pick the model you\u2019ve created and paste the URL from step 1 into the Preview URL field.",
+    "rationale": "After copying the preview URL (step 1), the next step (Second) is to go to the Models tab, pick the model, and paste the URL into the Preview URL field. Saving is the final step, not the immediate next one."
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "label": "Pre-specified evaluator replication comparison (amendment A9). Exploratory, model-conditioned M1-AI; evaluators are not pooled.",
+  "reference_blocked": false,
+  "replication_blocked": false,
+  "rows": [
+    {
+      "measure": "mean_gap",
+      "stage": "A1",
+      "reference_gap": -0.14653719451467095,
+      "replication_gap": -0.05212922173274581,
+      "signs_agree": true
+    },
+    {
+      "measure": "mean_gap",
+      "stage": "A2",
+      "reference_gap": -0.09852141270206083,
+      "replication_gap": -0.05676855895196509,
+      "signs_agree": true
+    },
+    {
+      "measure": "mean_gap",
+      "stage": "A3",
+      "reference_gap": -0.07119947445706742,
+      "replication_gap": -0.09582088408794931,
+      "signs_agree": true
+    },
+    {
+      "measure": "mean_gap",
+      "stage": "A4",
+      "reference_gap": -0.04366812227074224,
+      "replication_gap": -0.023462039377920796,
+      "signs_agree": true
+    },
+    {
+      "measure": "correctness_gap",
+      "stage": "A1",
+      "reference_gap": 1.91526852064694e-05,
+      "replication_gap": 0.004405286343612369,
+      "signs_agree": true
+    },
+    {
+      "measure": "correctness_gap",
+      "stage": "A2",
+      "reference_gap": -0.013215352792461443,
+      "replication_gap": -0.004366812227074246,
+      "signs_agree": true
+    },
+    {
+      "measure": "correctness_gap",
+      "stage": "A3",
+      "reference_gap": -1.932143133165365e-05,
+      "replication_gap": -0.004366812227074246,
+      "signs_agree": true
+    },
+    {
+      "measure": "correctness_gap",
+      "stage": "A4",
+      "reference_gap": 0.017467248908296984,
+      "replication_gap": -0.00045966444495515457,
+      "signs_agree": false
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-28b7f9567f9f6857c0ca",
+  "assignment_id": "S03-R2-006|explicit|A2",
+  "pass_number": 2,
+  "session_id": "msg_011ChB6ik5vALJpRnL1BCWsQ",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "11830d5f21d1aebc0fb668a64abd1e438977fe72c7fb19c2ff61d05de27b4479",
+  "score": 2,
+  "score_strict": 2,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-28b7f9567f9f6857c0ca-p2-a1",
+  "response": {
+    "opaque_id": "AI-28b7f9567f9f6857c0ca",
+    "option_id": "4",
+    "support": "inferred",
+    "evidence": "The AddToCartForm.jsx example is shown in a tablist with tabs \"Preact\", \"React\", \"Solid\", \"Svelte\" and \"Vue\", where only one tabpanel (Preact) is displayed at a time. The page also says: \"install Nano Stores alongside their helper package for your favorite UI framework\".",
+    "rationale": "The five tabs are per-framework variants of the same component, shown as mutually exclusive tabs. The page frames the choice as picking your own UI framework. That makes them alternatives, not sequential steps or one per product. The page never states this about the form tabs in so many words, so the support is inferred."
+  }
+}

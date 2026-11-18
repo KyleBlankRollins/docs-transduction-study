@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-8ff8738417cf1eecaeac",
+  "assignment_id": "S04-O2-at-006275|explicit|A3",
+  "pass_number": 2,
+  "session_id": "msg_011ChB6iq73ZtSq7qDL6aAXg",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "349a6ee402ca527f0e1e94e23d91df851f4cc5f0d97c71d31b50b91cd9370a1c",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-8ff8738417cf1eecaeac-p2-a1",
+  "response": {
+    "opaque_id": "AI-8ff8738417cf1eecaeac",
+    "option_id": "2",
+    "support": "explicit",
+    "evidence": "Firebase authentication in Astro requires the following three Astro server endpoints : GET /api/auth/signin - to sign in a user GET /api/auth/signout - to sign out a user POST /api/auth/register - to register a user",
+    "rationale": "The artifact lists three auth endpoints: sign-in, sign-out, and register. This matches option 2. The friends endpoints in option 4 belong to the Firestore section, not authentication."
+  }
+}

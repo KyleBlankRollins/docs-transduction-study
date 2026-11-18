@@ -1,0 +1,42 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-e16ffae048812a6befe4",
+  "assignment_id": "S12-O2-at-001248|explicit|A2",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g2RytPRZuYBa5aim4",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "02a21a3984bb5b71eb4f60276265dca4dd31c646c4cf2388a9bfda3208ef542c",
+  "score": 3,
+  "score_strict": null,
+  "strict_error": "Explicit support needs a verbatim artifact quote",
+  "flags": [
+    "quote_verified_after_normalization"
+  ],
+  "attempt": "AI-e16ffae048812a6befe4-p1-a1",
+  "response": {
+    "opaque_id": "AI-e16ffae048812a6befe4",
+    "option_id": "2",
+    "support": "explicit",
+    "evidence": "Contentful credentials - You can find the following credentials in your Contentful dashboard Settings > API keys. ... Contentful space ID ... Contentful delivery access token ... Contentful preview access token",
+    "rationale": "The Prerequisites section says the credentials are found under Settings > API keys in the Contentful dashboard. It lists three: the space ID, the delivery access token, and the preview access token. This matches option 2."
+  }
+}

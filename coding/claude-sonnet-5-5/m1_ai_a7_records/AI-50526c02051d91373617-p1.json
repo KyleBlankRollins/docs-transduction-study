@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-50526c02051d91373617",
+  "assignment_id": "S03-R2-001|explicit|A3",
+  "pass_number": 1,
+  "session_id": "msg_011ChB5g11Px9QBDSq7PJnCo",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "0745ba5848e4ee66d3563660aa4169a6f85e9981365def745bd12f166f03a958",
+  "score": 2,
+  "score_strict": 2,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-50526c02051d91373617-p1-a1",
+  "response": {
+    "opaque_id": "AI-50526c02051d91373617",
+    "option_id": "4",
+    "support": "inferred",
+    "evidence": "\"To get started, install Nano Stores alongside their helper package for your favorite UI framework: Preact React Solid Svelte Vue\"",
+    "rationale": "The text tells the reader to install Nano Stores with the helper package for their favorite UI framework, in the singular. The five commands appear as tabs, one per framework. Each command already includes the base `nanostores` package plus that framework's helper, and the Svelte tab has no helper at all. So the commands are alternatives, and only the one for the framework in use is needed. The text never states this relationship in so many words, which is why the support is inferred."
+  }
+}

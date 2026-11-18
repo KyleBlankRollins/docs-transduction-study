@@ -1,0 +1,40 @@
+{
+  "protocol": "m1-ai-1+A7",
+  "opaque_id": "AI-eaa05bfb8fdae8ce81f3",
+  "assignment_id": "S02-O1-at-010581|implicit|A4",
+  "pass_number": 2,
+  "session_id": "msg_011ChB6iqHTWCop6CKXjKiRa",
+  "evaluator": "anthropic-batch:claude-sonnet-5-5",
+  "configuration": {
+    "transport": "anthropic-batch-runner-1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-5-5",
+    "endpoint": "POST /v1/messages/batches",
+    "thinking": "adaptive (API default; not sent)",
+    "effort": "high",
+    "max_output_tokens": 32000,
+    "temperature": "provider default (non-default sampling rejected by model)",
+    "top_p": "provider default (not set)",
+    "seed": "unknown (not supported by API)",
+    "weights": "unknown (model alias does not pin weights)",
+    "fallbacks": "none (not sent; not allowed in batches)",
+    "tools": "none",
+    "protocol": "m1-ai-1",
+    "evaluator_prompt_sha256": "b5e514b8f9935450a00d6ca212d5c74cee90025d5f2fae87c93d4d37735d2679",
+    "agent_prompt_sha256": "a1bde99ed9ae007238f1dfd4456374e978be6850a9101909194fec47b29e8944"
+  },
+  "isolation_verified": true,
+  "packet_sha256": "73aa1f3bd3af33147be84dc44dd059779c17c41d44dcd87cd6d5a6cde6d4bcbc",
+  "score": 3,
+  "score_strict": 3,
+  "strict_error": "",
+  "flags": [],
+  "attempt": "AI-eaa05bfb8fdae8ce81f3-p2-a1",
+  "response": {
+    "opaque_id": "AI-eaa05bfb8fdae8ce81f3",
+    "option_id": "3",
+    "support": "explicit",
+    "evidence": "Adding the Astro Docs MCP server allows Raycast to access the latest Astro documentation while answering questions. Install by clicking the button below: Add to Raycast",
+    "rationale": "The artifact says that clicking the button installs the Astro Docs MCP server for Raycast, and the button is labeled \"Add to Raycast\". So it adds the docs server to the app. It does not install Raycast itself, and the separate \"More info\" link is what points to documentation."
+  }
+}
