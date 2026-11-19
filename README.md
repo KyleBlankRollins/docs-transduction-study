@@ -4,27 +4,30 @@ A pre-registered experiment testing whether **explicitly marked pragmatic relati
 
 > **Status: registered and run, with AI-assisted execution. Results are exploratory.**
 >
-> Registered 2026-08-02 and instrument locked 2026-09-23. The planned human coding was replaced by AI evaluators (amendment A3). The run used GLM-5.3-Flash on 2026-09-24 and was replicated with Claude Sonnet 5.5 on 2026-11-18 (A9). Every result here is model-conditioned and was scored under amendments decided after partial exposure. Read [Where things stand](#where-things-stand) before citing anything. Design version 0.9 plus post-lock amendments A5–A10.
+> Registered 2026-08-02 and instrument locked 2026-09-23. The planned human coding was replaced by AI evaluators (amendment A3). The run used GLM-5.3-Flash on 2026-09-24 and was replicated with Claude Sonnet 5.5 on 2026-11-18 (A9). A closed-book covariate followed on 2026-11-19 (A11). It shows both models already knew most answers without the documentation, which limits what correctness can say about survival. Every result here is model-conditioned, and several scoring rules were set after partial exposure. Read [Where things stand](#where-things-stand) before citing anything. Design version 0.9 plus post-lock amendments A5–A11.
 
 ---
 
 ## Where things stand
 
-The design below is the one registered. The execution departed from it in one large, logged way. Amendment A3 replaced the human analyst with AI evaluators, because human coding time was not available. That forfeits the model-free, training-data-immune Phase 1 claim.
+The design below is the one registered. The execution departed from it in one large, logged way. Amendment A3 replaced the human analyst with AI evaluators, because human coding time was not available. That forfeits the model-free, training-data-immune Phase 1 claim. The closed-book results show why that matters.
 
-**What was run (measure M1-AI):**
+**What was run:**
 
-- 229 relation instances on 12 Astro pages.
-- Both arms at stages A1–A4: 1,832 forced-choice assignments, plus a seed-selected 20% repeat pass (367).
-- Each assignment was evaluated in a fresh, isolated context with no answer key.
-- Two evaluator families, never pooled:
+- **M1-AI:**
+  - 229 relation instances on 12 Astro pages.
+  - Both arms at stages A1–A4: 1,832 forced-choice assignments, plus a seed-selected 20% repeat pass (367).
+  - Each assignment was evaluated in a fresh, isolated context with no answer key.
+  - Two evaluator families, never pooled.
+- **Closed-book covariate (A11):** the same 1,832 questions and options with no documentation shown, asking each model what it already knows.
+- **Exploratory analyses E1–E7:** a plan committed before computation ([`analysis/exploratory/PLAN.md`](analysis/exploratory/PLAN.md)), including AI-assisted case coding reviewed by the maintainer.
 
-| Evaluator | Run | Coverage | Repeatability (kappa) |
-| --------- | --- | -------- | --------------------- |
-| GLM-5.3-Flash (OpenCode) | 2026-09-24, pre-specified | 1,827 / 1,832 | 0.668 |
-| Claude Sonnet 5.5 (Message Batches) | 2026-11-18, replication (A9) | 1,827 / 1,832 | 0.848 |
+| Evaluator | M1-AI run | Coverage | Repeatability (kappa) | Correct with no documentation (A11) |
+| --------- | --------- | -------- | --------------------- | ----------------------------------- |
+| GLM-5.3-Flash (OpenCode) | 2026-09-24, pre-specified | 1,827 / 1,832 | 0.668 | 82% |
+| Claude Sonnet 5.5 (Message Batches) | 2026-11-18, replication (A9) | 1,827 / 1,832 | 0.848 | 86% |
 
-**What it found.** These are explicit-minus-implicit mean scores on the 0–3 rubric, A7 scoring. A negative value means the implicit, prose arm scored higher.
+**Pre-specified result.** These are explicit-minus-implicit mean scores on the 0–3 rubric, A7 scoring. A negative value means the implicit, prose arm scored higher.
 
 | Stage | GLM-5.3-Flash | Claude Sonnet 5.5 |
 | ----- | ------------- | ----------------- |
@@ -33,18 +36,41 @@ The design below is the one registered. The execution departed from it in one la
 | A3 plain text | −0.071 | −0.096 |
 | A4 retrieval chunk | −0.044 | −0.024 |
 
-- **H1 is not supported under either evaluator.** Explicit marking shows no survival advantage at any stage, and the gap does not widen down the pipeline. The two evaluators agree on the sign at every stage, a comparison pre-specified in A9.
-- **The gap is about quotability, not correctness.** The share of correct answers differs between arms by under two percentage points at every stage, under both evaluators. Nearly all of the gap lies between scores 2 and 3: correct answers backed by a quotable explicit statement versus correct answers reached by inference. Prose states a relation in a sentence that can be quoted, while markup carries it in structure. For GLM this was found by unplanned diagnostics; for Claude the correctness comparison was pre-specified.
-- **H3 is not supported.** At the chunk stage, a lost relation more often became a visible gap than a wrong one: 6 Corrupted versus 42 Absent under GLM, and 5 versus 43 under Claude.
-- **Not summarized here:** H2 (deixis) and the R3 device breakdown. See the tables in `analysis/`. Human M1a/M1b coding and Phase 2 were not run, and M2 is only a partial inventory.
+**What it means.**
+
+- **H1 is not supported under either evaluator.** Explicit marking shows no advantage at any stage, and the gap does not widen down the pipeline. The evaluators agree on the sign at every stage, a comparison pre-specified in A9.
+- **The gap is about quotability, not survival.**
+  - Almost all of it lies between scores 2 and 3: a correct answer backed by a quotable statement versus one reached by inference.
+  - Prose states a relation in a sentence that can be quoted, while markup carries it in structure.
+  - The effect is specific to the relations whose markup was changed. It is robust under both evaluators at A1–A2, in E1, which compares them with relations worded identically in both arms.
+  - The evaluators agree on correctness (kappa 0.84) far more than on this 2-versus-3 distinction (kappa 0.37).
+- **Correctness mostly measures memory.**
+  - Without any documentation, the models answered 82% (GLM) and 86% (Claude) of questions correctly. They "knew" 192 and 199 of the 229 instances, and 97–98% of membership questions (package-manager tabs).
+  - So the near-equal correctness of the two arms says little about whether relations survived.
+  - On the 30–37 instances neither model already knew, the samples are too small for robust claims. At the chunk stage the explicit arm is ahead on the manipulated relations under both evaluators, a hint in H1's direction, but directional only.
+- **Losses are mostly chunk boundaries.**
+  - At A4, "the text does not say" answers occur almost only where the relevant passage was split across chunks.
+  - Case reading found the text cut off in 39 of 40 sampled cases. Both arms lose about equally.
+  - One mechanism does favour prose: in the accessibility tree, tabbed content exposes only the active tab, so the other tabs' text disappears (2 coded cases).
+- **H3 is not supported.**
+  - At the chunk stage, lost relations more often became a visible gap than a wrong one: 6 Corrupted versus 42 Absent under GLM, and 5 versus 43 under Claude.
+  - Case reading found that 13 of the 23 Corrupted answers across all stages come from one defective probe ("what does the second command do?"). Without it, A4 Corrupted is 4 and 3.
+- **Not summarized here:** H2 (deixis) and the R3 device breakdown. See the tables in `analysis/`. Human M1a/M1b coding and the rest of Phase 2 were not run, and M2 is only a partial inventory.
 
 **Why caution is warranted.**
 
-- These are judgments by models whose training data very likely includes this corpus.
+- These are judgments by models that already know most of this corpus, as A11 measured. The design's human coding (M1a) or an unseen corpus would avoid that.
 - The quote-verification rule (A7) and the coverage rules (A8, A10) were set after partial exposure to the outputs. Each amendment says exactly what had been seen.
 - The rubric's "explicit support" criterion may itself favour prose.
+- One probe is defective, and it cannot be changed after the instrument lock.
 
-Details: [`AMENDMENTS.md`](AMENDMENTS.md), [`runlog.md`](runlog.md), `analysis/m1_ai_a7/` (GLM), `analysis/m1_ai_a7_claude-sonnet-5-5/` and `analysis/replication_claude-sonnet-5-5/` (Claude), and `analysis/exploratory/` (unplanned).
+**Details:**
+
+- [`AMENDMENTS.md`](AMENDMENTS.md) and [`runlog.md`](runlog.md).
+- GLM: `analysis/m1_ai_a7/`.
+- Claude: `analysis/m1_ai_a7_claude-sonnet-5-5/` and `analysis/replication_claude-sonnet-5-5/`.
+- E1–E7 and other unplanned work: `analysis/exploratory/`.
+- Closed-book covariate: `analysis/closed_book_covariate/`.
 
 ## What this is
 
@@ -166,20 +192,20 @@ A null result is worth more here than a confirmation, because nobody has measure
 
 ```
 DESIGN.md              The design, frozen at registration (v0.9). Authoritative.
-AMENDMENTS.md          Every post-registration change, logged (A1–A10)
+AMENDMENTS.md          Every post-registration change, logged (A1–A11)
 decisions/             Architecture decision records (ADR-0001 to 0005)
 vendor/astro-docs/     withastro/docs submodule, pinned at 6eca24e7
 corpus/                Selected specimens, both arms (explicit verbatim, implicit de-marked)
 pipeline/              De-marking transform (TypeScript) and the build overlay
 instruments/           Instances, probes.csv (questions, answers, foils), gate evidence and exclusions
-artifacts/             A1–A4 artifacts, assignment packets, sealed answer keys (large files via Git LFS)
-coding/                M1-AI records, append-only (GLM in coding/, Claude in coding/claude-sonnet-5-5/); M2 inventory
-analysis/              Pre-specified M1-AI tables per evaluator, replication comparison, exploratory diagnostics
+artifacts/             A1–A4 artifacts, assignment and closed-book packets, sealed answer keys (large files via Git LFS)
+coding/                M1-AI and closed-book records, append-only, one directory per evaluator and protocol; M2 inventory
+analysis/              Pre-specified M1-AI tables per evaluator, replication comparison, closed-book covariate, exploratory analyses
 src/, tests/           Python pipeline, runners, scoring, and analysis; `make check`
 runlog.md              Reverse-chronological, including every deviation
 ```
 
-Phase 2 (`inspect/`, `logs/`) has not been built.
+Phase 2 (`inspect/`, `logs/`) has not been built; its closed-book covariate was run through the study's own runners (A11).
 
 Coding records are **append-only**. Scores are never overwritten; a re-code adds a row with its own timestamp so the intra-rater comparison stays reconstructable.
 
@@ -235,7 +261,7 @@ The corpus was chosen because it is not the author's own writing, because its co
 
 Stated up front rather than buried:
 
-- **AI evaluators, not a human coder (A3).** Both evaluators were very likely trained on the corpus, and the author, who holds the hypotheses, chose and configured them. AI repeatability is not human reliability or validity.
+- **AI evaluators, not a human coder (A3).** Both evaluators know most of the corpus already: without the documentation they answered 82–86% of probes correctly (A11). The author, who holds the hypotheses, also chose and configured them. AI repeatability is not human reliability or validity.
 - **Post-exposure scoring amendments.** A7, A8, and A10 were each decided after some outputs were seen, though before any score comparison. Each is labelled with what had been seen.
 - **One coder** (original plan), who selected the specimens, wrote the probes, and holds the hypotheses. Closed-form probes and a delayed re-code constrain that; they do not eliminate it. A second coder on a 20% sample is the single largest available credibility improvement and is not currently secured.
 - **No blinding to arm is claimed.** The manipulation is visible in the artifact — a step component versus a prose paragraph *is* the treatment. Procedures that would falsely imply blinding are not used.
