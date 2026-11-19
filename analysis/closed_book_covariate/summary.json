@@ -1,0 +1,15 @@
+{
+  "label": "Pre-specified closed-book covariate analysis (amendment A11). Exploratory, model-conditioned M1-AI; evaluators not pooled.",
+  "glm-5.3-flash": {
+    "closed_book_answers": 1826,
+    "known_instances": 192,
+    "n": 37,
+    "complete_pairs": 148
+  },
+  "claude-sonnet-5-5": {
+    "closed_book_answers": 1788,
+    "known_instances": 199,
+    "n": 30,
+    "complete_pairs": 118
+  }
+}

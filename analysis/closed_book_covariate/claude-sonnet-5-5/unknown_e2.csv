@@ -1,0 +1,9 @@
+stage,outcome,n_pairs,point,ci_low,ci_high,undefined_resamples,specimens_negative,specimens_zero,specimens_positive,specimens_undefined,specimens_without_data
+A1,correct,29,0.034482758620689655,0.0,0.10714285714285714,0,0,9,1,0,2
+A1,quotable_conditional,29,-0.03571428571428571,-0.1,0.0,0,1,9,0,0,2
+A2,correct,30,0.0,0.0,0.0,0,0,10,0,0,2
+A2,quotable_conditional,30,0.0,-0.14285714285714285,0.21428571428571427,0,2,7,1,0,2
+A3,correct,29,0.0,0.0,0.0,0,0,10,0,0,2
+A3,quotable_conditional,29,0.034482758620689655,-0.08333333333333333,0.17142857142857143,0,1,7,2,0,2
+A4,correct,30,0.0,-0.16666666666666666,0.11538461538461539,0,2,6,2,0,2
+A4,quotable_conditional,30,-0.08333333333333333,-0.21052631578947367,0.0,0,2,7,0,0,3

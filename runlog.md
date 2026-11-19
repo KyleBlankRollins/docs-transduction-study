@@ -2,6 +2,45 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-11-19 — A11 closed-book covariate run and analyzed (both evaluators)
+
+Paid runs under the maintainer's approval, after a disposable 3-packet OpenCode
+test. That test first stopped on an OpenCode version drift: the CLI had
+auto-updated to 1.18.35. The pinned 1.18.32 was restored with
+`opencode upgrade 1.18.32`, and an expired OpenCode Go key was replaced by the
+maintainer. Test outputs were deleted unread.
+
+**Runs:**
+
+- **Claude Sonnet 5.5:** batch `msgbatch_01EejH9hixhecxDiLqtVZhaN`, 1,832
+  succeeded. 1,788 recorded and 44 `malformed_json`. 0.85M input and 0.69M
+  output tokens, about $4.32.
+- **GLM-5.3-Flash** (OpenCode 1.18.32): 1,839 invocations, including one retry
+  pass. 1,826 recorded, 4 output-check failures, 1 invalid, 1 double timeout.
+
+**Results** (`analysis/closed_book_covariate/`), read under A11's rules:
+
+- **Closed-book accuracy without any artifact:** GLM 82% and Claude 86% of
+  answers correct. R2 (membership) is 97–98%. *Known* instances: GLM 192 and
+  Claude 199 of 229. Most instances are known, so by A11 open-book correctness
+  is uninformative about survival, and only the unknown subset is interpreted.
+- **With and without the artifact:**
+  - About 23–42 assignments per arm and stage were recovered only with the
+    artifact, similar across arms.
+  - "Lost despite knowledge" is about 0 at A1–A3 and about 20 per arm at A4,
+    equal in both arms, under both evaluators.
+- **Unknown subset:** 37 instances for GLM and 30 for Claude, spread over at
+  most 7 specimens, so no gap can meet the robustness rule.
+  - Correctness gaps are about 0 at A1–A3.
+  - At A4, the manipulated-relation correctness gap is positive under both
+    evaluators (+0.20, +0.08), as is the manipulated-minus-observed difference
+    (+0.16, +0.14). Not robust; directional only.
+- **Familiarity check:** no arm difference in "lost despite knowledge" at any
+  stage.
+
+Exploratory and model-conditioned. The near-zero correctness gaps elsewhere
+in M1-AI largely reflect what the evaluators already knew.
+
 ## 2026-11-18 — Amendment A11 adopted (closed-book covariate); no calls yet
 
 The maintainer accepted A11's three choices:

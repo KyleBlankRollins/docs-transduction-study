@@ -1,0 +1,5 @@
+stage,n_pairs,point,ci_low,ci_high,undefined_resamples,specimens_negative,specimens_zero,specimens_positive,specimens_undefined,specimens_without_data
+A1,212,0.0,0.0,0.0,0,0,12,0,0,0
+A2,215,0.004651162790697674,0.0,0.016597510373443983,0,0,11,1,0,0
+A3,222,0.0,0.0,0.0,0,0,12,0,0,0
+A4,222,0.0,-0.05188679245283019,0.0546218487394958,0,4,6,2,0,0
