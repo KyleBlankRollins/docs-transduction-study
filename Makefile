@@ -8,7 +8,7 @@ VENDOR_DIR := vendor/astro-docs
 EXPLICIT_DIR := corpus/explicit
 IMPLICIT_DIR := corpus/implicit
 BUILD_DIR := build
-STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts assign-anchors review-o1-o2 classify-o1-o2 pilot lint-probes probe-sheet seed instrument-check artifacts artifacts-resume anchors assignment-dry-run opencode-preflight m1-ai-first-pass m1-ai-repeat m1-ai-batch-estimate m1-ai-batch-submit m1-ai-batch-collect m1-ai-batch-rescore m1-ai-batch-analyze m1-ai-replication exploratory-plan closed-book-build closed-book-batch-submit closed-book-batch-collect closed-book-glm closed-book-analyze rescore-a7 m2 coding-setup code kappa analyze
+STAGES := check corpus-report demark build-check inventory anchors-a0 inventory-counts assign-anchors review-o1-o2 classify-o1-o2 pilot lint-probes probe-sheet seed instrument-check artifacts artifacts-resume anchors assignment-dry-run opencode-preflight m1-ai-first-pass m1-ai-repeat m1-ai-batch-estimate m1-ai-batch-submit m1-ai-batch-collect m1-ai-batch-rescore m1-ai-batch-analyze m1-ai-replication exploratory-plan closed-book-build closed-book-batch-submit closed-book-batch-collect closed-book-glm closed-book-analyze closed-book-unknown rescore-a7 m2 coding-setup code kappa analyze
 
 .PHONY: help check $(STAGES)
 
@@ -237,6 +237,11 @@ closed-book-glm:
 
 closed-book-analyze:
 	uv run python -m docs_transduction_study.closed_book analyze
+
+# PLAN Addendum 1: E2/E5/E6 on instances the evaluators did not already know.
+# Refuses to run until the addendum is committed; no model calls.
+closed-book-unknown:
+	uv run python -m docs_transduction_study.closed_book analyze-unknown
 
 # UNPLANNED exploratory analyses E1-E7 (analysis/exploratory/PLAN.md). Refuses to
 # run unless the plan is committed; no model calls.

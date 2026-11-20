@@ -336,6 +336,198 @@ def single_evaluator_robustness(tables: dict[str, list[ep.Row]]) -> list[ep.Row]
     return out
 
 
+# ── Addendum 1: analyses on instances not already known ────────────────────
+
+ADDENDUM = "analysis/exploratory/PLAN.md"
+SUBSETS = ("U_e", "U_both", "S_e")
+
+
+def unknown_ids(known: list[dict[str, Any]]) -> set[str]:
+    return {k["instance_id"] for k in known if not k["known"]}
+
+
+def subset_rows(
+    subset: str,
+    rows: list[ep.Row],
+    outcomes: dict[str, str],
+    own_unknown: set[str],
+    both_unknown: set[str],
+) -> list[ep.Row]:
+    """Rows of one evaluator restricted to a subset (Addendum 1 definitions)."""
+    if subset == "U_e":
+        return [r for r in rows if r["instance_id"] in own_unknown]
+    if subset == "U_both":
+        return [r for r in rows if r["instance_id"] in both_unknown]
+
+    def unknown_here(instance: str, stage: str) -> bool:
+        # Missing or unscorable closed-book answers count as not correct.
+        return all(
+            outcomes.get(f"{instance}|{arm}|{stage}") != "cb_correct" for arm in ep.ARMS
+        )
+
+    return [r for r in rows if unknown_here(r["instance_id"], r["stage"])]
+
+
+def subset_tables(rows: list[ep.Row], boot: ep.Bootstrap) -> dict[str, list[ep.Row]]:
+    pairs, incomplete = ep.make_pairs(rows)
+    tables: dict[str, list[ep.Row]] = {
+        "size": [
+            {
+                "instances": len({r["instance_id"] for r in rows}),
+                "specimens": len({r["specimen_id"] for r in rows}),
+                "assignments": len(rows),
+                "complete_pairs": len(pairs),
+                "incomplete_pairs": len(incomplete),
+            }
+        ],
+        "e2_rates": ep.e2_rates(rows),
+        "e2_gaps": ep.e2_gaps(pairs, boot),
+    }
+    tables.update({f"e5_{k}": v for k, v in ep.e5(rows, pairs, boot).items()})
+    tables.update({f"e6_{k}": v for k, v in ep.e6(rows, pairs, boot).items()})
+    return tables
+
+
+def _gap_rows(tables: dict[str, list[ep.Row]]) -> dict[tuple[Any, ...], ep.Row]:
+    keyed: dict[tuple[Any, ...], ep.Row] = {}
+    for table in ("e2_gaps", "e6_gaps"):
+        for row in tables[table]:
+            keyed[(table, row.get("relation", ""), row["stage"], row["outcome"])] = row
+    for row in tables["e5_widening"]:
+        if row["change"] == "mean":
+            keyed[("e5_widening", "", "A1-A4", "score")] = row
+    return keyed
+
+
+def consistency(results: dict[str, dict[str, list[ep.Row]]]) -> list[ep.Row]:
+    """Addendum 1 rule: same non-zero sign under both evaluators, and under each
+    more specimens with data show that sign than the opposite. Never 'robust'."""
+    names = list(results)
+    keyed = [_gap_rows(results[n]) for n in names]
+    out = []
+    for key in keyed[0]:
+        if any(key not in k for k in keyed[1:]):
+            continue
+        rows = [k[key] for k in keyed]
+        signs = [ep._sign(r["point"]) for r in rows]
+        sign = signs[0] if len(set(signs)) == 1 and signs[0] not in (None, 0) else None
+        majority = [
+            sign is not None
+            and (r["specimens_negative"] if sign < 0 else r["specimens_positive"])
+            > (r["specimens_positive"] if sign < 0 else r["specimens_negative"])
+            for r in rows
+        ]
+        out.append(
+            {
+                "table": key[0],
+                "relation": key[1],
+                "stage": key[2],
+                "outcome": key[3],
+                **{f"point_{n}": r["point"] for n, r in zip(names, rows, strict=True)},
+                "same_sign": sign is not None,
+                "consistent": sign is not None and all(majority),
+            }
+        )
+    return out
+
+
+def sensitivity_agreement(
+    primary: dict[str, list[ep.Row]], other: dict[str, list[ep.Row]], label: str
+) -> list[ep.Row]:
+    """Whether a sensitivity subset agrees in sign with U_e, gap by gap."""
+    a, b = _gap_rows(primary), _gap_rows(other)
+    out = []
+    for key, row in a.items():
+        if key not in b:
+            continue
+        sa, sb = ep._sign(row["point"]), ep._sign(b[key]["point"])
+        out.append(
+            {
+                "subset": label,
+                "table": key[0],
+                "relation": key[1],
+                "stage": key[2],
+                "outcome": key[3],
+                "point_U_e": row["point"],
+                f"point_{label}": b[key]["point"],
+                "sign_agrees": None if sa is None or sb is None else sa == sb,
+            }
+        )
+    return out
+
+
+def addendum_commit(repo: Path = ep.REPO_ROOT) -> str:
+    import subprocess
+
+    dirty = subprocess.run(
+        ["git", "diff", "--quiet", "HEAD", "--", ADDENDUM], cwd=repo, check=False
+    )
+    if dirty.returncode != 0:
+        raise RuntimeError("Commit the plan addendum before computing")
+    return ep.plan_commit(repo)
+
+
+def analyze_unknown(
+    instrument: dict[str, Any], artifacts: Path, out: Path, resamples: int
+) -> None:
+    sha = addendum_commit()
+    instances = {row["instance_id"]: row for row in instrument["instances"]}
+    spans: dict[tuple[str, str], bool] = {}
+    for record in json.loads(
+        (artifacts / "anchor-assignments.json").read_text(encoding="utf-8")
+    ):
+        for arm in ep.ARMS:
+            spans[(record["instance_id"], arm)] = record[arm]["spans_chunks"]
+    boot = ep.Bootstrap(
+        sorted({r["specimen_id"] for r in instances.values()}),
+        resamples,
+        ep.SEED_STRING,
+    )
+    rows, outcomes, unknown = {}, {}, {}
+    for name, (open_coding, cb_coding) in EVALUATORS.items():
+        rows[name] = ep.load_rows(open_coding, instances, spans)
+        outcomes[name] = load_outcomes(cb_coding)
+        unknown[name] = unknown_ids(known_instances(outcomes[name], instances))
+    both = set.intersection(*unknown.values())
+    results: dict[str, dict[str, dict[str, list[ep.Row]]]] = {s: {} for s in SUBSETS}
+    for subset in SUBSETS:
+        for name in EVALUATORS:
+            filtered = subset_rows(
+                subset, rows[name], outcomes[name], unknown[name], both
+            )
+            results[subset][name] = subset_tables(filtered, boot)
+            for table, data in results[subset][name].items():
+                ep.write_csv(out / name / subset / f"{table}.csv", data)
+        ep.write_csv(
+            out / "combined" / f"{subset}_consistency.csv", consistency(results[subset])
+        )
+    agreement = []
+    for name in EVALUATORS:
+        for label in ("U_both", "S_e"):
+            agreement += [
+                {"evaluator": name, **row}
+                for row in sensitivity_agreement(
+                    results["U_e"][name], results[label][name], label
+                )
+            ]
+    ep.write_csv(out / "combined" / "sensitivity_agreement.csv", agreement)
+    sizes = {
+        subset: {name: results[subset][name]["size"][0] for name in EVALUATORS}
+        for subset in SUBSETS
+    }
+    (out / "README.md").write_text(
+        "# Unknown-subset analyses (PLAN Addendum 1)\n\n"
+        f"UNPLANNED exploratory; addendum fixed at commit {sha} before computation. "
+        "Model-conditioned M1-AI, A7 scoring; evaluators not pooled. Nothing here "
+        "is 'robust'; 'consistent' results are directional only.\n",
+        encoding="utf-8",
+    )
+    (out / "combined" / "sizes.json").write_text(
+        json.dumps(sizes, indent=2), encoding="utf-8"
+    )
+    print(json.dumps({"addendum_commit": sha, "sizes": sizes}, indent=2))
+
+
 def main() -> None:
     from docs_transduction_study import study_pipeline
 
@@ -363,8 +555,19 @@ def main() -> None:
     a.add_argument("--artifacts", type=Path, default=Path("artifacts"))
     a.add_argument("--out", type=Path, default=Path("analysis/closed_book_covariate"))
     a.add_argument("--resamples", type=int, default=ep.RESAMPLES)
+    u = sub.add_parser("analyze-unknown", help="PLAN Addendum 1 (unknown subsets)")
+    u.add_argument("--artifacts", type=Path, default=Path("artifacts"))
+    u.add_argument(
+        "--out",
+        type=Path,
+        default=Path("analysis/closed_book_covariate/unknown_subset"),
+    )
+    u.add_argument("--resamples", type=int, default=ep.RESAMPLES)
     args = parser.parse_args()
     instrument = study_pipeline.load_instrument()
+    if args.command == "analyze-unknown":
+        analyze_unknown(instrument, args.artifacts, args.out, args.resamples)
+        return
     if args.command == "build":
         print(
             json.dumps(

@@ -236,3 +236,62 @@ def test_unknown_gaps_and_familiarity():
     assert fam["A1"]["point"] == pytest.approx(0.0)
     robust = cb.single_evaluator_robustness(gaps)
     assert all("robust_specimen_criterion_only" in r for r in robust)
+
+
+# ── PLAN Addendum 1: unknown subsets ──────────────────────────────────────
+
+
+def test_subset_definitions():
+    instances, rows, outcomes = rows_and_outcomes()
+    known = cb.known_instances(outcomes, instances)
+    own = cb.unknown_ids(known)
+    assert own == {"S02-O1-1"}
+    u_e = cb.subset_rows("U_e", rows, outcomes, own, set())
+    assert {r["instance_id"] for r in u_e} == {"S02-O1-1"}
+    assert cb.subset_rows("U_both", rows, outcomes, own, set()) == []
+    # S02-O1-1 is closed-book correct in its explicit packets, so no stage has
+    # both arms wrong; S_e is empty here.
+    assert cb.subset_rows("S_e", rows, outcomes, own, set()) == []
+    missing = {k: v for k, v in outcomes.items() if not k.startswith("S02")}
+    s_e = cb.subset_rows("S_e", rows, missing, own, set())
+    assert {r["instance_id"] for r in s_e} == {"S02-O1-1"} and len(s_e) == 8
+
+
+def test_subset_tables_handle_empty_relation_cells():
+    _, rows, _ = rows_and_outcomes()
+    boot = ep.Bootstrap(["S01", "S02"], 100, "t")
+    tables = cb.subset_tables([r for r in rows if r["relation"] == "O1"], boot)
+    assert tables["size"][0]["complete_pairs"] == 4
+    r2 = [g for g in tables["e6_gaps"] if g["relation"] == "R2"]
+    assert r2 and all(g["n_pairs"] == 0 and g["point"] is None for g in r2)
+
+
+def gap_table(point, negative, positive):
+    row = {
+        "point": point,
+        "specimens_negative": negative,
+        "specimens_positive": positive,
+    }
+    return {
+        "e2_gaps": [{"stage": "A4", "outcome": "correct", **row}],
+        "e6_gaps": [],
+        "e5_widening": [{"change": "mean", **row}],
+    }
+
+
+def test_consistency_rule_needs_sign_and_specimen_majority():
+    out = cb.consistency({"a": gap_table(0.2, 1, 3), "b": gap_table(0.1, 0, 2)})
+    assert all(r["consistent"] for r in out)
+    mixed = cb.consistency({"a": gap_table(0.2, 2, 2), "b": gap_table(0.1, 0, 2)})
+    assert all(r["same_sign"] and not r["consistent"] for r in mixed)
+    split = cb.consistency({"a": gap_table(0.2, 0, 3), "b": gap_table(-0.1, 2, 0)})
+    assert not any(r["same_sign"] for r in split)
+
+
+def test_sensitivity_agreement_by_sign():
+    agree = cb.sensitivity_agreement(gap_table(0.2, 0, 3), gap_table(0.05, 0, 1), "S_e")
+    assert all(r["sign_agrees"] for r in agree)
+    disagree = cb.sensitivity_agreement(
+        gap_table(0.2, 0, 3), gap_table(-0.1, 1, 0), "S_e"
+    )
+    assert not any(r["sign_agrees"] for r in disagree)

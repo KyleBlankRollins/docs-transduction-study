@@ -160,4 +160,45 @@ Coding is AI-assisted and labelled as such. The maintainer reviews every categor
 
 ## Changes after this commit
 
-(None yet.)
+### Addendum 1 — analyses on instances the evaluators did not already know (2026-11-20)
+
+> Nothing in this addendum had been computed when it was committed. The maintainer decided to include S_e.
+
+**Why.** The A11 closed-book covariate showed the evaluators answer most probes correctly with no artifact: GLM 192 and Claude 199 of 229 instances are *known*. By A11's reading rule, correctness on known instances says little about survival. This addendum reruns the remaining E-analyses on the instances each evaluator did *not* already know.
+
+**Already seen when this addendum was written:**
+
+- everything listed above;
+- all A11 outputs, including the unknown-subset E1 and E2 gaps in `correct` and `quotable_conditional` per evaluator. At A4 the explicit arm was ahead on manipulated relations under both evaluators; this was not robust;
+- the H2/R3/H3 write-up (`analysis/interpretation/h2_r3_h3.md`): levels by relation type and stage over all instances, and H3 with and without the defective probe;
+- the size and make-up of each evaluator's unknown set. GLM has 37 instances: R1 7, R2 0, R3 6, R4 2, O1 6, O2 16. Claude has 30: R1 4, R2 0, R3 8, R4 1, O1 7, O2 10. Each spans 7 of the 12 specimens.
+
+Nothing else has been computed on these subsets.
+
+**Subsets** (the A11 rule: an instance is *known* if it is closed-book correct in at least 5 of its 8 answers):
+
+- **U_e (primary):** each evaluator's own unknown instances, analyzed with that evaluator's open-book records.
+- **U_both (sensitivity):** instances unknown to *both* evaluators, analyzed separately with each evaluator's records. Its size has not been computed yet.
+- **S_e (sensitivity):** per assignment rather than per instance. Keep an instance-stage pair if *both* of its closed-book answers (explicit and implicit packet) are not `cb_correct`; a missing or unscorable closed-book answer counts as not correct, as in A11's *known* rule. This keeps more data, but it departs from A11's instance-level rule, so it is reported only as a check on U_e.
+
+**Analyses** (per evaluator and subset, never pooled; definitions and statistics as in the main plan, including the page-clustered bootstrap with the same seed string and the specimen sign counts):
+
+- **E2:** rates by stage × arm; paired gaps for `score`, `correct`, `quotable` (both versions), `absent`, and `corrupted`; the score-boundary decomposition.
+- **E5:** stage-to-stage transitions, first stage of loss (below 3; at most 1), and the within-instance A1-to-A4 widening distribution and mean.
+- **E6:** paired gaps by relation type and stage, with n. A cell with no pairs is reported as empty, not as zero. R2 is empty by construction. A4 `absent` and `corrupted` are split by `spans_chunks`.
+- **Not rerun:** E1, and the E2 `correct` and `quotable_conditional` gaps for U_e, which already exist in the A11 outputs. E3 (too sparse per specimen), E4, and E7 are not run on these subsets either.
+
+**Reading rules (fixed now).**
+
+- The plan's *robust* rule (8 of 12 specimens) cannot be met, because no subset reaches 8 specimens. Nothing from this addendum is called robust.
+- A gap is called *consistent* if it has the same non-zero sign under both evaluators, and under each evaluator more specimens with data show that sign than the opposite sign. Everything else is *mixed*. Consistent results are reported as directional only.
+- If the explicit arm is ahead on `correct` on manipulated relations, consistently, at a stage, it is reported as a directional hint in H1's direction among relations the evaluators did not already know. It is not reported as support for H1.
+- If the gap on the subset again sits in `quotable` rather than `correct`, it is reported that memory does not explain the quotability difference.
+- If E5's A1-to-A4 widening is positive and consistent, it is reported as a directional hint of H1's widening on unknown relations. Otherwise H1 remains unsupported.
+- U_both and S_e are reported only as agreeing or disagreeing in sign with U_e.
+
+**Outputs.**
+
+- **Location:** `analysis/closed_book_covariate/unknown_subset/<evaluator>/<subset>/`, with a README that names this addendum's commit.
+- **Code:** in `closed_book.py`, tested on synthetic records, and committed before any of these quantities is computed.
+- **Runlog:** an entry when the analyses are run.
