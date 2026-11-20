@@ -1,0 +1,5 @@
+arm,spans_chunks,n,absent,corrupted,absent_rate,corrupted_rate
+explicit,True,2,0,1,0.0,0.5
+explicit,False,15,0,1,0.0,0.06666666666666667
+implicit,True,3,1,1,0.3333333333333333,0.3333333333333333
+implicit,False,14,0,1,0.0,0.07142857142857142

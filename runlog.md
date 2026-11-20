@@ -2,6 +2,29 @@
 
 Entries are reverse-chronological. This record begins before registration; deviations and lock events are added as they occur.
 
+## 2026-11-20 — UNPLANNED PLAN Addendum 1 run (instances not already known)
+
+Addendum and code committed at `55b6c5970` before computation;
+`make closed-book-unknown` wrote `analysis/closed_book_covariate/unknown_subset/`.
+
+**Subsets** (instances / specimens / complete pairs):
+
+| | GLM | Claude |
+|---|---|---|
+| U_e | 37 / 9 / 148 | 30 / 10 / 118 |
+| U_both | 17 / 8 / 68 | 17 / 8 / 66 |
+| S_e | 39 / 11 / 95 | 37 / 10 / 94 |
+
+**Reading under the addendum's rules.** Nothing is robust. "Consistent" results are directional only.
+
+- **Unknown relations are still recovered from the artifact.** Correctness is 97–100% at A1–A3 in both arms, under both evaluators. Losses appear only at A4.
+- **Correctness gaps are 0 at A1–A3.**
+  - At A4, the explicit arm has fewer Absent answers under both evaluators (GLM −0.108, Claude −0.033; consistent).
+  - The pooled correctness gap at A4 is not consistent (+0.108, 0.000).
+- **R1 (sequence) at A4:** the explicit arm is ahead on correctness under both evaluators (+0.29 / +0.25; 7 and 4 instances). U_both and S_e agree. This is a directional hint in H1's direction for step-marked sequences under chunking. It is not support for H1.
+- **Quotability:** the implicit arm stays more quotable (A1 and A4 consistent; R3 at A1 and A3). So memory does not explain the quotability difference.
+- **E5 widening, A1 to A4:** GLM +0.351 (6 of 9 specimens positive); Claude −0.207 (5 of 7 negative). Not consistent; H1 remains unsupported.
+
 ## 2026-11-19 — A11 closed-book covariate run and analyzed (both evaluators)
 
 Paid runs under the maintainer's approval, after a disposable 3-packet OpenCode

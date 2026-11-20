@@ -1,0 +1,50 @@
+{
+  "U_e": {
+    "glm-5.3-flash": {
+      "instances": 37,
+      "specimens": 9,
+      "assignments": 296,
+      "complete_pairs": 148,
+      "incomplete_pairs": 0
+    },
+    "claude-sonnet-5-5": {
+      "instances": 30,
+      "specimens": 10,
+      "assignments": 238,
+      "complete_pairs": 118,
+      "incomplete_pairs": 2
+    }
+  },
+  "U_both": {
+    "glm-5.3-flash": {
+      "instances": 17,
+      "specimens": 8,
+      "assignments": 136,
+      "complete_pairs": 68,
+      "incomplete_pairs": 0
+    },
+    "claude-sonnet-5-5": {
+      "instances": 17,
+      "specimens": 8,
+      "assignments": 134,
+      "complete_pairs": 66,
+      "incomplete_pairs": 2
+    }
+  },
+  "S_e": {
+    "glm-5.3-flash": {
+      "instances": 39,
+      "specimens": 11,
+      "assignments": 190,
+      "complete_pairs": 95,
+      "incomplete_pairs": 0
+    },
+    "claude-sonnet-5-5": {
+      "instances": 37,
+      "specimens": 10,
+      "assignments": 190,
+      "complete_pairs": 94,
+      "incomplete_pairs": 2
+    }
+  }
+}

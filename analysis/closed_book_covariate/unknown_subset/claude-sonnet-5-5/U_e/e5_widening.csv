@@ -1,0 +1,8 @@
+change,n,point,ci_low,ci_high,undefined_resamples,specimens_negative,specimens_zero,specimens_positive,specimens_undefined,specimens_without_data
+-3,1,,,,,,,,,
+-2,2,,,,,,,,,
+-1,2,,,,,,,,,
+0,22,,,,,,,,,
+1,1,,,,,,,,,
+2,1,,,,,,,,,
+mean,29,-0.20689655172413793,-0.5555555555555556,0.0967741935483871,0,5,3,2,0,2
