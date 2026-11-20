@@ -20,7 +20,7 @@ The design below is the one registered. The execution departed from it in one la
   - Each assignment was evaluated in a fresh, isolated context with no answer key.
   - Two evaluator families, never pooled.
 - **Closed-book covariate (A11):** the same 1,832 questions and options with no documentation shown, asking each model what it already knows.
-- **Exploratory analyses E1–E7:** a plan committed before computation ([`analysis/exploratory/PLAN.md`](analysis/exploratory/PLAN.md)), including AI-assisted case coding reviewed by the maintainer.
+- **Exploratory analyses E1–E7:** a plan committed before computation ([`analysis/exploratory/PLAN.md`](analysis/exploratory/PLAN.md)), including AI-assisted case coding reviewed by the maintainer. Addendum 1 to that plan repeats the analyses on instances the models did not already know.
 
 | Evaluator | M1-AI run | Coverage | Repeatability (kappa) | Correct with no documentation (A11) |
 | --------- | --------- | -------- | --------------------- | ----------------------------------- |
@@ -47,7 +47,12 @@ The design below is the one registered. The execution departed from it in one la
 - **Correctness mostly measures memory.**
   - Without any documentation, the models answered 82% (GLM) and 86% (Claude) of questions correctly. They "knew" 192 and 199 of the 229 instances, and 97–98% of membership questions (package-manager tabs).
   - So the near-equal correctness of the two arms says little about whether relations survived.
-  - On the 30–37 instances neither model already knew, the samples are too small for robust claims. At the chunk stage the explicit arm is ahead on the manipulated relations under both evaluators, a hint in H1's direction, but directional only.
+  - A follow-up analysis looked only at instances each model did *not* already know: 37 for GLM and 30 for Claude, on 9–10 pages ([PLAN Addendum 1](analysis/exploratory/PLAN.md), fixed before computation). Nothing there can be called robust; results are directional only.
+    - **Relations still survive until chunking.** Even on unknown instances, both arms were answered correctly 97–100% of the time at A1–A3, under both evaluators.
+    - **At the chunk stage, the explicit arm gets fewer "the text does not say" answers** under both evaluators.
+    - **Sequences (R1) are the clearest case.** Steps marked as steps were answered correctly more often after chunking than the same steps in prose (+0.29 and +0.25), with agreeing sensitivity checks. That is a directional hint in H1's direction, on only 7 and 4 instances. It is not support for H1.
+    - **The prose arm stays more quotable** on unknown relations too, so memory does not explain the quotability gap.
+    - **The within-instance widening test disagrees between evaluators,** so H1 remains unsupported.
 - **Losses are mostly chunk boundaries.**
   - At A4, "the text does not say" answers occur almost only where the relevant passage was split across chunks.
   - Case reading found the text cut off in 39 of 40 sampled cases. Both arms lose about equally.
@@ -70,7 +75,8 @@ The design below is the one registered. The execution departed from it in one la
 - GLM: `analysis/m1_ai_a7/`.
 - Claude: `analysis/m1_ai_a7_claude-sonnet-5-5/` and `analysis/replication_claude-sonnet-5-5/`.
 - E1–E7 and other unplanned work: `analysis/exploratory/`.
-- Closed-book covariate: `analysis/closed_book_covariate/`.
+- Closed-book covariate: `analysis/closed_book_covariate/`, with the Addendum 1 results in `analysis/closed_book_covariate/unknown_subset/`.
+- Interpretive write-up of H2, R3, and H3: [`analysis/interpretation/h2_r3_h3.md`](analysis/interpretation/h2_r3_h3.md).
 
 ## What this is
 
